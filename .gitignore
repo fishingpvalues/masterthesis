@@ -1,0 +1,47 @@
+# LaTeX generated files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.bbl
+*.bcf
+*.blg
+
+# Temporary files created by editors
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Intermediate document files
+*.dvi
+*.xdv
+
+# Generated images
+*.ps
+*.eps
+*.svg
+
+# Build directories
+_build/
+*.run.xml
+*.nav
+*.snm
+
+# For arara
+arara.log
+
+# Miscellaneous
+Thumbs.db
+.DS_Store
