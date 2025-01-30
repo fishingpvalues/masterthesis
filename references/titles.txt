@@ -1,0 +1,42 @@
+
+Alessandro Rizzuto, David Govi, Federico Schipani, and Alessandro Lazzeri. 2021. "Lead Time Estimation of a Drilling Factory with Machine and Deep Learning Algorithms: A Case Study", 84–92.
+Arnold, D., and K. Furmans, eds. 2006. Materialfluss in Logistiksystemen. 5th ed. Berlin, Heidelberg: Springer Berlin Heidelberg.
+Bano, D., J. Michael, B. Rumpe, S. Varga, and M. Weske. 2022. "Process-aware digital twin cockpit synthesis from event logs". Journal of Computer Languages 70:101121.
+Bender, J., M. Trat, and J. Ovtcharova. 2022. "Benchmarking AutoML-Supported Lead Time Prediction". 1877-0509 200:482–494.
+Biesinger, F., D. Meike, B. Kraß, and M. Weyrich. 2019. "A digital twin for production planning based on cyber-physical systems: A Case Study for a Cyber-Physical System-Based Creation of a Digital Twin". Procedia CIRP 79:355–360.
+Charpentier, P., and A. Véjar. 2014. "From Spatio-Temporal Data to Manufacturing System Model". Journal of Control, Automation and Electrical Systems 25(5):557–565.
+Choueiri, A. C., D. M. V. Sato, E. E. Scalabrin, and E. A. P. Santos. 2020. "An extended model for remaining time prediction in manufacturing systems using process mining". Journal of Manufacturing Systems 56:188–201.
+Czimmermann, T., G. Ciuti, M. Milazzo, M. Chiurazzi, S. Roccella, C. M. Oddo, and P. Dario. 2020. "Visual-Based Defect Detection and Classification Approaches for Industrial Applications-a SURVEY". Sensors 20(5):1459.
+Denno, P., C. Dickerson, and J. A. Harding. 2018. "Dynamic Production System Identification for Smart Manufacturing Systems". Journal of Manufacturing Systems 48.
+Evermann, J., J.-R. Rehse, and P. Fettke. 2016. "Predicting process behaviour using deep learning". http://arxiv.org/pdf/1612.04600.
+Farah Abdoune, Maroua Nouiri, Olivier Cardin, and Pierre Castagna. 2023. "Digital Twin Lifecycle: Core Challenges and Open Issues". In Service Oriented, Holonic and Multi-Agent Manufacturing Systems for Industry of the Future: Proceedings of SOHOMA 2022, edited by T. Borangiu, D. Trentesaux, and P. Leitão, 157–167. 1st ed. Cham: Springer International Publishing; Imprint Springer.
+Friederich, J., D. P. Francis, S. Lazarova-Molnar, and N. Mohamed. 2022. "A framework for data-driven digital twins of smart manufacturing systems". Computers in Industry 136:103586.
+Goodall, P., R. Sharpe, and A. West. 2019. "A data-driven simulation to support remanufacturing operations". Computers in Industry 105:48–60.
+Grieves, M. 2022. "Intelligent digital twins and the development and management of complex systems". Digital Twin 2:8.
+Huang, Y., M. D. Seck, and A. Verbraeck. 2011. "From data to simulation models: Component-based model generation with a data-driven approach". In Proceedings of the 2011 Winter Simulation Conference (WSC), 3719–3729. IEEE.
+Jan Lehr, Alik Sargsyan, Martin Pape, Jan Philipps, and Jorg Kruger. 2020. "Automated Optical Inspection Using Anomaly Detection and Unsupervised Defect Clustering", 1235–1238.
+Jones, D., C. Snider, A. Nassehi, J. Yon, and B. Hicks. 2020. "Characterising the Digital Twin: A systematic literature review". CIRP Journal of Manufacturing Science and Technology 29:36–52.
+Kitchenham, B., O. Pearl Brereton, D. Budgen, M. Turner, J. Bailey, and S. Linkman. 2009. "Systematic literature reviews in software engineering – A systematic literature review". Information and Software Technology 51(1):7–15.
+Kuehner, K. J., R. Scheer, and S. Strassburger. 2021. "Digital Twin: Finding Common Ground – A Meta-Review". Procedia CIRP 104:1227–1232.
+Kumbhar, M., A. H. Ng, and S. Bandaru. 2023. "A digital twin based framework for detection, diagnosis, and improvement of throughput bottlenecks". Journal of Manufacturing Systems 66:92–106.
+Liu, S., P. Zheng, L. Xia, and J. Bao. 2023. "A dynamic updating method of digital twin knowledge model based on fused memorizing-forgetting model". Advanced Engineering Informatics 57:102115.
+Lugaresi, G., and A. Matta. 2021. "Automated manufacturing system discovery and digital twin generation". Journal of Manufacturing Systems 59:51–66.
+Martin, N., M. Swennen, B. Depaire, M. Jans, A. Caris, and K. Vanhoof. 2017. "Retrieving batch organisation of work insights from event logs". Decision Support Systems 100:119–128.
+Martin, N., F. Bax, B. Depaire, and A. Caris. 2016. "Retrieving Resource Availability Insights from Event Logs". In 2016 IEEE 20th International Enterprise Distributed Object Computing Conference (EDOC): EDOC 2016 : 5-9 September 2016, Vienna, Austria : Proceedings, edited by F. Matthes, J. Mendling, and S. Rinderle-Ma, 1–10. Piscataway, NJ: IEEE.
+Martin, N., B. Depaire, and A. Caris. 2015. "Using Process Mining to Model Interarrival Times: Investigating the Sensitivity of the ARPRA Framework". In Proceedings of the 2015 Winter Simulation Conference, December 6 - 9, 2015, Huntington Beach, CA, edited by L. Yilmaz, 868–879. Piscataway, NJ, Madison, Wis.: IEEE; Omnipress.
+Michael W. Grieves, and J. Vickers. 2017. "Digital Twin: Mitigating Unpredictable, Undesirable Emergent Behavior in Complex Systems".
+Milde, M., and G. Reinhart. 2019. "Automated Model Development and Parametrization of Material Flow Simulations". In 2019 Winter Simulation Conference (WSC), edited by N. Mustafee, 2166–2177. Piscataway, NJ: IEEE.
+Moon, J., G. Park, and J. Jeong. 2021. "POP-ON: Prediction of Process Using One-Way Language Model Based on NLP Approach". Applied Sciences 11(2):864.
+Muhr, D., S. Tripathi, and H. Jodlbauer. 2020. "Divide and conquer anomaly detection: A case study predicting defective engines". Procedia Manufacturing 42:57–61.
+Müller, A., and F. Grumbach. 2023. "Predicting processing times in high mix low volume job shops".
+Nunes, P., J. Santos, and E. Rocha. 2023. "Challenges in predictive maintenance – A review". CIRP Journal of Manufacturing Science and Technology 40:53–67.
+Pourbafrani, M., S. J. van Zelst, and W. M. P. van der Aalst. 2020. "Supporting Automatic System Dynamics Model Generation for Simulation in the Context of Process Mining". In Business Information Systems: 23rd International Conference, BIS 2020, Colorado Springs, CO, USA, June 8–10, 2020, Proceedings, edited by W. Abramowicz and G. Klein, 249–263. 1st ed. Cham: Springer International Publishing; Imprint Springer.
+Rozinat, A., R. S. Mans, M. Song, and W. van der Aalst. 2009. "Discovering simulation models". Information Systems 34(3):305–327.
+Shen, K., J. Sun, Y. Zheng, C. Xu, H. Wang, S. Wang, S. Chen, and X. Feng. 2022. "A comprehensive analysis and experimental investigation for the thermal management of cell-to-pack battery system". Applied Thermal Engineering 211:118422.
+Simulation Interoperability Standards Organization. 2012. Standard for Core Manufacturing Simulation Data – XML Representation: SISO-STD-008-01-2012. https://cdn.ymaws.com/www.sisostandards.org/resource/resmgr/standards_products/siso-std-008-01-2012_cmsd_xm.pdf.
+Smith, C. 2015. "The Programmatic Generation of Discrete-Event Simulation Models from Production Tracking Data".
+Tax, N., I. Verenich, M. La Rosa, and M. Dumas. 2016. "Predictive Business Process Monitoring with LSTM Neural Networks".
+Thiede, S., Y. Seow, J. Andersson, and B. Johansson. 2013. "Environmental aspects in manufacturing system modelling and simulation—State of the art and research perspectives". CIRP Journal of Manufacturing Science and Technology 6(1):78–87.
+van der Aalst, W. 2012. "Process mining". Communications of the ACM 55(8):76–83.
+Zhang, J., J. Liu, C. Zhuang, H. Guo, and H. Ma. 2023. "A Data-Driven Smart Management and Control Framework for a Digital Twin Shop Floor with Multi-Variety Multi-Batch Production". The International Journal of Advanced Manufacturing Technology :1–17.
+Zhuang, C., J. Liu, and H. Xiong. 2018. "Digital Twin-Based Smart Production Management and Control Framework for the Complex Product Assembly Shop-Floor". The International Journal of Advanced Manufacturing Technology 96(1-4):1149–1163.
