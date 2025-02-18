@@ -8,22 +8,18 @@
 *.toc
 *.fmt
 *.fot
-*.cb
-*.cb2
+*.cb*
 *.synctex.gz
 *.fdb_latexmk
-*.fls
 *.bbl
 *.bcf
 *.blg
-*.run.xml
 *.glg
 *.glo
 *.gls
 *.ist
 .latexmkrc
 .google-cookie
-
 
 # Temporary files created by editors
 *~
@@ -41,11 +37,11 @@
 *.eps
 *.svg
 
-# Build directories
+# Build directories and auxiliary build files
 _build/
-*.run.xml
 *.nav
 *.snm
+*.run.xml
 
 # For arara
 arara.log
