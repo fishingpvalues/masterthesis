@@ -16,6 +16,14 @@
 *.bbl
 *.bcf
 *.blg
+*.run.xml
+*.glg
+*.glo
+*.gls
+*.ist
+.latexmkrc
+.google-cookie
+
 
 # Temporary files created by editors
 *~
