@@ -50,6 +50,29 @@
 % Für Absätze ohne Einrückung (\\ wird nicht meht benötigt)
 \usepackage{parskip}
 
+% Table of Contents customization
+\usepackage{tocloft}
+
+% Customize the name of the contents page (optional)
+\renewcommand{\contentsname}{Table of Contents}
+
+% Increase space before chapters and set a bold, larger font for chapter titles
+\setlength{\cftbeforechapskip}{1em}
+\renewcommand{\cftchapfont}{\bfseries\Large}
+\renewcommand{\cftchappagefont}{\bfseries\Large} % page numbers
+
+% Set the width for chapter numbers
+\setlength{\cftchapnumwidth}{3em}
+
+% Use leaders (dot fills) for chapters and sections
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% Customize sections: normal font, single-space, with a little indent
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\setlength{\cftbeforesecskip}{0.5em}
+\setlength{\cftsecindent}{1.5em}
 
 %Dieser Befehl beeinflusst das vertikale Layout des Dokuments. Standardmäßig versucht LaTeX, die Seiten so zu formatieren, dass der Text gleichmäßig über die Seiten verteilt ist, wodurch jede Seite die gleiche Höhe hat (was zu "vollen" Seiten führt). Der Befehl \raggedbottom bewirkt, dass LaTeX diese automatische Verteilung nicht anwendet und stattdessen den Seiteninhalt so belässt, wie er ist, auch wenn dies bedeutet, dass einige Seiten kürzer sind als andere.
 \raggedbottom

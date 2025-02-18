@@ -1,26 +1,26 @@
 \documentclass{cls/ma-ths}
 \input{packages.tex}
 
-
+\makeglossaries
+\loadglsentries{glossary} % glossary.tex is in the project root folder
+\glsaddall  % Ensure all glossary entries are added
 
 \begin{document}
-\input{0_frontpage.tex}
+  \input{0_frontpage.tex}
 
-\tableofcontents
-\clearpage
+  \tableofcontents
+  \clearpage
 
-\input{1_intro.tex}
-\input{2_theory_statusquo.tex}
-\input{3_pract.tex}
-\input{4_methodol.tex}
-\input{5_impl.tex}
-\input{6_usecase.tex}
-\input{7_disc.tex}
-\input{8_concl.tex}
+  \printglossary[title=Glossary]
 
-\printbibliography % prints the bibliography
+  \input{1_intro.tex}
+  \input{2_theory_statusquo.tex}
+  \input{3_pract.tex}
+  \input{4_methodol.tex}
+  \input{5_impl.tex}
+  \input{6_usecase.tex}
+  \input{7_disc.tex}
+  \input{8_concl.tex}
 
-\clearpage
-\input{glossary.tex} % manually including your glossary
-
+  \printbibliography
 \end{document}

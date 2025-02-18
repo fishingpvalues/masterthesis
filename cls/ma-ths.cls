@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ma-ths}[2023/10/01 v1.0 Master's Thesis Class]
+\ProvidesClass{cls/ma-ths}[2023/10/01 v1.0 Master's Thesis Class]
 
 % Load a standard base class that defines default font sizes etc.
 \LoadClass[a4paper,12pt,twoside]{scrreprt}
@@ -15,7 +15,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
-\RequirePackage{glossaries}
+\RequirePackage[toc]{glossaries}
 \RequirePackage{listings} % Code listing
 \RequirePackage{minted} % For better code highlighting
 \RequirePackage{xcolor} % Added package
@@ -69,22 +69,23 @@
 \fancyhead[R]{\thepage}
 \fancyfoot[C]{\thepage}
 
-% Glossary setup
-\makeglossaries
 
 % Title Page Setup (0_frontpage.tex)
 \newcommand{\frontpage}{%
     \begin{titlepage}
         \centering
-        \vspace*{1in}
-        {\Huge\textbf{Automatic Generation and Validation of Simulation Based Digital Twins:}\\[0.5cm]
-         \textbf{A data-driven Framework and Case Study Application}}\\[1.5cm]
-        \large
-        \textbf{Author:} Daniel Fischer\\[0.5cm]
-        \textbf{Supervisor:} Prof. Christian Schwede\\[1cm]
-        \textbf{Research Master Data Science}\\
-        \textbf{Hochschule Bielefeld (HSBI)}\\[2cm]
-        \textbf{Submission Date:} \today
+        \vspace*{1.5in} % Adjust top space as needed
+        % Increased line spacing for the title lines
+        {\fontsize{32}{40}\selectfont\bfseries Automatic Generation and Validation of Simulation Based Digital Twins}\\[2em]
+        {\fontsize{28}{36}\selectfont\bfseries A Data-driven Framework and Case Study Application}\\[2.5em]
+        \rule{\textwidth}{1pt}\\[2em]
+        \begin{tabular}{rl}
+            \textbf{Author:} & Daniel Fischer\\[1em]
+            \textbf{Supervisor:} & Prof. Christian Schwede\\[1em]
+            \textbf{Program:} & Research Master Data Science\\[1em]
+            \textbf{Institution:} & Hochschule Bielefeld (HSBI)\\[1em]
+            \textbf{Submission Date:} & \today\\[1em]
+        \end{tabular}
         \vfill
     \end{titlepage}
 }

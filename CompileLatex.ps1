@@ -1,5 +1,4 @@
 # Define the folder containing the LaTeX project
-#$latexProjectPath = "D:\mielepaper\"
 $latexProjectPath = "D:\masterthesis\"
 $outputFileName = "output.tex"
 $pdfFileName = "output.pdf"
@@ -21,13 +20,19 @@ foreach ($ext in $auxExtensions) {
     }
 }
 
-# Compile the LaTeX file using latexmk with biber backend
-# Remove -f after successful first compilation
-# Compile the LaTeX file using latexmk with biber backend
-# Remove -f after successful first compilation
-
+# First compilation using latexmk with biber backend
 latexmk -pdf -pdflatex="xelatex %O %S" -quiet -f $outputFileName
 
+# Run makeglossaries to process all glossary entries
+# Get the base name (without extension) of the main file
+$baseName = [System.IO.Path]::GetFileNameWithoutExtension($outputFileName)
+if (Test-Path "$latexProjectPath\$baseName.glo") {
+    Write-Host "Running makeglossaries on $baseName..."
+    makeglossaries $baseName
+}
+
+# Re-compile so the glossary entries are incorporated
+latexmk -pdf -pdflatex="xelatex %O %S" -quiet -f $outputFileName
 
 # Check if compilation was successful
 if (Test-Path $pdfFileName) {
