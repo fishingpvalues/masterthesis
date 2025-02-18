@@ -1,21 +1,22 @@
-\documentclass{sn-jnl}
-\input{packages} 
-%Vorher Fehler mit: \include{packages}
+\documentclass{cls/ma-ths}
+\input{packages.tex}
+
 
 
 \begin{document}
+\input{0_frontpage.tex}
+\input{1_intro.tex}
+\input{2_theory_statusquo.tex}
+\input{3_pract.tex}
+\input{4_methodol.tex}
+\input{5_impl.tex}
+\input{6_usecase.tex}
+\input{7_disc.tex}
+\input{8_concl.tex}
 
+\printbibliography % prints the bibliography
 
-
-\input{0_frontpage}
-\input{1_intro}
-\input{2_literature}
-\input{3_approach}
-\input{4_results_implications}
-\input{5_conclusion_and_additional_infos}
-\bibliographystyle{apacite}
-\bibliography{ref} 
-\input{6_appendix}
-
+\clearpage
+\input{glossary.tex} % manually including your glossary
 
 \end{document}

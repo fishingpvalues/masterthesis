@@ -1,0 +1,157 @@
+{
+    "Gliederung der Masterarbeit": [
+        {
+            "chapter": "Einleitung",
+            "pages": "6-8 Seiten",
+            "sections": [
+                "Problemstellung",
+                "Zielsetzung der Arbeit",
+                "Motivation und Relevanz",
+                "Forschungsfragen und Hypothesen",
+                "Aufbau der Arbeit/Methodisches Vorgehen"
+            ]
+        },
+        {
+            "chapter": "Theoretische Grundlagen und Stand der Technik",
+            "pages": "10-12 Seiten",
+            "sections": [
+                {
+                    "title": "Digital Twin: Definition und Konzepte",
+                    "subsections": [
+                        "Arten von Digitalen Zwillingen",
+                        "Data Driven DT",
+                        "Lerngründe Paper"
+                    ]
+                },
+                "Datengetriebene Modellierung: Prinzipien und Methoden",
+                {
+                    "title": "Materialflussplanung und -simulation",
+                    "subsections": [
+                        "Grundlegende Konzepte Christians Buch",
+                        "Prozesse und Ressourcen",
+                        "Pinedo Buch",
+                        "Produktionsplanung und Steuerung"
+                    ]
+                },
+                {
+                    "title": "Validierung und Verifikation in der Simulation",
+                    "subsections": [
+                        "Standardformate und Datenquellen für Simulationsmodelle",
+                        "Validierungsmethoden Christians Buch",
+                        "Kennzahlen und KPIs",
+                        "Mein Standardformat vorstellen, Pro Conta, vs. andere Formate",
+                        "Trace Analysis",
+                        "Herausforderungen bei der Validierung"
+                    ]
+                }
+            ]
+        },
+        {
+            "chapter": "Stand der Forschung",
+            "pages": "8-10 Seiten",
+            "sections": [
+                "Bestehende Ansätze zur Validierung und Verifikation von Digital Twins",
+                {
+                    "title": "Automatische Modellgenerierung und deren Gründe/Herausforderungen",
+                    "subsections": [
+                        "Automatisch = Stets aktuell und Warnung direkt wenn Twin nicht mehr Realität abbildet => Online Validierung",
+                        "Hoher Komplexitätsgrad braucht automatische Verfahren",
+                        "Framework fördert Standardisierung und Transparenz",
+                        "Skalierbarkeit automatisierter Ansätze",
+                        "Manuelle Validierungen können Bias enthalten",
+                        "Kosteneinsparungen"
+                    ]
+                },
+                "Grenzen aktueller Standardformate und Datenstrukturen",
+                "Lücken und offene Fragen in der Forschung"
+            ]
+        },
+        {
+            "chapter": "Methodik und Framework-Entwicklung",
+            "pages": "12-15 Seiten",
+            "sections": [
+                "Anforderungsanalyse (Funktional Technisch Datenformat)",
+                {
+                    "title": "Konzeption",
+                    "subsections": [
+                        "Beschreibung des Frameworks für die automatische Modellgenerierung  => Rekurrieren auf standardisieretes Dateiformat",
+                        "Verifikation des Modells: Strukturierte Pipeline und Validierungsziele",
+                        "Datenbasierte Validierung: Eventdaten und KPIs zur Systembewertung",
+                        "Definition von Validierungsszenarien (z. B. Maskierung, Blackbox-Szenarien)",
+                        "Automatische Bewertungskriterien für die Modellvalidität (z. B. Ähnlichkeit zu R², Durchlaufzeiten, Effizienzkennzahlen)",
+                        "Umgang mit fehlenden oder begrenzten Daten"
+                    ]
+                }
+            ]
+        },
+        {
+            "chapter": "Implementierung des Frameworks",
+            "pages": "8-12 Seiten",
+            "sections": [
+                {
+                    "title": "Technische Umsetzung der Modellgenerierung",
+                    "subsections": [
+                        "UML Diagramm",
+                        "Integration in bestehende Systeme"
+                    ]
+                },
+                "Automatische Validierung des generierten Modells",
+                "Verwendung externer Informationsquellen zur Modellverifikation",
+                "Schnittstellen zu Materialflusssystemen und Datenerhebung"
+            ]
+        },
+        {
+            "chapter": "Fallstudie: Validierung eines Digital Twins im Produktionssystem",
+            "pages": "10-12 Seiten",
+            "sections": [
+                {
+                    "title": "Beschreibung des Produktionssystems und der verfügbaren Daten",
+                    "subsections": [
+                        "Beschreibung IoT Factory",
+                        "Datenaufbereitung und Analyse"
+                    ]
+                },
+                "Aufbau des digitalen Zwillings für das Szenario",
+                "Durchführung der Validierungsexperimente",
+                "Ergebnisse und Interpretation: Grenzen und Fehler des Modells",
+                "Grenzen und Falsifizierbarkeit des Modells anhand realer Daten"
+            ]
+        },
+        {
+            "chapter": "Diskussion der Ergebnisse",
+            "pages": "5-7 Seiten",
+            "sections": [
+                "Kritische Reflexion der Framework-Entwicklung",
+                "Limitationen der automatischen Validierung",
+                {
+                    "title": "Aussagekraft und Belastbarkeit der entwickelten Methoden",
+                    "subsections": [
+                        "Vergleich mit manueller Modellierung"
+                    ]
+                },
+                "Implikationen für die Forschung und die Praxis"
+            ]
+        },
+        {
+            "chapter": "Fazit und Ausblick",
+            "pages": "4-6 Seiten",
+            "sections": [
+                "Zusammenfassung der wichtigsten Ergebnisse",
+                "Beantwortung der Forschungsfragen",
+                "Ausblick: Mögliche Weiterentwicklung des Frameworks",
+                "Handlungsempfehlungen für die Anwendung in der Praxis"
+            ]
+        },
+        {
+            "chapter": "Literaturverzeichnis"
+        },
+        {
+            "chapter": "Anhang",
+            "sections": [
+                "Ergänzende Daten und Abbildungen",
+                "Code- und Framework-Dokumentation",
+                "Glossar (falls erforderlich)"
+            ]
+        }
+    ]
+}

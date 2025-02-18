@@ -1,5 +1,7 @@
 % Paket für Bibliographie im APA-Stil
-\usepackage{apacite} 
+% \usepackage[sort&compress]{apacite} % remove or comment this out
+\usepackage[backend=biber, style=apa]{biblatex} % loads APA style with biber
+\addbibresource{ref.bib} % add your bibliography file
 
 % Ermöglicht das Setzen von Float-Barrieren zum Erzwingen von Einbettungen (Tabellen, Figures)
 \usepackage{placeins}
@@ -47,12 +49,6 @@
 
 % Für Absätze ohne Einrückung (\\ wird nicht meht benötigt)
 \usepackage{parskip}
-
-% Für inline Code der entsprechend dargestellt wird (Python). Usage z.B. mit % \mintinline{python}{codetext}
-
-% Definition eines neuen Kommandos für Zitate innerhalb von Abbildungen
-\newcommand{\captionciteA}[1]{\protect\citeA{#1}}
-\newcommand{\captionshortcite}[1]{\protect\shortcite{#1}}
 
 
 %Dieser Befehl beeinflusst das vertikale Layout des Dokuments. Standardmäßig versucht LaTeX, die Seiten so zu formatieren, dass der Text gleichmäßig über die Seiten verteilt ist, wodurch jede Seite die gleiche Höhe hat (was zu "vollen" Seiten führt). Der Befehl \raggedbottom bewirkt, dass LaTeX diese automatische Verteilung nicht anwendet und stattdessen den Seiteninhalt so belässt, wie er ist, auch wenn dies bedeutet, dass einige Seiten kürzer sind als andere.

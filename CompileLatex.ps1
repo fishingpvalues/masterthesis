@@ -1,6 +1,6 @@
 # Define the folder containing the LaTeX project
 #$latexProjectPath = "D:\mielepaper\"
-$latexProjectPath = "C:\masterthesis\"
+$latexProjectPath = "D:\masterthesis\"
 $outputFileName = "output.tex"
 $pdfFileName = "output.pdf"
 $outputDirectory = "$latexProjectPath\output"
@@ -9,9 +9,8 @@ $outputDirectory = "$latexProjectPath\output"
 Set-Location -Path $latexProjectPath
 
 # Define the list of common LaTeX auxiliary file extensions
-
-#Exclude aux and bbl files from deletion here after FORCED compilation for once at the end. These are necessary for the bibliography and cross-referencing.
-
+# Exclude aux and bbl files from deletion here after FORCED compilation for once at the end.
+# These are necessary for the bibliography and cross-referencing.
 $auxExtensions = @("*.aux", "*.log", "*.fls", "*.fdb_latexmk", "*.synctex.gz", "*.out", "*.toc", "*.bbl", "*.blg", "*.nav", "*.snm")
 
 # Delete all auxiliary files with matching extensions
@@ -22,9 +21,13 @@ foreach ($ext in $auxExtensions) {
     }
 }
 
-# Compile the LaTeX file using latexmk
-#Remove -f after successful first compilation
-latexmk -pdf -quiet -f $outputFileName
+# Compile the LaTeX file using latexmk with biber backend
+# Remove -f after successful first compilation
+# Compile the LaTeX file using latexmk with biber backend
+# Remove -f after successful first compilation
+
+latexmk -pdf -pdflatex="xelatex %O %S" -quiet -f $outputFileName
+
 
 # Check if compilation was successful
 if (Test-Path $pdfFileName) {
