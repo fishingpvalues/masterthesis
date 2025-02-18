@@ -34,7 +34,11 @@
 }
 
 % Set font
-\setmainfont{Times New Roman} % Requires LuaLaTeX or XeLaTeX
+\setmainfont[
+  BoldFont={Times New Roman Bold},
+  ItalicFont={Times New Roman Italic},
+  BoldItalicFont={Times New Roman Bold Italic}
+]{Times New Roman} % Requires LuaLaTeX or XeLaTeX
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
 
@@ -73,7 +77,8 @@
     \begin{titlepage}
         \centering
         \vspace*{1in}
-        {\Huge\textbf{Automatic Generation and Validation of Simulation Based Digital Twins: A data-driven Framework and Case Study Application}}\\[1.5cm]
+        {\Huge\textbf{Automatic Generation and Validation of Simulation Based Digital Twins:}\\[0.5cm]
+         \textbf{A data-driven Framework and Case Study Application}}\\[1.5cm]
         \large
         \textbf{Author:} Daniel Fischer\\[0.5cm]
         \textbf{Supervisor:} Prof. Christian Schwede\\[1cm]
