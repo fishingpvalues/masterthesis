@@ -1,78 +1,84 @@
-% Paket für Bibliographie im APA-Stil
-% \usepackage[sort&compress]{apacite} % remove or comment this out
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bibliography Setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[backend=biber, style=apa]{biblatex} % loads APA style with biber
 \addbibresource{ref.bib} % add your bibliography file
 
-% Ermöglicht das Setzen von Float-Barrieren zum Erzwingen von Einbettungen (Tabellen, Figures)
-\usepackage{placeins}
-
-% Hyperlinks im Dokument
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hyperlink & URL Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black,
+  pdfauthor={Daniel Fischer},
+  pdftitle={Master Thesis: Digital Twins},
+  pdfsubject={Master Thesis},
+  pdfkeywords={Digital Twin, Validation, Simulation}
+}
+\usepackage{url} % URL formatting
 
-% Verarbeitung von URLs
-\usepackage{url}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Floating Objects and Graphics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{placeins} % Force float barriers
+\usepackage{graphicx} % For graphic inclusion
+\graphicspath{{.}}    % Set graphics path
+\usepackage{float}    
+\usepackage{rotating}
 
-% Für professionelle Tabellen
-\usepackage{booktabs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Tables, Algorithms, and Miscellaneous Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}      % For professional tables
+\usepackage{tabularx}      % For flexible table widths
+\usepackage{algorithm}     % For algorithms
+\usepackage{algpseudocode} % For pseudocode
+\usepackage{comment}       % To comment out blocks of text
 
-% Blackboard Math Symbole (AMS)
-\usepackage{amsfonts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Mathematics and Fonts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts} % Blackboard math symbols
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{nicefrac} % Compact slash fractions
+\usepackage{anyfontsize} % Allows any font size
 
-% Kompakte Symbole für Brüche wie 1/2
-\usepackage{nicefrac}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Microtypography & Page Layout 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{microtype}    % Micro-optimizations for typography
+\usepackage{fancyhdr}     % Header and footer settings
+\usepackage{parskip}      % No paragraph indenting
+\raggedbottom            % Disable vertical stretch to fill pages
 
-% Mikrotypografie-Optimierungen
-\usepackage{microtype}
-
-% Kopfzeilen- und Fußzeileneinstellungen (wird vom springer template benötigt)
-\usepackage{fancyhdr}
-
-% Einbindung von Grafiken
-\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage{float}
-\usepackage{rotating}
-\usepackage{placeins}
-\usepackage{comment}
-
-% Wegen Font Shape not available hinweisen
-\usepackage{anyfontsize}
-
-% Pfad zu den Grafiken festlegen
-\graphicspath{ {.} }
-
-% Für Algorithmen und Pseudocode
-\usepackage{algorithm}
-\usepackage{algpseudocode}
-
-% Für Absätze ohne Einrückung (\\ wird nicht meht benötigt)
-\usepackage{parskip}
-
-% Table of Contents customization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Table of Contents Customization (TOC)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tocloft}
-
-% Customize the name of the contents page (optional)
 \renewcommand{\contentsname}{Table of Contents}
-
-% Increase space before chapters and set a bold, larger font for chapter titles
-\setlength{\cftbeforechapskip}{1em}
-\renewcommand{\cftchapfont}{\bfseries\Large}
-\renewcommand{\cftchappagefont}{\bfseries\Large} % page numbers
-
-% Set the width for chapter numbers
+\setlength{\cftbeforechapskip}{1.5em}
+\renewcommand{\cftchapfont}{\fontspec{Times New Roman}\bfseries\Large}
+\renewcommand{\cftchappagefont}{\fontspec{Times New Roman}\bfseries\Large}
 \setlength{\cftchapnumwidth}{3em}
+\renewcommand{\cftchapleader}{\hfill\mbox{\rule[0.5ex]{1cm}{0.4pt}}}
 
-% Use leaders (dot fills) for chapters and sections
-\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecfont}{\fontspec{Times New Roman}\normalfont\large}
+\renewcommand{\cftsecpagefont}{\fontspec{Times New Roman}\normalfont\large}
+\setlength{\cftbeforesecskip}{0.7em}
+\setlength{\cftsecindent}{2em}
 
-% Customize sections: normal font, single-space, with a little indent
-\renewcommand{\cftsecfont}{\normalfont}
-\renewcommand{\cftsecpagefont}{\normalfont}
-\setlength{\cftbeforesecskip}{0.5em}
-\setlength{\cftsecindent}{1.5em}
+\renewcommand{\cftsubsecleader}{\hfill}
+\setlength{\cftsubsecindent}{3em}
+\renewcommand{\cftsubsecfont}{\fontspec{Times New Roman}\normalfont\small}
+\renewcommand{\cftsubsecpagefont}{\fontspec{Times New Roman}\normalfont\small}
 
-%Dieser Befehl beeinflusst das vertikale Layout des Dokuments. Standardmäßig versucht LaTeX, die Seiten so zu formatieren, dass der Text gleichmäßig über die Seiten verteilt ist, wodurch jede Seite die gleiche Höhe hat (was zu "vollen" Seiten führt). Der Befehl \raggedbottom bewirkt, dass LaTeX diese automatische Verteilung nicht anwendet und stattdessen den Seiteninhalt so belässt, wie er ist, auch wenn dies bedeutet, dass einige Seiten kürzer sind als andere.
-\raggedbottom
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Captions Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{caption}
+\captionsetup{font=small, labelfont=bf}

@@ -1,27 +1,33 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{cls/ma-ths}[2023/10/01 v1.0 Master's Thesis Class]
 
-% Load a standard base class that defines default font sizes etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Base Class & Package Loading
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Load a standard base class (scrreprt) that defines default font sizes, etc.
 \LoadClass[a4paper,12pt,twoside]{scrreprt}
 
-% Load necessary packages
-\RequirePackage{geometry}
-\RequirePackage{fontspec} % Requires LuaLaTeX or XeLaTeX
-\RequirePackage{hyperref}
-\RequirePackage{setspace}
-\RequirePackage{titlesec}
-\RequirePackage{fancyhdr}
-\RequirePackage{graphicx}
-\RequirePackage{amsmath}
-\RequirePackage{amsfonts}
-\RequirePackage{amssymb}
-\RequirePackage[toc]{glossaries}
-\RequirePackage{listings} % Code listing
-\RequirePackage{minted} % For better code highlighting
-\RequirePackage{xcolor} % Added package
-% \RequirePackage{apacite} % Removed to avoid conflict with biblatex
+% Required packages
+\RequirePackage{geometry}     % Page geometry setup
+\RequirePackage{fontspec}       % Font selection (requires LuaLaTeX or XeLaTeX)
+\RequirePackage{hyperref}       % Hypertext links
+\RequirePackage{setspace}       % Line spacing control
+\RequirePackage{titlesec}       % Section title formatting
+\RequirePackage{fancyhdr}       % Header and footer customization
+\RequirePackage{graphicx}       % Graphics inclusion
+\RequirePackage{amsmath}        % Advanced math typesetting
+\RequirePackage{amsfonts}       % Math fonts
+\RequirePackage{amssymb}        % Additional math symbols
+\RequirePackage[toc]{glossaries} % Glossary handling
+\RequirePackage{listings}       % Code listings
+\RequirePackage{minted}         % Enhanced code highlighting
+\RequirePackage{xcolor}         % Color management
 
-% Set up page dimensions
+% Note: Removed apacite package to avoid conflicts with biblatex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Page Layout & Geometry
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \geometry{
     a4paper,
     left=1.5in,
@@ -33,23 +39,29 @@
     footskip=30pt
 }
 
-% Set font
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Font Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setmainfont[
   BoldFont={Times New Roman Bold},
   ItalicFont={Times New Roman Italic},
   BoldItalicFont={Times New Roman Bold Italic}
 ]{Times New Roman} % Requires LuaLaTeX or XeLaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Paragraph & Line Spacing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
-
-% Line spacing
 \onehalfspacing
 
-% Title formatting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title & Section Formatting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \titleformat{\chapter}[display]
   {\normalfont\huge\bfseries}
   {\chaptername\ \thechapter}{20pt}{\Huge}
-  
+
 \titleformat{\section}
   {\normalfont\Large\bfseries}
   {\thesection}{1em}{}
@@ -62,36 +74,41 @@
   {\normalfont\small\bfseries}
   {\thesubsubsection}{1em}{}
 
-% Header and footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Header and Footer Configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
-\fancyhf{}
+\fancyhf{} % Clear default header and footer
 \fancyhead[L]{\leftmark}
 \fancyhead[R]{\thepage}
-\fancyfoot[C]{\thepage}
+\fancyfoot[C]{\footnotesize \textit{Digital Twins Master Thesis}}
 
-
-% Title Page Setup (0_frontpage.tex)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Custom Commands & Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Enhanced title page command
 \newcommand{\frontpage}{%
     \begin{titlepage}
         \centering
-        \vspace*{1.5in} % Adjust top space as needed
-        % Increased line spacing for the title lines
-        {\fontsize{32}{40}\selectfont\bfseries Automatic Generation and Validation of Simulation Based Digital Twins}\\[2em]
-        {\fontsize{28}{36}\selectfont\bfseries A Data-driven Framework and Case Study Application}\\[2.5em]
+        \vspace*{1.8in} % Increased top space for balance
+        {\fontsize{34}{45}\selectfont\bfseries Automatic Generation and Validation of Simulation Based Digital Twins}\\[1em]
+        {\fontsize{30}{40}\selectfont\bfseries A Data-driven Framework and Case Study Application}\\[2em]
         \rule{\textwidth}{1pt}\\[2em]
         \begin{tabular}{rl}
-            \textbf{Author:} & Daniel Fischer\\[1em]
-            \textbf{Supervisor:} & Prof. Christian Schwede\\[1em]
-            \textbf{Program:} & Research Master Data Science\\[1em]
-            \textbf{Institution:} & Hochschule Bielefeld (HSBI)\\[1em]
+            \textbf{Author:}       & Daniel Fischer\\[1em]
+            \textbf{Supervisor:}   & Prof. Christian Schwede\\[1em]
+            \textbf{Program:}      & Research Master Data Science\\[1em]
+            \textbf{Institution:}  & Hochschule Bielefeld (HSBI)\\[1em]
             \textbf{Submission Date:} & \today\\[1em]
         \end{tabular}
         \vfill
     \end{titlepage}
 }
 
-% Example minted configuration for Python code
-\definecolor{bgcolor}{rgb}{0.95,0.95,0.95} % Background color for code blocks
+% Define a default background color for minted code blocks
+\definecolor{bgcolor}{rgb}{0.95,0.95,0.95}
+
+% Minted environment for Python code
 \newenvironment{pythoncode}{%
     \VerbatimEnvironment
     \begin{minted}[bgcolor=bgcolor,fontsize=\small,breaklines,linenos]{python}%
@@ -99,7 +116,7 @@
     \end{minted}%
 }
 
-% Example minted configuration for algorithms/pseudo code
+% Minted environment for algorithm/pseudocode text
 \newenvironment{algocode}{%
     \VerbatimEnvironment
     \begin{minted}[bgcolor=bgcolor,fontsize=\small,breaklines,linenos]{text}%
@@ -107,5 +124,7 @@
     \end{minted}%
 }
 
-% Define the document class
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% End of Class Definition
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \endinput

@@ -1,26 +1,42 @@
 \documentclass{cls/ma-ths}
-\input{packages.tex}
 
+%------------------------------------------------------------------------
+% Preamble setup
+%------------------------------------------------------------------------
+\input{packages.tex}
 \makeglossaries
 \loadglsentries{glossary} % glossary.tex is in the project root folder
 \glsaddall  % Ensure all glossary entries are added
 
 \begin{document}
-  \input{0_frontpage.tex}
 
-  \tableofcontents
-  \clearpage
+%------------------------------------------------------------------------
+% Front Matter
+%------------------------------------------------------------------------
+\input{chapters/0_frontpage.tex}
+\tableofcontents
+\clearpage
 
-  \printglossary[title=Glossary]
+%------------------------------------------------------------------------
+% Glossary
+%------------------------------------------------------------------------
+\printglossary[title=Glossary]
 
-  \input{1_intro.tex}
-  \input{2_theory_statusquo.tex}
-  \input{3_pract.tex}
-  \input{4_methodol.tex}
-  \input{5_impl.tex}
-  \input{6_usecase.tex}
-  \input{7_disc.tex}
-  \input{8_concl.tex}
+%------------------------------------------------------------------------
+% Main Chapters
+%------------------------------------------------------------------------
+\input{chapters/1_intro.tex}
+\input{chapters/2_theory_statusquo.tex}
+\input{chapters/3_pract.tex}
+\input{chapters/4_methodol.tex}
+\input{chapters/5_impl.tex}
+\input{chapters/6_usecase.tex}
+\input{chapters/7_disc.tex}
+\input{chapters/8_concl.tex}
 
-  \printbibliography
+%------------------------------------------------------------------------
+% Bibliography
+%------------------------------------------------------------------------
+\printbibliography
+
 \end{document}
