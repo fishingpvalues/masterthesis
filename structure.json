@@ -1,156 +1,156 @@
 {
-    "Gliederung der Masterarbeit": [
+    "Thesis Structure": [
         {
-            "chapter": "Einleitung",
-            "pages": "6-8 Seiten",
+            "chapter": "Introduction",
+            "pages": "6-8 pages",
             "sections": [
-                "Problemstellung",
-                "Zielsetzung der Arbeit",
-                "Motivation und Relevanz",
-                "Forschungsfragen und Hypothesen",
-                "Aufbau der Arbeit/Methodisches Vorgehen"
+                "Problem Statement",
+                "Objectives of the Thesis",
+                "Motivation and Relevance",
+                "Research Questions and Hypotheses",
+                "Thesis Structure / Methodology"
             ]
         },
         {
-            "chapter": "Theoretische Grundlagen und Stand der Technik",
-            "pages": "10-12 Seiten",
+            "chapter": "Theoretical Foundations and State of the Art",
+            "pages": "10-12 pages",
             "sections": [
                 {
-                    "title": "Digital Twin: Definition und Konzepte",
+                    "title": "Digital Twin: Definition and Concepts",
                     "subsections": [
-                        "Arten von Digitalen Zwillingen",
+                        "Types of Digital Twins",
                         "Data Driven DT",
-                        "Lerngründe Paper"
+                        "Rationale from Paper"
                     ]
                 },
-                "Datengetriebene Modellierung: Prinzipien und Methoden",
+                "Data-Driven Modeling: Principles and Methods",
                 {
-                    "title": "Materialflussplanung und -simulation",
+                    "title": "Material Flow Planning and Simulation",
                     "subsections": [
-                        "Grundlegende Konzepte Christians Buch",
-                        "Prozesse und Ressourcen",
-                        "Pinedo Buch",
-                        "Produktionsplanung und Steuerung"
+                        "Basic Concepts from Christian's Book",
+                        "Processes and Resources",
+                        "Pinedo Book",
+                        "Production Planning and Control"
                     ]
                 },
                 {
-                    "title": "Validierung und Verifikation in der Simulation",
+                    "title": "Validation and Verification in Simulation",
                     "subsections": [
-                        "Standardformate und Datenquellen für Simulationsmodelle",
-                        "Validierungsmethoden Christians Buch",
-                        "Kennzahlen und KPIs",
-                        "Mein Standardformat vorstellen, Pro Conta, vs. andere Formate",
+                        "Standard Formats and Data Sources for Simulation Models",
+                        "Validation Methods from Christian's Book",
+                        "Key Figures and KPIs",
+                        "Presenting My Standard Format, Pro Conta, vs. Other Formats",
                         "Trace Analysis",
-                        "Herausforderungen bei der Validierung"
+                        "Challenges in Validation"
                     ]
                 }
             ]
         },
         {
-            "chapter": "Stand der Forschung",
-            "pages": "8-10 Seiten",
+            "chapter": "State of Research",
+            "pages": "8-10 pages",
             "sections": [
-                "Bestehende Ansätze zur Validierung und Verifikation von Digital Twins",
+                "Existing Approaches for Validation and Verification of Digital Twins",
                 {
-                    "title": "Automatische Modellgenerierung und deren Gründe/Herausforderungen",
+                    "title": "Automatic Model Generation and Its Reasons/Challenges",
                     "subsections": [
-                        "Automatisch = Stets aktuell und Warnung direkt wenn Twin nicht mehr Realität abbildet => Online Validierung",
-                        "Hoher Komplexitätsgrad braucht automatische Verfahren",
-                        "Framework fördert Standardisierung und Transparenz",
-                        "Skalierbarkeit automatisierter Ansätze",
-                        "Manuelle Validierungen können Bias enthalten",
-                        "Kosteneinsparungen"
+                        "Automatic = Always up-to-date and Direct Warning When the Twin No Longer Represents Reality => Online Validation",
+                        "High Complexity Requires Automatic Procedures",
+                        "Framework Promotes Standardization and Transparency",
+                        "Scalability of Automated Approaches",
+                        "Manual Validations May Contain Bias",
+                        "Cost Savings"
                     ]
                 },
-                "Grenzen aktueller Standardformate und Datenstrukturen",
-                "Lücken und offene Fragen in der Forschung"
+                "Limitations of Current Standard Formats and Data Structures",
+                "Gaps and Open Questions in the Research"
             ]
         },
         {
-            "chapter": "Methodik und Framework-Entwicklung",
-            "pages": "12-15 Seiten",
+            "chapter": "Methodology and Framework Development",
+            "pages": "12-15 pages",
             "sections": [
-                "Anforderungsanalyse (Funktional Technisch Datenformat)",
+                "Requirements Analysis (Functional, Technical Data Format)",
                 {
-                    "title": "Konzeption",
+                    "title": "Conceptualization",
                     "subsections": [
-                        "Beschreibung des Frameworks für die automatische Modellgenerierung  => Rekurrieren auf standardisieretes Dateiformat",
-                        "Verifikation des Modells: Strukturierte Pipeline und Validierungsziele",
-                        "Datenbasierte Validierung: Eventdaten und KPIs zur Systembewertung",
-                        "Definition von Validierungsszenarien (z. B. Maskierung, Blackbox-Szenarien)",
-                        "Automatische Bewertungskriterien für die Modellvalidität (z. B. Ähnlichkeit zu R², Durchlaufzeiten, Effizienzkennzahlen)",
-                        "Umgang mit fehlenden oder begrenzten Daten"
+                        "Description of the Framework for Automatic Model Generation => Refers to a Standardized Data Format",
+                        "Verification of the Model: Structured Pipeline and Validation Goals",
+                        "Data-Driven Validation: Event Data and KPIs for System Evaluation",
+                        "Definition of Validation Scenarios (e.g., Masking, Blackbox Scenarios)",
+                        "Automatic Evaluation Criteria for Model Validity (e.g., Similarity to R², Throughput Times, Efficiency Metrics)",
+                        "Dealing with Missing or Limited Data"
                     ]
                 }
             ]
         },
         {
-            "chapter": "Implementierung des Frameworks",
-            "pages": "8-12 Seiten",
+            "chapter": "Implementation of the Framework",
+            "pages": "8-12 pages",
             "sections": [
                 {
-                    "title": "Technische Umsetzung der Modellgenerierung",
+                    "title": "Technical Implementation of Model Generation",
                     "subsections": [
-                        "UML Diagramm",
-                        "Integration in bestehende Systeme"
+                        "UML Diagram",
+                        "Integration into Existing Systems"
                     ]
                 },
-                "Automatische Validierung des generierten Modells",
-                "Verwendung externer Informationsquellen zur Modellverifikation",
-                "Schnittstellen zu Materialflusssystemen und Datenerhebung"
+                "Automatic Validation of the Generated Model",
+                "Use of External Information Sources for Model Verification",
+                "Interfaces to Material Flow Systems and Data Collection"
             ]
         },
         {
-            "chapter": "Fallstudie: Validierung eines Digital Twins im Produktionssystem",
-            "pages": "10-12 Seiten",
+            "chapter": "Case Study: Validation of a Digital Twin in the Production System",
+            "pages": "10-12 pages",
             "sections": [
                 {
-                    "title": "Beschreibung des Produktionssystems und der verfügbaren Daten",
+                    "title": "Description of the Production System and Available Data",
                     "subsections": [
-                        "Beschreibung IoT Factory",
-                        "Datenaufbereitung und Analyse"
+                        "Description of IoT Factory",
+                        "Data Preparation and Analysis"
                     ]
                 },
-                "Aufbau des digitalen Zwillings für das Szenario",
-                "Durchführung der Validierungsexperimente",
-                "Ergebnisse und Interpretation: Grenzen und Fehler des Modells",
-                "Grenzen und Falsifizierbarkeit des Modells anhand realer Daten"
+                "Construction of the Digital Twin for the Scenario",
+                "Conducting the Validation Experiments",
+                "Results and Interpretation: Limitations and Errors of the Model",
+                "Limitations and Falsifiability of the Model Based on Real Data"
             ]
         },
         {
-            "chapter": "Diskussion der Ergebnisse",
-            "pages": "5-7 Seiten",
+            "chapter": "Discussion of the Results",
+            "pages": "5-7 pages",
             "sections": [
-                "Kritische Reflexion der Framework-Entwicklung",
-                "Limitationen der automatischen Validierung",
+                "Critical Reflection on the Framework Development",
+                "Limitations of Automatic Validation",
                 {
-                    "title": "Aussagekraft und Belastbarkeit der entwickelten Methoden",
+                    "title": "Significance and Robustness of the Developed Methods",
                     "subsections": [
-                        "Vergleich mit manueller Modellierung"
+                        "Comparison with Manual Modeling"
                     ]
                 },
-                "Implikationen für die Forschung und die Praxis"
+                "Implications for Research and Practice"
             ]
         },
         {
-            "chapter": "Fazit und Ausblick",
-            "pages": "4-6 Seiten",
+            "chapter": "Conclusion and Outlook",
+            "pages": "4-6 pages",
             "sections": [
-                "Zusammenfassung der wichtigsten Ergebnisse",
-                "Beantwortung der Forschungsfragen",
-                "Ausblick: Mögliche Weiterentwicklung des Frameworks",
-                "Handlungsempfehlungen für die Anwendung in der Praxis"
+                "Summary of the Key Results",
+                "Answering the Research Questions",
+                "Outlook: Possible Further Development of the Framework",
+                "Recommendations for Practical Application"
             ]
         },
         {
-            "chapter": "Literaturverzeichnis"
+            "chapter": "References"
         },
         {
-            "chapter": "Anhang",
+            "chapter": "Appendix",
             "sections": [
-                "Ergänzende Daten und Abbildungen",
-                "Code- und Framework-Dokumentation",
-                "Glossar (falls erforderlich)"
+                "Supplementary Data and Figures",
+                "Code and Framework Documentation",
+                "Glossary (if needed)"
             ]
         }
     ]

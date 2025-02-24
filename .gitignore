@@ -18,7 +18,7 @@
 *.glo
 *.gls
 *.ist
-.latexmkrc
+*.latexmkrc
 .google-cookie
 
 # Temporary files created by editors
