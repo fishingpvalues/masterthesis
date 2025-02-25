@@ -30,7 +30,3 @@ Output: recalibrated_or_re_extracted_submodels
         - Repeat recalibration (go to Step 6).
 8. If recalibration_threshold is reached and acceptable results are not found:
     - Re-extract the sub-model and repeat the process.
-
-## Need access
-
-Digital Twin simulation models: a validation method based on machine learning and control charts
