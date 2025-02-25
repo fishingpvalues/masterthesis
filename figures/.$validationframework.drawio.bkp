@@ -1,0 +1,16 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
+  <diagram name="Seite-1" id="F4xT598CSBR7X-PaUnEJ">
+    <mxGraphModel dx="1182" dy="683" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="583" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RmuY_R9IjGEwW2GP8zIt-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Verification Framework&lt;/h1&gt;&lt;p&gt;Verification: Ensuring the model is technically correct = stakeholder needs.&lt;/p&gt;&lt;p&gt;Validation: Analyzing the accuracy metrics of the model to ensure that it accurately reflects the real world.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="10" width="180" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="RmuY_R9IjGEwW2GP8zIt-3" value="SBDT" style="shape=folder;fontStyle=1;tabWidth=110;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;folderSymbol=triangle;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="210" y="310" width="150" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
