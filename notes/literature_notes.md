@@ -30,3 +30,10 @@ Output: recalibrated_or_re_extracted_submodels
         - Repeat recalibration (go to Step 6).
 8. If recalibration_threshold is reached and acceptable results are not found:
     - Re-extract the sub-model and repeat the process.
+
+## Paper Validation of DT Chances and Opp
+
+- Listet verschiedene Validierungsverfahren auf: Manuelle visuelle Inspectuion, property testing, model based testing, ML approach
+- Führt Valiiderungsverfahren ein das was Christian auch vorschlägt
+- Probleme sind fehlende modellrealismus, unsicherheit in den Daten, concept drift und neue use cases der maschine
+-Impliklatuionen eines Frameworks: Sensitivity Analysis of features if they are necessary,

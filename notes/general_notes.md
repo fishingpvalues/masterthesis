@@ -1,47 +1,30 @@
-# Automatisierte Verifikation, Generierung und Validierung von simulierten, digitalen Zwillingen  
+Automatisierte Validierung von automatisiert generierten Simulationsbasierten Digitalen Zwillingen für Diskrete Materialflusssysteme
 
-*für diskrete Materialflusssysteme: Ein datengetriebenes Framework und Case Study*
+Story:
+ V&V von digitalen Zwillingen benötigt als ersten Schritt Referenzwert, die Vergleichen werden können (siehe SIMULATION-BASED DIGITAL TWINS: AN ACCREDITATION METHOD)
+ Normalerweise sind diese Werte Use-case spezifisch festzulegen und müssen im phyischen System und im digitalen Zwilling übereinstimmen
+ Bei Automatische generierten Zwillingen wird häufig auf Process Mining und das (object centric) Eventlog Format gesetzt
+ Gerade bei der automatischen erstellung macht ein manuelles V&V wenig Sinn, da es wieder manuellen Expertenaufwand erhöht
+ Hier soll also ein V&V Verfahren entwickelt werden das Use-case unabhängig automatisiert eingesetzt werden kann
+ Kernidee: das object-centric Event log dient als Grundlage für V&V
 
----
+- V+V nach der Modellerstellung
+- ist bei AUtomatischen generierten DT Verifikation und Validierung nicht dasselbe?
+Was ist hierbei Verifikation? Fällt das weg?
 
-## Story
+Vorgehen:
+ Eventlog zeitlich aufsteigen sortieren
+ Train,validation und test set bestimmen und mit 1 labeln
+ Aufträge aus den Daten generieren Order darf nicht die gesamten Prozessschritte beinhalten Features requested auslesen automatisch => Wie bei Schmaus? Was ist relevantes Features und was sind unwichtige Prozessdaten? TransformationModell soll Feautures entrhalten nur ORders = Aufträge mit sinnvollen Features: Finde sinnvolle Aufträge
+Wahrtscheinlich passen die Zeiten aber die exakten Zeitpunkte was mit denen?
 
-- **Verifikation und Validierung (V&V) von digitalen Zwillingen:**  
-  - Erster Schritt: Festlegung von Referenzwerten, die verglichen werden können (siehe *SIMULATION-BASED DIGITAL TWINS: AN ACCREDITATION METHOD*).
-  - Normalerweise sind diese Werte use-case-spezifisch und müssen im physischen System sowie im digitalen Zwilling übereinstimmen.
+SOLL: Simulation kann Eventlog 1:1 wiedergeben
+Feinplanungssimulation durchaus interessant: TimeModel genauer gestalten
 
-- **Automatisch generierte digitale Zwillinge:**  
-  - Häufig Einsatz von Process Mining und dem object-centric Eventlog-Format.
-  - Manuelle V&V macht wenig Sinn, da sie den Expertenaufwand wieder erhöht.
-
-- **Zielsetzung:**  
-  - Entwicklung eines V&V-Verfahrens, das unabhängig vom Use-Case automatisiert eingesetzt werden kann.  
-  - **Kernidee:** Das object-centric Eventlog dient als Grundlage für V&V.
-
----
-
-## Vorgehen
-
-1. **Sortierung:**  
-   - Eventlog zeitlich aufsteigend sortieren.
-
-2. **Datensplit:**  
-   - Train-, Validation- und Testset bestimmen und mit dem Label "1" versehen.
-
-3. **Auftragserzeugung:**  
-   - Aufträge aus den Daten generieren (Order Generator bauen).
-
-4. **Simulationsdaten:**  
-   - Für Trainings-, Validierungs- und Testzeitraum (mit denselben Auftragsdaten) Eventlogs durch Simulation erzeugen und mit dem Label "0" versehen.
-
-5. **Modelltraining:**  
-   - Classifier trainieren und validieren, ggf. Hyperparameter anpassen.
-
-6. **Fehler-Simulation:**  
-   - Falls das Modell bereits sehr gut performt, testweise realistische Fehler in die originalen Eventlogs des Validierungs- und Testsets einbauen.
-
-7. **V&V-System:**  
-   - Das V&V-System sollte die Abweichungen erkennen.
-
-8. **Endgültiger Test:**  
-   - Framework final an Schmausdaten testen.
+welcher purpose? Design planning or control? Wann welcher purpose wie will ich VVUQ machen?
+Wie abstrahieren wir von den Eventlogs? Kriterien anhand des Eventlogs zur Evailierung festrlegen welche Metriken? Was giobt das Foirmat her?
+ Für Training, Validation und Test Zeitraum (mit selben Auftragsdaten) Eventlogs mit der Simulation erzeugen und mit 0 Labeln
+ Classifier trainieren () und validieren gegenfalls Hyperparameter anpasssen. Ist der Classifier genau genug? Was will man mit dieser Genauigkeit erreichen?
+ Wenn Model schon jetzt perfekt, testweise realistische Fehler in original Eventlogs von Validierung und Testset einbauen
+ Das V&V System sollte nun die Abweichung erkennen
+ Framework auf Schmausdaten final testen
