@@ -1,0 +1,7 @@
+{
+    "machine": 0,
+    "endproduct": 1,
+    "feature": 2,
+    "transport": 3,
+    "test": 4
+}

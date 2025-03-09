@@ -1,0 +1,18 @@
+{
+    "CP-MOBI-WORK-DOCK": 0,
+    "CP-F-ASRS20-B": 1,
+    "CP-F-ASRS32-P": 2,
+    "CP-F-PALROB-B": 3,
+    "CP-PICKSORT": 4,
+    "CP-AM-CAM": 5,
+    "CP-AM-iPICK": 6,
+    "CP-F-RASS-1": 7,
+    "CP-AM-MEASURE": 8,
+    "CP-F-RASS-2": 9,
+    "CP-F-RASS-3": 10,
+    "CP-AM-FTEST": 11,
+    "CP-AM-LABEL": 12,
+    "CP-AM-OUT": 13,
+    "no resource": 14,
+    "CP-F-AASS1": 15
+}
