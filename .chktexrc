@@ -1,0 +1,17 @@
+% filepath: d:\masterthesis\.chktexrc
+# .chktexrc configuration for Master's Thesis
+
+# Set the number of spaces per tab.
+TabSize=4
+
+# Set the verbosity level (1 = minimal, 3 = verbose).
+Verbosity=1
+
+# Filter (ignore) specific warnings that might not be relevant:
+# Warning 22: Undefined references or similar issues.
+# Warning 30: Some layout-related warnings.
+# Warning 16: Often related to spacing/punctuation in LaTeX.
+WarningFilter=22,30,16
+
+# Optionally, enforce a maximum line length (e.g., 80 characters).
+MaxLineLength=80
