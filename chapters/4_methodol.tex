@@ -1,22 +1,35 @@
-\chapter{Methodology and Framework Development}
+\chapter{Conception of a Framework for Automated Validation}
 \label{chap:methodology}
 
 \section{Requirements Analysis}
-% (Functional, Technical, Data Format)  
-% Content goes here
+% Functional requirements
+% Technical requirements
+% Requirements for data formats
+% Derivation of requirements from theoretical findings (→ reference to 2.2 and 3.4)
 
-\section{Conceptualization}
-\subsection{Description of the Framework for Automatic Model Generation}
-% Reference to a standardized data format; content goes here
-\subsection{Verification of the Model: Structured Pipeline and Validation Goals}
-% Content goes here
-\subsection{Data-Driven Validation: Event Data and KPIs for System Evaluation}
-% Content goes here
-\subsection{Definition of Validation Scenarios (e.g., Masking, Blackbox Scenarios)}
-% Content goes here
-\subsection{Automatic Evaluation Criteria for Model Validity (e.g., similarity to R², Throughput Times, Efficiency Metrics)}
-% Content goes here
-\subsection{Handling of Missing or Limited Data}
-% Content goes here
+\section{Data-Based Validation Strategy}
+% Object-centric event logs as a basis for validation (→ Reference to 2.3)
+% Temporal data partitioning (training, validation, test)
+% Feature selection: identification of relevant features from event logs
+% Order reconstruction from process data
+% Preprocessing and Data Cleaning: Handling missing data, unifying part IDs, and filtering out irrelevant process steps (→ Reference to 6.1)
+% Methodical implementation of the theoretical V&V concepts (→ Reference to 2.2)
 
-\cite{waswani2017attention}
+\section{Machine Learning-Based Validation Approach}
+% Simulation model for the generation of synthetic event logs
+% Classification-based deviation detection as a unified V&V approach (→ Reference to 2.2 and 3.3)
+% Feature Engineering: Creation of features such as "duration," "sequence_number," and periodic time features (e.g., "day_of_week_sin," "hour_of_day_cos") (→ Reference to 6.3)
+% Hyperparameter optimization and model selection
+% Artificial error injection to validate the approach (→ Reference to 6.3)
+% Clustering and Anomaly Detection: Use of KMeans clustering to identify patterns and anomalies in the data (→ Reference to 6.4)
+
+\section{Metrics and Key Figures for Model Evaluation}
+% Process-oriented metrics (throughput times, resource utilization) (→ Reference to 2.4)
+% Time-related metrics (start and end times, processing times)
+% Order-related metrics (completeness, sequence fidelity)
+% Derivation of metrics from V&V theory (→ Reference to 2.2)
+
+\section{Online Validation and Continuous Monitoring}
+% Early detection of model deviations
+% Recommendations for action in the event of model drift
+% V&V as a continuous process

@@ -101,14 +101,17 @@
 - Temporal data partitioning (training, validation, test)
 - Feature selection: identification of relevant features from event logs
 - Order reconstruction from process data
+- **Preprocessing and Data Cleaning**: Handling missing data, unifying part IDs, and filtering out irrelevant process steps (→ Reference to 6.1)
 - Methodical implementation of the theoretical V&V concepts** (→ Reference to 2.2)
 
 ### 4.3 Machine Learning-Based Validation Approach
 
 - Simulation model for the generation of synthetic event logs
 - Classification-based deviation detection as a unified V&V approach** (→ Reference to 2.2 and 3.3)
+- **Feature Engineering**: Creation of features such as "duration," "sequence_number," and periodic time features (e.g., "day_of_week_sin," "hour_of_day_cos") (→ Reference to 6.3)
 - Hyperparameter optimization and model selection
 - Artificial error injection to validate the approach (→ Reference to 6.3)
+- **Clustering and Anomaly Detection**: Use of KMeans clustering to identify patterns and anomalies in the data (→ Reference to 6.4)
 
 ### 4.4 Metrics and Key Figures for Model Evaluation
 
@@ -160,6 +163,7 @@
 - Description of the production system (e.g., IoT Factory)
 - Available event data and their characteristics
 - Data pre-processing and analysis
+- **Preprocessing and Data Cleaning**: Handling missing data, unifying part IDs, and filtering out irrelevant process steps (→ Reference to 4.2)
 
 ### 6.2 Automatically Generated Digital Twin
 
@@ -172,6 +176,8 @@
 - Experimental design
 - Execution of automated validation
 - Error injection and model adjustment
+- **Feature Engineering**: Creation of features such as "duration," "sequence_number," and periodic time features (e.g., "day_of_week_sin," "hour_of_day_cos") (→ Reference to 4.3)
+- **Machine Learning Models**: Implementation of a Decision Tree Classifier and an xLSTM model for validation (→ Reference to 4.3)
 - **Empirical verification of theoretical V&V concepts** (→ reference to 2.2 and 4.3)
 
 ### 6.4 Results and Interpretation
@@ -179,6 +185,7 @@
 - Model accuracy and reliability
 - Detection rate of artificially injected errors
 - Analysis of validation metrics (→ reference to 4.4)
+- **Discrepancies and Anomalies**: Identification of discrepancies between real and simulated data, such as differences in order IDs, process types, and resource IDs (→ Reference to 7.3)
 - **Evaluation of results in the context of V&V theory** (→ reference to 2.2)
 
 ### 6.5 Comparison with Manual Validation Methods
@@ -209,6 +216,7 @@
 - Technical limits
 - Methodological constraints
 - Application areas
+- **Discrepancies and Anomalies**: Critical understanding of discrepancies between real and simulated data (→ Reference to 6.4)
 - **Critical reflection of the own approach** (→ reference to 4.5 and 6.5)
 
 ### 7.4 Implications for Research and Practice

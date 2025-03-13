@@ -1,20 +1,34 @@
-\chapter{Case Study: Validation of a Digital Twin in the Production System}
+\chapter{Case Study: Validation in Practice}
 \label{chap:case-study}
 
-\section{Description of the Production System and Available Data}
-\subsection{Description of the IoT Factory}
-% Content goes here
-\subsection{Data Preparation and Analysis}
-% Content goes here
+\section{Application Scenario and Data Basis}
+% Description of the production system (e.g., IoT Factory)
+% Available event data and their characteristics
+% Data pre-processing and analysis
+% Preprocessing and Data Cleaning: Handling missing data, unifying part IDs, and filtering out irrelevant process steps (→ Reference to 4.2)
 
-\section{Construction of the Digital Twin for the Scenario}
-% Content goes here
+\section{Automatically Generated Digital Twin}
+% Model generation process
+% Model properties and parameters
+% Aspects of automatic model generation in practice (→ reference to 3.2)
 
-\section{Conducting the Validation Experiments}
-% Content goes here
+\section{Validation Experiments}
+% Experimental design
+% Execution of automated validation
+% Error injection and model adjustment
+% Feature Engineering: Creation of features such as "duration," "sequence_number," and periodic time features (e.g., "day_of_week_sin," "hour_of_day_cos") (→ Reference to 4.3)
+% Machine Learning Models: Implementation of a Decision Tree Classifier and an xLSTM model for validation (→ Reference to 4.3)
+% Empirical verification of theoretical V\&V concepts (→ reference to 2.2 and 4.3)
 
-\section{Results and Interpretation: Limits and Errors of the Model}
-% Content goes here
+\section{Results and Interpretation}
+% Model accuracy and reliability
+% Detection rate of artificially injected errors
+% Analysis of validation metrics (→ Reference to 4.4)
+% Discrepancies and Anomalies: Identification of discrepancies between real and simulated data (→ Reference to 7.3)
+% Evaluation of results in the context of V\&V theory (→ reference to 2.2)
 
-\section{Limits and Falsifiability of the Model Based on Real Data}
-% Content goes here
+\section{Comparison with Manual Validation Methods}
+% Effort analysis
+% Quality comparison
+% Cost-benefit analysis
+% Empirical evidence for the advantages of automated V\&V (→ reference to 3.2 and 7.3)
