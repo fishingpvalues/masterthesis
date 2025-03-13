@@ -91,8 +91,7 @@
     \begin{titlepage}
         \centering
         \vspace*{1.8in} % Increased top space for balance
-        {\fontsize{34}{45}\selectfont\bfseries Automatic Generation and Validation of Simulation Based Digital Twins}\\[1em]
-        {\fontsize{30}{40}\selectfont\bfseries A Data-driven Framework and Case Study Application}\\[2em]
+        {\fontsize{34}{80}\selectfont\bfseries Automatic Verification and Validation of Automatically Generated Simulation-Based Digital Twins for Discrete Material Flow Systems}\\[1em]
         \rule{\textwidth}{1pt}\\[2em]
         \begin{tabular}{rl}
             \textbf{Author:}       & Daniel Fischer\\[1em]
