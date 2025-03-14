@@ -48,7 +48,37 @@ The thesis thus addresses this paradox by developing a data-driven framework for
 
 This thesis addresses these questions by proposing that object-centric event logs—the same data structures often used to generate DT in manufacturing—can serve as the foundation for an automated, use case-independent validation and verification framework. Such an approach would maintain the efficiency benefits of automated generation while ensuring the resulting Digital Twins meet necessary quality standards. The development and monitoring of generic, statistically grounded reference values is a key aspect of this approach. Such key indicators need to have an underlying distribution and have to be quantifiable. The framework will be evaluated using a case study from the discrete material flow domain, providing empirical evidence of its effectiveness in improving model accuracy and efficiency.
 
-% This section includes: Motivation, Relevance, Research Questions, and Hypotheses
-% Content goes here
-
 \section{Structure and Methodology}
+
+\subsection{Structure}
+
+The thesis is divided into eight chapters that reflect the progression of the research process, from first to fourth semester:
+
+\Cref{chap:theory} establishes the theoretical groundwork by delivering a clear understanding and definitions of the topics. These definitions include the topics DT, VVUQ, process mining and DMFS. The chapter follows an hourglass scheme: The first topic includes an overview of different DT and their applications is given, narrowing down on data-driven DT and their daughters, automatically generated DT which stem from gathered data. The first topic closes with a differentiation of SBDT and classical simulation approaches. The second topic focusses on an verification and validation in general, not drawing an immediate connection between them. Historical development of verification and validation are shown. An examplary continuous process is described. Furthermore, VVUQ in the context of AMG and SBDT is presented. The third topic introduces process mining (PM) and its data formats and tools. A connection between PM and VVUQ is drawn. The chapter concludes with a summary of material flow planning and simulation, which is the domain of the case study.
+
+\Cref{chap:research} educates the reader by explaining the landscape of VVUQ in literature. Relevant VVUQ approaches are described and critically evaluated. The chapter serves as a short literature review by further shedding light on AMG for DT. Relevant problem fields in practice are examined, further specifying the problem niche of the thesis. ML-based approaches for general VVUQ of models, not necessarily DT, are presented. The chapter further clarifies the research gap and reviews the current state of research in the field of DTs, focusing on validation and verification. The chapter provides an overview of the existing literature on the topic, highlighting the gaps and challenges in the current research.
+
+\Cref{chap:methodology} outlines the methodology used to develop the proposed framework. It begins with a classical requirements analysis, deriving functional, technical, and data format requirements from theoretical findings. The chapter elaborates on the data-based validation strategy, machine learning-based validation approach, metrics for model evaluation, and online validation with continuous monitoring.
+
+\Cref{chap:implementation} presents the framework implementation, starting with the architecture and system setup, followed by detailed descriptions of event log processing, simulation integration, and the machine learning pipeline.
+
+\Cref{chap:case-study} presents the case study results, evaluating the framework's effectiveness in improving Digital Twin quality. It describes the application scenario and data basis, the automatically generated DT, validation experiments, and result interpretation. It concludes with a comparison to manual validation methods.
+
+\Cref{chap:discussion} discusses the implications of the results and provides recommendations for future research. It evaluates the framework in light of the research questions, examines the significance of verification in automatically generated DT, addresses limitations, and explores implications for research and practice.
+
+\Cref{chap:conclusion} concludes the thesis by summarizing key findings and their implications. It addresses the research questions and hypotheses, discusses the results' significance, acknowledges limitations, and provides recommendations for future work.
+
+\subsection{Methodology}
+
+
+Methodologically the thesis follows a design science research approach (DSR). This approach is characterized by the development of artifacts to solve practical problems \parencite{hevner2004design,peffers2007design}. Artifacts in the sense of DSR are created objects or constructs which adress the given problem and contribute in direction of both theory and practice. The artifacts are evaluated in a real-world context to demonstrate their effectiveness. The thesis follows DSR by applying the cyclical DSR model, see figure \ref{fig:DSR}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/dsr.png}
+  \caption{The cyclical design science research model. The model consists of six steps. The problem identification (1) refers to the research gap in automated VVUQ of SBDT. Defining the solution objectives (2) specifies the research gap by formulating questions and hypotheses based on the theoretical foundations. The design and development (3) phase includes the development of the framework. The demonstration (4) phase shows the application of the framework in a case study. The evaluation (5) phase assesses the effectiveness of the framework. The communication (6) phase concludes the research by presenting the results.}
+  \label{fig:DSR}
+\end{figure}
+
+The research paradigm of the thesis can be characterized as deductive-theory critical \parencite{eberhard1987einfuhrung}. A conceptual VVUQ framework is developed based on existing theoretical foundations, while deriving new requirements thorugh a requirements analysis. The framework is then applied in a case study to evaluate its effectiveness. The research is critical in the sense that it aims to improve the efficiency and effectiveness of VVUQ for automatically generated DTs. Elements of empirical research are included through the case study and the data-driven approach.
+
