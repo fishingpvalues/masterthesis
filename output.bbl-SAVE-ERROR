@@ -1,0 +1,3573 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{Abdoune2023}{inbook}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=3b36e2e076df395a2bac2ea8fe775f04}{%
+           family={Abdoune},
+           familyi={A\bibinitperiod},
+           given={Farah},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b79398d206bc19e50ad09acff8f2a939}{%
+           family={Nouiri},
+           familyi={N\bibinitperiod},
+           given={Maroua},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d19c29b919b3ddc7ca46005bc3a1a2a1}{%
+           family={Cardin},
+           familyi={C\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=16f3eb490afae296a6e553d9d526e33a}{%
+           family={Castagna},
+           familyi={C\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=3646de0f1158dc430be6893063dfd626}{%
+           family={Borangiu},
+           familyi={B\bibinitperiod},
+           given={Theodor},
+           giveni={T\bibinitperiod}}}%
+        {{hash=41ea2a7c1eaef0910ebd90ff889e038d}{%
+           family={Trentesaux},
+           familyi={T\bibinitperiod},
+           given={Damien},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d9ca932893ae74db6b035f11d2854da0}{%
+           family={Leitão},
+           familyi={L\bibinitperiod},
+           given={Paulo},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{3ff38ad71c178e6485117bad41842753}
+      \strng{fullhash}{d885093cf250ccb3fad8b281ecfebd25}
+      \strng{fullhashraw}{d885093cf250ccb3fad8b281ecfebd25}
+      \strng{bibnamehash}{d885093cf250ccb3fad8b281ecfebd25}
+      \strng{authorbibnamehash}{d885093cf250ccb3fad8b281ecfebd25}
+      \strng{authornamehash}{3ff38ad71c178e6485117bad41842753}
+      \strng{authorfullhash}{d885093cf250ccb3fad8b281ecfebd25}
+      \strng{authorfullhashraw}{d885093cf250ccb3fad8b281ecfebd25}
+      \strng{editorbibnamehash}{cdb3bd9ac88577053868c15e551c4308}
+      \strng{editornamehash}{d1b3e5480937bd2d612b1eb0dac9f00a}
+      \strng{editorfullhash}{cdb3bd9ac88577053868c15e551c4308}
+      \strng{editorfullhashraw}{cdb3bd9ac88577053868c15e551c4308}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Service Oriented, Holonic and Multi-Agent Manufacturing Systems for Industry of the Future: Proceedings of SOHOMA 2022}
+      \field{title}{Digital Twin Lifecycle: Core Challenges and Open Issues}
+      \field{year}{2023}
+      \field{pages}{157\bibrangedash 167}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1007/978-3-031-19647-3\_14
+      \endverb
+    \endentry
+    \entry{cognizant2020divestitures}{report}{}{}
+      \list{institution}{1}{%
+        {Cognizant}%
+      }
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A significant number of divestment projects are delayed or deferred due to misalignment of the business strategy and the IT strategy. This report details how sellers can leverage IT to achieve divestiture goals effectively.}
+      \field{month}{1}
+      \field{note}{Digital Systems \& Technology}
+      \field{title}{Applying IT to Sweeten Divestitures: The Seller Perspective}
+      \field{type}{techreport}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.cognizant.com/us/en/insights/reports/applying-it-to-sweeten-divestitures-the-seller-perspective-codex4409.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.cognizant.com/us/en/insights/reports/applying-it-to-sweeten-divestitures-the-seller-perspective-codex4409.pdf
+      \endverb
+    \endentry
+    \entry{arnold2005materialfluss}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=895c0f0ca47b36a1b244fcf252dcec93}{%
+           family={Arnold},
+           familyi={A\bibinitperiod},
+           given={Dieter},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eab78db2f5ccead55ddc4cefde26f5c1}{%
+           family={Furmans},
+           familyi={F\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{fullhash}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{fullhashraw}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{bibnamehash}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{authorbibnamehash}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{authornamehash}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{authorfullhash}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{authorfullhashraw}{8967f73aeb0648cce1440a2fa4085f0b}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4}
+      \field{isbn}{978-3-540-27398-1}
+      \field{series}{VDI-Buch}
+      \field{title}{Materialfluss in Logistiksystemen}
+      \field{year}{2005}
+      \verb{doi}
+      \verb 10.1007/b139029
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/book/10.1007/b139029
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/book/10.1007/b139029
+      \endverb
+    \endentry
+    \entry{arrieta2020explainable}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=94bf5c37ae25e1a4f902c67f8af0647b}{%
+           family={Arrieta},
+           familyi={A\bibinitperiod},
+           given={Alejandro\bibnamedelima Barredo},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f2f49e7916926b46a6555cf86c18c919}{%
+           family={Díaz-Rodríguez},
+           familyi={D\bibinithyphendelim R\bibinitperiod},
+           given={Natalia},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cad385a9bc804164f8a02ca66c24913e}{%
+           family={Del\bibnamedelima Ser},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eee76618bbe2267980002ac15fc73c9b}{%
+           family={Bennetot},
+           familyi={B\bibinitperiod},
+           given={Adrien},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d79f34727bcbbd23065a0c111485c1b}{%
+           family={Tabik},
+           familyi={T\bibinitperiod},
+           given={Siham},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=43d5191cbb4190664e6dad9d9b27505e}{%
+           family={Barbado},
+           familyi={B\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1691f3ff4356c12149ac4f858ead7e04}{%
+           family={García},
+           familyi={G\bibinitperiod},
+           given={Salvador},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fca9608c0877fec28cda4245d80fad9d}{%
+           family={Gil-López},
+           familyi={G\bibinithyphendelim L\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=381bf37312a71cebeee50fc633f67c46}{%
+           family={Molina},
+           familyi={M\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4ff51a3504ff841d75fa3640a2842bff}{%
+           family={Benjamins},
+           familyi={B\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{8d645501efd3b19a683a4e9347e9604c}
+      \strng{fullhash}{f47fbe35649a7b2c8a65c95f4389af91}
+      \strng{fullhashraw}{f47fbe35649a7b2c8a65c95f4389af91}
+      \strng{bibnamehash}{f47fbe35649a7b2c8a65c95f4389af91}
+      \strng{authorbibnamehash}{f47fbe35649a7b2c8a65c95f4389af91}
+      \strng{authornamehash}{8d645501efd3b19a683a4e9347e9604c}
+      \strng{authorfullhash}{f47fbe35649a7b2c8a65c95f4389af91}
+      \strng{authorfullhashraw}{f47fbe35649a7b2c8a65c95f4389af91}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information fusion}
+      \field{title}{Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI}
+      \field{volume}{58}
+      \field{year}{2020}
+      \field{pages}{82\bibrangedash 115}
+      \range{pages}{34}
+    \endentry
+    \entry{Bitencourt2023}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=96e9a8dbe34eb1e0eeaf98fc8aa52e8d}{%
+           family={Bitencourt},
+           familyi={B\bibinitperiod},
+           given={Lucas},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e6376a6ae7d74c74a868da0a5b4004a1}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7a94956ad3d0ff2b06999df6364b5e9d}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={João},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{da7c486694a68492b9c281b27d8a5fe6}
+      \strng{fullhash}{bc46ae3837006ac2534cae5d846d6e39}
+      \strng{fullhashraw}{bc46ae3837006ac2534cae5d846d6e39}
+      \strng{bibnamehash}{bc46ae3837006ac2534cae5d846d6e39}
+      \strng{authorbibnamehash}{bc46ae3837006ac2534cae5d846d6e39}
+      \strng{authornamehash}{da7c486694a68492b9c281b27d8a5fe6}
+      \strng{authorfullhash}{bc46ae3837006ac2534cae5d846d6e39}
+      \strng{authorfullhashraw}{bc46ae3837006ac2534cae5d846d6e39}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 2023 International Conference on Digital Twin Technologies}
+      \field{title}{Building Trust in Digital Twin through Verification and Validation}
+      \field{year}{2023}
+      \field{pages}{55\bibrangedash 63}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1000/bitencourt.2023.001
+      \endverb
+    \endentry
+    \entry{boschert2016digital}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=6166a6839deb21910c39c72db54fa213}{%
+           family={Boschert},
+           familyi={B\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f1d90913c921a7f9f8a6edb379e1e50c}{%
+           family={Rosen},
+           familyi={R\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{fullhash}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{fullhashraw}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{bibnamehash}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{authorbibnamehash}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{authornamehash}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{authorfullhash}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{authorfullhashraw}{b8f538c68a1507482d893ea568eea4bd}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mechatronic futures: Challenges and solutions for mechatronic systems and their designers}
+      \field{title}{Digital twin—the simulation aspect}
+      \field{year}{2016}
+      \field{pages}{59\bibrangedash 74}
+      \range{pages}{16}
+    \endentry
+    \entry{chenganomalies}{article}{}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=8ed13a70825e42214a8cda7c6e3cd8e9}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Xiang},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a0a21263926a1a04392c4925b7adc505}{%
+           family={Chaw},
+           familyi={C\bibinitperiod},
+           given={Jun\bibnamedelima Kit},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc1a6e9e3f087be42f9091cad91b6026}{%
+           family={Goh},
+           familyi={G\bibinitperiod},
+           given={Kam\bibnamedelima Meng},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3c6189196d351268e7e3efe37f4b83c5}{%
+           family={Ting},
+           familyi={T\bibinitperiod},
+           given={Tin\bibnamedelima Tin},
+           giveni={T\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=91650c57fb64dcfb9284c5002c8b1b5f}{%
+           family={Sahrani},
+           familyi={S\bibinitperiod},
+           given={Shafrida},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0c3563183a19ed3c410fc79762ce99b}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={Mohammad\bibnamedelima Nazir},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=13d2f6f2d1e212d44945106324f60472}{%
+           family={Abdul\bibnamedelima Kadir},
+           familyi={A\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Rabiah},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dad005d8fccd49cffe0e8b2fddc3c165}{%
+           family={Ang},
+           familyi={A\bibinitperiod},
+           given={Mei\bibnamedelima Choo},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e651922af6fa89245cb2782e814b057f}
+      \strng{fullhash}{ebf5ae8f98f56ac520d3eddf52303794}
+      \strng{fullhashraw}{ebf5ae8f98f56ac520d3eddf52303794}
+      \strng{bibnamehash}{ebf5ae8f98f56ac520d3eddf52303794}
+      \strng{authorbibnamehash}{ebf5ae8f98f56ac520d3eddf52303794}
+      \strng{authornamehash}{e651922af6fa89245cb2782e814b057f}
+      \strng{authorfullhash}{ebf5ae8f98f56ac520d3eddf52303794}
+      \strng{authorfullhashraw}{ebf5ae8f98f56ac520d3eddf52303794}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The widespread adoption of cyber-physical systems and other cutting-edge digital technology in manufacturing industry production facilities may motivate stakeholders to embrace the idea of Industry 4.0. Some industrial companies already have different sensors installed on their machines; however, without proper analysis, the data collected is not useful. This systematic review’s main goal is to synthesize the existing evidence on the application of predictive maintenance (PdM) with visual aids and to identify the key knowledge gaps in areas including utilities, power generation, industry, and energy consumption. After a thorough search and evaluation for relevancy, 37 documents were identified. Moreover, we identified the visual analytics of PdM, including anomaly detection, planning/scheduling, exploratory data analysis (EDA), and explainable artificial intelligence (XAI). The findings revealed that anomaly detection was a major domain in PdM-related works. We conclude that most of the literature lacks depth in terms of an overall framework that combines data-driven and knowledge-driven techniques of PdM in the manufacturing industry. Some works that utilized both techniques indicated promising results, but there is insufficient research on involving maintenance personnel’s feedback in the latter stage of PdM architecture. Thus, there are still pertinent issues that need to be investigated, and limitations that need to be overcome before PdM is deployed with minimal human involvement.}
+      \field{issn}{1424-8220}
+      \field{journaltitle}{Sensors}
+      \field{number}{17}
+      \field{title}{Systematic Literature Review on Visual Analytics of Predictive Maintenance in the Manufacturing Industry}
+      \field{volume}{22}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.3390/s22176321
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/22/17/6321
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/22/17/6321
+      \endverb
+    \endentry
+    \entry{eberhard1987einfuhrung}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c4821c3c3f14f6ebb0f81c4e22e4a9a1}{%
+           family={Eberhard},
+           familyi={E\bibinitperiod},
+           given={Kurt},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Kohlhammer}%
+      }
+      \strng{namehash}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{fullhash}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{fullhashraw}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{bibnamehash}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{authorbibnamehash}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{authornamehash}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{authorfullhash}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{authorfullhashraw}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Einführung in die Erkenntnis-und Wissenschaftstheorie: Geschichte und Praxis der konkurrierenden Erkenntniswege}
+      \field{year}{1987}
+    \endentry
+    \entry{frank2019industry}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=0218393ea85670dbe36c737d56c6df82}{%
+           family={Frank},
+           familyi={F\bibinitperiod},
+           given={Alejandro\bibnamedelima Germán},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=423a503e0585b505d52d415b06746498}{%
+           family={Dalenogare},
+           familyi={D\bibinitperiod},
+           given={Lucas\bibnamedelima Santos},
+           giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6041e81cc2a98944c2f81bd4a09c2af}{%
+           family={Ayala},
+           familyi={A\bibinitperiod},
+           given={Néstor\bibnamedelima Fabián},
+           giveni={N\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9d5990faf2aa0d791db52069e7519e29}
+      \strng{fullhash}{7e1fb68fdb60264c564702e9f6b7f7fe}
+      \strng{fullhashraw}{7e1fb68fdb60264c564702e9f6b7f7fe}
+      \strng{bibnamehash}{7e1fb68fdb60264c564702e9f6b7f7fe}
+      \strng{authorbibnamehash}{7e1fb68fdb60264c564702e9f6b7f7fe}
+      \strng{authornamehash}{9d5990faf2aa0d791db52069e7519e29}
+      \strng{authorfullhash}{7e1fb68fdb60264c564702e9f6b7f7fe}
+      \strng{authorfullhashraw}{7e1fb68fdb60264c564702e9f6b7f7fe}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Production Economics}
+      \field{title}{Industry 4.0 Technologies: Implementation Patterns in Manufacturing Companies}
+      \field{volume}{210}
+      \field{year}{2019}
+      \field{pages}{15\bibrangedash 26}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.ijpe.2019.01.004
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.ijpe.2019.01.004
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.ijpe.2019.01.004
+      \endverb
+    \endentry
+    \entry{gemanbias}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=559187c6e8cad5a03e2e2c57be738be0}{%
+           family={Geman},
+           familyi={G\bibinitperiod},
+           given={Stuart},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5e800f4e8612595408e837b525dcb194}{%
+           family={Bienenstock},
+           familyi={B\bibinitperiod},
+           given={Elie},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=354d7f4444d2ce013f0557758d97d4da}{%
+           family={Doursat},
+           familyi={D\bibinitperiod},
+           given={René},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{43bd93a92ad993ba4dc5fbb4579b6753}
+      \strng{fullhash}{dd71a5679a5bb79d7c782553f3d32dd4}
+      \strng{fullhashraw}{dd71a5679a5bb79d7c782553f3d32dd4}
+      \strng{bibnamehash}{dd71a5679a5bb79d7c782553f3d32dd4}
+      \strng{authorbibnamehash}{dd71a5679a5bb79d7c782553f3d32dd4}
+      \strng{authornamehash}{43bd93a92ad993ba4dc5fbb4579b6753}
+      \strng{authorfullhash}{dd71a5679a5bb79d7c782553f3d32dd4}
+      \strng{authorfullhashraw}{dd71a5679a5bb79d7c782553f3d32dd4}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neural Computation}
+      \field{number}{1}
+      \field{title}{Neural Networks and the Bias/Variance Dilemma}
+      \field{volume}{4}
+      \field{year}{1992}
+      \field{pages}{1\bibrangedash 58}
+      \range{pages}{58}
+      \verb{doi}
+      \verb 10.1162/neco.1992.4.1.1
+      \endverb
+    \endentry
+    \entry{grieves2014digital}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4b5d6786e8fb5cd63db15f454210559d}{%
+           family={Grieves},
+           familyi={G\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{fullhash}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{fullhashraw}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{bibnamehash}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{authorbibnamehash}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{authornamehash}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{authorfullhash}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{authorfullhashraw}{4b5d6786e8fb5cd63db15f454210559d}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{White Paper}
+      \field{title}{Digital Twin: Manufacturing Excellence through Virtual Factory Replication}
+      \field{type}{techreport}
+      \field{year}{2014}
+    \endentry
+    \entry{hevner2004design}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=e054261c7f1739e1ba1db0a45e385c1b}{%
+           family={Hevner},
+           familyi={H\bibinitperiod},
+           given={Alan\bibnamedelima R},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5aec260b5b1381edc4b8ff6755f2d543}{%
+           family={March},
+           familyi={M\bibinitperiod},
+           given={Salvatore\bibnamedelima T},
+           giveni={S\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c518c214dc9e77148493e9ea47f505ab}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Jinsoo},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=65565df90d4793da7a2f20e5e1b07345}{%
+           family={Ram},
+           familyi={R\bibinitperiod},
+           given={Sudha},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{77b3350005135e016e7a83431f326d8f}
+      \strng{fullhash}{b163bef761d9a2c79a3d232595321775}
+      \strng{fullhashraw}{b163bef761d9a2c79a3d232595321775}
+      \strng{bibnamehash}{b163bef761d9a2c79a3d232595321775}
+      \strng{authorbibnamehash}{b163bef761d9a2c79a3d232595321775}
+      \strng{authornamehash}{77b3350005135e016e7a83431f326d8f}
+      \strng{authorfullhash}{b163bef761d9a2c79a3d232595321775}
+      \strng{authorfullhashraw}{b163bef761d9a2c79a3d232595321775}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MIS quarterly}
+      \field{title}{Design science in information systems research}
+      \field{year}{2004}
+      \field{pages}{75\bibrangedash 105}
+      \range{pages}{31}
+    \endentry
+    \entry{hua2022validation}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=efb71d59e7a848d5478a932c595434f6}{%
+           family={Hua},
+           familyi={H\bibinitperiod},
+           given={Edward\bibnamedelima Y.},
+           giveni={E\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3ebc6e63c0b9a54a818e8b46785decc1}{%
+           family={Lazarova-Molnar},
+           familyi={L\bibinithyphendelim M\bibinitperiod},
+           given={Sanja},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5c3ff30e6e4cfdb2e71832e02f745083}{%
+           family={Francis},
+           familyi={F\bibinitperiod},
+           given={Deena\bibnamedelima P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{da8b623ff9bff69f162652eb6fcbe5aa}
+      \strng{fullhash}{b5f84e024ef2b6807121e97271f22ebb}
+      \strng{fullhashraw}{b5f84e024ef2b6807121e97271f22ebb}
+      \strng{bibnamehash}{b5f84e024ef2b6807121e97271f22ebb}
+      \strng{authorbibnamehash}{b5f84e024ef2b6807121e97271f22ebb}
+      \strng{authornamehash}{da8b623ff9bff69f162652eb6fcbe5aa}
+      \strng{authorfullhash}{b5f84e024ef2b6807121e97271f22ebb}
+      \strng{authorfullhashraw}{b5f84e024ef2b6807121e97271f22ebb}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2022 Winter Simulation Conference (WSC)}
+      \field{title}{Validation of Digital Twins: Challenges and Opportunities}
+      \field{year}{2022}
+      \field{pages}{2900\bibrangedash 2911}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/WSC57314.2022.10015420
+      \endverb
+    \endentry
+    \entry{jones2020characterising}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=eb0aecd83160d1f552629af8b8a74fba}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b9e0b4eed4e077b50d6c26573930e59}{%
+           family={Snider},
+           familyi={S\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aee06f4f71fb601bdbb4525f1a3f6d8b}{%
+           family={Nassehi},
+           familyi={N\bibinitperiod},
+           given={Aydin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e52ba7b16129a74a1260d1c22e371c2a}{%
+           family={Yon},
+           familyi={Y\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4154cfbb6e9315f1c85b072e9b2e5c1}{%
+           family={Hicks},
+           familyi={H\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0d2dd35e2f0a0827e2202ba42e3d8ff1}
+      \strng{fullhash}{c11d28ed7db749a0c13672563dbc5e41}
+      \strng{fullhashraw}{c11d28ed7db749a0c13672563dbc5e41}
+      \strng{bibnamehash}{c11d28ed7db749a0c13672563dbc5e41}
+      \strng{authorbibnamehash}{c11d28ed7db749a0c13672563dbc5e41}
+      \strng{authornamehash}{0d2dd35e2f0a0827e2202ba42e3d8ff1}
+      \strng{authorfullhash}{c11d28ed7db749a0c13672563dbc5e41}
+      \strng{authorfullhashraw}{c11d28ed7db749a0c13672563dbc5e41}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{CIRP Journal of Manufacturing Science and Technology}
+      \field{title}{Characterising the Digital Twin: A Systematic Literature Review}
+      \field{volume}{29}
+      \field{year}{2020}
+      \field{pages}{36\bibrangedash 52}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1016/j.cirpj.2020.02.002
+      \endverb
+    \endentry
+    \entry{judijanto2024trends}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=ef8c45a60e35da2c5851c1bb4216ea6c}{%
+           family={Judijanto},
+           familyi={J\bibinitperiod},
+           given={Loso},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b9ce190942966b9be6603c3bdb1bccde}{%
+           family={Qadriah},
+           familyi={Q\bibinitperiod},
+           given={Laila},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0819c60a3380f961700da83f4346e2f6}{%
+           family={Prabowo},
+           familyi={P\bibinitperiod},
+           given={Iwan\bibnamedelima Ady},
+           giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=96254fe27747b39db2652fe6fbe89a77}{%
+           family={Widyatmoko},
+           familyi={W\bibinitperiod},
+           given={Widyatmoko},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6836268675fc763a63faf598a0dcad34}{%
+           family={Sabila},
+           familyi={S\bibinitperiod},
+           given={Puji\bibnamedelima Chairu},
+           giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7d510ffd868f5efa20b5d2e5f953e347}
+      \strng{fullhash}{f270c7e9095be09c923f27dbbafafe70}
+      \strng{fullhashraw}{f270c7e9095be09c923f27dbbafafe70}
+      \strng{bibnamehash}{f270c7e9095be09c923f27dbbafafe70}
+      \strng{authorbibnamehash}{f270c7e9095be09c923f27dbbafafe70}
+      \strng{authornamehash}{7d510ffd868f5efa20b5d2e5f953e347}
+      \strng{authorfullhash}{f270c7e9095be09c923f27dbbafafe70}
+      \strng{authorfullhashraw}{f270c7e9095be09c923f27dbbafafe70}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Eastasouth Journal of Information System and Computer Science}
+      \field{number}{02}
+      \field{title}{Trends in Digital Twin Technology for Industry 4.0: A Bibliometric Study}
+      \field{volume}{2}
+      \field{year}{2024}
+      \field{pages}{92\bibrangedash 104}
+      \range{pages}{13}
+    \endentry
+    \entry{kovacs2016mathematical}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b2b66eccd3d0ca7a58a6030fbbcccc16}{%
+           family={Kovacs},
+           familyi={K\bibinitperiod},
+           given={György},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=859c1615065d04a4c9f0a50936690873}{%
+           family={Kostal},
+           familyi={K\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{fullhash}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{fullhashraw}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{bibnamehash}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{authorbibnamehash}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{authornamehash}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{authorfullhash}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{authorfullhashraw}{63506cb48d3c5394df4b7e22fb7db49d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Materials science and technology}
+      \field{title}{Mathematical description of material flow}
+      \field{volume}{1}
+      \field{year}{2016}
+    \endentry
+    \entry{kritzinger2018digital}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=8d80d5b5ee79734f97fd33c812d6dac6}{%
+           family={Kritzinger},
+           familyi={K\bibinitperiod},
+           given={Werner},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=311ca48099d155aefc853ee2d37c45bc}{%
+           family={Karner},
+           familyi={K\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=48040ca6c54ba95c232e885a81b7520c}{%
+           family={Traar},
+           familyi={T\bibinitperiod},
+           given={Georg},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=598ac4328313a0283b8c797e6fd89147}{%
+           family={Henjes},
+           familyi={H\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5a55899cfc23803210eff138ac04eaa3}{%
+           family={Sihn},
+           familyi={S\bibinitperiod},
+           given={Wilfried},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7423993c1548bda37e04a6629b9c6416}
+      \strng{fullhash}{fe9b64fcc683144e05e14022e4a34955}
+      \strng{fullhashraw}{fe9b64fcc683144e05e14022e4a34955}
+      \strng{bibnamehash}{fe9b64fcc683144e05e14022e4a34955}
+      \strng{authorbibnamehash}{fe9b64fcc683144e05e14022e4a34955}
+      \strng{authornamehash}{7423993c1548bda37e04a6629b9c6416}
+      \strng{authorfullhash}{fe9b64fcc683144e05e14022e4a34955}
+      \strng{authorfullhashraw}{fe9b64fcc683144e05e14022e4a34955}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IFAC-PapersOnLine}
+      \field{number}{11}
+      \field{title}{Digital Twin in Manufacturing: A Categorical Literature Review and Classification}
+      \field{volume}{51}
+      \field{year}{2018}
+      \field{pages}{1016\bibrangedash 1022}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.ifacol.2018.08.474
+      \endverb
+    \endentry
+    \entry{lapointe2005multilevel}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=803c6580871eff1655cd3c776d16fe8c}{%
+           family={Lapointe},
+           familyi={L\bibinitperiod},
+           given={Liette},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e09afb73fd07caae3124af93f2e39097}{%
+           family={Rivard},
+           familyi={R\bibinitperiod},
+           given={Suzanne},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{fullhash}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{fullhashraw}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{bibnamehash}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{authorbibnamehash}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{authornamehash}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{authorfullhash}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{authorfullhashraw}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MIS quarterly}
+      \field{title}{A multilevel model of resistance to information technology implementation}
+      \field{year}{2005}
+      \field{pages}{461\bibrangedash 491}
+      \range{pages}{31}
+    \endentry
+    \entry{lim2020state}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=7b49bc77133962bb6cd3d45600b9285b}{%
+           family={Lim},
+           familyi={L\bibinitperiod},
+           given={Kendrik\bibnamedelimb Yan\bibnamedelima Hong},
+           giveni={K\bibinitperiod\bibinitdelim Y\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=17d64641c9501c33dda0578b773d6f4f}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Pai},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=392bb9e5add4d8972f77cb9c47bd2b5b}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Chun-Hsien},
+           giveni={C\bibinithyphendelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b35a57d5f5e5801e41ca4c91340226f9}
+      \strng{fullhash}{9371b3c308e08c05da019f5940732748}
+      \strng{fullhashraw}{9371b3c308e08c05da019f5940732748}
+      \strng{bibnamehash}{9371b3c308e08c05da019f5940732748}
+      \strng{authorbibnamehash}{9371b3c308e08c05da019f5940732748}
+      \strng{authornamehash}{b35a57d5f5e5801e41ca4c91340226f9}
+      \strng{authorfullhash}{9371b3c308e08c05da019f5940732748}
+      \strng{authorfullhashraw}{9371b3c308e08c05da019f5940732748}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Intelligent Manufacturing}
+      \field{number}{6}
+      \field{title}{A state-of-the-art survey of Digital Twin: techniques, engineering product lifecycle management and business innovation perspectives}
+      \field{volume}{31}
+      \field{year}{2020}
+      \field{pages}{1313\bibrangedash 1337}
+      \range{pages}{25}
+    \endentry
+    \entry{Lugaresi2021aifac}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=62ca141fd0f0b38e9abd936efa0b4378}{%
+           family={Lugaresi},
+           familyi={L\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=89b6920e8368f378a9b10ade9b526066}{%
+           family={Matta},
+           familyi={M\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{fullhash}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{fullhashraw}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{bibnamehash}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{authorbibnamehash}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{authornamehash}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{authorfullhash}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{authorfullhashraw}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IFAC-PapersOnLine}
+      \field{number}{1}
+      \field{title}{Automated Digital Twins Generation for Manufacturing Systems: A Case Study}
+      \field{volume}{54}
+      \field{year}{2021}
+      \field{pages}{749\bibrangedash 754}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.ifacol.2021.08.087
+      \endverb
+    \endentry
+    \entry{mandala2024etl}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=52b419637241ec6968f0caa7ba2391d4}{%
+           family={Mandala},
+           familyi={M\bibinitperiod},
+           given={Nishanth\bibnamedelima Reddy},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{fullhash}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{fullhashraw}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{bibnamehash}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{authorbibnamehash}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{authornamehash}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{authorfullhash}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{authorfullhashraw}{52b419637241ec6968f0caa7ba2391d4}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Science and Research (IJSR)}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{ETL in Big Data Architectures: Challenges and Solutions}
+      \field{volume}{13}
+      \field{year}{2024}
+      \field{pages}{1061\bibrangedash 1068}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.21275/SR241014054151
+      \endverb
+      \verb{urlraw}
+      \verb https://www.ijsr.net/getabstract.php?paperid=SR241014054151
+      \endverb
+      \verb{url}
+      \verb https://www.ijsr.net/getabstract.php?paperid=SR241014054151
+      \endverb
+    \endentry
+    \entry{Oztemel2020}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=60cf4a30eb435bedf70020ae16faaf35}{%
+           family={Oztemel},
+           familyi={O\bibinitperiod},
+           given={Ercan},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=237de3bd9383c85fdf852ecfcabf4026}{%
+           family={Gursev},
+           familyi={G\bibinitperiod},
+           given={Samet},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{fullhash}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{fullhashraw}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{bibnamehash}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{authorbibnamehash}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{authornamehash}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{authorfullhash}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{authorfullhashraw}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of intelligent manufacturing}
+      \field{number}{1}
+      \field{title}{Literature review of Industry 4.0 and related technologies}
+      \field{volume}{31}
+      \field{year}{2020}
+      \field{pages}{127\bibrangedash 182}
+      \range{pages}{56}
+    \endentry
+    \entry{peffers2007design}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=3127efe8cdd4557b7228a8724f568529}{%
+           family={Peffers},
+           familyi={P\bibinitperiod},
+           given={Ken},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b17b21a3e4c61d1302f46cba38c6e50}{%
+           family={Tuunanen},
+           familyi={T\bibinitperiod},
+           given={Tuure},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=33ad207ea3031c6d744a31f5bc43c547}{%
+           family={Rothenberger},
+           familyi={R\bibinitperiod},
+           given={Marcus\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=edf3e165ce4429b30d49e353a7d1417a}{%
+           family={Chatterjee},
+           familyi={C\bibinitperiod},
+           given={Samir},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{4ccaed1d47a4875e5f027cdf2d20bbca}
+      \strng{fullhash}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{fullhashraw}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{bibnamehash}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{authorbibnamehash}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{authornamehash}{4ccaed1d47a4875e5f027cdf2d20bbca}
+      \strng{authorfullhash}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{authorfullhashraw}{0d82c455b50c2b184d97697dac2e8660}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of management information systems}
+      \field{number}{3}
+      \field{title}{A design science research methodology for information systems research}
+      \field{volume}{24}
+      \field{year}{2007}
+      \field{pages}{45\bibrangedash 77}
+      \range{pages}{33}
+    \endentry
+    \entry{ribeiro2016should}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9203dc724f298030e81ba470feb309af}{%
+           family={Ribeiro},
+           familyi={R\bibinitperiod},
+           given={Marco\bibnamedelima Tulio},
+           giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0b9694812f0dc77974d99bb875a76d48}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Sameer},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c9ab8ac486d7f85ac914b1a8e51e512b}{%
+           family={Guestrin},
+           familyi={G\bibinitperiod},
+           given={Carlos},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{62dda78fe1497685b6e2c1e1adb1ed32}
+      \strng{fullhash}{70906198418f30a779bc9bda0f6ae1f1}
+      \strng{fullhashraw}{70906198418f30a779bc9bda0f6ae1f1}
+      \strng{bibnamehash}{70906198418f30a779bc9bda0f6ae1f1}
+      \strng{authorbibnamehash}{70906198418f30a779bc9bda0f6ae1f1}
+      \strng{authornamehash}{62dda78fe1497685b6e2c1e1adb1ed32}
+      \strng{authorfullhash}{70906198418f30a779bc9bda0f6ae1f1}
+      \strng{authorfullhashraw}{70906198418f30a779bc9bda0f6ae1f1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining}
+      \field{title}{" Why should i trust you?" Explaining the predictions of any classifier}
+      \field{year}{2016}
+      \field{pages}{1135\bibrangedash 1144}
+      \range{pages}{10}
+    \endentry
+    \entry{robinson2014simulation}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=90fa1029c52f5ea6bd1a8937ac5a4175}{%
+           family={Robinson},
+           familyi={R\bibinitperiod},
+           given={Stewart},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Bloomsbury Publishing}%
+      }
+      \strng{namehash}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{fullhash}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{fullhashraw}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{bibnamehash}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{authorbibnamehash}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{authornamehash}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{authorfullhash}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{authorfullhashraw}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Simulation: the practice of model development and use}
+      \field{year}{2014}
+    \endentry
+    \entry{schwede2024learning}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=380f666faedbe7eaf1805cdb7d4b900b}{%
+           family={Schwede},
+           familyi={S\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=10907c9ed6dd5bc25c7f744818cc0cbd}{%
+           family={Fischer},
+           familyi={F\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{fullhash}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{fullhashraw}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{bibnamehash}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{authorbibnamehash}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{authornamehash}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{authorfullhash}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{authorfullhashraw}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2024 Winter Simulation Conference (WSC)}
+      \field{title}{Learning Simulation-Based Digital Twins for Discrete Material Flow Systems: A Review}
+      \field{year}{2024}
+      \field{pages}{3070\bibrangedash 3081}
+      \range{pages}{12}
+    \endentry
+    \entry{sel2025survey}{article}{}{}
+      \name{author}{9}{}{%
+        {{un=0,uniquepart=base,hash=ebe937978be47c3607fd5eb435274b75}{%
+           family={Sel},
+           familyi={S\bibinitperiod},
+           given={Kaan},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5a0919ab3111f5505b75c0d2f4f8b082}{%
+           family={Hawkins-Daarud},
+           familyi={H\bibinithyphendelim D\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7da1f6391cb04abcc3a3f3ab854335e0}{%
+           family={Chaudhuri},
+           familyi={C\bibinitperiod},
+           given={Anirban},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f8a160b8c0d170fb73dada1610c32a7}{%
+           family={Osman},
+           familyi={O\bibinitperiod},
+           given={Deen},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=835abd4cd4549475e31645c9053666e0}{%
+           family={Bahai},
+           familyi={B\bibinitperiod},
+           given={Ahmad},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb81936690aab7453c9e490af5e2466e}{%
+           family={Paydarfar},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=540b98b0f45aa1fed9a28bd57312dfd6}{%
+           family={Willcox},
+           familyi={W\bibinitperiod},
+           given={Karen},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=71259e4de0107435690bea7e4e5348f7}{%
+           family={Chung},
+           familyi={C\bibinitperiod},
+           given={Caroline},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6e747b12f9d65ce7183ebd9a0527add5}{%
+           family={Jafari},
+           familyi={J\bibinitperiod},
+           given={Roozbeh},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{daebda972b2d7bdf09032f6b2d234063}
+      \strng{fullhash}{94fd01db67869bb66e817b230246d49d}
+      \strng{fullhashraw}{94fd01db67869bb66e817b230246d49d}
+      \strng{bibnamehash}{94fd01db67869bb66e817b230246d49d}
+      \strng{authorbibnamehash}{94fd01db67869bb66e817b230246d49d}
+      \strng{authornamehash}{daebda972b2d7bdf09032f6b2d234063}
+      \strng{authorfullhash}{94fd01db67869bb66e817b230246d49d}
+      \strng{authorfullhashraw}{94fd01db67869bb66e817b230246d49d}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{npj Digital Medicine}
+      \field{number}{1}
+      \field{title}{Survey and perspective on verification, validation, and uncertainty quantification of digital twins for precision medicine}
+      \field{volume}{8}
+      \field{year}{2025}
+      \field{pages}{40}
+      \range{pages}{1}
+    \endentry
+    \entry{buildings11040151}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=30ac06705dda3a9b8da620caba2da665}{%
+           family={Sepasgozar},
+           familyi={S\bibinitperiod},
+           given={Samad\bibnamedelimb M.\bibnamedelimi E.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{30ac06705dda3a9b8da620caba2da665}
+      \strng{fullhash}{30ac06705dda3a9b8da620caba2da665}
+      \strng{fullhashraw}{30ac06705dda3a9b8da620caba2da665}
+      \strng{bibnamehash}{30ac06705dda3a9b8da620caba2da665}
+      \strng{authorbibnamehash}{30ac06705dda3a9b8da620caba2da665}
+      \strng{authornamehash}{30ac06705dda3a9b8da620caba2da665}
+      \strng{authorfullhash}{30ac06705dda3a9b8da620caba2da665}
+      \strng{authorfullhashraw}{30ac06705dda3a9b8da620caba2da665}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Construction projects and cities account for over 50% of carbon emissions and energy consumption. Industry 4.0 and digital transformation may increase productivity and reduce energy consumption. A digital twin (DT) is a key enabler in implementing Industry 4.0 in the areas of construction and smart cities. It is an emerging technology that connects different objects by utilising the advanced Internet of Things (IoT). As a technology, it is in high demand in various industries, and its literature is growing exponentially. Previous digital modeling practices, the use of data acquisition tools, human–computer–machine interfaces, programmable cities, and infrastructure, as well as Building Information Modeling (BIM), have provided digital data for construction, monitoring, or controlling physical objects. However, a DT is supposed to offer much more than digital representation. Characteristics such as bi-directional data exchange and real-time self-management (e.g., self-awareness or self-optimisation) distinguish a DT from other information modeling systems. The need to develop and implement DT is rising because it could be a core technology in many industrial sectors post-COVID-19. This paper aims to clarify the DT concept and differentiate it from other advanced 3D modeling technologies, digital shadows, and information systems. It also intends to review the state of play in DT development and offer research directions for future investigation. It recommends the development of DT applications that offer rapid and accurate data analysis platforms for real-time decisions, self-operation, and remote supervision requirements post-COVID-19. The discussion in this paper mainly focuses on the Smart City, Engineering and Construction (SCEC) sectors.}
+      \field{issn}{2075-5309}
+      \field{journaltitle}{Buildings}
+      \field{number}{4}
+      \field{title}{Differentiating Digital Twin from Digital Shadow: Elucidating a Paradigm Shift to Expedite a Smart, Sustainable Built Environment}
+      \field{volume}{11}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.3390/buildings11040151
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2075-5309/11/4/151
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2075-5309/11/4/151
+      \endverb
+    \endentry
+    \entry{Shao2023mfglet}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=72647c69b834f44cc66fb202bb149440}{%
+           family={Shao},
+           familyi={S\bibinitperiod},
+           given={Guodong},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=493380d48e8c0777e8c4aa218cf88069}{%
+           family={Hightower},
+           familyi={H\bibinitperiod},
+           given={Joe},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f6970eaf2d55055e5fa7f4a3ce86c51c}{%
+           family={Schindel},
+           familyi={S\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fef5b6807bfbfda14b03b0f9272d2946}
+      \strng{fullhash}{a9eeb1d1b31f79a16c2813c877a7ace6}
+      \strng{fullhashraw}{a9eeb1d1b31f79a16c2813c877a7ace6}
+      \strng{bibnamehash}{a9eeb1d1b31f79a16c2813c877a7ace6}
+      \strng{authorbibnamehash}{a9eeb1d1b31f79a16c2813c877a7ace6}
+      \strng{authornamehash}{fef5b6807bfbfda14b03b0f9272d2946}
+      \strng{authorfullhash}{a9eeb1d1b31f79a16c2813c877a7ace6}
+      \strng{authorfullhashraw}{a9eeb1d1b31f79a16c2813c877a7ace6}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Manufacturing Letters}
+      \field{month}{1}
+      \field{title}{Credibility Consideration for Digital Twins in Manufacturing}
+      \field{volume}{35}
+      \field{year}{2023}
+      \field{pages}{24\bibrangedash 28}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1016/j.mfglet.2022.11.009
+      \endverb
+    \endentry
+    \entry{Tao2018ijamt}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=f4149340bc388abb627321731645513a}{%
+           family={Tao},
+           familyi={T\bibinitperiod},
+           given={Fei},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ad74434582c8e3377f720153af229172}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Jiangfeng},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42a5432916c6057414bbe3f1adae17eb}{%
+           family={Qi},
+           familyi={Q\bibinitperiod},
+           given={Qinglin},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1276b0c695bd412950c2be5e737aeed5}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Meng},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=79de404a0f3ac5ccec6c28b5a79bc60f}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={He},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6da920de727f4aec0d1a14c83cb1fac9}{%
+           family={Sui},
+           familyi={S\bibinitperiod},
+           given={Fangyuan},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{aee6731a830f7f2d502f4262bfb7e431}
+      \strng{fullhash}{57b1e71e5ee4ce0c994aeffb711b596f}
+      \strng{fullhashraw}{57b1e71e5ee4ce0c994aeffb711b596f}
+      \strng{bibnamehash}{57b1e71e5ee4ce0c994aeffb711b596f}
+      \strng{authorbibnamehash}{57b1e71e5ee4ce0c994aeffb711b596f}
+      \strng{authornamehash}{aee6731a830f7f2d502f4262bfb7e431}
+      \strng{authorfullhash}{57b1e71e5ee4ce0c994aeffb711b596f}
+      \strng{authorfullhashraw}{57b1e71e5ee4ce0c994aeffb711b596f}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The International Journal of Advanced Manufacturing Technology}
+      \field{number}{9-12}
+      \field{title}{Digital Twin-driven Product Design, Manufacturing and Service with Big Data}
+      \field{volume}{94}
+      \field{year}{2018}
+      \field{pages}{3563\bibrangedash 3576}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1007/s00170-017-0233-1
+      \endverb
+    \endentry
+    \entry{Thiede2013}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=9470c33d3fb3eaf6ffd6a2a47f8ef763}{%
+           family={Thiede},
+           familyi={T\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5fcded1d1443ff2d52defe48f9a149fa}{%
+           family={Seow},
+           familyi={S\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6c3b363fe3673e3e55d47411036959fc}{%
+           family={Andersson},
+           familyi={A\bibinitperiod},
+           given={Johan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f5c047e82cd38cb36802b8a60a7b3948}{%
+           family={Johansson},
+           familyi={J\bibinitperiod},
+           given={Björn},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{395210f9fdbf6bda15650507174e979d}
+      \strng{fullhash}{caca5e813c40ad744ed730d3fb6e267a}
+      \strng{fullhashraw}{caca5e813c40ad744ed730d3fb6e267a}
+      \strng{bibnamehash}{caca5e813c40ad744ed730d3fb6e267a}
+      \strng{authorbibnamehash}{caca5e813c40ad744ed730d3fb6e267a}
+      \strng{authornamehash}{395210f9fdbf6bda15650507174e979d}
+      \strng{authorfullhash}{caca5e813c40ad744ed730d3fb6e267a}
+      \strng{authorfullhashraw}{caca5e813c40ad744ed730d3fb6e267a}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{CIRP Journal of Manufacturing Science and Technology}
+      \field{number}{1}
+      \field{title}{Environmental aspects in manufacturing system modelling and simulation—State of the art and research perspectives}
+      \field{volume}{6}
+      \field{year}{2013}
+      \field{pages}{78\bibrangedash 87}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1016/j.cirpj.2012.10.002
+      \endverb
+    \endentry
+    \entry{trauer2022digital}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=4e46a0fc3878d43359fe48a664fe58ff}{%
+           family={Trauer},
+           familyi={T\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66c95225fefe04abcf20c7267f722d24}{%
+           family={Schweigert-Recksiek},
+           familyi={S\bibinithyphendelim R\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=601a0caa0bfa3b574b69a88f892dd3f7}{%
+           family={Schenk},
+           familyi={S\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2e8fc0d55bb436bd2433a44165838fc3}{%
+           family={Baudisch},
+           familyi={B\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=583d994c5adfb4fd1cef362fa4ef0a70}{%
+           family={Mörtl},
+           familyi={M\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=51ea7aaedf81d8deb2b9b55c52fea22c}{%
+           family={Zimmermann},
+           familyi={Z\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{88cd2a53417c7ca47ffa342e6c2d9d59}
+      \strng{fullhash}{72649df2684f9f4e26c966c10c018abd}
+      \strng{fullhashraw}{72649df2684f9f4e26c966c10c018abd}
+      \strng{bibnamehash}{72649df2684f9f4e26c966c10c018abd}
+      \strng{authorbibnamehash}{72649df2684f9f4e26c966c10c018abd}
+      \strng{authornamehash}{88cd2a53417c7ca47ffa342e6c2d9d59}
+      \strng{authorfullhash}{72649df2684f9f4e26c966c10c018abd}
+      \strng{authorfullhashraw}{72649df2684f9f4e26c966c10c018abd}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Design Society}
+      \field{title}{A digital twin trust framework for industrial application}
+      \field{volume}{2}
+      \field{year}{2022}
+      \field{pages}{293\bibrangedash 302}
+      \range{pages}{10}
+    \endentry
+    \entry{vassiliadis2002conceptual}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9e7a0590d59945c560f5f4d194ea78e0}{%
+           family={Vassiliadis},
+           familyi={V\bibinitperiod},
+           given={Panos},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2334fe96ca8118d664a7c04745bea2ef}{%
+           family={Simitsis},
+           familyi={S\bibinitperiod},
+           given={Alkis},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6170c8d37eb3ff31ea97b6721677bcf}{%
+           family={Skiadopoulos},
+           familyi={S\bibinitperiod},
+           given={Spiros},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7106b82659341ca0c44488f90f304485}
+      \strng{fullhash}{2bf299b44d35ec21df64849d324b6d47}
+      \strng{fullhashraw}{2bf299b44d35ec21df64849d324b6d47}
+      \strng{bibnamehash}{2bf299b44d35ec21df64849d324b6d47}
+      \strng{authorbibnamehash}{2bf299b44d35ec21df64849d324b6d47}
+      \strng{authornamehash}{7106b82659341ca0c44488f90f304485}
+      \strng{authorfullhash}{2bf299b44d35ec21df64849d324b6d47}
+      \strng{authorfullhashraw}{2bf299b44d35ec21df64849d324b6d47}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 5th ACM international workshop on Data Warehousing and OLAP}
+      \field{title}{Conceptual modeling for ETL processes}
+      \field{year}{2002}
+      \field{pages}{14\bibrangedash 21}
+      \range{pages}{8}
+    \endentry
+    \entry{Wright2020amse}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d96168b9cbc11200c246dcd37c2330d4}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={Louise},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=144ca1586abfa99b633916db3878f69d}{%
+           family={Davidson},
+           familyi={D\bibinitperiod},
+           given={Stuart},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{fullhash}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{fullhashraw}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{bibnamehash}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{authorbibnamehash}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{authornamehash}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{authorfullhash}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{authorfullhashraw}{dd2ac320635e67b42a64bf997d5f10a2}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advanced Modeling and Simulation in Engineering Sciences}
+      \field{number}{1}
+      \field{title}{How to Tell the Difference between a Model and a Digital Twin}
+      \field{volume}{7}
+      \field{year}{2020}
+      \field{pages}{13}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s40323-020-00147-4
+      \endverb
+    \endentry
+    \entry{Zhang2021jmsy}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3a1f1a0016bb4e33e52e9bd0f48cfd33}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lin},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b759e68934cf9686a02c51db66301d03}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Longfei},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ebefe287582aeffcb5a9e58331561eac}{%
+           family={Horn},
+           familyi={H\bibinitperiod},
+           given={Berthold\bibnamedelima K.P.},
+           giveni={B\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{28657ed324e41f2c879d1bf29d4788c0}
+      \strng{fullhash}{12797c386ed85b75a4de5ca303cbd853}
+      \strng{fullhashraw}{12797c386ed85b75a4de5ca303cbd853}
+      \strng{bibnamehash}{12797c386ed85b75a4de5ca303cbd853}
+      \strng{authorbibnamehash}{12797c386ed85b75a4de5ca303cbd853}
+      \strng{authornamehash}{28657ed324e41f2c879d1bf29d4788c0}
+      \strng{authorfullhash}{12797c386ed85b75a4de5ca303cbd853}
+      \strng{authorfullhashraw}{12797c386ed85b75a4de5ca303cbd853}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Manufacturing Systems}
+      \field{month}{4}
+      \field{title}{Building a Right Digital Twin with Model Engineering}
+      \field{volume}{59}
+      \field{year}{2021}
+      \field{pages}{151\bibrangedash 164}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.jmsy.2021.02.009
+      \endverb
+    \endentry
+    \entry{zhao2024data}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=2de7d89e68ab37846bfb84be00359def}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Yaoyao\bibnamedelima Fiona},
+           giveni={Y\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=693110afff4a3d103acae016cd7a177e}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Jiarui},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3b600865594bcf4059598900b5eeb5d1}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Lijun},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{ede86c0ad9d5874f5e56b3cd630c69fe}
+      \strng{fullhash}{e414872ab4f49878dc7b244272ba994b}
+      \strng{fullhashraw}{e414872ab4f49878dc7b244272ba994b}
+      \strng{bibnamehash}{e414872ab4f49878dc7b244272ba994b}
+      \strng{authorbibnamehash}{e414872ab4f49878dc7b244272ba994b}
+      \strng{authornamehash}{ede86c0ad9d5874f5e56b3cd630c69fe}
+      \strng{authorfullhash}{e414872ab4f49878dc7b244272ba994b}
+      \strng{authorfullhashraw}{e414872ab4f49878dc7b244272ba994b}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Engineering}
+      \field{title}{On the data quality and imbalance in machine learning-based design and manufacturing—A systematic review}
+      \field{year}{2024}
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{Abdoune2023}{inbook}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=3b36e2e076df395a2bac2ea8fe775f04}{%
+           family={Abdoune},
+           familyi={A\bibinitperiod},
+           given={Farah},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b79398d206bc19e50ad09acff8f2a939}{%
+           family={Nouiri},
+           familyi={N\bibinitperiod},
+           given={Maroua},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d19c29b919b3ddc7ca46005bc3a1a2a1}{%
+           family={Cardin},
+           familyi={C\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=16f3eb490afae296a6e553d9d526e33a}{%
+           family={Castagna},
+           familyi={C\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=3646de0f1158dc430be6893063dfd626}{%
+           family={Borangiu},
+           familyi={B\bibinitperiod},
+           given={Theodor},
+           giveni={T\bibinitperiod}}}%
+        {{hash=41ea2a7c1eaef0910ebd90ff889e038d}{%
+           family={Trentesaux},
+           familyi={T\bibinitperiod},
+           given={Damien},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d9ca932893ae74db6b035f11d2854da0}{%
+           family={Leitão},
+           familyi={L\bibinitperiod},
+           given={Paulo},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{3ff38ad71c178e6485117bad41842753}
+      \strng{fullhash}{d885093cf250ccb3fad8b281ecfebd25}
+      \strng{fullhashraw}{d885093cf250ccb3fad8b281ecfebd25}
+      \strng{bibnamehash}{d885093cf250ccb3fad8b281ecfebd25}
+      \strng{authorbibnamehash}{d885093cf250ccb3fad8b281ecfebd25}
+      \strng{authornamehash}{3ff38ad71c178e6485117bad41842753}
+      \strng{authorfullhash}{d885093cf250ccb3fad8b281ecfebd25}
+      \strng{authorfullhashraw}{d885093cf250ccb3fad8b281ecfebd25}
+      \strng{editorbibnamehash}{cdb3bd9ac88577053868c15e551c4308}
+      \strng{editornamehash}{d1b3e5480937bd2d612b1eb0dac9f00a}
+      \strng{editorfullhash}{cdb3bd9ac88577053868c15e551c4308}
+      \strng{editorfullhashraw}{cdb3bd9ac88577053868c15e551c4308}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Service Oriented, Holonic and Multi-Agent Manufacturing Systems for Industry of the Future: Proceedings of SOHOMA 2022}
+      \field{title}{Digital Twin Lifecycle: Core Challenges and Open Issues}
+      \field{year}{2023}
+      \field{pages}{157\bibrangedash 167}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1007/978-3-031-19647-3\_14
+      \endverb
+    \endentry
+    \entry{cognizant2020divestitures}{report}{}{}
+      \list{institution}{1}{%
+        {Cognizant}%
+      }
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A significant number of divestment projects are delayed or deferred due to misalignment of the business strategy and the IT strategy. This report details how sellers can leverage IT to achieve divestiture goals effectively.}
+      \field{month}{1}
+      \field{note}{Digital Systems \& Technology}
+      \field{title}{Applying IT to Sweeten Divestitures: The Seller Perspective}
+      \field{type}{techreport}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://www.cognizant.com/us/en/insights/reports/applying-it-to-sweeten-divestitures-the-seller-perspective-codex4409.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.cognizant.com/us/en/insights/reports/applying-it-to-sweeten-divestitures-the-seller-perspective-codex4409.pdf
+      \endverb
+    \endentry
+    \entry{arnold2005materialfluss}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=895c0f0ca47b36a1b244fcf252dcec93}{%
+           family={Arnold},
+           familyi={A\bibinitperiod},
+           given={Dieter},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eab78db2f5ccead55ddc4cefde26f5c1}{%
+           family={Furmans},
+           familyi={F\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{fullhash}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{fullhashraw}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{bibnamehash}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{authorbibnamehash}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{authornamehash}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{authorfullhash}{8967f73aeb0648cce1440a2fa4085f0b}
+      \strng{authorfullhashraw}{8967f73aeb0648cce1440a2fa4085f0b}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4}
+      \field{isbn}{978-3-540-27398-1}
+      \field{series}{VDI-Buch}
+      \field{title}{Materialfluss in Logistiksystemen}
+      \field{year}{2005}
+      \verb{doi}
+      \verb 10.1007/b139029
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/book/10.1007/b139029
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/book/10.1007/b139029
+      \endverb
+    \endentry
+    \entry{arrieta2020explainable}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=94bf5c37ae25e1a4f902c67f8af0647b}{%
+           family={Arrieta},
+           familyi={A\bibinitperiod},
+           given={Alejandro\bibnamedelima Barredo},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f2f49e7916926b46a6555cf86c18c919}{%
+           family={Díaz-Rodríguez},
+           familyi={D\bibinithyphendelim R\bibinitperiod},
+           given={Natalia},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cad385a9bc804164f8a02ca66c24913e}{%
+           family={Del\bibnamedelima Ser},
+           familyi={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eee76618bbe2267980002ac15fc73c9b}{%
+           family={Bennetot},
+           familyi={B\bibinitperiod},
+           given={Adrien},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d79f34727bcbbd23065a0c111485c1b}{%
+           family={Tabik},
+           familyi={T\bibinitperiod},
+           given={Siham},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=43d5191cbb4190664e6dad9d9b27505e}{%
+           family={Barbado},
+           familyi={B\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1691f3ff4356c12149ac4f858ead7e04}{%
+           family={García},
+           familyi={G\bibinitperiod},
+           given={Salvador},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fca9608c0877fec28cda4245d80fad9d}{%
+           family={Gil-López},
+           familyi={G\bibinithyphendelim L\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=381bf37312a71cebeee50fc633f67c46}{%
+           family={Molina},
+           familyi={M\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4ff51a3504ff841d75fa3640a2842bff}{%
+           family={Benjamins},
+           familyi={B\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{8d645501efd3b19a683a4e9347e9604c}
+      \strng{fullhash}{f47fbe35649a7b2c8a65c95f4389af91}
+      \strng{fullhashraw}{f47fbe35649a7b2c8a65c95f4389af91}
+      \strng{bibnamehash}{f47fbe35649a7b2c8a65c95f4389af91}
+      \strng{authorbibnamehash}{f47fbe35649a7b2c8a65c95f4389af91}
+      \strng{authornamehash}{8d645501efd3b19a683a4e9347e9604c}
+      \strng{authorfullhash}{f47fbe35649a7b2c8a65c95f4389af91}
+      \strng{authorfullhashraw}{f47fbe35649a7b2c8a65c95f4389af91}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information fusion}
+      \field{title}{Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI}
+      \field{volume}{58}
+      \field{year}{2020}
+      \field{pages}{82\bibrangedash 115}
+      \range{pages}{34}
+    \endentry
+    \entry{Bitencourt2023}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=96e9a8dbe34eb1e0eeaf98fc8aa52e8d}{%
+           family={Bitencourt},
+           familyi={B\bibinitperiod},
+           given={Lucas},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e6376a6ae7d74c74a868da0a5b4004a1}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7a94956ad3d0ff2b06999df6364b5e9d}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={João},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{da7c486694a68492b9c281b27d8a5fe6}
+      \strng{fullhash}{bc46ae3837006ac2534cae5d846d6e39}
+      \strng{fullhashraw}{bc46ae3837006ac2534cae5d846d6e39}
+      \strng{bibnamehash}{bc46ae3837006ac2534cae5d846d6e39}
+      \strng{authorbibnamehash}{bc46ae3837006ac2534cae5d846d6e39}
+      \strng{authornamehash}{da7c486694a68492b9c281b27d8a5fe6}
+      \strng{authorfullhash}{bc46ae3837006ac2534cae5d846d6e39}
+      \strng{authorfullhashraw}{bc46ae3837006ac2534cae5d846d6e39}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 2023 International Conference on Digital Twin Technologies}
+      \field{title}{Building Trust in Digital Twin through Verification and Validation}
+      \field{year}{2023}
+      \field{pages}{55\bibrangedash 63}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1000/bitencourt.2023.001
+      \endverb
+    \endentry
+    \entry{boschert2016digital}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=6166a6839deb21910c39c72db54fa213}{%
+           family={Boschert},
+           familyi={B\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f1d90913c921a7f9f8a6edb379e1e50c}{%
+           family={Rosen},
+           familyi={R\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{fullhash}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{fullhashraw}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{bibnamehash}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{authorbibnamehash}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{authornamehash}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{authorfullhash}{b8f538c68a1507482d893ea568eea4bd}
+      \strng{authorfullhashraw}{b8f538c68a1507482d893ea568eea4bd}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mechatronic futures: Challenges and solutions for mechatronic systems and their designers}
+      \field{title}{Digital twin—the simulation aspect}
+      \field{year}{2016}
+      \field{pages}{59\bibrangedash 74}
+      \range{pages}{16}
+    \endentry
+    \entry{chenganomalies}{article}{}{}
+      \name{author}{8}{}{%
+        {{un=0,uniquepart=base,hash=8ed13a70825e42214a8cda7c6e3cd8e9}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Xiang},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a0a21263926a1a04392c4925b7adc505}{%
+           family={Chaw},
+           familyi={C\bibinitperiod},
+           given={Jun\bibnamedelima Kit},
+           giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc1a6e9e3f087be42f9091cad91b6026}{%
+           family={Goh},
+           familyi={G\bibinitperiod},
+           given={Kam\bibnamedelima Meng},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3c6189196d351268e7e3efe37f4b83c5}{%
+           family={Ting},
+           familyi={T\bibinitperiod},
+           given={Tin\bibnamedelima Tin},
+           giveni={T\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=91650c57fb64dcfb9284c5002c8b1b5f}{%
+           family={Sahrani},
+           familyi={S\bibinitperiod},
+           given={Shafrida},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0c3563183a19ed3c410fc79762ce99b}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={Mohammad\bibnamedelima Nazir},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=13d2f6f2d1e212d44945106324f60472}{%
+           family={Abdul\bibnamedelima Kadir},
+           familyi={A\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Rabiah},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dad005d8fccd49cffe0e8b2fddc3c165}{%
+           family={Ang},
+           familyi={A\bibinitperiod},
+           given={Mei\bibnamedelima Choo},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e651922af6fa89245cb2782e814b057f}
+      \strng{fullhash}{ebf5ae8f98f56ac520d3eddf52303794}
+      \strng{fullhashraw}{ebf5ae8f98f56ac520d3eddf52303794}
+      \strng{bibnamehash}{ebf5ae8f98f56ac520d3eddf52303794}
+      \strng{authorbibnamehash}{ebf5ae8f98f56ac520d3eddf52303794}
+      \strng{authornamehash}{e651922af6fa89245cb2782e814b057f}
+      \strng{authorfullhash}{ebf5ae8f98f56ac520d3eddf52303794}
+      \strng{authorfullhashraw}{ebf5ae8f98f56ac520d3eddf52303794}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The widespread adoption of cyber-physical systems and other cutting-edge digital technology in manufacturing industry production facilities may motivate stakeholders to embrace the idea of Industry 4.0. Some industrial companies already have different sensors installed on their machines; however, without proper analysis, the data collected is not useful. This systematic review’s main goal is to synthesize the existing evidence on the application of predictive maintenance (PdM) with visual aids and to identify the key knowledge gaps in areas including utilities, power generation, industry, and energy consumption. After a thorough search and evaluation for relevancy, 37 documents were identified. Moreover, we identified the visual analytics of PdM, including anomaly detection, planning/scheduling, exploratory data analysis (EDA), and explainable artificial intelligence (XAI). The findings revealed that anomaly detection was a major domain in PdM-related works. We conclude that most of the literature lacks depth in terms of an overall framework that combines data-driven and knowledge-driven techniques of PdM in the manufacturing industry. Some works that utilized both techniques indicated promising results, but there is insufficient research on involving maintenance personnel’s feedback in the latter stage of PdM architecture. Thus, there are still pertinent issues that need to be investigated, and limitations that need to be overcome before PdM is deployed with minimal human involvement.}
+      \field{issn}{1424-8220}
+      \field{journaltitle}{Sensors}
+      \field{number}{17}
+      \field{title}{Systematic Literature Review on Visual Analytics of Predictive Maintenance in the Manufacturing Industry}
+      \field{volume}{22}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.3390/s22176321
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/22/17/6321
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/22/17/6321
+      \endverb
+    \endentry
+    \entry{eberhard1987einfuhrung}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c4821c3c3f14f6ebb0f81c4e22e4a9a1}{%
+           family={Eberhard},
+           familyi={E\bibinitperiod},
+           given={Kurt},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Kohlhammer}%
+      }
+      \strng{namehash}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{fullhash}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{fullhashraw}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{bibnamehash}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{authorbibnamehash}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{authornamehash}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{authorfullhash}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \strng{authorfullhashraw}{c4821c3c3f14f6ebb0f81c4e22e4a9a1}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Einführung in die Erkenntnis-und Wissenschaftstheorie: Geschichte und Praxis der konkurrierenden Erkenntniswege}
+      \field{year}{1987}
+    \endentry
+    \entry{frank2019industry}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=0218393ea85670dbe36c737d56c6df82}{%
+           family={Frank},
+           familyi={F\bibinitperiod},
+           given={Alejandro\bibnamedelima Germán},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=423a503e0585b505d52d415b06746498}{%
+           family={Dalenogare},
+           familyi={D\bibinitperiod},
+           given={Lucas\bibnamedelima Santos},
+           giveni={L\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6041e81cc2a98944c2f81bd4a09c2af}{%
+           family={Ayala},
+           familyi={A\bibinitperiod},
+           given={Néstor\bibnamedelima Fabián},
+           giveni={N\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9d5990faf2aa0d791db52069e7519e29}
+      \strng{fullhash}{7e1fb68fdb60264c564702e9f6b7f7fe}
+      \strng{fullhashraw}{7e1fb68fdb60264c564702e9f6b7f7fe}
+      \strng{bibnamehash}{7e1fb68fdb60264c564702e9f6b7f7fe}
+      \strng{authorbibnamehash}{7e1fb68fdb60264c564702e9f6b7f7fe}
+      \strng{authornamehash}{9d5990faf2aa0d791db52069e7519e29}
+      \strng{authorfullhash}{7e1fb68fdb60264c564702e9f6b7f7fe}
+      \strng{authorfullhashraw}{7e1fb68fdb60264c564702e9f6b7f7fe}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Production Economics}
+      \field{title}{Industry 4.0 Technologies: Implementation Patterns in Manufacturing Companies}
+      \field{volume}{210}
+      \field{year}{2019}
+      \field{pages}{15\bibrangedash 26}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.ijpe.2019.01.004
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.ijpe.2019.01.004
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.ijpe.2019.01.004
+      \endverb
+    \endentry
+    \entry{gemanbias}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=559187c6e8cad5a03e2e2c57be738be0}{%
+           family={Geman},
+           familyi={G\bibinitperiod},
+           given={Stuart},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5e800f4e8612595408e837b525dcb194}{%
+           family={Bienenstock},
+           familyi={B\bibinitperiod},
+           given={Elie},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=354d7f4444d2ce013f0557758d97d4da}{%
+           family={Doursat},
+           familyi={D\bibinitperiod},
+           given={René},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{43bd93a92ad993ba4dc5fbb4579b6753}
+      \strng{fullhash}{dd71a5679a5bb79d7c782553f3d32dd4}
+      \strng{fullhashraw}{dd71a5679a5bb79d7c782553f3d32dd4}
+      \strng{bibnamehash}{dd71a5679a5bb79d7c782553f3d32dd4}
+      \strng{authorbibnamehash}{dd71a5679a5bb79d7c782553f3d32dd4}
+      \strng{authornamehash}{43bd93a92ad993ba4dc5fbb4579b6753}
+      \strng{authorfullhash}{dd71a5679a5bb79d7c782553f3d32dd4}
+      \strng{authorfullhashraw}{dd71a5679a5bb79d7c782553f3d32dd4}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neural Computation}
+      \field{number}{1}
+      \field{title}{Neural Networks and the Bias/Variance Dilemma}
+      \field{volume}{4}
+      \field{year}{1992}
+      \field{pages}{1\bibrangedash 58}
+      \range{pages}{58}
+      \verb{doi}
+      \verb 10.1162/neco.1992.4.1.1
+      \endverb
+    \endentry
+    \entry{grieves2014digital}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4b5d6786e8fb5cd63db15f454210559d}{%
+           family={Grieves},
+           familyi={G\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{fullhash}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{fullhashraw}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{bibnamehash}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{authorbibnamehash}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{authornamehash}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{authorfullhash}{4b5d6786e8fb5cd63db15f454210559d}
+      \strng{authorfullhashraw}{4b5d6786e8fb5cd63db15f454210559d}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{White Paper}
+      \field{title}{Digital Twin: Manufacturing Excellence through Virtual Factory Replication}
+      \field{type}{techreport}
+      \field{year}{2014}
+    \endentry
+    \entry{hevner2004design}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=e054261c7f1739e1ba1db0a45e385c1b}{%
+           family={Hevner},
+           familyi={H\bibinitperiod},
+           given={Alan\bibnamedelima R},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5aec260b5b1381edc4b8ff6755f2d543}{%
+           family={March},
+           familyi={M\bibinitperiod},
+           given={Salvatore\bibnamedelima T},
+           giveni={S\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c518c214dc9e77148493e9ea47f505ab}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Jinsoo},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=65565df90d4793da7a2f20e5e1b07345}{%
+           family={Ram},
+           familyi={R\bibinitperiod},
+           given={Sudha},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{77b3350005135e016e7a83431f326d8f}
+      \strng{fullhash}{b163bef761d9a2c79a3d232595321775}
+      \strng{fullhashraw}{b163bef761d9a2c79a3d232595321775}
+      \strng{bibnamehash}{b163bef761d9a2c79a3d232595321775}
+      \strng{authorbibnamehash}{b163bef761d9a2c79a3d232595321775}
+      \strng{authornamehash}{77b3350005135e016e7a83431f326d8f}
+      \strng{authorfullhash}{b163bef761d9a2c79a3d232595321775}
+      \strng{authorfullhashraw}{b163bef761d9a2c79a3d232595321775}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MIS quarterly}
+      \field{title}{Design science in information systems research}
+      \field{year}{2004}
+      \field{pages}{75\bibrangedash 105}
+      \range{pages}{31}
+    \endentry
+    \entry{hua2022validation}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=efb71d59e7a848d5478a932c595434f6}{%
+           family={Hua},
+           familyi={H\bibinitperiod},
+           given={Edward\bibnamedelima Y.},
+           giveni={E\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3ebc6e63c0b9a54a818e8b46785decc1}{%
+           family={Lazarova-Molnar},
+           familyi={L\bibinithyphendelim M\bibinitperiod},
+           given={Sanja},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5c3ff30e6e4cfdb2e71832e02f745083}{%
+           family={Francis},
+           familyi={F\bibinitperiod},
+           given={Deena\bibnamedelima P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{da8b623ff9bff69f162652eb6fcbe5aa}
+      \strng{fullhash}{b5f84e024ef2b6807121e97271f22ebb}
+      \strng{fullhashraw}{b5f84e024ef2b6807121e97271f22ebb}
+      \strng{bibnamehash}{b5f84e024ef2b6807121e97271f22ebb}
+      \strng{authorbibnamehash}{b5f84e024ef2b6807121e97271f22ebb}
+      \strng{authornamehash}{da8b623ff9bff69f162652eb6fcbe5aa}
+      \strng{authorfullhash}{b5f84e024ef2b6807121e97271f22ebb}
+      \strng{authorfullhashraw}{b5f84e024ef2b6807121e97271f22ebb}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2022 Winter Simulation Conference (WSC)}
+      \field{title}{Validation of Digital Twins: Challenges and Opportunities}
+      \field{year}{2022}
+      \field{pages}{2900\bibrangedash 2911}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/WSC57314.2022.10015420
+      \endverb
+    \endentry
+    \entry{jones2020characterising}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=eb0aecd83160d1f552629af8b8a74fba}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b9e0b4eed4e077b50d6c26573930e59}{%
+           family={Snider},
+           familyi={S\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aee06f4f71fb601bdbb4525f1a3f6d8b}{%
+           family={Nassehi},
+           familyi={N\bibinitperiod},
+           given={Aydin},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e52ba7b16129a74a1260d1c22e371c2a}{%
+           family={Yon},
+           familyi={Y\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4154cfbb6e9315f1c85b072e9b2e5c1}{%
+           family={Hicks},
+           familyi={H\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0d2dd35e2f0a0827e2202ba42e3d8ff1}
+      \strng{fullhash}{c11d28ed7db749a0c13672563dbc5e41}
+      \strng{fullhashraw}{c11d28ed7db749a0c13672563dbc5e41}
+      \strng{bibnamehash}{c11d28ed7db749a0c13672563dbc5e41}
+      \strng{authorbibnamehash}{c11d28ed7db749a0c13672563dbc5e41}
+      \strng{authornamehash}{0d2dd35e2f0a0827e2202ba42e3d8ff1}
+      \strng{authorfullhash}{c11d28ed7db749a0c13672563dbc5e41}
+      \strng{authorfullhashraw}{c11d28ed7db749a0c13672563dbc5e41}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{CIRP Journal of Manufacturing Science and Technology}
+      \field{title}{Characterising the Digital Twin: A Systematic Literature Review}
+      \field{volume}{29}
+      \field{year}{2020}
+      \field{pages}{36\bibrangedash 52}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1016/j.cirpj.2020.02.002
+      \endverb
+    \endentry
+    \entry{judijanto2024trends}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=ef8c45a60e35da2c5851c1bb4216ea6c}{%
+           family={Judijanto},
+           familyi={J\bibinitperiod},
+           given={Loso},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b9ce190942966b9be6603c3bdb1bccde}{%
+           family={Qadriah},
+           familyi={Q\bibinitperiod},
+           given={Laila},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0819c60a3380f961700da83f4346e2f6}{%
+           family={Prabowo},
+           familyi={P\bibinitperiod},
+           given={Iwan\bibnamedelima Ady},
+           giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=96254fe27747b39db2652fe6fbe89a77}{%
+           family={Widyatmoko},
+           familyi={W\bibinitperiod},
+           given={Widyatmoko},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6836268675fc763a63faf598a0dcad34}{%
+           family={Sabila},
+           familyi={S\bibinitperiod},
+           given={Puji\bibnamedelima Chairu},
+           giveni={P\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7d510ffd868f5efa20b5d2e5f953e347}
+      \strng{fullhash}{f270c7e9095be09c923f27dbbafafe70}
+      \strng{fullhashraw}{f270c7e9095be09c923f27dbbafafe70}
+      \strng{bibnamehash}{f270c7e9095be09c923f27dbbafafe70}
+      \strng{authorbibnamehash}{f270c7e9095be09c923f27dbbafafe70}
+      \strng{authornamehash}{7d510ffd868f5efa20b5d2e5f953e347}
+      \strng{authorfullhash}{f270c7e9095be09c923f27dbbafafe70}
+      \strng{authorfullhashraw}{f270c7e9095be09c923f27dbbafafe70}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Eastasouth Journal of Information System and Computer Science}
+      \field{number}{02}
+      \field{title}{Trends in Digital Twin Technology for Industry 4.0: A Bibliometric Study}
+      \field{volume}{2}
+      \field{year}{2024}
+      \field{pages}{92\bibrangedash 104}
+      \range{pages}{13}
+    \endentry
+    \entry{kovacs2016mathematical}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b2b66eccd3d0ca7a58a6030fbbcccc16}{%
+           family={Kovacs},
+           familyi={K\bibinitperiod},
+           given={György},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=859c1615065d04a4c9f0a50936690873}{%
+           family={Kostal},
+           familyi={K\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{fullhash}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{fullhashraw}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{bibnamehash}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{authorbibnamehash}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{authornamehash}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{authorfullhash}{63506cb48d3c5394df4b7e22fb7db49d}
+      \strng{authorfullhashraw}{63506cb48d3c5394df4b7e22fb7db49d}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Materials science and technology}
+      \field{title}{Mathematical description of material flow}
+      \field{volume}{1}
+      \field{year}{2016}
+    \endentry
+    \entry{kritzinger2018digital}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=8d80d5b5ee79734f97fd33c812d6dac6}{%
+           family={Kritzinger},
+           familyi={K\bibinitperiod},
+           given={Werner},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=311ca48099d155aefc853ee2d37c45bc}{%
+           family={Karner},
+           familyi={K\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=48040ca6c54ba95c232e885a81b7520c}{%
+           family={Traar},
+           familyi={T\bibinitperiod},
+           given={Georg},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=598ac4328313a0283b8c797e6fd89147}{%
+           family={Henjes},
+           familyi={H\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5a55899cfc23803210eff138ac04eaa3}{%
+           family={Sihn},
+           familyi={S\bibinitperiod},
+           given={Wilfried},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7423993c1548bda37e04a6629b9c6416}
+      \strng{fullhash}{fe9b64fcc683144e05e14022e4a34955}
+      \strng{fullhashraw}{fe9b64fcc683144e05e14022e4a34955}
+      \strng{bibnamehash}{fe9b64fcc683144e05e14022e4a34955}
+      \strng{authorbibnamehash}{fe9b64fcc683144e05e14022e4a34955}
+      \strng{authornamehash}{7423993c1548bda37e04a6629b9c6416}
+      \strng{authorfullhash}{fe9b64fcc683144e05e14022e4a34955}
+      \strng{authorfullhashraw}{fe9b64fcc683144e05e14022e4a34955}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IFAC-PapersOnLine}
+      \field{number}{11}
+      \field{title}{Digital Twin in Manufacturing: A Categorical Literature Review and Classification}
+      \field{volume}{51}
+      \field{year}{2018}
+      \field{pages}{1016\bibrangedash 1022}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1016/j.ifacol.2018.08.474
+      \endverb
+    \endentry
+    \entry{lapointe2005multilevel}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=803c6580871eff1655cd3c776d16fe8c}{%
+           family={Lapointe},
+           familyi={L\bibinitperiod},
+           given={Liette},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e09afb73fd07caae3124af93f2e39097}{%
+           family={Rivard},
+           familyi={R\bibinitperiod},
+           given={Suzanne},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{fullhash}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{fullhashraw}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{bibnamehash}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{authorbibnamehash}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{authornamehash}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{authorfullhash}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \strng{authorfullhashraw}{f61b1c6ecb6ca83e8c848a4c172bc9d7}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MIS quarterly}
+      \field{title}{A multilevel model of resistance to information technology implementation}
+      \field{year}{2005}
+      \field{pages}{461\bibrangedash 491}
+      \range{pages}{31}
+    \endentry
+    \entry{lim2020state}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=7b49bc77133962bb6cd3d45600b9285b}{%
+           family={Lim},
+           familyi={L\bibinitperiod},
+           given={Kendrik\bibnamedelimb Yan\bibnamedelima Hong},
+           giveni={K\bibinitperiod\bibinitdelim Y\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=17d64641c9501c33dda0578b773d6f4f}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Pai},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=392bb9e5add4d8972f77cb9c47bd2b5b}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Chun-Hsien},
+           giveni={C\bibinithyphendelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b35a57d5f5e5801e41ca4c91340226f9}
+      \strng{fullhash}{9371b3c308e08c05da019f5940732748}
+      \strng{fullhashraw}{9371b3c308e08c05da019f5940732748}
+      \strng{bibnamehash}{9371b3c308e08c05da019f5940732748}
+      \strng{authorbibnamehash}{9371b3c308e08c05da019f5940732748}
+      \strng{authornamehash}{b35a57d5f5e5801e41ca4c91340226f9}
+      \strng{authorfullhash}{9371b3c308e08c05da019f5940732748}
+      \strng{authorfullhashraw}{9371b3c308e08c05da019f5940732748}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Intelligent Manufacturing}
+      \field{number}{6}
+      \field{title}{A state-of-the-art survey of Digital Twin: techniques, engineering product lifecycle management and business innovation perspectives}
+      \field{volume}{31}
+      \field{year}{2020}
+      \field{pages}{1313\bibrangedash 1337}
+      \range{pages}{25}
+    \endentry
+    \entry{Lugaresi2021aifac}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=62ca141fd0f0b38e9abd936efa0b4378}{%
+           family={Lugaresi},
+           familyi={L\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=89b6920e8368f378a9b10ade9b526066}{%
+           family={Matta},
+           familyi={M\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{fullhash}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{fullhashraw}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{bibnamehash}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{authorbibnamehash}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{authornamehash}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{authorfullhash}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \strng{authorfullhashraw}{ccd468ecf12d6f5aa4f1255bfb5ac28a}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IFAC-PapersOnLine}
+      \field{number}{1}
+      \field{title}{Automated Digital Twins Generation for Manufacturing Systems: A Case Study}
+      \field{volume}{54}
+      \field{year}{2021}
+      \field{pages}{749\bibrangedash 754}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.ifacol.2021.08.087
+      \endverb
+    \endentry
+    \entry{mandala2024etl}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=52b419637241ec6968f0caa7ba2391d4}{%
+           family={Mandala},
+           familyi={M\bibinitperiod},
+           given={Nishanth\bibnamedelima Reddy},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{fullhash}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{fullhashraw}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{bibnamehash}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{authorbibnamehash}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{authornamehash}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{authorfullhash}{52b419637241ec6968f0caa7ba2391d4}
+      \strng{authorfullhashraw}{52b419637241ec6968f0caa7ba2391d4}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Science and Research (IJSR)}
+      \field{month}{10}
+      \field{number}{10}
+      \field{title}{ETL in Big Data Architectures: Challenges and Solutions}
+      \field{volume}{13}
+      \field{year}{2024}
+      \field{pages}{1061\bibrangedash 1068}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.21275/SR241014054151
+      \endverb
+      \verb{urlraw}
+      \verb https://www.ijsr.net/getabstract.php?paperid=SR241014054151
+      \endverb
+      \verb{url}
+      \verb https://www.ijsr.net/getabstract.php?paperid=SR241014054151
+      \endverb
+    \endentry
+    \entry{Oztemel2020}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=60cf4a30eb435bedf70020ae16faaf35}{%
+           family={Oztemel},
+           familyi={O\bibinitperiod},
+           given={Ercan},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=237de3bd9383c85fdf852ecfcabf4026}{%
+           family={Gursev},
+           familyi={G\bibinitperiod},
+           given={Samet},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{fullhash}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{fullhashraw}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{bibnamehash}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{authorbibnamehash}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{authornamehash}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{authorfullhash}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \strng{authorfullhashraw}{e1c57a4f30fe94c97d0a264934f8a08b}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of intelligent manufacturing}
+      \field{number}{1}
+      \field{title}{Literature review of Industry 4.0 and related technologies}
+      \field{volume}{31}
+      \field{year}{2020}
+      \field{pages}{127\bibrangedash 182}
+      \range{pages}{56}
+    \endentry
+    \entry{peffers2007design}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=3127efe8cdd4557b7228a8724f568529}{%
+           family={Peffers},
+           familyi={P\bibinitperiod},
+           given={Ken},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8b17b21a3e4c61d1302f46cba38c6e50}{%
+           family={Tuunanen},
+           familyi={T\bibinitperiod},
+           given={Tuure},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=33ad207ea3031c6d744a31f5bc43c547}{%
+           family={Rothenberger},
+           familyi={R\bibinitperiod},
+           given={Marcus\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=edf3e165ce4429b30d49e353a7d1417a}{%
+           family={Chatterjee},
+           familyi={C\bibinitperiod},
+           given={Samir},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{4ccaed1d47a4875e5f027cdf2d20bbca}
+      \strng{fullhash}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{fullhashraw}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{bibnamehash}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{authorbibnamehash}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{authornamehash}{4ccaed1d47a4875e5f027cdf2d20bbca}
+      \strng{authorfullhash}{0d82c455b50c2b184d97697dac2e8660}
+      \strng{authorfullhashraw}{0d82c455b50c2b184d97697dac2e8660}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of management information systems}
+      \field{number}{3}
+      \field{title}{A design science research methodology for information systems research}
+      \field{volume}{24}
+      \field{year}{2007}
+      \field{pages}{45\bibrangedash 77}
+      \range{pages}{33}
+    \endentry
+    \entry{ribeiro2016should}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9203dc724f298030e81ba470feb309af}{%
+           family={Ribeiro},
+           familyi={R\bibinitperiod},
+           given={Marco\bibnamedelima Tulio},
+           giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0b9694812f0dc77974d99bb875a76d48}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Sameer},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c9ab8ac486d7f85ac914b1a8e51e512b}{%
+           family={Guestrin},
+           familyi={G\bibinitperiod},
+           given={Carlos},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{62dda78fe1497685b6e2c1e1adb1ed32}
+      \strng{fullhash}{70906198418f30a779bc9bda0f6ae1f1}
+      \strng{fullhashraw}{70906198418f30a779bc9bda0f6ae1f1}
+      \strng{bibnamehash}{70906198418f30a779bc9bda0f6ae1f1}
+      \strng{authorbibnamehash}{70906198418f30a779bc9bda0f6ae1f1}
+      \strng{authornamehash}{62dda78fe1497685b6e2c1e1adb1ed32}
+      \strng{authorfullhash}{70906198418f30a779bc9bda0f6ae1f1}
+      \strng{authorfullhashraw}{70906198418f30a779bc9bda0f6ae1f1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining}
+      \field{title}{" Why should i trust you?" Explaining the predictions of any classifier}
+      \field{year}{2016}
+      \field{pages}{1135\bibrangedash 1144}
+      \range{pages}{10}
+    \endentry
+    \entry{robinson2014simulation}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=90fa1029c52f5ea6bd1a8937ac5a4175}{%
+           family={Robinson},
+           familyi={R\bibinitperiod},
+           given={Stewart},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Bloomsbury Publishing}%
+      }
+      \strng{namehash}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{fullhash}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{fullhashraw}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{bibnamehash}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{authorbibnamehash}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{authornamehash}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{authorfullhash}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \strng{authorfullhashraw}{90fa1029c52f5ea6bd1a8937ac5a4175}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Simulation: the practice of model development and use}
+      \field{year}{2014}
+    \endentry
+    \entry{schwede2024learning}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=380f666faedbe7eaf1805cdb7d4b900b}{%
+           family={Schwede},
+           familyi={S\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=10907c9ed6dd5bc25c7f744818cc0cbd}{%
+           family={Fischer},
+           familyi={F\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{fullhash}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{fullhashraw}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{bibnamehash}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{authorbibnamehash}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{authornamehash}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{authorfullhash}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \strng{authorfullhashraw}{6c1d06ba22215a91425ba2eeb09af4d3}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2024 Winter Simulation Conference (WSC)}
+      \field{title}{Learning Simulation-Based Digital Twins for Discrete Material Flow Systems: A Review}
+      \field{year}{2024}
+      \field{pages}{3070\bibrangedash 3081}
+      \range{pages}{12}
+    \endentry
+    \entry{sel2025survey}{article}{}{}
+      \name{author}{9}{}{%
+        {{un=0,uniquepart=base,hash=ebe937978be47c3607fd5eb435274b75}{%
+           family={Sel},
+           familyi={S\bibinitperiod},
+           given={Kaan},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5a0919ab3111f5505b75c0d2f4f8b082}{%
+           family={Hawkins-Daarud},
+           familyi={H\bibinithyphendelim D\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7da1f6391cb04abcc3a3f3ab854335e0}{%
+           family={Chaudhuri},
+           familyi={C\bibinitperiod},
+           given={Anirban},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7f8a160b8c0d170fb73dada1610c32a7}{%
+           family={Osman},
+           familyi={O\bibinitperiod},
+           given={Deen},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=835abd4cd4549475e31645c9053666e0}{%
+           family={Bahai},
+           familyi={B\bibinitperiod},
+           given={Ahmad},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bb81936690aab7453c9e490af5e2466e}{%
+           family={Paydarfar},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=540b98b0f45aa1fed9a28bd57312dfd6}{%
+           family={Willcox},
+           familyi={W\bibinitperiod},
+           given={Karen},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=71259e4de0107435690bea7e4e5348f7}{%
+           family={Chung},
+           familyi={C\bibinitperiod},
+           given={Caroline},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6e747b12f9d65ce7183ebd9a0527add5}{%
+           family={Jafari},
+           familyi={J\bibinitperiod},
+           given={Roozbeh},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group UK London}%
+      }
+      \strng{namehash}{daebda972b2d7bdf09032f6b2d234063}
+      \strng{fullhash}{94fd01db67869bb66e817b230246d49d}
+      \strng{fullhashraw}{94fd01db67869bb66e817b230246d49d}
+      \strng{bibnamehash}{94fd01db67869bb66e817b230246d49d}
+      \strng{authorbibnamehash}{94fd01db67869bb66e817b230246d49d}
+      \strng{authornamehash}{daebda972b2d7bdf09032f6b2d234063}
+      \strng{authorfullhash}{94fd01db67869bb66e817b230246d49d}
+      \strng{authorfullhashraw}{94fd01db67869bb66e817b230246d49d}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{npj Digital Medicine}
+      \field{number}{1}
+      \field{title}{Survey and perspective on verification, validation, and uncertainty quantification of digital twins for precision medicine}
+      \field{volume}{8}
+      \field{year}{2025}
+      \field{pages}{40}
+      \range{pages}{1}
+    \endentry
+    \entry{buildings11040151}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=30ac06705dda3a9b8da620caba2da665}{%
+           family={Sepasgozar},
+           familyi={S\bibinitperiod},
+           given={Samad\bibnamedelimb M.\bibnamedelimi E.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{30ac06705dda3a9b8da620caba2da665}
+      \strng{fullhash}{30ac06705dda3a9b8da620caba2da665}
+      \strng{fullhashraw}{30ac06705dda3a9b8da620caba2da665}
+      \strng{bibnamehash}{30ac06705dda3a9b8da620caba2da665}
+      \strng{authorbibnamehash}{30ac06705dda3a9b8da620caba2da665}
+      \strng{authornamehash}{30ac06705dda3a9b8da620caba2da665}
+      \strng{authorfullhash}{30ac06705dda3a9b8da620caba2da665}
+      \strng{authorfullhashraw}{30ac06705dda3a9b8da620caba2da665}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Construction projects and cities account for over 50% of carbon emissions and energy consumption. Industry 4.0 and digital transformation may increase productivity and reduce energy consumption. A digital twin (DT) is a key enabler in implementing Industry 4.0 in the areas of construction and smart cities. It is an emerging technology that connects different objects by utilising the advanced Internet of Things (IoT). As a technology, it is in high demand in various industries, and its literature is growing exponentially. Previous digital modeling practices, the use of data acquisition tools, human–computer–machine interfaces, programmable cities, and infrastructure, as well as Building Information Modeling (BIM), have provided digital data for construction, monitoring, or controlling physical objects. However, a DT is supposed to offer much more than digital representation. Characteristics such as bi-directional data exchange and real-time self-management (e.g., self-awareness or self-optimisation) distinguish a DT from other information modeling systems. The need to develop and implement DT is rising because it could be a core technology in many industrial sectors post-COVID-19. This paper aims to clarify the DT concept and differentiate it from other advanced 3D modeling technologies, digital shadows, and information systems. It also intends to review the state of play in DT development and offer research directions for future investigation. It recommends the development of DT applications that offer rapid and accurate data analysis platforms for real-time decisions, self-operation, and remote supervision requirements post-COVID-19. The discussion in this paper mainly focuses on the Smart City, Engineering and Construction (SCEC) sectors.}
+      \field{issn}{2075-5309}
+      \field{journaltitle}{Buildings}
+      \field{number}{4}
+      \field{title}{Differentiating Digital Twin from Digital Shadow: Elucidating a Paradigm Shift to Expedite a Smart, Sustainable Built Environment}
+      \field{volume}{11}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.3390/buildings11040151
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2075-5309/11/4/151
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2075-5309/11/4/151
+      \endverb
+    \endentry
+    \entry{Shao2023mfglet}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=72647c69b834f44cc66fb202bb149440}{%
+           family={Shao},
+           familyi={S\bibinitperiod},
+           given={Guodong},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=493380d48e8c0777e8c4aa218cf88069}{%
+           family={Hightower},
+           familyi={H\bibinitperiod},
+           given={Joe},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f6970eaf2d55055e5fa7f4a3ce86c51c}{%
+           family={Schindel},
+           familyi={S\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fef5b6807bfbfda14b03b0f9272d2946}
+      \strng{fullhash}{a9eeb1d1b31f79a16c2813c877a7ace6}
+      \strng{fullhashraw}{a9eeb1d1b31f79a16c2813c877a7ace6}
+      \strng{bibnamehash}{a9eeb1d1b31f79a16c2813c877a7ace6}
+      \strng{authorbibnamehash}{a9eeb1d1b31f79a16c2813c877a7ace6}
+      \strng{authornamehash}{fef5b6807bfbfda14b03b0f9272d2946}
+      \strng{authorfullhash}{a9eeb1d1b31f79a16c2813c877a7ace6}
+      \strng{authorfullhashraw}{a9eeb1d1b31f79a16c2813c877a7ace6}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Manufacturing Letters}
+      \field{month}{1}
+      \field{title}{Credibility Consideration for Digital Twins in Manufacturing}
+      \field{volume}{35}
+      \field{year}{2023}
+      \field{pages}{24\bibrangedash 28}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1016/j.mfglet.2022.11.009
+      \endverb
+    \endentry
+    \entry{Tao2018ijamt}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=f4149340bc388abb627321731645513a}{%
+           family={Tao},
+           familyi={T\bibinitperiod},
+           given={Fei},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ad74434582c8e3377f720153af229172}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Jiangfeng},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42a5432916c6057414bbe3f1adae17eb}{%
+           family={Qi},
+           familyi={Q\bibinitperiod},
+           given={Qinglin},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1276b0c695bd412950c2be5e737aeed5}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Meng},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=79de404a0f3ac5ccec6c28b5a79bc60f}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={He},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6da920de727f4aec0d1a14c83cb1fac9}{%
+           family={Sui},
+           familyi={S\bibinitperiod},
+           given={Fangyuan},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{aee6731a830f7f2d502f4262bfb7e431}
+      \strng{fullhash}{57b1e71e5ee4ce0c994aeffb711b596f}
+      \strng{fullhashraw}{57b1e71e5ee4ce0c994aeffb711b596f}
+      \strng{bibnamehash}{57b1e71e5ee4ce0c994aeffb711b596f}
+      \strng{authorbibnamehash}{57b1e71e5ee4ce0c994aeffb711b596f}
+      \strng{authornamehash}{aee6731a830f7f2d502f4262bfb7e431}
+      \strng{authorfullhash}{57b1e71e5ee4ce0c994aeffb711b596f}
+      \strng{authorfullhashraw}{57b1e71e5ee4ce0c994aeffb711b596f}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The International Journal of Advanced Manufacturing Technology}
+      \field{number}{9-12}
+      \field{title}{Digital Twin-driven Product Design, Manufacturing and Service with Big Data}
+      \field{volume}{94}
+      \field{year}{2018}
+      \field{pages}{3563\bibrangedash 3576}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1007/s00170-017-0233-1
+      \endverb
+    \endentry
+    \entry{Thiede2013}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=9470c33d3fb3eaf6ffd6a2a47f8ef763}{%
+           family={Thiede},
+           familyi={T\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5fcded1d1443ff2d52defe48f9a149fa}{%
+           family={Seow},
+           familyi={S\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6c3b363fe3673e3e55d47411036959fc}{%
+           family={Andersson},
+           familyi={A\bibinitperiod},
+           given={Johan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f5c047e82cd38cb36802b8a60a7b3948}{%
+           family={Johansson},
+           familyi={J\bibinitperiod},
+           given={Björn},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{395210f9fdbf6bda15650507174e979d}
+      \strng{fullhash}{caca5e813c40ad744ed730d3fb6e267a}
+      \strng{fullhashraw}{caca5e813c40ad744ed730d3fb6e267a}
+      \strng{bibnamehash}{caca5e813c40ad744ed730d3fb6e267a}
+      \strng{authorbibnamehash}{caca5e813c40ad744ed730d3fb6e267a}
+      \strng{authornamehash}{395210f9fdbf6bda15650507174e979d}
+      \strng{authorfullhash}{caca5e813c40ad744ed730d3fb6e267a}
+      \strng{authorfullhashraw}{caca5e813c40ad744ed730d3fb6e267a}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{CIRP Journal of Manufacturing Science and Technology}
+      \field{number}{1}
+      \field{title}{Environmental aspects in manufacturing system modelling and simulation—State of the art and research perspectives}
+      \field{volume}{6}
+      \field{year}{2013}
+      \field{pages}{78\bibrangedash 87}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1016/j.cirpj.2012.10.002
+      \endverb
+    \endentry
+    \entry{trauer2022digital}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=4e46a0fc3878d43359fe48a664fe58ff}{%
+           family={Trauer},
+           familyi={T\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=66c95225fefe04abcf20c7267f722d24}{%
+           family={Schweigert-Recksiek},
+           familyi={S\bibinithyphendelim R\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=601a0caa0bfa3b574b69a88f892dd3f7}{%
+           family={Schenk},
+           familyi={S\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2e8fc0d55bb436bd2433a44165838fc3}{%
+           family={Baudisch},
+           familyi={B\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=583d994c5adfb4fd1cef362fa4ef0a70}{%
+           family={Mörtl},
+           familyi={M\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=51ea7aaedf81d8deb2b9b55c52fea22c}{%
+           family={Zimmermann},
+           familyi={Z\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{88cd2a53417c7ca47ffa342e6c2d9d59}
+      \strng{fullhash}{72649df2684f9f4e26c966c10c018abd}
+      \strng{fullhashraw}{72649df2684f9f4e26c966c10c018abd}
+      \strng{bibnamehash}{72649df2684f9f4e26c966c10c018abd}
+      \strng{authorbibnamehash}{72649df2684f9f4e26c966c10c018abd}
+      \strng{authornamehash}{88cd2a53417c7ca47ffa342e6c2d9d59}
+      \strng{authorfullhash}{72649df2684f9f4e26c966c10c018abd}
+      \strng{authorfullhashraw}{72649df2684f9f4e26c966c10c018abd}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Design Society}
+      \field{title}{A digital twin trust framework for industrial application}
+      \field{volume}{2}
+      \field{year}{2022}
+      \field{pages}{293\bibrangedash 302}
+      \range{pages}{10}
+    \endentry
+    \entry{vassiliadis2002conceptual}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9e7a0590d59945c560f5f4d194ea78e0}{%
+           family={Vassiliadis},
+           familyi={V\bibinitperiod},
+           given={Panos},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2334fe96ca8118d664a7c04745bea2ef}{%
+           family={Simitsis},
+           familyi={S\bibinitperiod},
+           given={Alkis},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c6170c8d37eb3ff31ea97b6721677bcf}{%
+           family={Skiadopoulos},
+           familyi={S\bibinitperiod},
+           given={Spiros},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7106b82659341ca0c44488f90f304485}
+      \strng{fullhash}{2bf299b44d35ec21df64849d324b6d47}
+      \strng{fullhashraw}{2bf299b44d35ec21df64849d324b6d47}
+      \strng{bibnamehash}{2bf299b44d35ec21df64849d324b6d47}
+      \strng{authorbibnamehash}{2bf299b44d35ec21df64849d324b6d47}
+      \strng{authornamehash}{7106b82659341ca0c44488f90f304485}
+      \strng{authorfullhash}{2bf299b44d35ec21df64849d324b6d47}
+      \strng{authorfullhashraw}{2bf299b44d35ec21df64849d324b6d47}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the 5th ACM international workshop on Data Warehousing and OLAP}
+      \field{title}{Conceptual modeling for ETL processes}
+      \field{year}{2002}
+      \field{pages}{14\bibrangedash 21}
+      \range{pages}{8}
+    \endentry
+    \entry{Wright2020amse}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d96168b9cbc11200c246dcd37c2330d4}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={Louise},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=144ca1586abfa99b633916db3878f69d}{%
+           family={Davidson},
+           familyi={D\bibinitperiod},
+           given={Stuart},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{fullhash}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{fullhashraw}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{bibnamehash}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{authorbibnamehash}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{authornamehash}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{authorfullhash}{dd2ac320635e67b42a64bf997d5f10a2}
+      \strng{authorfullhashraw}{dd2ac320635e67b42a64bf997d5f10a2}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advanced Modeling and Simulation in Engineering Sciences}
+      \field{number}{1}
+      \field{title}{How to Tell the Difference between a Model and a Digital Twin}
+      \field{volume}{7}
+      \field{year}{2020}
+      \field{pages}{13}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s40323-020-00147-4
+      \endverb
+    \endentry
+    \entry{Zhang2021jmsy}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3a1f1a0016bb4e33e52e9bd0f48cfd33}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lin},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b759e68934cf9686a02c51db66301d03}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Longfei},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ebefe287582aeffcb5a9e58331561eac}{%
+           family={Horn},
+           familyi={H\bibinitperiod},
+           given={Berthold\bibnamedelima K.P.},
+           giveni={B\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{28657ed324e41f2c879d1bf29d4788c0}
+      \strng{fullhash}{12797c386ed85b75a4de5ca303cbd853}
+      \strng{fullhashraw}{12797c386ed85b75a4de5ca303cbd853}
+      \strng{bibnamehash}{12797c386ed85b75a4de5ca303cbd853}
+      \strng{authorbibnamehash}{12797c386ed85b75a4de5ca303cbd853}
+      \strng{authornamehash}{28657ed324e41f2c879d1bf29d4788c0}
+      \strng{authorfullhash}{12797c386ed85b75a4de5ca303cbd853}
+      \strng{authorfullhashraw}{12797c386ed85b75a4de5ca303cbd853}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Manufacturing Systems}
+      \field{month}{4}
+      \field{title}{Building a Right Digital Twin with Model Engineering}
+      \field{volume}{59}
+      \field{year}{2021}
+      \field{pages}{151\bibrangedash 164}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.jmsy.2021.02.009
+      \endverb
+    \endentry
+    \entry{zhao2024data}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=2de7d89e68ab37846bfb84be00359def}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Yaoyao\bibnamedelima Fiona},
+           giveni={Y\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=693110afff4a3d103acae016cd7a177e}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Jiarui},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3b600865594bcf4059598900b5eeb5d1}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Lijun},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{ede86c0ad9d5874f5e56b3cd630c69fe}
+      \strng{fullhash}{e414872ab4f49878dc7b244272ba994b}
+      \strng{fullhashraw}{e414872ab4f49878dc7b244272ba994b}
+      \strng{bibnamehash}{e414872ab4f49878dc7b244272ba994b}
+      \strng{authorbibnamehash}{e414872ab4f49878dc7b244272ba994b}
+      \strng{authornamehash}{ede86c0ad9d5874f5e56b3cd630c69fe}
+      \strng{authorfullhash}{e414872ab4f49878dc7b244272ba994b}
+      \strng{authorfullhashraw}{e414872ab4f49878dc7b244272ba994b}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Engineering}
+      \field{title}{On the data quality and imbalance in machine learning-based design and manufacturing—A systematic review}
+      \field{year}{2024}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
