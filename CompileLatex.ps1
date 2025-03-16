@@ -50,6 +50,15 @@ if (Test-Path $pdfFileName) {
 
     # Open the PDF in the default PDF reader
     Start-Process "$outputDirectory\$draftFileName"
+
+    # Delete the newest version in OneDrive folder and copy the newly compiled PDF
+    $destinationFolder = "C:\Users\danie\OneDrive\Studium\Forschungsmaster Data Science\Masterarbeit"
+    if (-not (Test-Path $destinationFolder)) {
+        New-Item -ItemType Directory -Path $destinationFolder
+    }
+    $latestFile = Get-ChildItem $destinationFolder -Filter *.pdf | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+    if ($latestFile) { Remove-Item $latestFile.FullName -Force }
+    Copy-Item -Path "$outputDirectory\$draftFileName" -Destination $destinationFolder -Force
 } else {
     Write-Host "Compilation failed. Please check for errors in the LaTeX file."
 }
