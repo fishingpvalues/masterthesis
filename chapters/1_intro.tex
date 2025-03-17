@@ -54,8 +54,9 @@ This thesis addresses these questions by proposing that object-centric event log
 The thesis is structured into eight chapters.
 \Cref{chap:theory} establishes the theoretical groundwork. It begins with broad, domain-specific concepts and progressively narrowing the focus to the core topics of this thesis: Automated verification and validation (VVUQ) of simulation-based digital twins (SBDTs) in discrete material flow systems.
 \Cref{sec:material-flow} introduces material flow planning and simulation, outlining the fundamental elements of production systems, including processes, resources, and control mechanisms. It defines key performance indicators (KPIs) that are essential for evaluating both real and simulated systems, thereby providing the practical context in which digital twins operate.
+\Cref{sec:digital-twin} then transitions to the DT concepts. A framework for comparing DTs by \textcite{schwede2024learning} is presented. Particular attention is given to data-driven digital twins and their subset, automatically generated digital twins (AGDTs). The section concludes by contrasting AGDTs with classical simulation models, emphasizing the challenges posed by automatically generated models.
 Building on this foundation, \Cref{sec:object-centric-event-logs} presents the principles of process mining (PM) and event log analysis, with a focus on object-centric event logs as a data basis for automated validation. This section demonstrates how PM acts as a bridge between real-world process data and model validation, thus enabling continuous verification of SBDTs.
-\Cref{sec:digital-twin} then transitions to the DT concepts. Particular attention is given to data-driven digital twins and their subset, automatically generated digital twins (AGDTs). The section concludes by contrasting AGDTs with cla  ssical simulation models, emphasizing the challenges posed by automatically generated models.
+
 \Cref{sec:vvuq-sbdt} narrows the focus further to VVUQ in the context of SBDTs, beginning with a historical overview of VVUQ methodologies. It then addresses the specific challenges posed by automatically generated models, such as data dependency and lack of transparency in model creation. The section introduces machine learning-based approaches for VVUQ, particularly classification methods for model deviation detection. It also explores the current state of VVUQ in corporate practice, emphasizing the necessity for continuous and automated validation processes.
 
 \Cref{chap:methodology} outlines the methodology used to develop the proposed framework. It begins with a classical requirements analysis, deriving functional, technical, and data format requirements from theoretical findings. The chapter elaborates on the data-based validation strategy, machine learning-based validation approach, metrics for model evaluation, and online validation with continuous monitoring.
@@ -68,7 +69,7 @@ Building on this foundation, \Cref{sec:object-centric-event-logs} presents the p
 
 \Cref{chap:conclusion} concludes the thesis by summarizing key findings and their implications. It addresses the research questions and hypotheses, discusses the results' significance, acknowledges limitations, and provides recommendations for future work.
 
-\subsection{Methodology}
+\subsection*{Methodology}
 
 Methodologically the thesis follows a design science research approach (DSR). This approach is characterized by the development of artifacts to solve practical problems \parencite{hevner2004design,peffers2007design}. Artifacts in the sense of DSR are created objects or constructs which adress the given problem and contribute in direction of both theory and practice. The artifacts are evaluated in a real-world context to demonstrate their effectiveness. The thesis follows DSR by applying the cyclical DSR model, see figure \ref{fig:DSR}.
 
