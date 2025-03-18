@@ -81,7 +81,6 @@
 \fancyhf{} % Clear default header and footer
 \fancyhead[L]{\leftmark}
 \fancyhead[R]{\thepage}
-\fancyfoot[C]{\footnotesize \textit{Digital Twins Master Thesis}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Custom Commands & Environments

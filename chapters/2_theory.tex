@@ -1,15 +1,24 @@
 \chapter{Theoretical Foundation}
 \label{chap:theory}
 
-\section{Material Flow Planning and Simulation}
+The following chapter provides a theoretical foundation for the research conducted in this thesis. We will introduce the basic concepts of material flow planning and simulation, digital twins, process mining, and verification, validation, and uncertainty quantification (VVUQ). We will also discuss the relevance of these concepts in the context of simulation-based digital twins and their application in corporate practice.
+
+
+\section{Discrete Material Flow Systems and Simulation}
+The chapter starts with an introduction of the underlying concepts of DMFS and SBDT.
 \label{sec:material-flow}
 \subsection{Basic Concepts}
-% Content goes here
-% - Basic concepts
+Discrete material flow systems cannot be fully understood without first clarifying the principles of Discrete Event Simulation (DES) for Discrete Event Systems. In DES, a system changes its state through \textit{events} that occur at specific, discrete time instances; it is assumed that no changes occur between two successive events. Consequently, the state of the system is completely defined by the values of its variables at each event occurrence \parencite{varga2001discrete}. The time at which an event occurs is typically marked by a timestamp, and the scientific observation of such systems is conducted by analyzing the discrete \textit{sequence} of events over time \parencite{robinson2014simulation}.
 
-\subsection{Processes and Resources}
-% Content goes here
-% - Processes and resources
+Simulation, in this context, refers to the process of imitating the operation of a Discrete Event System over time—often through multiple event sequences. This imitation is captured in a model, and the core activities in a simulation involve constructing and experimenting with this model. A high-quality simulation abstracts the essential features of the system, which requires the modeller to have a sound a priori understanding of what “essential” means in the given context. Although the model can later be refined, its quality is primarily measured by its ability to predict outcomes and offer a diverse range of scenarios \parencite{maria1997introduction}.
+
+Referring back to DMFS, their simulation describes the imitation of material flow systems by breaking down continuous flows into discrete events. Such material flow systems can be characterized as “systems processing discrete objects (parts) that move at regular or irregular intervals along transportation routes or conveyor lines, comprising production and logistic systems” \parencite{Arnold2006,schwede2024learning}. These systems form the backbone of material flow planning and control structures. The central idea of material flow planning and control is to ensure that material requirements—both in terms of quantity and timing—are met during transportation and storage across the various stages of the supply chain \autocite{Gehr2007}. Importantly, the time horizon of interest spans from order placement up to delivery.
+To summarize, DMFS are often simulated using DES, which abstracts the continuous flow of materials into discrete events. The simulation is carried out using a model. The simulation and modeller are embedded in the context of material flow planning and control, which aims to ensure that material requirements are met across the supply chain. Successfully performed material flow planning and control induce high quality data for simulation and modelling purposes.
+
+\subsection{Comparing DMFS}
+Events in DMFS need to be further differentiated to be comparable. \Autocite{Arnold2006} propose to differentiate DMFS into static and dynamic components. Static components describe the possibility space of the system (e.g. processes that can be performed, resources that can be used), while dynamic components define the concrete material flow for a certain part or order (e.g. routing rules). Static components are parts, resources and processes \autocite{schwede2024learning}. Parts are transformed by processes using resources, sometimes based on orders. Transformation can have an impact on physical properties of the parts (transformation model), spacial position (transition model), the quality of the parts (quality model) and takes time (time model) and uses resources (resource model). Resources have a capacity of handling parts in parallel (resource capacity model) and processes have a predecessor-successors relationship (process model). The model details have to be defined by the modeller.
+% Continue: Scwhede and Fischer 2024  
+
 
 \subsection{Production Planning and Control}
 % Content goes here
