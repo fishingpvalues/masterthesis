@@ -5,27 +5,45 @@ The following chapter provides a theoretical foundation for the research conduct
 
 
 \section{Discrete Material Flow Systems and Simulation}
-The chapter starts with an introduction of the underlying concepts of DMFS and SBDT.
+This section begins with an introduction of the underlying concepts of Discrete Material Flow Systems (DMFS) and Simulation Based Digital Twins (SBDT).
 \label{sec:material-flow}
 \subsection{Basic Concepts}
 Discrete material flow systems cannot be fully understood without first clarifying the principles of Discrete Event Simulation (DES) for Discrete Event Systems. In DES, a system changes its state through \textit{events} that occur at specific, discrete time instances; it is assumed that no changes occur between two successive events. Consequently, the state of the system is completely defined by the values of its variables at each event occurrence \parencite{varga2001discrete}. The time at which an event occurs is typically marked by a timestamp, and the scientific observation of such systems is conducted by analyzing the discrete \textit{sequence} of events over time \parencite{robinson2014simulation}.
 
 Simulation, in this context, refers to the process of imitating the operation of a Discrete Event System over time—often through multiple event sequences. This imitation is captured in a model, and the core activities in a simulation involve constructing and experimenting with this model. A high-quality simulation abstracts the essential features of the system, which requires the modeller to have a sound a priori understanding of what “essential” means in the given context. Although the model can later be refined, its quality is primarily measured by its ability to predict outcomes and offer a diverse range of scenarios \parencite{maria1997introduction}.
 
-Referring back to DMFS, their simulation describes the imitation of material flow systems by breaking down continuous flows into discrete events. Such material flow systems can be characterized as “systems processing discrete objects (parts) that move at regular or irregular intervals along transportation routes or conveyor lines, comprising production and logistic systems” \parencite{Arnold2006,schwede2024learning}. These systems form the backbone of material flow planning and control structures. The central idea of material flow planning and control is to ensure that material requirements—both in terms of quantity and timing—are met during transportation and storage across the various stages of the supply chain \autocite{Gehr2007}. Importantly, the time horizon of interest spans from order placement up to delivery.
+In the context of DMFS, their simulation describes the imitation of material flow systems by breaking down continuous flows into discrete events. Such material flow systems can be characterized as “systems processing discrete objects (parts) that move at regular or irregular intervals along transportation routes or conveyor lines, comprising production and logistic systems” \parencite{Arnold2006,schwede2024learning}. These systems form the backbone of material flow planning and control structures. The central idea of material flow planning and control is to ensure that material requirements—both in terms of quantity and timing—are met during transportation and storage across the various stages of the supply chain \autocite{Gehr2007}. Importantly, the time horizon of interest spans from order placement up to delivery.
 To summarize, DMFS are often simulated using DES, which abstracts the continuous flow of materials into discrete events. The simulation is carried out using a model. The simulation and modeller are embedded in the context of material flow planning and control, which aims to ensure that material requirements are met across the supply chain. Successfully performed material flow planning and control induce high quality data for simulation and modelling purposes.
 
 \subsection{Comparing DMFS}
-Events in DMFS need to be further differentiated to be comparable. \Autocite{Arnold2006} propose to differentiate DMFS into static and dynamic components. Static components describe the possibility space of the system (e.g. processes that can be performed, resources that can be used), while dynamic components define the concrete material flow for a certain part or order (e.g. routing rules). Static components are parts, resources and processes \autocite{schwede2024learning}. Parts are transformed by processes using resources, sometimes based on orders. Transformation can have an impact on physical properties of the parts (transformation model), spacial position (transition model), the quality of the parts (quality model) and takes time (time model) and uses resources (resource model). Resources have a capacity of handling parts in parallel (resource capacity model) and processes have a predecessor-successors relationship (process model). The model details have to be defined by the modeller.
-% Continue: Scwhede and Fischer 2024  
+Because the simulation of DMFS often involves (discrete) event simulation, events in DMFS need to be further differentiated to be comparable. \Autocite{Arnold2006} propose to differentiate DMFS into static and dynamic components.
+
+Static components describe the possible states of the system. Possible states can be the set of possible processes given a part or resource, for example. Dynamic components define the concrete material flow for a certain part or order.
+Static components include parts, resources and processes \autocite{schwede2024learning}. Parts are transformed by processes using resources sometimes based on orders. Transformation can have an impact on physical properties of the parts (transformation model), spacial position (transition model), the quality of the parts (quality model) and takes time (time model) and uses resources (resource model). Resources have a capacity of handling parts in parallel (resource capacity model) and processes have a predecessor-successors relationship (process model).
+Dynamic components are used to define the concrete dynamic material flow within the DMFS. There are four components: Order generation, order control, resource control and supply control. Order generation defines the load the system must process. Order control defines how parts are processed, sometimes referred to as routing rules \autocite{mildeautomated}. Resource control defines how resource decide to handle processing request, also sometimes referred to as priority rules. Supply control describes how supply parts are provided \autocite{mildeautomated,schwede2024learning}. See the latter source for a more detailed description of the components.
 
 
 \subsection{Production Planning and Control}
-% Content goes here
-% - Production planning and control
+After establishing a theoretical foundation and simulation approaches for DMFS, this section focuses on Production Planning and Control (PPC) as a critical factor influencing the quality and quantity of data generated by Discrete Event Simulation.
+PPC is the structured approach to planning, scheduling, controlling and managing all aspects of the manufacturing process. It involves the coordination of resources, processes, and orders to meet production goals. PPC is essential for optimizing production processes, reducing costs, and improving quality. The main functions of PPC include production planning, production scheduling, and production control. Production planning involves determining the production capacity, production goals, and production processes. Production scheduling involves creating a detailed schedule for production activities. Production control involves monitoring and controlling production activities to ensure that production goals are met \parencite{kiran2019production}. Scheduling is usually the last step performed before execution of the plan \parencite{pinedo2012design}.
+
+The integration of PPC with simulation models is crucial because it directly affects the data quality used in DES of DMFS. Effective PPC processes anticipate anomalies in the production cycle, allowing for adjustments that maintain system efficiency and reliability. If successful, these adjustments yield high-quality data that enhance the accuracy of simulation outcomes. \parencite{kiran2019production}.
+
 
 \subsection{Relevant KPIs and Metrics}
-% Content goes here
+% Content goes here compare robinson2014simulation
+\begin{tikzpicture}[node distance=3cm, auto]
+  % Define nodes for each vertex of the triangle
+  \node[draw, ellipse, align=center] (accuracy) {Accuracy\\(Validity)};
+  \node[draw, ellipse, align=center, below left of=accuracy] (efficiency) {Efficiency\\(Rechenzeit)};
+  \node[draw, ellipse, align=center, below right of=accuracy] (applicability) {Applicability\\(Scalability)};
+
+  % Draw arrows to indicate the trade-offs between the vertices
+  \draw[->, thick] (accuracy) -- (efficiency) node[midway, left, align=center] {Erhöhte Genauigkeit\\ kann Rechenzeit erhöhen};
+  \draw[->, thick] (efficiency) -- (applicability) node[midway, below, align=center] {Mehr Effizienz\\ erschwert Skalierbarkeit};
+  \draw[->, thick] (applicability) -- (accuracy) node[midway, right, align=center] {Erweiterte Anwendbarkeit\\ kann Genauigkeit mindern};
+\end{tikzpicture}
+
 % - Relevant KPIs and metrics (→ Reference to 4.4: Metrics for model evaluation)
 
 \section{Digital Twin: Definition and Concepts}
