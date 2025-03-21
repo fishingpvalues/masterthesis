@@ -31,18 +31,33 @@ The integration of PPC with simulation models is crucial because it directly aff
 
 
 \subsection{Relevant KPIs and Metrics}
-% Content goes here compare robinson2014simulation
-\begin{tikzpicture}[node distance=3cm, auto]
-  % Define nodes for each vertex of the triangle
-  \node[draw, ellipse, align=center] (accuracy) {Accuracy\\(Validity)};
-  \node[draw, ellipse, align=center, below left of=accuracy] (efficiency) {Efficiency\\(Rechenzeit)};
-  \node[draw, ellipse, align=center, below right of=accuracy] (applicability) {Applicability\\(Scalability)};
+Up to this point, DES for SBDT of DMFS has been introduced, outlining the key factors that contribute to a robust simulation. A model differentiation framework proposed by \citeauthor*{schwede2024learning} has been briefly presented to facilitate comparison of SBDT. Furthermore, the critical role of PPC in generating high-quality data for simulation has been discussed. These discussions emphasize that, even when SBDT are integrated within well-functioning PPC processes, various SBDT models remain prone to errors and inherent trade-offs that must be addressed by the modeller.
 
-  % Draw arrows to indicate the trade-offs between the vertices
-  \draw[->, thick] (accuracy) -- (efficiency) node[midway, left, align=center] {Erhöhte Genauigkeit\\ kann Rechenzeit erhöhen};
-  \draw[->, thick] (efficiency) -- (applicability) node[midway, below, align=center] {Mehr Effizienz\\ erschwert Skalierbarkeit};
-  \draw[->, thick] (applicability) -- (accuracy) node[midway, right, align=center] {Erweiterte Anwendbarkeit\\ kann Genauigkeit mindern};
-\end{tikzpicture}
+The goal conflict of the modeller when developing SBDT can be described by the following conflict triangle \parencite{robinson2014simulation,balci2012life}:
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/goals.png}
+  \caption{The goal conflict of the modeller when developing SBDT. Aiming for higher accuracy (validity) often leads to higher computational costs (efficiency) and reduced scalability (applicability). Reaching more efficiency often leads to reduced accuracy and scalability. Aiming for higher scalability often leads to reduced accuracy and efficiency.}
+  \label{fig:goals}
+\end{figure}
+
+Focussing one of the three dimensions—accuracy (validity), efficiency (computation time), and applicability (scalability)—often leads to trade-offs in the other two dimensions. Often times the data itself is not sufficient to make a decision on which trade-off to make. Limited data points may hinder the modeller to reach high validity. System architecture may block the system from reaching good scalability. Hardware limitations may hinder the modeller to reach high efficiency.
+At other times, corporate management may have a preference for one of the dimensions.
+
+One solution to balance and quantify these goals can be achieved by defining a set of KPIs. Some may already be available through PPC, some may be calculated from DES data or the DES itself. Optimally, the data warehouse provides relevant views \parencite{cui2020manufacturing}. Because the SBDT in theory mirrors the DMFS, the KPIs gathered from PPC and the DES should yield identical values. Deviations between the KPIs of the SBDT and the DMFS may indicate errors in the SBDT. The following KPIs are relevant for the evaluation of SBDT:
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/kpi.png}
+  \caption{SBDT KPIs differentiated by PPC-based and Infrastructure-based indicators.}
+  \label{fig:kpis}
+\end{figure}
+
+The PPC related KPIs may be provided by above mentioned data warehouse, because they are highly relevant in the context of production scheduling and -control. Throughput measures the number of produced parts at the last station in a specified period. It is an indicator for the productivity of the manufacturing sytem \parencite{imseitif2019throughput}. Lead time is the cumulative time a part travels through the system from start to sink. It is an indicator for the efficiency of the manufacturing system \parencite{pfeiffer2016manufacturing}. Cycle time measures the same amount like lead time but focusses only on the active production process, excluding transports and waiting times \parencite{griffin1993metrics}. Setup time measures the time needed to prepare a machine for a new task. It is an indicator for the flexibility of the manufacturing system \parencite{allahverdi2008significance}. In the given usecase, we aggregate the setup time for all setup processes. All KPIs presented so far can be calculated dynamically when new data has been sent. Later on, they may serve as an alert system for the modeller to detect deviations between the SBDT and the DMFS, see \autoref{sec:vvuq-sbdt}.
+
+The infrastructure related KPIs are derived by sensors from the executing system of the SBDT. Ping time measures the time needed to send a signal from one point to another. It is an indicator for the latency of the infrastructure \parencite{wu2021digital}. SBDT need to enforce real-time control over the physical entity. The latency thus needs to be as low as possible. In this scenario, one point (sender) is represented by the physical entity and its sensors. The receiving point runs the SBDT. It is advantageous to run the SBDT on Edge to minmize latency- and transmission costs \parencite{li2018learning}. CPU-, memory-, disk- and network usage metrics are indicators for the load of the infrastructure. They are important to detect bottlenecks in the infrastructure \parencite{li2018learning}. The first indicator is usually measured in percent of the maximum CPU capacity. The latter three indicators are usually measured in bytes or bits per second \parencite{granelli2021evaluating}.
+
 
 % - Relevant KPIs and metrics (→ Reference to 4.4: Metrics for model evaluation)
 

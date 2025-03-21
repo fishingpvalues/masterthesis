@@ -1,0 +1,19 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.4 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.4">
+  <diagram name="Seite-1" id="WTdp1-wcwIpe_19XcLFv">
+    <mxGraphModel dx="1434" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="583" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DHFWRvlP0dfVqOlD5bYB-1" value="PPC-based" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DHFWRvlP0dfVqOlD5bYB-2" value="SBDT Key Performance Indicators" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="40" y="130" width="480" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DHFWRvlP0dfVqOlD5bYB-3" value="Infrastructure-based" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="290" y="200" width="230" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
