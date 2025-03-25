@@ -63,10 +63,23 @@ The infrastructure related KPIs are derived by sensors from the executing system
 \label{sec:digital-twin}
 The latter section gave a short intrduction into DFMS, DES, its metrics and the corporate processes accompanying the SBDT. Now, we shed light on the DT itself. For a short introduction to the topic, see \autoref{chap:introduction}.
 
-To recall, this thesis defines a DT as follows:
+Like introduced in the predecessing chapter, DT inherent the highest order of modelling fidelity compared to DM or DS. There are different definitions of DT present in the literature \parencite{Negri2017promfg,zheng2019application,glaessgen2012digital,Demkovich2018def,boschert2016digital,grieves2014digital,kritzinger2018digital,Tao2018ijamt,zehnder2018representing}. Each of them highlights different aspects of the DT. This thesis uliziles the definition by \autocite{grieves2014digital} which highlughts the cinceptual elements of the twin and its lifecylce focus:
 
-% Defition
+\begin{quote}
+  The digital twin concept (...) contains three main parts: A) Physical products in real space, (B) virtual products in virtual space and (C) the two-way connections of data and information that tie the virtual and real products together. \autocite{grieves2014digital}
+\end{quote}
+
+The physical product is the entity which will be modelled. The virtual product is the DT itself, but also its infrastructure, for example data services making the real-time data flow possible \parencite{Tao2018ijamt}. The two-way connection is the data flow between the physical and the virtual product. The data flow is bidirectional. \citeauthor{zehnder2018representing} add that the data flow may contain meta data "describing the data source and its context". Also the connection protocol is of importance here (e.g. MQTT or REST). TCP may be the method of choice as it ensures that the packages arrive in the correct order and without errors \parencite{li2018learning}.
+% Definition
 \subsection{Types of Digital Twins}
+Now that a unified understanding of DT has been established, this section focusses on how DT may be learned from different sources of information. \citeauthor{schwede2024learning} reviewed DT in the context of manufacturing. The layd out different information bases for DT:
+
+\begin{itemize}
+  \item Simulation-based DT (SBDT) \parencite{Lugaresi2021aifac}
+  \item Data-driven DT (DDD) \parencite{schwede2024learning}
+\end{itemize}
+
+
 % Content goes here
 % - Types of digital twins
 
