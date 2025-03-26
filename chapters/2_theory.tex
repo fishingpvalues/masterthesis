@@ -76,35 +76,50 @@ Now that a unified understanding of DT has been established, this section focuse
 
 \begin{itemize}
   \item Simulation-based DT (SBDT) \parencite{Lugaresi2021aifac,martinez2018automatic}
-  \item Data-driven DT (DDD) \parencite{he2019data,Friederich2022}
+  \item Data-driven DT (DDDT) \parencite{he2019data,Friederich2022}
   \item Hybrid Digital Twins (HDT) \parencite{luo2020hybrid,huang2023hybrid}
 \end{itemize}
 
 
-SBDTs \parencite{Lugaresi2021aifac,martinez2018automatic,boschert2016digital} are based on DES. They utilize discrete event simulation (see \autoref{sec:material-flow}) to create a dynamic representation of the physical system \parencite{schluse2016simulation,pantelides2013online}. To incorporate a SBDT into workflows and processes, suitable data structures must be in place beforehand \parencite{boschert2016digital}. DES may improve the predictive capabilities of the model compared to manual twin creation. In contrast, the development of a realistic simulation model requires experts and time \parencite{Charpentier2014}. If the simulation model fails to capture recent behaviour of the physical entity, a recalibration is mandatory \parencite{Friederich2022}. In a nutshell, SBDTs are a step forward to speed up the creation and updating processes of DTs.
+SBDTs \parencite{Lugaresi2021aifac,martinez2018automatic,boschert2016digital} are based on DES. They utilize discrete event simulation (see \autoref{sec:material-flow}) to create a dynamic representation of the physical system \parencite{schluse2016simulation,pantelides2013online}. To incorporate a SBDT into workflows and processes, suitable data structures must be in place beforehand \parencite{boschert2016digital}. DES may improve the predictive capabilities of the model compared to manual twin creation. DES is able to model causal relationships between the events \parencite{francis2021towards}. In contrast, the development of a realistic simulation model requires experts and time \parencite{Charpentier2014}. If the simulation model fails to capture recent behaviour of the physical entity, a recalibration is mandatory \parencite{Friederich2022}. In a nutshell, SBDTs are a step forward to speed up the creation and updating processes of DTs.
 
-DDD rely on the utilization of data to model the physical entity. The data may be gathered from sensors, data warehouses or other sources. The data is used to train a model which represents the physical entity. The model may be a neural network, a decision tree or another machine learning model. The model is then used to predict future states of the physical entity. The model may be updated with new data to increase its accuracy \parencite{he2019data,Friederich2022}. For a more detailed description of DDD including its up- and downsides, see \autoref{sec:data-driven-digital-twins}.
+DDDT rely on the utilization of data to model the physical entity. The data may be gathered from sensors, data warehouses or other sources. The data is used to train a model which represents the physical entity. The model may be a neural network, a decision tree or another machine learning model. The model is then used to predict future states of the physical entity. The model may be updated with new data to increase its accuracy \parencite{he2019data,Friederich2022}. For a more detailed description of DDDT including its up- and downsides, see \autoref{sec:data-driven-digital-twins}.
 
 HDT combine different sources of information to create a more accurate model of the physical entity. The sources may be simulation models (see \autoref{sec:material-flow}), data-driven models (see \autoref{sec:data-driven-digital-twins}) or physics-based models. Physics-based models contain information about the physical properties and behaviors of the entity. They do not have to learn these characteristics from the data because this information is made available to the model \textit{a priori} \parencite{kapteyn2022data,aivaliotis2019methodology}. The simulation based models accompanying the physics-based one obeys characteristics of SBDT, see above. The combination of different sources may make the HDT more robust and a faster learner. HDT unite the advantages of SBDT with the knowledge advantage physics based models have. Unfortunately, they also inherit the disadvatages of SBDT. Physics-based models may also involve heavy involve heavy computational costs and domain expertise \parencite{kapteyn2022data}.
 
 \subsection{Data-Driven Digital Twins}
 \label{sec:data-driven-digital-twins}
-Offline learning uses the data \textit{once} for training, validation and testing, while online learning continuously updates the model with new data to adapt to changes in the physical system. Online learning is thus able to capture new trends in the data and to foresee concept drift \parencite{tsymbal2004problem}.
 
-Because DDD are obtained by sensor data and other sources, they may not capture anomalies or trends not captured in the data. Furthermore, their creation process often involves domain experts (???).
+While SBDTs and HDT possess not negligible computational costs and require domain expertise, DDDT are able to learn from data without the need for a hand-written simulation model. The DDDT \textit{learns} the model. Learning in the context of DDDT is not trivial, several approaches have been proposed in the literature \parencite{he2019data,Friederich2022,francis2021towards}. Often times Data Science methods come to work. The learning process may be supervised or unsupervised. Supervised learning uses labeled data to train the model \parencite{cunningham2008supervised}. The label can symbolize different values of interest. Unsupervised learning uses unlabeled data to train the model \parencite{barlow1989unsupervised}. Often times, the task at hand is to group the data into different categories. Data sources of interest may be process data, resource data or order data \parencite{Biesinger2019}.
+The learning process may be online or offline. Offline learning uses the data \textit{once} for training, validation and testing, while online learning continuously updates the model with new data to adapt to changes in the physical system. Online learning is thus able to capture new trends in the data and to foresee concept drift \parencite{tsymbal2004problem}. DDDT have to be differentiated from data-driven simulation \parencite{Charpentier2014}, which involves human invervention to create highly individual solutions for the physical entity. The key difference is that every characteristic has to be explicitly described in the model by the expert, there are no efforts to let an intelligent algorithm learn these by itself.
+DDDT thus rely less on domain expertise and manual model creation. A suitable model may be able to capture relevant trends in the data and to predict outcomes which describe most of the characteristics of the physical entity. \parencite{francis2021towards} propose several key elements a DDDT must contain to be termed \textit{data-driven}:
+
+\begin{itemize}
+  \item \textbf{Data Collection:} The relevant entities to be modelled have to be identified. This activity involves data gathering of the identified entities and ensuring a steady data stream to a database. The data may be gathered from sensors, data warehouses or other sources.
+  \item \textbf{Data Validation:} This step involves cleaning and preprocessing the data. The data may contain missing values, outliers or other errors. The data has to be cleaned and preprocessed to ensure a high quality of the model. Plausibility checks may be performed to ensure the data is correct.
+  \item \textbf{Knowledge Extraction:} After the data has been collected and cleaned, events have to be detected. \Citeauthor{francis2021towards} utilize process mining terms in this context, such as evemt detection and process discovery. The main goal in this step is to find a common ground on which events are of interest. The thesis later dives deeper into Process Mining techniques applied here, see \autoref{sec:process-mining}.
+  \item \textbf{(Semi-)automatic Simulation Modeling:} The data is used to train a model. This step may use offline or online data as a stream. The model may be a neural network, a decision tree or another machine learning model. The model is then used to predict future states of the physical entity. The model may be updated with new data to increase its accuracy.
+  \item \textbf{Continuous Model Validation:} Interestingly,\citeauthor{francis2021towards} propose a continuous model validation. In the online learning case, they recommend to use the steady data stream to apply validation techniques continuously, see \autoref{sec:vvuq-sbdt} The validation may be performed by comparing the model predictions with the real data. If the model deviates from the real data, the model may be recalibrated.
+\end{itemize}
+
+DDDTs go one step further than SBDT and minimize the influence of the human in the loop \parencite{francis2021towards,Friederich2022}. Faster model development and updating activities are the result. The third reason to automate DT endevours elaborated by \citeauthor{schwede2024learning}, increasing prediction quality, rises and falls with the data quality, thus the gathering and preprocessing efforts of the modeller. Extrinsic factors like the number of data points available also play into the equation (curse of dimensionality). DDDT should avoid biased or noisy predictions at all costs. The identification of \textit{relevant} events poses the risk of introducing a selection bias, rather a confirmation bias. The modeller may have the tendency to select events which confirm his or her hypothesis. Ramdom sampling may be a solution to this problem, but can destroy sequential information patterns in event sequences. Overall DDDT are a promising approach to model the physical entity. If the right balance between human involvement and automated learning is found, it may be an efficient solution \parencite{francis2021towards}. Thinking one step ahead, employing data-based VVUQ approaches may also be a gamechanger. This topic will be discussed in Section \autoref{sec:ml_validation}.
 % Content goes here
 % - Data-Driven Digital Twins (→ Reference to 3.2: Automatic model generation)
 
 \subsection{Automatically Generated Digital Twins}
+\label{sec:automatically-generated-digital-twins}
+AGDT mitigate the slight inefficiencies of DDDT by eliminating the human in the loop. The framework by \citeauthor{francis2021towards} already discernibled automatically generated DT.
 % Content goes here
 % - Automatically generated digital twins
 \subsection{Definitions and Differences from Classical Simulation Literature}
+\label{sec:differences-simulation}
 % Content goes here
 
 \section{Process Mining and Event Logs}
 \label{sec:process-mining}
 
 \subsection{Core Concepts}
+\label{sec:core-concepts}
 % Content goes here
 % - Standard formats and their importance for automated validation
 % Standards aus Will van der Aalst Buch beschreiben die hier einschlägig sind
@@ -116,6 +131,7 @@ Because DDD are obtained by sensor data and other sources, they may not capture 
 
 
 \subsection{Process Mining as Enabling Technology}
+\label{sec:process-mining-enabling-technology}
 % Content goes here
 % The importance of PM for model validation VVUQ
 % - Process mining as a bridge between process data and model validation (→ Reference to 3.3)
@@ -128,29 +144,35 @@ Because DDD are obtained by sensor data and other sources, they may not capture 
 
 
 \subsection{Historical Development of VVUQ Concepts}
+\label{sec:historical-development}
 % Content goes here
 % - Historical development of V\&V concepts (→ Reference to 1.2)
 
 \subsection{Requirements of VVUQ for Automatically Generated Models}
+\label{sec:requirements-automatically-generated-models}
 % Content goes here
 % - Requirements specific to VVUQ in the context of automatically generated models (→ Reference to 3.1 and 7.2)
 
 \subsection{Theoretical Argumentation for Merging Verification, Validation and Uncertainty Quantification}
+\label{sec:merging-vvuq}
 % Content goes here
 % - Theoretical argumentation for merging verification, validation and uncertainty quantification
 
 \subsection{Machine Learning-Based Approaches}
+\label{sec:ml-approaches}
 % Content goes here
 % - Classification methods for the detection of model deviations (→ Reference to 4.3)
 % - Challenges in data preparation and feature selection
 % - Discussion of previous ML approaches in the context of the V&V problem (→ Reference to 2.2 and 4.3)
 
 \subsection{VVUQ in the Context of Digital Twins}
+\label{sec:vvuq-dt}
 % Manual vs. automated approaches
 % - Critical discussion of existing V&V definitions and methods (→ Reference back to 2.2)
 % - Challenges in the validation of automatically generated models
 
 \subsection{VVUQ in Corporate Practice}
+\label{sec:vvuq-corporate-practice}
 % Content goes here
 % - V\&V as a continuous process (→ Reference to 4.5: Online validation)
 
