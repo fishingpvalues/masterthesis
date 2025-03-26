@@ -63,27 +63,35 @@ The infrastructure related KPIs are derived by sensors from the executing system
 \label{sec:digital-twin}
 The latter section gave a short intrduction into DFMS, DES, its metrics and the corporate processes accompanying the SBDT. Now, we shed light on the DT itself. For a short introduction to the topic, see \autoref{chap:introduction}.
 
-Like introduced in the predecessing chapter, DT inherent the highest order of modelling fidelity compared to DM or DS. There are different definitions of DT present in the literature \parencite{Negri2017promfg,zheng2019application,glaessgen2012digital,Demkovich2018def,boschert2016digital,grieves2014digital,kritzinger2018digital,Tao2018ijamt,zehnder2018representing}. Each of them highlights different aspects of the DT. This thesis uliziles the definition by \autocite{grieves2014digital} which highlughts the cinceptual elements of the twin and its lifecylce focus:
+Like introduced in the predecessing chapter, DT inherent the highest order of modelling fidelity compared to DM or DS. There are different definitions of DT present in the literature \parencite{Negri2017promfg,zheng2019application,glaessgen2012digital,Demkovich2018def,boschert2016digital,grieves2014digital,kritzinger2018digital,Tao2018ijamt,zehnder2018representing}. Each of them highlights different aspects of the DT. This thesis uliziles the definition by \autocite{grieves2014digital} which highlights the conceptual elements of the twin and its lifecylce focus:
 
 \begin{quote}
   The digital twin concept (...) contains three main parts: A) Physical products in real space, (B) virtual products in virtual space and (C) the two-way connections of data and information that tie the virtual and real products together. \autocite{grieves2014digital}
 \end{quote}
 
 The physical product is the entity which will be modelled. The virtual product is the DT itself, but also its infrastructure, for example data services making the real-time data flow possible \parencite{Tao2018ijamt}. The two-way connection is the data flow between the physical and the virtual product. The data flow is bidirectional. \citeauthor{zehnder2018representing} add that the data flow may contain meta data "describing the data source and its context". Also the connection protocol is of importance here (e.g. MQTT or REST). TCP may be the method of choice as it ensures that the packages arrive in the correct order and without errors \parencite{li2018learning}.
-% Definition
+
 \subsection{Types of Digital Twins}
-Now that a unified understanding of DT has been established, this section focusses on how DT may be learned from different sources of information. \citeauthor{schwede2024learning} reviewed DT in the context of manufacturing. The layd out different information bases for DT:
+Now that a unified understanding of DT has been established, this section focuses on how DT may be learned from different sources of information. The following list includes the most relevant types of DT with a focus on different kinds of information sources:
 
 \begin{itemize}
-  \item Simulation-based DT (SBDT) \parencite{Lugaresi2021aifac}
-  \item Data-driven DT (DDD) \parencite{schwede2024learning}
+  \item Simulation-based DT (SBDT) \parencite{Lugaresi2021aifac,martinez2018automatic}
+  \item Data-driven DT (DDD) \parencite{he2019data,Friederich2022}
+  \item Hybrid Digital Twins (HDT) \parencite{luo2020hybrid,huang2023hybrid}
 \end{itemize}
 
 
-% Content goes here
-% - Types of digital twins
+SBDTs \parencite{Lugaresi2021aifac,martinez2018automatic,boschert2016digital} are based on DES. They utilize discrete event simulation (see \autoref{sec:material-flow}) to create a dynamic representation of the physical system \parencite{schluse2016simulation,pantelides2013online}. To incorporate a SBDT into workflows and processes, suitable data structures must be in place beforehand \parencite{boschert2016digital}. DES may improve the predictive capabilities of the model compared to manual twin creation. In contrast, the development of a realistic simulation model requires experts and time \parencite{Charpentier2014}. If the simulation model fails to capture recent behaviour of the physical entity, a recalibration is mandatory \parencite{Friederich2022}. In a nutshell, SBDTs are a step forward to speed up the creation and updating processes of DTs.
+
+DDD rely on the utilization of data to model the physical entity. The data may be gathered from sensors, data warehouses or other sources. The data is used to train a model which represents the physical entity. The model may be a neural network, a decision tree or another machine learning model. The model is then used to predict future states of the physical entity. The model may be updated with new data to increase its accuracy \parencite{he2019data,Friederich2022}. For a more detailed description of DDD including its up- and downsides, see \autoref{sec:data-driven-digital-twins}.
+
+HDT combine different sources of information to create a more accurate model of the physical entity. The sources may be simulation models (see \autoref{sec:material-flow}), data-driven models (see \autoref{sec:data-driven-digital-twins}) or physics-based models. Physics-based models contain information about the physical properties and behaviors of the entity. They do not have to learn these characteristics from the data because this information is made available to the model \textit{a priori} \parencite{kapteyn2022data,aivaliotis2019methodology}. The simulation based models accompanying the physics-based one obeys characteristics of SBDT, see above. The combination of different sources may make the HDT more robust and a faster learner. HDT unite the advantages of SBDT with the knowledge advantage physics based models have. Unfortunately, they also inherit the disadvatages of SBDT. Physics-based models may also involve heavy involve heavy computational costs and domain expertise \parencite{kapteyn2022data}.
 
 \subsection{Data-Driven Digital Twins}
+\label{sec:data-driven-digital-twins}
+Offline learning uses the data \textit{once} for training, validation and testing, while online learning continuously updates the model with new data to adapt to changes in the physical system. Online learning is thus able to capture new trends in the data and to foresee concept drift \parencite{tsymbal2004problem}.
+
+Because DDD are obtained by sensor data and other sources, they may not capture anomalies or trends not captured in the data. Furthermore, their creation process often involves domain experts (???).
 % Content goes here
 % - Data-Driven Digital Twins (→ Reference to 3.2: Automatic model generation)
 
