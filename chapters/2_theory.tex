@@ -179,13 +179,9 @@ OCEL thus extends traditional PM by accommodating the  multi-object nature of co
 \subsection{Process Mining as Enabling Technology}
 \label{sec:process-mining-enabling-technology}
 
-Recalling that PM uses event logs to develop process models or to enhance existing ones, these logs may serve as a foundation for VVUQ of models in general. DT utilizing PM may be validated with play-out and replay techniques.
-% Content goes here
-% The importance of PM for model validation VVUQ
-% - Process mining as a bridge between process data and model validation (→ Reference to 3.3)
-% - PM helps in context of DT, VVUQ and Simulation
-
-
+Recall that PM uses event logs to develop process models or to enhance existing ones, so these logs may serve as a foundation for VVUQ of models in general. Live twin data often can be exported to the event log format. Several standardizations have been proposed, with the IEEE XES standard being the most widely used \parencite{van2016data}. The XES standard defines a common format for event logs, enabling the exchange of event data between different software frameworks. The idea lies in exporting twin decisions or live data as event logs and then use PM tools to perform VVUQ.
+Replay may be used on SBDT simulated traces in comparison with actual event data to reveal mismatches in sequences or timing. For example, the SBDT could have predicted a circual process. Replay can be applied to further analyze this bottleneck. Play-Out can empower the modeller to sample a big amount of exemplary traces to gain KPIs. OCED object attribute values may offer even more insights.
+PPC systems (\autoref{sec:ppc}) often times deliver even more data to enrich the event log so that VVUQ can be performed easier. If event log extraction out of the SBDT is performed online, VVUQ can be performed on the fly.
 
 \section{VVUQ in the Context of Simulation-Based Digital Twins}
 \label{sec:vvuq-sbdt}
