@@ -8,7 +8,6 @@
   volume  = {200},
   year    = {2022}
 }
-
 @article{Abdoune2022a,
   author  = {Abdoune, Farah and Nouiri, Maroua and Cardin, Olivier and Castagna, Pierre},
   doi     = {10.1016/j.ifacol.2022.10.092},
@@ -20,62 +19,6 @@
   volume  = {55},
   year    = {2022}
 }
-@article{durst2017historical,
-  title={A historical review of the development of verification and validation theories for simulation models},
-  author={Durst, Phillip J and Anderson, Derek T and Bethel, Cindy L},
-  journal={International Journal of Modeling, Simulation, and Scientific Computing},
-  volume={8},
-  number={02},
-  pages={1730001},
-  year={2017},
-  publisher={World Scientific}
-}
-@article{schlesinger1979terminology,
-  title={Terminology for model credibility},
-  author={Schlesinger, Stewart},
-  journal={Simulation},
-  volume={32},
-  number={3},
-  pages={103--104},
-  year={1979},
-  publisher={SAGE Publications}
-}
-@article{naylor1967verification,
-  title={Verification of computer simulation models},
-  author={Naylor, Thomas H and Finger, Joseph Michael},
-  journal={Management science},
-  volume={14},
-  number={2},
-  pages={B--92},
-  year={1967},
-  publisher={INFORMS}
-}
-@article{evans1967simulation,
-  title={SIMULATION USING DIGITAL COMPUTERS.},
-  author={Evans, George W and Wallace, Graham F and Sutherland, Georgia L},
-  year={1967}
-}
-@article{bonani2003physics,
-  title={Physics-based simulation techniques for small-and large-signal device noise analysis in RF applications},
-  author={Bonani, Fabrizio and Guerrieri, S Donati and Ghione, Giovanni},
-  journal={IEEE Transactions on Electron Devices},
-  volume={50},
-  number={3},
-  pages={633--644},
-  year={2003},
-  publisher={IEEE}
-}
-@article{machlup1955problem,
-  title={The problem of verification in economics},
-  author={Machlup, Fritz},
-  journal={Southern Economic Journal (pre-1986)},
-  volume={22},
-  number={1},
-  pages={1},
-  year={1955},
-  publisher={Southern Economic Association}
-}
-
 @incollection{Abdoune2023,
   address   = {Cham},
   author    = {Farah Abdoune and Maroua Nouiri and Olivier Cardin and Pierre Castagna},
@@ -87,18 +30,15 @@
   title     = {Digital Twin Lifecycle: Core Challenges and Open Issues},
   year      = {2023}
 }
-
 @article{aivaliotis2019methodology,
-  author    = {Aivaliotis, Panagiotis and Georgoulias, Konstantinos and Arkouli, Zoi and Makris, Sotiris},
-  doi       = {10.1016/j.procir.2019.03.072},
-  journal   = {Procedia Cirp},
-  pages     = {417--422},
-  publisher = {Elsevier},
   title     = {Methodology for enabling digital twin using advanced physics-based modelling in predictive maintenance},
+  author    = {Aivaliotis, Panagiotis and Georgoulias, Konstantinos and Arkouli, Zoi and Makris, Sotiris},
+  journal   = {Procedia Cirp},
   volume    = {81},
-  year      = {2019}
+  pages     = {417--422},
+  year      = {2019},
+  publisher = {Elsevier}
 }
-
 @article{Alam2023,
   author  = {Alam, Mohammed Didarul and Kabir, Golam and Mirmohammadsadeghi, Seyedmehdi},
   doi     = {10.1016/j.dajour.2023.100252},
@@ -109,17 +49,15 @@
   volume  = {7},
   year    = {2023}
 }
-
 @article{allahverdi2008significance,
+  title     = {The significance of reducing setup times/setup costs},
   author    = {Allahverdi, Ali and Soroush, Hossein M},
-  doi       = {10.1016/j.ejor.2006.09.010},
   journal   = {European journal of operational research},
+  volume    = {187},
   number    = {3},
   pages     = {978--984},
-  publisher = {Elsevier},
-  title     = {The significance of reducing setup times/setup costs},
-  volume    = {187},
-  year      = {2008}
+  year      = {2008},
+  publisher = {Elsevier}
 }
 
 @article{Anbalagan2021,
@@ -132,7 +70,6 @@
   volume  = {46},
   year    = {2021}
 }
-
 @book{arnold2005materialfluss,
   address   = {Berlin, Heidelberg},
   author    = {Arnold, Dieter and Furmans, Kai},
@@ -156,24 +93,23 @@
 }
 
 @book{Arnold2019Materialfluss,
-  abstract  = {Als umfangreiches Basiswerk zum Verständnis von Materialflussprozessen in Unternehmen geht das vorliegende Buch mittlerweile in die 7. Auflage. Mit den Themen Grundelemente und Abbildung von Materialflusssystemen, Warten und Bedienen im Materialfluss, Lagern und Kommissionieren, Sortieren, Planung von Materialflusssystemen sowie Informationsflüsse in Logistiksystemen gibt dieses Buch einen umfassenden Einblick in die komplexen Zusammenhänge moderner Materialflusssysteme und wendet sich an Ingenieure des Maschinenbaus, der Produktionstechnik und des Wirtschaftsingenieurwesens. Neben Themen wie Wertstromanalyse, Steuerung von Materialflusssystemen und Identifikationsmethoden werden in der aktuellen Auflage die analytische Modellierung doppeltiefer Lagerung, die Nutzung von zweifachen Lastaufnahmemitteln und von Shuttle-Systemen behandelt.},
-  address   = {Berlin, Heidelberg},
-  author    = {Dieter Arnold and Kai Furmans},
-  doi       = {10.1007/978-3-662-60388-8},
-  edition   = {7},
-  isbn      = {978-3-662-60387-1},
-  keywords  = {Logistik, Materialflussplanung, Intralogistik, Lagersysteme, Kommissioniersysteme, Materialflusssimulation, Informationsflüsse in Logistiksystemen, Identifikationssysteme, Stochastisches Verhalten von Materialflusssystemen, Engineering Economics},
-  language  = {German},
-  pages     = {XIII, 418},
-  publisher = {Springer Vieweg},
   title     = {Materialfluss in Logistiksystemen},
+  author    = {Dieter Arnold and Kai Furmans},
+  year      = {2019},
+  edition   = {7},
+  publisher = {Springer Vieweg},
+  address   = {Berlin, Heidelberg},
+  doi       = {10.1007/978-3-662-60388-8},
+  isbn      = {978-3-662-60387-1},
   url       = {https://doi.org/10.1007/978-3-662-60388-8},
-  year      = {2019}
+  abstract  = {Als umfangreiches Basiswerk zum Verständnis von Materialflussprozessen in Unternehmen geht das vorliegende Buch mittlerweile in die 7. Auflage. Mit den Themen Grundelemente und Abbildung von Materialflusssystemen, Warten und Bedienen im Materialfluss, Lagern und Kommissionieren, Sortieren, Planung von Materialflusssystemen sowie Informationsflüsse in Logistiksystemen gibt dieses Buch einen umfassenden Einblick in die komplexen Zusammenhänge moderner Materialflusssysteme und wendet sich an Ingenieure des Maschinenbaus, der Produktionstechnik und des Wirtschaftsingenieurwesens. Neben Themen wie Wertstromanalyse, Steuerung von Materialflusssystemen und Identifikationsmethoden werden in der aktuellen Auflage die analytische Modellierung doppeltiefer Lagerung, die Nutzung von zweifachen Lastaufnahmemitteln und von Shuttle-Systemen behandelt.},
+  keywords  = {Logistik, Materialflussplanung, Intralogistik, Lagersysteme, Kommissioniersysteme, Materialflusssimulation, Informationsflüsse in Logistiksystemen, Identifikationssysteme, Stochastisches Verhalten von Materialflusssystemen, Engineering Economics},
+  pages     = {XIII, 418},
+  language  = {German}
 }
 
 @article{arrieta2020explainable,
   author    = {Arrieta, Alejandro Barredo and D{\'\i}az-Rodr{\'\i}guez, Natalia and Del Ser, Javier and Bennetot, Adrien and Tabik, Siham and Barbado, Alberto and Garc{\'\i}a, Salvador and Gil-L{\'o}pez, Sergio and Molina, Daniel and Benjamins, Richard and others},
-  doi       = {10.1016/j.inffus.2019.12.012},
   journal   = {Information fusion},
   pages     = {82--115},
   publisher = {Elsevier},
@@ -185,7 +121,6 @@
 @book{ASME2018,
   address   = {New York, NY},
   author    = {{The American Society of Mechanical Engineers}},
-  doi       = {10.1061/infographic.000016},
   publisher = {ASME},
   series    = {ASME V\&V 40-2018},
   title     = {Assessing Credibility of Computational Modeling through Verification and Validation: Application to Medical Devices},
@@ -216,15 +151,14 @@
 }
 
 @article{balci2012life,
+  title     = {A life cycle for modeling and simulation},
   author    = {Balci, Osman},
-  doi       = {10.1177/0037549712438469},
   journal   = {Simulation},
+  volume    = {88},
   number    = {7},
   pages     = {870--883},
-  publisher = {Sage Publications Sage UK: London, England},
-  title     = {A life cycle for modeling and simulation},
-  volume    = {88},
-  year      = {2012}
+  year      = {2012},
+  publisher = {Sage Publications Sage UK: London, England}
 }
 
 @article{Bano2022,
@@ -250,15 +184,14 @@
 }
 
 @article{barlow1989unsupervised,
+  title     = {Unsupervised learning},
   author    = {Barlow, Horace B},
-  doi       = {10.7551/mitpress/7011.003.0002},
   journal   = {Neural computation},
+  volume    = {1},
   number    = {3},
   pages     = {295--311},
-  publisher = {MIT Press One Rogers Street, Cambridge, MA 02142-1209, USA journals-info},
-  title     = {Unsupervised learning},
-  volume    = {1},
-  year      = {1989}
+  year      = {1989},
+  publisher = {MIT Press One Rogers Street, Cambridge, MA 02142-1209, USA journals-info}
 }
 
 @article{Barricelli2019,
@@ -281,15 +214,12 @@
   volume  = {200},
   year    = {2022}
 }
-
 @phdthesis{bergmann2014automatische,
-  author = {Bergmann, Soeren},
-  doi    = {10.1109/wsc57314.2022.10015350},
-  school = {Ilmenau, Technische Universitaet Ilmenau, Diss., 2013},
   title  = {Automatische Generierung adaptiver Modelle zur Simulation von Produktionssystemen},
-  year   = {2014}
+  author = {Bergmann, Soeren},
+  year   = {2014},
+  school = {Ilmenau, Technische Universitaet Ilmenau, Diss., 2013}
 }
-
 @article{Biesinger2019,
   author  = {Florian Biesinger and Daniel Meike and Benjamin Kra{\ss} and Mario Weyrich},
   doi     = {10.1016/j.procir.2019.02.092},
@@ -311,7 +241,6 @@
   volume  = {68},
   year    = {2019}
 }
-
 @inproceedings{Bitencourt2023,
   author    = {Bitencourt, Lucas and Silva, Maria and Costa, João},
   booktitle = {Proceedings of the 2023 International Conference on Digital Twin Technologies},
@@ -323,7 +252,6 @@
 
 @article{boschert2016digital,
   author    = {Boschert, Stefan and Rosen, Roland},
-  doi       = {10.1007/978-3-319-32156-1_5},
   journal   = {Mechatronic futures: Challenges and solutions for mechatronic systems and their designers},
   pages     = {59--74},
   publisher = {Springer},
@@ -332,17 +260,15 @@
 }
 
 @article{chakraborty2019advanced,
+  title     = {Advanced machine learning techniques for building performance simulation: a comparative analysis},
   author    = {Chakraborty, Debaditya and Elzarka, Hazem},
-  doi       = {10.1080/19401493.2018.1498538},
   journal   = {Journal of Building Performance Simulation},
+  volume    = {12},
   number    = {2},
   pages     = {193--207},
-  publisher = {Taylor \& Francis},
-  title     = {Advanced machine learning techniques for building performance simulation: a comparative analysis},
-  volume    = {12},
-  year      = {2019}
+  year      = {2019},
+  publisher = {Taylor \& Francis}
 }
-
 @article{Charpentier2014,
   author  = {Patrice Charpentier and Andr\'{e}s V\'{e}jar},
   doi     = {10.1007/s40313-014-0111-2},
@@ -353,7 +279,6 @@
   volume  = {25},
   year    = {2014}
 }
-
 @article{Chen2023,
   author  = {Chen, Jielin and Li, Shuang and Leng, Xiaolong and Li, Changping and Kurniawan, Rendi and Kwak, Yein and Ko, Tae Jo},
   doi     = {10.1016/j.rcim.2023.102591},
@@ -364,19 +289,16 @@
   volume  = {84},
   year    = {2023}
 }
-
 @article{cheng2022systematic,
+  title     = {Systematic literature review on visual analytics of predictive maintenance in the manufacturing industry},
   author    = {Cheng, Xiang and Chaw, Jun Kit and Goh, Kam Meng and Ting, Tin Tin and Sahrani, Shafrida and Ahmad, Mohammad Nazir and Abdul Kadir, Rabiah and Ang, Mei Choo},
-  doi       = {10.3390/s22176321},
   journal   = {Sensors},
+  volume    = {22},
   number    = {17},
   pages     = {6321},
-  publisher = {MDPI},
-  title     = {Systematic literature review on visual analytics of predictive maintenance in the manufacturing industry},
-  volume    = {22},
-  year      = {2022}
+  year      = {2022},
+  publisher = {MDPI}
 }
-
 @article{Cho2015,
   author  = {Cho, Jin-Hee and Chan, Kevin and Adali, Sibel},
   doi     = {10.1145/2815595},
@@ -388,7 +310,6 @@
   volume  = {48},
   year    = {2015}
 }
-
 @article{Choueiri2020,
   author  = {Anthony C. Choueiri and Diego M. V. Sato and Eduardo E. Scalabrin and Edson A. P. Santos},
   doi     = {10.1016/j.jmsy.2020.06.010},
@@ -398,7 +319,6 @@
   volume  = {56},
   year    = {2020}
 }
-
 @article{Cimino2023,
   author  = {Cimino, Antonio and Gnoni, Maria Grazia and Longo, Francesco and La Rosa, Angelica},
   doi     = {10.1016/j.procs.2022.12.390},
@@ -409,7 +329,6 @@
   volume  = {217},
   year    = {2023}
 }
-
 @article{Corradini2022,
   author  = {Corradini, Fabio and Silvestri, Marco},
   doi     = {10.1016/j.addma.2022.102633},
@@ -420,28 +339,23 @@
   volume  = {51},
   year    = {2022}
 }
-
 @article{cui2020manufacturing,
-  author    = {Cui, Yesheng and Kara, Sami and Chan, Ka C},
-  doi       = {10.1016/j.rcim.2019.101861},
-  journal   = {Robotics and computer-integrated Manufacturing},
-  pages     = {101861},
-  publisher = {Elsevier},
   title     = {Manufacturing big data ecosystem: A systematic literature review},
+  author    = {Cui, Yesheng and Kara, Sami and Chan, Ka C},
+  journal   = {Robotics and computer-integrated Manufacturing},
   volume    = {62},
-  year      = {2020}
+  pages     = {101861},
+  year      = {2020},
+  publisher = {Elsevier}
 }
-
 @incollection{cunningham2008supervised,
+  title     = {Supervised learning},
   author    = {Cunningham, Paedraig and Cord, Matthieu and Delany, Sarah Jane},
   booktitle = {Machine learning techniques for multimedia: case studies on organization and retrieval},
-  doi       = {10.1007/978-3-540-75171-7_2},
   pages     = {21--49},
-  publisher = {Springer},
-  title     = {Supervised learning},
-  year      = {2008}
+  year      = {2008},
+  publisher = {Springer}
 }
-
 @article{Czimmermann2020,
   author  = {Tobias Czimmermann and Gionata Ciuti and Marco Milazzo and Marco Chiurazzi and Salvatore Roccella and Calogero Maria Oddo and Paolo Dario},
   doi     = {10.3390/s20051459},
@@ -452,18 +366,15 @@
   volume  = {20},
   year    = {2020}
 }
-
 @article{damm2001lscs,
-  author    = {Damm, Werner and Harel, David},
-  doi       = {10.1007/978-0-387-35562-7_23},
-  journal   = {Formal methods in system design},
-  pages     = {45--80},
-  publisher = {Springer},
   title     = {LSCs: Breathing life into message sequence charts},
+  author    = {Damm, Werner and Harel, David},
+  journal   = {Formal methods in system design},
   volume    = {19},
-  year      = {2001}
+  pages     = {45--80},
+  year      = {2001},
+  publisher = {Springer}
 }
-
 @techreport{deloitte2025processmining,
   author      = {Deloitte},
   institution = {Deloitte},
@@ -473,7 +384,17 @@
   url         = {https://www.deloitte.com/de/de/services/financial-advisory/research/global-process-mining-survey.html},
   year        = {2025}
 }
-
+@inproceeedings{Demkovich2018def,
+  author    = {Demkovich, Natalia and Yablochnikov, Eugeny and Abaev, Grigory},
+  booktitle = {2018 IEEE Industrial Cyber-Physical Systems (ICPS)},
+  title     = {Multiscale modeling and simulation for industrial cyber-physical systems},
+  year      = {2018},
+  volume    = {},
+  number    = {},
+  pages     = {291-296},
+  keywords  = {Manufacturing processes;Data models;Solid modeling;Computational modeling;digital manufacturing;simulation;Industrie 4.0;digital twin},
+  doi       = {10.1109/ICPHYS.2018.8387674}
+}
 @article{Denkena2020,
   author  = {Denkena, Berend and Dittrich, Marc-Andr{\'e} and Stobrawa, Sebastian and Stjepandi{\'c}, Josip},
   doi     = {10.1016/j.procir.2020.03.016},
@@ -484,7 +405,6 @@
   volume  = {93},
   year    = {2020}
 }
-
 @article{Denno2018,
   author  = {Peter Denno and Chris Dickerson and John A. Harding},
   doi     = {10.1016/j.jmsy.2018.05.006},
@@ -494,7 +414,6 @@
   volume  = {48},
   year    = {2018}
 }
-
 @inproceedings{Dobaj2022,
   author    = {Dobaj, J{\"u}rgen and Riel, Andreas and Krug, Thomas and Seidl, Matthias and Macher, Georg and Egretzberger, Markus},
   booktitle = {Proceedings of the 17th Symposium on Software Engineering for Adaptive and Self-Managing Systems},
@@ -504,10 +423,8 @@
   url       = {https://doi.org/10.1145/3524844.3528057},
   year      = {2022}
 }
-
 @article{dwivedi2023explainable,
   author    = {Dwivedi, Rudresh and Dave, Devam and Naik, Het and Singhal, Smiti and Omer, Rana and Patel, Pankesh and Qian, Bin and Wen, Zhenyu and Shah, Tejal and Morgan, Graham and others},
-  doi       = {10.1145/3561048},
   journal   = {ACM Computing Surveys},
   number    = {9},
   pages     = {1--33},
@@ -516,15 +433,12 @@
   volume    = {55},
   year      = {2023}
 }
-
 @book{eberhard1987einfuhrung,
-  author    = {Eberhard, Kurt},
-  doi       = {10.1159/000397876},
-  publisher = {Kohlhammer},
   title     = {Einf{\"u}hrung in die Erkenntnis-und Wissenschaftstheorie: Geschichte und Praxis der konkurrierenden Erkenntniswege},
-  year      = {1987}
+  author    = {Eberhard, Kurt},
+  year      = {1987},
+  publisher = {Kohlhammer}
 }
-
 @article{Erdos2023,
   author  = {Erd{\"o}s, G{\'a}bor and Horv{\'a}th, Gergely},
   doi     = {10.1016/j.cirp.2023.04.062},
@@ -552,7 +466,7 @@
   howpublished = {\url{https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689}},
   note         = {Accessed: 2025-03-11},
   title        = {Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act) and amending certain Union legislative acts},
-  year         = {2024}
+  year         = 2024
 }
 
 @article{Eunike2022,
@@ -565,16 +479,13 @@
   volume  = {107},
   year    = {2022}
 }
-
 @article{Evermann2016,
   author  = {Joerg Evermann and Jan-Recker Rehse and Peter Fettke},
-  doi     = {10.1016/j.dss.2017.04.003},
   journal = {arXiv preprint arXiv:1612.04600},
   title   = {Predicting process behaviour using deep learning},
   url     = {https://arxiv.org/abs/1612.04600},
   year    = {2016}
 }
-
 @article{fernandes2021concept,
   author  = {Fernandes, Thiago L. and Baldo Crhistian, R. and Donatelli, Gustavo D.},
   doi     = {10.1016/j.aime.2021.100054},
@@ -595,7 +506,6 @@
   volume  = {74},
   year    = {2022}
 }
-
 @article{fisher2022validation,
   author  = {Fisher, Charles R. and Nygren, Kelly E. and Beaudoin, Armand J.},
   doi     = {10.1016/j.jmapro.2021.11.057},
@@ -630,14 +540,14 @@
   year    = {2020}
 }
 
+
 @inproceedings{francis2021towards,
+  title        = {Towards data-driven digital twins for smart manufacturing},
   author       = {Francis, Deena P and Lazarova-Molnar, Sanja and Mohamed, Nader},
   booktitle    = {Proceedings of the 27th International Conference on Systems Engineering, ICSEng 2020},
-  doi          = {10.1007/978-3-030-65796-3_43},
-  organization = {Springer},
   pages        = {445--454},
-  title        = {Towards data-driven digital twins for smart manufacturing},
-  year         = {2021}
+  year         = {2021},
+  organization = {Springer}
 }
 
 @article{Frank2019,
@@ -694,27 +604,27 @@
 }
 
 @inbook{Gehr2007,
-  address   = {Berlin, Heidelberg},
-  booktitle = {Logistik in der Automobilindustrie: Innovatives Supply Chain Management f{\"u}r wettbewerbsf{\"a}hige Zulieferstrukturen},
-  doi       = {10.1007/978-3-540-68114-4_4},
-  isbn      = {978-3-540-68114-4},
-  pages     = {73--100},
-  publisher = {Springer Berlin Heidelberg},
   title     = {Der Materialfluss im Zuliefernetzwerk --- integrierte und prozessorientierte Planung und Steuerung},
-  url       = {https://doi.org/10.1007/978-3-540-68114-4_4},
-  year      = {2007}
+  booktitle = {Logistik in der Automobilindustrie: Innovatives Supply Chain Management f{\"u}r wettbewerbsf{\"a}hige Zulieferstrukturen},
+  year      = {2007},
+  publisher = {Springer Berlin Heidelberg},
+  address   = {Berlin, Heidelberg},
+  pages     = {73--100},
+  isbn      = {978-3-540-68114-4},
+  doi       = {10.1007/978-3-540-68114-4_4},
+  url       = {https://doi.org/10.1007/978-3-540-68114-4_4}
 }
 
 @article{gemanbias,
   author   = {Geman, Stuart and Bienenstock, Elie and Doursat, René},
-  doi      = {10.1162/neco.1992.4.1.1},
   journal  = {Neural Computation},
-  keywords = {},
+  title    = {Neural Networks and the Bias/Variance Dilemma},
+  year     = {1992},
+  volume   = {4},
   number   = {1},
   pages    = {1-58},
-  title    = {Neural Networks and the Bias/Variance Dilemma},
-  volume   = {4},
-  year     = {1992}
+  keywords = {},
+  doi      = {10.1162/neco.1992.4.1.1}
 }
 
 @article{ghosh2021developing,
@@ -737,7 +647,13 @@
   year      = {2012}
 }
 
-
+@inproceedings{glaessgen2012digital,
+  title     = {The digital twin paradigm for future NASA and US Air Force vehicles},
+  author    = {Glaessgen, Edward and Stargel, David},
+  booktitle = {53rd AIAA/ASME/ASCE/AHS/ASC structures, structural dynamics and materials conference 20th AIAA/ASME/AHS adaptive structures conference 14th AIAA},
+  pages     = {1818},
+  year      = {2012}
+}
 
 @article{gohari2019digital,
   author  = {Gohari, Hossein and Berry, Cody and Barari, Ahmad},
@@ -762,20 +678,18 @@
 }
 
 @article{granelli2021evaluating,
+  title     = {Evaluating a digital twin of an IoT resource slice: An emulation study using the ELIoT platform},
   author    = {Granelli, Fabrizio and Capraro, Riccardo and Lorandi, Michela and Casari, Paolo},
-  doi       = {10.1109/lnet.2021.3097556},
   journal   = {IEEE Networking Letters},
+  volume    = {3},
   number    = {3},
   pages     = {147--151},
-  publisher = {IEEE},
-  title     = {Evaluating a digital twin of an IoT resource slice: An emulation study using the ELIoT platform},
-  volume    = {3},
-  year      = {2021}
+  year      = {2021},
+  publisher = {IEEE}
 }
 
 @techreport{grieves2014digital,
   author = {Grieves, Michael},
-  doi    = {10.20944/preprints202305.1758.v1},
   note   = {White Paper},
   title  = {Digital Twin: Manufacturing Excellence through Virtual Factory Replication},
   year   = {2014}
@@ -793,7 +707,6 @@
 
 @article{grieves2022dont,
   author  = {Grieves, Michael},
-  doi     = {10.20944/preprints202305.1758.v1},
   journal = {DESIGNLINES},
   title   = {Don't 'Twin' Digital Twins and Simulations Opinion},
   url     = {https://www.researchgate.net/publication/365991616_Don't_'Twin'_Digital_Twins_and_Simulations_Opinion#fullTextFileContent},
@@ -811,15 +724,14 @@
 }
 
 @article{griffin1993metrics,
+  title     = {Metrics for measuring product development cycle time},
   author    = {Griffin, Abbie},
-  doi       = {10.1111/1540-5885.1020112},
   journal   = {Journal of Product Innovation Management: An International Publication of the Product Development \& Management Association},
+  volume    = {10},
   number    = {2},
   pages     = {112--125},
-  publisher = {Wiley Online Library},
-  title     = {Metrics for measuring product development cycle time},
-  volume    = {10},
-  year      = {1993}
+  year      = {1993},
+  publisher = {Wiley Online Library}
 }
 
 @inproceedings{gross2023transition,
@@ -831,7 +743,6 @@
   title        = {Transition to Digital Twin for Automotive Sensor Interfaces Test Equipment},
   year         = {2023}
 }
-
 @article{guardabascio2022model,
   author    = {Guardabascio, Vincenzo and Pesce, Mirko and Magistrali, Stefano and Marcigliano, Francesco and Fonti, Gabriele and Valesano, Fabio and Dimitrakopoulos, Pantelis and Framke, Nils Henning and Papadimitriou, Iakovos},
   doi       = {10.4271/2022-01-0200},
@@ -840,7 +751,6 @@
   title     = {Model-Based Control Development Using Real-Time 1D Thermal Management in Co-Simulation for High Performance BEV Digital Twin},
   year      = {2022}
 }
-
 @article{guivarch2019creation,
   author  = {Guivarch, D. and Mermoz, E. and Marino, Y. and Sartor, M.},
   doi     = {10.1016/j.cirp.2019.04.041},
@@ -851,7 +761,6 @@
   volume  = {68},
   year    = {2019}
 }
-
 @article{guo2021digital,
   author  = {Guo, Hongfei and Chen, Minshi and Mohamed, Khalgui and Qu, Ting and Wang, Siming and Li, Jianke},
   doi     = {10.1016/j.jmsy.2020.07.012},
@@ -861,26 +770,23 @@
   volume  = {58},
   year    = {2021}
 }
-
 @article{he2019data,
-  author    = {He, Rui and Chen, Guoming and Dong, Che and Sun, Shufeng and Shen, Xiaoyu},
-  doi       = {10.1016/j.isatra.2019.05.011},
-  journal   = {ISA transactions},
-  pages     = {221--234},
-  publisher = {Elsevier},
   title     = {Data-driven digital twin technology for optimized control in process systems},
+  author    = {He, Rui and Chen, Guoming and Dong, Che and Sun, Shufeng and Shen, Xiaoyu},
+  journal   = {ISA transactions},
   volume    = {95},
-  year      = {2019}
+  pages     = {221--234},
+  year      = {2019},
+  publisher = {Elsevier}
 }
 
 @article{hevner2004design,
+  title     = {Design science in information systems research},
   author    = {Hevner, Alan R and March, Salvatore T and Park, Jinsoo and Ram, Sudha},
-  doi       = {10.1007/978-1-4419-5653-8_2},
   journal   = {MIS quarterly},
   pages     = {75--105},
-  publisher = {JSTOR},
-  title     = {Design science in information systems research},
-  year      = {2004}
+  year      = {2004},
+  publisher = {JSTOR}
 }
 
 @article{hinchy2020using,
@@ -903,7 +809,6 @@
   volume  = {126},
   year    = {2023}
 }
-
 @inproceedings{hua2022validation,
   author       = {Hua, Edward Y. and Lazarova-Molnar, Sanja and Francis, Deena P.},
   booktitle    = {2022 Winter Simulation Conference (WSC)},
@@ -913,18 +818,15 @@
   title        = {Validation of Digital Twins: Challenges and Opportunities},
   year         = {2022}
 }
-
 @article{huang2023hybrid,
-  author    = {Huang, Ziqi and Fey, Marcel and Liu, Chao and Beysel, Ege and Xu, Xun and Brecher, Christian},
-  doi       = {10.1016/j.rcim.2023.102545},
-  journal   = {Robotics and Computer-Integrated Manufacturing},
-  pages     = {102545},
-  publisher = {Elsevier},
   title     = {Hybrid learning-based digital twin for manufacturing process: Modeling framework and implementation},
+  author    = {Huang, Ziqi and Fey, Marcel and Liu, Chao and Beysel, Ege and Xu, Xun and Brecher, Christian},
+  journal   = {Robotics and Computer-Integrated Manufacturing},
   volume    = {82},
-  year      = {2023}
+  pages     = {102545},
+  year      = {2023},
+  publisher = {Elsevier}
 }
-
 @article{husseini2022development,
   author  = {Husseini, K. and Schmidgruber, N. and Weinmann, H. W. and Maibaum, K. and Ruhland, J. and Fleischer, J.},
   doi     = {10.1016/j.procir.2022.02.150},
@@ -946,14 +848,13 @@
 }
 
 @article{imseitif2019throughput,
-  author    = {Imseitif, Jad and Tang, He and Smith, Mike},
-  doi       = {10.1016/j.promfg.2020.01.423},
-  journal   = {Procedia Manufacturing},
-  pages     = {814--823},
-  publisher = {Elsevier},
   title     = {Throughput analysis of manufacturing systems with buffers considering reliability and cycle time using DES and DOE},
+  author    = {Imseitif, Jad and Tang, He and Smith, Mike},
+  journal   = {Procedia Manufacturing},
   volume    = {39},
-  year      = {2019}
+  pages     = {814--823},
+  year      = {2019},
+  publisher = {Elsevier}
 }
 
 @article{inkulu2022challenges,
@@ -969,7 +870,6 @@
 
 @misc{iso2017systems,
   author = {{International Organization for Standardization}},
-  doi    = {10.17487/rfc0892},
   title  = {ISO/IEC/IEEE 24765 Systems and Software Engineering - Vocabulary},
   url    = {www.iso.orgwww.ieee.org},
   year   = {2017}
@@ -977,21 +877,18 @@
 
 @misc{iso2021automation,
   author = {{International Organization for Standardization}},
-  doi    = {10.18356/9789292685980c003},
   title  = {ISO 23247-1: Automation Systems and Integration - Digital Twin Framework for Manufacturing – Part 1: Overview and General Principles},
   year   = {2021}
 }
 
 @article{jeremiah2024comprehensive,
   author    = {Jeremiah, Sekione Reward and El Azzaoui, Abir and Xiong, Neal N and Park, Jong Hyuk},
-  doi       = {10.1016/j.sysarc.2024.103120},
   journal   = {Journal of Systems Architecture},
   pages     = {103120},
   publisher = {Elsevier},
   title     = {A comprehensive survey of digital twins: applications, technologies and security challenges},
   year      = {2024}
 }
-
 @article{jia2023from,
   author  = {Jia, Wenjie and Wang, Wei and Zhang, Zhenzu},
   doi     = {10.1016/j.aei.2023.101915},
@@ -1011,7 +908,6 @@
   volume  = {58},
   year    = {2021}
 }
-
 @article{jiang2023product,
   author  = {Jiang, Linbei and Su, Shaohui and Pei, Xin and Chu, Changyong and Yuan, Yiming and Wang, Kuan},
   doi     = {10.1016/j.cie.2023.109168},
@@ -1044,7 +940,6 @@
 
 @article{judijanto2024trends,
   author  = {Judijanto, Loso and Qadriah, Laila and Prabowo, Iwan Ady and Widyatmoko, Widyatmoko and Sabila, Puji Chairu},
-  doi     = {10.58812/esiscs.v2i02.382},
   journal = {The Eastasouth Journal of Information System and Computer Science},
   number  = {02},
   pages   = {92--104},
@@ -1054,15 +949,14 @@
 }
 
 @article{kapteyn2022data,
+  title     = {Data-driven physics-based digital twins via a library of component-based reduced-order models},
   author    = {Kapteyn, Michael G and Knezevic, David J and Huynh, DBP and Tran, Minh and Willcox, Karen E},
-  doi       = {10.1002/nme.6423},
   journal   = {International Journal for Numerical Methods in Engineering},
+  volume    = {123},
   number    = {13},
   pages     = {2986--3003},
-  publisher = {Wiley Online Library},
-  title     = {Data-driven physics-based digital twins via a library of component-based reduced-order models},
-  volume    = {123},
-  year      = {2022}
+  year      = {2022},
+  publisher = {Wiley Online Library}
 }
 
 @article{kherbache2022digital,
@@ -1087,11 +981,10 @@
 }
 
 @book{kiran2019production,
-  author    = {Kiran, DR},
-  doi       = {10.1016/b978-0-12-818364-9.00001-9},
-  publisher = {Butterworth-heinemann},
   title     = {Production planning and control: A comprehensive approach},
-  year      = {2019}
+  author    = {Kiran, DR},
+  year      = {2019},
+  publisher = {Butterworth-heinemann}
 }
 
 @article{knapp2017building,
@@ -1106,7 +999,6 @@
 
 @article{kovacs2016mathematical,
   author  = {Kovacs, Gy{\"o}rgy and Kostal, Peter},
-  doi     = {10.1039/an9881301817},
   journal = {Materials science and technology},
   title   = {Mathematical description of material flow},
   volume  = {1},
@@ -1136,23 +1028,19 @@
 
 @article{landy2023where,
   author  = {Landy, Katie},
-  doi     = {10.1067/j.cpradiol.2023.08.014},
   journal = {Industry Week},
   month   = {January 30},
   title   = {Where Do Digital Twins Add the Most Value?},
   year    = {2023}
 }
-
 @article{lapointe2005multilevel,
   author    = {Lapointe, Liette and Rivard, Suzanne},
-  doi       = {10.2307/25148692},
   journal   = {MIS quarterly},
   pages     = {461--491},
   publisher = {JSTOR},
   title     = {A multilevel model of resistance to information technology implementation},
   year      = {2005}
 }
-
 @article{Latif2020,
   author  = {Latif, Ame Here and Hasan, and Starly, Binil},
   doi     = {10.1016/j.promfg.2020.05.132},
@@ -1162,7 +1050,6 @@
   volume  = {48},
   year    = {2020}
 }
-
 @article{Latsou2023,
   author  = {Latsou, Christina and Farsi, Maryam and Erkoyuncu, John Ahmet},
   doi     = {10.1016/j.jmsy.2023.02.008},
@@ -1173,18 +1060,15 @@
   volume  = {67},
   year    = {2023}
 }
-
 @article{lechevalier2018methodology,
-  author    = {Lechevalier, David and Narayanan, Anantha and Rachuri, Sudarsan and Foufou, Sebti},
-  doi       = {10.1016/j.compind.2017.12.005},
-  journal   = {Computers in Industry},
-  pages     = {54--67},
-  publisher = {Elsevier},
   title     = {A methodology for the semi-automatic generation of analytical models in manufacturing},
+  author    = {Lechevalier, David and Narayanan, Anantha and Rachuri, Sudarsan and Foufou, Sebti},
+  journal   = {Computers in Industry},
   volume    = {95},
-  year      = {2018}
+  pages     = {54--67},
+  year      = {2018},
+  publisher = {Elsevier}
 }
-
 @article{Lee2022,
   author  = {Lee, Donggun and Kim, Chong-Keun and Yang, Jinho and Cho, Kang-Yeon and Choi, Jonghwan and Noh, Sang-Do and Nam, Seunghoon},
   doi     = {10.3390/machines10121147},
@@ -1195,7 +1079,6 @@
   volume  = {10},
   year    = {2022}
 }
-
 @article{Leng2020rcim,
   author  = {Leng, Jiewu and Liu, Qiang and Ye, Shide and Jing, Jianbo and Wang, Yan and Zhang, Chaoyang and Zhang, Ding and Chen, Xin},
   doi     = {10.1016/j.rcim.2019.101895},
@@ -1206,7 +1089,6 @@
   volume  = {63},
   year    = {2020}
 }
-
 @article{Leng2021jclepro,
   author  = {Leng, Jiewu and Zhou, Man and Xiao, Yuxuan and Zhang, Hu and Liu, Qiang and Shen, Weiming and Su, Qianyi and Li, Longzhang},
   doi     = {10.1016/j.jclepro.2021.127278},
@@ -1217,7 +1099,6 @@
   volume  = {306},
   year    = {2021}
 }
-
 @article{Leng2022aei,
   author  = {Leng, Jiewu and Chen, Ziying and Sha, Weinan and Lin, Zisheng and Lin, Jun and Liu, Qiang},
   doi     = {10.1016/j.aei.2022.101676},
@@ -1228,19 +1109,16 @@
   volume  = {53},
   year    = {2022}
 }
-
 @article{li2018learning,
+  title     = {Learning IoT in edge: Deep learning for the Internet of Things with edge computing},
   author    = {Li, He and Ota, Kaoru and Dong, Mianxiong},
-  doi       = {10.1109/mnet.2018.1700202},
   journal   = {IEEE network},
+  volume    = {32},
   number    = {1},
   pages     = {96--101},
-  publisher = {IEEE},
-  title     = {Learning IoT in edge: Deep learning for the Internet of Things with edge computing},
-  volume    = {32},
-  year      = {2018}
+  year      = {2018},
+  publisher = {IEEE}
 }
-
 @article{Li2021ijpe,
   author  = {Li, Ming and Li, Zhi and Huang, Xidian and Qu, Ting},
   doi     = {10.1016/j.ijpe.2021.108223},
@@ -1251,7 +1129,6 @@
   volume  = {240},
   year    = {2021}
 }
-
 @article{Li2022aei,
   author  = {Li, Hao and Ma, Wenfeng and Wang, Haoqi and Liu, Gen and Wen, Xiaoyu and Zhang, Yuyan and Yang, Miying and Luo, Guofu and Xie, Guizhong and Sun, Chunya},
   doi     = {10.1016/j.aei.2022.101701},
@@ -1297,15 +1174,14 @@
 }
 
 @article{lim2020state,
+  title     = {A state-of-the-art survey of Digital Twin: techniques, engineering product lifecycle management and business innovation perspectives},
   author    = {Lim, Kendrik Yan Hong and Zheng, Pai and Chen, Chun-Hsien},
-  doi       = {10.1007/s10845-019-01512-w},
   journal   = {Journal of Intelligent Manufacturing},
+  volume    = {31},
   number    = {6},
   pages     = {1313--1337},
-  publisher = {Springer},
-  title     = {A state-of-the-art survey of Digital Twin: techniques, engineering product lifecycle management and business innovation perspectives},
-  volume    = {31},
-  year      = {2020}
+  year      = {2020},
+  publisher = {Springer}
 }
 
 @article{Lin2021jclepro,
@@ -1483,14 +1359,13 @@
 }
 
 @article{luo2020hybrid,
-  author    = {Luo, Weichao and Hu, Tianliang and Ye, Yingxin and Zhang, Chengrui and Wei, Yongli},
-  doi       = {10.1016/j.rcim.2020.101974},
-  journal   = {Robotics and Computer-Integrated Manufacturing},
-  pages     = {101974},
-  publisher = {Elsevier},
   title     = {A hybrid predictive maintenance approach for CNC machine tool driven by Digital Twin},
+  author    = {Luo, Weichao and Hu, Tianliang and Ye, Yingxin and Zhang, Chengrui and Wei, Yongli},
+  journal   = {Robotics and Computer-Integrated Manufacturing},
   volume    = {65},
-  year      = {2020}
+  pages     = {101974},
+  year      = {2020},
+  publisher = {Elsevier}
 }
 
 @article{Lv2021jmsy,
@@ -1514,7 +1389,6 @@
   volume  = {80},
   year    = {2023}
 }
-
 @article{Ma2022apenergy,
   author  = {Ma, Shuaiyin and Ding, Wei and Liu, Yang and Ren, Shan and Yang, Haidong},
   doi     = {10.1016/j.apenergy.2022.119986},
@@ -1536,35 +1410,32 @@
   volume  = {68},
   year    = {2021}
 }
-
 @article{mandala2024etl,
+  title   = {ETL in Big Data Architectures: Challenges and Solutions},
   author  = {Mandala, Nishanth Reddy},
-  doi     = {10.21275/SR241014054151},
   journal = {International Journal of Science and Research (IJSR)},
+  volume  = {13},
   number  = {10},
   pages   = {1061--1068},
-  title   = {ETL in Big Data Architectures: Challenges and Solutions},
-  volume  = {13},
-  year    = {2024}
+  year    = {2024},
+  doi     = {10.21275/SR241014054151}
 }
 
 @inproceedings{maria1997introduction,
+  title     = {Introduction to modeling and simulation},
   author    = {Maria, Anu},
   booktitle = {Proceedings of the 29th conference on Winter simulation},
-  doi       = {10.1145/268437.268440},
   pages     = {7--13},
-  title     = {Introduction to modeling and simulation},
   year      = {1997}
 }
 
 @inproceedings{martinez2018automatic,
+  title        = {Automatic generation of a simulation-based digital twin of an industrial process plant},
   author       = {Martinez, Gerardo Santillan and Sierla, Seppo and Karhela, Tommi and Vyatkin, Valeriy},
   booktitle    = {IECON 2018-44th Annual Conference of the IEEE Industrial Electronics Society},
-  doi          = {10.1109/iecon.2018.8591464},
-  organization = {IEEE},
   pages        = {3084--3089},
-  title        = {Automatic generation of a simulation-based digital twin of an industrial process plant},
-  year         = {2018}
+  year         = {2018},
+  organization = {IEEE}
 }
 
 @inproceedings{Matei2021,
@@ -1589,13 +1460,13 @@
 @inproceedings{mildeautomated,
   author    = {Milde, Michael and Reinhart, Gunther},
   booktitle = {2019 Winter Simulation Conference (WSC)},
-  doi       = {10.1109/WSC40007.2019.9004702},
-  keywords  = {Data models;Production systems;Analytical models;Data mining;Manuals;Data acquisition},
+  title     = {Automated Model Development and Parametrization of Material Flow Simulations},
+  year      = {2019},
+  volume    = {},
   number    = {},
   pages     = {2166-2177},
-  title     = {Automated Model Development and Parametrization of Material Flow Simulations},
-  volume    = {},
-  year      = {2019}
+  keywords  = {Data models;Production systems;Analytical models;Data mining;Manuals;Data acquisition},
+  doi       = {10.1109/WSC40007.2019.9004702}
 }
 
 @article{Min2019ijinfomgt,
@@ -1632,13 +1503,12 @@
 }
 
 @article{montgomery1988divestment,
+  title     = {Divestment: Motives and gains},
   author    = {Montgomery, Cynthia A and Thomas, Ann R},
-  doi       = {10.1002/smj.4250090108},
   journal   = {Strategic Management Journal},
   pages     = {93--97},
-  publisher = {JSTOR},
-  title     = {Divestment: Motives and gains},
-  year      = {1988}
+  year      = {1988},
+  publisher = {JSTOR}
 }
 
 @article{Morabito2021ifac,
@@ -1651,7 +1521,6 @@
   volume  = {54},
   year    = {2021}
 }
-
 @article{Moretti2021addma,
   author  = {Moretti, M. and Rossi, A. and Senin, N.},
   doi     = {10.1016/j.addma.2020.101609},
@@ -1662,6 +1531,7 @@
   volume  = {37},
   year    = {2021}
 }
+
 
 @article{Mourtzis2021procs,
   author  = {Mourtzis, Dimitris and Angelopoulos, John and Panopoulos, Nikos},
@@ -1682,6 +1552,7 @@
   volume  = {104},
   year    = {2021}
 }
+
 
 @article{Muller2022ifac,
   author  = {M{\"u}ller, Manuel S. and Nasser, Jazdi and Weyrich, Michael},
@@ -1715,6 +1586,7 @@
   year    = {2017}
 }
 
+
 @article{Negri2019promfg,
   author  = {Negri, Elisa and Fumagalli, Luca and Cimino, Chiara and Macchi, Marco},
   doi     = {10.1016/j.promfg.2018.12.033},
@@ -1736,6 +1608,7 @@
   year    = {2020}
 }
 
+
 @article{Neto2021promfg,
   author  = {Neto, Anis Assad and Carrijo, Bruna Sprea and Brock, Jo{\~a}o Guilherme Romanzini and Deschamps, Fernando and de Lima, Edson Pinheiro},
   doi     = {10.1016/j.promfg.2021.10.060},
@@ -1745,6 +1618,7 @@
   volume  = {55},
   year    = {2021}
 }
+
 
 @article{Neto2023ijpe,
   author  = {Neto, Anis Assad and da Silva, Elias Ribeiro and Deschamps, Fernando and do Nascimento Junior, Laercio Alves and de Lima, Edson Pinheiro},
@@ -1757,6 +1631,7 @@
   year    = {2023}
 }
 
+
 @article{Nie2023rcim,
   author  = {Nie, Qingwei and Tang, Dunbing and Liu, Changchun and Wang, Liping and Song, Jiaye},
   doi     = {10.1016/j.rcim.2023.102543},
@@ -1767,6 +1642,7 @@
   volume  = {82},
   year    = {2023}
 }
+
 
 @article{Novak2020ifac,
   author  = {Nov{\'a}k, Petr and Vysko{\v{c}}il, Ji{\v{r}}{\'i} and Wally, Bernhard},
@@ -1789,7 +1665,6 @@
   volume  = {57},
   year    = {2004}
 }
-
 @article{Ogunsakin2023compind,
   author  = {Ogunsakin, Rotimi and Mehandjiev, Nikolay and Marin, Cesar A.},
   doi     = {10.1016/j.compind.2023.103920},
@@ -1825,7 +1700,6 @@
 
 @article{Oztemel2020,
   author    = {Oztemel, Ercan and Gursev, Samet},
-  doi       = {10.1007/s10845-018-1433-8},
   journal   = {Journal of intelligent manufacturing},
   number    = {1},
   pages     = {127--182},
@@ -1880,14 +1754,13 @@
 }
 
 @article{pantelides2013online,
-  author    = {Pantelides, Constantinos C and Renfro, Jeffrey G},
-  doi       = {10.1016/j.compchemeng.2012.07.008},
-  journal   = {Computers \& Chemical Engineering},
-  pages     = {136--148},
-  publisher = {Elsevier},
   title     = {The online use of first-principles models in process operations: Review, current status and future needs},
+  author    = {Pantelides, Constantinos C and Renfro, Jeffrey G},
+  journal   = {Computers \& Chemical Engineering},
   volume    = {51},
-  year      = {2013}
+  pages     = {136--148},
+  year      = {2013},
+  publisher = {Elsevier}
 }
 
 @article{Papacharalampopoulos2020procirp,
@@ -1912,15 +1785,14 @@
 }
 
 @article{peffers2007design,
+  title     = {A design science research methodology for information systems research},
   author    = {Peffers, Ken and Tuunanen, Tuure and Rothenberger, Marcus A and Chatterjee, Samir},
-  doi       = {10.2753/mis0742-1222240302},
   journal   = {Journal of management information systems},
+  volume    = {24},
   number    = {3},
   pages     = {45--77},
-  publisher = {Taylor \& Francis},
-  title     = {A design science research methodology for information systems research},
-  volume    = {24},
-  year      = {2007}
+  year      = {2007},
+  publisher = {Taylor \& Francis}
 }
 
 @article{Pei2021jmsy,
@@ -1946,24 +1818,22 @@
 }
 
 @article{pfeiffer2016manufacturing,
-  author    = {Pfeiffer, Andr{\'a}s and Gyulai, D{\'a}vid and K{\'a}d{\'a}r, Botond and Monostori, L{\'a}szl{\'o}},
-  doi       = {10.1016/j.procir.2015.12.018},
-  journal   = {Procedia Cirp},
-  pages     = {75--80},
-  publisher = {Elsevier},
   title     = {Manufacturing lead time estimation with the combination of simulation and statistical learning methods},
+  author    = {Pfeiffer, Andr{\'a}s and Gyulai, D{\'a}vid and K{\'a}d{\'a}r, Botond and Monostori, L{\'a}szl{\'o}},
+  journal   = {Procedia Cirp},
   volume    = {41},
-  year      = {2016}
+  pages     = {75--80},
+  year      = {2016},
+  publisher = {Elsevier}
 }
 
 @article{pinedo2012design,
+  title     = {Design and implementation of scheduling systems: Basic concepts},
   author    = {Pinedo, Michael L and Pinedo, Michael L},
-  doi       = {10.1007/978-0-387-78935-4_17},
   journal   = {Scheduling: theory, algorithms, and systems},
   pages     = {459--483},
-  publisher = {Springer},
-  title     = {Design and implementation of scheduling systems: Basic concepts},
-  year      = {2012}
+  year      = {2012},
+  publisher = {Springer}
 }
 
 @inproceedings{Pourbafrani2020,
@@ -1977,7 +1847,6 @@
   title     = {Supporting Automatic System Dynamics Model Generation for Simulation in the Context of Process Mining},
   year      = {2020}
 }
-
 @article{Qian2021jcise,
   author  = {Qian, Weiwei and Guo, Yu and Cui, Kai and Wu, Pengxing and Fang, Weiguang and Liu, Daoyuan},
   doi     = {10.1115/1.4049634},
@@ -2020,14 +1889,13 @@
 }
 
 @article{reinhardt2019survey,
-  author    = {Reinhardt, Heiner and Weber, Marek and Putz, Matthias},
-  doi       = {10.1016/j.procir.2019.03.022},
-  journal   = {Procedia CIRP},
-  pages     = {121--126},
-  publisher = {Elsevier},
   title     = {A survey on automatic model generation for material flow simulation in discrete manufacturing},
+  author    = {Reinhardt, Heiner and Weber, Marek and Putz, Matthias},
+  journal   = {Procedia CIRP},
   volume    = {81},
-  year      = {2019}
+  pages     = {121--126},
+  year      = {2019},
+  publisher = {Elsevier}
 }
 
 @article{Ren2021procirp,
@@ -2043,7 +1911,6 @@
 @inproceedings{ribeiro2016should,
   author    = {Ribeiro, Marco Tulio and Singh, Sameer and Guestrin, Carlos},
   booktitle = {Proceedings of the 22nd ACM SIGKDD international conference on knowledge discovery and data mining},
-  doi       = {10.1145/2939672.2939778},
   pages     = {1135--1144},
   title     = {" Why should i trust you?" Explaining the predictions of any classifier},
   year      = {2016}
@@ -2051,7 +1918,6 @@
 
 @article{Rizzuto2021,
   author  = {Alessandro Rizzuto and David Govi and Federico Schipani and Alessandro Lazzeri},
-  doi     = {10.5220/0010655000003062},
   journal = {Proceedings of the 2021 International Conference on Advanced Production Management and Process},
   pages   = {84--92},
   title   = {Lead Time Estimation of a Drilling Factory with Machine and Deep Learning Algorithms: A Case Study},
@@ -2059,8 +1925,14 @@
 }
 
 @book{robinson2014simulation,
+  title     = {Simulation: the practice of model development and use},
   author    = {Robinson, Stewart},
-  doi       = {10.1016/s1569-190x(02)00117-x},
+  year      = {2014},
+  publisher = {Bloomsbury Publishing}
+}
+
+@book{robinson2014simulation,
+  author    = {Robinson, Stewart},
   publisher = {Bloomsbury Publishing},
   title     = {Simulation: the practice of model development and use},
   year      = {2014}
@@ -2125,13 +1997,12 @@
 }
 
 @inproceedings{schluse2016simulation,
+  title        = {From simulation to experimentable digital twins: Simulation-based development and operation of complex technical systems},
   author       = {Schluse, Michael and Rossmann, Juergen},
   booktitle    = {2016 IEEE international symposium on systems engineering (ISSE)},
-  doi          = {10.1109/syseng.2016.7753162},
-  organization = {IEEE},
   pages        = {1--6},
-  title        = {From simulation to experimentable digital twins: Simulation-based development and operation of complex technical systems},
-  year         = {2016}
+  year         = {2016},
+  organization = {IEEE}
 }
 
 @article{Schroeder2016ifac,
@@ -2158,7 +2029,6 @@
 @inproceedings{schwede2024learning,
   author       = {Schwede, Christian and Fischer, Daniel},
   booktitle    = {2024 Winter Simulation Conference (WSC)},
-  doi          = {10.1109/wsc63780.2024.10838729},
   organization = {IEEE},
   pages        = {3070--3081},
   title        = {Learning Simulation-Based Digital Twins for Discrete Material Flow Systems: A Review},
@@ -2167,7 +2037,6 @@
 
 @article{sel2025survey,
   author    = {Sel, Kaan and Hawkins-Daarud, Andrea and Chaudhuri, Anirban and Osman, Deen and Bahai, Ahmad and Paydarfar, David and Willcox, Karen and Chung, Caroline and Jafari, Roozbeh},
-  doi       = {10.1038/s41746-025-01447-y},
   journal   = {npj Digital Medicine},
   number    = {1},
   pages     = {40},
@@ -2187,19 +2056,16 @@
   volume  = {225},
   year    = {2020}
 }
-
 @article{sepasgozar2021differentiating,
+  title     = {Differentiating digital twin from digital shadow: Elucidating a paradigm shift to expedite a smart, sustainable built environment},
   author    = {Sepasgozar, Samad ME},
-  doi       = {10.3390/buildings11040151},
   journal   = {Buildings},
+  volume    = {11},
   number    = {4},
   pages     = {151},
-  publisher = {MDPI},
-  title     = {Differentiating digital twin from digital shadow: Elucidating a paradigm shift to expedite a smart, sustainable built environment},
-  volume    = {11},
-  year      = {2021}
+  year      = {2021},
+  publisher = {MDPI}
 }
-
 @article{Shao2023mfglet,
   author  = {Shao, Guodong and Hightower, Joe and Schindel, William},
   doi     = {10.1016/j.mfglet.2022.11.009},
@@ -2210,7 +2076,6 @@
   volume  = {35},
   year    = {2023}
 }
-
 @article{Shen2022,
   author  = {Kai Shen and Jun Sun and Yujie Zheng and Chao Xu and Hongyu Wang and Shuang Wang and Shuang Chen and Xiaoqing Feng},
   doi     = {10.1016/j.applthermaleng.2022.118422},
@@ -2220,15 +2085,12 @@
   volume  = {211},
   year    = {2022}
 }
-
 @misc{SISO2012,
   author = {{Simulation Interoperability Standards Organization}},
-  doi    = {10.3789/ansi.niso.z39.85-2012},
   title  = {Standard for Core Manufacturing Simulation Data – XML Representation: SISO-STD-008-01-2012},
   url    = {https://cdn.ymaws.com/www.sisostandards.org/resource/resmgr/standards_products/siso-std-008-01-2012_cmsd_xm.pdf},
   year   = {2012}
 }
-
 @article{Smith2015,
   author  = {C. Smith},
   doi     = {10.1057/jos.2014.36},
@@ -2239,7 +2101,6 @@
   volume  = {9},
   year    = {2015}
 }
-
 @article{Sommer2023jiii,
   author  = {Sommer, Markus and Stjepandi{\'c}, Josip and Stobrawa, Sebastian and von Soden, Moritz},
   doi     = {10.1016/j.jii.2023.100462},
@@ -2250,7 +2111,6 @@
   volume  = {33},
   year    = {2023}
 }
-
 @article{Stacchio2022vrih,
   author  = {Stacchio, Lorenzo and Angeli, Alessia and Marfia, Gustavo},
   doi     = {10.1016/j.vrih.2022.06.004},
@@ -2261,7 +2121,6 @@
   volume  = {4},
   year    = {2022}
 }
-
 @article{Stavropoulos2022procirp,
   author  = {Stavropoulos, Panagiotis and Papacharalampopoulos, Alexios and Michail, Christos K.},
   doi     = {10.1016/j.procir.2022.05.057},
@@ -2282,6 +2141,9 @@
   volume  = {61},
   year    = {2020}
 }
+
+
+
 
 @article{Tao2018ijamt,
   author  = {Tao, Fei and Cheng, Jiangfeng and Qi, Qinglin and Zhang, Meng and Zhang, He and Sui, Fangyuan},
@@ -2341,7 +2203,6 @@
 
 @article{trauer2022digital,
   author    = {Trauer, Jakob and Schweigert-Recksiek, Sebastian and Schenk, Tim and Baudisch, Thomas and M{\"o}rtl, Markus and Zimmermann, Markus},
-  doi       = {10.1017/pds.2022.31},
   journal   = {Proceedings of the Design Society},
   pages     = {293--302},
   publisher = {Cambridge University Press},
@@ -2351,15 +2212,14 @@
 }
 
 @article{tsymbal2004problem,
+  title     = {The problem of concept drift: definitions and related work},
   author    = {Tsymbal, Alexey},
-  doi       = {10.1016/j.inffus.2006.11.002},
   journal   = {Computer Science Department, Trinity College Dublin},
+  volume    = {106},
   number    = {2},
   pages     = {58},
-  publisher = {Citeseer},
-  title     = {The problem of concept drift: definitions and related work},
-  volume    = {106},
-  year      = {2004}
+  year      = {2004},
+  publisher = {Citeseer}
 }
 
 @article{Ugarte2022procs,
@@ -2373,35 +2233,30 @@
 }
 
 @book{van2016data,
-  author    = {Van Der Aalst, Wil and van der Aalst, Wil},
-  doi       = {10.1007/978-3-662-49851-4_1},
-  publisher = {Springer},
   title     = {Data science in action},
-  year      = {2016}
+  author    = {Van Der Aalst, Wil and van der Aalst, Wil},
+  year      = {2016},
+  publisher = {Springer}
 }
-
 @inproceedings{van2019object,
+  title        = {Object-centric process mining: dealing with divergence and convergence in event data},
   author       = {van der Aalst, Wil MP},
   booktitle    = {Software Engineering and Formal Methods: 17th International Conference, SEFM 2019, Oslo, Norway, September 18--20, 2019, Proceedings 17},
-  doi          = {10.1007/978-3-030-30446-1_1},
-  organization = {Springer},
   pages        = {3--25},
-  title        = {Object-centric process mining: dealing with divergence and convergence in event data},
-  year         = {2019}
+  year         = {2019},
+  organization = {Springer}
 }
 
 @article{van2023object,
+  title     = {Object-centric process mining: unraveling the fabric of real processes},
   author    = {van der Aalst, Wil MP},
-  doi       = {10.3390/math11122691},
   journal   = {Mathematics},
+  volume    = {11},
   number    = {12},
   pages     = {2691},
-  publisher = {MDPI},
-  title     = {Object-centric process mining: unraveling the fabric of real processes},
-  volume    = {11},
-  year      = {2023}
+  year      = {2023},
+  publisher = {MDPI}
 }
-
 @article{vanderAalst2012,
   author  = {Wil van der Aalst},
   doi     = {10.1145/2240236.2240257},
@@ -2414,10 +2269,9 @@
 }
 
 @inproceedings{varga2001discrete,
+  title     = {Discrete event simulation system},
   author    = {Varga, Andr{\'a}s},
   booktitle = {Proc. of the European Simulation Multiconference (ESM’2001)},
-  doi       = {10.1109/13.804564},
-  title     = {Discrete event simulation system},
   volume    = {17},
   year      = {2001}
 }
@@ -2436,7 +2290,6 @@
 @inproceedings{vassiliadis2002conceptual,
   author    = {Vassiliadis, Panos and Simitsis, Alkis and Skiadopoulos, Spiros},
   booktitle = {Proceedings of the 5th ACM international workshop on Data Warehousing and OLAP},
-  doi       = {10.1145/583890.583893},
   pages     = {14--21},
   title     = {Conceptual modeling for ETL processes},
   year      = {2002}
@@ -2466,7 +2319,6 @@
 @book{Walden2015,
   address   = {Hoboken, NJ},
   author    = {Walden, David and Roedler, Garry and Forsberg, Kevin and Hamelin, Douglas and Shortell, Thomas},
-  doi       = {10.1002/inst.201013263},
   edition   = {4th},
   publisher = {John Wiley \& Sons, Inc.},
   title     = {Systems Engineering Handbook},
@@ -2494,7 +2346,6 @@
   volume  = {57},
   year    = {2020}
 }
-
 @article{Wang2021jmsy,
   author  = {Wang, Tian and Li, Jiakun and Kong, Zhaoning and Liu, Xin and Snoussi, Hichem and Lv, Hongqiang},
   doi     = {10.1016/j.jmsy.2020.07.011},
@@ -2553,7 +2404,6 @@
 @inproceedings{Wang2023clis,
   author    = {Wang, Ze and Ouyang, Yong and Kochan, Orest},
   booktitle = {7th International Conference on Computational Linguistics and Intelligent Systems},
-  doi       = {10.21203/rs.3.rs-633211/v1},
   title     = {Research On Virtual Monitoring Method Based On Digital Twin Smart Factory},
   year      = {2023}
 }
@@ -2643,15 +2493,14 @@
 }
 
 @article{wu2021digital,
+  title     = {Digital twin networks: A survey},
   author    = {Wu, Yiwen and Zhang, Ke and Zhang, Yan},
-  doi       = {10.1109/jiot.2021.3079510},
   journal   = {IEEE Internet of Things Journal},
+  volume    = {8},
   number    = {18},
   pages     = {13789--13804},
-  publisher = {IEEE},
-  title     = {Digital twin networks: A survey},
-  volume    = {8},
-  year      = {2021}
+  year      = {2021},
+  publisher = {IEEE}
 }
 
 @article{Wu2021promfg,
@@ -2793,7 +2642,6 @@
   volume  = {93},
   year    = {2020}
 }
-
 @article{Yilmaz2022jos,
   author  = {Yilmaz, Levent and Liu, Bo},
   doi     = {10.1080/17477778.2020.1821587},
@@ -2817,79 +2665,23 @@
 }
 
 @inproceedings{zehnder2018representing,
+  title        = {Representing industrial data streams in digital twins using semantic labeling},
   author       = {Zehnder, Philipp and Riemer, Dominik},
   booktitle    = {2018 IEEE International Conference on Big Data (Big Data)},
-  doi          = {10.1109/bigdata.2018.8622400},
-  organization = {IEEE},
   pages        = {4223--4226},
-  title        = {Representing industrial data streams in digital twins using semantic labeling},
-  year         = {2018}
+  year         = {2018},
+  organization = {IEEE}
 }
 
 @article{Zhang2021jmsy,
   author  = {Zhang, Lin and Zhou, Longfei and Horn, Berthold K.P.},
   doi     = {10.1016/j.jmsy.2021.02.009},
   journal = {Journal of Manufacturing Systems},
-  month   = {4},
+  month   = {apr},
   pages   = {151--164},
   title   = {Building a Right Digital Twin with Model Engineering},
   volume  = {59},
   year    = {2021}
-}
-@article{ignall1978using,
-  title={Using simulation to develop and validate analytic models: some case studies},
-  author={Ignall, Edward J and Kolesar, Peter and Walker, Warren E},
-  journal={Operations Research},
-  volume={26},
-  number={2},
-  pages={237--253},
-  year={1978},
-  publisher={INFORMS}
-}
-@inproceedings{sargent2010verification,
-  title={Verification and validation of simulation models},
-  author={Sargent, Robert G},
-  booktitle={Proceedings of the 2010 winter simulation conference},
-  pages={166--183},
-  year={2010},
-  organization={IEEE}
-}
-@article{volodina2021importance,
-  title={The importance of uncertainty quantification in model reproducibility},
-  author={Volodina, Victoria and Challenor, Peter},
-  journal={Philosophical Transactions of the Royal Society A},
-  volume={379},
-  number={2197},
-  pages={20200071},
-  year={2021},
-  publisher={The Royal Society Publishing}
-}
-@article{thelen2023comprehensive,
-  title={A comprehensive review of digital twin—part 2: roles of uncertainty quantification and optimization, a battery digital twin, and perspectives},
-  author={Thelen, Adam and Zhang, Xiaoge and Fink, Olga and Lu, Yan and Ghosh, Sayan and Youn, Byeng D and Todd, Michael D and Mahadevan, Sankaran and Hu, Chao and Hu, Zhen},
-  journal={Structural and multidisciplinary optimization},
-  volume={66},
-  number={1},
-  pages={1},
-  year={2023},
-  publisher={Springer}
-}
-@inproceedings{abdoune2022handling,
-  title={Handling uncertainties with and within digital twins},
-  author={Abdoune, Farah and Rifi, Leah and Fontanili, Franck and Cardin, Olivier},
-  booktitle={International Workshop on Service Orientation in Holonic and Multi-Agent Manufacturing},
-  pages={118--129},
-  year={2022},
-  organization={Springer}
-}
-
-@inproceedings{Demkovich2018def,
-  title={Multiscale modeling and simulation for industrial cyber-physical systems},
-  author={Demkovich, Natalia and Yablochnikov, Eugeny and Abaev, Grigory},
-  booktitle={2018 IEEE Industrial Cyber-Physical Systems (ICPS)},
-  pages={291--296},
-  year={2018},
-  organization={IEEE}
 }
 
 @article{Zhang2022ifac,
@@ -2934,6 +2726,7 @@
   year    = {2023}
 }
 
+
 @article{Zhang2023actamat,
   author  = {Zhang, Haijie and Liu, Xiaoshan and Ma, Dexin and Song, Min and Ludwig, Andreas and Kharicha, Abdellah and Wu, Menghuai},
   doi     = {10.1016/j.actamat.2022.118579},
@@ -2944,6 +2737,8 @@
   volume  = {244},
   year    = {2023}
 }
+
+
 
 @article{Zhang2023eswa,
   author  = {Zhang, Jiwei and Cui, Haoliang and Yang, Andy L. and Gu, Feng and Shi, Chengjie and Zhang, Wen and Niu, Shaozhang},
@@ -3002,22 +2797,22 @@
 
 @article{zhao2024data,
   author    = {Zhao, Yaoyao Fiona and Xie, Jiarui and Sun, Lijun},
-  doi       = {10.1016/j.eng.2024.04.024},
   journal   = {Engineering},
   publisher = {Elsevier},
   title     = {On the data quality and imbalance in machine learning-based design and manufacturing—A systematic review},
   year      = {2024}
 }
 
+
+
 @article{zheng2019application,
-  author    = {Zheng, Yu and Yang, Sen and Cheng, Huanchong},
-  doi       = {10.1007/s12652-018-0911-3},
-  journal   = {Journal of ambient intelligence and humanized computing},
-  pages     = {1141--1153},
-  publisher = {Springer},
   title     = {An application framework of digital twin and its case study},
+  author    = {Zheng, Yu and Yang, Sen and Cheng, Huanchong},
+  journal   = {Journal of ambient intelligence and humanized computing},
   volume    = {10},
-  year      = {2019}
+  pages     = {1141--1153},
+  year      = {2019},
+  publisher = {Springer}
 }
 
 @article{Zheng2020rcim,
