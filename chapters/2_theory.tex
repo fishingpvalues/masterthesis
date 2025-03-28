@@ -220,7 +220,7 @@ AMG stem largely stem from the DES discipline (\autoref{par:asmg:}), termed ASMG
   \item \textbf{Model Opacity:} ASMG models often use sophisticated machine learning algorithms like neural networks. Such black-box models are difficult to interpret, making it hard to understand their internal logic. This opacity may hinder VVUQ, as the modeller cannot easily identify errors or biases.
   \item \textbf{Data Dependency:} Data-driven models rely on high-quality data. If the data is biased or noisy, the model's predictions may be inaccurate.
   \item \textbf{Dynamic Model Adaptation:} Models that continuously learn and adapt, such as those employing online learning, require ongoing validation to ensure they remain valid as new data is ingested. This dynamic nature introduces the risk of concept drift \autocite{lu2018learning}, where the underlying process changes over time, potentially degrading model performance.
-  \item \textbf{Quantifying Uncertainty:} Data-driven models may be complex, involving many layers and parameters. Ensuring the model's stability and robustness is crucial for reliable VVUQ.
+  \item \textbf{Quantifying Uncertainty:} Predictions by ASMG models often come with uncertainty. Quantifying this uncertainty is crucial for decision-making, especially in safety-critical applications.
 \end{itemize}
 
 To assess these challenges, the thesis defines the following \textit{key requirements} for VVUQ of automatically generated models, especially SBDT:

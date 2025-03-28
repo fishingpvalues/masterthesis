@@ -52,6 +52,8 @@
 \usepackage{amssymb}
 \usepackage{nicefrac} % Compact slash fractions
 \usepackage{anyfontsize} % Allows any font size
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Microtypography & Page Layout 
@@ -65,13 +67,14 @@
 %% Table of Contents Customization (TOC)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tocloft}
-\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\contentsname}{\fontspec{Times New Roman}Contents}
 \setlength{\cftbeforechapskip}{1.5em}
 \renewcommand{\cftchapfont}{\fontspec{Times New Roman}\bfseries\Large}
 \renewcommand{\cftchappagefont}{\fontspec{Times New Roman}\bfseries\Large}
 \setlength{\cftchapnumwidth}{3em}
 \renewcommand{\cftchapleader}{\hfill\mbox{\rule[0.5ex]{1cm}{0.4pt}}}
 
+\renewcommand{\cfttoctitlefont}{\normalfont\Huge\bfseries\fontspec{Times New Roman}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsecfont}{\fontspec{Times New Roman}\normalfont\large}
 \renewcommand{\cftsecpagefont}{\fontspec{Times New Roman}\normalfont\large}
