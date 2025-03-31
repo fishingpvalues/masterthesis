@@ -220,7 +220,7 @@ AMG stem largely stem from the DES discipline (\autoref{par:asmg:}), termed ASMG
   \item \textbf{Model Opacity:} ASMG models often use sophisticated machine learning algorithms like neural networks. Such black-box models are difficult to interpret, making it hard to understand their internal logic. This opacity may hinder VVUQ, as the modeller cannot easily identify errors or biases.
   \item \textbf{Data Dependency:} Data-driven models rely on high-quality data. If the data is biased or noisy, the model's predictions may be inaccurate.
   \item \textbf{Dynamic Model Adaptation:} Models that continuously learn and adapt, such as those employing online learning, require ongoing validation to ensure they remain valid as new data is ingested. This dynamic nature introduces the risk of concept drift \autocite{lu2018learning}, where the underlying process changes over time, potentially degrading model performance.
-  \item \textbf{Quantifying Uncertainty:} Data-driven models may be complex, involving many layers and parameters. Ensuring the model's stability and robustness is crucial for reliable VVUQ.
+  \item \textbf{Quantifying Uncertainty:} Model predictions are stochastic in nature. For applications where precision is crucial, such as in manufacturing, uncertainty needs to be quantified.
 \end{itemize}
 
 To assess these challenges, the thesis defines the following \textit{key requirements} for VVUQ of automatically generated models, especially SBDT:
@@ -235,25 +235,47 @@ To assess these challenges, the thesis defines the following \textit{key require
 \end{itemize}
 
 As noted by \citeauthor{francis2021towards}, the lifecycle SBDT has implications for its VVUQ as well: VVUQ must accompany the SBDT in all phases, from conceptualization to deployment and operation. The key requirements outlined above provide a foundation for developing robust VVUQ processes for automatically generated models, ensuring their reliability and accuracy in real-world applications.
-% - Requirements specific to VVUQ in the context of automatically generated models (→ Reference to 3.1 and 7.2)
 
-\subsection{Machine Learning-Based Approaches}
+\subsection{Traditional versus Machine Learning-Based Approaches}
 \label{sec:ml-approaches}
-% Content goes here
-% - Classification methods for the detection of model deviations (→ Reference to 4.3)
-% - Challenges in data preparation and feature selection
-% - Discussion of previous ML approaches in the context of the V&V problem (→ Reference to 2.2 and 4.3)
 
-\subsection{VVUQ in the Context of Digital Twins}
+VVUQ can be performed using traditional methods or more sophisticated approaches. Traditional verification techniques may include code inspection, unit testing or debugging. SOURCES If closed solutions to simulated models are available, they may be used to validate the simulation. Traditional validation techniques involve comparisons between model predictions and real-world data, such as statistical tests or sensitivity analysis. In the context of manufacturing, simple experiments or historical data can be used. The consultation of experts is another possibility \parencite{shao2023credibility}.
+
+\subsubsection*{Machine Learning-Based VVUQ}
+
+Sophisticated approaches may include the use of machine learning (ML) techniques to enhance VVUQ processes. ML can be used to identify patterns in data, detect anomalies, and improve model predictions. In addition to supervised and unsupervised learning shortly introduced in \autoref{sec:data-driven-digital-twins}, semi-supervised learning and reinforcement learning are two other approaches. Supervised learning may be employed where labels regarding the validity or non-validity of an OCEL (see \autoref{sec:object-centric-event-logs}) are given. Unsupervised learning may provide such labels as learned categories if they are missing or may assist with finding common patterns in the data. Unsupervised techniques are context-agnostic and assume no patterns in the data, see \citeauthor{hastie2009unsupervised} for the reverse problem of encoding a priori information in unsupervised algorithms. Semi-supervised learning combines labeled and unlabeled data to improve model performance. It somehow forms a middle ground where lots of unlabelled data is available and is then grouped by the algorithm. The scarce data is then used in the holdout set to perform testing \parencite{learning2006semi}. Reinforcement learning is not commonly applied in VVUQ of SBDT.
+ML techniques are often referred to as "oracles" when used for VVUQ because of their key challenge of opacity \autoref{sec:requirements-automatically-generated-models}.
+
+\subsubsection*{Challenges in Data Preparation and Feature Selection}
+
+Before discussing the application of ML techniques in VVUQ, several problems hindering successful application of ML in VVUQ are identified. The first problem is data quality \parencite{wu2025uncertainty}. Data quality may degrade the performance and reliability of ML-based VVUQ approaches. Firstly, \textit{missing values} in the dataset can hinder the training process and potentially introduce biases. To account for this, imputation strategies or simply removing defect rows may be a solution \parencite{gudivada2017data}. The modeller has to keep in mind that this may corrupt the VVUQ process. Secondly \textit{outliers}, which are data points that deviate significantly from the rest, create a challenge as they might represent real trends in the data (and thus containing valuable edge cases for VVUQ) or simply be erroneous entries, requiring care of the modeller. Thirdly \textit{noise} can overblend the underlying patterns that ML algorithms aim to learn, reducing the accuracy and generalization ability of the VVUQ models \parencite{liu2020noise}. Such noise may be random, for example by measuring environmental influence, or systematic, for example emitted by erroneous sensors. The first kind of noise can be reduced by smooting or filtering.
+
+Inconsistent data is another mistake to avoid in data gathering. It may arise from deviations in formats, units or representations of the same information. It can lead to confusion for ML algorithms and require standardization and cleaning \parencite{mahanthappa2021data}. Duplicate data entries may also generate false trends in the data. Imbalance introduced by duplicates or measurement erros can bias the model in predicting only the majority class when a classification problem is at hand.
+Beyond data qualitiy, the modeller has to make sure that the data is representative and bias-free. The training data used for VVUQ models must accurately reflect the operational environment. Biases can arise through human intervention or environmental influence \parencite{liu2020noise}. Finally, the way data is split into training, testing, and validation sets is important for avoiding overfitting. Here, the model learns the training data too well and fails to generalize to unseen data, and for obtaining a reliable estimate of the model's performance on new data.
+
+After ensuring data quality, the modeller has to consider suitable features for the given problem. Features are columns in the dataset describing characteristics of the data points (rows) through values. OCEL provide a relatively strict feature set in which the modeller has to operate. This has the advantage that several of the upper challenges may be eliminated because the data can be exported through a standardized interface. Successful VVUQ methods may require additional features nontheless. Only the most relevant features may be selected \parencite{geron2022hands}. Feature engineering describes the endevour of creating new features through combining existing features or through a new data gathering process. The incorporation of features in model training is coined feature selection. In the given use case, an adaptive feature a feature selection based on twin components may be useful, see \autoref{sec:comparing-dmfs}.
+
+\subsubsection*{Classification Methods for the Detection of Model Deviations}
+
+Extensive work has been done on the topic of ML-based deviation detection. Such deviations are called "anomalies" and the process is termed "anomaly detection" \parencite{kharitonov2022comparative}. Anomalies are data points that deviate significantly from the majority of the data. They can be classified into three categories: point anomalies, contextual anomalies and collective anomalies \parencite{chandola2009anomaly}. Point anomalies are single data points that differ significantly from the rest of the dataset. Contextual anomalies are data points that are normal in one context but anomalous in another. They appear less detiative than point anomalies and have less statistical wheight. Collective anomalies are groups of data points that are anomalous when considered together but may not be anomalous individually. Anomalies are of special interest in the context of VVUQ, as they can indicate potential issues with the model or the data, see \autoref{sec:metrics}.
+
+Several algorithms exist to detect anomalies, including statistical methods, clustering-based methods, and supervised learning methods. If the data is sufficiently labelled and preprocessed, supervised methods are promising. Algorithms such as Support Vector Machines (SVM), Neural Networks (NN), Decision Trees, and Random Forests can learn from this labeled data to classify new model outputs or behaviors as either normal or deviative. However, a common challenge in anomaly detection scenarios is the issue of class imbalance, where instances of normal behavior are more common than the occurrences of deviations. This imbalance needs to be carefully addressed during model training to prevent the classifier from being biased towards the majority class. Clustering-based unsupervised methods detect anomalies through grouping similar data points together. Algorithms like K-Means, DBSCAN, and Hierarchical Clustering can be used to identify clusters of normal behavior, with anomalies being those points that do not belong to any cluster. They measure the distance between data points to cull anomalous points as reaching far outside of a group of common data points. Often times the assigned groups can be plotted, yielding further insights in the nature of the detected anomalies. Statistical methods, on the other hand, rely on the assumption that the data follows a certain distribution. They identify anomalies based on statistical properties such as mean, variance, and standard deviation  \parencite{chandola2009anomaly}.
+
+Anomaly detection and VVUQ share common goals of identifying deviations from expected behavior and ensuring the reliability of models. The two fields can benefit from each other, as VVUQ can provide a framework for evaluating the performance of anomaly detection algorithms, while anomaly detection techniques can enhance VVUQ processes by identifying potential issues in models or data.
+
+\subsection{Modern VVUQ in the Context of SBDT}
 \label{sec:vvuq-dt}
-% Manual vs. automated approaches
-% - Critical discussion of existing V&V definitions and methods (→ Reference back to 2.2)
-% - Challenges in the validation of automatically generated models
+% Connect the Dots: PM, PPC, OCED, DMFS, key requirements and challenges, framework by schwede fischer 2024 for DMFS
+% ML based VVUQ for AGM
+% ML based VVUQ for SBDT
+% ML based VVUQ for SBDT in the context of PM
+% 
 
-\subsection{VVUQ in Corporate Practice}
-\label{sec:vvuq-corporate-practice}
-% Content goes here
-% - V\&V as a continuous process (→ Reference to 4.5: Online validation)
+
+% Manual vs. automated approaches
+% - Challenges in the validation of automatically generated models
+% KNN model accreditation (→ Reference to 4.3)
+
 
 
 
