@@ -262,6 +262,26 @@ Extensive work has been done on the topic of ML-based deviation detection. Such 
 
 Several algorithms exist to detect anomalies, including statistical methods, clustering-based methods, and supervised learning methods. If the data is sufficiently labelled and preprocessed, supervised methods are promising. Algorithms such as Support Vector Machines (SVM), Neural Networks (NN), Decision Trees, and Random Forests can learn from this labeled data to classify new model outputs or behaviors as either normal or deviative. However, a common challenge in anomaly detection scenarios is the issue of class imbalance, where instances of normal behavior are more common than the occurrences of deviations. This imbalance needs to be carefully addressed during model training to prevent the classifier from being biased towards the majority class. Clustering-based unsupervised methods detect anomalies through grouping similar data points together. Algorithms like K-Means, DBSCAN, and Hierarchical Clustering can be used to identify clusters of normal behavior, with anomalies being those points that do not belong to any cluster. They measure the distance between data points to cull anomalous points as reaching far outside of a group of common data points. Often times the assigned groups can be plotted, yielding further insights in the nature of the detected anomalies. Statistical methods, on the other hand, rely on the assumption that the data follows a certain distribution. They identify anomalies based on statistical properties such as mean, variance, and standard deviation  \parencite{chandola2009anomaly}.
 
+
+\subsubsection*{Performance Metrics}
+\label{sec:metrics-theory}
+Accuracy, precision, recall, F1-score (classification metrics)
+MSE, MAE, MAPE (regression metrics)
+ROC curves and AUC
+Uncertainty quantification metrics (e.g., confidence intervals, prediction intervals)
+% Process-oriented metrics (throughput times, resource utilization) (→ Reference to 2.4)
+% Time-related metrics (start and end times, processing times)
+% Order-related metrics (completeness, sequence fidelity)
+% Derivation of metrics from V&V theory (→ Reference to 2.2)
+% MAE, MSE, Mean absolute percentage error (MAPE) for regression tasks (→ Reference to 6.3)
+% F1 Score, ROC AUC, and other classification metrics for model evaluation (→ Reference to 6.3)
+\subsubsection*{Bidirectional LSTM Networks for Sequence-Based Anomaly Detection}
+% TODO: Write section
+The basic structure of RNNs and LSTM networks
+How bidirectional LSTMs work and their advantages
+Why BiLSTMs are particularly suited for sequence-based anomaly detection
+Brief mention of their applications in time series analysis
+
 Anomaly detection and VVUQ share common goals of identifying deviations from expected behavior and ensuring the reliability of models. The two fields can benefit from each other, as VVUQ can provide a framework for evaluating the performance of anomaly detection algorithms, while anomaly detection techniques can enhance VVUQ processes by identifying potential issues in models or data.
 
 \subsection{Modern VVUQ in the Context of SBDT}
