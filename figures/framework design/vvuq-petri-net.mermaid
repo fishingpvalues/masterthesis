@@ -1,0 +1,87 @@
+stateDiagram-v2
+    direction LR
+    
+    %% Main States/Places
+    state "Physical Manufacturing System" as PhysicalSystem
+    state "Data Acquisition" as DataAcquisition
+    state "Data Preprocessing" as DataPreprocessing
+    state "Simulation Model" as SimulationModel
+    state "ResNet BiLSTM Network" as AnomalyNetwork
+    state "Model Validation" as ModelValidation
+    state "Uncertainty Quantification" as UQ
+    state "Alert Management" as AlertManagement
+    state "Decision Support" as DecisionSupport
+    state "Reporting & KPI Analysis" as Reporting
+    state "Model Retraining" as ModelRetraining
+    
+    %% Transitions/Flows
+    PhysicalSystem --> DataAcquisition: Real-time & Historical Data
+    DataAcquisition --> DataPreprocessing: Raw Data
+    
+    state fork_state <<fork>>
+    DataPreprocessing --> fork_state: Processed Data
+    fork_state --> SimulationModel
+    fork_state --> AnomalyNetwork
+    
+    SimulationModel --> ModelValidation: Simulated Outputs
+    AnomalyNetwork --> ModelValidation: Anomaly Scores
+    PhysicalSystem --> ModelValidation: Actual Process Data
+    
+    ModelValidation --> UQ: Validation Results
+    AnomalyNetwork --> UQ: Prediction Confidence
+    
+    state join_state <<join>>
+    ModelValidation --> join_state: Validation Metrics
+    UQ --> join_state: Uncertainty Bounds
+    
+    join_state --> AlertManagement: Validation Results with Uncertainty
+    
+    state decision_state <<choice>>
+    AlertManagement --> decision_state: Alert Classification
+    decision_state --> DecisionSupport: Critical Anomalies
+    decision_state --> Reporting: Normal Operation
+    
+    DecisionSupport --> PhysicalSystem: Corrective Actions
+    DecisionSupport --> Reporting: Intervention Records
+    
+    Reporting --> ModelRetraining: Performance Degradation Detected
+    ModelRetraining --> SimulationModel: Updated Simulation Model
+    ModelRetraining --> AnomalyNetwork: Retrained Neural Network
+    
+    %% Notes for clarity
+    note right of DataAcquisition
+        Collects data from:
+        - IoT sensors
+        - Manufacturing equipment
+        - MES/ERP systems
+        - CAD models
+    end note
+    
+    note right of DataPreprocessing
+        - Normalization
+        - Denoising
+        - Feature engineering
+        - Handling missing values
+    end note
+    
+    note right of AnomalyNetwork
+        ResNet BiLSTM architecture:
+        - Feature extraction (ResNet)
+        - Temporal pattern learning (BiLSTM)
+        - Anomaly score generation
+    end note
+    
+    note right of UQ
+        - Bayesian methods
+        - Monte Carlo simulations
+        - Ensemble approaches
+        - Confidence intervals
+    end note
+    
+    note right of ModelRetraining
+        Triggered by:
+        - Scheduled updates
+        - Model drift detection
+        - Process changes
+        - New labeled data
+    end note

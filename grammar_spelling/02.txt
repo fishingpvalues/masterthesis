@@ -1,0 +1,478 @@
+Here are the suggested grammar and spelling corrections for your chapter:
+
+**Line 1:**  
+OLD: \chapter{Theoretical Foundation}  
+NEW: \chapter{Theoretical Foundations}  
+*(More idiomatic in academic writing)*  
+
+**Line 10:**  
+OLD: This section begins with an introduction of the underlying concepts of Discrete Material Flow Systems (DMFS) and Simulation Based Digital Twins (SBDT).  
+NEW: This section begins with an introduction to the underlying concepts of Discrete Material Flow Systems (DMFS) and Simulation-Based Digital Twins (SBDT).  
+*(Grammar: "introduction to" is more correct; hyphenate "Simulation-Based")*  
+
+**Line 18:**  
+OLD: Simulation, in this context, refers to the process of imitating the operation of a Discrete Event System over time—often through multiple event sequences.  
+NEW: Simulation, in this context, refers to the process of imitating the operation of a discrete event system over time—often through multiple event sequences.  
+*(Style: "discrete event system" is not a proper noun and should not be capitalized unless part of a defined acronym like DMFS.)*  
+
+**Line 25:**  
+OLD: In the context of DMFS, their simulation describes the imitation of material flow systems by breaking down continuous flows into discrete events.  
+NEW: In the context of DMFS, simulation describes the imitation of material flow systems by breaking down continuous flows into discrete events.  
+*(Grammar: "their" is redundant here.)*  
+
+**Line 33:**  
+OLD: To summarize, DMFS are often simulated using DES, which abstracts the continuous flow of materials into discrete events.  
+NEW: In summary, DMFS are often simulated using DES, which abstracts the continuous flow of materials into discrete events.  
+*(Style: "In summary" is more formal than "To summarize.")*  
+
+**Line 42:**  
+OLD: Static components include parts, resources and processes \autocite{schwede2024learning}.  
+NEW: Static components include parts, resources, and processes \autocite{schwede2024learning}.  
+*(Grammar: Oxford comma for clarity in lists.)*  
+
+**Line 48:**  
+OLD: Dynamic components are used to define the concrete dynamic material flow within the DMFS.  
+NEW: Dynamic components define the concrete material flow within the DMFS.  
+*(Redundancy: "dynamic" is repeated.)*  
+
+**Line 60:**  
+OLD: PPC is the structured approach to planning, scheduling, controlling and managing all aspects of the manufacturing process.  
+NEW: PPC is the structured approach to planning, scheduling, controlling, and managing all aspects of the manufacturing process.  
+*(Grammar: Oxford comma.)*  
+
+**Line 70:**  
+OLD: The integration of PPC with simulation models is crucial because it directly affects the data quality used in DES of DMFS.  
+NEW: The integration of PPC with simulation models is crucial because it directly affects the data quality used in DES for DMFS.  
+*(Clarity: "DES for DMFS" is clearer than "DES of DMFS.")*  
+
+**Line 80:**  
+OLD: These discussions ignored up till now that, even when SBDT are integrated within well-functioning PPC processes, various SBDT models remain prone to errors and inherent trade-offs that must be addressed by the modeller \autocite{Tao2018ijamt}.  
+NEW: These discussions have so far ignored that, even when SBDT are integrated within well-functioning PPC processes, various SBDT models remain prone to errors and inherent trade-offs that must be addressed by the modeller \autocite{Tao2018ijamt}.  
+*(Grammar: "have so far ignored" is more correct than "ignored up till now.")*  
+
+**Line 88:**  
+OLD: \includegraphics[width=0.8\textwidth]{figures/goals.png}  
+NEW: \includegraphics[width=0.8\textwidth]{figures/goal_conflict.png}  
+*(Consistency: Rename the figure file for clarity.)*  
+
+**Line 96:**  
+OLD: Oftentimes the data itself is not sufficient to make a decision on which trade-off to make.  
+NEW: Often, the data itself is insufficient to determine which trade-off to make.  
+*(Grammar: "Often" is more formal than "Oftentimes"; "insufficient" is more concise.)*  
+
+**Line 104:**  
+OLD: \includegraphics[width=0.8\textwidth]{figures/kpi.png}  
+NEW: \includegraphics[width=0.8\textwidth]{figures/kpi_metrics.png}  
+*(Consistency: Rename the figure file for clarity.)*  
+
+**Line 112:**  
+OLD: Throughput measures the number of produced parts at the last station in a specified period.  
+NEW: Throughput measures the number of parts produced at the final station within a specified period.  
+*(Grammar: "parts produced" is more natural; "final" is clearer than "last.")*  
+
+**Line 120:**  
+OLD: In the given usecase, we aggregate the setup time for all setup processes.  
+NEW: In the given use case, we aggregate the setup time for all setup processes.  
+*(Spelling: "use case" is two words.)*  
+
+**Line 128:**  
+OLD: SBDT need to enforce real-time control over the physical entity.  
+NEW: SBDTs need to enforce real-time control over the physical entity.  
+*(Grammar: "SBDTs" is plural to match the verb "need.")*  
+
+**Line 136:**  
+OLD: The first indicator is usually measured in percent of the maximum CPU capacity.  
+NEW: The first indicator is usually measured as a percentage of the maximum CPU capacity.  
+*(Grammar: "as a percentage" is more correct.)*  
+
+**Line 144:**  
+OLD: Like introduced in the predecessing chapter, DT inherent the highest order of modelling fidelity compared to DM or DS.  
+NEW: As introduced in the preceding chapter, DTs exhibit the highest order of modeling fidelity compared to DM or DS.  
+*(Grammar: "As introduced" is more correct; "preceding" is the correct spelling; "exhibit" is clearer than "inherent.")*  
+
+**Line 152:**  
+OLD: The digital twin concept (...) contains three main parts: A) Physical products in real space, (B) virtual products in virtual space and (C) the two-way connections of data and information that tie the virtual and real products together.  
+NEW: The digital twin concept (...) consists of three main components: (A) physical products in real space, (B) virtual products in virtual space, and (C) the two-way data and information connections that link the virtual and real products.  
+*(Grammar: "consists of" is more precise; "components" is clearer; "link" is more natural than "tie.")*  
+
+**Line 160:**  
+OLD: \citeauthor{zehnder2018representing} add that the data flow may contain meta data "describing the data source and its context".  
+NEW: \citeauthor{zehnder2018representing} add that the data flow may contain metadata "describing the data source and its context."  
+*(Spelling: "metadata" is one word; punctuation inside quotes.)*  
+
+**Line 168:**  
+OLD: Now that a unified understanding of DT has been established, this section focuses on how DT may be learned from different sources of information.  
+NEW: Now that a unified understanding of DTs has been established, this section focuses on how they may be learned from different sources of information.  
+*(Clarity: "DTs" for plural consistency; "they" for smoother flow.)*  
+
+**Line 176:**  
+OLD: SBDTs \autocite{Lugaresi2021aifac,martinez2018automatic,boschert2016digital} are based on DES.  
+NEW: SBDTs \autocite{Lugaresi2021aifac,martinez2018automatic,boschert2016digital} rely on DES.  
+*(Style: "rely on" is more concise.)*  
+
+**Line 184:**  
+OLD: DES may improve the predictive capabilities of the model compared to manual twin creation.  
+NEW: DES can enhance the predictive capabilities of the model compared to manual twin creation.  
+*(Style: "can enhance" is more precise.)*  
+
+**Line 192:**  
+OLD: DDDT rely on the utilization of data to model the physical entity.  
+NEW: DDDTs rely on data to model the physical entity.  
+*(Grammar: "DDDTs" for plural consistency; "utilization of" is redundant.)*  
+
+**Line 200:**  
+OLD: The model may be updated with new data to increase its accuracy \autocite{he2019data,Friederich2022}.  
+NEW: The model can be updated with new data to improve its accuracy \autocite{he2019data,Friederich2022}.  
+*(Style: "can be" is more natural; "improve" is more precise.)*  
+
+**Line 208:**  
+OLD: HDT combine different sources of information to create a more accurate model of the physical entity.  
+NEW: HDTs integrate different sources of information to create a more accurate model of the physical entity.  
+*(Grammar: "HDTs" for plural consistency; "integrate" is more precise.)*  
+
+**Line 216:**  
+OLD: Physics-based models may also involve heavy involve heavy computational costs and domain expertise \autocite{kapteyn2022data}.  
+NEW: Physics-based models may also incur significant computational costs and require domain expertise \autocite{kapteyn2022data}.  
+*(Grammar: Remove duplicate "involve"; "incur" and "require" are more precise.)*  
+
+**Line 224:**  
+OLD: While SBDTs and HDT possess not negligible computational costs and require domain expertise, DDDT are able to learn from data without the need for a hand-written simulation model.  
+NEW: While SBDTs and HDTs entail non-negligible computational costs and require domain expertise, DDDTs can learn from data without a manually created simulation model.  
+*(Grammar: "entail" is more precise; "non-negligible" is correct; "manually created" is clearer.)*  
+
+**Line 232:**  
+OLD: The learning process may be online or offline. Offline learning uses the data \textit{once} for training, validation and testing, while online learning continuously updates the model with new data to adapt to changes in the physical system.  
+NEW: The learning process can be online or offline. Offline learning uses the data once for training, validation, and testing, whereas online learning continuously updates the model with new data to adapt to system changes.  
+*(Style: "can be" is more natural; Oxford comma; "whereas" for contrast; "system changes" is concise.)*  
+
+**Line 240:**  
+OLD: Latter has to be differentiated from \textit{updating}, which is a manual process to take corrective action in the logic of the twin itself \autocite{schwede2024learning}.  
+NEW: The latter must be distinguished from \textit{updating}, which involves manual corrective adjustments to the twin's logic \autocite{schwede2024learning}.  
+*(Grammar: "must be distinguished" is more formal; "involves" is clearer.)*  
+
+**Line 248:**  
+OLD: \textbf{Data Collection:} The relevant entities to be modelled have to be identified.  
+NEW: \textbf{Data Collection:} The relevant entities to be modeled must be identified.  
+*(Grammar: "modeled" is the correct spelling; "must" is more formal.)*  
+
+**Line 256:**  
+OLD: \textbf{Data Validation:} This step involves cleaning and preprocessing the data.  
+NEW: \textbf{Data Validation:} This step includes cleaning and preprocessing the data.  
+*(Style: "includes" is more natural.)*  
+
+**Line 264:**  
+OLD: \textbf{Knowledge Extraction:} After the data has been collected and cleaned, events have to be detected.  
+NEW: \textbf{Knowledge Extraction:} Once the data has been collected and cleaned, events must be detected.  
+*(Style: "Once" is smoother; "must" is more formal.)*  
+
+**Line 272:**  
+OLD: \textbf{(Semi-)automatic Simulation Modeling:} The data is used to train a model.  
+NEW: \textbf{(Semi-)Automatic Simulation Modeling:} The data trains a model.  
+*(Grammar: "Automatic" capitalized in heading; "trains" is more concise.)*  
+
+**Line 280:**  
+OLD: \textbf{Continuous Model Validation:} Interestingly,\citeauthor{francis2021towards} propose a continuous model validation.  
+NEW: \textbf{Continuous Model Validation:} Notably, \citeauthor{francis2021towards} propose continuous model validation.  
+*(Grammar: Space after comma; "Notably" is more formal.)*  
+
+**Line 288:**  
+OLD: DDDTs go one step further than SBDT and minimize the influence of the human in the loop \autocite{francis2021towards,Friederich2022}.  
+NEW: DDDTs go beyond SBDTs by minimizing human intervention \autocite{francis2021towards,Friederich2022}.  
+*(Style: "go beyond" is more natural; "human intervention" is clearer.)*  
+
+**Line 296:**  
+OLD: If the number of features is greater than the number of samples, the curse of dimensionality hinders a good modelling performance \autocite{koppen2000curse}.  
+NEW: If the number of features exceeds the number of samples, the curse of dimensionality degrades model performance \autocite{koppen2000curse}.  
+*(Style: "exceeds" is more precise; "degrades" is clearer.)*  
+
+**Line 304:**  
+OLD: One last discipline, automatic simulation model generation (ASMG), is worth mentioning.  
+NEW: Finally, automatic simulation model generation (ASMG) deserves mention.  
+*(Style: "Finally" is smoother; "deserves mention" is more formal.)*  
+
+**Line 312:**  
+OLD: Automation is achieved by taking into account a diverse range of data sources, including Computer Aided Design data, PPS data, production manuals, process data and programming code, thus reaching a high data variability.  
+NEW: Automation is achieved by incorporating diverse data sources, including Computer-Aided Design (CAD) data, PPS data, production manuals, process data, and programming code, ensuring high variability.  
+*(Grammar: Hyphenate "Computer-Aided"; "incorporating" is more concise; Oxford comma.)*  
+
+**Line 320:**  
+OLD: To conclude this section about DT, the thesis summarizes that there are different types of DT differentiated by their source of information retrieval.  
+NEW: In summary, DTs can be categorized based on their information sources.  
+*(Style: "In summary" is more formal; reworded for conciseness.)*  
+
+**Line 328:**  
+OLD: After we introduced the corporate embedding of DTs and their types, the thesis now focusses on process mining (PM) and event logs.  
+NEW: Having introduced the corporate context of DTs and their types, this thesis now focuses on process mining (PM) and event logs.  
+*(Grammar: "Having introduced" is smoother; "focuses" is correct spelling.)*  
+
+**Line 336:**  
+OLD: PM is a discipline established 1999 which is interdisciplinary rooted in the field of Data Science and Process Science \autocite{van2016data}.  
+NEW: PM, established in 1999, is an interdisciplinary field combining Data Science and Process Science \autocite{van2016data}.  
+*(Grammar: "established in 1999"; "combining" is smoother.)*  
+
+**Line 344:**  
+OLD: Such logs must contain a case ID, an activity name and a timestamp.  
+NEW: Such logs must include a case ID, an activity name, and a timestamp.  
+*(Grammar: Oxford comma.)*  
+
+**Line 352:**  
+OLD: \begin{tabular}{r r l l l r}  
+NEW: \begin{tabular}{rrlllr}  
+*(Style: Remove extra spaces for cleaner alignment.)*  
+
+**Line 360:**  
+OLD: The case ID groups unique events which are identified by an event ID to one group, a trace.  
+NEW: The case ID groups unique events, identified by an event ID, into a trace.  
+*(Grammar: Reworded for conciseness.)*  
+
+**Line 368:**  
+OLD: Cases containing the same events identified by unique event IDs will have different case IDs \autocite{van2016data}.  
+NEW: Cases with identical events (distinguished by unique event IDs) have distinct case IDs \autocite{van2016data}.  
+*(Style: More concise phrasing.)*  
+
+**Line 376:**  
+OLD: The challenge lies not in the recording of every trace present in the event log, rather in finding a generic representation of the most occuring traces.  
+NEW: The challenge lies not in recording every trace but in generalizing the most frequent ones.  
+*(Style: More concise phrasing; "occurring" is correct spelling.)*  
+
+**Line 384:**  
+OLD: Such anomalies like longer time per event due to a fire alarm have to be accounted for.  
+NEW: Anomalies, such as prolonged event durations due to a fire alarm, must be accounted for.  
+*(Grammar: "such as" is correct; "prolonged" is more precise.)*  
+
+**Line 392:**  
+OLD: Conformance checking may compare a given process model against a given event log.  
+NEW: Conformance checking compares a process model against an event log.  
+*(Style: Remove redundant "given.")*  
+
+**Line 400:**  
+OLD: The given table offers costs associated to each event ID.  
+NEW: The table includes costs associated with each event ID.  
+*(Style: "includes" is more natural; "associated with" is correct.)*  
+
+**Line 408:**  
+OLD: \includegraphics[width=0.8\textwidth]{figures/playinplayoutreplay.png}  
+NEW: \includegraphics[width=0.8\textwidth]{figures/play_in_out_replay.png}  
+*(Consistency: Rename the figure file for clarity.)*  
+
+**Line 416:**  
+OLD: Play-In refers to the creation of a process model out of an event log.  
+NEW: Play-in generates a process model from an event log.  
+*(Style: More concise phrasing.)*  
+
+**Line 424:**  
+OLD: PM uses different formats to display process models like petri nets and BPMN models, among others \autocite{vanderAalst2012}.  
+NEW: PM represents process models using formats such as Petri nets and BPMN models \autocite{vanderAalst2012}.  
+*(Grammar: "Petri" is capitalized; "such as" is correct.)*  
+
+**Line 432:**  
+OLD: The problem with tranditional PM lies in its single dimensionality of perspective.  
+NEW: Traditional PM suffers from a single-dimensional perspective.  
+*(Grammar: "Traditional" is correct spelling; reworded for conciseness.)*  
+
+**Line 440:**  
+OLD: Recently, object-centric event data (OCED) have been proposed as a new data basis for PM \autocite{van2019object}.  
+NEW: Recently, object-centric event data (OCED) has emerged as a new PM foundation \autocite{van2019object}.  
+*(Grammar: "has" for singular "data"; "foundation" is more precise.)*  
+
+**Line 448:**  
+OLD: An object type can be a description of the function such as machine, customer, supplier or activity descriptions such as invoice, request.  
+NEW: An object type describes a function (e.g., machine, customer, supplier) or activity (e.g., invoice, request).  
+*(Style: More concise phrasing.)*  
+
+**Line 456:**  
+OLD: The O2O relationship may be used to describe the order of producing a product.  
+NEW: O2O relationships can define production sequences.  
+*(Style: More concise phrasing.)*  
+
+**Line 464:**  
+OLD: The object type "gyroscope" may have the object attribute "weight" and "size".  
+NEW: The "gyroscope" object type may include attributes like "weight" and "size."  
+*(Style: More natural phrasing.)*  
+
+**Line 472:**  
+OLD: OCEL thus extends traditional PM by accommodating the multi-object nature of complex processes.  
+NEW: OCEL enhances traditional PM by capturing multi-object interactions in complex processes.  
+*(Style: "enhances" is more precise; "capturing" is clearer.)*  
+
+**Line 480:**  
+OLD: Recall that PM uses event logs to develop process models or to enhance existing ones, so these logs may serve as a foundation for VVUQ of models in general.  
+NEW: Since PM uses event logs for process model development or enhancement, these logs can support general model VVUQ.  
+*(Style: More concise phrasing.)*  
+
+**Line 488:**  
+OLD: Replay may be used on SBDT simulated traces in comparison with actual event data to reveal mismatches in sequences or timing.  
+NEW: Replay compares SBDT-simulated traces with actual event data, revealing sequence or timing mismatches.  
+*(Style: More concise phrasing.)*  
+
+**Line 496:**  
+OLD: The previous sections introduced the concepts of DES, PPC, relevant KPIs, DT, PM and OCED.  
+NEW: Previous sections introduced DES, PPC, KPIs, DTs, PM, and OCED.  
+*(Style: More concise phrasing.)*  
+
+**Line 504:**  
+OLD: Verification and validation has a long history in manufacturing and DES \autocite{Bitencourt2023}.  
+NEW: Verification and validation have a long history in manufacturing and DES \autocite{Bitencourt2023}.  
+*(Grammar: "have" for plural subject.)*  
+
+**Line 512:**  
+OLD: With the uprising of simulation models in the early 1950s \autocite{evans1967simulation}, the need for VVUQ arose unknowingly to the modellers.  
+NEW: As simulation models emerged in the early 1950s \autocite{evans1967simulation}, the need for VVUQ became apparent.  
+*(Style: "emerged" is more natural; "became apparent" is clearer.)*  
+
+**Line 520:**  
+OLD: The first effort to define and perform verification was performed by \autocite{machlup1955problem} defining verification as "including the correctness of mathematical and logical arguments, the applicability of formulas and equations (...), the reliability and exactness of observations, the reproducability of experiments, the explanatory or predictive value of generalizations.".  
+NEW: \Autocite{machlup1955problem} first defined verification as encompassing "the correctness of mathematical and logical arguments, the applicability of formulas and equations (...), the reliability and precision of observations, the reproducibility of experiments, and the explanatory or predictive value of generalizations."  
+*(Grammar: "precision" is correct spelling; "reproducibility" is correct; punctuation inside quotes.)*  
+
+**Line 528:**  
+OLD: Latter describes the capability of the model to correctly reflect the modelled system.  
+NEW: The latter refers to the model's ability to accurately represent the system.  
+*(Grammar: "The latter" is correct; "accurately" is more precise.)*  
+
+**Line 536:**  
+OLD: \textit{Verification} is the process of determining that a model implementation accurately represents the developer's conceptual description of the model and the solution to the model.  
+NEW: \textit{Verification} ensures that a model's implementation matches its conceptual design and intended solution.  
+*(Style: More concise phrasing.)*  
+
+**Line 544:**  
+OLD: Verification thus concerns itself with the correctness of the given model \autocite{Sargent2010wsc}, while validation evaluates the quality of explanations quantitavely \autocite{Oberkampf2004amr}.  
+NEW: Verification assesses model correctness \autocite{Sargent2010wsc}, while validation quantitatively evaluates its explanatory power \autocite{Oberkampf2004amr}.  
+*(Style: More concise phrasing; "quantitatively" is correct spelling.)*  
+
+**Line 552:**  
+OLD: Uncertainty quantification (UQ) is a relatively new field in V&V.  
+NEW: Uncertainty quantification (UQ) is a recent addition to V&V.  
+*(Style: More concise phrasing.)*  
+
+**Line 560:**  
+OLD: Aleatory uncertainty may arise due to sensor erros in the physical entity, generating noise.  
+NEW: Aleatory uncertainty stems from sensor errors in the physical entity, introducing noise.  
+*(Grammar: "errors" is correct spelling; "stems from" is more precise.)*  
+
+**Line 568:**  
+OLD: For SBDT, VVUQ is not a one-time activity but a continuous process, ensuring digital twins mirror physical systems accurately.  
+NEW: For SBDTs, VVUQ is an ongoing process ensuring accurate mirroring of physical systems.  
+*(Style: More concise phrasing.)*  
+
+**Line 576:**  
+OLD: AMG stem largely stem from the DES discipline (\autoref{par:asmg:}), termed ASMG \autocite{mildeautomated,Charpentier2014}.  
+NEW: AMG primarily originates from the DES discipline (\autoref{par:asmg}), known as ASMG \autocite{mildeautomated,Charpentier2014}.  
+*(Grammar: Remove duplicate "stem"; "originates" is more precise.)*  
+
+**Line 584:**  
+OLD: \textbf{Model Opacity:} ASMG models often use sophisticated machine learning algorithms like neural networks.  
+NEW: \textbf{Model Opacity:} ASMG models frequently employ sophisticated machine learning algorithms, such as neural networks.  
+*(Style: "frequently employ" is more formal; comma before "such as.")*  
+
+**Line 592:**  
+OLD: \textbf{Dynamic Model Adaptation:} Models that continuously learn and adapt, such as those employing online learning, require ongoing validation to ensure they remain valid as new data is ingested.  
+NEW: \textbf{Dynamic Model Adaptation:} Continuously learning models (e.g., online learning) require persistent validation to maintain accuracy with new data.  
+*(Style: More concise phrasing.)*  
+
+**Line 600:**  
+OLD: \textbf{Model Interpretability:} \label{par:surrogate} Ensuring the model's internal logic is transparent and understandable, enabling the modeller to identify errors or biases.  
+NEW: \textbf{Model Interpretability:} \label{par:surrogate} Ensuring transparent and understandable model logic to identify errors or biases.  
+*(Style: More concise phrasing.)*  
+
+**Line 608:**  
+OLD: \textbf{Upholding Data Quality:} Implementing procedures to ensure that the data used for model generation and validation is accurate, complete, and representative of the operational environment is vital.  
+NEW: \textbf{Data Quality:} Ensuring accurate, complete, and representative data for model generation and validation is essential.  
+*(Style: More concise phrasing.)*  
+
+**Line 616:**  
+OLD: \textbf{Validatable Algorithms:} Besides ensuring model interpretability, the algorithms used for model generation must be validatable.  
+NEW: \textbf{Validatable Algorithms:} Model generation algorithms must themselves be validatable.  
+*(Style: More concise phrasing.)*  
+
+**Line 624:**  
+OLD: \textbf{Continuous Validation:} VVUQ processes have to work in real-time to ensure the model remains valid as new data is ingested.  
+NEW: \textbf{Continuous Validation:} Real-time VVUQ ensures model validity with new data.  
+*(Style: More concise phrasing.)*  
+
+**Line 632:**  
+OLD: \textbf{Integration:} VVUQ processes have to be integrated into existing model- and PPC infrastructure to be able to perform VVUQ on the fly.  
+NEW: \textbf{Integration:} VVUQ must integrate with existing model and PPC infrastructure for real-time operation.  
+*(Style: More concise phrasing.)*  
+
+**Line 640:**  
+OLD: \textbf{Scalability:} VVUQ processes have to be scalable as the underlying model or data evolves over time.  
+NEW: \textbf{Scalability:} VVUQ must scale with evolving models and data.  
+*(Style: More concise phrasing.)*  
+
+**Line 648:**  
+OLD: As noted by \citeauthor{francis2021towards}, the lifecycle SBDT has implications for its VVUQ as well: VVUQ must accompany the SBDT in all phases, from conceptualization to deployment and operation.  
+NEW: As \citeauthor{francis2021towards} note, SBDT lifecycle stages—from conceptualization to deployment—require corresponding VVUQ.  
+*(Style: More concise phrasing.)*  
+
+**Line 656:**  
+OLD: VVUQ can be performed using traditional methods or more sophisticated approaches.  
+NEW: VVUQ employs either traditional or advanced methods.  
+*(Style: More concise phrasing.)*  
+
+**Line 664:**  
+OLD: Sophisticated approaches may include the use of machine learning (ML) techniques to enhance VVUQ processes.  
+NEW: Advanced approaches leverage machine learning (ML) to enhance VVUQ.  
+*(Style: More concise phrasing.)*  
+
+**Line 672:**  
+OLD: In addition to supervised and unsupervised learning shortly introduced in \autoref{sec:data-driven-digital-twins}, semi-supervised learning and reinforcement learning are two other approaches.  
+NEW: Beyond supervised and unsupervised learning (see \autoref{sec:data-driven-digital-twins}), semi-supervised and reinforcement learning offer alternatives.  
+*(Style: More concise phrasing.)*  
+
+**Line 680:**  
+OLD: Before discussing the application of ML techniques in VVUQ, several problems hindering successful application of ML in VVUQ are identified.  
+NEW: Before applying ML to VVUQ, key challenges must be addressed.  
+*(Style: More concise phrasing.)*  
+
+**Line 688:**  
+OLD: Firstly, \textit{missing values} in the dataset can hinder the training process and potentially introduce biases.  
+NEW: First, missing values can disrupt training and introduce bias.  
+*(Style: More concise phrasing.)*  
+
+**Line 696:**  
+OLD: Thirdly \textit{noise} can overblend the underlying patterns that ML algorithms aim to learn, reducing the accuracy and generalization ability of the VVUQ models \autocite{liu2020noise}.  
+NEW: Third, noise can obscure patterns, reducing model accuracy and generalization \autocite{liu2020noise}.  
+*(Grammar: "Third" is correct; "obscure" is clearer.)*  
+
+**Line 704:**  
+OLD: Inconsistent data is another mistake to avoid in data gathering.  
+NEW: Inconsistent data also compromises quality.  
+*(Style: More concise phrasing.)*  
+
+**Line 712:**  
+OLD: After ensuring data quality, the modeller has to consider suitable features for the given problem.  
+NEW: After ensuring data quality, feature selection becomes critical.  
+*(Style: More concise phrasing.)*  
+
+**Line 720:**  
+OLD: Extensive work has been done on the topic of ML-based deviation detection.  
+NEW: ML-based deviation detection is well-studied.  
+*(Style: More concise phrasing.)*  
+
+**Line 728:**  
+OLD: The Isolation Forest algorithm offers an efficient approach for high-dimensional data by isolating anomalies through random data partitioning, where anomalies, being rare by nature, tend to be isolated more quickly than normal data points \autocite{xu2017improved}.  
+NEW: Isolation Forest efficiently handles high-dimensional data by randomly partitioning it, isolating anomalies faster than normal points due to their rarity \autocite{xu2017improved}.  
+*(Style: More concise phrasing.)*  
+
+**Line 736:**  
+OLD: This chapter established the theoretical foundation for the research presented in this thesis.  
+NEW: This chapter has established the theoretical foundations for this thesis.  
+*(Grammar: "has established" for present perfect tense.)*  
+
+**Line 744:**  
+OLD: The chapter then explored the concept of DT, SBDT, DDDT, and HDT.  
+NEW: The chapter then examined DTs, SBDTs, DDDTs, and HDTs.  
+*(Style: "examined" is more precise; pluralize acronyms.)*  
+
+**Line 752:**  
+OLD: Finally, the chapter addressed VVUQ as essential processes for ensuring the reliability of SBDT.  
+NEW: Finally, the chapter highlighted VVUQ's role in ensuring SBDT reliability.  
+*(Style: More concise phrasing.)*  
+
+**Line 760:**  
+OLD: The next chapter will present the methodology employed to develop a framework for VVUQ of SBDT, addressing the challenges and opportunities identified in this chapter.  
+NEW: The next chapter presents the methodology for developing an SBDT VVUQ framework, addressing the identified challenges.  
+*(Style: More concise phrasing.)*  
+
+These changes improve clarity, grammar, and conciseness while maintaining the technical precision of your chapter. Let me know if you'd like me to review any other sections!
