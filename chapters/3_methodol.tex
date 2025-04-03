@@ -1,6 +1,6 @@
 \chapter{Framework Design}
 \label{chap:methodology}
-This chapter develops the methodological approach for automatically performing VVUQ for automatically generated SBDT in the manufacturing domain. The foundational methodology uses data-driven frameworks and applies ML tecniques to verify and validate the SBDT. The following chapter structure derives requirements besides the identified key requirements given in \autoref{sec:requirements-automatically-generated-models}, categorizes them and presents a conceptual blueprint. It is based on the theoretical findings from Chapter \ref{chap:theory} and designed to ensure that the VVUQ process is systematic, reproducible, and adaptable to different use cases.
+This chapter develops the methodological approach for automatically performing VVUQ for automatically generated SBDT in the manufacturing domain. The foundational methodology uses data-driven frameworks and applies ML techniques to verify and validate the SBDT. The following chapter structure derives requirements besides the identified key requirements given in \autoref{sec:requirements-automatically-generated-models}, categorizes them and presents a conceptual blueprint. It is based on the theoretical findings from Chapter \ref{chap:theory} and designed to ensure that the VVUQ process is systematic, reproducible, and adaptable to different use cases.
 
 \section{Requirements Engineering}
 A thorough analysis of the requirements for the proposed VVUQ framework is essential. \Autocite{sindhgatta2005functional} distinguishes between functional (FR, \autocite{van2001goal}) and non-functional requirements (NFR, \autocite{glinz2005rethinking}). Functional requirements define the specific functions and features that the system must provide, while non-functional requirements specify the quality attributes, constraints, and performance criteria that the system must meet. Additionally, technical requirements (TR) and operational requirements (OR) may also be considered. TR specifies the technical specifications of the system which are necessary to meet the functional requirements \autocite{chikh2012new}, while OR outlines the operational constraints and conditions under which the system must operate \autocite{incose2023incose}.
@@ -17,64 +17,11 @@ The following \autoref{fig:requirements} summarizes the key requirements identif
 
 Real-time data integration enables continuous synchronization between physical processes and the digital twin through real-time data streams. This is crucial for ensuring that the digital twin accurately reflects the current state of the physical system. The latency in this regard has to be minimized \autocite{li2018learning}. Of course, one FR has to be the Automatic VVUQ of the SBDT with its functional capabilities anomaly detection \autocite{pang2021deep}, uncertainty quantification \autocite{sel2025survey}, and adaptive recalibration to new physical states. The framework should also include an alarm management system that generates alerts and recommendations for action in the event of anomalies or validation errors. This is essential for ensuring that operators can respond quickly to potential issues and maintain the integrity of the system. The performance evaluation of the framework should be automated and include key performance indicators (KPIs) such as F1-Score, MAE, and synchronization accuracy see \autoref{sec:metrics}.
 
-The NFRs include dynamic scalability, which allows the framework to handle large amounts of data and complex models in real time \autocite{leskovec2020mining}. This is essential for ensuring that the system can adapt to changing conditions and requirements also defined by evolving technical requirements or new demands of the stateholders. The framework should also be robust against uncertainties, meaning it should be able to tolerate noise, incomplete data, and model uncertainties like concept drift. Security is another important NFR, as the framework must ensure the confidentiality and integrity of sensitive data. Interoperability with existing systems such as MES, ERP, and PLM systems is also crucial for successful integration into existing workflows. The user-friendliness of the framework is important for ensuring that operators can easily monitor real-time data, visualize anomalies, and understand uncertainty metrics. Finally, continuous learning capabilities are essential for enabling the anomaly detection network to adapt to changing processes over time.
+The NFRs include dynamic scalability, which allows the framework to handle large amounts of data and complex models in real time \autocite{leskovec2020mining}. This is essential for ensuring that the system can adapt to changing conditions and requirements also defined by evolving technical requirements or new demands of the stakeholders. The framework should also be robust against uncertainties, meaning it should be able to tolerate noise, incomplete data, and model uncertainties like concept drift. Security is another important NFR, as the framework must ensure the confidentiality and integrity of sensitive data. Interoperability with existing systems such as MES, ERP, and PLM systems is also crucial for successful integration into existing workflows. The user-friendliness of the framework is important for ensuring that operators can easily monitor real-time data, visualize anomalies, and understand uncertainty metrics. Finally, continuous learning capabilities are essential for enabling the anomaly detection network to adapt to changing processes over time.
 
-The TR includes a scalable architecture that can be deployed in cloud or edge environments to process real-time data streams. The framework should support heterogeneous data formats, including sensor data, CAD models, and IoT streams. The integration of the ResNet BiLSTM network into the data pipeline is essential for efficient anomaly detection. The framework should also include modules for uncertainty quantification, such as Monte Carlo simulations and Gaussian processes. Hardware requirements should be defined to ensure sufficient storage and computing capacity for deep learning and real-time processing. Finally, the framework should support protocols such as OPC UA, MQTT, and RESTful APIs for system integration. Several data sources and stewardship are required to ensure the quality of the data used for VVUQ. This includes real-time data streams, historical data for training and baseline comparisons, metadata for context information, labeled anomaly datasets for training the ResNet BiLSTM network, and data quality standards for noise filtering, consistency checking, and gap handling.
+The TR includes a scalable architecture that can be deployed in cloud or edge environments to process real-time data streams. The framework should support heterogeneous data formats, including sensor data, CAD models, and IoT streams. The integration of the ResNet BiLSTM network into the data pipeline is essential for efficient anomaly detection. The framework should also include modules for uncertainty quantification, such as Monte Carlo simulations and Gaussian processes. Hardware requirements should be defined to ensure sufficient storage and computing capacity for deep learning and real-time processing. Finally, the framework should support protocols such as OPC UA, MQTT, and RESTful APIs for system integration. Several data sources and stewardship are required to ensure the quality of the data used for VVUQ. This includes real-time data streams, historical data for training and baseline comparisons, metadata for context information, labelled anomaly datasets for training the ResNet BiLSTM network, and data quality standards for noise filtering, consistency checking, and gap handling.
 
 The OR incorporate several key aspects that ensure the effective operation of the framework. Data stewardship ensures that the data quality follows high standards throughout the whole process. Continuous monitoring, for example logging, maintenance procedures and a flexible runtime environment close the list of identified requirements.
-\begin{comment}
-### **1. Functional Requirements (FR) – Funktionale Anforderungen**
-**Ergänzungen aus dem Text:**
-- **Echtzeit-Datenintegration**: Kontinuierliche Synchronisation zwischen physischen Prozessen und dem digitalen Zwilling mittels Echtzeit-Datenströmen.
-- **Automatische Validierung/Verifikation**: Automatisierte VVUQ-Prozesse mit Online-Datenströmen zur Bewertung der Genauigkeit des digitalen Zwillings.
-- **Anomalieerkennung**: Integration eines ResNet BiLSTM-Netzwerks zur Erkennung von Abweichungen in Fertigungsprozessen.
-- **Unsicherheitsquantifizierung (UQ)**: Quantifizierung von Unsicherheiten in Modellvorhersagen und Anomaliescores (z. B. Bayesian-Methoden, Ensemble-Techniken).
-- **Adaptive Rekalibrierung**: Automatische Anpassung des digitalen Zwillings bei Modellabweichungen oder Prozessänderungen.
-- **Alarmmanagement**: Generierung von Warnungen und Handlungsempfehlungen bei Anomalien oder Validierungsfehlern.
-- **Leistungsbewertung**: Automatisierte Berichterstattung und KPIs (z. B. F1-Score, MAE, Synchronisationsgenauigkeit).
-
----
-
-### **2. Non-Functional Requirements (NFR) – Nicht-funktionale Anforderungen**
-**Ergänzungen aus dem Text:**
-- **Dynamische Skalierbarkeit**: Unterstützung großer Datenmengen und komplexer Modelle in Echtzeit (z. B. Sensordatenströme).
-- **Robustheit gegen Unsicherheiten**: Toleranz gegenüber Rauschen, unvollständigen Daten und Modellunsicherheiten.
-- **Sicherheit**: Verschlüsselung von Daten (in Transit und at Rest), Authentifizierungsmechanismen, regelmäßige Sicherheitsaudits.
-- **Interoperabilität**: Nahtlose Integration mit MES-, ERP- und PLM-Systemen sowie Legacy-Systemen.
-- **Benutzerfreundlichkeit**: Intuitives Dashboard für Echtzeit-Monitoring, Anomalievisualisierung und Unsicherheitsmetriken.
-- **Kontinuierliches Lernen**: Fähigkeit des Anomalieerkennungsnetzwerks, sich an sich ändernde Prozesse anzupassen (z. B. Transfer Learning).
-
----
-
-### **3. Technical Requirements (TR) – Technische Anforderungen**
-**Ergänzungen aus dem Text:**
-- **Skalierbare Architektur**: Cloud-/Edge-fähige Infrastruktur zur Verarbeitung von Echtzeitdatenströmen.
-- **Datenkompatibilität**: Unterstützung heterogener Datenformate (Sensordaten, CAD-Modelle, IoT-Streams).
-- **ResNet BiLSTM-Integration**: Effiziente Einbettung des Netzwerks in die Datenpipeline (z. B. TensorFlow/PyTorch).
-- **UQ-Module**: Implementierung von Unsicherheitsquantifizierungsmethoden (z. B. Monte-Carlo-Simulationen, Gauß-Prozesse).
-- **Hardware-Anforderungen**: Definierte Speicher- und Rechenkapazitäten für Deep Learning und Echtzeitverarbeitung.
-- **Protokolle**: Unterstützung von OPC UA, MQTT und RESTful APIs für die Systemintegration.
-DATA REQUIREMENTS
-- **Echtzeitdatenströme**: Kontinuierliche Erfassung von Sensordaten und IoT-Streams.
-- **Historische Daten**: Zugriff auf vergangene Betriebsdaten für Training und Baseline-Vergleiche.
-- **Metadaten**: Kontextinformationen (z. B. Maschinenspezifikationen, Prozessparameter).
-- **Labeldaten**: Gelabelte Anomaliedatensätze für das Training des ResNet BiLSTM-Netzwerks.
-- **Datenqualität**: Standards für Rauschfilterung, Konsistenzprüfung und Lückenbehandlung.
-
----
-
-### **4. Operational Requirements (OR) – Operative Anforderungen**
-**Ergänzungen aus dem Text:**
-- **Datenqualitätssicherung**: Vorverarbeitung (Normalisierung, Denoising) und Datenbereinigung vor der Analyse.
-- **Einhaltung von Standards**: DSGVO-konforme Speicherung, Datenschutzrichtlinien für sensible Fertigungsdaten.
-- **Kontinuierliche Wartung**: Regelmäßige Updates des Anomalieerkennungsmodells und des Frameworks.
-- **Fehlertoleranz**: Automatische Fehlererkennung und -behebung (z. B. bei Datenausfällen).
-- **Laufzeitumgebung**: Betrieb in hybriden Umgebungen (Cloud, On-Premise, Edge).
-- **Dokumentation**: Vollständige Protokollierung von Validierungsergebnissen, Anomalien und Framework-Status.
-- **Sicherheitsanforderungen**: Implementierung von Sicherheitsprotokollen zum Schutz sensibler Daten.
-- **Wartungsanforderungen**: Regelmäßige Überprüfung und Aktualisierung des Systems zur Gewährleistung der Sicherheit und Effizienz.
-
-\end{comment}
 
 \section{An Automated VVUQ Framework for Automatically Generated SBDTs}
 \label{sec:framework}
