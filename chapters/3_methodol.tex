@@ -22,74 +22,24 @@ The NFRs include dynamic scalability, which allows the framework to handle large
 The TR includes a scalable architecture that can be deployed in cloud or edge environments to process real-time data streams. The framework should support heterogeneous data formats, including sensor data, CAD models, and IoT streams. The integration of the ResNet BiLSTM network into the data pipeline is essential for efficient anomaly detection. The framework should also include modules for uncertainty quantification, such as Monte Carlo simulations and Gaussian processes. Hardware requirements should be defined to ensure sufficient storage and computing capacity for deep learning and real-time processing. Finally, the framework should support protocols such as OPC UA, MQTT, and RESTful APIs for system integration. Several data sources and stewardship are required to ensure the quality of the data used for VVUQ. This includes real-time data streams, historical data for training and baseline comparisons, metadata for context information, labeled anomaly datasets for training the ResNet BiLSTM network, and data quality standards for noise filtering, consistency checking, and gap handling.
 
 The OR incorporate several key aspects that ensure the effective operation of the framework. Data stewardship ensures that the data quality follows high standards throughout the whole process. Continuous monitoring, for example logging, maintenance procedures and a flexible runtime environment close the list of identified requirements.
-\begin{comment}
-### **1. Functional Requirements (FR) – Funktionale Anforderungen**
-**Ergänzungen aus dem Text:**
-- **Echtzeit-Datenintegration**: Kontinuierliche Synchronisation zwischen physischen Prozessen und dem digitalen Zwilling mittels Echtzeit-Datenströmen.
-- **Automatische Validierung/Verifikation**: Automatisierte VVUQ-Prozesse mit Online-Datenströmen zur Bewertung der Genauigkeit des digitalen Zwillings.
-- **Anomalieerkennung**: Integration eines ResNet BiLSTM-Netzwerks zur Erkennung von Abweichungen in Fertigungsprozessen.
-- **Unsicherheitsquantifizierung (UQ)**: Quantifizierung von Unsicherheiten in Modellvorhersagen und Anomaliescores (z. B. Bayesian-Methoden, Ensemble-Techniken).
-- **Adaptive Rekalibrierung**: Automatische Anpassung des digitalen Zwillings bei Modellabweichungen oder Prozessänderungen.
-- **Alarmmanagement**: Generierung von Warnungen und Handlungsempfehlungen bei Anomalien oder Validierungsfehlern.
-- **Leistungsbewertung**: Automatisierte Berichterstattung und KPIs (z. B. F1-Score, MAE, Synchronisationsgenauigkeit).
-
----
-
-### **2. Non-Functional Requirements (NFR) – Nicht-funktionale Anforderungen**
-**Ergänzungen aus dem Text:**
-- **Dynamische Skalierbarkeit**: Unterstützung großer Datenmengen und komplexer Modelle in Echtzeit (z. B. Sensordatenströme).
-- **Robustheit gegen Unsicherheiten**: Toleranz gegenüber Rauschen, unvollständigen Daten und Modellunsicherheiten.
-- **Sicherheit**: Verschlüsselung von Daten (in Transit und at Rest), Authentifizierungsmechanismen, regelmäßige Sicherheitsaudits.
-- **Interoperabilität**: Nahtlose Integration mit MES-, ERP- und PLM-Systemen sowie Legacy-Systemen.
-- **Benutzerfreundlichkeit**: Intuitives Dashboard für Echtzeit-Monitoring, Anomalievisualisierung und Unsicherheitsmetriken.
-- **Kontinuierliches Lernen**: Fähigkeit des Anomalieerkennungsnetzwerks, sich an sich ändernde Prozesse anzupassen (z. B. Transfer Learning).
-
----
-
-### **3. Technical Requirements (TR) – Technische Anforderungen**
-**Ergänzungen aus dem Text:**
-- **Skalierbare Architektur**: Cloud-/Edge-fähige Infrastruktur zur Verarbeitung von Echtzeitdatenströmen.
-- **Datenkompatibilität**: Unterstützung heterogener Datenformate (Sensordaten, CAD-Modelle, IoT-Streams).
-- **ResNet BiLSTM-Integration**: Effiziente Einbettung des Netzwerks in die Datenpipeline (z. B. TensorFlow/PyTorch).
-- **UQ-Module**: Implementierung von Unsicherheitsquantifizierungsmethoden (z. B. Monte-Carlo-Simulationen, Gauß-Prozesse).
-- **Hardware-Anforderungen**: Definierte Speicher- und Rechenkapazitäten für Deep Learning und Echtzeitverarbeitung.
-- **Protokolle**: Unterstützung von OPC UA, MQTT und RESTful APIs für die Systemintegration.
-DATA REQUIREMENTS
-- **Echtzeitdatenströme**: Kontinuierliche Erfassung von Sensordaten und IoT-Streams.
-- **Historische Daten**: Zugriff auf vergangene Betriebsdaten für Training und Baseline-Vergleiche.
-- **Metadaten**: Kontextinformationen (z. B. Maschinenspezifikationen, Prozessparameter).
-- **Labeldaten**: Gelabelte Anomaliedatensätze für das Training des ResNet BiLSTM-Netzwerks.
-- **Datenqualität**: Standards für Rauschfilterung, Konsistenzprüfung und Lückenbehandlung.
-
----
-
-### **4. Operational Requirements (OR) – Operative Anforderungen**
-**Ergänzungen aus dem Text:**
-- **Datenqualitätssicherung**: Vorverarbeitung (Normalisierung, Denoising) und Datenbereinigung vor der Analyse.
-- **Einhaltung von Standards**: DSGVO-konforme Speicherung, Datenschutzrichtlinien für sensible Fertigungsdaten.
-- **Kontinuierliche Wartung**: Regelmäßige Updates des Anomalieerkennungsmodells und des Frameworks.
-- **Fehlertoleranz**: Automatische Fehlererkennung und -behebung (z. B. bei Datenausfällen).
-- **Laufzeitumgebung**: Betrieb in hybriden Umgebungen (Cloud, On-Premise, Edge).
-- **Dokumentation**: Vollständige Protokollierung von Validierungsergebnissen, Anomalien und Framework-Status.
-- **Sicherheitsanforderungen**: Implementierung von Sicherheitsprotokollen zum Schutz sensibler Daten.
-- **Wartungsanforderungen**: Regelmäßige Überprüfung und Aktualisierung des Systems zur Gewährleistung der Sicherheit und Effizienz.
-
-\end{comment}
 
 \section{An Automated VVUQ Framework for Automatically Generated SBDTs}
 \label{sec:framework}
-% Overview of the framework design
-% Object-centric event logs as a basis for validation (→ Reference to 2.3)
-% Temporal data partitioning (training, validation, test)
-% Feature selection: identification of relevant features from event logs
-% Order reconstruction from process data
-% Preprocessing and Data Cleaning: Handling missing data, unifying part IDs, and filtering out irrelevant process steps (→ Reference to 6.1)
-% Methodical implementation of the theoretical V&V concepts (→ Reference to 2.2)
-% Simulation model for the generation of synthetic event logs
-% Classification-based deviation detection as a unified V&V approach (→ Reference to 2.2 and 3.3)
-% Feature Engineering: Creation of features such as "duration," "sequence_number," and periodic time features (e.g., "day_of_week_sin," "hour_of_day_cos") (→ Reference to 6.3)
-% Hyperparameter optimization and model selection
-% Clustering and Anomaly Detection: Use of KMeans clustering to identify patterns and anomalies in the data (→ Reference to 6.4)
+
+The following schematic shows the developed framework.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/framework.png}
+\caption{Framework for VVUQ of SBDT in the manufacturing domain. The framework starts with the data sources which all lead into the data lake. The data warehouse provides the Data Layer (DL) with different views. The DL further enriches the data to feed it into the Twin Layer (TL). The TL contains the DT and the physical entity. The TL is connected to the VVUQ Layer (VVUQL). It encorporates the ResNet BiLSTM network for VVUQ of the twin. It can trigger alarms and recommendations for action. The VVUQL is connected to the Decision Support Layer (DSL) which provides different data analysis and visualization tools. The DSL is responsible for the short-term decision making to manage the VVUQ process. The DSL is connected to the user interface (UI) which provides the user with a dashboard for monitoring and controlling the system. The DSL can request new data from the Data Sources. It also is connected to the Continuous Improvement Process layer (CIP) which is responsible for the long-term decision making.}
+\caption*{Source: Own illustration.}
+\label{fig:framework}
+
+The framework consists of five interconnected layers that form a closed-loop system with continuous data flow, validation and improvement. At the start, diverse data sources such as PPC systems, DES outputs, PM, expert knowledge, sensor networks, and CRM feedback provide the raw inputs, which are centralized in a data lake with structured views managed by a data warehouse. The data warehouse enriches the incoming data with engineering features. The DL collects and integrates this data, preprocesses it through cleaning, normalization and feature extraction. The DL performs a subset of the actions of the data warehouse, but tailors the data specifically for the SBDT. This structured approach meets real-time integration and quality requirements considered above.
+
+Within the TL, the physical entity and its SBDT are in connection through a bi-directional data flow that ensures real-time synchronization. Evidently this framework does not allow DS or DM, because the closed-loop structure would be interrupted here. Complementing this, the VVUQ Layer is dedicated to the automatic VVUQ processes. It ensures that the SBDT represents both the conceptual model and the physical entity, using advanced methods such as a ResNet Bi-LSTM Attention Model. This DL approach, which processes historical and real-time data, provides robust anomaly detection capabilities, triggers recalibration when necessary, and validates outputs against actual measurements, thus fulfilling adaptive recalibration and anomaly detection requirements.
+
+Translating these technical evaluations into corporate processes and recommendations is the role of the DSL. This layer synthesizes the VVUQ assessments into prioritized \textit{short-term} decision recommendations, monitors KPIs, identifies data gaps, and manages alerts. By serving as the interface between technical processes and operational decision-making, it ensures that manufacturing personnel receive insights. The CIP layer further enhances the system by monitoring performance, detecting concept drift, scheduling model retraining based on accumulated data, and generating KPI reports. The CIP layer manages \textit{long-term} feedback. Through an "Adapt Twin" process, this layer feeds insights back into the TL, ensuring that the digital twin evolves in connection with changes in the physical entity.
 
 \section{Online Validation and Continuous Feedback Loop}
 \label{sec:online-validation}
@@ -101,3 +51,5 @@ DATA REQUIREMENTS
 % Early detection of model deviations
 % Recommendations for action in the event of model drift
 % V&V as a continuous process
+The entire framework operates as a closed-loop system characterized by continuous data collection from diverse sources, real-time synchronization between physical and digital entities, ongoing validation of simulation outputs against physical measurements, and a systematic flow of decision recommendations and alerts. This architecture ensures interoperability by providing standardized interfaces between layers and existing manufacturing systems while maintaining the flexibility to adapt to various manufacturing contexts. The framework transforms VVUQ from a periodic technical assessment into an ongoing process that enhances digital twin fidelity and decision support capabilities. By meeting comprehensive functional, non-functional, technical, and operational requirements, this framework not only improves the accuracy and effectiveness of simulation-based digital twins but also facilitates their practical application as decision support tools in modern manufacturing environments.
+
