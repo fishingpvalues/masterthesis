@@ -29,11 +29,12 @@ The OR incorporate several key aspects that ensure the effective operation of th
 The following schematic shows the developed framework.
 
 \begin{figure}[htbp]
-\centering
-\includegraphics[width=0.8\textwidth]{figures/framework.png}
-\caption{Framework for VVUQ of SBDT in the manufacturing domain. The framework starts with the data sources which all lead into the data lake. The data warehouse provides the Data Layer (DL) with different views. The DL further enriches the data to feed it into the Twin Layer (TL). The TL contains the DT and the physical entity. The TL is connected to the VVUQ Layer (VVUQL). It encorporates the ResNet BiLSTM network for VVUQ of the twin. It can trigger alarms and recommendations for action. The VVUQL is connected to the Decision Support Layer (DSL) which provides different data analysis and visualization tools. The DSL is responsible for the short-term decision making to manage the VVUQ process. The DSL is connected to the user interface (UI) which provides the user with a dashboard for monitoring and controlling the system. The DSL can request new data from the Data Sources. It also is connected to the Continuous Improvement Process layer (CIP) which is responsible for the long-term decision making.}
-\caption*{Source: Own illustration.}
-\label{fig:framework}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/framework.png}
+  \caption{Framework for VVUQ of SBDT in the manufacturing domain. The framework starts with the data sources which all lead into the data lake. The data warehouse provides the Data Layer (DL) with different views. The DL further enriches the data to feed it into the Twin Layer (TL). The TL contains the DT and the physical entity. The TL is connected to the VVUQ Layer (VVUQL). It incorporates the ResNet BiLSTM network for VVUQ of the twin. It can trigger alarms and recommendations for action. The VVUQL is connected to the Decision Support Layer (DSL) which provides different data analysis and visualization tools. The DSL is responsible for the short-term decision making to manage the VVUQ process. The DSL is connected to the user interface (UI) which provides the user with a dashboard for monitoring and controlling the system. The DSL can request new data from the Data Sources. It also is connected to the Continuous Improvement Process layer (CIP) which is responsible for the long-term decision making.}
+  \caption*{Source: Own illustration.}
+  \label{fig:framework}
+\end{figure}
 
 The framework consists of five interconnected layers that form a closed-loop system with continuous data flow, validation and improvement. At the start, diverse data sources such as PPC systems, DES outputs, PM, expert knowledge, sensor networks, and CRM feedback provide the raw inputs, which are centralized in a data lake with structured views managed by a data warehouse. The data warehouse enriches the incoming data with engineering features. The DL collects and integrates this data, preprocesses it through cleaning, normalization and feature extraction. The DL performs a subset of the actions of the data warehouse, but tailors the data specifically for the SBDT. This structured approach meets real-time integration and quality requirements considered above.
 
@@ -43,13 +44,5 @@ Translating these technical evaluations into corporate processes and recommendat
 
 \section{Online Validation and Continuous Feedback Loop}
 \label{sec:online-validation}
-% Continuous monitoring of the SBDT in real-time
-% Integration of real-time data streams from the physical system
-% Feedback loop for continuous improvement of the SBDT
-% Continuous improvement process ISO 9001:2015 (→ Reference to 2.4)
-% Integration of feedback from operators and stakeholders
-% Early detection of model deviations
-% Recommendations for action in the event of model drift
-% V&V as a continuous process
-The entire framework operates as a closed-loop system characterized by continuous data collection from diverse sources, real-time synchronization between physical and digital entities, ongoing validation of simulation outputs against physical measurements, and a systematic flow of decision recommendations and alerts. This architecture ensures interoperability by providing standardized interfaces between layers and existing manufacturing systems while maintaining the flexibility to adapt to various manufacturing contexts. The framework transforms VVUQ from a periodic technical assessment into an ongoing process that enhances digital twin fidelity and decision support capabilities. By meeting comprehensive functional, non-functional, technical, and operational requirements, this framework not only improves the accuracy and effectiveness of simulation-based digital twins but also facilitates their practical application as decision support tools in modern manufacturing environments.
+The entire framework operates as a closed-loop system characterized by continuous data collection from diverse sources, real-time synchronization between physical and digital entities, ongoing validation of simulation outputs against physical measurements, and a systematic flow of decision recommendations and alerts. This architecture ensures interoperability by providing standardized interfaces between layers and existing manufacturing systems while maintaining the flexibility to adapt to various manufacturing contexts. The framework transforms VVUQ from a periodic technical assessment into an ongoing process that enhances DT quality and decision support capabilities. By meeting comprehensive functional, non-functional, technical, and operational requirements, this framework not only improves the accuracy and effectiveness of simulation-based digital twins but also facilitates their practical application as decision support tools in modern manufacturing environments. Stakeholder feedback and personnel suggestions are integrated into the framework through the DSL and CIP layers, ensuring that the system evolves in response to changing needs and conditions. This approach fosters a culture of continuous improvement and innovation, ultimately enhancing the overall performance and reliability of simulation-based digital twins in manufacturing.
 

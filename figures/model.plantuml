@@ -1,0 +1,105 @@
+@startuml
+' Diagram Title
+title xLSTM Model Architecture and Data Flow
+
+' Style suggestion (optional, makes it look a bit nicer)
+skinparam componentStyle rectangle
+skinparam nodeStyle rectangle
+skinparam rectangle {
+    RoundCorner 20
+}
+skinparam cloud {
+    RoundCorner 20
+}
+skinparam database {
+    RoundCorner 20
+}
+
+
+' 1. Data Input and Preprocessing
+database "Input DataFrame\n(final_data)" as InputDF
+rectangle "Time Feature Engineering\n(Add sin/cos day/hour features)" as FeatureEng
+rectangle "Select Features (12)\n& Target (is_valid)" as FeatureSelect
+
+InputDF --> FeatureEng
+FeatureEng --> FeatureSelect
+
+' 2. Dataset and DataLoader
+component "XLSTMDataset\n(Create sequences of length 19)" as Dataset
+component "DataLoader\n(Batching [size=32], Padding via collate_fn)" as Loader
+rectangle "Target Labels\n(Batch, 1)" as Targets
+
+FeatureSelect --> Dataset
+Dataset --> Loader : "(Sequence [19, 12], Target [1]) pairs"
+Loader --> Targets : "Batched Targets"
+
+' 3. The xLSTM Model - using frame for grouping
+frame "xLSTM Model (Input: Batch [Batch, 19, 12])" {
+    rectangle "Layer 1 (num_layers=1)" as LayerBlock {
+        rectangle "Bidirectional LSTM\n(hidden=512)" as BiLSTM
+        note right of BiLSTM : Output Shape:\n(Batch, 19, 1024)
+
+        rectangle "Multi-Head Self-Attention\n(heads=4, dim=1024)" as Attention
+        note right of Attention : Q, K, V from BiLSTM output
+
+        rectangle "LayerNorm" as LN
+
+        ' Residual Connection Path
+        rectangle "Residual Linear\n(1024 -> 1024)" as ResLinear
+        () "+" as AddNode
+        note left of AddNode : Add & ReLU\n(norm_output + residual_linear_output)
+
+        BiLSTM --> Attention : "(Seq dimension transposed for Attention)"
+        Attention --> LN : "(Seq dimension transposed back)"
+        
+        ' Explicitly show the split for residual
+        LN --> AddNode : "Identity Path"
+        LN --> ResLinear
+        ResLinear --> AddNode : "Residual Path"
+    }
+    
+    rectangle "Mean Aggregation\n(Average over sequence dim 1)" as MeanPool
+    note right of MeanPool : Output Shape:\n(Batch, 1024)
+
+    rectangle "FC Classifier Head" as FCHead {
+        rectangle "Linear (1024 -> 128)\n+ ReLU\n+ Dropout (0.3)" as FC1
+        rectangle "Linear (128 -> 1)" as FC2
+        FC1 -> FC2
+    }
+    note right of FCHead : Output Shape:\n(Batch, 1)
+
+    rectangle "Sigmoid Activation" as Sigmoid
+    rectangle "Output Probabilities\n(Batch, 1)" as OutputProbs
+
+
+    ' Model Internal Flow
+    AddNode --> MeanPool : "Output of Layer Block"
+    MeanPool --> FCHead
+    FCHead --> Sigmoid
+    Sigmoid --> OutputProbs
+}
+
+' Connecting Loader to Model Input
+Loader --> BiLSTM : "Batched Sequences [Batch, 19, 12]"
+
+
+' 4. Loss Calculation (Training)
+rectangle "BCELoss" as LossCalc
+note left of LossCalc : Binary Cross-Entropy
+
+OutputProbs --> LossCalc
+Targets --> LossCalc
+
+
+' 5. Evaluation (Testing/Validation)
+cloud "Evaluation Metrics\n(Accuracy @ Thr=0.9, ROC AUC)" as Eval
+
+OutputProbs --> Eval : "Model Probabilities"
+Targets --> Eval : "True Labels"
+
+
+' Explicit flow for clarity
+LossCalc ..> BiLSTM : "(Backpropagation during Training)" #line:dotted;line.color=red
+
+
+@enduml

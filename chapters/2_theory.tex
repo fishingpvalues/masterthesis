@@ -40,7 +40,7 @@ The goal conflict of the modeller when developing SBDT can be described by the f
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/goals.png}
+  \includegraphics[width=0.6\textwidth]{figures/goals.png}
   \caption{The goal conflict of the modeller when developing SBDT. Aiming for higher accuracy (validity) often leads to higher computational costs (efficiency) and reduced scalability (applicability). Reaching more efficiency often leads to reduced accuracy and scalability. Aiming for higher scalability often leads to reduced accuracy and efficiency.}
   \label{fig:goals}
 \end{figure}
@@ -57,6 +57,7 @@ One solution to balance and quantify these goals can be achieved by defining a s
   \label{fig:kpis}
 \end{figure}
 
+% TODO: Add KPI formulas
 The PPC related KPIs may be provided by above mentioned data warehouse, because they are highly relevant in the context of production scheduling and -control. Throughput measures the number of produced parts at the last station in a specified period. It is an indicator for the productivity of the manufacturing sytem \autocite{imseitif2019throughput}. Lead time is the cumulative time a part travels through the system from start to sink. It is an indicator for the efficiency of the manufacturing system \autocite{pfeiffer2016manufacturing}. Cycle time measures the same amount like lead time but focusses only on the active production process, excluding transports and waiting times \autocite{griffin1993metrics}. Setup time measures the time needed to prepare a machine for a new task. It is an indicator for the flexibility of the manufacturing system \autocite{allahverdi2008significance}. In the given usecase, we aggregate the setup time for all setup processes. All KPIs presented so far can be calculated dynamically when new data has been sent. Later on, they may serve as an alert system for the modeller to detect deviations between the SBDT and the DMFS, see \autoref{sec:vvuq-sbdt}.
 
 The infrastructure related KPIs are derived by sensors from the executing system of the SBDT. Ping time measures the time needed to send a signal from one point to another. It is an indicator for the latency of the infrastructure \autocite{wu2021digital}. SBDT need to enforce real-time control over the physical entity. The latency thus needs to be as low as possible. In this scenario, one point (sender) is represented by the physical entity and its sensors. The receiving point runs the SBDT. It is advantageous to run the SBDT on Edge to minmize latency- and transmission costs \autocite{li2018learning}. CPU-, memory-, disk- and network usage metrics are indicators for the load of the infrastructure. They are important to detect bottlenecks in the infrastructure \autocite{li2018learning}. The first indicator is usually measured in percent of the maximum CPU capacity. The latter three indicators are usually measured in bytes or bits per second \autocite{granelli2021evaluating}.
@@ -128,24 +129,24 @@ PM is a discipline established 1999 which is interdisciplinary rooted in the fie
   \resizebox{\textwidth}{!}{%
     \begin{tabular}{r r l l l r}
       \toprule
-      \textbf{Case id} & \textbf{Event id} & \textbf{Timestamp} & \textbf{Activity}     & \textbf{Resource} & \textbf{Cost} \\
+      \textbf{Case id} & \textbf{Event id} & \textbf{Timestamp} & \textbf{Activity}     & \textbf{Resource}  & \textbf{Cost} \\
       \midrule
-      1                & 101               & 10-01-2025:08.00   & receive raw material  & Warehouse A       & 500           \\
-                       & 102               & 10-01-2025:08.30   & initial quality check & Inspector Bob     & 300           \\
-                       & 103               & 10-01-2025:09.00   & cutting process       & Machine X         & 800           \\
-                       & 104               & 10-01-2025:09.45   & assembly              & Worker Alice      & 600           \\
-                       & 105               & 10-01-2025:10.30   & final inspection      & Inspector Eve     & 400           \\
+      1                & 101               & 10-01-2025:08.00   & receive raw material  & Warehouse A        & 500           \\
+                       & 102               & 10-01-2025:08.30   & initial quality check & Inspector Stefan   & 300           \\
+                       & 103               & 10-01-2025:09.00   & cutting process       & Machine X          & 800           \\
+                       & 104               & 10-01-2025:09.45   & assembly              & Worker Paul        & 600           \\
+                       & 105               & 10-01-2025:10.30   & final inspection      & Inspector Eva      & 400           \\
       \midrule
-      2                & 201               & 11-01-2025:07.45   & receive raw material  & Warehouse B       & 500           \\
-                       & 202               & 11-01-2025:08.15   & cutting process       & Machine Y         & 800           \\
-                       & 203               & 11-01-2025:09.00   & welding               & Robot Arm Z       & 700           \\
-                       & 204               & 11-01-2025:09.45   & quality assurance     & Inspector Dave    & 400           \\
+      2                & 201               & 11-01-2025:07.45   & receive raw material  & Warehouse B        & 500           \\
+                       & 202               & 11-01-2025:08.15   & cutting process       & Machine Y          & 800           \\
+                       & 203               & 11-01-2025:09.00   & welding               & Robot Arm Z        & 700           \\
+                       & 204               & 11-01-2025:09.45   & quality assurance     & Inspector David    & 400           \\
       \midrule
-      3                & 301               & 12-01-2025:06.30   & receive raw material  & Warehouse C       & 500           \\
-                       & 302               & 12-01-2025:07.00   & initial quality check & Inspector Judy    & 300           \\
-                       & 303               & 12-01-2025:07.30   & CNC machining         & Machine W         & 900           \\
-                       & 304               & 12-01-2025:08.15   & painting              & Worker Karl       & 500           \\
-                       & 305               & 12-01-2025:09.00   & packaging             & Worker Laura      & 350           \\
+      3                & 301               & 12-01-2025:06.30   & receive raw material  & Warehouse C        & 500           \\
+                       & 302               & 12-01-2025:07.00   & initial quality check & Inspector Claudius & 300           \\
+                       & 303               & 12-01-2025:07.30   & CNC machining         & Machine W          & 900           \\
+                       & 304               & 12-01-2025:08.15   & painting              & Worker Daniel      & 500           \\
+                       & 305               & 12-01-2025:09.00   & packaging             & Worker Johannes    & 350           \\
       \bottomrule
     \end{tabular}%
   }
@@ -166,15 +167,13 @@ Play-In refers to the creation of a process model out of an event log. Play-Out 
 
 PM uses different formats to display process models like petri nets and BPMN models, among others \autocite{vanderAalst2012}. The thesis at hand focusses on DDDT in the context of simulation. Such data-driven models often come as a black box, thus they can not be rendered by PM models.
 
-% Standards aus Will van der Aalst Buch beschreiben die hier einschlägig sind
-
 \subsection{Object-Centricness in Process Mining}
 \label{sec:object-centric-event-logs}
 
-The problem with tranditional PM lies in its single dimensionality of perspective. For each process question, a new play-out has to be performed. Interactions between different objects are not captured \autocite{van2023object}. One event may be related to different cases (convergence) or from the perspective of a case, there may be several equal activities within a case (divergence) \autocite{van2019object}.
+The problem with traditional PM lies in its single dimensionality of perspective. For each process question, a new play-out has to be performed. Interactions between different objects are not captured \autocite{van2023object}. One event may be related to different cases (convergence) or from the perspective of a case, there may be several equal activities within a case (divergence) \autocite{van2019object}.
 Recently, object-centric event data (OCED) have been proposed as a new data basis for PM \autocite{van2019object}. OCED logs (OCEL) are a generalization of classical event logs. Such traditional event logs use the case ID as a label to group and distringuish events. They assume that the process model describes the start and end of a single object. Each event refers to exactly one object (case) \autocite{van2023object}. OCED overthrows these assumptions by assuming that events may relate to multiple objects. To account for this new logic, OCEL coins the terms events, objects, types, attributes and qualifier. Each object has exactly one object type. Several objects may have the same type. An object type can be a description of the function such as machine, customer, supplier or activity descriptions such as invoice, request. Objects are instances of these types. Events in particular have an event type, termed activity. The same non-uniqueness applies here \textemdash many events can have the same type like "processing complaint", "cooking coffee". Each event is described by exactly one type. OCED assumes event atomicity; each event is indivisible. Each event has one timestamp. Compared to traditional PM, events may relate to multiple objects through a qualifier (E2O). Such a qualifier may be, considering the event "printing label" and object "printing station", the label to be printed. Objects may be related to multiple objects (O2O). O2O relationships are frozen (static) and are assumed to not change. The O2O relationship may be used to describe the order of producing a product. For example, the O2O relation "main pcb to gyroscope" may say that the main pcb has to be produced before the gyroscope. Another O2O relation can be an order, the connection between the customer object and the ordered product. It is worth mentioning that objects can also be related indirectly together through two E2O relations: The E2O relation "producing" may connect the event "machine 1 produces" with the object "gyroscope". The E2O relation "check" may connect the event "machine 1 checks" with the object "main pcb", thus connecting the two objects "gyroscope" and "main pcb" indirectly via two events \autocite{van2019object}. E2O relations are dynamic. They may change over time, involving different objects. In the given example, "main pcb" would be checked with "display" instead of "gyroscope".
 
-Events and objects have attributes (keys), posessing values. Event attribute values refer to exactly one event and one event attribute, they are not shared. For example, the cost for one event may have the value $10€$. The same logic applies to objects as well, one event attribuite value refers to exactly one object and one object attribute. Because several events may have the same type and several objects may have the same type as well, each event- or object type may refer to any number of event or object attributes. They open interpretative possibilities for the modeller by considering them as expected attributes for the event or object type. The given example may be the event type "producing" which may have the event attribute "duration" and "cost". The object type "gyroscope" may have the object attribute "weight" and "size". One may averag the different object attribute values of one type cluster to generate object type KPIs. A key specificity of object attribute values lies in the fact that they have a timestamp. Event attribute values do not. Latter information would be redudant because events to already have a timestamp, see above. Event attribute values may have cardinality one per event. $N$ event attributes have $n$ values. This does not apply to object attribute values. They may have multiple values because of their nature to change over time \autocite{van2023object}. This is why each object attribute value has a timestamp. The attribute value is in conclusion unique for a given object during a given time given one attribute. The given example may be the object attribute "weight" of the object "main pcb" which may change over time. The object attribute value "weight" may have the value $100g$ at time $t_1$ and $120g$ at time $t_2$.
+Events and objects have attributes (keys), possessing values. Event attribute values refer to exactly one event and one event attribute, they are not shared. For example, the cost for one event may have the value $10€$. The same logic applies to objects as well, one event attribuite value refers to exactly one object and one object attribute. Because several events may have the same type and several objects may have the same type as well, each event- or object type may refer to any number of event or object attributes. They open interpretative possibilities for the modeller by considering them as expected attributes for the event or object type. The given example may be the event type "producing" which may have the event attribute "duration" and "cost". The object type "gyroscope" may have the object attribute "weight" and "size". One may average the different object attribute values of one type cluster to generate object type KPIs. A key specificity of object attribute values lies in the fact that they have a timestamp. Event attribute values do not. Latter information would be redundant because events to already have a timestamp, see above. Event attribute values may have cardinality one per event. $N$ event attributes have $n$ values. This does not apply to object attribute values. They may have multiple values because of their nature to change over time \autocite{van2023object}. This is why each object attribute value has a timestamp. The attribute value is in conclusion unique for a given object during a given time given one attribute. The given example may be the object attribute "weight" of the object "main pcb" which may change over time. The object attribute value "weight" may have the value $100g$ at time $t_1$ and $120g$ at time $t_2$.
 
 OCEL thus extends traditional PM by accommodating the  multi-object nature of complex processes. Unlike classical event logs—which restrict events to a single case—OCEL captures dynamic interactions among multiple objects via E2O relations and static inter-object dependencies through O2O relations. This enriched framework enables a more comprehensive representation of real-world processes, where events may concurrently affect several objects. Timestamped object attribution values enable the modeller to perform temporal analysis and KPI derivation (\autoref{sec:relevant-kpis}). Overall, OCED provides a more detailed, semantically rich representation of complex, interconnected processes. \autocite{van2023object}.
 
@@ -262,19 +261,205 @@ Extensive work has been done on the topic of ML-based deviation detection. Such 
 
 Several algorithms exist to detect anomalies, including statistical methods, clustering-based methods, and supervised learning methods. If the data is sufficiently labelled and preprocessed, supervised methods are promising. Algorithms such as Support Vector Machines (SVM), Neural Networks (NN), Decision Trees, and Random Forests can learn from this labeled data to classify new model outputs or behaviors as either normal or deviative. However, a common challenge in anomaly detection scenarios is the issue of class imbalance, where instances of normal behavior are more common than the occurrences of deviations. This imbalance needs to be carefully addressed during model training to prevent the classifier from being biased towards the majority class. Clustering-based unsupervised methods detect anomalies through grouping similar data points together. Algorithms like K-Means, DBSCAN, and Hierarchical Clustering can be used to identify clusters of normal behavior, with anomalies being those points that do not belong to any cluster. They measure the distance between data points to cull anomalous points as reaching far outside of a group of common data points. Often times the assigned groups can be plotted, yielding further insights in the nature of the detected anomalies. Statistical methods, on the other hand, rely on the assumption that the data follows a certain distribution. They identify anomalies based on statistical properties such as mean, variance, and standard deviation  \parencite{chandola2009anomaly}.
 
-
 \subsubsection*{Performance Metrics}
 \label{sec:metrics-theory}
-Accuracy, precision, recall, F1-score (classification metrics)
-MSE, MAE, MAPE (regression metrics)
-ROC curves and AUC
-Uncertainty quantification metrics (e.g., confidence intervals, prediction intervals)
-% Process-oriented metrics (throughput times, resource utilization) (→ Reference to 2.4)
-% Time-related metrics (start and end times, processing times)
-% Order-related metrics (completeness, sequence fidelity)
-% Derivation of metrics from V&V theory (→ Reference to 2.2)
-% MAE, MSE, Mean absolute percentage error (MAPE) for regression tasks (→ Reference to 6.3)
-% F1 Score, ROC AUC, and other classification metrics for model evaluation (→ Reference to 6.3)
+Another important aspects of assessing model quality is through metrics. The following section introduces the most common metrics used in VVUQ of SBDT. The introduction is supported by an exemplary OCEL:
+
+\begin{table}[htbp]
+  \centering
+  \caption{A fragment of a manufacturing OCEL with type annotations. Each row represents an event with associated process execution details. The columns are annotated as follows: \texttt{process\_execution\_id} (int), \texttt{order\_id} (int), \texttt{start\_time} (datetime), \texttt{end\_time} (datetime), \texttt{part\_id} (int), \texttt{process\_type} (int), \texttt{process\_id} (int), \texttt{resource\_id} (int), and \texttt{is\_valid} (bool).}
+  \label{tab:exemplary-ocel}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{r r l l r r r r l}
+      \toprule
+      \textbf{process\_execution\_id} & \textbf{order\_id} & \textbf{start\_time} & \textbf{end\_time}  & \textbf{part\_id} & \textbf{process\_type} & \textbf{process\_id} & \textbf{resource\_id} & \textbf{is\_valid} \\
+      \midrule
+      0                               & 2529               & 2020-04-22 14:21:07  & 2020-04-22 14:21:31 & -1                & 0                      & 0                    & 0                     & True               \\
+      1                               & 2529               & 2020-04-22 14:23:35  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
+      2                               & 2529               & 2020-04-22 14:21:09  & 2020-04-22 14:21:33 & -1                & 0                      & 0                    & 0                     & True               \\
+      3                               & 2529               & 2020-04-22 14:23:36  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
+      4                               & 2529               & 2020-04-22 14:21:11  & 2020-04-22 14:21:35 & -1                & 0                      & 0                    & 0                     & True               \\
+      5                               & 2529               & 2020-04-22 14:23:36  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
+      6                               & 2529               & 2020-04-22 14:21:13  & 2020-04-22 14:21:37 & -1                & 0                      & 0                    & 0                     & True               \\
+      7                               & 2529               & 2020-04-22 14:23:36  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
+      8                               & 2529               & 2020-04-22 14:21:15  & 2020-04-22 14:21:39 & -1                & 0                      & 0                    & 0                     & True               \\
+      9                               & 2529               & 2020-04-22 14:23:37  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
+      10                              & 2529               & 2020-04-22 14:21:18  & 2020-04-22 14:21:41 & -1                & 0                      & 0                    & 0                     & True               \\
+      11                              & 2529               & 2020-04-22 14:23:37  & 2020-04-22 14:23:57 & -1                & 1                      & 1                    & 1                     & False              \\
+      12                              & 2529               & 2020-04-22 14:21:20  & 2020-04-22 14:21:44 & -1                & 0                      & 0                    & 0                     & False              \\
+      13                              & 2529               & 2020-04-22 14:23:37  & 2020-04-22 14:23:57 & -1                & 1                      & 1                    & 1                     & False              \\
+      14                              & 2529               & 2020-04-22 14:21:22  & 2020-04-22 14:21:46 & -1                & 0                      & 0                    & 0                     & False              \\
+      15                              & 2529               & 2020-04-22 14:23:38  & 2020-04-22 14:23:57 & -1                & 1                      & 1                    & 1                     & False              \\
+      \bottomrule
+    \end{tabular}%
+  }
+\end{table}
+
+\paragraph{\textbf{Accuracy}}
+Accuracy is a fundamental metric that quantifies the overall correctness of the classification model. It represents the ratio of correctly classified instances to the total number of instances in the dataset [Connolly2023, Grandini2020].
+
+
+\begin{equation}
+  \text{Accuracy} = \frac{\text{Number of Correct Predictions}}{\text{Total Number of Predictions}} = \frac{TP + TN}{TP + TN + FP + FN}
+\end{equation}
+where $TP$ denotes the count of true positives, $TN$ represents true negatives, $FP$ signifies false positives, and $FN$ indicates false negatives.
+
+This metric offers a high-level overview of the model's performance by indicating the proportion of predictions that align with the actual classes. While its simplicity makes it easily interpretable, accuracy can be a misleading metric when dealing with imbalanced datasets [Google, MDPI]. In manufacturing, where the occurrence of invalid processes might be significantly lower than valid ones, a high accuracy score could be achieved by a model that predominantly predicts the majority class, failing to effectively identify the critical minority class of invalid processes [Google]. Therefore, relying solely on accuracy might not provide a complete or accurate assessment of the model's utility in identifying process anomalies.
+
+\paragraph{\textbf{Precision}}
+Precision, also known as the positive predictive value, focuses on the quality of the positive predictions made by the model. It measures the proportion of instances that the model predicted as positive which were indeed positive.
+
+
+\begin{equation}
+  \text{Precision} = \frac{TP}{TP + FP}
+\end{equation}
+
+A high precision score signifies that when the model predicts a manufacturing process as 'invalid' (assuming 'invalid' is the positive class), it is highly likely to be genuinely invalid. This is particularly important in manufacturing quality control to minimize the occurrence of false alarms, which can lead to unnecessary interruptions in the production line and increased operational costs [Google]. A model with high precision ensures that interventions based on its predictions are more likely to be warranted, thereby enhancing the efficiency of the quality assurance process.
+
+\paragraph{\textbf{Sensitivity}}
+Recall, also referred to as sensitivity or the true positive rate (TPR), assesses the model's ability to identify all the actual positive instances within the dataset. It measures the proportion of actual positive instances that were correctly classified as positive by the model [Google, Iguazio].
+
+\begin{equation}
+  \text{Recall} = \frac{TP}{TP + FN}
+\end{equation}
+
+In the context of manufacturing, a high recall for the 'invalid' class is crucial for ensuring that the model effectively detects the majority of the truly invalid processes. Failing to identify an invalid process (a false negative) can have significant consequences, potentially leading to the production of defective goods that may incur costs related to rework, scrap, or customer dissatisfaction [Google]. Therefore, a model with high recall minimizes the risk of overlooking critical quality issues in the manufacturing process.
+
+\paragraph{\textbf{F1-Score}}
+The F1-score provides a balanced measure of the classification model's performance by calculating the harmonic mean of precision and recall. This metric is particularly useful when dealing with datasets that exhibit an imbalance in the class distribution.
+
+\begin{equation}
+  \text{F1-score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} = \frac{2TP}{2TP + FP + FN}
+\end{equation}
+
+By considering both the precision (the accuracy of positive predictions) and the recall (the ability to find all positive instances), the F1-score offers a single metric that summarizes the trade-off between these two important aspects of a classifier's performance. In the realm of manufacturing quality prediction, where achieving a balance between accurately identifying invalid processes and minimizing false alarms is often a key objective, the F1-score serves as a valuable tool for assessing the overall effectiveness of the ResNet Bi-LSTM Multihead attention network. It is especially beneficial when the costs associated with false positives and false negatives are relatively similar, or when a general measure of good performance across both precision and recall is desired.
+
+\paragraph{\textbf{Confusion Matrix}}
+A confusion matrix is a specific type of contingency table that provides a detailed breakdown of the performance of a classification model by displaying the counts of true positives, true negatives, false positives, and false negatives. For a binary classification problem, such as predicting whether a manufacturing process is valid or not, the confusion matrix typically takes the form of a 2x2 table [PulmonChronicles, Wikipedia].
+
+\begin{table}[h!]
+  \centering
+  \caption{Confusion Matrix for Binary Classification}
+  \label{tab:confusion_matrix}
+  \begin{tabular}{c|cc}
+    \toprule
+    \textbf{Actual Class} & \multicolumn{2}{c}{\textbf{Predicted Class}}                       \\
+                          & Positive (True)                              & Negative (False)    \\
+    \midrule
+    Positive (True)       & True Positive (TP)                           & False Negative (FN) \\
+    Negative (False)      & False Positive (FP)                          & True Negative (TN)  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+This matrix offers a granular view of the model's predictive behavior, allowing for a thorough analysis of the different types of errors it makes. True positives represent the cases where the model correctly predicted a positive outcome (e.g., an invalid process was correctly identified). True negatives indicate instances where the model correctly predicted a negative outcome (e.g., a valid process was correctly identified). False positives occur when the model incorrectly predicts a positive outcome for a negative instance (e.g., a valid process was wrongly flagged as invalid). Conversely, false negatives arise when the model incorrectly predicts a negative outcome for a positive instance (e.g., an invalid process was missed and classified as valid) [Wikipedia]. Analyzing the confusion matrix for the 'is\_valid' prediction in the context of manufacturing can reveal crucial information about the model's tendencies, such as whether it is more prone to generating false alarms or to missing actual defects, which has direct implications for the design and implementation of quality control strategies.
+
+Using the provided data, and the hypothetical predictions:
+\begin{verbatim}
+Actual is_valid: 
+Predicted is_valid:
+\end{verbatim}
+Assuming 'True' is the positive class, the confusion matrix would be:
+\begin{table}[h!]
+  \centering
+  \caption{Example Confusion Matrix for Provided Data}
+  \label{tab:example_confusion_matrix_data}
+  \begin{tabular}{c|cc}
+    \toprule
+    \textbf{Actual Class} & \multicolumn{2}{c}{\textbf{Predicted Class}}         \\
+                          & True                                         & False \\
+    \midrule
+    True                  & 8                                            & 2     \\
+    False                 & 1                                            & 1     \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Here, $TP=8$, $FN=2$, $FP=1$, $TN=1$.
+
+\paragraph{\textbf{Classification Report}}
+A classification report consolidates the performance evaluation of a classification model by presenting a summary of key metrics, including precision, recall, F1-score, and support, for each of the classes in the problem. The support indicates the number of actual occurrences of each class within the dataset [Kohli].
+
+\textbf{Example (based on the hypothetical predictions from the confusion matrix example):}
+\begin{verbatim}
+              precision    recall  f1-score   support
+
+       False       0.50      0.50      0.50         2
+        True       0.89      0.80      0.84        10
+
+    accuracy                           0.75        12
+   macro avg       0.69      0.65      0.67        12
+weighted avg       0.82      0.75      0.78        12
+\end{verbatim}
+
+This report offers a clear and concise overview of the model's effectiveness in classifying instances of each class. By providing class-specific precision, recall, and F1-scores, it allows for a more nuanced understanding of the model's performance, especially in scenarios where the classes are imbalanced or where the importance of accurate classification differs across classes [Kohli]. In the context of manufacturing process validity prediction, the classification report would detail how well the ResNet Bi-LSTM Multihead attention network performs in identifying both valid and invalid processes, providing valuable insights into its practical utility.
+
+While the primary focus based on the example data is on classification, the ResNet Bi-LSTM Multihead attention network might also be employed for regression tasks in manufacturing, such as predicting continuous variables like throughput times or resource utilization levels. In such scenarios, the following regression metrics are crucial for evaluating the model's predictive accuracy.
+
+\paragraph{\textbf{Mean Squared Error (MSE)}}
+Mean Squared Error (MSE) quantifies the average of the squared differences between the values predicted by the model and the actual observed values.
+
+\begin{equation}
+  \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\end{equation}
+where $y_i$ represents the actual value of the target variable for the $i$-th instance, $\hat{y}_i$ is the corresponding predicted value, and $n$ is the total number of data points in the dataset.
+
+MSE is a widely used metric that provides a measure of the overall prediction error. The squaring of the differences means that larger errors contribute more significantly to the final MSE value, making it particularly sensitive to outliers in the predictions. In the context of manufacturing, if the model were predicting throughput time, a high MSE would indicate that, on average, the squared difference between the predicted and actual throughput times is large, suggesting a lower accuracy in the model's predictions.
+
+\paragraph{\textbf{Mean Absolute Error (MAE)}}
+Mean Absolute Error (MAE) measures the average of the absolute differences between the predicted and actual values.
+
+\begin{equation}
+  \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+\end{equation}
+
+MAE offers a more direct and interpretable measure of the average magnitude of the errors in the model's predictions. Unlike MSE, MAE treats all errors equally, without giving disproportionate weight to larger errors. In manufacturing applications, such as predicting resource utilization, MAE would represent the average absolute percentage point difference between the model's predictions and the actual utilization rates, providing a clear indication of the typical size of the prediction errors.
+
+\paragraph{\textbf{Mean Absolute Percentage Error (MAPE)}}
+Mean Absolute Percentage Error (MAPE) calculates the average percentage error between the predicted and actual values.
+
+\begin{equation}
+  \text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100\%
+\end{equation}
+
+MAPE is particularly useful when the scale of the target variable varies, as it provides an error measure in relative terms. The percentage error is often easier to understand and communicate than absolute errors, especially in a business or operational context. For example, if the ResNet Bi-LSTM Multihead attention network were predicting the percentage of defective parts produced, MAPE would indicate the average percentage by which the model's predictions deviate from the actual defect rates, offering a valuable perspective on the model's performance in predicting proportional outcomes.
+
+\paragraph{\textbf{Performance Evaluation using ROC Curves and AUC}}
+For binary classification tasks, such as the prediction of 'is\_valid' status in manufacturing processes, Receiver Operating Characteristic (ROC) curves and the Area Under the Curve (AUC) provide a comprehensive evaluation of the model's performance.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        width=10cm, height=8cm,
+        xlabel={False Positive Rate (FPR)},
+        ylabel={True Positive Rate (TPR)},
+        grid=major,
+        xmin=0, xmax=1,
+        ymin=0, ymax=1,
+        axis lines=middle,
+        enlargelimits=false,
+        xtick={0,0.2,0.4,0.6,0.8,1},
+        ytick={0,0.2,0.4,0.6,0.8,1},
+        legend style={at={(1.05,0.5)}, anchor=west, draw=none, font=\small}
+      ]
+      % ROC Curve
+      \addplot[smooth, thick, blue] coordinates {
+          (0,0) (0.1,0.4) (0.2,0.6) (0.4,0.7) (0.6,0.85) (0.8,0.9) (1,1)
+        };
+      \addlegendentry{ROC Curve}
+
+      % Random classifier (diagonal line)
+      \addplot[dashed, red] coordinates {(0,0) (1,1)};
+      \addlegendentry{Random Classifier}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Example ROC Curve}
+  \label{fig:roc}
+\end{figure}
+
+An ROC curve is a graphical representation that plots the true positive rate (TPR or recall) against the false positive rate (FPR) at various classification thresholds. By examining the curve, one can visualize the trade-off between the model's sensitivity (its ability to correctly identify positive instances) and its specificity (its ability to correctly identify negative instances) across different decision points. The AUC metric quantifies the overall ability of the classifier to distinguish between the two classes. It represents the area under the ROC curve, with values ranging from 0 to 1. An AUC of 1 indicates a perfect classifier, while an AUC of 0.5 suggests a performance no better than random guessing. In the context of predicting 'is\_valid' in manufacturing, a higher AUC for the ResNet Bi-LSTM Multihead attention network would signify that the model is better at distinguishing between valid and invalid processes, regardless of the chosen classification threshold. This is particularly valuable when the class distribution is imbalanced, as ROC and AUC provide a more robust evaluation compared to metrics like accuracy that can be skewed by the majority class.
+
+
 \subsubsection*{Bidirectional LSTM Networks for Sequence-Based Anomaly Detection}
 % TODO: Write section
 The basic structure of RNNs and LSTM networks
@@ -305,7 +490,72 @@ DTs ranking in the \textit{reality} category where most often verified and valid
 \subsubsection*{K-Nearest Neighbors (KNN) for Digital Twin Accreditation in Manufacturing}
 The k-Nearest Neighbors (KNN) algorithm, a lazy learning approach grounded in measuring feature similarity, can be used for the accreditation of manufacturing digital twins \autocite{dos2024simulation}. KNN classifies new data points by identifying the majority class among the $K$ nearest neighbors in the training dataset. The determination of "being close" relies on various distance metrics. Most commonly, the Euclidean distance is used. Selecting an appropriate value for $K$ is crucial for balancing the model's bias and variance.
 The approach by \autocite{dos2024simulation} integrates KNN with p-charts for the concurrent validation of SBDT \autocite{dos2024digital}. This involves monitoring the DTs output over time and using KNN to classify its behavior. Subsequently, p-charts are employed to statistically monitor the proportion of anomalies detected by KNN. The X-axis reprensents the discretized time $t$, the Y-axis represents the proportion of anomalies detected by the KNN. P-charts normally show a relative proportion of nonconforming items in a sample \autocite{acosta1999improved}. \Autocite{dos2024simulation} enriched their chart with an upper control limit (UCL) and lower control limit (LCL) which stand for acceptable statistical boundaries. This approach is similar to \autocite{Nie2023rcim} who also defined control intervals. If the p-value exceeds the boundaries, the twin may deviate from real behaviour. This method offers the advantage of real-time monitoring. However, it is sensitive to the choice of the hyperparameter $K$ and can be computationally expensive for large datasets \autocite{dos2024simulation}. The presence of outliers and noisy data can also impact the accuracy of KNN, and its performance may decrease in high-dimensional spaces. The authors utilized metrics such as accuracy, precision, recall and F1-Score (\autoref{sec:metrics}. They also used cross validation for increasing robustness of the prediction. By varying values for $K$, an optimal split may be found. Recalling the different kinds of anomalies from \autoref{sec:classification-methods}, KNN is able to capture point anomalies and contextual anomalies. Collective anomalies are not captured by KNN, as they are not able to learn from the data.
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}
+    % Define control limits (adjust values as needed for a real scenario)
+    \def\ucl{0.20} % Upper Control Limit
+    \def\lcl{0.05} % Lower Control Limit
+    \def\cl{((\ucl)+(\lcl))/2} % Center Line (optional, average proportion)
 
+    \begin{axis}[
+        width=10cm, % Adjusted width
+        height=8cm,  % Adjusted height
+        grid=both,
+        title={P-Chart for Digital Twin Anomaly Monitoring (using KNN results)},
+        xlabel={Discretized Time (t)},
+        ylabel={Proportion of Anomalies (p)},
+        xmin=0, xmax=11, % Extend x-axis slightly beyond data
+        ymin=0, ymax=0.3, % Adjust y-axis to fit data and limits
+        xtick={1,2,3,4,5,6,7,8,9,10}, % Explicit ticks for discrete time
+        yticklabel style={/pgf/number format/.cd,fixed,precision=2}, % Format y-labels
+        scaled y ticks=false, % Show actual proportion values
+        legend pos=outer north east, % Place legend outside
+        legend cell align={left},
+      ]
+
+      % --- Simulated Data: Proportion of anomalies detected by KNN over time ---
+      % Replace this with actual data if available
+      % Format: (time_step, proportion)
+      \addplot+[mark=*, blue, solid, mark options={fill=blue}]
+      coordinates {
+          (1, 0.08) % Time 1, 8% anomalies
+          (2, 0.11) % Time 2, 11% anomalies
+          (3, 0.09) % Time 3, 9% anomalies
+          (4, 0.13) % Time 4, 13% anomalies
+          (5, 0.07) % Time 5, 7% anomalies
+          (6, 0.15) % Time 6, 15% anomalies
+          (7, 0.22) % Time 7, 22% anomalies - Exceeds UCL!
+          (8, 0.10) % Time 8, 10% anomalies
+          (9, 0.06) % Time 9, 6% anomalies
+          (10, 0.12)% Time 10, 12% anomalies
+        };
+      \addlegendentry{Anomaly Proportion (p)}
+
+      % --- Control Limits ---
+      % Upper Control Limit (UCL)
+      \addplot[const plot, dashed, red, thick, domain=\pgfkeysvalueof{/pgfplots/xmin}:\pgfkeysvalueof{/pgfplots/xmax}] {\ucl};
+      \addlegendentry{UCL = \pgfmathprintnumber{\ucl}}
+      % Add label directly to the line (alternative to legend)
+      % \node[anchor=west, red] at (axis cs:\pgfkeysvalueof{/pgfplots/xmax},\ucl) {UCL}; 
+
+      % Lower Control Limit (LCL)
+      \addplot[const plot, dashed, green, thick, domain=\pgfkeysvalueof{/pgfplots/xmin}:\pgfkeysvalueof{/pgfplots/xmax}] {\lcl};
+      \addlegendentry{LCL = \pgfmathprintnumber{\lcl}}
+      % Add label directly to the line (alternative to legend)
+      % \node[anchor=west, green] at (axis cs:\pgfkeysvalueof{/pgfplots/xmax},\lcl) {LCL};
+
+      % Optional: Center Line (CL) - Often the average proportion
+      % \addplot[const plot, dotted, gray, thick, domain=\pgfkeysvalueof{/pgfplots/xmin}:\pgfkeysvalueof{/pgfplots/xmax}] {\cl};
+      % \addlegendentry{CL = \pgfmathprintnumber{\cl}}
+      % Add label directly to the line (alternative to legend)
+      % \node[anchor=west, gray] at (axis cs:\pgfkeysvalueof{/pgfplots/xmax},\cl) {CL};
+
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Example P-Chart showing the proportion of anomalies detected by KNN over time for Digital Twin accreditation, with Upper (UCL) and Lower (LCL) control limits. A point outside the limits (like at t=7) suggests potential deviation.}
+  \label{fig:pchart_knn_dt}
+\end{figure}
 \subsubsection*{Time Series Classification for Fault Localization}
 Time series classification techniques also play an important role in detecting and classifying anomalies within manufacturing digital twin systems \autocite{Lugaresi2023compind}. These techniques involve training classifiers on simulation data generated by the digital twin to identify and categorize faults in the real physical system \autocite{dihan2024digital}. A case study involving a scale-model gantry crane demonstrates the application of time series classification for this purpose \autocite{mertens2024localizing}.
 Other techniques in this domain often involve deep learning models such as CNN, Recurrent Neural Networks (RNN), and LSTM networks. These models perform well at automatically extracting relevant features from time series data \autocite{cao2023real}, outperforming traditional rule-based or statistical methods in complex scenarios. Time series classification offers the benefits of automated anomaly detection and classification, with the potential for early fault prediction. However, a key challenge is the need for sufficient labeled data for training these models \autocite{zemskov2024security}, and real-time performance is often a critical requirement.
