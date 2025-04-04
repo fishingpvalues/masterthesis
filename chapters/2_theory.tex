@@ -152,7 +152,7 @@ PM is a discipline established 1999 which is interdisciplinary rooted in the fie
   }
 \end{table}
 
-\autoref{tab:manufacturinglog} illustrates the PM concepts. The case ID groups unique events which are identified by an event ID to one group, a trace. The timestamp refers to the time of event occurence, while the activity describes the event. In this example, additional informations like resource name and cost are given as well. Cases containing the same events identified by unique event IDs will have different case IDs \autocite{van2016data}. Process discovery may try to produce a process model from the event log. The model may be a Petri net, a BPMN model or another process model. The challenge lies not in the recording of every trace present in the event log, rather in finding a generic representation of the most occuring traces. The process model must be generic enough to describe most traces, but specific enough to not get invalidated by future traces which may contain completely different events. Another major building block of this process model is accounting for trace concurrency. When several events may be identified to happen in parallel during the same time window, the model must recognize this. It can be spoken of a classical bias-variance tradeoff lend from data science. The process most contain the most frequent traces but has to filter out traces which contain anomalies. Such anomalies like longer time per event due to a fire alarm have to be accounted for. Conformance checking may compare a given process model against a given event log. They are specialized in detecting aforementioned anomalies. A key insight in conformance checking lies in two possible deviations from reality: The given model does not capture the real behaviour (A) or reality differs from the model (B). In the first case, the model is not working as intended. In the second case, the event log is corrupt. The third view on event logs, process enhancement, enables the modeller to use the generated process model to identify bottlenecks. Anomalies identified serve as a good starting point because they reveal errors in the process sequence. The given table offers costs associated to each event ID. This information may be used to create an event benchmark to further optimze the desired "ideal" trace. The first goal of course is to ensure that no mistakes happen during a process.
+\autoref{tab:manufacturinglog} illustrates the PM concepts. The case ID groups unique events which are identified by an event ID to one group, a trace. The timestamp refers to the time of event occurrence, while the activity describes the event. In this example, additional information like resource name and cost are given as well. Cases containing the same events identified by unique event IDs will have different case IDs \autocite{van2016data}. Process discovery may try to produce a process model from the event log. The model may be a Petri net, a BPMN model or another process model. The challenge lies not in the recording of every trace present in the event log, rather in finding a generic representation of the most occurring traces. The process model must be generic enough to describe most traces, but specific enough to not get invalidated by future traces which may contain completely different events. Another major building block of this process model is accounting for trace concurrency. When several events may be identified to happen in parallel during the same time window, the model must recognize this. It can be spoken of a classical bias-variance tradeoff lend from data science. The process most contain the most frequent traces but has to filter out traces which contain anomalies. Such anomalies like longer time per event due to a fire alarm have to be accounted for. Conformance checking may compare a given process model against a given event log. They are specialized in detecting aforementioned anomalies. A key insight in conformance checking lies in two possible deviations from reality: The given model does not capture the real behaviour (A) or reality differs from the model (B). In the first case, the model is not working as intended. In the second case, the event log is corrupt. The third view on event logs, process enhancement, enables the modeller to use the generated process model to identify bottlenecks. Anomalies identified serve as a good starting point because they reveal errors in the process sequence. The given table offers costs associated to each event ID. This information may be used to create an event benchmark to further optimize the desired "ideal" trace. The first goal of course is to ensure that no mistakes happen during a process.
 
 More generally, PM empowers the modeller to perform VVUQ of an process model, event log or described trace. This concept is captured by the terms \textit{Play-In}, \textit{Play-Out} and \textit{Replay} \autocite{damm2001lscs}, see \autoref{fig:playinoutreplay}.
 
@@ -171,9 +171,9 @@ PM uses different formats to display process models like petri nets and BPMN mod
 \label{sec:object-centric-event-logs}
 
 The problem with traditional PM lies in its single dimensionality of perspective. For each process question, a new play-out has to be performed. Interactions between different objects are not captured \autocite{van2023object}. One event may be related to different cases (convergence) or from the perspective of a case, there may be several equal activities within a case (divergence) \autocite{van2019object}.
-Recently, object-centric event data (OCED) have been proposed as a new data basis for PM \autocite{van2019object}. OCED logs (OCEL) are a generalization of classical event logs. Such traditional event logs use the case ID as a label to group and distringuish events. They assume that the process model describes the start and end of a single object. Each event refers to exactly one object (case) \autocite{van2023object}. OCED overthrows these assumptions by assuming that events may relate to multiple objects. To account for this new logic, OCEL coins the terms events, objects, types, attributes and qualifier. Each object has exactly one object type. Several objects may have the same type. An object type can be a description of the function such as machine, customer, supplier or activity descriptions such as invoice, request. Objects are instances of these types. Events in particular have an event type, termed activity. The same non-uniqueness applies here \textemdash many events can have the same type like "processing complaint", "cooking coffee". Each event is described by exactly one type. OCED assumes event atomicity; each event is indivisible. Each event has one timestamp. Compared to traditional PM, events may relate to multiple objects through a qualifier (E2O). Such a qualifier may be, considering the event "printing label" and object "printing station", the label to be printed. Objects may be related to multiple objects (O2O). O2O relationships are frozen (static) and are assumed to not change. The O2O relationship may be used to describe the order of producing a product. For example, the O2O relation "main pcb to gyroscope" may say that the main pcb has to be produced before the gyroscope. Another O2O relation can be an order, the connection between the customer object and the ordered product. It is worth mentioning that objects can also be related indirectly together through two E2O relations: The E2O relation "producing" may connect the event "machine 1 produces" with the object "gyroscope". The E2O relation "check" may connect the event "machine 1 checks" with the object "main pcb", thus connecting the two objects "gyroscope" and "main pcb" indirectly via two events \autocite{van2019object}. E2O relations are dynamic. They may change over time, involving different objects. In the given example, "main pcb" would be checked with "display" instead of "gyroscope".
+Recently, object-centric event data (OCED) have been proposed as a new data basis for PM \autocite{van2019object}. OCED logs (OCEL) are a generalization of classical event logs. Such traditional event logs use the case ID as a label to group and distinguish events. They assume that the process model describes the start and end of a single object. Each event refers to exactly one object (case) \autocite{van2023object}. OCED overthrows these assumptions by assuming that events may relate to multiple objects. To account for this new logic, OCEL coins the terms events, objects, types, attributes and qualifier. Each object has exactly one object type. Several objects may have the same type. An object type can be a description of the function such as machine, customer, supplier or activity descriptions such as invoice, request. Objects are instances of these types. Events in particular have an event type, termed activity. The same non-uniqueness applies here \textemdash many events can have the same type like "processing complaint", "cooking coffee". Each event is described by exactly one type. OCED assumes event atomicity; each event is indivisible. Each event has one timestamp. Compared to traditional PM, events may relate to multiple objects through a qualifier (E2O). Such a qualifier may be, considering the event "printing label" and object "printing station", the label to be printed. Objects may be related to multiple objects (O2O). O2O relationships are frozen (static) and are assumed to not change. The O2O relationship may be used to describe the order of producing a product. For example, the O2O relation "main pcb to gyroscope" may say that the main pcb has to be produced before the gyroscope. Another O2O relation can be an order, the connection between the customer object and the ordered product. It is worth mentioning that objects can also be related indirectly together through two E2O relations: The E2O relation "producing" may connect the event "machine 1 produces" with the object "gyroscope". The E2O relation "check" may connect the event "machine 1 checks" with the object "main pcb", thus connecting the two objects "gyroscope" and "main pcb" indirectly via two events \autocite{van2019object}. E2O relations are dynamic. They may change over time, involving different objects. In the given example, "main pcb" would be checked with "display" instead of "gyroscope".
 
-Events and objects have attributes (keys), possessing values. Event attribute values refer to exactly one event and one event attribute, they are not shared. For example, the cost for one event may have the value $10€$. The same logic applies to objects as well, one event attribuite value refers to exactly one object and one object attribute. Because several events may have the same type and several objects may have the same type as well, each event- or object type may refer to any number of event or object attributes. They open interpretative possibilities for the modeller by considering them as expected attributes for the event or object type. The given example may be the event type "producing" which may have the event attribute "duration" and "cost". The object type "gyroscope" may have the object attribute "weight" and "size". One may average the different object attribute values of one type cluster to generate object type KPIs. A key specificity of object attribute values lies in the fact that they have a timestamp. Event attribute values do not. Latter information would be redundant because events to already have a timestamp, see above. Event attribute values may have cardinality one per event. $N$ event attributes have $n$ values. This does not apply to object attribute values. They may have multiple values because of their nature to change over time \autocite{van2023object}. This is why each object attribute value has a timestamp. The attribute value is in conclusion unique for a given object during a given time given one attribute. The given example may be the object attribute "weight" of the object "main pcb" which may change over time. The object attribute value "weight" may have the value $100g$ at time $t_1$ and $120g$ at time $t_2$.
+Events and objects have attributes (keys), possessing values. Event attribute values refer to exactly one event and one event attribute, they are not shared. For example, the cost for one event may have the value $10€$. The same logic applies to objects as well, one event attribute value refers to exactly one object and one object attribute. Because several events may have the same type and several objects may have the same type as well, each event- or object type may refer to any number of event or object attributes. They open interpretative possibilities for the modeller by considering them as expected attributes for the event or object type. The given example may be the event type "producing" which may have the event attribute "duration" and "cost". The object type "gyroscope" may have the object attribute "weight" and "size". One may average the different object attribute values of one type cluster to generate object type KPIs. A key specificity of object attribute values lies in the fact that they have a timestamp. Event attribute values do not. Latter information would be redundant because events to already have a timestamp, see above. Event attribute values may have cardinality one per event. $N$ event attributes have $n$ values. This does not apply to object attribute values. They may have multiple values because of their nature to change over time \autocite{van2023object}. This is why each object attribute value has a timestamp. The attribute value is in conclusion unique for a given object during a given time given one attribute. The given example may be the object attribute "weight" of the object "main pcb" which may change over time. The object attribute value "weight" may have the value $100g$ at time $t_1$ and $120g$ at time $t_2$.
 
 OCEL thus extends traditional PM by accommodating the  multi-object nature of complex processes. Unlike classical event logs—which restrict events to a single case—OCEL captures dynamic interactions among multiple objects via E2O relations and static inter-object dependencies through O2O relations. This enriched framework enables a more comprehensive representation of real-world processes, where events may concurrently affect several objects. Timestamped object attribution values enable the modeller to perform temporal analysis and KPI derivation (\autoref{sec:relevant-kpis}). Overall, OCED provides a more detailed, semantically rich representation of complex, interconnected processes. \autocite{van2023object}.
 
@@ -259,9 +259,10 @@ After ensuring data quality, the modeller has to consider suitable features for 
 \label{sec:classification-methods}
 Extensive work has been done on the topic of ML-based deviation detection. Such deviations are called "anomalies" and the process is termed "anomaly detection" \parencite{kharitonov2022comparative}. Anomalies are data points that deviate significantly from the majority of the data. They can be classified into three categories: point anomalies, contextual anomalies and collective anomalies \parencite{chandola2009anomaly}. Point anomalies are single data points that differ significantly from the rest of the dataset. Contextual anomalies are data points that are normal in one context but anomalous in another. They appear less often than point anomalies and have less statistical weight. Collective anomalies are groups of data points that are anomalous when considered together but may not be anomalous individually. Anomalies are of special interest in the context of VVUQ, as they can indicate potential issues with the model or the data, see \autoref{sec:metrics}.
 
+Anomaly detection and VVUQ share common goals of identifying deviations from expected behavior and ensuring the reliability of models. The two fields can benefit from each other, as VVUQ can provide a framework for evaluating the performance of anomaly detection algorithms, while anomaly detection techniques can enhance VVUQ processes by identifying potential issues in models or data.
 Several algorithms exist to detect anomalies, including statistical methods, clustering-based methods, and supervised learning methods. If the data is sufficiently labelled and preprocessed, supervised methods are promising. Algorithms such as Support Vector Machines (SVM), Neural Networks (NN), Decision Trees, and Random Forests can learn from this labeled data to classify new model outputs or behaviors as either normal or deviative. However, a common challenge in anomaly detection scenarios is the issue of class imbalance, where instances of normal behavior are more common than the occurrences of deviations. This imbalance needs to be carefully addressed during model training to prevent the classifier from being biased towards the majority class. Clustering-based unsupervised methods detect anomalies through grouping similar data points together. Algorithms like K-Means, DBSCAN, and Hierarchical Clustering can be used to identify clusters of normal behavior, with anomalies being those points that do not belong to any cluster. They measure the distance between data points to cull anomalous points as reaching far outside of a group of common data points. Often times the assigned groups can be plotted, yielding further insights in the nature of the detected anomalies. Statistical methods, on the other hand, rely on the assumption that the data follows a certain distribution. They identify anomalies based on statistical properties such as mean, variance, and standard deviation  \parencite{chandola2009anomaly}.
 
-\subsubsection*{Performance Metrics}
+\subsubsection*{Metrics for Model Quality Assessment}
 \label{sec:metrics-theory}
 Another important aspects of assessing model quality is through metrics. The following section introduces the most common metrics used in VVUQ of SBDT. The introduction is supported by an exemplary OCEL:
 
@@ -461,13 +462,317 @@ An ROC curve is a graphical representation that plots the true positive rate (TP
 
 
 \subsubsection*{Bidirectional LSTM Networks for Sequence-Based Anomaly Detection}
-% TODO: Write section
-The basic structure of RNNs and LSTM networks
-How bidirectional LSTMs work and their advantages
-Why BiLSTMs are particularly suited for sequence-based anomaly detection
-Brief mention of their applications in time series analysis
 
-Anomaly detection and VVUQ share common goals of identifying deviations from expected behavior and ensuring the reliability of models. The two fields can benefit from each other, as VVUQ can provide a framework for evaluating the performance of anomaly detection algorithms, while anomaly detection techniques can enhance VVUQ processes by identifying potential issues in models or data.
+\paragraph{\textbf{The Foundation: Recurrent Neural Networks (RNNs)}}
+\label{sec:rnn}
+The following section describes the model types on which the automatic VBVVQ is based. The model types are introduced in a bottom-up fashion, starting with the most basic model type and building up to the more complex models. The first model type is the Recurrent Neural Network (RNN), which is the basis for the Long Short-Term Memory (LSTM) networks. The LSTM networks are then used in a bidirectional fashion, which is the basis for the ResNet Bi-LSTM Multihead attention network. Because the OCEL data is sequential in nature, the RNNs are used to model the sequential data. The LSTM networks are used to overcome the limitations of the RNNs, and the bidirectional LSTM networks are used to improve the performance of the LSTM networks. The ResNet Bi-LSTM Multihead attention network is then introduced as a more advanced model that combines the strengths of both LSTM and attention mechanisms.\footnote{Throughout this section, specific mathematical notation conventions are adopted for clarity. Vectors, such as inputs, hidden states, cell states, outputs, and biases, are denoted by bold lowercase letters (e.g., \( \bm{x}, \bm{h}, \bm{c}, \bm{y}, \bm{b} \)). Matrices, primarily representing weights, are represented by uppercase letters (e.g., \( W, U \)). The symbol \( \sigma \) denotes a generic non-linear activation function, while \( \sigma_h \) and \( \sigma_y \) specifically refer to activation functions in the hidden and output layers, respectively. Commonly used specific activation functions like hyperbolic tangent and softmax are written as \( \tanh \) and \( \text{softmax} \). Element-wise multiplication (Hadamard product) is indicated by the symbol \( \odot \).}
+
+Recurrent Neural Network (RNN) were the first novel networks to handle sequential data. Unlike feedforward neural networks that process each input independently, RNNs are specifically designed to handle sequences by maintaining an internal memory, known as the hidden state, which summarizes past information \autocite{geron2022hands}. As sequential data \( \{ \bm{x}_1, \bm{x}_2, ..., \bm{x}_T \} \) is fed into the network step by step (indexed by \( t \)), the RNN processes each element \( \bm{x}_t \) while simultaneously updating its hidden state \( \bm{h}_t \). This hidden state acts as the network's memory, retaining information from previous time steps. It can be thought of as the long-term memory of the network.
+
+The core computation within an RNN at time step \( t \) involves calculating the new hidden state \( \bm{h}_t \) based on the current input \( \bm{x}_t \) and the previous hidden state \( \bm{h}_{t-1} \). This relationship is typically defined as:
+\begin{equation}
+  \bm{h}_t = \sigma_h (W_{xh} \bm{x}_t + W_{hh} \bm{h}_{t-1} + \bm{b}_h)
+  \label{eq:rnn_hidden_state}
+\end{equation}
+% =========================================================================
+% Example Placement for Unfolded RNN Diagram
+% (Place this *after* Eq. (1) \eqref{eq:rnn_hidden_state} in your text)
+% =========================================================================
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[node distance=1.2cm and 1.8cm]
+    % Nodes for time steps
+    \node (cell_tm1) [block] {RNN};
+    \node (cell_t)   [block, right=of cell_tm1] {RNN};
+    \node (cell_tp1) [block, right=of cell_t] {RNN};
+
+    % Inputs
+    \node (xtm1) [below=of cell_tm1] {\(\bm{x}_{t-1}\)};
+    \node (xt)   [below=of cell_t] {\(\bm{x}_t\)};
+    \node (xtp1) [below=of cell_tp1] {\(\bm{x}_{t+1}\)};
+
+    % Outputs
+    \node (ytm1) [above=of cell_tm1] {\(\bm{y}_{t-1}\)};
+    \node (yt)   [above=of cell_t] {\(\bm{y}_t\)};
+    \node (ytp1) [above=of cell_tp1] {\(\bm{y}_{t+1}\)};
+
+    % Hidden States (Coordinates for arrows)
+    \coordinate (h_tm1_out) at (cell_tm1.east);
+    \coordinate (h_t_in) at (cell_t.west);
+    \coordinate (h_t_out) at (cell_t.east);
+    \coordinate (h_tp1_in) at (cell_tp1.west);
+    \coordinate (h_init_in) at (cell_tm1.west); % Input for h_{t-2}
+
+    % Input Connections
+    \draw [arrow] (xtm1) -- node[midway, right, font=\footnotesize]{$W_{xh}$} (cell_tm1);
+    \draw [arrow] (xt)   -- node[midway, right, font=\footnotesize]{$W_{xh}$} (cell_t);
+    \draw [arrow] (xtp1) -- node[midway, right, font=\footnotesize]{$W_{xh}$} (cell_tp1);
+
+    % Output Connections
+    \draw [arrow] (cell_tm1) -- node[midway, right, font=\footnotesize]{$W_{hy}$} (ytm1);
+    \draw [arrow] (cell_t)   -- node[midway, right, font=\footnotesize]{$W_{hy}$} (yt);
+    \draw [arrow] (cell_tp1) -- node[midway, right, font=\footnotesize]{$W_{hy}$} (ytp1);
+
+    % Hidden State Connections (Recurrence)
+    \draw [arrow] (h_tm1_out) -- node[midway, above]{$\bm{h}_{t-1}$} node[midway, below, font=\footnotesize]{$W_{hh}$} (h_t_in);
+    \draw [arrow] (h_t_out)   -- node[midway, above]{$\bm{h}_{t}$} node[midway, below, font=\footnotesize]{$W_{hh}$} (h_tp1_in);
+
+    % Indicate initial / further connections
+    \node (dots_left_h) [left=0.8cm of h_init_in] {\(\dots\)};
+    \draw [arrow] (dots_left_h) -- node[midway, above]{$\bm{h}_{t-2}$} node[midway, below, font=\footnotesize]{$W_{hh}$} (h_init_in);
+    \node (dots_right_h) [right=0.8cm of cell_tp1] {\(\dots\)};
+    \draw [arrow] (cell_tp1) -- (dots_right_h); % Arrow towards further steps
+
+    % Ellipses for sequences
+    \node (dots_left_x) [left=0.8cm of xtm1] {\(\dots\)};
+    \draw [arrow] (dots_left_x) -- (xtm1);
+    \node (dots_right_x) [right=0.8cm of xtp1] {\(\dots\)};
+    \draw [arrow] (xtp1) -- (dots_right_x);
+
+    \node (dots_left_y) [left=0.8cm of ytm1] {\(\dots\)};
+    \draw [arrow] (ytm1) -- (dots_left_y);
+    \node (dots_right_y) [right=0.8cm of ytp1] {\(\dots\)};
+    \draw [arrow] (ytp1) -- (dots_right_y);
+
+  \end{tikzpicture}
+  \caption{Unfolded architecture of a Recurrent Neural Network (RNN) over time, illustrating the computation of the hidden state \(\bm{h}_t\) according to Equation \autoref{eq:rnn_hidden_state}.}
+  \label{fig:rnn_unfolded}
+\end{figure}
+where \( W_{xh} \) is the weight matrix connecting the input to the hidden layer, \( W_{hh} \) is the weight matrix for the recurrent connection from the previous hidden state to the current hidden state, \( \bm{b}_h \) is the bias vector for the hidden layer, and \( \sigma_h \) is a non-linear activation function, commonly the hyperbolic tangent (\(\tanh\)) or ReLU. The initial hidden state \( \bm{h}_0 \) is typically initialized to zeros or learned.
+
+The output \( \bm{y}_t \) at time step \( t \) can then be computed from the hidden state:
+\begin{equation}
+  \bm{y}_t = \sigma_y (W_{hy} \bm{h}_t + \bm{b}_y)
+  \label{eq:rnn_output}
+\end{equation}
+Here, \( W_{hy} \) is the weight matrix from the hidden layer to the output layer, \( \bm{b}_y \) is the output bias vector, and \( \sigma_y \) is an activation function appropriate for the task, for example softmax for classification tasks.
+
+A crucial characteristic of RNNs is parameter sharing: the weight matrices (\( W_{xh}, W_{hh}, W_{hy} \)) and biases (\( \bm{b}_h, \bm{b}_y \)) are the same across all time steps \( t = 1, ..., T \). This allows the model to generalize learned patterns regardless of their position in the sequence and significantly reduces the number of parameters to learn. Conceptually, this process is often understood by thinking of the network as being "unfolded" over time, creating a deep feedforward-like structure where each layer corresponds to a time step but utilizes shared weights \autocite{medsker2001recurrent}.
+
+Depending on the task, RNNs can be structured differently, such as many-to-one (sequence input, single output\textemdash sentiment analysis), one-to-many (single input, sequence output\textemdash image captioning), or many-to-many (sequence input, sequence output\textemdash machine translation) \auto.
+
+Despite their conceptual elegance, standard RNNs face significant challenges when learning dependencies over long sequences. During training using Backpropagation Through Time (BPTT), gradients are propagated backward through the unfolded network representation. The repeated multiplication involving the recurrent weight matrix \( W_{hh} \) (specifically, its Jacobian matrix containing the first derivatives) can cause gradients to either shrink exponentially towards zero (vanishing gradients) or grow uncontrollably (exploding gradients) \autocite{hochreiter1998vanishing}. Vanishing gradients hinder the model's ability to capture long-range dependencies, as updates to weights connecting distant past inputs become negligible. Exploding gradients can lead to numerical instability during training \autocite{philipp2017exploding}.
+
+\paragraph{\textbf{Long Short-Term Memory Networks (LSTMs)}}
+\label{sec:lstm}
+
+To address the vanishing gradient problem and effectively learn long-range dependencies, Long Short-Term Memory Networks (LSTMs) were introduced by \autocite{hochreiter1997long}. LSTMs employ a more sophisticated internal structure within each recurrent unit, often called an LSTM cell.
+
+The key innovation of the LSTM cell is the introduction of a \textit{cell state}, \( \bm{c}_t \), which acts as an information conduit, allowing information to flow through time with potentially minimal modification. The long-term preservation is a key distinction from the RNN, where the hidden state gets overwritten. The flow of information into, out of, and within the cell state is regulated by three specialized gating mechanisms: the forget gate, the input gate, and the output gate. These gates use sigmoid activation functions (\(\sigma\)), which output values between 0 and 1, representing the proportion of information allowed to pass.
+
+At each time step \( t \), given the input \( \bm{x}_t \), the previous hidden state \( \bm{h}_{t-1} \), and the previous cell state \( \bm{c}_{t-1} \), the LSTM cell performs the following computations:
+
+\begin{enumerate}
+  \item \textbf{Forget Gate (\( \bm{f}_t \)):} Decides which information to discard from the previous cell state \( \bm{c}_{t-1} \).
+        \begin{equation}
+          \bm{f}_t = \sigma(W_f \bm{x}_t + U_f \bm{h}_{t-1} + \bm{b}_f)
+          \label{eq:lstm_forget_gate}
+        \end{equation}
+
+  \item \textbf{Input Gate (\( \bm{i}_t \)):} Determines which new information from the input and previous hidden state should be stored in the cell state. This involves two parts:
+        \begin{itemize}
+          \item The input gate layer decides which values to update:
+                \begin{equation}
+                  \bm{i}_t = \sigma(W_i \bm{x}_t + U_i \bm{h}_{t-1} + \bm{b}_i)
+                  \label{eq:lstm_input_gate}
+                \end{equation}
+          \item A candidate cell state \( \bm{\tilde{c}}_t \) is created with potential new values, typically using a \( \tanh \) activation:
+                \begin{equation}
+                  \bm{\tilde{c}}_t = \tanh(W_c \bm{x}_t + U_c \bm{h}_{t-1} + \bm{b}_c)
+                  \label{eq:lstm_candidate_cell}
+                \end{equation}
+        \end{itemize}
+
+  \item \textbf{Cell State Update (\( \bm{c}_t \)):} The old cell state \( \bm{c}_{t-1} \) is updated to the new cell state \( \bm{c}_t \). This involves element-wise multiplication (\(\odot\)) to forget parts of the old state (via \( \bm{f}_t \)) and add parts of the new candidate state (via \( \bm{i}_t \)).
+        \begin{equation}
+          \bm{c}_t = \bm{f}_t \odot \bm{c}_{t-1} + \bm{i}_t \odot \bm{\tilde{c}}_t
+          \label{eq:lstm_cell_update}
+        \end{equation}
+
+  \item \textbf{Output Gate (\( \bm{o}_t \)):} Determines what part of the (filtered) cell state \( \bm{c}_t \) should be outputted as the new hidden state \( \bm{h}_t \).
+        \begin{equation}
+          \bm{o}_t = \sigma(W_o \bm{x}_t + U_o \bm{h}_{t-1} + \bm{b}_o)
+          \label{eq:lstm_output_gate}
+        \end{equation}
+        \begin{equation}
+          \bm{h}_t = \bm{o}_t \odot \tanh(\bm{c}_t)
+          \label{eq:lstm_hidden_state}
+        \end{equation}
+\end{enumerate}
+
+% TODO: Add figure for LSTM cell structure
+In these equations, \( W_*, U_* \) represent the respective weight matrices for connections from the input and the previous hidden state, and \( \bm{b}_* \) are the bias vectors.
+
+The gating mechanisms allow LSTMs to selectively remember or forget information over long durations. The cell state's update mechanism, involving addition and element-wise multiplication controlled by gates often close to 1 (especially the forget gate), facilitates a more stable gradient flow compared to the repeated matrix multiplications in simple RNNs. This characteristic, sometimes associated with the Constant Error Carousel (CEC) concept \autocite{hochreiter1997long}, effectively mitigates the vanishing gradient problem. LSTMs have become a standard tool for various sequence modelling tasks, including time series prediction and machine sequences \autocite{al2024rnn}.
+
+
+\paragraph{\textbf{Bidirectional LSTMs (Bi-LSTMs)}}
+\label{sec:bilstm}
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[node distance=0.6cm and 1.3cm]
+    % Input Sequence
+    \node (x1) {\(\dots\)};
+    \node (x2) [right=of x1] {\(\bm{x}_{t-1}\)};
+    \node (x3) [right=of x2] {\(\bm{x}_t\)};
+    \node (x4) [right=of x3] {\(\bm{x}_{t+1}\)};
+    \node (x5) [right=of x4] {\(\dots\)};
+    \node[below=1.5em of x3, text width=6cm, align=center] {Input Sequence};
+
+    % Forward LSTM Layer
+    \node (f1) [block, fill=blue!20, above=1.2cm of x1] {\(\rightarrow\)};
+    \node (f2) [block, fill=blue!20, above=1.2cm of x2] {\(\rightarrow\)};
+    \node (f3) [block, fill=blue!20, above=1.2cm of x3] {\(\rightarrow\)};
+    \node (f4) [block, fill=blue!20, above=1.2cm of x4] {\(\rightarrow\)};
+    \node (f5) [block, fill=blue!20, above=1.2cm of x5] {\(\rightarrow\)};
+    \node[left=0.5em of f1, text width=2cm, align=right] {Forward LSTM};
+
+    % Backward LSTM Layer
+    \node (b1) [block, fill=orange!20, above=0.8cm of f1] {\(\leftarrow\)};
+    \node (b2) [block, fill=orange!20, above=0.8cm of f2] {\(\leftarrow\)};
+    \node (b3) [block, fill=orange!20, above=0.8cm of f3] {\(\leftarrow\)};
+    \node (b4) [block, fill=orange!20, above=0.8cm of f4] {\(\leftarrow\)};
+    \node (b5) [block, fill=orange!20, above=0.8cm of f5] {\(\leftarrow\)};
+    \node[left=0.5em of b1, text width=2cm, align=right] {Backward LSTM};
+
+    % Combined Output Layer (representing concatenation)
+    \coordinate (c1) at ($(f1)!0.5!(b1) + (0,1.5cm)$); % Position above the two layers
+    \coordinate (c2) at ($(f2)!0.5!(b2) + (0,1.5cm)$);
+    \coordinate (c3) at ($(f3)!0.5!(b3) + (0,1.5cm)$);
+    \coordinate (c4) at ($(f4)!0.5!(b4) + (0,1.5cm)$);
+    \coordinate (c5) at ($(f5)!0.5!(b5) + (0,1.5cm)$);
+
+    % Output Nodes/Labels
+    \node (o1) [above=0.1cm of c1] {\(\dots\)};
+    \node (o2) [above=0.1cm of c2] {\(\bm{h}_{t-1}\)};
+    \node (o3) [above=0.1cm of c3] {\(\bm{h}_t\)};
+    \node (o4) [above=0.1cm of c4] {\(\bm{h}_{t+1}\)};
+    \node (o5) [above=0.1cm of c5] {\(\dots\)};
+    \node[above=1.5em of o3, text width=6cm, align=center] {Combined Output Sequence};
+
+
+    % Input Arrows to both LSTMs
+    \draw[arrow] (x1) |- (f1.south); \draw[arrow] (x1) |- (b1.south);
+    \draw[arrow] (x2) -- (f2.south); \draw[arrow] (x2) -- (b2.south);
+    \draw[arrow] (x3) -- (f3.south); \draw[arrow] (x3) -- (b3.south);
+    \draw[arrow] (x4) -- (f4.south); \draw[arrow] (x4) -- (b4.south);
+    \draw[arrow] (x5) |- (f5.south); \draw[arrow] (x5) |- (b5.south);
+
+    % LSTM Layer Connections (Forward)
+    \draw[arrow] (f1) -- node[midway, above, font=\tiny]{\(\vec{\bm{h}}_{t-2}\)} (f2);
+    \draw[arrow] (f2) -- node[midway, above, font=\tiny]{\(\vec{\bm{h}}_{t-1}\)} (f3);
+    \draw[arrow] (f3) -- node[midway, above, font=\tiny]{\(\vec{\bm{h}}_{t}\)} (f4);
+    \draw[arrow] (f4) -- node[midway, above, font=\tiny]{\(\vec{\bm{h}}_{t+1}\)} (f5);
+
+    % LSTM Layer Connections (Backward)
+    \draw[arrow] (b5) -- node[midway, below, font=\tiny]{\(\cev{\bm{h}}_{t+2}\)} (b4);
+    \draw[arrow] (b4) -- node[midway, below, font=\tiny]{\(\cev{\bm{h}}_{t+1}\)} (b3);
+    \draw[arrow] (b3) -- node[midway, below, font=\tiny]{\(\cev{\bm{h}}_{t}\)} (b2);
+    \draw[arrow] (b2) -- node[midway, below, font=\tiny]{\(\cev{\bm{h}}_{t-1}\)} (b1);
+
+    % Output Arrows (Combining)
+    \draw[arrow] (f1.north) -- (c1); \draw[arrow] (b1.north) -- (c1);
+    \draw[arrow] (f2.north) -- node[midway, left, font=\tiny]{\(\vec{\bm{h}}_{t-1}\)} (c2);
+    \draw[arrow] (b2.north) -- node[midway, right, font=\tiny]{\(\cev{\bm{h}}_{t-1}\)} (c2);
+    \draw[arrow] (f3.north) -- node[midway, left, font=\tiny]{\(\vec{\bm{h}}_{t}\)} (c3);
+    \draw[arrow] (b3.north) -- node[midway, right, font=\tiny]{\(\cev{\bm{h}}_{t}\)} (c3);
+    \draw[arrow] (f4.north) -- node[midway, left, font=\tiny]{\(\vec{\bm{h}}_{t+1}\)} (c4);
+    \draw[arrow] (b4.north) -- node[midway, right, font=\tiny]{\(\cev{\bm{h}}_{t+1}\)} (c4);
+    \draw[arrow] (f5.north) -- (c5); \draw[arrow] (b5.north) -- (c5);
+
+    % Arrows to final output nodes
+    \draw[arrow] (c1) -- (o1);
+    \draw[arrow] (c2) -- (o2);
+    \draw[arrow] (c3) -- (o3);
+    \draw[arrow] (c4) -- (o4);
+    \draw[arrow] (c5) -- (o5);
+
+    % Annotation for combination
+    \node[draw, ellipse, dashed, fit=(f3)(b3), inner sep = 0.3cm, label={[yshift=-1.2cm]center:Combine (e.g., Concat)}] {};
+    % Alternative annotation:
+    % \node[below=0.2cm of c3, font=\tiny, text width=2cm, align=center] {Combine e.g., \\ \(\bm{h}_t = [\vec{\bm{h}}_t ; \cev{\bm{h}}_t]\)};
+
+  \end{tikzpicture}
+  \caption{Architecture of a Bidirectional LSTM (Bi-LSTM), processing the input sequence (\(\bm{x}_t\)) both forwards (generating \(\vec{\bm{h}}_t\)) and backwards (generating \(\cev{\bm{h}}_t\)). The final hidden states \(\bm{h}_t\) are produced by combining information from both directions (e.g., via concatenation according to Equation \autoref{eq:bilstm_concat}).}
+  \label{fig:bilstm_arch}
+\end{figure}
+While standard LSTMs process sequences chronologically, capturing dependencies on past inputs, many tasks benefit from considering context from both past and future elements. For example, understanding why a specific machine task is perfomed requires knowledge about the task performed afterwards. Bidirectional LSTMs (Bi-LSTMs) address this by processing the input sequence in both forward and backward directions \autocite{schuster1997bidirectional}.
+
+A Bi-LSTM consists of two separate LSTM layers:
+\begin{enumerate}
+  \item A \textbf{forward LSTM} processes the input sequence \( \{\bm{x}_1, ..., \bm{x}_T\} \) from \( t=1 \) to \( T \), producing a sequence of forward hidden states \( \{\vec{\bm{h}}_1, ..., \vec{\bm{h}}_T\} \). The computation for \( \vec{\bm{h}}_t \) follows the standard LSTM equations \eqref{eq:lstm_forget_gate} through \eqref{eq:lstm_hidden_state}.
+  \item A \textbf{backward LSTM} processes the input sequence in reverse order, from \( t=T \) down to \( 1 \), producing a sequence of backward hidden states \( \{\cev{\bm{h}}_1, ..., \cev{\bm{h}}_T\} \). The computation for \( \cev{\bm{h}}_t \) uses a separate set of LSTM parameters and processes the sequence \( \{\bm{x}_T, ..., \bm{x}_1\} \).
+\end{enumerate}
+
+At each time step \( t \), the final hidden state representation \( \bm{h}_t \) combines the information from both directions. A common method is concatenation:
+\begin{equation}
+  \bm{h}_t = [\vec{\bm{h}}_t ; \cev{\bm{h}}_t]
+  \label{eq:bilstm_concat}
+\end{equation}
+where \( [;] \) denotes vector concatenation. Other combination methods like summation or averaging are also possible. This combined state \( \bm{h}_t \) contains information about the input \( \bm{x}_t \) informed by both its preceding and succeeding context within the sequence.
+
+Bi-LSTMs have proven highly effective in tasks requiring contextual understanding, such as Named Entity Recognition or sentiment analysis \autocite{al2024rnn}. However, they are computationally more expensive than unidirectional LSTMs due to the doubled network structure.
+
+\paragraph{\textbf{Residual Networks (ResNets)}}
+\label{sec:resnet}
+
+As neural networks became deeper to model more complex functions, researchers encountered the \textit{degradation problem}: simply stacking more layers could lead to higher training error, even though a deeper network should theoretically be able to represent the functions learned by a shallower one \autocite{he2016deep}. This issue, distinct from overfitting, indicated difficulties in optimizing very deep networks.
+
+Residual Networks (ResNets) were introduced to overcome this challenge. The core idea is to reframe the learning process by having layers learn a \textit{residual function} with respect to their input, rather than learning the desired underlying mapping directly. This is achieved using \textit{residual blocks} containing skip connections (or shortcut connections).
+
+Consider a block of layers aiming to learn a mapping \( \mathcal{H}(\bm{x}) \). A residual block instead learns a residual function \( \mathcal{F}(\bm{x}) = \mathcal{H}(\bm{x}) - \bm{x} \). The output \( \bm{y} \) of the residual block is then computed as:
+\begin{equation}
+  \bm{y} = \mathcal{F}(\bm{x}, \{W_i\}) + \bm{x}
+  \label{eq:resnet_block}
+\end{equation}
+Here, \( \bm{x} \) is the input to the block, \( \mathcal{F}(\bm{x}, \{W_i\}) \) represents the function learned by the stacked layers within the block (parameterized by weights \( \{W_i\} \)), and the \( +\bm{x} \) term is the identity skip connection. This formulation makes it easier for the network to learn an identity mapping (if optimal) by simply driving the weights in \( \mathcal{F} \) towards zero.
+
+These skip connections provide alternative pathways for gradient propagation during backpropagation. Gradients can flow directly through the identity connections, bypassing the layers in \( \mathcal{F} \). This significantly alleviates the vanishing gradient problem in very deep networks, allowing for the successful training of models with hundreds or even thousands of layers \autocite{he2016deep}.
+
+While originally developed for computer vision, the principle of residual connections can be applied to other architectures, including sequential models. Incorporating ResNet-like connections within or around (Bi-)LSTM layers can potentially stabilize training and allow for deeper sequential architectures, enabling the capture of more intricate temporal patterns without suffering from degradation.
+
+\paragraph{\textbf{Multi-head Attention Mechanism}}
+\label{sec:attention}
+
+In sequence modelling, particularly with long sequences, not all parts of the input are equally relevant for making a prediction at a given time step. Attention mechanisms allow a model to dynamically focus on the most pertinent parts of the input sequence \autocite{chorowski2014end}. A significant advancement is \textit{self-attention}, where the mechanism relates different positions of a single sequence to compute its representation \autocite{vaswani2017attention}.
+
+Self-attention operates on a set of input vectors, typically representing tokens or time steps in a sequence. For each input vector, three representations are derived through learned linear transformations: a query (\( \bm{q} \)), a key (\( \bm{k} \)), and a value (\( \bm{v} \)). The attention mechanism computes the output as a weighted sum of the values, where the weight assigned to each value is determined by the compatibility (often measured by dot product) between its corresponding key and the query.
+
+The most common form is \textit{Scaled Dot-Product Attention}, calculated for a set of queries \( Q \), keys \( K \), and values \( V \) (where \( Q, K, V \) are typically matrices stacking the \( \bm{q}, \bm{k}, \bm{v} \) vectors):
+\begin{equation}
+  \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V
+  \label{eq:scaled_dot_product_attention}
+\end{equation}
+Here, \( QK^T \) computes the dot products between all query-key pairs. The result is scaled by \( \sqrt{d_k} \), where \( d_k \) is the dimension of the keys, to prevent the dot products from becoming too large and pushing the softmax function into regions with very small gradients. The softmax function normalizes these scores into attention weights, which sum to 1. Finally, these weights are multiplied by the Value matrix \( V \) to produce the output, effectively highlighting the values corresponding to the most relevant keys for each query.
+
+\textit{Multi-Head Attention} enhances this mechanism by performing the attention calculation multiple times in parallel, each with different, learned linear projections of the original \( Q, K, V \). This allows the model to jointly attend to information from different representation subspaces at different positions \autocite{vaswani2017attention}.
+
+Let the number of heads be \( h \). For each head \( i \in \{1, ..., h\} \), the input \( Q, K, V \) are projected using learned weight matrices \( W^Q_i, W^K_i, W^V_i \):
+\begin{equation}
+  \text{head}_i = \text{Attention}(Q W^Q_i, K W^K_i, V W^V_i)
+  \label{eq:attention_head_i}
+\end{equation}
+The outputs of all heads are then concatenated and projected one final time using another learned weight matrix \( W^O \):
+\begin{equation}
+  \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h) W^O
+  \label{eq:multihead_attention}
+\end{equation}
+This multi-head structure allows each head to potentially focus on different types of relationships (e.g., short-range vs. long-range dependencies, different syntactic or semantic features), leading to a richer representation. Multi-head attention is a cornerstone of the transformer architecture \autocite{vaswani2017attention} and is increasingly combined with other models like LSTMs.
+
+\paragraph{\textbf{The Integrated Architecture for Anomaly Detection}}
+\label{sec:integrated_architecture}
+
+The theoretical components described above -- (Bi-)LSTMs, residual connections, and multi-head attention -- can be integrated to form powerful deep learning architectures tailored for specific tasks. For the challenge of anomaly detection in sequential manufacturing process data within the context of Simulation-Based Digital Twins (SBDT), an architecture combining these elements offers significant advantages.
+
+The proposed model utilizes Bi-LSTM layers as the core sequence processing units to capture the temporal dynamics inherent in manufacturing operations, leveraging their ability to model long-range dependencies as described in Section \autoref{sec:lstm} and \autoref{sec:bilstm}. To potentially enable deeper Bi-LSTM stacks and stabilize training, residual connections, inspired by ResNet principles (Section \autoref{sec:resnet}), can be incorporated within or between these layers.
+
+Following the Bi-LSTM layers, a multi-head attention mechanism (Section \autoref{sec:attention}) is applied to the sequence of hidden states generated by the Bi-LSTMs. This allows the model to adaptively weigh the importance of different time steps or features in the sequence when making a final prediction. By focusing on the most salient parts of the process history, the attention mechanism can enhance the model's ability to distinguish between normal and anomalous patterns. The multi-head approach enables simultaneous focus on diverse aspects potentially indicative of anomalies.
+
+The final output of the attention layer is typically passed through further feedforward layers to produce the anomaly classification (e.g., a probability score indicating deviation from normal behaviour). This integrated architecture aims to leverage the strengths of each component: Temporal modelling from Bi-LSTMs, improved trainability from residual connections, and context-aware focusing from multi-head attention.
+
+This architecture directly relates to the VVUQ of SBDTs. Accurate anomaly classification serves as a form of validation for the DTs representation of normal process behaviour. Furthermore, analysing the attention weights (derived from Equation \autoref{eq:scaled_dot_product_attention}) can provide insights into which process steps or features the model considers most indicative of anomalies, aiding in the verification and interpretation of both the model and the manufacturing process itself. While not explicitly detailed here, uncertainty quantification could be explored by examining the model's output confidence for different detected anomalies. The subsequent chapter will delve deeper into modern VVUQ techniques within the SBDT context.
+
 
 \subsection{Modern VVUQ in the Context of SBDT}
 \label{sec:vvuq-dt}
@@ -489,6 +794,14 @@ DTs ranking in the \textit{reality} category where most often verified and valid
 
 \subsubsection*{K-Nearest Neighbors (KNN) for Digital Twin Accreditation in Manufacturing}
 The k-Nearest Neighbors (KNN) algorithm, a lazy learning approach grounded in measuring feature similarity, can be used for the accreditation of manufacturing digital twins \autocite{dos2024simulation}. KNN classifies new data points by identifying the majority class among the $K$ nearest neighbors in the training dataset. The determination of "being close" relies on various distance metrics. Most commonly, the Euclidean distance is used. Selecting an appropriate value for $K$ is crucial for balancing the model's bias and variance.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/knn.png}
+  \caption{KNN algorithm. The algorithm classifies a new data point based on the majority class of its $K$ nearest neighbors in the training dataset. Euclidean distance metric has been used to determine the distance between data points.}
+  \label{fig:vvbitencourt}
+\end{figure}
+
 The approach by \autocite{dos2024simulation} integrates KNN with p-charts for the concurrent validation of SBDT \autocite{dos2024digital}. This involves monitoring the DTs output over time and using KNN to classify its behavior. Subsequently, p-charts are employed to statistically monitor the proportion of anomalies detected by KNN. The X-axis reprensents the discretized time $t$, the Y-axis represents the proportion of anomalies detected by the KNN. P-charts normally show a relative proportion of nonconforming items in a sample \autocite{acosta1999improved}. \Autocite{dos2024simulation} enriched their chart with an upper control limit (UCL) and lower control limit (LCL) which stand for acceptable statistical boundaries. This approach is similar to \autocite{Nie2023rcim} who also defined control intervals. If the p-value exceeds the boundaries, the twin may deviate from real behaviour. This method offers the advantage of real-time monitoring. However, it is sensitive to the choice of the hyperparameter $K$ and can be computationally expensive for large datasets \autocite{dos2024simulation}. The presence of outliers and noisy data can also impact the accuracy of KNN, and its performance may decrease in high-dimensional spaces. The authors utilized metrics such as accuracy, precision, recall and F1-Score (\autoref{sec:metrics}. They also used cross validation for increasing robustness of the prediction. By varying values for $K$, an optimal split may be found. Recalling the different kinds of anomalies from \autoref{sec:classification-methods}, KNN is able to capture point anomalies and contextual anomalies. Collective anomalies are not captured by KNN, as they are not able to learn from the data.
 \begin{figure}[htbp]
   \centering
@@ -556,6 +869,7 @@ The approach by \autocite{dos2024simulation} integrates KNN with p-charts for th
   \caption{Example P-Chart showing the proportion of anomalies detected by KNN over time for Digital Twin accreditation, with Upper (UCL) and Lower (LCL) control limits. A point outside the limits (like at t=7) suggests potential deviation.}
   \label{fig:pchart_knn_dt}
 \end{figure}
+
 \subsubsection*{Time Series Classification for Fault Localization}
 Time series classification techniques also play an important role in detecting and classifying anomalies within manufacturing digital twin systems \autocite{Lugaresi2023compind}. These techniques involve training classifiers on simulation data generated by the digital twin to identify and categorize faults in the real physical system \autocite{dihan2024digital}. A case study involving a scale-model gantry crane demonstrates the application of time series classification for this purpose \autocite{mertens2024localizing}.
 Other techniques in this domain often involve deep learning models such as CNN, Recurrent Neural Networks (RNN), and LSTM networks. These models perform well at automatically extracting relevant features from time series data \autocite{cao2023real}, outperforming traditional rule-based or statistical methods in complex scenarios. Time series classification offers the benefits of automated anomaly detection and classification, with the potential for early fault prediction. However, a key challenge is the need for sufficient labeled data for training these models \autocite{zemskov2024security}, and real-time performance is often a critical requirement.

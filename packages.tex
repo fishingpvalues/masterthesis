@@ -29,9 +29,19 @@
 \graphicspath{{.}}    % Set graphics path
 \usepackage{float}
 \usepackage{rotating}
+% TikZ and PGF for drawing diagrams and figures
 \usepackage{tikz}
 \usepackage{svg} % For including SVG graphics
-\usetikzlibrary{positioning, arrows.meta, plotmarks}
+\usetikzlibrary{positioning, arrows.meta, plotmarks, arrows, shapes.geometric, calc, shapes, backgrounds, fit, patterns, shapes.multipart, decorations.pathreplacing, decorations.pathmorphing, decorations.text, shapes.symbols, shadows.blur, shadows} % TikZ libraries
+% Define some styles for consistency
+\tikzstyle{block} = [rectangle, draw, thick, fill=blue!10, text centered, rounded corners, minimum height=2.7em, minimum width=3.5em]
+\tikzstyle{gate} = [circle, draw, thick, fill=yellow!30, minimum size=1.8em, inner sep=1pt]
+\tikzstyle{pointop} = [circle, draw, thick, fill=green!30, inner sep=0pt, minimum size=0.9em] % Pointwise operations
+\tikzstyle{data} = [coordinate] % Invisible points for routing lines
+\tikzstyle{arrow} = [thick, ->, >=Stealth]
+\tikzstyle{line} = [thick]
+\tikzstyle{state_line} = [line width=1.5pt] % Thicker line for cell state
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Tables, Algorithms, and Miscellaneous Packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -39,7 +49,7 @@
 \usepackage{tabularx}      % For flexible table widths
 \usepackage{algorithm}     % For algorithms
 \usepackage{algpseudocode} % For pseudocode
-\usepackage{comment}       % To comment out blocks of text
+\usepackage{comment}       % To comment out blocksa777a777 of text
 \usepackage[toc,acronym,nonumberlist]{glossaries}
 \usepackage{geometry}
 \usepackage{pgf-pie}
@@ -47,7 +57,7 @@
 \usepackage{verbatim}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
-\pgfplotsset{compat=1.18}
+\pgfplotsset{compat=1.17}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Mathematics and Fonts
@@ -55,6 +65,7 @@
 \usepackage{amsfonts} % Blackboard math symbols
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bm}
 \usepackage{nicefrac} % Compact slash fractions
 \usepackage{anyfontsize} % Allows any font size
 \usepackage{fontspec}
