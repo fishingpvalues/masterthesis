@@ -1,6 +1,6 @@
 @startuml
 ' Diagram Title
-title xLSTM Model Architecture and Data Flow
+title Model Architecture and Data Flow
 
 ' Style suggestion (optional, makes it look a bit nicer)
 skinparam componentStyle rectangle
@@ -25,7 +25,7 @@ InputDF --> FeatureEng
 FeatureEng --> FeatureSelect
 
 ' 2. Dataset and DataLoader
-component "XLSTMDataset\n(Create sequences of length 19)" as Dataset
+component "LSTMDataset\n(Create sequences of length 19)" as Dataset
 component "DataLoader\n(Batching [size=32], Padding via collate_fn)" as Loader
 rectangle "Target Labels\n(Batch, 1)" as Targets
 
@@ -34,7 +34,7 @@ Dataset --> Loader : "(Sequence [19, 12], Target [1]) pairs"
 Loader --> Targets : "Batched Targets"
 
 ' 3. The xLSTM Model - using frame for grouping
-frame "xLSTM Model (Input: Batch [Batch, 19, 12])" {
+frame "LSTM Model (Input: Batch [Batch, 19, 12])" {
     rectangle "Layer 1 (num_layers=1)" as LayerBlock {
         rectangle "Bidirectional LSTM\n(hidden=512)" as BiLSTM
         note right of BiLSTM : Output Shape:\n(Batch, 19, 1024)
