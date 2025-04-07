@@ -157,13 +157,39 @@ The softmax function converts a vector of K real numbers \( \bm{z} = (z_1, ..., 
 The outputs are non-negative and sum to 1 (\( \sum_{i=1}^K \text{softmax}(\bm{z})_i = 1 \)). Softmax is commonly used in the output layer of multi-class classification models and plays a crucial role in normalizing scores into attention weights in the Attention mechanism (Equation~\ref{eq:scaled_dot_product_attention}).
 
 % -------------------------------------------------------------------------
+\subsection{Distance and Similarity Metrics}
+\label{subsec:distance_metrics}
+% -------------------------------------------------------------------------
+These metrics quantify the difference or similarity between vectors, which is fundamental in many machine learning tasks like clustering, nearest neighbor search, and evaluating embedding spaces. Let \( \bm{a}, \bm{b} \in \mathbb{R}^d \) be two vectors of dimension \( d \).
+
+\paragraph{Euclidean Distance (L2 Distance):}
+\label{eq:euclidean_distance}
+The most common distance measure, representing the straight-line distance between two points in Euclidean space. It is the L2 norm of the difference between the vectors:
+\begin{equation}
+  d_{\text{Euclidean}}(\bm{a}, \bm{b}) = ||\bm{a} - \bm{b}||_2 = \sqrt{\sum_{i=1}^d (a_i - b_i)^2}
+\end{equation}
+
+\paragraph{Manhattan Distance (L1 Distance):}
+Measures the distance by summing the absolute differences of the vector components. It corresponds to the distance travelled along axes at right angles (like navigating city blocks). It is the L1 norm of the difference:
+\begin{equation}
+  d_{\text{Manhattan}}(\bm{a}, \bm{b}) = ||\bm{a} - \bm{b}||_1 = \sum_{i=1}^d |a_i - b_i|
+\end{equation}
+
+\paragraph{Cosine Similarity:}
+Measures the cosine of the angle between two non-zero vectors, indicating their orientation similarity irrespective of their magnitude. It ranges from -1 (exactly opposite) through 0 (orthogonal) to 1 (exactly the same direction). It is calculated using the dot product and vector magnitudes (L2 norms):
+\begin{equation}
+  \text{CosineSimilarity}(\bm{a}, \bm{b}) = \frac{\bm{a} \cdot \bm{b}}{||\bm{a}||_2 ||\bm{b}||_2} = \frac{\sum_{i=1}^d a_i b_i}{\sqrt{\sum_{i=1}^d a_i^2} \sqrt{\sum_{i=1}^d b_i^2}}
+\end{equation}
+Cosine similarity is widely used for comparing high-dimensional vectors, such as text document embeddings or feature vectors, where magnitude might be less important than orientation. Note that while similarity increases as the value approaches 1, Cosine Distance is sometimes defined as \( 1 - \text{CosineSimilarity}(\bm{a}, \bm{b}) \).
+
+% -------------------------------------------------------------------------
 \subsection{Attention Mechanism Components}
 % -------------------------------------------------------------------------
 % (Content from previous version - Dot Product, Scaling)
 The Scaled Dot-Product Attention mechanism (Equation~\ref{eq:scaled_dot_product_attention}) relies on several fundamental operations beyond the Softmax function:
 
 \paragraph{Dot Product Similarity:}
-The compatibility between a query \( \bm{q} \) and a key \( \bm{k} \) (both typically vectors of the same dimension \( d_k \)) is often computed using the dot product \( \bm{q} \cdot \bm{k} = \bm{q}^T \bm{k} \). For matrices \( Q \) and \( K \) containing multiple queries and keys as rows, the matrix product \( QK^T \) computes all pairwise dot products efficiently.
+The compatibility between a query \( \bm{q} \) and a key \( \bm{k} \) (both typically vectors of the same dimension \( d_k \)) is often computed using the dot product \( \bm{q} \cdot \bm{k} = \bm{q}^T \bm{k} \). As noted above, this is closely related to Cosine Similarity but does not normalize for vector magnitudes. For matrices \( Q \) and \( K \) containing multiple queries and keys as rows, the matrix product \( QK^T \) computes all pairwise dot products efficiently.
 
 \paragraph{Scaling:}
 To counteract the effect of large dot product values when the dimension \( d_k \) is high, the scores \( QK^T \) are scaled down by dividing by \( \sqrt{d_k} \) before applying the softmax function. This helps maintain a stable gradient flow during training.
