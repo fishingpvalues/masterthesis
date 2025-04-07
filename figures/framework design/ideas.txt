@@ -22,7 +22,7 @@ The Twin Layer houses core elements of the digital twin ecosystem:
 
 1. **Physical Entity**: The actual manufacturing system generating real-time operational data.
 
-2. **Digital Entity**: The simulation-based digital twin modeling the physical entity's behavior.
+2. **Digital Entity**: The simulation-based digital twin modeling the physical entity's behaviour.
 
 This layer facilitates bi-directional data flow between physical and digital entities, enabling real-time synchronization to fulfill the functional requirement for continuous alignment between systems.
 
@@ -32,7 +32,7 @@ The VVUQ Layer implements the core functional requirement of automatic VVUQ thro
 
 1. **Verification**: Ensures the digital twin correctly represents the conceptual model.
 
-2. **Validation**: Confirms the digital twin accurately represents the physical entity's behavior.
+2. **Validation**: Confirms the digital twin accurately represents the physical entity's behaviour.
 
 3. **Uncertainty Quantification**: Measures various sources of uncertainty in the digital twin's predictions.
 

@@ -20,7 +20,7 @@ The UML model \autocite{PlantUML} in \autoref{fig:DSR} illustrates the system's 
   \item \textbf{Data Connectors:} In the given code, two classes \texttt{InputStructure} and \texttt{OutputStructure} are responsible for reading and writing data. The \texttt{InputStructure} class reads raw data from the twin simulation, while the \texttt{OutputStructure} class writes the processed data into the OCEL format developed for this framework, see \autoref{label:sec:event_log_processing}. In this I/O model, the mapping logic is returned as well. The connector assigns IDs for different parts, resources, and processes. The IDs are used to identify the different components in the manufacturing process. This is a requirement for OCED. The mapping is returned as JSON files for each category, respectively.
   \item \textbf{KPIFactory:} Contains utility functions to calculate a diverse set of KPIs for PPC evaluation of the process.
   \item \textbf{Baseline Model:} Implements a baseline model for comparison with the ResNet-BiLSTM-Attention model. This model serves as a reference point to evaluate the performance of the more complex architecture.
-  \item \textbf{Pytorch DataSet and DataLoader: BiLSTMDataset} Handles the conversion of raw data into a format suitable for the ResNet-BiLSTM-Attention model.
+  \item \textbf{PyTorch DataSet and DataLoader: BiLSTMDataset} Handles the conversion of raw data into a format suitable for the ResNet-BiLSTM-Attention model.
   \item \textbf{ResNet-BiLSTM-Attention:} The core model that combines ResNet and BiLSTM architectures with attention mechanisms to learn from the data.
 \end{itemize}
 
