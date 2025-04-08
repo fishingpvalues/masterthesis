@@ -261,6 +261,7 @@ A fundamental algorithm that updates parameters based on the gradient of the los
 where \( \eta \) is the learning rate and \( \nabla J(...) \) is the gradient computed on a mini-batch \( (\bm{x}^{(i)}, \bm{y}^{(i)}) \). Variants include momentum or Nesterov momentum.
 
 \paragraph{Adam Optimizer:}
+\label{eq:adam}
 An adaptive learning rate optimization algorithm that computes individual adaptive learning rates for different parameters using estimates of first and second moments of the gradients \autocite{kingma2014adam}. It often converges faster than basic SGD. The update rules involve computing biased moment estimates (\( \bm{m}_t, \bm{v}_t \)), bias-corrected estimates (\( \hat{\bm{m}}_t, \hat{\bm{v}}_t \)), and then updating parameters:
 \begin{equation}
   \theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{\bm{v}}_t} + \epsilon} \hat{\bm{m}}_t
@@ -283,6 +284,7 @@ Techniques used to adjust the learning rate \( \eta \) during training, which ca
 Loss functions quantify the difference between the model's predictions and the true target values, guiding the optimization process.
 
 \paragraph{Binary Cross-Entropy (BCE):}
+\label{eq:bce} % Reuse label if needed
 Used for binary classification tasks where the model outputs a probability \( \hat{p}_i \) for the positive class (true label \( y_i \in \{0, 1\} \)). It is the loss function used in the model training for this thesis.
 \begin{equation}
   \text{BCE} = -\frac{1}{N} \sum_{i=1}^N [ y_i \log(\hat{p}_i) + (1 - y_i) \log(1 - \hat{p}_i) ]

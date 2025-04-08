@@ -301,6 +301,7 @@ Accuracy quantifies the overall correctness of the classification model. It repr
 
 
 \begin{equation}
+  \label{eq:accuracy}
   \text{Accuracy} = \frac{\text{Number of Correct Predictions}}{\text{Total Number of Predictions}} = \frac{TP + TN}{TP + TN + FP + FN}
 \end{equation}
 where $TP$ denotes the count of true positives, $TN$ represents true negatives, $FP$ shows false positives, and $FN$ indicates false negatives.
@@ -312,6 +313,7 @@ Precision, also known as the positive predictive value, focuses on the quality o
 
 
 \begin{equation}
+  \label{eq:precision}
   \text{Precision} = \frac{TP}{TP + FP}
 \end{equation}
 
@@ -321,6 +323,7 @@ A high precision score shows that when the model predicts a manufacturing proces
 Recall, also referred to as sensitivity or the true positive rate (TPR), assesses the model's ability to identify all the actual positive instances within the dataset. It measures the proportion of actual positive instances that were correctly classified as positive by the model \autocite{fahrmeir2016statistik}.
 
 \begin{equation}
+  \label{eq:recall}
   \text{Recall} = \frac{TP}{TP + FN}
 \end{equation}
 
@@ -330,6 +333,7 @@ In the context of manufacturing, a high recall for the 'valid' class is crucial 
 The F1-score provides a balanced measure of the classification model's performance by calculating the harmonic mean of precision and recall. This metric is particularly useful when dealing with datasets that contain an imbalance in the class distribution.
 
 \begin{equation}
+  \label{eq:F1-score}
   \text{F1-score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} = \frac{2TP}{2TP + FP + FN}
 \end{equation}
 
@@ -341,7 +345,7 @@ A confusion matrix is a specific type of contingency table that provides a detai
 \begin{table}[h!]
   \centering
   \caption{Confusion Matrix for Binary Classification}
-  \label{tab:confusion_matrix}
+  \label{tab:confusionmatrix}
   \begin{tabular}{c|cc}
     \toprule
     \textbf{Actual Class} & \multicolumn{2}{c}{\textbf{Predicted Class}}                       \\
@@ -419,9 +423,15 @@ For binary classification tasks, such as the prediction of 'is\_valid' status in
   \label{fig:roc}
 \end{figure}
 
-An ROC curve is a graphical representation that plots the true positive rate (TPR or recall) against the false positive rate (FPR) at various classification thresholds. By examining the curve, one can visualize the trade-off between the model's sensitivity (its ability to correctly identify positive instances) and its specificity (its ability to correctly identify negative instances) across different decision points. The AUC metric quantifies the overall ability of the classifier to distinguish between the two classes. It represents the area under the ROC curve, with values ranging from 0 to 1. An AUC of 1 indicates a perfect classifier, while an AUC of 0.5 suggests a performance no better than random guessing. In the context of predicting 'is\_valid' in manufacturing, a higher AUC for the network would signify that the model is better at distinguishing between valid and invalid processes, regardless of the chosen classification threshold. This is particularly valuable when the class distribution is imbalanced, as ROC and AUC provide a more robust evaluation compared to metrics like accuracy that can be skewed by the majority class.
+\begin{equation}
+  \text{AUC} = \int_{0}^{1} \text{TPR}(\text{FPR}) \, d\text{FPR}
+  \label{eq:auc}
+\end{equation}
+
+An ROC curve is a graphical representation that plots the true positive rate (TPR or recall) against the false positive rate (FPR) at various classification thresholds. By examining the curve, one can visualize the trade-off between the model's sensitivity (its ability to correctly identify positive instances) and its specificity (its ability to correctly identify negative instances) across different decision points. The value of AUC ranges from 0 to 1. An AUC of 1 indicates a perfect classifier, while an AUC of 0.5 suggests a performance no better than random guessing. In the context of predicting 'is\_valid' in manufacturing, a higher AUC for the network would signify that the model is better at distinguishing between valid and invalid processes, regardless of the chosen classification threshold. This is particularly valuable when the class distribution is imbalanced, as ROC and AUC provide a more robust evaluation compared to metrics like accuracy that can be skewed by the majority class.
 
 Now that the basic concepts of VVUQ and the metrics used to assess model quality have been introduced, the next section will delve into the specific models employed in this work. The focus will be on the ResNet Bi-LSTM Multi-Head attention network, which is designed to automatically generate VBVVQ models for SBDT. This model leverages the strengths of LSTM networks and attention mechanisms to effectively handle sequential data and improve prediction accuracy.
+
 \subsubsection*{Bidirectional LSTM Networks for Sequence-Based Anomaly Detection}
 
 \paragraph{\textbf{The Foundation: Recurrent Neural Networks (RNNs)}}
