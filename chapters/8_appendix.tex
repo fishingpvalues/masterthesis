@@ -265,7 +265,7 @@ where \( \eta \) is the learning rate and \( \nabla J(...) \) is the gradient co
 An adaptive learning rate optimization algorithm that computes individual adaptive learning rates for different parameters using estimates of first and second moments of the gradients \autocite{kingma2014adam}. It often converges faster than basic SGD. The update rules involve computing biased moment estimates (\( \bm{m}_t, \bm{v}_t \)), bias-corrected estimates (\( \hat{\bm{m}}_t, \hat{\bm{v}}_t \)), and then updating parameters:
 \begin{equation}
   \theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\hat{\bm{v}}_t} + \epsilon} \hat{\bm{m}}_t
-  \label{eq:adam_update} % Reuse label if needed
+  \label{eq:adam-update} % Reuse label if needed
 \end{equation}
 Adam is used for training the model in this work.
 

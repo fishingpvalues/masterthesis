@@ -10,7 +10,7 @@ The framework has been applied on the Internet of Things-Factory (IOT) in Güter
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.7\textwidth]{pictures/iot1.png}
+  \includegraphics[width=0.7\textwidth]{figures/iot1.png}
   \caption{Overview of the IOT factory. It consists of three production stations from left to right, which are followed by a sorting station and a packaging station. The stations are interconnected by an assembly line. Isolated from the assembly part, two AGVs are used to transport parts between the warehouse station (upper right) and another flexible workstation (right).}
   \label{fig:iotoverview}
 \end{figure}
@@ -19,7 +19,7 @@ The robot cells are responsible for performing transformation operation like ass
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\textwidth]{pictures/robots.png}
+  \includegraphics[width=0.8\textwidth]{figures/robots.png}
   \caption{Two robot cells. The first cell is the main actor in this exemplary production process. Cell two is not part of the observed process here. The third image shows an AGV which transports boxes with assembled and disassembled parts to the stations.}
   \label{fig:robots}
 \end{figure}
@@ -28,7 +28,7 @@ The factory produces an exemplary product, consisting of a back part, a breadboa
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.2\textwidth]{pictures/parts.png}
+  \includegraphics[width=0.2\textwidth]{figures/parts.png}
   \caption{The product consists of a back part, a breadboard and a front panel. The breadboard is used to put on several parts, such as a display, gyroscope, analog board and a weather station.}
   \label{fig:iotproduct}
 \end{figure}
@@ -38,7 +38,7 @@ PRÜFEN UND ANPASSEN
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\textwidth]{pictures/assrules.png}
+  \includegraphics[width=0.8\textwidth]{figures/assrules.png}
   \caption{Three variants are possible. No transformation is also a possibility.}
   \label{fig:assrules}
 \end{figure}
@@ -51,7 +51,7 @@ Finally, the sequential order of the production process is as follows:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\textwidth]{pictures/process_direction.drawio.png}
+  \includegraphics[width=0.7\textwidth]{figures/processdirection.png}
   \caption{The blueprint with transitions between resources.}
   \label{fig:transitions}
 \end{figure}
@@ -60,13 +60,13 @@ Finally, the sequential order of the production process is as follows:
 
 \subsubsection{SBDT Dataset}
 
-The dataset gathered from the SBDT is referred to as \texttt{sim\_data}. The OpenFactoryTwin (see \autoref{sec:automated-digital-twin}) provides a method to deserialize the simulated orders and save them in a CSV file. The dataset then gets converted to the OCEL structure. For this endeveaur, a separate connector logic has to be implemented in every use case. See \texttt{src/connector/ofact} for the connector here.
+The dataset gathered from the SBDT is referred to as \texttt{sim\_data}. The OpenFactoryTwin (see \autoref{sec:automated-digital-twin}) provides a method to deserialize the simulated orders and save them in a CSV file. The dataset then gets converted to the OCEL structure. For this endeveaor, a separate connector logic has to be implemented in every use case. See \texttt{src/connector/ofact} for the connector here.
 
 The connector's output follows a standardized structure defined by the \texttt{OutputStructure} class, which ensures consistency across different data sources. The connector first deserializes the dynamic state model from a pickle file, accessing the full simulation state. Only actual process executions (as opposed to planned ones) are retained for further processing, identified by the "ACTUAL" flag in their event type. The connector creates mapping dictionaries for various categorical attributes following the OCED standard:
 
 \begin{itemize}
   \item \textbf{Part ID Mapping:} Uses domain expertise to identify part types from process names, normalizing text (lowercase, no whitespace) to match against a predefined list of possible parts. This list contains possible parts from \autoref{fig:iotproduct}.
-  \item \textbf{Process Type Categorization:} Assigns process steps to expert-defined categories such as "machine," "feature," "endproduct," "test," and "transport" based on keywords in process names. These types have been assigned by the modeller and are of free choice. See \autoref{tab:output_structure_detailed}.
+  \item \textbf{Process Type Categorization:} Assigns process steps to expert-defined categories such as "machine," "feature," "endproduct," "test," and "transport" based on keywords in process names. These types have been assigned by the modeller and are of free choice. See \autoref{tab:output-structure-detailed}.
   \item \textbf{Process ID Mapping:} Creates unique integer identifiers for each distinct process description based on enumeration.
   \item \textbf{Resource ID Mapping:} Generates unique identifiers for each resource involved in the process executions based on enumeration.
   \item \textbf{Temporal Data Extraction:} The connector extracts start and end times for each process execution.
@@ -122,7 +122,7 @@ The operations performed can be seen in the following:
   \item \textbf{Place cover to assembly place}: The first part is placed on the assembly place. The cover is placed on top of the part as the first piece of the product.
   \item \textbf{Assemble part from box on RASS1 - MAIN PCB}: The main PCB is assembled on the cover. This is the first configured part of the product. The main PCB is the breadboard of the product.
   \item \textbf{Switch on PCB}: The main PCB is switched on. This is necessary to activate it.
-  \item \textbf{Assemble part from box on RASS1 - DISPLAY}: The display is assembled on the main PCB. This is the second configured part of the product. The display is one optional part of the product. This factors out one product variant, see \ref{sec:casestudy}.
+  \item \textbf{Assemble part from box on RASS1 - DISPLAY}: The display is assembled on the main PCB. This is the second configured part of the product. The display is one optional part of the product. This factors out one product variant.
   \item \textbf{Move part to pallet on belt}: The product is moved to the pallet on the belt for further processing.
   \item \textbf{Measure a part (analog)}: The product is measured. This is necessary to ensure the quality of the product for later steps.
   \item \textbf{Assemble part from box on RASS2 - ANALOG}: The analog part is assembled on the product. This is the third configured part of the product. The analog part is also one optional part of the product.
@@ -146,7 +146,7 @@ Per step, several resources are involved. The following table shows the utilized
   \centering
   \caption{Steps and Resources Used}
   \label{tab:description-resources}
-  \begin{tabular}{@{}p{0.4\textwidth}p{0.55\textwidth}@{}}
+  \begin{tabular}{@{}p{0.4\textwidth}p{0.4\textwidth}@{}}
     \toprule
     \textbf{Process Step Name}                    & \textbf{Resource Name}                \\
     \midrule
@@ -185,7 +185,7 @@ Several preprocessing steps had to be performed to account for the fact that the
   \item The \texttt{sim\_data} dataset was aligned for the same time period as the \texttt{real\_data} dataset. The SBDT chose the time of order as the production time. In the modelling phase, when adaptive feature selection had been performed to identify if the SBDT was able to learn the Time Model, only \textit{relative} time features were chosen which were developed in \autoref{sec:feature-engineering}.
   \item The \texttt{real\_data} dataset was filtered for the same process steps as the \texttt{sim\_data} dataset. This means that only the process steps which are present in the \texttt{sim\_data} dataset were kept, producing only one product variant. This has also been applied on the part_id, the process_type and resource_id columns. The IDs based on enumeration had to be mapped to the original IDs in \texttt{real\_data} to ensure that the correct IDs are used in the simulation. The mapping was done through the JSON files generated by the connector.
   \item Both datasets have been cleaned and entries containing invalid IDs were removed. This means that all entries which are not present in the mapping dictionaries were removed. The mapping dictionaries are generated by the connector and contain only valid IDs per definition.
-  \item Only a subset of all performed processes was included (in detail, all \texttt{process_id} \le 26. These processes all have the \texttt{process_type} 'machine', 'feature' or 'endproduct'. The processes with the \texttt{process_type} 'test' and 'transport' were removed. This was done to ensure that only the relevant processes are included in the dataset.
+  \item Only a subset of all performed processes was included (in detail, all \texttt{process\_id} \le 26. These processes all have the \texttt{process\_type} 'machine', 'feature' or 'endproduct'. The processes with the \texttt{process\_type} 'test' and 'transport' were removed. This was done to ensure that only the relevant processes are included in the dataset.
 \end{itemize}
 
 The \texttt{real\_data} dataset was then concatenated with the \texttt{sim\_data} dataset. The concatenation was done by appending the \texttt{sim\_data} dataset to the \texttt{real\_data} dataset. The resulting dataset contains all process steps from both datasets. The resulting dataset is referred to as \texttt{final\_data}. The unification before concatenation was necessary to ensure that no logical flaws are present in the data.
@@ -193,7 +193,7 @@ The \texttt{real\_data} dataset was then concatenated with the \texttt{sim\_data
 The \texttt{final\_data} dataset finally after preprocessing as described contains 1978 rows and 56 orders with 24 features. The following section elaborates how these features were generated.
 
 \subsubsection{Feature Engineering}
-
+\label{sec:feature-engineering}
 
 \section{Automatically Generated Digital Twin}
 \label{sec:automated-digital-twin}
@@ -222,7 +222,7 @@ The simulation is conducted using an updated version of the Open Factory Twin (o
   \item \textbf{ProcessTimeModel}: Each part receives a time simple time distribution to account for its production time.
   \item \textbf{QualityModel}: Each part receives a bernoulli distribution to account for its quality. In the dataset, no quality information existed.
   \item \textbf{TransitionModel}: This model connects possible origins to possible destinations, to that the traversal of the parts can be modelled correctly. Each part and additional processes are relevant here.
-  \item \textbf{TransformationModel}: This model contains the building rules from Section \ref{sec:casestudy}.
+  \item \textbf{TransformationModel}: This model contains the building rules.
   \item \textbf{Time}: Process execution plans get a starting time here.
   \item \textbf{Part}: Parts are connected to their EntityType here. There is also information attached where the part is stored or situated in.
   \item \textbf{Sales}: Lists the features and feature cluster. This matches the building rules. Parts have to be defined as features here.
