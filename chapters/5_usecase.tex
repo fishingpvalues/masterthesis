@@ -59,13 +59,13 @@ Finally, the sequential order of the production process is as follows:
 
 \subsubsection{SBDT Dataset}
 
-The dataset gathered from the SBDT is referred to as \texttt{sim\_data}. The OpenFactoryTwin (see \autoref{sec:automated-digital-twin}) provides a method to deserialize the simulated orders and save them in a CSV file. The dataset then gets converted to the OCEL structure. For this endeveaur, a separate connector logic has to be implemented in every use case. See \texttt{src/connector/ofact} for the connector here.
+The dataset gathered from the SBDT is referred to as \texttt{sim\_data}. The OpenFactoryTwin (see \autoref{sec:automated-digital-twin}) provides a method to deserialize the simulated orders and save them in a CSV file. The dataset then gets converted to the OCEL structure. For this endeveur, a separate connector logic has to be implemented in every use case. See \texttt{src/connector/ofact} for the connector here.
 
 The connector's output follows a standardized structure defined by the \texttt{OutputStructure} class, which ensures consistency across different data sources. The connector first deserializes the dynamic state model from a pickle file, accessing the full simulation state. Only actual process executions (as opposed to planned ones) are retained for further processing, identified by the "ACTUAL" flag in their event type. The connector creates mapping dictionaries for various categorical attributes following the OCED standard:
 
 \begin{itemize}
   \item \textbf{Part ID Mapping:} Uses domain expertise to identify part types from process names, normalizing text (lowercase, no whitespace) to match against a predefined list of possible parts. This list contains possible parts from \autoref{fig:iotproduct}.
-  \item \textbf{Process Type Categorization:} Assigns process steps to expert-defined categories such as "machine," "feature," "endproduct," "test," and "transport" based on keywords in process names. These types have been assigned by the modeller and are of free choice. See \autoref{tab:output_structure_detailed}.
+  \item \textbf{Process Type Categorization:} Assigns process steps to expert-defined categories such as "machine," "feature," "endproduct," "test," and "transport" based on keywords in process names. These types have been assigned by the modeller and are of free choice. See \autoref{tab:output-structure-detailed}.
   \item \textbf{Process ID Mapping:} Creates unique integer identifiers for each distinct process description based on enumeration.
   \item \textbf{Resource ID Mapping:} Generates unique identifiers for each resource involved in the process executions based on enumeration.
   \item \textbf{Temporal Data Extraction:} The connector extracts start and end times for each process execution.
@@ -177,7 +177,7 @@ Per step, several resources are involved. The following table shows the utilized
 This process has been identified as the ground-truth process. The process is circular, meaning that the product is assembled and can be disassembled in a loop. The process is also modular, meaning that the product can be assembled in different configurations. The process is also flexible, meaning that the product can be assembled in different ways.
 
 \section{Open Factory Twin}
-\label{sec:automated_digital_twin}
+\label{sec:automated-digital-twin}
 
 The Simulation-Based Digital Twin (SBDT) for the IoT Factory use case was developed using the Open Factory Twin (OFacT) framework \autocite{ofactintern}. OFacT is an open-source digital twin framework specifically designed for modeling, simulating, and controlling production and logistics environments. Its goal is to support system design, planning, and operational control throughout the entire lifecycle of such systems.
 
@@ -229,7 +229,7 @@ The connector's output follows a standardized structure defined by the \texttt{O
 
 \begin{itemize}
   \item \textbf{Part ID Mapping:} Uses domain expertise to identify part types from process names, normalizing text (lowercase, no whitespace) to match against a predefined list of possible parts. This list contains possible parts from \autoref{fig:iotproduct}.
-  \item \textbf{Process Type Categorization:} Assigns process steps to expert-defined categories such as "machine," "feature," "endproduct," "test," and "transport" based on keywords in process names. These types have been assigned by the modeller and are of free choice. See \autoref{tab:output_structure_detailed}.
+  \item \textbf{Process Type Categorization:} Assigns process steps to expert-defined categories such as "machine," "feature," "endproduct," "test," and "transport" based on keywords in process names. These types have been assigned by the modeller and are of free choice. See \autoref{tab:output-structure-detailed}.
   \item \textbf{Process ID Mapping:} Creates unique integer identifiers for each distinct process description based on enumeration.
   \item \textbf{Resource ID Mapping:} Generates unique identifiers for each resource involved in the process executions based on enumeration.
   \item \textbf{Temporal Data Extraction:} The connector extracts start and end times for each process execution.
