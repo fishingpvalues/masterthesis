@@ -220,6 +220,7 @@ The \texttt{sim\_data} rows will receive the label $0$ for \texttt{is\_valid}, b
 
 
 \section{Data Pipeline}
+\label{sec:data-pipeline}
 
 Several preprocessing steps had to be performed to account for the fact that the SBDT simulated only one variant of the product: 'analog', 'cover', 'display', 'gyroscope', 'pcb' and the involved machines. This yielded the necessity to make both datasets congruent to each other. The following steps were performed:
 
@@ -444,7 +445,7 @@ The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with 
 \begin{table}[htbp]
   \centering
   \caption{Whitebox DT validation results across 10 runs (N=1000, $\alpha=0.05$), using paragraph-based layout.}
-  \label{tab:results-whitebox-paragraph}
+  \label{tab:results-whitebox}
   \begin{tabular}{l l l l l p{3cm}}
     \toprule
     \textbf{Component ($\mathcal{F}_c$)} & \textbf{$\overline{\text{ROC AUC}}$} & \textbf{$\sigma_{\text{ROC AUC}}$} & \textbf{$\bar{p}$-value} & \textbf{RR} & \textbf{Assessment} \\

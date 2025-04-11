@@ -5,7 +5,7 @@
 %% Base Class & Package Loading
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Load a standard base class (scrreprt) that defines default font sizes, etc.
-\LoadClass[a4paper,12pt,twoside]{scrreprt}
+\LoadClass[a4paper,12pt]{scrreprt}
 
 % Required packages
 \RequirePackage{geometry}     % Page geometry setup
@@ -30,15 +30,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \geometry{
     a4paper,
-    left=1.5in,
-    right=1.5in,
-    top=1in,
-    bottom=1in,
+    left=3.0cm,
+    right=2.5cm,
+    top=2.0cm,
+    bottom=2.0cm,
     headheight=15pt,
     headsep=10pt,
     footskip=30pt
 }
-
+% TODO: Change left to 3cm, right tio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Font Settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

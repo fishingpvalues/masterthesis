@@ -67,7 +67,7 @@ The procedure involves the following steps:
   \item \textbf{Calculate the p-value:} The p-value represents the probability of observing a test statistic as extreme as, or more extreme than, $S_{obs}$ under the assumption that $H_0$ is true. It is calculated as the proportion of permuted statistics that are greater than or equal to (or less than or equal to, depending on the hypothesis direction) the observed statistic:
         \begin{equation}
           p = \frac{\sum_{i=1}^{N} \mathbb{I}(S_{perm, i} \ge S_{obs})}{N}
-          \label{eq:pvalue_perm_generic}
+          \label{eq:pvalue_perm}
         \end{equation}
         where $\mathbb{I}(\cdot)$ is the indicator function (1 if the condition is true, 0 otherwise). For a two-sided test, the calculation involves considering extreme values in both tails of the null distribution.
   \item \textbf{Interpret the Result:} Compare the calculated p-value to a pre-defined significance level $\alpha$ (commonly $\alpha = 0.05$ or $\alpha = 0.01$).
