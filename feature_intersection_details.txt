@@ -1,0 +1,37 @@
+--- Detailed Feature Intersection Report ---
+
+Combination: KPI-based ONLY
+  - Represented by Boolean: (False, False, False, False, False, True)
+  - Feature Count: 4
+  - Features: cycle_time_sec, lead_time_sec, setup_time_sec, throughput
+
+Combination: Resource Model & Transformation Model & Process Model ONLY
+  - Represented by Boolean: (False, True, True, False, True, False)
+  - Feature Count: 1
+  - Features: process_id
+
+Combination: Resource Model & Transformation Model & Transition Model ONLY
+  - Represented by Boolean: (False, True, True, True, False, False)
+  - Feature Count: 1
+  - Features: part_id
+
+Combination: Resource Model & Transition Model ONLY
+  - Represented by Boolean: (False, True, False, True, False, False)
+  - Feature Count: 1
+  - Features: resource_id
+
+Combination: Time Model & Transformation Model & Transition Model & Process Model ONLY
+  - Represented by Boolean: (True, False, True, True, True, False)
+  - Feature Count: 1
+  - Features: sequence_number
+
+Combination: Time Model & Transition Model & Process Model ONLY
+  - Represented by Boolean: (True, False, False, True, True, False)
+  - Feature Count: 1
+  - Features: duration
+
+Combination: Time Model ONLY
+  - Represented by Boolean: (True, False, False, False, False, False)
+  - Feature Count: 6
+  - Features: day_of_week_cos, day_of_week_sin, hour_of_day_cos, hour_of_day_sin, is_break, is_not_weekday
+

@@ -1,26 +1,94 @@
 \chapter{Discussion}
 \label{chap:discussion}
 
-\section{Evaluation of the Developed Framework}
-% Strengths and weaknesses
-% Fulfillment of requirements (→ reference to 4.1)
-% Evaluation of the framework in light of research questions (→ reference to 1.3)
+This chapter critically examines the findings from the empirical validation of the framework presented in \autoref{chap:case-study}, connecting these results to the broader theoretical foundations established earlier in the thesis, see \autoref{chap:theory}. The IoT Factory case study provided valuable insights into the effectiveness of the machine learning-based approach to VVUQ of simulation-based digital twins, revealing both strengths and limitations of the proposed methodology.
 
-\section{Significance of Verification in Automatically Generated Digital Twins}
-% Reference back to theoretical discussion on V&V (→ reference to 1.2, 2.2, and 3.1)
-% Empirical findings on the merging of verification and validation
-% Distinction from validation
-% Integration into the overall process
-% Theoretical advancement of V&V concepts (→ reference to 2.2 and 8.2)
+\section{Comparison with Traditional VVUQ Methods}
+\label{sec:comparison_manual}
 
-\section{Limitations of Automated Validation}
-% Technical limits
-% Methodological constraints
-% Application areas
-% Discrepancies and Anomalies: Critical understanding of discrepancies between real and simulated data (→ Reference to 6.4)
-% Critical reflection of the own approach (→ reference to 4.5 and 6.5)
+Traditional VVUQ practices, as discussed earlier, distinguish between verification (ensuring the model is built correctly according to specifications) and validation (ensuring the model is an accurate representation of the real system for the intended purpose). Key techniques mentioned included code inspection, debugging, unit tests, statistical test and sensitivity analysis, see \autoref{sec:ml-approaches}. While essential, applying these techniques comprehensively to complex SBDTs faces several challenges, also highlighted previously.
 
-\section{Implications for Research and Practice}
-% Scientific contribution
-% Practical applicability
-% Transfer of findings to other domains (→ outlook to 8.3)
+The proposed ML-based validation framework, utilizing classifiers and permutation testing on event log data, primarily addresses the *validation* aspect by comparing the dynamic behavior reflected in simulated outputs against real-world operational data. It aims to overcome some of the traditional challenges:
+
+\begin{itemize}
+  \item \textbf{Effort and Scalability:} Traditional validation relying on extensive \textit{expert consultation}, manual log comparison implicit in some forms of \textit{historical data comparison}, or setting up numerous \textit{simple experiments} is often highly \textit{labor-intensive}. This manual effort negates some efficiency gains expected from SBDTs, especially if they are automatically generated or frequently updated. The ML approach, while requiring initial setup (data pipeline, feature engineering, model training), automates the core comparison task. Re-running the validation on new data or model versions requires mainly computational resources, addressing the \textit{difficulty scaling} challenge better than manual review.
+
+  \item \textbf{Scope, Depth, and Objectivity:} Comparing aggregate KPIs via \textit{statistical tests} or assessing \textit{face validity} through \textit{expert consultation} may fail to capture subtle discrepancies in process dynamics or interactions within the SBDT. The ML approach analyzes granular event data (\autoref{sec:data_acquisition_prep}) and potentially complex feature interactions (\autoref{sec:feature_engineering_validation}), offering a deeper probe into the model's dynamic fidelity. The whitebox results (\autoref{sec:whitebox_results}), where the DT identified statistically significant discrepancies (RR=1.00) across all components based on diverse feature sets, provide empirical evidence (\autoref{sec:whitebox_results}) for this potential depth. Furthermore, the use of permutation testing (\autoref{sec:statistical_significance}) yields objective p-values, contrasting with the subjectivity inherent in \textit{expert consultation} or purely \textit{results-based validation}.
+
+  \item \textbf{Applicability to Black-Box Models:} Techniques like \textit{code inspection} are difficult for complex or proprietary simulation platforms. The ML-based approach treats the SBDT primarily as a generator of output data. As long as comparable event logs can be extracted from the simulation and the real system, the validation method can be applied, mitigating the challenge of \textit{limited applicability to black-box models}.
+
+  \item \textbf{Continuous Validation:} Manual validation activities are often performed periodically. The automated nature of the ML pipeline lends itself better to more frequent or even \textit{continuous validation} as new real-world data becomes available or the SBDT is updated, addressing a key limitation of traditional batch validation processes.
+
+  \item \textbf{Integration:} While integrating any V&V process presents challenges, embedding an automated data pipeline and ML testing framework might face different \textit{integration challenges} (e.g., MLOps) compared to scheduling manual reviews or setting up traditional statistical reporting. However, once integrated, it can potentially offer more seamless feedback.
+\end{itemize}
+
+It is crucial to note that the proposed ML-based validation method primarily focuses on assessing the SBDT's fidelity against real-world data (validation). It does not replace the need for traditional *verification* techniques. Methods like \textit{code inspection}, \textit{unit testing}, and \textit{debugging} remain essential for ensuring that the simulation model itself is implemented correctly according to its design specifications and is free from logical errors or bugs. Verification ensures the model is "built right," while the ML-based validation helps determine if it is the "right model" relative to observed reality.
+
+In comparison to the traditional validation techniques previously discussed, the automated, classifier-based VVUQ framework demonstrated in this chapter offers specific advantages in objectivity, depth, scalability, and applicability, particularly for complex SBDTs. It directly addresses key challenges associated with manual effort and limited scope often found in traditional methods like \textit{expert consultation} or basic \textit{statistical tests} on aggregate KPIs. The empirical results (\autoref{sec:whitebox_results}), even from the simpler whitebox model, highlight the method's sensitivity in detecting statistically significant discrepancies across various SBDT components based on event log data. While not replacing necessary verification steps, this data-driven validation approach provides a powerful, scalable, and objective tool to enhance confidence in SBDT credibility or guide targeted model improvements, aligning with the need for advanced VVUQ in the era of Industry 4.0 and digital twins.
+
+\section{Discussion in Light of Research Questions}
+\label{sec:discussion_rqs}
+The subsequent discussion evaluates the extent to which this objective was met by critically analyzing the results of the case study (\autoref{chap:case-study}) in the context of the research questions posed in \autoref{chap:introduction}:
+\begin{itemize}
+  \item \textbf{RQ1:} How can automated VVUQ processes for SBDTs be efficiently implemented?
+  \item \textbf{RQ2:} Which data-driven approaches are best suited for identifying discrepancies between simulated behaviour and real operational data in DMFS?
+  \item \textbf{RQ3:} To what extent does the developed framework improve the quality and reliability of SBDTs compared to traditional V&V methods?
+\end{itemize}
+
+\subsection{RQ1: Efficiency of Automated VVUQ Implementation}
+\label{sec:discussion_rq1}
+% Discuss the practical efficiency observed in the case study.
+% - How automated was the pipeline (data prep, feature eng, model training, testing)?
+% - Compare setup effort vs. execution effort based on experience.
+% - Did it fulfill efficiency requirements (ref Chapter 4)? Scalability thoughts?
+% - Strengths/Weaknesses regarding efficiency.
+
+\subsection{RQ2: Suitability of Data-Driven Approaches for Discrepancy Detection}
+\label{sec:discussion_rq2}
+% Discuss how well the chosen methods worked.
+% - Effectiveness of OCEL + feature engineering (ref \autoref{sec:feature-engineering}).
+% - Performance of DT (and BiLSTM when results are available) in finding differences (ref \autoref{sec:whitebox_results}). Which features/aspects seemed important?
+% - Utility of permutation testing for statistical significance (\autoref{sec:statistical_significance}).
+% - Strengths/Weaknesses of these specific techniques for this task.
+
+\subsection{RQ3: Improvement Compared to Traditional Methods}
+\label{sec:discussion_rq3}
+% Synthesize the comparison (\autoref{sec:comparison_manual}) with empirical evidence.
+% - Did the framework demonstrate improved quality/reliability/scope in the case study (e.g., detecting issues across all components with DT)?
+% - How did the objectivity compare?
+% - Did it address specific traditional challenges in practice?
+% - Strengths/Weaknesses regarding comparative improvement.
+
+% Note: The section "Significance of Verification..." is proposed to be removed as a standalone section. Its points about distinction are covered in \autoref{sec:comparison_manual}, and theoretical points fit in \autoref{sec:implications_theoretical}.
+
+\section{Implications of the Findings}
+\label{sec:discussion_implications} % Replaces your "Implications for Research and Practice" and incorporates elements from your Conclusion draft
+
+\subsection{Methodological and Theoretical Insights}
+\label{sec:implications_theoretical} % Incorporates content from Conclusion draft Sec 2
+% Discuss the broader significance.
+% - Significance of using OCEL for validation data structures.
+% - Contribution to using ML (specifically classifiers/permutation tests) for simulation validation.
+% - Potential advancements/refinements to V&V theory for automated/SBDT contexts.
+% - Insights into defining/measuring DT fidelity.
+
+\subsection{Recommendations for Practical Application}
+\label{sec:implications_practical} % Incorporates content from Conclusion draft Sec 4
+% Translate findings into actionable advice.
+% - Strategies for implementing automated ML-based validation in industry.
+% - Best practices derived from the case study (e.g., feature engineering, model choice considerations).
+% - How practitioners can use this framework to increase trust/utility of SBDTs.
+% - Potential integration points with existing manufacturing IT/OT infrastructure.
+
+\section{Limitations of the Study}
+\label{sec:discussion_limitations} % Replaces your "Limitations of Automated Validation"
+% Critically reflect on the research boundaries.
+% - Generalizability (single case study, specific SBDT type/platform - OFacT).
+% - Data dependency (quality/quantity of real and sim logs, handling missing data).
+% - Methodological choices (DT vs BiLSTM limitations, features chosen, permutation test details, lack of UQ quantification in results).
+% - Scope (Aspects of VVUQ not covered, e.g., formal verification, detailed UQ propagation).
+% - Understanding Discrepancies: Discuss the extent to which the method identified *why* differences occurred (interpretability challenge, especially for BiLSTM). Did feature importance help?
+
+\section{Discussion Summary}
+\label{sec:discussion_summary}
+% Optional: A brief paragraph summarizing the main threads of the discussion before transitioning to the final conclusion chapter. Recaps the answers to RQs, main implications, and key limitations discussed.

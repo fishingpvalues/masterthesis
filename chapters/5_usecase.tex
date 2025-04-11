@@ -1,11 +1,11 @@
-\chapter{Testing}
+\chapter{Empirical Validation: IoT Factory Case Study}
 \label{chap:case-study}
 
 The thesis now focusses on the application of the implemented features and methods in a real-world scenario. The goal is to demonstrate the practical applicability of the developed concepts and to validate the theoretical findings presented in the previous chapters.
 
-\section{Application Scenario}
+\section{Physical Entity: Internet of Things Factory}
 \label{sec:factory}
-The framework has been applied on the Internet of Things-Factory (IOT) in Gütersloh, Germany \parencite{IoTFactory2024}. It is a cyber-physical system (CPS) \parencite{baheti2011cyber} mimicking industry-relevant processes in a smaller scale for research students. It consists of several stations that are partly interconnected via an assembly line or a delivery service conducted by automatic guided vehicles (AGVs). The factory is modular, so processes can be discovered module-wise in isolation. All modules are working on edge but are connected to a cluster to control it. The factory works without any personnel in theory. The main process also evaluated here is circular, meaning that the product is assembled and can be disassembled in a loop. The factory is shown in Figure \ref{fig:iotoverview}.
+The framework has been applied on the Internet of Things-Factory (IOT) in Gütersloh, Germany \autocite{IoTFactory2024}. It is a cyber-physical system (CPS) \autocite{baheti2011cyber} mimicking industry-relevant processes in a smaller scale for research students. It consists of several stations that are partly interconnected via an assembly line or a delivery service conducted by automatic guided vehicles (AGVs). The factory is modular, so processes can be discovered module-wise in isolation. All modules are working on edge but are connected to a cluster to control it. The factory works without any personnel in theory. The main process also evaluated here is circular, meaning that the product is assembled and can be disassembled in a loop. The factory is shown in Figure \ref{fig:iotoverview}.
 
 \begin{figure}[htbp]
   \centering
@@ -55,31 +55,7 @@ Finally, the sequential order of the production process is as follows:
   \label{fig:transitions}
 \end{figure}
 
-\subsection{Data Basis}
-
-\subsubsection{SBDT Dataset}
-
-The dataset gathered from the SBDT is referred to as \texttt{sim\_data}. The OpenFactoryTwin (see \autoref{sec:automated-digital-twin}) provides a method to deserialize the simulated orders and save them in a CSV file. The dataset then gets converted to the OCEL structure. For this endeveur, a separate connector logic has to be implemented in every use case. See \texttt{src/connector/ofact} for the connector here.
-
-The connector's output follows a standardized structure defined by the \texttt{OutputStructure} class, which ensures consistency across different data sources. The connector first deserializes the dynamic state model from a pickle file, accessing the full simulation state. Only actual process executions (as opposed to planned ones) are retained for further processing, identified by the "ACTUAL" flag in their event type. The connector creates mapping dictionaries for various categorical attributes following the OCED standard:
-
-\begin{itemize}
-  \item \textbf{Part ID Mapping:} Uses domain expertise to identify part types from process names, normalizing text (lowercase, no whitespace) to match against a predefined list of possible parts. This list contains possible parts from \autoref{fig:iotproduct}.
-  \item \textbf{Process Type Categorization:} Assigns process steps to expert-defined categories such as "machine," "feature," "endproduct," "test," and "transport" based on keywords in process names. These types have been assigned by the modeller and are of free choice. See \autoref{tab:output-structure-detailed}.
-  \item \textbf{Process ID Mapping:} Creates unique integer identifiers for each distinct process description based on enumeration.
-  \item \textbf{Resource ID Mapping:} Generates unique identifiers for each resource involved in the process executions based on enumeration.
-  \item \textbf{Temporal Data Extraction:} The connector extracts start and end times for each process execution.
-\end{itemize}
-
-Process executions are associated with their respective order IDs, establishing the connection between individual process steps and the orders they belong to. All extracted information is then consolidated into a standardized DataFrame structure with properly typed columns as defined in the \texttt{OutputStructure} class. The connector also includes a validation step to ensure that the generated DataFrame adheres to the expected structure and data types, raising an error if any discrepancies are found.
-
-A key aspect of the connector's functionality is the integration of domain knowledge into the data transformation process. Instead of relying solely on the raw data structure, the connector employs expert-defined categorizations and normalization procedures to ensure semantic consistency in the transformed data.
-
-For example, the part identification logic uses a predefined list of potential parts (such as "GYROSCOPE," "MAIN PCB," "FRONT COVER," etc.) and searches for these terms within process descriptions. Similarly, the process type categorization uses domain-specific groupings like "machine," "feature," and "test" based on keywords found in process names.This domain knowledge integration ensures that the transformed data maintains the semantic richness required for meaningful validation and comparison between simulated and real-world processes.
-
-The \texttt{sim\_data} rows will receive the label $0$ for \texttt{is\_valid}, because we want the black-box model to learn to distinguish between real and simulated data to perform VVUQ. This way we can ensure that the SBDT learned important characteristics from the factory data, which receives the integer $1$ for \texttt{is\_valid}.
-
-\subsubsection{Factory Dataset}
+\subsection*{Factory Dataset}
 
 The dataset has been gathered from the database of the IoT Factory. In the code it is referred to as \texttt{real\_data}.
 
@@ -175,11 +151,10 @@ Per step, several resources are involved. The following table shows the utilized
 
 
 This process has been identified as the ground-truth process. The process is circular, meaning that the product is assembled and can be disassembled in a loop. The process is also modular, meaning that the product can be assembled in different configurations. The process is also flexible, meaning that the product can be assembled in different ways.
-
-\section{Open Factory Twin}
+\section{Digital Entity: Open Factory Twin}
 \label{sec:automated-digital-twin}
 
-The Simulation-Based Digital Twin (SBDT) for the IoT Factory use case was developed using the Open Factory Twin (OFacT) framework \autocite{ofactintern}. OFacT is an open-source digital twin framework specifically designed for modeling, simulating, and controlling production and logistics environments. Its goal is to support system design, planning, and operational control throughout the entire lifecycle of such systems.
+The Simulation-Based Digital Twin (SBDT) for the IoT Factory use case was developed using the Open Factory Twin (OFacT) framework \autocite{ofact-intern}. OFacT is an open-source digital twin framework specifically designed for modeling, simulating, and controlling production and logistics environments. Its goal is to support system design, planning, and operational control throughout the entire lifecycle of such systems.
 
 A principle of OFacT is the separation between the static description of the system and its dynamic behavior. This is achieved by distinguishing between:
 
@@ -221,9 +196,9 @@ The construction of the State Model within OFacT uses structured input methods, 
 
 By defining these elements according to the IoT Factory's characteristics, a detailed static model was created within the OFacT framework. For simulation purposes, the state model then gets 'played out' with orders. The orders contain this model then served as the basis for running simulations to generate process execution data, forming the SBDT dataset used in this thesis for comparison against real-world data. The \autoref{fig:assrules} are inherently modelled by the chosen order variants.
 
-\section{Simulation}
+\subsection*{SBDT Dataset}
 
-The dataset gathered from the SBDT is referred to as \texttt{sim\_data}. The OpenFactoryTwin (see \autoref{sec:automated_digital_twin}) provides a method to deserialize the simulated orders and save them in a CSV file. The dataset then gets converted to the OCEL structure. For this endeveaur, a separate connector logic has to be implemented in every use case. See \texttt{src/connector/ofact} for the connector here.
+The dataset gathered from the SBDT is referred to as \texttt{sim\_data}. The OpenFactoryTwin (see \autoref{sec:automated-digital-twin}) provides a method to deserialize the simulated orders and save them in a CSV file. The dataset then gets converted to the OCEL structure. For this endeveur, a separate connector logic has to be implemented in every use case. See \texttt{src/connector/ofact} for the connector here.
 
 The connector's output follows a standardized structure defined by the \texttt{OutputStructure} class, which ensures consistency across different data sources. The connector first deserializes the dynamic state model from a pickle file, accessing the full simulation state. Only actual process executions (as opposed to planned ones) are retained for further processing, identified by the "ACTUAL" flag in their event type. The connector creates mapping dictionaries for various categorical attributes following the OCED standard:
 
@@ -239,12 +214,12 @@ Process executions are associated with their respective order IDs, establishing 
 
 A key aspect of the connector's functionality is the integration of domain knowledge into the data transformation process. Instead of relying solely on the raw data structure, the connector employs expert-defined categorizations and normalization procedures to ensure semantic consistency in the transformed data.
 
-For example, the part identification logic uses a predefined list of potential parts (such as "GYROSCOPE," "MAIN PCB," "FRONT COVER," etc.) and searches for these terms within process descriptions. Similarly, the process type categorization uses domain-specific groupings like "machine" "feature" and "test" based on keywords found in process names.This domain knowledge integration ensures that the transformed data maintains the semantic richness required for meaningful validation and comparison between simulated and real-world processes.
+For example, the part identification logic uses a predefined list of potential parts (such as "GYROSCOPE," "MAIN PCB," "FRONT COVER," etc.) and searches for these terms within process descriptions. Similarly, the process type categorization uses domain-specific groupings like "machine," "feature," and "test" based on keywords found in process names.This domain knowledge integration ensures that the transformed data maintains the semantic richness required for meaningful validation and comparison between simulated and real-world processes.
 
 The \texttt{sim\_data} rows will receive the label $0$ for \texttt{is\_valid}, because we want the black-box model to learn to distinguish between real and simulated data to perform VVUQ. This way we can ensure that the SBDT learned important characteristics from the factory data, which receives the integer $1$ for \texttt{is\_valid}.
 
 
-\subsection{Concatenation of Datasets}
+\section{Data Pipeline}
 
 Several preprocessing steps had to be performed to account for the fact that the SBDT simulated only one variant of the product: 'analog', 'cover', 'display', 'gyroscope', 'pcb' and the involved machines. This yielded the necessity to make both datasets congruent to each other. The following steps were performed:
 
@@ -259,7 +234,7 @@ The \texttt{real\_data} dataset was then concatenated with the \texttt{sim\_data
 
 The \texttt{final\_data} dataset finally after preprocessing as described contains 1978 rows and 56 orders with 24 features. The following section elaborates how these features were generated.
 
-\subsubsection{Feature Engineering}
+\subsection*{Feature Engineering}
 \label{sec:feature-engineering}
 
 Several features have been engineered to assist both the whitebox and blackbox model on the validation task. The features were furher introduced to empower adaptive feature selection (AFS) regarding the model components of the SBDT \autocite{schwede2024learning}. This way, if the features sufficiently explain the data, the conclusion can be made that the SBDT was able to learn the respective model component.
@@ -336,18 +311,21 @@ Figure \ref{fig:time-encoding} illustrates this concept for the hour of the day.
   \label{fig:time-encoding}
 \end{figure}
 
-\section{Experiments}
-With the the integration of these features, AFS can be performed. Most features are time based an can be used to check for the Time Model component. The learning of the resource model and the resource capacity model is faciliated by the categorical feature \texttt{resource\_id} with respect to the sequence number and time information. In general, time features have been found useful because they inherently encode order information as well. Now we restrict the whitebox and blackbox model on subsets of features and gather evidence if they were able to distinguish the real processes (with the label \texttt{is\_valid} equal to $1$) from the simulated twin data with the zeroed label.
+\section{Validation Methodology and Setup}
+With the integration of these features, AFS can be performed. For the statistical soundness of the analysis, a permutation test will be performed to assess the significance of the results. The following sections outline the testing procedure and the specific components of the SBDT that will be evaluated.
 
-\subsection{Statistical Testing Framework}
+\subsection*{Permutation Testing for Statistical Significance}
 \label{sec:model-logic}
-\noindent The null hypothesis ($H_0$) posits that the SBDT accurately represents the real system with respect to the features $\mathcal{F}_c$, meaning the data distributions are indistinguishable:
+
+As laid out in the methodology chapter \autoref{sec:permtest}, a permutation test will be conducted.
+
+\noindent The null hypothesis ($H_0$) claims that the SBDT accurately represents the real system with respect to the features $\mathcal{F}_c$, meaning the data distributions are indistinguishable:
 \begin{equation}
   H_0: \mathcal{D}_{real}(\mathbf{X} | \mathcal{F}_c) = \mathcal{D}_{sim}(\mathbf{X} | \mathcal{F}_c)
   \label{eq:h0}
 \end{equation}
 
-\noindent The alternative hypothesis ($H_1$) posits that the SBDT does \textit{not} accurately represent the real system, and the distributions are statistically distinguishable using the features $\mathcal{F}_c$:
+\noindent The alternative hypothesis ($H_1$) claims that the SBDT does \textit{not} accurately represent the real system, and the distributions are statistically distinguishable using the features $\mathcal{F}_c$:
 \begin{equation}
   H_1: \mathcal{D}_{real}(\mathbf{X} | \mathcal{F}_c) \neq \mathcal{D}_{sim}(\mathbf{X} | \mathcal{F}_c)
   \label{eq:h1}
@@ -355,150 +333,17 @@ With the the integration of these features, AFS can be performed. Most features 
 
 \noindent Under this framework, if a classifier trained on the feature set $\mathcal{F}_c$ achieves performance significantly better than chance at distinguishing between real ($y=1$) and simulated ($y=0$) data, it provides evidence to reject $H_0$ in favour of $H_1$. This would imply that the SBDT component $c$ has \emph{not} been learned accurately, as detectable discrepancies exist. Conversely, if the classifier performs poorly (close to random chance), we fail to reject $H_0$, suggesting that, based on the features $\mathcal{F}_c$, the simulated data is consistent with the real data for that component.
 
-
-While classification reports provide metrics like accuracy, F1-score, precision, and recall, these point estimates do not directly quantify the statistical significance of the separation between the two classes (real vs. simulated) against the null hypothesis $H_0$. To determine if the classifier's ability to distinguish the data sources is statistically significant (i.e., unlikely to be due to random chance), we employ \textbf{Permutation Testing}.
-
-Permutation testing is a non-parametric statistical significance test well-suited for this classification task. It directly assesses the likelihood of observing the classifier's performance (or better) under the null hypothesis ($H_0$) that the labels (real/simulated) are independent of the features $\mathcal{F}_c$. The procedure is as follows:
-
-\begin{enumerate}
-  \item \textbf{Compute Observed Statistic:} Train and evaluate the classifier (e.g., Decision Tree or BiLSTM) on the original dataset using the feature subset $\mathcal{F}_c$. Record the chosen performance metric (e.g., Accuracy or AUC), denoted as $S_{obs}$. This is typically obtained from cross-validation or a hold-out test set.
-  \item \textbf{Generate Null Distribution:} Repeat the following steps a large number of times ($N$, e.g., $N=1000$ or $N=5000$):
-        \begin{itemize}
-          \item Create a permuted dataset by randomly shuffling the true labels ($y=0$ and $y=1$) across all data instances $\mathbf{X}$ in the test set (or across folds in cross-validation). This simulates the scenario where the features $\mathcal{F}_c$ carry no information about the data's origin (real vs. simulated), consistent with $H_0$.
-          \item Train and evaluate the classifier on this permuted dataset using the same procedure as in step 1. Record the performance metric, $S_{perm}$.
-        \end{itemize}
-        This generates an empirical distribution of the performance metric under the null hypothesis.
-  \item \textbf{Calculate p-value:} The p-value is the proportion of permutation scores ($S_{perm}$) that are greater than or equal to the observed score ($S_{obs}$):
-        \begin{equation}
-          p = \frac{\sum_{i=1}^{N} \mathbb{I}(S_{perm, i} \ge S_{obs})}{N}
-          \label{eq:pvalue_perm}
-        \end{equation}
-        where $\mathbb{I}(\cdot)$ is the indicator function (1 if the condition is true, 0 otherwise).
-  \item \textbf{Interpret Result:} Compare the p-value to a pre-defined significance level $\alpha$ (e.g., $\alpha = 0.05$).
-        \begin{itemize}
-          \item If $p < \alpha$: We reject the null hypothesis $H_0$. There is statistically significant evidence that the classifier can distinguish between real and simulated data based on features $\mathcal{F}_c$. This suggests the SBDT component $c$ was \emph{not} learned accurately.
-          \item If $p \ge \alpha$: We fail to reject the null hypothesis $H_0$. There is insufficient evidence to conclude that the distributions are different based on features $\mathcal{F}_c$. This suggests the SBDT component $c$ might be adequately learned (or at least, its inaccuracies are not detectable with this feature set and classifier).
-        \end{itemize}
-\end{enumerate}
-
-This procedure will be applied for each feature subset $\mathcal{F}_c$ corresponding to the different SBDT model components being evaluated. The resulting p-values provide a rigorous basis for concluding whether observed differences between the real and simulated data are statistically meaningful.
-
-\begin{comment}
-Recommended Approach: Train Once, Permute Test Predictions
-The key insight is that we can train the model once and then perform permutation testing on the test set predictions:
-
-Train the BiLSTM model on the original training data
-Generate predictions on the test set
-For permutation testing, only shuffle the test set labels while keeping the predictions fixed
-This maintains the statistical soundness while dramatically reducing computation time
-Implementation Changes
-Here's how to modify your permutation_test function for BiLSTM models:
-% Experimental design
-% Execution of automated validation
-%  model adjustment
-% Feature Engineering: Creation of features such as "duration," "sequence_number," and periodic time features (e.g., "day_of_week_sin," "hour_of_day_cos") (→ Reference to 4.3)
-% Machine Learning Models: Implementation of a Decision Tree Classifier and an BiLSTM model for validation (→ Reference to 4.3)
-% Empirical verification of theoretical V\&V concepts (→ reference to 2.2 and 4.3)
-
-Reporting: In your results section, for each component/feature set, you would report the primary classification metric (e.g., Accuracy or AUC) and the p-value obtained from the permutation test. This allows you to state whether the observed separation capability of the classifier is statistically significant.
-\end{comment}
-
-\subsection{Testing the SBDT Components}
+\subsection*{Testing the SBDT Components}
 To rigorously evaluate the SBDTs fidelity concerning different process aspects, we implemented the hypothesis testing framework outlined previously (testing $H_0$: \autoref{eq:h0} against $H_1$: \autoref{eq:h1}). This involved using machine learning classifiers to determine if statistically significant differences exist between the real process data ($\mathcal{D}_{real}$, labeled $y=1$) and the simulated data ($\mathcal{D}_{sim}$, labeled $y=0$) based on specific feature subsets ($\mathcal{F}_c$) corresponding to key SBDT model components.
 
-The analysis was performed separately for distinct feature subsets $\mathcal{F}_c$, each curated to reflect the behaviour governed by specific SBDT components. Based on the feature engineering described in \autoref{sec:feature-engineering}, subsets were defined for the \texttt{time\_model} (including duration, sequence, cyclical time features), \texttt{resource\_model} (categorical resource, part, process IDs), \texttt{process\_model} (process ID, duration, sequence), \texttt{kpi\_based} (calculated KPIs like throughput, cycle time), and an \texttt{all\_features} set encompassing all available engineered features.
+The analysis was performed separately for distinct feature subsets $\mathcal{F}_c$, each curated to reflect the behaviour governed by specific SBDT components. Based on the feature engineering described in \autoref{sec:feature-engineering}, subsets were defined for the \texttt{time\_model} (including duration, sequence, cyclical time features), \texttt{resource\_model} (categorical resource, part, process IDs), \texttt{process\_model} (process ID, duration, sequence), \texttt{kpi\_based} (calculated KPIs like throughput, cycle time), and an \texttt{all\_features} set encompassing all available engineered features. PRÜFEN UND ANPASSEN
 
-\subsection{Permutation Testing Procedure}
+\subsection*{Permutation Testing Procedure}
 
-Statistical significance was assessed using \textbf{Permutation Testing}, as described conceptually earlier (\autoref{eq:pvalue_perm}). The practical implementation followed these steps for each feature subset $\mathcal{F}_c$:
+The practical implementation of the test described in \autoref{eq:pvalue_perm} followed these steps for each feature subset $\mathcal{F}_c$:
 
-\begin{enumerate}
-  \item \textbf{Data Splitting:} The combined dataset (\texttt{final\_data}) was split into stratified training ($\mathcal{D}_{train}$) and testing ($\mathcal{D}_{test}$) sets using \texttt{sklearn.model\_selection.train\_test\_split}, ensuring proportional representation of real ($y=1$) and simulated ($y=0$) data in both sets. A random seed was used for reproducibility within a single run.
-  \item \textbf{Model Training:} The chosen classifier (Decision Tree or BiLSTM) was trained on $\mathcal{D}_{train}$ using only the features in $\mathcal{F}_c$.
-  \item \textbf{Observed Statistic Calculation:} The trained model was evaluated on the original test set $\mathcal{D}_{test}$. The performance metric, specifically the Area Under the Receiver Operating Characteristic Curve (\textbf{ROC AUC}, \texttt{sklearn.metrics.roc\_auc\_score}), was calculated and recorded as the observed statistic, $S_{obs}$. ROC AUC was chosen for its robustness to class imbalance and its ability to measure overall discriminative power.
-  \item \textbf{Null Distribution Generation (Permutation):} To generate the null distribution, $N$ permutations (e.g., $N=100$) were performed. Critically, an efficient approach was used, particularly for the computationally intensive BiLSTM model:
-        \begin{itemize}
-          \item The trained model generated predictions (binary $\hat{\mathbf{y}}_{test}$) and class probabilities (specifically for the positive class, $\hat{\mathbf{p}}_{test}$) on the original test set $\mathcal{D}_{test}$ *once*.
-          \item For each permutation $i=1...N$: The *true labels* $\mathbf{y}_{test}$ of the test set were randomly shuffled, creating $\mathbf{y}_{test, perm}^{(i)}$.
-          \item The permuted statistic $S_{perm, i}$ was calculated by comparing the shuffled labels $\mathbf{y}_{test, perm}^{(i)}$ against the *fixed* probabilities $\hat{\mathbf{p}}_{test}$ (i.e., calculating ROC AUC between $\mathbf{y}_{test, perm}^{(i)}$ and $\hat{\mathbf{p}}_{test}$). This avoids retraining the model for each permutation. (A similar principle was applied for the Decision Tree, comparing permuted labels against fixed predictions/probabilities).
-        \end{itemize}
-  \item \textbf{P-value Calculation:} The p-value was computed as the proportion of permutation statistics greater than or equal to the observed statistic, following Eq.~\ref{eq:pvalue_perm}.
-        \begin{equation}
-          p = \frac{\sum_{i=1}^{N} \mathbb{I}(S_{perm, i} \ge S_{obs})}{N}
-          \nonumber % No number as it's conceptually the same as eq:pvalue_perm
-        \end{equation}
-\end{enumerate}
-
-This can also be summarized in pseudo code:
-
-\begin{algorithm}[H] % Floating environment
-  \caption{Multi-Run Permutation Testing for SBDT Component Validation}
-  \label{alg:permutation_testing_readable} % New label for readable version
-  \begin{algorithmic}[1] % Optional line numbering
-    \footnotesize % Font size (Consider trying \small if this spacing allows)
-    % -----------
-
-    \Require % Input:
-    \Statex \hspace{\algorithmicindent} Preprocessed dataset $\mathcal{D}_{final}$ ($\mathbf{X}$, $y \in \{0=\text{sim}, 1=\text{real}\}$),
-    \Statex \hspace{\algorithmicindent} Set of feature subsets $\{\mathcal{F}_c\}_{c=1}^C$ (for components $c$),
-    \Statex \hspace{\algorithmicindent} Number of runs $n_{runs}$,
-    \Statex \hspace{\algorithmicindent} Number of permutations $N$, \Comment{e.g., 1000 DT / 100 BiLSTM}
-    \Statex \hspace{\algorithmicindent} Significance level $\alpha$, \Comment{e.g., 0.01 DT / 0.05 BiLSTM}
-    \Statex \hspace{\algorithmicindent} Classifier type $M_{type}$ (Decision Tree or BiLSTM)
-    \Ensure % Output:
-    \Statex \hspace{\algorithmicindent} Aggregated results $R[c] = \{\bar{S}_{obs}, \sigma_{S_{obs}}, \bar{p}, RR\}$ for each component $c$.
-    \Statex \hspace{\algorithmicindent} \Comment{$\bar{S}_{obs}$=mean ROC AUC, $\sigma_{S_{obs}}$=std dev, $\bar{p}$=mean p-val, $RR$=rejection rate}
-    \medskip % Add space after inputs/outputs
-
-    \State Initialize overall results dictionary $R \gets \emptyset$
-    \medskip
-
-    \ForAll{feature subset $\mathcal{F}_c$ corresponding to component $c$} \Comment{Test each SBDT component}
-    \State Initialize run result lists: $S_{obs\_list} \gets [ ]$, $p_{list} \gets [ ]$
-    \medskip % Space before inner loop
-
-    \For{$run = 1$ to $n_{runs}$} \Comment{Repeat for stability}
-    \State $seed \gets \text{GenerateNewRandomSeed}()$
-    \State $(\mathcal{D}_{train}, \mathcal{D}_{test}) \gets \text{SplitDataStratified}(\mathcal{D}_{final}, \mathcal{F}_c, seed)$
-    \State $\mathbf{X}_{train}, \mathbf{y}_{train} \gets \text{GetFeaturesAndLabels}(\mathcal{D}_{train})$
-    \State $\mathbf{X}_{test}, \mathbf{y}_{test} \gets \text{GetFeaturesAndLabels}(\mathcal{D}_{test})$
-    \medskip % Space after data prep
-
-    \State $M \gets \text{TrainModel}(M_{type}, \mathbf{X}_{train}, \mathbf{y}_{train})$ \Comment{Train classifier}
-    \medskip % Space after training
-
-    \State $\hat{\mathbf{p}}_{test} \gets \text{PredictProbabilities}(M, \mathbf{X}_{test})$ \Comment{Get fixed probabilities $P(y=1|\mathbf{X}_{test})$}
-    \State $S_{obs} \gets \text{CalculateMetric}(\mathbf{y}_{test}, \hat{\mathbf{p}}_{test}, \text{'ROC AUC'})$ \Comment{Observed score; robust calc.}
-    \medskip % Space after observed score calc
-
-    \State $S_{perm\_list} \gets [ ]$ \Comment{Store permutation scores}
-    \For{$i = 1$ to $N$} \Comment{Generate null distribution}
-    \State $\mathbf{y}_{test, perm}^{(i)} \gets \text{ShuffleLabels}(\mathbf{y}_{test})$ \Comment{Permute ground truth}
-    \State $S_{perm, i} \gets \text{CalculateMetric}(\mathbf{y}_{test, perm}^{(i)}, \hat{\mathbf{p}}_{test}, \text{'ROC AUC'})$ \Comment{Score vs fixed probs (efficient)}
-    \State Append $S_{perm, i}$ to $S_{perm\_list}$
-    \EndFor
-    \medskip % Space after permutation loop
-
-    \State $count_{ge} \gets \sum_{i=1}^{N} \mathbb{I}(S_{perm\_list}[i] \ge S_{obs})$
-    \State $p_{run} \gets count_{ge} / N$ \Comment{p-value for this run}
-    \medskip % Space after p-value calc
-
-    \State Append $S_{obs}$ to $S_{obs\_list}$; Append $p_{run}$ to $p_{list}$ \Comment{Store run results (handles NaNs)}
-    \EndFor \Comment{End of runs loop}
-    \medskip % Space after inner loop
-
-    \State $( \bar{S}_{obs}, \sigma_{S_{obs}}, \bar{p}, RR ) \gets \text{AggregateValidResults}(S_{obs\_list}, p_{list}, \alpha)$ \Comment{Calc stats ignoring NaNs}
-    \State $R[c] \gets \{\dots\}$ \Comment{Store aggregated results for component $c$}
-    \medskip % Space after aggregation
-    \EndFor \Comment{End of feature subset loop}
-
-    \State \Return $R$
-
-  \end{algorithmic}
-\end{algorithm}
-
-\begin{algorithm}[H] % Floating environment
-  \caption{Multi-Run Permutation Testing (Symbolic Notation)}
+\begin{algorithm}[H]
+  \caption{Multi-Run Permutation Testing}
   \label{alg:permutation_testing_symbolic} % New label for symbolic version
   \begin{algorithmic}[1] % Optional line numbering
     \footnotesize % Font size
@@ -516,7 +361,7 @@ This can also be summarized in pseudo code:
     \medskip
 
     \ForAll{feature subset $\mathcal{F}_c$ for component $c$}
-    \State $S_{obs\_list} := [\,]$; $p_{list} := [\,]$ \Comment{Initialize lists for run results}
+    \State $S_{obs\_list} := [\,]$; $p_{list} := [\,]$ \Comment{Initialize arrays for run results}
     \medskip
     \For{$run = 1$ to $n_{runs}$}
     \State $seed \leftarrow \text{RandomSeed}()$
@@ -525,13 +370,13 @@ This can also be summarized in pseudo code:
     \medskip
 
     \State $\hat{\mathbf{p}}_{test} \leftarrow M(\mathbf{X}_{test})$ \Comment{Predict $P(y=1|\mathbf{X}_{test})$ using trained model $M$}
-    \State $S_{obs} \leftarrow \text{ROC\_AUC}(\mathbf{y}_{test}, \hat{\mathbf{p}}_{test})$ \Comment{Observed score (robust calc.)}
+    \State $S_{obs} \leftarrow \text{ROC\_AUC}(\mathbf{y}_{test}, \hat{\mathbf{p}}_{test})$ \Comment{Observed score}
     \medskip
 
     \State $S_{perm\_list} := [\,]$
     \For{$i = 1$ to $N$}
     \State $\mathbf{y}_{test, perm}^{(i)} \leftarrow \text{Permute}(\mathbf{y}_{test})$ \Comment{Randomly shuffle test labels}
-    \State $S_{perm, i} \leftarrow \text{ROC\_AUC}(\mathbf{y}_{test, perm}^{(i)}, \hat{\mathbf{p}}_{test})$ \Comment{Score vs fixed $\hat{\mathbf{p}}_{test}$ (efficient)}
+    \State $S_{perm, i} \leftarrow \text{ROC\_AUC}(\mathbf{y}_{test, perm}^{(i)}, \hat{\mathbf{p}}_{test})$ \Comment{Score vs fixed $\hat{\mathbf{p}}_{test}$}
     \State Append $S_{perm, i}$ to $S_{perm\_list}$
     \EndFor
     \medskip
@@ -545,7 +390,7 @@ This can also be summarized in pseudo code:
     \medskip
 
     \State $\bar{S}_{obs} \leftarrow \text{Mean}(S_{obs\_list} | \text{not NaN})$ \Comment{Calculate mean of valid observed scores}
-    \State $\sigma_{S_{obs}} \leftarrow \text{StdDev}(S_{obs\_list} | \text{not NaN})$ \Comment{Calculate std dev of valid observed scores}
+    \State $\sigma_{S_{obs}} \leftarrow \text{StdDev}(S_{obs\_list} | \text{not NaN})$ \Comment{Calculate $\sigma$ of valid observed scores}
     \State $\bar{p} \leftarrow \text{Mean}(p_{list} | \text{not NaN})$ \Comment{Calculate mean of valid p-values}
     \State $RR \leftarrow \text{Mean}(\mathbb{I}(p < \alpha) \mid p \in p_{list}, p \neq \text{NaN})$ \Comment{Rejection Rate on valid p-values}
     \State $R[c] \leftarrow (\bar{S}_{obs}, \sigma_{S_{obs}}, \bar{p}, RR)$ \Comment{Store aggregated results for component $c$}
@@ -556,79 +401,77 @@ This can also be summarized in pseudo code:
 
   \end{algorithmic}
 \end{algorithm}
-\begin{algorithm}[H] % Floating environment
-  \caption{Multi-Run Permutation Testing (Balanced Notation)}
-  \label{alg:permutation_testing_balanced} % New label for balanced version
-  \begin{algorithmic}[1] % Optional line numbering
-    \footnotesize % Font size
-    % -----------
 
-    \Require % Input:
-    \Statex \hspace{\algorithmicindent} Dataset $\mathcal{D}_{final}$ (Features $\mathbf{X}$, Labels $y \in \{0,1\}$),
-    \Statex \hspace{\algorithmicindent} Feature Subsets $\{\mathcal{F}_c\}_{c=1}^C$, Runs $n_{runs}$, Permutations $N$, Significance $\alpha$, Model Type $M_{type}$
-    \Ensure % Output:
-    \Statex \hspace{\algorithmicindent} Results $R[c] = (\bar{S}_{obs}, \sigma_{S_{obs}}, \bar{p}, RR)$ \Comment{Mean/Std ROC AUC, Mean p-val, Rejection Rate}
-    \medskip
-
-    \State $R \leftarrow \emptyset$ \Comment{Initialize results dictionary}
-    \medskip
-
-    \ForAll{feature subset $\mathcal{F}_c$ for component $c$} \Comment{Test each component}
-    \State $S_{obs\_list} \leftarrow []$; $p_{list} \leftarrow []$ \Comment{Initialize lists for run results}
-    \medskip
-    \For{$run = 1$ to $n_{runs}$} \Comment{Repeat for stability}
-    \State $seed \leftarrow \text{RandomSeed}()$
-    \State $(\mathcal{D}_{train}, \mathcal{D}_{test}) \leftarrow \text{SplitData}(\mathcal{D}_{final}, \mathcal{F}_c, seed)$ \Comment{Stratified split}
-    \State $M \leftarrow \text{TrainModel}(M_{type}, \mathcal{D}_{train})$ \Comment{Train on $(\mathbf{X}_{train}, \mathbf{y}_{train})$}
-    \medskip % Space
-
-    \State $\hat{\mathbf{p}}_{test} \leftarrow \text{PredictProbabilities}(M, \mathbf{X}_{test})$ \Comment{Get fixed $P(y=1|\mathbf{X}_{test})$}
-    \State $S_{obs} \leftarrow \text{CalculateMetric}(\mathbf{y}_{test}, \hat{\mathbf{p}}_{test}, \text{'ROC AUC'})$ \Comment{Observed score (robust calc.)}
-    \medskip % Space
-
-    \State $S_{perm\_list} \leftarrow []$ \Comment{Store permutation scores}
-    \For{$i = 1$ to $N$} \Comment{Generate null distribution}
-    \State $\mathbf{y}_{test, perm}^{(i)} \leftarrow \text{ShuffleLabels}(\mathbf{y}_{test})$ \Comment{Permute true labels}
-    \State $S_{perm, i} \leftarrow \text{CalculateMetric}(\mathbf{y}_{test, perm}^{(i)}, \hat{\mathbf{p}}_{test}, \text{'ROC AUC'})$ \Comment{Score vs fixed probs (efficient)}
-    \State Append $S_{perm, i}$ to $S_{perm\_list}$
-    \EndFor
-    \medskip % Space
-
-    \State $count_{ge} \leftarrow \sum_{i=1}^{N} \mathbb{I}(S_{perm\_list}[i] \ge S_{obs})$
-    \State $p_{run} \leftarrow count_{ge} / N$ \Comment{p-value for this run}
-    \medskip % Space
-
-    \State Append $S_{obs}$ to $S_{obs\_list}$; Append $p_{run}$ to $p_{list}$ \Comment{Store run results (handles NaNs)}
-    \EndFor \Comment{End runs}
-    \medskip % Space
-
-    \State $( \bar{S}_{obs}, \sigma_{S_{obs}}, \bar{p}, RR ) \leftarrow \text{AggregateValidResults}(S_{obs\_list}, p_{list}, \alpha)$ \Comment{Calculate stats over valid runs}
-    \State $R[c] \leftarrow (\bar{S}_{obs}, \sigma_{S_{obs}}, \bar{p}, RR)$ \Comment{Store aggregated results}
-    \medskip % Space
-    \EndFor \Comment{End feature subsets}
-
-    \State \Return $R$
-
-  \end{algorithmic}
-\end{algorithm}
-
-
+\begin{enumerate}
+  \item \textbf{Data Splitting:} The combined dataset (\texttt{final\_data}) was split into stratified training ($\mathcal{D}_{train}$) and testing ($\mathcal{D}_{test}$) sets, ensuring proportional representation of real ($y=1$) and simulated ($y=0$) data in both sets. A random seed was used for reproducibility within a single run.
+  \item \textbf{Model Training:} The chosen classifier (DT or BiLSTM) was trained on $\mathcal{D}_{train}$ using only the features in $\mathcal{F}_c$.
+  \item \textbf{Observed Statistic Calculation:} The trained model was evaluated on the original test set $\mathcal{D}_{test}$. The performance metric, specifically the ROC AUC score \autoref{eq:auc} (\textbf{ROC AUC}), was calculated and recorded as the observed statistic, $S_{obs}$.
+  \item \textbf{Null Distribution Generation (Permutation):} To generate the null distribution, $N$ permutations were performed. Critically, an efficient approach was used, particularly for the computationally intensive BiLSTM model:
+        \begin{itemize}
+          \item The trained model generated predictions (binary $\hat{\mathbf{y}}_{test}$) and class probabilities (specifically for the positive class, $\hat{\mathbf{p}}_{test}$) on the original test set $\mathcal{D}_{test}$ \textit{once}.
+          \item For each permutation $i=1...N$: The *true labels* $\mathbf{y}_{test}$ of the test set were randomly shuffled, creating $\mathbf{y}_{test, perm}^{(i)}$.
+          \item The permuted statistic $S_{perm, i}$ was calculated by comparing the shuffled labels $\mathbf{y}_{test, perm}^{(i)}$ against the fixed probabilities $\hat{\mathbf{p}}_{test}$ (i.e., calculating ROC AUC between $\mathbf{y}_{test, perm}^{(i)}$ and $\hat{\mathbf{p}}_{test}$). This avoids retraining the model for each permutation. (A similar principle was applied for the Decision Tree, comparing permuted labels against fixed predictions/probabilities).
+        \end{itemize}
+  \item \textbf{P-value Calculation:} The p-value was computed as the proportion of permutation statistics greater than or equal to the observed statistic, following \autoref{eq:pvalue_perm}.
+        \begin{equation}
+          p = \frac{\sum_{i=1}^{N} \mathbb{I}(S_{perm, i} \ge S_{obs})}{N}
+          \nonumber
+        \end{equation}
+\end{enumerate}
 
 \section{Results and Interpretation}
+The feature subsets are equal to the model components, as noted. The following UpSet plot summarizes the feature subsets used for the SBDT components.
 
-The feature subsets are equal to the model components, as noted. The following UpSet plot summarizes the feature subsets used for the SBDT components. The UpSet plot is a visualization technique that provides an alternative to Venn diagrams for representing the intersections of multiple sets. It is particularly useful when dealing with a large number of sets or when the intersections are complex:
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/upset.png}
+  \caption{UpSet plot visualizing feature overlap across categories. Left bars show total features per category; top bars show counts for specific intersections defined by the dot matrix below.}
+  \caption*{Source: Own illustration.}
+  \label{fig:upsetplot}
+\end{figure}
 
-INSERT
-Based on the aggregated results, the fidelity of the SBDT component corresponding to the feature set $\mathcal{F}_c$ was assessed. A high \textit{rejection rate} (e.g., consistently above 0.9 across the 10 runs) was interpreted as strong evidence against the null hypothesis $H_0$. This indicates that the classifier could reliably distinguish between real and simulated data based on the features $\mathcal{F}_c$, suggesting that the corresponding SBDT component was \textit{not learned accurately} (labeled 'INACCURATE'). Conversely, a low rejection rate suggests insufficient evidence to reject $H_0$, implying the SBDT component might be \texttt{adequately learned} ('ACCURATE'), or at least its potential inaccuracies were not detectable by the classifier using the given features.
+The plot highlights that the time model has the largest number of unique features (6 features), consisting primarily of derived temporal sinusoidal and cosine encodings and status dummy variables. The KPI category also contains a distinct set of 4 unique features, representing specific performance metrics. These exclusive memberships indicate that temporal representation and performance indicators introduce the most diverse information into the overall feature space.
+Several other features show significant overlap, signifying their role as core concepts linking multiple perspectives. Key identifiers like process\_id are shared across resource model, transformation model, and process model, while part\_id links resource model, transformation model, and transition model. The feature sequence\_number exhibits the highest degree of intersection among the detailed combinations, connecting time model, transformation model, transition model, and process model, underscoring its importance in relating temporal sequence to various operational views. Similarly, duration connects time model, transition model, and process model, and resource\_id connects resource model and transition model. PRÜFEN UND ANPASSEN
+
+Based on the aggregated results, the fidelity of the SBDT component corresponding to the feature set $\mathcal{F}_c$ was assessed. A high \textit{rejection rate} (e.g., consistently above 0.9 across the 10 runs) was interpreted as strong evidence against the null hypothesis $H_0$. This indicates that the classifier could reliably distinguish between real and simulated data based on the features $\mathcal{F}_c$, suggesting that the corresponding SBDT component was \textit{not learned accurately} (labeled 'INACCURATE'). Conversely, a low rejection rate suggests insufficient evidence to reject $H_0$, implying the SBDT component might be \textit{adequately learned} ('ACCURATE'), or at least its potential inaccuracies were not detectable by the classifier using the given features.
+"
+\subsection*{Results of Whitebox Model}
+
+The whitebox validation was performed using a DT classifier \autocite{Scikit-Learn}. Key hyperparameters included limiting the tree complexity with $max_depth=5$, using the default $criterion='gini'$ for measuring split quality. Permutation testing was conducted with $N = 1000$ permutations per run over $n_{runs}=10$ runs, using a significance level of $\alpha = 0.05$. Because inference costs with the DT are low, label shuffling was performed on training and test set.
+
+The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with standard deviation ($\sigma_{S_{obs}}$), mean p-value ($\bar{p}$), and the Rejection Rate (RR), are presented in Table \ref{tab:results-whitebox}. The mean ROC AUC scores are also visualized in Figure \ref{fig:dt-roc-auc}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Whitebox DT validation results across 10 runs (N=1000, $\alpha=0.05$), using paragraph-based layout.}
+  \label{tab:results-whitebox-paragraph}
+  \begin{tabular}{l l l l l p{3cm}}
+    \toprule
+    \textbf{Component ($\mathcal{F}_c$)} & \textbf{$\overline{\text{ROC AUC}}$} & \textbf{$\sigma_{\text{ROC AUC}}$} & \textbf{$\bar{p}$-value} & \textbf{RR} & \textbf{Assessment} \\
+    \midrule
+    \texttt{time\_model}                 & 1.0000                               & 0.0000                             & 0.0000                   & 1.00        & INACCURATE          \\
+    \texttt{resource\_model}             & 0.9832                               & 0.0104                             & 0.0000                   & 1.00        & INACCURATE          \\
+    \texttt{transformation\_model}       & 1.0000                               & 0.0000                             & 0.0000                   & 1.00        & INACCURATE          \\
+    \texttt{transition\_model}           & 1.0000                               & 0.0000                             & 0.0000                   & 1.00        & INACCURATE          \\
+    \texttt{process\_model}              & 1.0000                               & 0.0000                             & 0.0000                   & 1.00        & INACCURATE          \\
+    \texttt{kpi\_based}                  & 1.0000                               & 0.0000                             & 0.0000                   & 1.00        & INACCURATE          \\
+    \texttt{all\_features}               & 1.0000                               & 0.0000                             & 0.0000                   & 1.00        & INACCURATE          \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 
-% xAI
-% Analysis of validation metrics (→ Reference to 4.4)
-% Discrepancies and Anomalies: Identification of discrepancies between real and simulated data (→ Reference to 7.3)
-% Evaluation of results in the context of V\&V theory (→ reference to 2.2)
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/dt-roc-auc-by-component.png}
+  \caption{Mean ROC AUC scores achieved by the DT classifier when distinguishing between real and simulated data, using feature subsets corresponding to different SBDT components. Scores averaged over 10 runs. The dashed red line indicates random chance (AUC = 0.5).}
+  \label{fig:dt-roc-auc}
+\end{figure}
 
-\section{Comparison with Manual Validation Methods}
-% Effort analysis
-% Quality comparison
-% Cost-benefit analysis
-% Empirical evidence for the advantages of automated V\&V (→ reference to 3.2 and 7.3)
+The results from the whitebox model are highly significant. For almost all feature subsets, the DT achieved a perfect mean ROC AUC of 1.0000, with the exception of the \texttt{resource\_model} subset which scored slightly lower but still extremely high ($\bar{S}_{obs}=0.9832 \pm 0.0104$). Correspondingly, the mean p-values were effectively zero ($< 0.0001$, reported as 0.0000) and the rejection rate was 1.00 for all components across all 10 runs. This indicates that the Decision Tree could easily and consistently distinguish the simulated data from the real data based on the features associated with every tested SBDT component. According to the interpretation framework, this implies that, from the perspective of the whitebox model, all tested SBDT components were learned inaccurately.
+Given that the mean p-value for every feature subset is far below the significance level ($\bar{p} \approx 0.0000 < \alpha = 0.05$), and the rejection rate (RR) is 1.00 for all components, we reject the null hypothesis ($H_0$) for every tested SBDT component based on the Decision Tree classifier. This provides statistically significant evidence that the Decision Tree model can reliably distinguish between the real process data and the simulated data using the features associated with the time model, resource model, transformation model, transition model, process model, and KPI-based perspectives, as well as when using all features combined.
+
+The conclusion drawn solely from this whitebox analysis is therefore that the SBDT exhibits detectable discrepancies compared to the real system across all evaluated aspects. Consequently, based on the stringent criteria of the Decision Tree's ability to find differentiating patterns (even limited to $max_depth=5$), all tested components of the SBDT are deemed **INACCURATE**. This suggests that, at the level of detail captured by the engineered features and discernible by the DT model, the simulation does not adequately replicate the observed behaviour of the real IoT factory. The analysis with the blackbox model in the next section will explore whether a more complex model reaches similar conclusions.
+
+\subsection*{Results of Blackbox Model}
+The training of the blackbox model is way more costly than training the DT. The label shuffling was only performed on the test set. Thus, $N$ was chosen to be $200$ while $\alpha$ was reduced to $0.01$. The following report summarizes the key results of the permutation test:
