@@ -154,12 +154,12 @@ This process has been identified as the ground-truth process. The process is cir
 \section{Digital Entity: Open Factory Twin}
 \label{sec:automated-digital-twin}
 
-The Simulation-Based Digital Twin (SBDT) for the IoT Factory use case was developed using the Open Factory Twin (OFacT) framework \autocite{ofact-intern}. OFacT is an open-source digital twin framework specifically designed for modeling, simulating, and controlling production and logistics environments. Its goal is to support system design, planning, and operational control throughout the entire lifecycle of such systems.
+The Simulation-Based Digital Twin (SBDT) for the IoT Factory use case was developed using the Open Factory Twin (OFacT) framework \autocite{ofact-intern}. OFacT is an open-source digital twin framework specifically designed for modelling, simulating, and controlling production and logistics environments. Its goal is to support system design, planning, and operational control throughout the entire lifecycle of such systems.
 
-A principle of OFacT is the separation between the static description of the system and its dynamic behavior. This is achieved by distinguishing between:
+A principle of OFacT is the separation between the static description of the system and its dynamic behaviour. This is achieved by distinguishing between:
 
 \begin{itemize}
-  \item \textbf{State Model:} This component represents the static structure of the factory, its components (resources, parts, layout), their properties, relationships, and the potential processes or behaviors they can exhibit.
+  \item \textbf{State Model:} This component represents the static structure of the factory, its components (resources, parts, layout), their properties, relationships, and the potential processes or behaviours they can exhibit.
   \item \textbf{Agent Control:} This component implements the dynamic logic that governs the system's operation during simulation, making decisions about resource allocation, process execution sequences, and handling events based on the state model.
 \end{itemize}
 
@@ -174,7 +174,7 @@ The construction of the State Model within OFacT uses structured input methods, 
   \item \textbf{WorkStation}: Workstations are resources which perform processes on parts. In our use case, these are the RASS stations.
   \item \textbf{ConveyorBelt}: There is one belt where the storage units traverse through the factory.
   \item \textbf{NonStationaryResource}: There are no non-stationary resources.
-  \item \textbf{PassiveMovingResource}: One artifical passive moving resource has been mod
+  \item \textbf{PassiveMovingResource}: One artificial passive moving resource has been mod
   \item \textbf{Process}: Contains processes and value added processes (VAP). VAP are adding features to parts and modify it. For each activity in the data a VAP has been created.
   \item \textbf{ProcessController}: This controller summarizes all processes to come and connects them.
   \item \textbf{ResourceModel}: Resource groups are formulated for activities like montage, identifying to attach the relevant parts to these resources. This way, main resources and parts are getting matched.
@@ -198,7 +198,7 @@ By defining these elements according to the IoT Factory's characteristics, a det
 
 \subsection*{SBDT Dataset}
 
-The dataset gathered from the SBDT is referred to as \texttt{sim\_data}. The OpenFactoryTwin (see \autoref{sec:automated-digital-twin}) provides a method to deserialize the simulated orders and save them in a CSV file. The dataset then gets converted to the OCEL structure. For this endeveur, a separate connector logic has to be implemented in every use case. See \texttt{src/connector/ofact} for the connector here.
+The dataset gathered from the SBDT is referred to as \texttt{sim\_data}. The OpenFactoryTwin (see \autoref{sec:automated-digital-twin}) provides a method to deserialize the simulated orders and save them in a CSV file. The dataset then gets converted to the OCEL structure. For this endeavour, a separate connector logic has to be implemented in every use case. See \texttt{src/connector/ofact} for the connector here.
 
 The connector's output follows a standardized structure defined by the \texttt{OutputStructure} class, which ensures consistency across different data sources. The connector first deserializes the dynamic state model from a pickle file, accessing the full simulation state. Only actual process executions (as opposed to planned ones) are retained for further processing, identified by the "ACTUAL" flag in their event type. The connector creates mapping dictionaries for various categorical attributes following the OCED standard:
 
@@ -308,7 +308,7 @@ Figure \ref{fig:time-encoding} illustrates this concept for the hour of the day.
       }
 
   \end{tikzpicture}
-  \caption{Sine and Cosine transformation of the hour of the day (0-23). Each hour is mapped to a point $(x_{\cos}, x_{\sin})$ on the unit circle (blue dots). Key hours are labeled, demonstrating how the transformation preserves cyclical continuity (hour 23 is near hour 0).}
+  \caption{Sine and Cosine transformation of the hour of the day (0-23). Each hour is mapped to a point $(x_{\cos}, x_{\sin})$ on the unit circle (blue dots). Key hours are labelled, demonstrating how the transformation preserves cyclical continuity (hour 23 is near hour 0).}
   \label{fig:time-encoding}
 \end{figure}
 
@@ -335,7 +335,7 @@ As laid out in the methodology chapter \autoref{sec:permtest}, a permutation tes
 \noindent Under this framework, if a classifier trained on the feature set $\mathcal{F}_c$ achieves performance significantly better than chance at distinguishing between real ($y=1$) and simulated ($y=0$) data, it provides evidence to reject $H_0$ in favour of $H_1$. This would imply that the SBDT component $c$ has \emph{not} been learned accurately, as detectable discrepancies exist. Conversely, if the classifier performs poorly (close to random chance), we fail to reject $H_0$, suggesting that, based on the features $\mathcal{F}_c$, the simulated data is consistent with the real data for that component.
 
 \subsection*{Testing the SBDT Components}
-To rigorously evaluate the SBDTs fidelity concerning different process aspects, we implemented the hypothesis testing framework outlined previously (testing $H_0$: \autoref{eq:h0} against $H_1$: \autoref{eq:h1}). This involved using machine learning classifiers to determine if statistically significant differences exist between the real process data ($\mathcal{D}_{real}$, labeled $y=1$) and the simulated data ($\mathcal{D}_{sim}$, labeled $y=0$) based on specific feature subsets ($\mathcal{F}_c$) corresponding to key SBDT model components.
+To rigorously evaluate the SBDTs fidelity concerning different process aspects, we implemented the hypothesis testing framework outlined previously (testing $H_0$: \autoref{eq:h0} against $H_1$: \autoref{eq:h1}). This involved using machine learning classifiers to determine if statistically significant differences exist between the real process data ($\mathcal{D}_{real}$, labelled $y=1$) and the simulated data ($\mathcal{D}_{sim}$, labelled $y=0$) based on specific feature subsets ($\mathcal{F}_c$) corresponding to key SBDT model components.
 
 The analysis was performed separately for distinct feature subsets $\mathcal{F}_c$, each curated to reflect the behaviour governed by specific SBDT components. Based on the feature engineering described in \autoref{sec:feature-engineering}, subsets were defined for the \texttt{time\_model} (including duration, sequence, cyclical time features), \texttt{resource\_model} (categorical resource, part, process IDs), \texttt{process\_model} (process ID, duration, sequence), \texttt{kpi\_based} (calculated KPIs like throughput, cycle time), and an \texttt{all\_features} set encompassing all available engineered features. PRÜFEN UND ANPASSEN
 
@@ -434,11 +434,11 @@ The feature subsets are equal to the model components, as noted. The following U
 The plot highlights that the time model has the largest number of unique features (6 features), consisting primarily of derived temporal sinusoidal and cosine encodings and status dummy variables. The KPI category also contains a distinct set of 4 unique features, representing specific performance metrics. These exclusive memberships indicate that temporal representation and performance indicators introduce the most diverse information into the overall feature space.
 Several other features show significant overlap, signifying their role as core concepts linking multiple perspectives. Key identifiers like process\_id are shared across resource model, transformation model, and process model, while part\_id links resource model, transformation model, and transition model. The feature sequence\_number exhibits the highest degree of intersection among the detailed combinations, connecting time model, transformation model, transition model, and process model, underscoring its importance in relating temporal sequence to various operational views. Similarly, duration connects time model, transition model, and process model, and resource\_id connects resource model and transition model. PRÜFEN UND ANPASSEN
 
-Based on the aggregated results, the fidelity of the SBDT component corresponding to the feature set $\mathcal{F}_c$ was assessed. A high \textit{rejection rate} (e.g., consistently above 0.9 across the 10 runs) was interpreted as strong evidence against the null hypothesis $H_0$. This indicates that the classifier could reliably distinguish between real and simulated data based on the features $\mathcal{F}_c$, suggesting that the corresponding SBDT component was \textit{not learned accurately} (labeled 'INACCURATE'). Conversely, a low rejection rate suggests insufficient evidence to reject $H_0$, implying the SBDT component might be \textit{adequately learned} ('ACCURATE'), or at least its potential inaccuracies were not detectable by the classifier using the given features.
+Based on the aggregated results, the fidelity of the SBDT component corresponding to the feature set $\mathcal{F}_c$ was assessed. A high \textit{rejection rate} (e.g., consistently above 0.5 across the 10 runs) was interpreted as strong evidence against the null hypothesis $H_0$. This indicates that the classifier could reliably distinguish between real and simulated data based on the features $\mathcal{F}_c$, suggesting that the corresponding SBDT component was \textit{not learned accurately} (labeled 'INACCURATE'). Conversely, a low rejection rate suggests insufficient evidence to reject $H_0$, implying the SBDT component might be \textit{adequately learned} ('ACCURATE'), or at least its potential inaccuracies were not detectable by the classifier using the given features.
 "
 \subsection*{Results of Whitebox Model}
 
-The whitebox validation was performed using a DT classifier \autocite{Scikit-Learn}. Key hyperparameters included limiting the tree complexity with $max_depth=5$, using the default $criterion='gini'$ for measuring split quality. Permutation testing was conducted with $N = 1000$ permutations per run over $n_{runs}=10$ runs, using a significance level of $\alpha = 0.05$. Because inference costs with the DT are low, label shuffling was performed on training and test set.
+The whitebox validation was performed using a DT classifier \autocite{Scikit-Learn}. Key hyperparameters included limiting the tree complexity with a max tree depth of five using the default gini criterion \autoref{eq:gini_impurity} for measuring split quality \autoref{eq:gini_split}. Permutation testing was conducted with $N = 1000$ permutations per run over $n_{runs}=10$ runs, using a significance level of $\alpha = 0.05$. Because inference costs with the DT are low, label shuffling was performed on training and test set.
 
 The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with standard deviation ($\sigma_{S_{obs}}$), mean p-value ($\bar{p}$), and the Rejection Rate (RR), are presented in Table \ref{tab:results-whitebox}. The mean ROC AUC scores are also visualized in Figure \ref{fig:dt-roc-auc}.
 
@@ -465,14 +465,51 @@ The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/dt-roc-auc-by-component.png}
-  \caption{Mean ROC AUC scores achieved by the DT classifier when distinguishing between real and simulated data, using feature subsets corresponding to different SBDT components. Scores averaged over 10 runs. The dashed red line indicates random chance (AUC = 0.5).}
+  \caption{Mean ROC AUC scores achieved by the DTree classifier when distinguishing between real and simulated data, using feature subsets corresponding to different SBDT components. Scores averaged over 10 runs. The dashed red line indicates random chance (AUC = 0.5).}
   \label{fig:dt-roc-auc}
 \end{figure}
 
-The results from the whitebox model are highly significant. For almost all feature subsets, the DT achieved a perfect mean ROC AUC of 1.0000, with the exception of the \texttt{resource\_model} subset which scored slightly lower but still extremely high ($\bar{S}_{obs}=0.9832 \pm 0.0104$). Correspondingly, the mean p-values were effectively zero ($< 0.0001$, reported as 0.0000) and the rejection rate was 1.00 for all components across all 10 runs. This indicates that the Decision Tree could easily and consistently distinguish the simulated data from the real data based on the features associated with every tested SBDT component. According to the interpretation framework, this implies that, from the perspective of the whitebox model, all tested SBDT components were learned inaccurately.
+The results from the whitebox model are highly significant. For almost all feature subsets, the DTree achieved a perfect mean ROC AUC of 1.0000, with the exception of the \texttt{resource\_model} subset which scored slightly lower but still extremely high ($\bar{S}_{obs}=0.9832 \pm 0.0104$). Correspondingly, the mean p-values were effectively zero ($< 0.0001$, reported as 0.0000) and the rejection rate was 1.00 for all components across all 10 runs. This indicates that the Decision Tree could easily and consistently distinguish the simulated data from the real data based on the features associated with every tested SBDT component. According to the interpretation framework, this implies that, from the perspective of the whitebox model, all tested SBDT components were learned inaccurately.
 Given that the mean p-value for every feature subset is far below the significance level ($\bar{p} \approx 0.0000 < \alpha = 0.05$), and the rejection rate (RR) is 1.00 for all components, we reject the null hypothesis ($H_0$) for every tested SBDT component based on the Decision Tree classifier. This provides statistically significant evidence that the Decision Tree model can reliably distinguish between the real process data and the simulated data using the features associated with the time model, resource model, transformation model, transition model, process model, and KPI-based perspectives, as well as when using all features combined.
 
-The conclusion drawn solely from this whitebox analysis is therefore that the SBDT exhibits detectable discrepancies compared to the real system across all evaluated aspects. Consequently, based on the stringent criteria of the Decision Tree's ability to find differentiating patterns (even limited to $max_depth=5$), all tested components of the SBDT are deemed **INACCURATE**. This suggests that, at the level of detail captured by the engineered features and discernible by the DT model, the simulation does not adequately replicate the observed behaviour of the real IoT factory. The analysis with the blackbox model in the next section will explore whether a more complex model reaches similar conclusions.
+The conclusion drawn solely from this whitebox analysis is therefore that the SBDT exhibits detectable discrepancies compared to the real system across all evaluated aspects. Consequently, based on the stringent criteria of the Decision Tree's ability to find differentiating patterns (even limited to $max_depth=5$), all tested components of the SBDT are deemed INACCURATE. This suggests that, at the level of detail captured by the engineered features and discernible by the DTree model, the simulation does not adequately replicate the observed behaviour of the real IoT factory. The analysis with the blackbox model in the next section will explore whether a more complex model reaches similar conclusions.
 
 \subsection*{Results of Blackbox Model}
-The training of the blackbox model is way more costly than training the DT. The label shuffling was only performed on the test set. Thus, $N$ was chosen to be $200$ while $\alpha$ was reduced to $0.01$. The following report summarizes the key results of the permutation test:
+
+The blackbox validation employed the BiLSTM-based classifier described earlier in the thesis. Training this model is computationally more intensive than the DTree. Therefore, while the number of permutations ($N=1000$) and runs ($n_{runs}=10$) were maintained, the label shuffling for generating the null distribution was performed only on the test set labels for efficiency, comparing against the fixed predictions of the trained model. Furthermore, a stricter significance level of $\alpha = 0.01$ was adopted for this analysis. GPU acceleration via CUDA \autocite{NVIDIA_CUDA} was utilized to manage the computational cost.
+
+The aggregated results from the blackbox models permutation tests are summarized in \autoref{tab:results-blackbox}, based on the report generated by the testing script. The mean AUC scores are visualized in \autoref{fig:bilstm-roc-auc}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Blackbox BiLSTM validation results across 10 runs (N=1000, $\alpha=0.01$).}
+  \label{tab:results-blackbox}
+  \begin{tabular}{l l l l l p{3cm}}
+    \toprule
+    \textbf{Component ($\mathcal{F}_c$)} & \textbf{$\overline{\text{ROC AUC}}$} & \textbf{$\sigma_{\text{ROC AUC}}$} & \textbf{$\bar{p}$-value} & \textbf{RR} & \textbf{Assessment} \\
+    \midrule
+    \texttt{time\_model}                 & 0.9998                               & 0.0005                             & 0.0000                   & 1.00        & INACCURATE          \\
+    \texttt{resource\_model}             & 0.9087                               & 0.1618                             & 0.0492                   & 0.90        & INACCURATE          \\
+    \texttt{transformation\_model}       & 0.8705                               & 0.2094                             & 0.1879                   & 0.80        & INACCURATE          \\
+    \texttt{transition\_model}           & 1.0000                               & 0.0000                             & 0.0000                   & 1.00        & INACCURATE          \\
+    \texttt{process\_model}              & 0.9788                               & 0.0635                             & 0.0000                   & 1.00        & INACCURATE          \\
+    \texttt{kpi\_based}                  & 0.9989                               & 0.0019                             & 0.0000                   & 1.00        & INACCURATE          \\
+    \texttt{all\_features}               & 1.0000                               & 0.0000                             & 0.0000                   & 1.00        & INACCURATE          \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/lstm-roc-auc-by-component.png}
+  \caption{Mean ROC AUC scores achieved by the classifier when distinguishing between real and simulated data, using feature subsets corresponding to different SBDT components. Scores averaged over 10 runs. The dashed red line indicates random chance (AUC = 0.5).}
+  \label{fig:bilstm-roc-auc}
+\end{figure}
+
+The blackbox model results largely align with the whitebox findings, indicating significant discrepancies between the simulated and real data across various SBDT components. The BiLSTM classifier achieved very high mean ROC AUC scores for most feature subsets, particularly for \texttt{time\_model} (0.9998), \texttt{transition\_model} (1.0000), \texttt{process\_model} (0.9788), \texttt{kpi\_based} (0.9989), and \texttt{all\_features} (1.0000). For these components, the mean p-values were effectively zero, and the rejection rate (RR) was 1.00, strongly indicating rejection of the null hypothesis ($H_0$) at the $\alpha = 0.01$ significance level.
+
+For the \texttt{resource\_model} and \texttt{transformation\_model}, the mean ROC AUC scores were lower ($\bar{S}_{obs}=0.9087$ and $0.8705$, respectively) and exhibited considerably higher standard deviations ($\sigma_{S_{obs}}=0.1618$ and $0.2094$), suggesting greater variability in the models ability to distinguish data based on these features across the 10 runs. Despite this variability, the rejection rates were still very high (RR=0.90 for \texttt{resource\_model}, RR=0.80 for \texttt{transformation\_model}). A rejection rate of 0.90 means that in 9 out of the 10 independent runs, the calculated p-value was less than the stringent $\alpha=0.01$, leading to the rejection of $H_0$. Similarly, for the transformation model, $H_0$ was rejected in 8 out of 10 runs. While the mean p-values (0.0492 and 0.1879) are higher than for other components and above $\alpha=0.01$, the high rejection rates across multiple runs provide strong evidence that the BiLSTM could consistently distinguish the data more often than not, even under the stricter significance level.
+
+Therefore, based on the consistent rejection of $H_0$ across the majority of runs (as indicated by RR $\ge$ 0.80) for all feature subsets, we conclude that the blackbox model also finds statistically significant differences between the real and simulated data for all tested aspects.
+
+Similar to the whitebox analysis, the conclusion drawn from the blackbox model is that the SBDT exhibits detectable inaccuracies compared to the real system across all evaluated components. The high ROC AUC scores and, critically, the high rejection rates under permutation testing provide strong evidence against the null hypothesis ($H_0$) for every component. Consequently, based on the BiLSTM classifier's ability to distinguish the data, all tested components of the SBDT are assessed as INACCURATE. This reinforces the finding that the current SBDT configuration, as evaluated through the engineered features, does not sufficiently replicate the behavior observed in the real IoT factory dataset.

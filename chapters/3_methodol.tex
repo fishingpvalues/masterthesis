@@ -1,26 +1,26 @@
 \chapter{Methodology}
 \label{chap:methodology}
-This chapter develops the methodological approach for automatically performing VVUQ for automatically generated SBDT in the manufacturing domain. The foundational methodology uses data-driven frameworks and applies ML techniques to verify and validate the SBDT. The following chapter structure derives requirements besides the identified key requirements given in \autoref{sec:requirements-automatically-generated-models}, categorizes them and presents a conceptual blueprint. It is based on the theoretical findings from Chapter \ref{chap:theory} and designed to ensure that the VVUQ process is systematic, reproducible, and adaptable to different use cases.
+This chapter develops the methodological approach for automatically performing VVUQ for automatically generated SBDT in the manufacturing domain. The foundational methodology uses a data-driven frameworks and applies ML techniques to verify and validate the SBDT. The following chapter first derives requirements besides the identified key requirements given in \autoref{sec:requirements-automatically-generated-models}, categorizes them and presents a conceptual blueprint. It is based on the theoretical findings from Chapter \ref{chap:theory} and designed to ensure that the VVUQ process is systematic, reproducible, and adaptable to different use cases. It then describes the statistical significance testing method used to validate the results of the VVUQ process.
 
 \section{Framework Design}
 \subsection{Requirements Engineering}
-A thorough analysis of the requirements for the proposed VVUQ framework is essential. \Autocite{sindhgatta2005functional} distinguishes between functional (FR, \autocite{van2001goal}) and non-functional requirements (NFR, \autocite{glinz2005rethinking}). Functional requirements define the specific functions and features that the system must provide, while non-functional requirements specify the quality attributes, constraints, and performance criteria that the system must meet. Additionally, technical requirements (TR) and operational requirements (OR) may also be considered. TR specifies the technical specifications of the system which are necessary to meet the functional requirements \autocite{chikh2012new}, while OR outlines the operational constraints and conditions under which the system must operate \autocite{incose2023incose}.
+A thorough analysis of the requirements for the proposed VVUQ framework is essential. \Autocite{sindhgatta2005functional} distinguishes between functional (FR, \autocite{van2001goal}) and non-functional requirements (NFR, \autocite{glinz2005rethinking}). Functional requirements define the specific functions and features that the system must provide, while non-functional requirements specify the quality attributes, constraints, and performance criteria that the system must meet. Additionally, technical requirements (TR) and operational requirements (OR) are considered. TR specify the technical specifications of the system which are necessary to meet the functional requirements \autocite{chikh2012new}, while OR outline the operational constraints and conditions under which the system must operate \autocite{incose2023incose}.
 
 The following \autoref{fig:requirements} summarizes the key requirements identified in \autoref{sec:requirements-automatically-generated-models} and adds requirements which have been derived from the theoretical findings in Chapter \ref{chap:theory}.
 
 \begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.8\textwidth]{figures/req.png}
-  \caption{Key Requirements for the VVUQ framework differentiated by FR, NFR, TR, and OR. }
-  \caption*{Source: Own illustration.}
-  \label{fig:requirements}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/req.png}
+    \caption{Key Requirements for the VVUQ framework differentiated by FR, NFR, TR, and OR. }
+    \caption*{Source: Own illustration.}
+    \label{fig:requirements}
 \end{figure}
 
 Real-time data integration enables continuous synchronization between physical processes and the digital twin through real-time data streams. This is crucial for ensuring that the digital twin accurately reflects the current state of the physical system. The latency in this regard has to be minimized \autocite{li2018learning}. Of course, one FR has to be the Automatic VVUQ of the SBDT with its functional capabilities anomaly detection \autocite{pang2021deep}, uncertainty quantification \autocite{sel2025survey}, and adaptive recalibration to new physical states. The framework should also include an alarm management system that generates alerts and recommendations for action in the event of anomalies or validation errors. This is essential for ensuring that operators can respond quickly to potential issues and maintain the integrity of the system. The performance evaluation of the framework should be automated and include KPIs such as F1-Score, MAE, and synchronization accuracy see \autoref{sec:metrics-theory}.
 
 The NFRs include dynamic scalability, which allows the framework to handle large amounts of data and complex models in real time \autocite{leskovec2020mining}. This is essential for ensuring that the system can adapt to changing conditions and requirements also defined by evolving technical requirements or new demands of the stakeholders. The framework should also be robust against uncertainties, meaning it should be able to tolerate noise, incomplete data, and model uncertainties like concept drift. Security is another important NFR, as the framework must ensure the confidentiality and integrity of sensitive data. Interoperability with existing systems is also crucial for successful integration into existing workflows. The user-friendliness of the framework is important for ensuring that operators can easily monitor real-time data, visualize anomalies, and understand uncertainty metrics. Finally, continuous learning capabilities are essential for enabling the anomaly detection network to adapt to changing processes over time.
 
-The TR includes a scalable architecture that can be deployed in cloud or edge environments to process real-time data streams. The framework should support heterogeneous data formats, including sensor data and IoT streams. The integration of the ResNet BiLSTM network into the data pipeline is essential for efficient anomaly detection. The framework should also include modules for uncertainty quantification, such as Monte Carlo simulations and Gaussian processes. Hardware requirements should be defined to ensure sufficient storage and computing capacity for deep learning and real-time processing. Finally, the framework should support protocols such as OPC UA, MQTT, and RESTful APIs for system integration. Several data sources and stewardship are required to ensure the quality of the data used for VVUQ. This includes real-time data streams, historical data for training and baseline comparisons, metadata for context information, labelled anomaly datasets for training the ResNet BiLSTM network, and data quality standards for noise filtering, consistency checking, and gap handling.
+The TR include a scalable architecture that can be deployed in cloud or edge environments to process real-time data streams. The framework should support heterogeneous data formats, including sensor data and IoT streams. The integration of the ResNet BiLSTM network into the data pipeline is essential for efficient anomaly detection. The framework should also include modules for uncertainty quantification, such as Monte Carlo simulations and Gaussian processes. Hardware requirements should be defined to ensure sufficient storage and computing capacity for deep learning and real-time processing. Finally, the framework should support protocols such as OPC UA, MQTT, and RESTful APIs for system integration. Several data sources and stewardship are required to ensure the quality of the data used for VVUQ. This includes real-time data streams, historical data for training and baseline comparisons, metadata for context information, labelled anomaly datasets for training the ResNet-BiLSTM network, and data quality standards for noise filtering, consistency checking, and gap handling.
 
 The OR incorporate several key aspects that ensure the effective operation of the framework. Data stewardship ensures that the data quality follows high standards throughout the whole process. Continuous monitoring, for example logging, maintenance procedures and a flexible runtime environment close the list of identified requirements.
 
@@ -28,11 +28,11 @@ The OR incorporate several key aspects that ensure the effective operation of th
 \label{sec:framework}
 
 \begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.8\textwidth]{figures/framework.png}
-  \caption{Framework for VVUQ of SBDT in the manufacturing domain. The framework starts with the data sources which all lead into the data lake. The data warehouse provides the Data Layer (DL) with different views. The DL further enriches the data to feed it into the Twin Layer (TL). The TL contains the DT and the physical entity. The TL is connected to the VVUQ Layer (VVUQL). It incorporates the ResNet BiLSTM network for VVUQ of the twin. It can trigger alarms and recommendations for action. The VVUQL is connected to the Decision Support Layer (DSL) which provides different data analysis and visualization tools. The DSL is responsible for the short-term decision making to manage the VVUQ process. The DSL is connected to the user interface (UI) which provides the user with a dashboard for monitoring and controlling the system. The DSL can request new data from the Data Sources. It also is connected to the Continuous Improvement Process layer (CIP) which is responsible for the long-term decision making.}
-  \caption*{Source: Own illustration.}
-  \label{fig:framework}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/framework.png}
+    \caption{Framework for VVUQ of SBDT in the manufacturing domain. The framework starts with the data sources which all lead into the data lake. The data warehouse provides the Data Layer (DL) with different views. The DL further enriches the data to feed it into the Twin Layer (TL). The TL contains the DT and the physical entity. The TL is connected to the VVUQ Layer (VVUQL). It incorporates the ResNet BiLSTM network for VVUQ of the twin. It can trigger alarms and recommendations for action. The VVUQL is connected to the Decision Support Layer (DSL) which provides different data analysis and visualization tools. The DSL is responsible for the short-term decision making to manage the VVUQ process. The DSL is connected to the user interface (UI) which provides the user with a dashboard for monitoring and controlling the system. The DSL can request new data from the Data Sources. It also is connected to the Continuous Improvement Process layer (CIP) which is responsible for the long-term decision making.}
+    \caption*{Source: Own illustration.}
+    \label{fig:framework}
 \end{figure}
 
 The framework consists of five interconnected layers that form a closed-loop system with continuous data flow, validation and improvement. At the start, diverse data sources such as PPC systems, DES outputs, PM, expert knowledge, sensor networks, and CRM feedback provide the raw inputs, which are centralized in a data lake with structured views managed by a data warehouse. The data warehouse enriches the incoming data with engineering features. The DL collects and integrates this data, preprocesses it through cleaning, normalization and feature extraction. The DL performs a subset of the actions of the data warehouse, but tailors the data specifically for the SBDT. This structured approach meets real-time integration and quality requirements considered above.
@@ -55,26 +55,26 @@ Permutation testing is particularly useful when the underlying distribution of t
 The procedure involves the following steps:
 
 \begin{enumerate}
-  \item \textbf{Define the Null Hypothesis ($H_0$):} State the specific null hypothesis being tested. For instance, in a classification task comparing two data sources (e.g., real vs. simulated), $H_0$ might be that the data source labels are independent of the input features.
-  \item \textbf{Choose a Test Statistic ($S$):} Select a suitable metric to quantify the effect or performance of interest. This could be the difference in means between two groups, a correlation coefficient, classifier accuracy, AUC, or another relevant measure.
-  \item \textbf{Compute the Observed Statistic ($S_{obs}$):} Calculate the chosen test statistic $S$ on the original, unpermuted dataset.
-  \item \textbf{Generate the Null Distribution:} Repeat the following steps a large number of times ($N$, e.g., $N=1000$ or more):
-        \begin{itemize}
-          \item Create a permuted dataset by randomly shuffling the relevant labels or group assignments while keeping the features intact. For example, in a two-class classification problem, shuffle the class labels across all data instances. This process breaks the potential association between features and labels, simulating the scenario under $H_0$.
-          \item Compute the test statistic $S$ on this permuted dataset, denoted as $S_{perm}$.
-        \end{itemize}
-        The collection of these $N$ permuted statistics ($S_{perm, 1}, S_{perm, 2}, ..., S_{perm, N}$) forms the empirical null distribution.
-  \item \textbf{Calculate the p-value:} The p-value represents the probability of observing a test statistic as extreme as, or more extreme than, $S_{obs}$ under the assumption that $H_0$ is true. It is calculated as the proportion of permuted statistics that are greater than or equal to (or less than or equal to, depending on the hypothesis direction) the observed statistic:
-        \begin{equation}
-          p = \frac{\sum_{i=1}^{N} \mathbb{I}(S_{perm, i} \ge S_{obs})}{N}
-          \label{eq:pvalue_perm}
-        \end{equation}
-        where $\mathbb{I}(\cdot)$ is the indicator function (1 if the condition is true, 0 otherwise). For a two-sided test, the calculation involves considering extreme values in both tails of the null distribution.
-  \item \textbf{Interpret the Result:} Compare the calculated p-value to a pre-defined significance level $\alpha$ (commonly $\alpha = 0.05$ or $\alpha = 0.01$).
-        \begin{itemize}
-          \item If $p < \alpha$: Reject the null hypothesis $H_0$. This indicates that the observed result ($S_{obs}$) is statistically significant and unlikely to have occurred merely by chance. There is evidence for the alternative hypothesis (e.g., the classifier performs significantly better than chance, or the two groups are significantly different).
-          \item If $p \ge \alpha$: Fail to reject the null hypothesis $H_0$. This means there is insufficient statistical evidence to conclude that the observed result is different from what might be expected under random chance, given the current data and test.
-        \end{itemize}
+    \item \textbf{Define the Null Hypothesis ($H_0$):} State the specific null hypothesis being tested. For instance, in a classification task comparing two data sources (e.g., real vs. simulated), $H_0$ might be that the data source labels are independent of the input features.
+    \item \textbf{Choose a Test Statistic ($S$):} Select a suitable metric to quantify the effect or performance of interest. This could be the difference in means between two groups, a correlation coefficient, classifier accuracy, AUC, or another relevant measure.
+    \item \textbf{Compute the Observed Statistic ($S_{obs}$):} Calculate the chosen test statistic $S$ on the original, unpermuted dataset.
+    \item \textbf{Generate the Null Distribution:} Repeat the following steps a large number of times ($N$, e.g., $N=1000$ or more):
+          \begin{itemize}
+              \item Create a permuted dataset by randomly shuffling the relevant labels or group assignments while keeping the features intact. For example, in a two-class classification problem, shuffle the class labels across all data instances. This process breaks the potential association between features and labels, simulating the scenario under $H_0$.
+              \item Compute the test statistic $S$ on this permuted dataset, denoted as $S_{perm}$.
+          \end{itemize}
+          The collection of these $N$ permuted statistics ($S_{perm, 1}, S_{perm, 2}, ..., S_{perm, N}$) forms the empirical null distribution.
+    \item \textbf{Calculate the p-value:} The p-value represents the probability of observing a test statistic as extreme as, or more extreme than, $S_{obs}$ under the assumption that $H_0$ is true. It is calculated as the proportion of permuted statistics that are greater than or equal to (or less than or equal to, depending on the hypothesis direction) the observed statistic:
+          \begin{equation}
+              p = \frac{\sum_{i=1}^{N} \mathbb{I}(S_{perm, i} \ge S_{obs})}{N}
+              \label{eq:pvalue_perm}
+          \end{equation}
+          where $\mathbb{I}(\cdot)$ is the indicator function (1 if the condition is true, 0 otherwise). For a two-sided test, the calculation involves considering extreme values in both tails of the null distribution.
+    \item \textbf{Interpret the Result:} Compare the calculated p-value to a pre-defined significance level $\alpha$ (commonly $\alpha = 0.05$ or $\alpha = 0.01$).
+          \begin{itemize}
+              \item If $p < \alpha$: Reject the null hypothesis $H_0$. This indicates that the observed result ($S_{obs}$) is statistically significant and unlikely to have occurred merely by chance. There is evidence for the alternative hypothesis (e.g., the classifier performs significantly better than chance, or the two groups are significantly different).
+              \item If $p \ge \alpha$: Fail to reject the null hypothesis $H_0$. This means there is insufficient statistical evidence to conclude that the observed result is different from what might be expected under random chance, given the current data and test.
+          \end{itemize}
 \end{enumerate}
 
 By applying permutation testing, we can add statistical rigor to the evaluation of models and comparisons between datasets, providing stronger support for the conclusions drawn from empirical results. This method will be employed in the validation phase of this thesis (Chapter \autoref{chap:case-study}) to assess the significance of the findings.

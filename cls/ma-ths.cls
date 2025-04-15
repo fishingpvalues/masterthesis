@@ -38,7 +38,7 @@
     headsep=10pt,
     footskip=30pt
 }
-% TODO: Change left to 3cm, right tio
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Font Settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,7 +90,7 @@
     \begin{titlepage}
         \centering
         \vspace*{1.8in} % Increased top space for balance
-        {\fontsize{34}{80}\selectfont\bfseries Automatic Verification and Validation of Automatically Generated Simulation-Based Digital Twins for Discrete Material Flow Systems}\\[1em]
+        {\fontsize{34}{90}\selectfont\bfseries Automatic Verification and Validation of Automatically Generated Simulation-Based Digital Twins for Discrete Material Flow Systems}\\[2em] % Increased vertical space after title from 1em to 2em
         \rule{\textwidth}{1pt}\\[2em]
         \begin{tabular}{rl}
             \textbf{Author:}       & Daniel Fischer\\[1em]
