@@ -17,7 +17,7 @@ To summarize, DMFS are often simulated using DES, which abstracts the continuous
 
 \subsection{Comparing DMFS}
 \label{sec:comparing-dmfs}
-Because the simulation of DMFS often involves (discrete) event simulation, events in DMFS need to be further differentiated to be comparable. \Autocite{Arnold2006} propose to differentiate DMFS into static and dynamic components.
+Because the simulation of DMFS often involves (discrete) event simulation, events in DMFS need to be further differentiated to be comparable. \Textcite{Arnold2006} propose to differentiate DMFS into static and dynamic components.
 
 Static components describe the possible states of the system. Possible states can be the set of possible processes given a part or resource, for example. Dynamic components define the concrete material flow for a certain part or order.
 Static components include parts, resources and processes \autocite{schwede2024learning}. Parts are transformed by processes using resources, sometimes based on orders. Transformation can have an impact on physical properties of the parts (transformation model), spatial position (transition model), the quality of the parts (quality model) and takes time (time model) and uses resources (resource model). Resources have a capacity of handling parts in parallel (resource capacity model) and processes have a predecessor-successors relationship (process model).
@@ -34,15 +34,16 @@ The integration of PPC with simulation models is crucial because it directly aff
 
 \subsection{Key Performance Indicators}
 \label{sec:relevant-kpis}
-Up to this point, DES for SBDT of DMFS has been introduced, outlining the key factors that contribute to a robust simulation. A model differentiation framework proposed by \citeauthor*{schwede2024learning} has been briefly presented to facilitate comparison of SBDT. Furthermore, the critical role of PPC in generating high-quality data for simulation has been discussed. These discussions ignored up till now that, even when SBDT are integrated within well-functioning PPC processes, various SBDT models remain prone to errors and inherent trade-offs that must be addressed by the modeller \autocite{Tao2018ijamt}.
+Up to this point, DES for SBDT of DMFS has been introduced, outlining the key factors that contribute to a robust simulation. A model differentiation framework proposed by \textcite*{schwede2024learning} has been briefly presented to facilitate comparison of SBDT. Furthermore, the critical role of PPC in generating high-quality data for simulation has been discussed. These discussions ignored up till now that, even when SBDT are integrated within well-functioning PPC processes, various SBDT models remain prone to errors and inherent trade-offs that must be addressed by the modeller \autocite{Tao2018ijamt}.
 
 The goal conflict of the modeller when developing SBDT can be described by the following conflict triangle \autocite{robinson2014simulation,balci2012life}:
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.6\textwidth]{figures/goals.png}
-  \caption{The goal conflict of the modeller when developing SBDT. Aiming for higher accuracy (validity) often leads to higher computational costs (efficiency) and reduced scalability (applicability). Reaching more efficiency often leads to reduced accuracy and scalability. Aiming for higher scalability often leads to reduced accuracy and efficiency.}
+  \caption[Conflict triangle of the modeller designing SBDT and VVUQ frameworks]{The goal conflict of the modeller when developing SBDT. Aiming for higher accuracy (validity) often leads to higher computational costs (efficiency) and reduced scalability (applicability). Reaching more efficiency often leads to reduced accuracy and scalability. Aiming for higher scalability often leads to reduced accuracy and efficiency.}
   \label{fig:goals}
+  \caption*{Own illustration based on \autocite{robinson2014simulation,balci2012life}.}
 \end{figure}
 
 Focusing one of the three dimensions—accuracy (validity), efficiency (computation time), and applicability (scalability)—often leads to trade-offs in the other two dimensions. Oftentimes the data itself is not sufficient to make a decision on which trade-off to make. Limited data points may hinder the modeller from reaching high validity. System architecture may block the system from reaching good scalability. Hardware limitations may hinder the modeller from reaching high efficiency.
@@ -53,8 +54,9 @@ One solution to balance and quantify these goals can be achieved by defining a s
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/kpi.png}
-  \caption{SBDT KPIs differentiated by PPC-based and Infrastructure-based indicators.}
+  \caption[Differentiation of KPIs]{SBDT KPIs differentiated by PPC-based and Infrastructure-based indicators.}
   \label{fig:kpis}
+  \caption*{Own illustration based on \autocite{cui2020manufacturing}.}
 \end{figure}
 
 \begin{equation}
@@ -86,13 +88,13 @@ The infrastructure related KPIs are derived by sensors from the executing system
 \label{sec:digital-twin}
 The latter section gave a short introduction into DFMS, DES, its metrics and the corporate processes accompanying the SBDT. Now, the thesis sheds light on the DT itself. For a short introduction to the topic, see \autoref{chap:introduction}.
 
-Like introduced in the preceding chapter, DT inherent the highest order of modelling fidelity compared to DM or DS. There are different definitions of DT present in the literature \autocite{Negri2017promfg,zheng2019application,glaessgen2012digital,Demkovich2018def,boschert2016digital,grieves2014digital,kritzinger2018digital,Tao2018ijamt,zehnder2018representing}. Each of them highlights different aspects of the DT. This thesis utilizes the definition by \autocite{grieves2014digital} which highlights the conceptual elements of the twin and its lifecycle focus:
+Like introduced in the preceding chapter, DT inherent the highest order of modelling fidelity compared to DM or DS. There are different definitions of DT present in the literature \autocite{Negri2017promfg,zheng2019application,glaessgen2012digital,Demkovich2018def,boschert2016digital,grieves2014digital,kritzinger2018digital,Tao2018ijamt,zehnder2018representing}. Each of them highlights different aspects of the DT. This thesis utilizes the definition by \textcite{grieves2014digital} which highlights the conceptual elements of the twin and its lifecycle focus:
 
 \begin{quote}
-  The digital twin concept (...) contains three main parts: A) Physical products in real space, (B) virtual products in virtual space and (C) the two-way connections of data and information that tie the virtual and real products together. \autocite{grieves2014digital}
+  The digital twin concept (...) contains three main parts: A) Physical products in real space, (B) virtual products in virtual space and (C) the two-way connections of data and information that tie the virtual and real products together. \textcite{grieves2014digital}
 \end{quote}
 
-The physical product is the entity which will be modelled. The virtual product is the DT itself, but also its infrastructure, for example data services making the real-time data flow possible \autocite{Tao2018ijamt}. The two-way connection is the data flow between the physical and the virtual product. The data flow is bidirectional. \citeauthor{zehnder2018representing} add that the data flow may contain meta data "describing the data source and its context". Also the connection protocol is of importance here (e.g. MQTT or REST). TCP may be the method of choice as it ensures that the packages arrive in the correct order and without errors \autocite{li2018learning}.
+The physical product is the entity which will be modelled. The virtual product is the DT itself, but also its infrastructure, for example data services making the real-time data flow possible \autocite{Tao2018ijamt}. The two-way connection is the data flow between the physical and the virtual product. The data flow is bidirectional. \textcite{zehnder2018representing} add that the data flow may contain meta data "describing the data source and its context". Also the connection protocol is of importance here (e.g. MQTT or REST). TCP may be the method of choice as it ensures that the packages arrive in the correct order and without errors \autocite{li2018learning}.
 
 \subsection*{Types of Digital Twins}
 \label{sec:types-digital-twins}
@@ -116,17 +118,17 @@ HDT combine different sources of information to create a more accurate model of 
 
 While SBDTs and HDT possess significant computational costs and require domain expertise, DDDT are able to learn from data without the need for a hand-written simulation model. The DDDT \textit{learns} the model. Learning in the context of DDDT is not trivial, several approaches have been proposed in the literature \autocite{he2019data,Friederich2022,francis2021towards}. Often times Data Science methods come to work. The learning process may be supervised or unsupervised. Supervised learning uses labelled data to train the model \autocite{cunningham2008supervised}. The label can symbolize different values of interest. Unsupervised learning uses unlabelled data to train the model \autocite{barlow1989unsupervised}. Often times, the task at hand is to group the data into different categories, see \autoref{sec:knn} \autocite{Biesinger2019}.
 The learning process may be online or offline. Offline learning uses the data \textit{once} for training, validation and testing, while online learning continuously updates the model with new data to adapt to changes in the physical system. Online learning is thus able to capture new trends in the data and to foresee concept drift \autocite{tsymbal2004problem}. DDDT have to be differentiated from data-driven simulation \autocite{Charpentier2014}, which involves human intervention to create highly individual solutions for the physical entity. The key difference is that every characteristic has to be explicitly described in the model by the expert, there are no efforts to let an intelligent algorithm learn these by itself. DDDT may be able to update themselves to new trends in the data by online learning, termed \textit{synchronization} \autocite{reinhardt2019survey}. Latter has to be differentiated from \textit{updating}, which is a manual process to take corrective action in the logic of the twin itself \autocite{schwede2024learning}. An example for updating a DDDT may be the addition of a new feature to the model. An example for synchronization may be the adaption of the model to new trends in the data. The latter may be done by the model itself, the former has to be done by the modeller.
-DDDT thus rely less on domain expertise and manual model creation. A suitable model may be able to capture relevant trends in the data and to predict outcomes which describe most of the characteristics of the physical entity. \autocite{francis2021towards} propose several elements a DDDT must contain to be termed \textit{data-driven}:
+DDDT thus rely less on domain expertise and manual model creation. A suitable model may be able to capture relevant trends in the data and to predict outcomes which describe most of the characteristics of the physical entity. \textcite{francis2021towards} propose several elements a DDDT must contain to be termed \textit{data-driven}:
 
 \begin{enumerate}
   \item \textbf{Data Collection:} The relevant entities to be modelled have to be identified. This activity involves data gathering of the identified entities and ensuring a steady data stream to a database. The data may be gathered from sensors, data warehouses or other sources.
   \item \textbf{Data Validation:} This step involves cleaning and preprocessing the data. The data may contain missing values, outliers or other errors. The data has to be cleaned and preprocessed to ensure a high quality of the model. Plausibility checks may be performed to ensure the data is correct.
   \item \textbf{Knowledge Extraction:} After the data has been collected and cleaned, events have to be detected. \Citeauthor{francis2021towards} utilize PM terms in this context, such as event detection and process discovery. The main goal in this step is to find a common ground on which events are of interest. The thesis later dives deeper into PM techniques applied here, see \autoref{sec:process-mining}.
   \item \textbf{(Semi-)automatic Simulation Modelling:} The data is used to train a model. This step may use offline or online data as a stream. The model may be a neural network, a decision tree or another machine learning model. The model is then used to predict future states of the physical entity. The model may be updated with new data to increase its accuracy.
-  \item \textbf{Continuous Model Validation:} Interestingly,\citeauthor{francis2021towards} propose a continuous model validation. In the online learning case, they recommend to use the steady data stream to apply validation techniques continuously, see \autoref{sec:vvuq-sbdt} The validation may be performed by comparing the model predictions with the real data. If the model deviates from the real data, the model may be recalibrated.
+  \item \textbf{Continuous Model Validation:} Interestingly,\textcite{francis2021towards} propose a continuous model validation. In the online learning case, they recommend to use the steady data stream to apply validation techniques continuously, see \autoref{sec:vvuq-sbdt} The validation may be performed by comparing the model predictions with the real data. If the model deviates from the real data, the model may be recalibrated.
 \end{enumerate}
 
-DDDTs go one step further than SBDT and minimize the influence of the human in the loop \autocite{francis2021towards,Friederich2022}. Faster model development and updating activities are the result. The third reason to automate DT endeavours elaborated by \citeauthor{schwede2024learning}, increasing prediction quality, rises and falls with the data quality, thus the gathering and preprocessing efforts of the modeller. Extrinsic factors like the number of data points available also play into the equation. If the number of features is greater than the number of samples, the curse of dimensionality hinders a good modelling performance \autocite{koppen2000curse}. DDDT should avoid biased or noisy predictions at all costs. The identification of \textit{relevant} events poses the risk of introducing a selection bias, rather a confirmation bias. The modeller may have the tendency to select events which confirm his or her hypothesis. Random sampling may be a solution to this problem, but can destroy sequential information patterns in event sequences. Overall DDDT are a promising approach to model the physical entity. If the right balance between human involvement and automated learning is found, it may be an efficient solution \autocite{francis2021towards}. Thinking one step ahead, employing data-based VVUQ approaches may also be a step forward. This topic will be discussed in Section \autoref{sec:ml-approaches}.
+DDDTs go one step further than SBDT and minimize the influence of the human in the loop \autocite{francis2021towards,Friederich2022}. Faster model development and updating activities are the result. The third reason to automate DT endeavours elaborated by \textcite{schwede2024learning}, increasing prediction quality, rises and falls with the data quality, thus the gathering and preprocessing efforts of the modeller. Extrinsic factors like the number of data points available also play into the equation. If the number of features is greater than the number of samples, the curse of dimensionality hinders a good modelling performance \autocite{koppen2000curse}. DDDT should avoid biased or noisy predictions at all costs. The identification of \textit{relevant} events poses the risk of introducing a selection bias, rather a confirmation bias. The modeller may have the tendency to select events which confirm his or her hypothesis. Random sampling may be a solution to this problem, but can destroy sequential information patterns in event sequences. Overall DDDT are a promising approach to model the physical entity. If the right balance between human involvement and automated learning is found, it may be an efficient solution \autocite{francis2021towards}. Thinking one step ahead, employing data-based VVUQ approaches may also be a step forward. This topic will be discussed in Section \autoref{sec:ml-approaches}.
 
 \label{par:asmg}
 One last discipline, automatic simulation model generation (ASMG), is worth mentioning. ASMG has to be differentiated from DDDT by the effort to automatically generate models, thus DM and DS through DES. Automatic DT generation is not necessarily the goal. It aims to automate the model generation process and tries to eliminate the human in the loop, \autocite{reinhardt2019survey,lechevalier2018methodology}. Automation is achieved by taking into account a diverse range of data sources, including Computer Aided Design data, PPS data, production manuals, process data and programming code, thus reaching a high data variability. The gathered data has to be processed online or offline as well through suitable frameworks or human intervention. Challenges lay in incomplete data \autocite{bergmann2014automatische}, although the same problems of DDDT also apply here. If the gained data is not mined thoroughly, human intervention is needed again, mitigating automation efforts.
@@ -143,7 +145,7 @@ PM is a discipline established 1999 which is interdisciplinary rooted in the fie
 
 \begin{table}[htbp]
   \centering
-  \caption{A fragment of a manufacturing event log: Each line corresponds to an event. The case ID groups unique events which are identified by an event ID to one group, a trace. The timestamp refers to the time of event occurrence, while the activity describes the event. In this example, additional information like resource name and cost are given as well. Case 1, for example, consists of five events, involving a warehouse, two inspectors, and one machine.}
+  \caption[Exemplary Event Log]{A fragment of a manufacturing event log: Each line corresponds to an event. The case ID groups unique events which are identified by an event ID to one group, a trace. The timestamp refers to the time of event occurrence, while the activity describes the event. In this example, additional information like resource name and cost are given as well. Case 1, for example, consists of five events, involving a warehouse, two inspectors, and one machine.}
   \label{tab:manufacturinglog}
   \resizebox{\textwidth}{!}{%
     \begin{tabular}{r r l l l r}
@@ -169,6 +171,7 @@ PM is a discipline established 1999 which is interdisciplinary rooted in the fie
       \bottomrule
     \end{tabular}%
   }
+  \caption*{Own illustration based on \autocite{van2016data}.}
 \end{table}
 
 \autoref{tab:manufacturinglog} illustrates the PM concepts. The case ID groups unique events which are identified by an event ID to one group, a trace. The timestamp refers to the time of event occurrence, while the activity describes the event. In this example, additional information like resource name and cost are given as well. Cases containing the same events identified by unique event IDs will have different case IDs \autocite{van2016data}. Process discovery may try to produce a process model from the event log. The model may be a Petri net, a BPMN model or another process model. The challenge lies not in the recording of every trace present in the event log, rather in finding a generic representation of the most occurring traces. The process model must be generic enough to describe most traces, but specific enough to not get invalidated by future traces which may contain completely different events. Another major building block of this process model is accounting for trace concurrency. When several events may be identified to happen in parallel during the same time window, the model must recognize this. It can be spoken of a classical bias-variance trade-off lend from data science. The process most contain the most frequent traces but has to filter out traces which contain anomalies. Such anomalies like longer time per event due to a fire alarm have to be accounted for. Conformance checking may compare a given process model against a given event log. They are specialized in detecting aforementioned anomalies. A key insight in conformance checking lies in two possible deviations from reality: The given model does not capture the real behaviour (A) or reality differs from the model (B). In the first case, the model is not working as intended. In the second case, the event log is corrupt. The third view on event logs, process enhancement, enables the modeller to use the generated process model to identify bottlenecks. Anomalies identified serve as a good starting point because they reveal errors in the process sequence. The given table offers costs associated to each event ID. This information may be used to create an event benchmark to further optimize the desired "ideal" trace. The first goal of course is to ensure that no mistakes happen during a process.
@@ -178,8 +181,9 @@ More generally, PM empowers the modeller to perform VVUQ of an process model, ev
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/playinplayoutreplay.png}
-  \caption{The Play-In, Play-Out and Replay concept in the context of PM. The Play-In phase involves the creation of a process model from an event log. The Play-Out phase involves the creation of an event log from a process model. The Replay phase involves the modification of the process model thorough information gained from the event log.}
+  \caption[Three model usages of process models]{The Play-In, Play-Out and Replay concept in the context of PM. The Play-In phase involves the creation of a process model from an event log. The Play-Out phase involves the creation of an event log from a process model. The Replay phase involves the modification of the process model thorough information gained from the event log.}
   \label{fig:playinoutreplay}
+  \caption*{Own illustration based on \autocite{damm2001lscs}.}
 \end{figure}
 
 Play-In refers to the creation of a process model out of an event log. Play-Out may be called "sampling" in data science as it generates traces out of the model. DES uses Play-Out to generate new exemplary behaviour, see \autoref{sec:material-flow}. Here, a process model may be used to play-out (simulate) several traces of the desired events and then use bagging techniques like averaging the durations per event to gain robust KPIs (\autoref{sec:relevant-kpis}) and to reduce variance. A biased process model may still generate biased KPIs. Replay uses event log and process model together to check conformance, enriching the model with information captured in the log or to transform a descriptive process model into a prescriptive one \autocite{van2016data}.
@@ -206,16 +210,16 @@ PPC systems (\autoref{sec:ppc}) often times deliver even more data to enrich the
 \section{VVUQ in the Context of Simulation-Based Digital Twins}
 \label{sec:vvuq-sbdt}
 
-The previous sections introduced the concepts of DES, PPC, relevant KPIs, DT, PM and OCED. This section now focusses on VVUQ in the context of SBDT. The thesis at hand uses the term VVUQ to describe the process of verifying, validating and quantifying the uncertainty of a SBDT. V\&V has a long history in manufacturing and DES \autocite{Bitencourt2023}. \Autocite{sel2025survey} add uncertainty quantification as a main interest. Their framework is applied in the medical domain, but they mention reasonable arguments regarding efficiency and safety of SBDT in general.\footnote{To go into detail, they deem erroneous data through sensor failure, model opacity (\autoref{sec:requirements-automatically-generated-models}) and the speed of model self-adaption as the necessities for UQ.} Thus, the thesis considers VVUQ instead of merely V\&V efforts. The following section introduces the basic concepts of VVUQ and its relevance for SBDT.
+The previous sections introduced the concepts of DES, PPC, relevant KPIs, DT, PM and OCED. This section now focusses on VVUQ in the context of SBDT. The thesis at hand uses the term VVUQ to describe the process of verifying, validating and quantifying the uncertainty of a SBDT. V\&V has a long history in manufacturing and DES \autocite{Bitencourt2023}. \Textcite{sel2025survey} add uncertainty quantification as a main interest. Their framework is applied in the medical domain, but they mention reasonable arguments regarding efficiency and safety of SBDT in general.\footnote{To go into detail, they deem erroneous data through sensor failure, model opacity (\autoref{sec:requirements-automatically-generated-models}) and the speed of model self-adaption as the necessities for UQ.} Thus, the thesis considers VVUQ instead of merely V\&V efforts. The following section introduces the basic concepts of VVUQ and its relevance for SBDT.
 
 
 \subsection{Development process of VVUQ Concepts}
 \label{sec:historical-development}
 With the uprising of simulation models in the early 1950s \autocite{evans1967simulation}, the need for VVUQ arose unknowingly to the modellers. The usability of such simulations was deemed high as long as the results were promising, increasing trust in the technology \autocite{durst2017historical}. Blind trust does not validate models. Contrarily, if the results more or less were satisfactory, the model was considered validated \autocite{bonani2003physics}.
 
-The first effort to define and perform verification was performed by \autocite{machlup1955problem} defining verification as "including the correctness of mathematical and logical arguments, the applicability of formulas and equations (...), the reliability and exactness of observations, the reproducibility of experiments, the explanatory or predictive value of generalizations.". \Autocite{naylor1967verification} further refined this definitions by introducing the idea of "goodness of fit". Latter describes the capability of the model to correctly reflect the modelled system. During the 1970s, researchers like Schlesinger \autocite{schlesinger1979terminology} defined validation as achieving a "satisfactory range of accuracy consistent with the application", while Ignall argued for validation against simulations rather than analytical models \autocite{ignall1978using}. Sargent's work from 1979 to 1984 proposed methods like user collaboration and independent verification and validation (V\&V), detailing techniques such as sensitivity analysis and Turing tests \autocite{Sargent2010wsc}. Balci developed a taxonomy and emphasized continuous V\&V, reflecting the need for ongoing assessment \autocite{balci2012life}.
+The first effort to define and perform verification was performed by \textcite{machlup1955problem} defining verification as "including the correctness of mathematical and logical arguments, the applicability of formulas and equations (...), the reliability and exactness of observations, the reproducibility of experiments, the explanatory or predictive value of generalizations.". \Textcite{naylor1967verification} further refined this definitions by introducing the idea of "goodness of fit". Latter describes the capability of the model to correctly reflect the modelled system. During the 1970s, researchers like Schlesinger \autocite{schlesinger1979terminology} defined validation as achieving a "satisfactory range of accuracy consistent with the application", while Ignall argued for validation against simulations rather than analytical models \autocite{ignall1978using}. Sargent's work from 1979 to 1984 proposed methods like user collaboration and independent verification and validation (V\&V), detailing techniques such as sensitivity analysis and Turing tests \autocite{Sargent2010wsc}. Balci developed a taxonomy and emphasized continuous V\&V, reflecting the need for ongoing assessment \autocite{balci2012life}.
 
-By 2004, modern V\&V emerged. Considering model fidelity of today's approaches, \autocite{Oberkampf2004amr} introduced widely recognized definitions of V\&V:
+By 2004, modern V\&V emerged. Considering model fidelity of today's approaches, \textcite{Oberkampf2004amr} introduced widely recognized definitions of V\&V:
 
 \begin{quote}
   \textit{Verification} is the process of determining that a model implementation accurately represents the developer's conceptual description of the model and the solution to the model.
@@ -223,10 +227,10 @@ By 2004, modern V\&V emerged. Considering model fidelity of today's approaches, 
   \textit{Validation} is the process of determining the degree to which a model is an accurate representation of the real world from the perspective of the intended uses of the model. \autocite{Oberkampf2004amr}
 \end{quote}
 
-Verification thus concerns itself with the correctness of the given model \autocite{Sargent2010wsc}, while validation evaluates the quality of explanations quantitively \autocite{Oberkampf2004amr}. \Citeauthor{iso2017systems} span the concept of validation to computational models, where valid models correctly reflect the users intended functionality. PPC may provide the modeller with relevant KPIs to assess both.
+Verification thus concerns itself with the correctness of the given model \autocite{Sargent2010wsc}, while validation evaluates the quality of explanations quantitively \autocite{Oberkampf2004amr}. \Textcite{iso2017systems} span the concept of validation to computational models, where valid models correctly reflect the users intended functionality. PPC may provide the modeller with relevant KPIs to assess both.
 
 \label{sec:uncertainty-quantification}
-Uncertainty quantification (UQ) is a relatively new field in V\&V. It aims to quantify the uncertainty of the model and its predictions through the whole lifecycle of the model, including training, inference and prediction \autocite{sel2025survey}. Uncertainty quantification empowers the modeller to define confidence intervals to correctly emphasize the stochastic nature of the model predictions \autocite{volodina2021importance}. This is crucial for SBDT, where real-time decisions rely on accurate representations, as \autocite{francis2021towards} highlights the need for continuous updates. UQ differentiates \textit{aleatory} uncertainty, which is inherent to the data, and \textit{epistemic} uncertainty, which is due to lack of knowledge \autocite{sel2025survey}. Aleatory uncertainty may arise due to sensor errors in the physical entity, generating noise. Epistemic uncertainty may arise due to lack of data or knowledge about the physical entity \autocite{thelen2023comprehensive}. Epistemic uncertainty can be reduced. \Autocite{abdoune2022handling} provide a comprehensive overview of UQ challenges and potential solutions in the context of SBDT.
+Uncertainty quantification (UQ) is a relatively new field in V\&V. It aims to quantify the uncertainty of the model and its predictions through the whole lifecycle of the model, including training, inference and prediction \autocite{sel2025survey}. Uncertainty quantification empowers the modeller to define confidence intervals to correctly emphasize the stochastic nature of the model predictions \autocite{volodina2021importance}. This is crucial for SBDT, where real-time decisions rely on accurate representations, as \textcite{francis2021towards} highlights the need for continuous updates. UQ differentiates \textit{aleatory} uncertainty, which is inherent to the data, and \textit{epistemic} uncertainty, which is due to lack of knowledge \autocite{sel2025survey}. Aleatory uncertainty may arise due to sensor errors in the physical entity, generating noise. Epistemic uncertainty may arise due to lack of data or knowledge about the physical entity \autocite{thelen2023comprehensive}. Epistemic uncertainty can be reduced. \Textcite{abdoune2022handling} provide a comprehensive overview of UQ challenges and potential solutions in the context of SBDT.
 
 For SBDT, VVUQ is not a one-time activity but a continuous process (\autoref{sec:framework}), ensuring digital twins mirror physical systems accurately. This is vital for industries like manufacturing, where decisions based on digital twins have significant implications \autoref{sec:problem}.
 The historical development of VVUQ, from early verification to integrated UQ, reflects the growing complexity of simulation models. As SBDT become central to decision-making, robust VVUQ practices ensure reliability, linking back to foundational concepts introduced earlier, see \autoref{sec:types-digital-twins}. The concepts of VVUQ are embedded in the context of PM and OCED, which may further assist described endeavours. Especially for UQ, PM offers a rich data source to quantify uncertainty and validate models by providing a \textit{degree of fit} of the given process model.
@@ -254,7 +258,7 @@ To assess these challenges, the thesis defines the following \textit{key require
   \item \textbf{Scalability:} VVUQ processes have to be scalable as the underlying model or data evolves over time. This requires the development of scalable VVUQ techniques that can handle large volumes of data and complex models. Of course, the infrastructure must be able to handle the increased computational load.
 \end{itemize}
 
-As noted by \citeauthor{francis2021towards}, the lifecycle SBDT has implications for its VVUQ as well: VVUQ must accompany the SBDT in all phases, from conceptualization to deployment and operation. The key requirements outlined above provide a foundation for developing robust VVUQ processes for automatically generated models, ensuring their reliability and accuracy in real-world applications.
+As noted by \textcite{francis2021towards}, the lifecycle SBDT has implications for its VVUQ as well: VVUQ must accompany the SBDT in all phases, from conceptualization to deployment and operation. The key requirements outlined above provide a foundation for developing robust VVUQ processes for automatically generated models, ensuring their reliability and accuracy in real-world applications.
 
 \subsection{Traditional versus Machine Learning-Based Approaches}
 \label{sec:ml-approaches}
@@ -263,7 +267,7 @@ VVUQ can be performed using traditional methods or more sophisticated approaches
 
 \subsubsection*{Machine Learning-Based VVUQ}
 
-Sophisticated approaches may include the use of machine learning (ML) techniques to enhance VVUQ processes. ML can be used to identify patterns in data, detect anomalies, and improve model predictions. In addition to supervised and unsupervised learning shortly introduced in \autoref{sec:data-driven-digital-twins}, semi-supervised learning and reinforcement learning are two other approaches. Supervised learning may be employed where labels regarding the validity or non-validity of an OCEL (see \autoref{sec:object-centric-event-logs}) are given. Unsupervised learning may provide such labels as learned categories if they are missing or may assist with finding common patterns in the data. Unsupervised techniques are context-agnostic and assume no patterns in the data, see \citeauthor{hastie2009unsupervised} for the reverse problem of encoding a priori information in unsupervised algorithms. Semi-supervised learning combines labelled and unlabelled data to improve model performance. It somehow forms a middle ground where lots of unlabelled data is available and is then grouped by the algorithm. The scarce data is then used in the holdout set to perform testing \autocite{learning2006semi}. Reinforcement learning is not commonly applied in VVUQ of SBDT.
+Sophisticated approaches may include the use of machine learning (ML) techniques to enhance VVUQ processes. ML can be used to identify patterns in data, detect anomalies, and improve model predictions. In addition to supervised and unsupervised learning shortly introduced in \autoref{sec:data-driven-digital-twins}, semi-supervised learning and reinforcement learning are two other approaches. Supervised learning may be employed where labels regarding the validity or non-validity of an OCEL (see \autoref{sec:object-centric-event-logs}) are given. Unsupervised learning may provide such labels as learned categories if they are missing or may assist with finding common patterns in the data. Unsupervised techniques are context-agnostic and assume no patterns in the data, see \textcite{hastie2009unsupervised} for the reverse problem of encoding a priori information in unsupervised algorithms. Semi-supervised learning combines labelled and unlabelled data to improve model performance. It somehow forms a middle ground where lots of unlabelled data is available and is then grouped by the algorithm. The scarce data is then used in the holdout set to perform testing \autocite{learning2006semi}. Reinforcement learning is not commonly applied in VVUQ of SBDT.
 ML techniques are often referred to as "oracles" when used for VVUQ because of their key challenge of opacity \autoref{sec:requirements-automatically-generated-models}.
 
 \subsubsection*{Challenges in Data Preparation and Feature Selection}
@@ -288,7 +292,7 @@ Another important aspects of assessing model quality is through metrics. The fol
 
 \begin{table}[htbp]
   \centering
-  \caption{A fragment of a manufacturing OCEL with type annotations. Each row represents an event with associated process execution details. The columns are annotated as follows: \texttt{process\_execution\_id} (int), \texttt{order\_id} (int), \texttt{start\_time} (datetime), \texttt{end\_time} (datetime), \texttt{part\_id} (int), \texttt{process\_type} (int), \texttt{process\_id} (int), \texttt{resource\_id} (int), and \texttt{is\_valid} (bool).}
+  \caption[Exemplary OCEL]{A fragment of a manufacturing OCEL with type annotations. Each row represents an event with associated process execution details. The columns are annotated as follows: \texttt{process\_execution\_id} (int), \texttt{order\_id} (int), \texttt{start\_time} (datetime), \texttt{end\_time} (datetime), \texttt{part\_id} (int), \texttt{process\_type} (int), \texttt{process\_id} (int), \texttt{resource\_id} (int), and \texttt{is\_valid} (bool).}
   \label{tab:exemplary-ocel}
   \resizebox{\textwidth}{!}{%
     \begin{tabular}{r r l l r r r r l}
@@ -314,6 +318,7 @@ Another important aspects of assessing model quality is through metrics. The fol
       \bottomrule
     \end{tabular}%
   }
+  \caption*{Own tabulation based IoT Factory data.}}
 \end{table}
 
 \paragraph{\textbf{Accuracy}}
@@ -364,7 +369,7 @@ A confusion matrix is a specific type of contingency table that provides a detai
 
 \begin{table}[h!]
   \centering
-  \caption{Confusion Matrix for Binary Classification}
+  \caption[Confusion Matrix Sceleton]{Confusion Matrix for Binary Classification}
   \label{tab:confusionmatrix}
   \begin{tabular}{c|cc}
     \toprule
@@ -375,6 +380,7 @@ A confusion matrix is a specific type of contingency table that provides a detai
     Negative (False)      & False Positive (FP)                          & True Negative (TN)  \\
     \bottomrule
   \end{tabular}
+  \caption*{Own tabulation based on \autocite{fahrmeir2016statistik}.}}
 \end{table}
 
 This matrix offers a granular view of the model's predictive behaviour, allowing for a thorough analysis of the different types of errors it makes. True positives represent the cases where the model correctly predicted a positive outcome (e.g., a valid process was correctly identified). True negatives indicate instances where the model correctly predicted a negative outcome (e.g., an invalid process was correctly identified). False positives occur when the model incorrectly predicts a positive outcome for a negative instance (e.g., an invalid process was wrongly flagged as valid). Conversely, false negatives arise when the model incorrectly predicts a negative outcome for a positive instance (e.g., a valid process was missed and classified as invalid). Analysing the confusion matrix for the 'is\_valid' prediction in the context of manufacturing can reveal crucial information about the model's tendencies, such as whether it is more prone to generating false alarms or to missing actual defects, which has direct implications for the design and implementation of quality control strategies.
@@ -439,8 +445,9 @@ For binary classification tasks, such as the prediction of 'is\_valid' status in
       \addlegendentry{Random Classifier}
     \end{axis}
   \end{tikzpicture}
-  \caption{Example ROC Curve}
+  \caption[ROC AUC Curve example]{Example ROC Curve}
   \label{fig:roc}
+  \caption*{Own tabulation based on \autocite{geron2022hands}.}}
 \end{figure}
 
 \begin{equation}
@@ -465,10 +472,7 @@ The core computation within an RNN at time step \( t \) involves calculating the
   \bm{h}_t = \sigma_h (W_{xh} \bm{x}_t + W_{hh} \bm{h}_{t-1} + \bm{b}_h)
   \label{eq:rnn_hidden_state}
 \end{equation}
-% =========================================================================
-% Example Placement for Unfolded RNN Diagram
-% (Place this *after* Eq. (1) \eqref{eq:rnn_hidden_state} in your text)
-% =========================================================================
+
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}[node distance=1.2cm and 1.8cm]
@@ -526,9 +530,11 @@ The core computation within an RNN at time step \( t \) involves calculating the
     \draw [arrow] (ytp1) -- (dots_right_y);
 
   \end{tikzpicture}
-  \caption{Unfolded architecture of a Recurrent Neural Network (RNN) over time, illustrating the computation of the hidden state \(\bm{h}_t\) according to \autoref{eq:rnn_hidden_state}.}
+  \caption[RNN unfolded]{Unfolded architecture of a Recurrent Neural Network (RNN) over time, illustrating the computation of the hidden state \(\bm{h}_t\) according to \autoref{eq:rnn_hidden_state}.}
   \label{fig:rnn_unfolded}
+  \caption*{Own illustration based on \autocite{geron2022hands}.}
 \end{figure}
+
 where \( W_{xh} \) is the weight matrix connecting the input to the hidden layer, \( W_{hh} \) is the weight matrix for the recurrent connection from the previous hidden state to the current hidden state, \( \bm{b}_h \) is the bias vector for the hidden layer, and \( \sigma_h \) is a non-linear activation function, commonly the hyperbolic tangent (\(\tanh\)) or ReLU. The initial hidden state \( \bm{h}_0 \) is typically initialized to zeros or learned.
 
 The output \( \bm{y}_t \) at time step \( t \) can then be computed from the hidden state:
@@ -554,7 +560,7 @@ The key innovation of the LSTM cell is the introduction of a \textit{cell state}
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/lstmcell.png}
-  \caption{Visual representation of the LSTM cell computations detailed in Equations \ref{eq:lstm_forget_gate}-\ref{eq:lstm_hidden_state}. The diagram shows how inputs ( \bm{x}t ) and ( \bm{h}{t-1} ) interact with the forget gate ((\bm{f}\_t)), input gate ((\bm{i}\_t)), candidate state ((\bm{\tilde{c}}\_t)), and output gate ((\bm{o}t)) to update the cell state from ( \bm{c}{t-1} ) to ( \bm{c}\_t ) and compute the hidden state ( \bm{h}\_t ).}
+  \caption[LSTM cell]{Visual representation of the LSTM cell computations detailed in Equations \ref{eq:lstm-forget-gate}-\ref{eq:lstm-hidden-state}. The diagram shows how inputs ( \bm{x}t ) and ( \bm{h}{t-1} ) interact with the forget gate ((\bm{f}\_t)), input gate ((\bm{i}\_t)), candidate state ((\bm{\tilde{c}}\_t)), and output gate ((\bm{o}t)) to update the cell state from ( \bm{c}{t-1} ) to ( \bm{c}\_t ) and compute the hidden state ( \bm{h}\_t ).}
   \caption*{Source: Own illustration based on \autocite{geron2022hands}.}
   \label{fig:lstm_cell}
 \end{figure}
@@ -564,7 +570,7 @@ At each time step \( t \), given the input \( \bm{x}_t \), the previous hidden s
   \item \textbf{Forget Gate (\( \bm{f}_t \)):} Decides which information to discard from the previous cell state \( \bm{c}_{t-1} \).
         \begin{equation}
           \bm{f}_t = \sigma(W_f \bm{x}_t + U_f \bm{h}_{t-1} + \bm{b}_f)
-          \label{eq:lstm_forget_gate}
+          \label{eq:lstm-forget-gate}
         \end{equation}
 
   \item \textbf{Input Gate (\( \bm{i}_t \)):} Determines which new information from the input and previous hidden state should be stored in the cell state. This involves two parts:
@@ -572,29 +578,29 @@ At each time step \( t \), given the input \( \bm{x}_t \), the previous hidden s
           \item The input gate layer decides which values to update:
                 \begin{equation}
                   \bm{i}_t = \sigma(W_i \bm{x}_t + U_i \bm{h}_{t-1} + \bm{b}_i)
-                  \label{eq:lstm_input_gate}
+                  \label{eq:lstm-input-gate}
                 \end{equation}
           \item A candidate cell state \( \bm{\tilde{c}}_t \) is created with potential new values, typically using a \( \tanh \) activation:
                 \begin{equation}
                   \bm{\tilde{c}}_t = \tanh(W_c \bm{x}_t + U_c \bm{h}_{t-1} + \bm{b}_c)
-                  \label{eq:lstm_candidate_cell}
+                  \label{eq:lstm-candidate-cell}
                 \end{equation}
         \end{itemize}
 
   \item \textbf{Cell State Update (\( \bm{c}_t \)):} The old cell state \( \bm{c}_{t-1} \) is updated to the new cell state \( \bm{c}_t \). This involves element-wise multiplication (\(\odot\)) to forget parts of the old state (via \( \bm{f}_t \)) and add parts of the new candidate state (via \( \bm{i}_t \)).
         \begin{equation}
           \bm{c}_t = \bm{f}_t \odot \bm{c}_{t-1} + \bm{i}_t \odot \bm{\tilde{c}}_t
-          \label{eq:lstm_cell_update}
+          \label{eq:lstm-cell-update}
         \end{equation}
 
   \item \textbf{Output Gate (\( \bm{o}_t \)):} Determines what part of the (filtered) cell state \( \bm{c}_t \) should be outputted as the new hidden state \( \bm{h}_t \).
         \begin{equation}
           \bm{o}_t = \sigma(W_o \bm{x}_t + U_o \bm{h}_{t-1} + \bm{b}_o)
-          \label{eq:lstm_output_gate}
+          \label{eq:lstm-output-gate}
         \end{equation}
         \begin{equation}
           \bm{h}_t = \bm{o}_t \odot \tanh(\bm{c}_t)
-          \label{eq:lstm_hidden_state}
+          \label{eq:lstm-hidden-state}
         \end{equation}
 \end{enumerate}
 
@@ -688,14 +694,16 @@ The gating mechanisms allow LSTMs to selectively remember or forget information 
     % Annotation for combination
     \node[draw, ellipse, dashed, fit=(f3)(b3), inner 09 = 0.3cm, label={[yshift=-1.2cm]center:Combine}] {};
   \end{tikzpicture}
-  \caption{Architecture of a Bidirectional LSTM (Bi-LSTM), processing the input sequence (\(\bm{x}_t\)) both forwards (generating \(\vec{\bm{h}}_t\)) and backwards (generating \(\cev{\bm{h}}_t\)). The final hidden states \(\bm{h}_t\) are produced by combining information from both directions (e.g., via concatenation according to Equation \autoref{eq:bilstm_concat}).}
+  \caption[Bi-LSTM architecture]{Architecture of a Bidirectional LSTM (Bi-LSTM), processing the input sequence (\(\bm{x}_t\)) both forwards (generating \(\vec{\bm{h}}_t\)) and backwards (generating \(\cev{\bm{h}}_t\)). The final hidden states \(\bm{h}_t\) are produced by combining information from both directions (e.g., via concatenation according to Equation \autoref{eq:bilstm_concat}).}
   \label{fig:bilstm_arch}
+  \caption*{Own illustration.}
 \end{figure}
+
 While standard LSTMs process sequences chronologically, capturing dependencies on past inputs, many tasks benefit from considering context from both past and future elements. For example, understanding why a specific machine task is performed requires knowledge about the task performed afterwards. Bidirectional LSTMs (Bi-LSTMs) address this by processing the input sequence in both forward and backward directions \autocite{schuster1997bidirectional}.
 
-A Bi-LSTM consists of two 09arate LSTM layers:
+A Bi-LSTM consists of two separate LSTM layers:
 \begin{enumerate}
-  \item A \textbf{forward LSTM} processes the input sequence \( \{\bm{x}_1, ..., \bm{x}_T\} \) from \( t=1 \) to \( T \), producing a sequence of forward hidden states \( \{\vec{\bm{h}}_1, ..., \vec{\bm{h}}_T\} \). The computation for \( \vec{\bm{h}}_t \) follows the standard LSTM equations \eqref{eq:lstm_forget_gate} through \eqref{eq:lstm_hidden_state}.
+  \item A \textbf{forward LSTM} processes the input sequence \( \{\bm{x}_1, ..., \bm{x}_T\} \) from \( t=1 \) to \( T \), producing a sequence of forward hidden states \( \{\vec{\bm{h}}_1, ..., \vec{\bm{h}}_T\} \). The computation for \( \vec{\bm{h}}_t \) follows the standard LSTM equations \autoref{eq:lstm-forget-gate} through \autoref{eq:lstm-hidden-state}.
   \item A \textbf{backward LSTM} processes the input sequence in reverse order, from \( t=T \) down to \( 1 \), producing a sequence of backward hidden states \( \{\cev{\bm{h}}_1, ..., \cev{\bm{h}}_T\} \). The computation for \( \cev{\bm{h}}_t \) uses a 09arate set of LSTM parameters and processes the sequence \( \{\bm{x}_T, ..., \bm{x}_1\} \).
 \end{enumerate}
 
@@ -773,17 +781,18 @@ This architecture directly relates to the VVUQ of SBDTs. Accurate anomaly classi
 ML-based VVUQ approaches heavily rely on data. In the preceding sections, the thesis introduced several interfaces which may serve as suitable data sources. PM/OCED may provide event logs for VVUQ approaches \textemdash ML approaches can ingest those. PPC systems may provide additional data to enrich the event log. This section will shed light on a systematic literature review (SLR) on V\&V in the context of DTs. After summarizing the main findings, several V\&V approaches with increasing sophistication are presented. The section closes with a discussion of the most promising approaches.
 
 
-\Autocite{Bitencourt2023} conducted a SLR on V\&V in the context of DT \textemdash a relatively new field. They did not consider uncertainty quantification in their SLR. As \autocite{hua2022validation} note, there are no structured and established frameworks for validating DTs. This statement holds for all sectors where DTs are applied. The SLR analysed 269 papers. They applied the 4R framework by \autocite{Osho2022jmsy} to describe the capabilities of the analysed twin frameworks. The 4R framework consists of the four dimensions \textit{Representation}, \textit{Replication}, \textit{Reality} and \textit{No DT}. The SLR found that most frameworks ($49\%$) rather developed a DM or DS. Another $26\%$ of DT were only able to \textit{represent} the physical entity. Highly sophisticated DT were the exception, not the rule. Considering this trend, V\&V may not be a topic researchers are interested in at first sight. \Autocite{Bitencourt2023} identified a trend throughout the years of increasing modelling capabilities of the considered DT. Up to the year 2023, the trend is still increasing. They identify more data sources as the main driver for this trend. From the 269 papers, $47\%$ have been applied in the manufacturing domain. Of all classified DT, one key insight is that most authors performed at least one form of V\&V.
+\Textcite{Bitencourt2023} conducted a SLR on V\&V in the context of DT \textemdash a relatively new field. They did not consider uncertainty quantification in their SLR. As \textcite{hua2022validation} note, there are no structured and established frameworks for validating DTs. This statement holds for all sectors where DTs are applied. The SLR analysed 269 papers. They applied the 4R framework by \textcite{Osho2022jmsy} to describe the capabilities of the analysed twin frameworks. The 4R framework consists of the four dimensions \textit{Representation}, \textit{Replication}, \textit{Reality} and \textit{No DT}. The SLR found that most frameworks ($49\%$) rather developed a DM or DS. Another $26\%$ of DT were only able to \textit{represent} the physical entity. Highly sophisticated DT were the exception, not the rule. Considering this trend, V\&V may not be a topic researchers are interested in at first sight. \Textcite{Bitencourt2023} identified a trend throughout the years of increasing modelling capabilities of the considered DT. Up to the year 2023, the trend is still increasing. They identify more data sources as the main driver for this trend. From the 269 papers, $47\%$ have been applied in the manufacturing domain. Of all classified DT, one key insight is that most authors performed at least one form of V\&V.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/vvbitencourt.png}
-  \caption{Donut chart showing the distribution of V\&V methods in the context of DT.}
+  \caption[Donut Chart V\&V]{Donut chart showing the distribution of V\&V methods in the context of DT.}
   \label{fig:vvbitencourt}
+  \caption*{Own illustration based on \textcite{Bitencourt2023}.}
 \end{figure}
 
-DTs ranking in the \textit{reality} category where most often verified and validated. The authors deduct that because of the increasing complexity of the model, V\&V may become a stressing topic. \Autocite{Nie2023rcim} propose a multi-agent and cloud-edge orchestration framework leveraging Digital Twin and IIoT to optimize distributed manufacturing resources. Their framework integrates a Convolutional Neural Network (CNN) with a bidirectional Long Short Term Memory (LSTM) module to perform scheduling and self-adaptive strategies for intelligent, real-time production control. They compare their network with an earlier adopted algorithm and its result to perform V\&V. Quantifying the validity, they use Mean Squared Error (MSE) and Mean Absolute Error (MAE), see \autoref{sec:metrics-theory}.
-\Autocite{Lv2023rcim} defined target scenarios and boundaries to verify their DT for fault diagnosis of a drilling platform. They defined intervals for the metrics to be valid. Validation was performed by conducting a case study. Latter can be termed qualitative validation because the factual similarity of the case study against the DT has been assessed. Regarding their verification approach, they go one step further than \autocite{Nie2023rcim} by defining control intervals. This is somewhat automatic verification, but still requires human intervention when the values leave the defined intervals. \Autocite{Chen2023,Mykoniatis2021jim} both performed visual inspection to verify their DT. Both used cameras or other visual inspection tools to compare the DT results with reality. \Autocite{Chen2023} used thermal cameras to conduct temperature scans and compared the results with temperature prediction of the twin. \Autocite{Mykoniatis2021jim} used video recordings to validate their twin behaviour, but consulted KPIs to further validate their twin. Both approaches use aids for measurements and visual inspection. The measurements still have to be conducted and compared manually. Some authors performed statistical V\&V, although the measurements were not automated. \Autocite{Wang2023asoc} compared historical data with the twin data and calculated the mean absolute percentage error of both datasets, \autoref{sec:metrics-theory}. For validation they relied on conducting a case study, thus not fully automating V\&V. \Autocite{Min2019ijinfomgt} performed verification using PPC KPIs, automating the V\&V process even further. Their validation included using a validation set and measuring a set of metrics including error of fit and accuracy. This approach can be considered the first step towards a fully automated VVUQ process. \Autocite{Bitencourt2023} conclude that the majority of the analysed papers performed V\&V manually, with only a few authors automating the process. They also note that most authors did not consider uncertainty quantification in their work. And indeed, most work was performed in only conducting verification ($31\%$) where case studies were the method of choice \autocite{Eunike2022,jia2023from,kumbhar2023digital,Leng2020rcim,Leng2022aei}}. Case studies were also often applied where only validation tool place ($35\%$) \autocite{Alam2023,Dobaj2022,kherbache2022digital,Latsou2023,Leng2021jclepro,Negri2019promfg}. The SLR shows that V\&V is a topic of interest in the context of DT, but most authors still rely on manual methods. The trend towards more sophisticated DTs and the increasing complexity of models will likely drive further research in this area. The SLR also highlights the need for more automated and standardized V\&V processes, especially in the context of uncertainty quantification. Very few authors performed fully automated VVUQ for DT. The ones who did will now be discussed in more detail.
+DTs ranking in the \textit{reality} category where most often verified and validated. The authors deduct that because of the increasing complexity of the model, V\&V may become a stressing topic. \Textcite{Nie2023rcim} propose a multi-agent and cloud-edge orchestration framework leveraging Digital Twin and IIoT to optimize distributed manufacturing resources. Their framework integrates a Convolutional Neural Network (CNN) with a bidirectional Long Short Term Memory (LSTM) module to perform scheduling and self-adaptive strategies for intelligent, real-time production control. They compare their network with an earlier adopted algorithm and its result to perform V\&V. Quantifying the validity, they use Mean Squared Error (MSE) and Mean Absolute Error (MAE), see \autoref{sec:metrics-theory}.
+\Textcite{Lv2023rcim} defined target scenarios and boundaries to verify their DT for fault diagnosis of a drilling platform. They defined intervals for the metrics to be valid. Validation was performed by conducting a case study. Latter can be termed qualitative validation because the factual similarity of the case study against the DT has been assessed. Regarding their verification approach, they go one step further than \textcite{Nie2023rcim} by defining control intervals. This is somewhat automatic verification, but still requires human intervention when the values leave the defined intervals. \Textcite{Chen2023,Mykoniatis2021jim} both performed visual inspection to verify their DT. Both used cameras or other visual inspection tools to compare the DT results with reality. \Textcite{Chen2023} used thermal cameras to conduct temperature scans and compared the results with temperature prediction of the twin. \Textcite{Mykoniatis2021jim} used video recordings to validate their twin behaviour, but consulted KPIs to further validate their twin. Both approaches use aids for measurements and visual inspection. The measurements still have to be conducted and compared manually. Some authors performed statistical V\&V, although the measurements were not automated. \Textcite{Wang2023asoc} compared historical data with the twin data and calculated the mean absolute percentage error of both datasets, \autoref{sec:metrics-theory}. For validation they relied on conducting a case study, thus not fully automating V\&V. \Textcite{Min2019ijinfomgt} performed verification using PPC KPIs, automating the V\&V process even further. Their validation included using a validation set and measuring a set of metrics including error of fit and accuracy. This approach can be considered the first step towards a fully automated VVUQ process. \Textcite{Bitencourt2023} conclude that the majority of the analysed papers performed V\&V manually, with only a few authors automating the process. They also note that most authors did not consider uncertainty quantification in their work. And indeed, most work was performed in only conducting verification ($31\%$) where case studies were the method of choice \autocite{Eunike2022,jia2023from,kumbhar2023digital,Leng2020rcim,Leng2022aei}}. Case studies were also often applied where only validation tool place ($35\%$) \autocite{Alam2023,Dobaj2022,kherbache2022digital,Latsou2023,Leng2021jclepro,Negri2019promfg}. The SLR shows that V\&V is a topic of interest in the context of DT, but most authors still rely on manual methods. The trend towards more sophisticated DTs and the increasing complexity of models will likely drive further research in this area. The SLR also highlights the need for more automated and standardized V\&V processes, especially in the context of uncertainty quantification. Very few authors performed fully automated VVUQ for DT. The ones who did will now be discussed in more detail.
 
 
 \subsubsection*{K-Nearest Neighbours (KNN) for Digital Twin Accreditation in Manufacturing}
@@ -793,12 +802,14 @@ The k-Nearest Neighbours (KNN) algorithm, a lazy learning approach grounded in m
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/knn.png}
-  \caption{KNN algorithm. The algorithm classifies a new data point based on the majority class of its $K$ nearest neighbours in the training dataset. Euclidean distance metric has been used to determine the distance between data points.}
+  \caption[KNN intuition]{KNN algorithm. The algorithm classifies a new data point based on the majority class of its $K$ nearest neighbours in the training dataset. Euclidean distance metric has been used to determine the distance between data points.}
   \label{fig:knn}
+  \caption*{Own illustration.}
 \end{figure}
 
 In the given figure, the lazy learning approach of KNN near completion is shown. The star-formed point has to be assigned to class one or two. Based on the count of points in the near region of the unassigned point, the algorithm will decide class two.
-The approach by \autocite{dos2024simulation} integrates KNN with p-charts for the concurrent validation of SBDT \autocite{dos2024digital}. This involves monitoring the DTs output over time and using KNN to classify its behaviour. Subsequently, p-charts are employed to statistically monitor the proportion of anomalies detected by KNN. The X-axis represents the discretized time $t$, the Y-axis represents the proportion of anomalies detected by the KNN. P-charts normally show a relative proportion of nonconforming items in a sample \autocite{acosta1999improved}. \Autocite{dos2024simulation} enriched their chart with an upper control limit (UCL) and lower control limit (LCL) which stand for acceptable statistical boundaries. This approach is similar to \autocite{Nie2023rcim} who also defined control intervals. If the p-value exceeds the boundaries, the twin may deviate from real behaviour. This method offers the advantage of real-time monitoring. However, it is sensitive to the choice of the hyperparameter $K$ and can be computationally expensive for large datasets \autocite{dos2024simulation}. The presence of outliers and noisy data can also impact the accuracy of KNN, and its performance may decrease in high-dimensional spaces. The authors utilized metrics such as accuracy, precision, recall and F1-Score (\autoref{sec:metrics-theory}. They also used cross validation for increasing robustness of the prediction. By varying values for $K$, an optimal split may be found. Recalling the different kinds of anomalies from \autoref{sec:classification-methods}, KNN is able to capture point anomalies and contextual anomalies. Collective anomalies are not captured by KNN, as they are not able to learn from the data.
+The approach by \textcite{dos2024simulation} integrates KNN with p-charts for the concurrent validation of SBDT \autocite{dos2024digital}. This involves monitoring the DTs output over time and using KNN to classify its behaviour. Subsequently, p-charts are employed to statistically monitor the proportion of anomalies detected by KNN. The X-axis represents the discretized time $t$, the Y-axis represents the proportion of anomalies detected by the KNN. P-charts normally show a relative proportion of nonconforming items in a sample \autocite{acosta1999improved}. \Textcite{dos2024simulation} enriched their chart with an upper control limit (UCL) and lower control limit (LCL) which stand for acceptable statistical boundaries. This approach is similar to \textcite{Nie2023rcim} who also defined control intervals. If the p-value exceeds the boundaries, the twin may deviate from real behaviour. This method offers the advantage of real-time monitoring. However, it is sensitive to the choice of the hyperparameter $K$ and can be computationally expensive for large datasets \autocite{dos2024simulation}. The presence of outliers and noisy data can also impact the accuracy of KNN, and its performance may decrease in high-dimensional spaces. The authors utilized metrics such as accuracy, precision, recall and F1-Score (\autoref{sec:metrics-theory}. They also used cross validation for increasing robustness of the prediction. By varying values for $K$, an optimal split may be found. Recalling the different kinds of anomalies from \autoref{sec:classification-methods}, KNN is able to capture point anomalies and contextual anomalies. Collective anomalies are not captured by KNN, as they are not able to learn from the data.
+
 \begin{figure}[htbp]
   \centering
   \begin{tikzpicture}
@@ -851,19 +862,12 @@ The approach by \autocite{dos2024simulation} integrates KNN with p-charts for th
       % Lower Control Limit (LCL)
       \addplot[const plot, dashed, green, thick, domain=\pgfkeysvalueof{/pgfplots/xmin}:\pgfkeysvalueof{/pgfplots/xmax}] {\lcl};
       \addlegendentry{LCL = \pgfmathprintnumber{\lcl}}
-      % Add label directly to the line (alternative to legend)
-      % \node[anchor=west, green] at (axis cs:\pgfkeysvalueof{/pgfplots/xmax},\lcl) {LCL};
-
-      % Optional: Center Line (CL) - Often the average proportion
-      % \addplot[const plot, dotted, gray, thick, domain=\pgfkeysvalueof{/pgfplots/xmin}:\pgfkeysvalueof{/pgfplots/xmax}] {\cl};
-      % \addlegendentry{CL = \pgfmathprintnumber{\cl}}
-      % Add label directly to the line (alternative to legend)
-      % \node[anchor=west, gray] at (axis cs:\pgfkeysvalueof{/pgfplots/xmax},\cl) {CL};
 
     \end{axis}
   \end{tikzpicture}
-  \caption{Example P-Chart showing the proportion of anomalies detected by KNN over time for Digital Twin accreditation, with Upper (UCL) and Lower (LCL) control limits. A point outside the limits (like at t=7) suggests potential deviation.}
+  \caption[Proportion chart for VVUQ]{Example P-Chart showing the proportion of anomalies detected by KNN over time for Digital Twin accreditation, with Upper (UCL) and Lower (LCL) control limits. A point outside the limits (like at t=7) suggests potential deviation.}
   \label{fig:pchart_knn_dt}
+  \caption*{Own illustration based on \textcite{dos2024simulation}.}
 \end{figure}
 
 \subsubsection*{Time Series Classification for Fault Localization}
@@ -878,7 +882,7 @@ MCD is a technique that uses dropout \autocite{srivastava2014dropout} during bot
 DE involves training multiple models with different initializations and architectures, and then combining their predictions to obtain a more robust estimate of uncertainty \autocite{rahaman2021uncertainty}. The difference between DE and MCD lies in statistically independent NNs, meaning they do not share statistical interaction processes. Furthermore, they are initialized randomly, whereas MCD networks share the same weight initialization. MCD and DE both provide good estimates for uncertainty, but it is recommended to apply both techniques after rigorous fine-tuning of the DNN architecture \autocite{kamali2024advancements}.
 GPs are a non-parametric Bayesian approach that models the underlying function as a distribution over functions \autocite{bilionis2012multi}. They provide a measure of uncertainty in their predictions by estimating the variance and mean of the predicted outputs \autocite{Burr2025TEADT}.
 
-Overall VVUQ for SBDT is conducted with varying efforts. There is not a lot of research on fully automated VVUQ processes. The SLR by \autocite{Bitencourt2023} shows that most authors still rely on manual methods, if VVUQ has been performed at all. The trend towards more sophisticated DTs and the increasing complexity of models will likely drive further research in this area. The SLR also highlights the need for more automated and standardized VVUQ processes, especially in the context of uncertainty quantification. Very few authors performed fully automated VVUQ for DT. The ones who did were presented in this section.
+Overall VVUQ for SBDT is conducted with varying efforts. There is not a lot of research on fully automated VVUQ processes. The SLR by \textcite{Bitencourt2023} shows that most authors still rely on manual methods, if VVUQ has been performed at all. The trend towards more sophisticated DTs and the increasing complexity of models will likely drive further research in this area. The SLR also highlights the need for more automated and standardized VVUQ processes, especially in the context of uncertainty quantification. Very few authors performed fully automated VVUQ for DT. The ones who did were presented in this section.
 
 This chapter established the theoretical foundation for the research presented in this thesis. It began by introducing DMFS and their simulation using DES, differentiating static and dynamic components. The discussion highlighted the connection between PPC and data quality. KPIs were identified as critical tools for balancing the inherent trade-offs between model accuracy, computational efficiency, and scalability \textemdash an omnipresent challenge in SBDT \autoref{sec:problem}.The chapter then explored the concept of DT, SBDT, DDDT, and HDT. Each type was analysed for its strengths and limitations, with SBDT relying on DES for dynamic representation, DDDT using machine learning for automated adaptation, and HDT combining domain knowledge with data-driven insights. PM was mentioned as a useful tool for DT validation, particularly through object-centric event logs (OCEL), which provide a multi-dimensional perspective on process interactions. OCEL’s ability to capture complex, concurrent relationships between objects and events positions it as a powerful tool for enhancing traditional PM techniques. Finally, the chapter addressed VVUQ as essential processes for ensuring the reliability of SBDT. Traditional VVUQ methods, such as statistical tests were compared with modern machine learning approaches, including KNN and BNN. This highlights the need for continuous, automated VVUQ frameworks capable of handling the dynamic nature of SBDT. Key challenges such as model opacity, data dependency, and uncertainty quantification were identified as critical areas for future research. Key requirements for successful VVUQ were developed.
 

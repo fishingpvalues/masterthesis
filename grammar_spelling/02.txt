@@ -96,8 +96,8 @@ NEW: The digital twin concept (...) consists of three main components: (A) physi
 *(Grammar: "consists of" is more precise; "components" is clearer; "link" is more natural than "tie.")*  
 
 **Line 160:**  
-OLD: \citeauthor{zehnder2018representing} add that the data flow may contain meta data "describing the data source and its context".  
-NEW: \citeauthor{zehnder2018representing} add that the data flow may contain metadata "describing the data source and its context."  
+OLD: \textcite{zehnder2018representing} add that the data flow may contain meta data "describing the data source and its context".  
+NEW: \textcite{zehnder2018representing} add that the data flow may contain metadata "describing the data source and its context."  
 *(Spelling: "metadata" is one word; punctuation inside quotes.)*  
 
 **Line 168:**  
@@ -171,8 +171,8 @@ NEW: \textbf{(Semi-)Automatic Simulation Modeling:} The data trains a model.
 *(Grammar: "Automatic" capitalized in heading; "trains" is more concise.)*  
 
 **Line 280:**  
-OLD: \textbf{Continuous Model Validation:} Interestingly,\citeauthor{francis2021towards} propose a continuous model validation.  
-NEW: \textbf{Continuous Model Validation:} Notably, \citeauthor{francis2021towards} propose continuous model validation.  
+OLD: \textbf{Continuous Model Validation:} Interestingly,\textcite{francis2021towards} propose a continuous model validation.  
+NEW: \textbf{Continuous Model Validation:} Notably, \textcite{francis2021towards} propose continuous model validation.  
 *(Grammar: Space after comma; "Notably" is more formal.)*  
 
 **Line 288:**  
@@ -401,8 +401,8 @@ NEW: \textbf{Scalability:} VVUQ must scale with evolving models and data.
 *(Style: More concise phrasing.)*  
 
 **Line 648:**  
-OLD: As noted by \citeauthor{francis2021towards}, the lifecycle SBDT has implications for its VVUQ as well: VVUQ must accompany the SBDT in all phases, from conceptualization to deployment and operation.  
-NEW: As \citeauthor{francis2021towards} note, SBDT lifecycle stages—from conceptualization to deployment—require corresponding VVUQ.  
+OLD: As noted by \textcite{francis2021towards}, the lifecycle SBDT has implications for its VVUQ as well: VVUQ must accompany the SBDT in all phases, from conceptualization to deployment and operation.  
+NEW: As \textcite{francis2021towards} note, SBDT lifecycle stages—from conceptualization to deployment—require corresponding VVUQ.  
 *(Style: More concise phrasing.)*  
 
 **Line 656:**  

@@ -4,14 +4,14 @@ This chapter develops the methodological approach for automatically performing V
 
 \section{Framework Design}
 \subsection{Requirements Engineering}
-A thorough analysis of the requirements for the proposed VVUQ framework is essential. \Autocite{sindhgatta2005functional} distinguishes between functional (FR, \autocite{van2001goal}) and non-functional requirements (NFR, \autocite{glinz2005rethinking}). Functional requirements define the specific functions and features that the system must provide, while non-functional requirements specify the quality attributes, constraints, and performance criteria that the system must meet. Additionally, technical requirements (TR) and operational requirements (OR) are considered. TR specify the technical specifications of the system which are necessary to meet the functional requirements \autocite{chikh2012new}, while OR outline the operational constraints and conditions under which the system must operate \autocite{incose2023incose}.
+A thorough analysis of the requirements for the proposed VVUQ framework is essential. \Textcite{sindhgatta2005functional} distinguishes between functional (FR, \textcite{van2001goal}) and non-functional requirements (NFR, \textcite{glinz2005rethinking}). Functional requirements define the specific functions and features that the system must provide, while non-functional requirements specify the quality attributes, constraints, and performance criteria that the system must meet. Additionally, technical requirements (TR) and operational requirements (OR) are considered. TR specify the technical specifications of the system which are necessary to meet the functional requirements \autocite{chikh2012new}, while OR outline the operational constraints and conditions under which the system must operate \autocite{incose2023incose}.
 
 The following \autoref{fig:requirements} summarizes the key requirements identified in \autoref{sec:requirements-automatically-generated-models} and adds requirements which have been derived from the theoretical findings in Chapter \ref{chap:theory}.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/req.png}
-  \caption{Key Requirements for the VVUQ framework differentiated by FR, NFR, TR, and OR. }
+  \caption[Key requirements for VVUQ]{Key Requirements for the VVUQ framework differentiated by FR, NFR, TR, and OR. }
   \caption*{Source: Own illustration.}
   \label{fig:requirements}
 \end{figure}
@@ -30,7 +30,7 @@ The OR incorporate several key aspects that ensure the effective operation of th
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/framework.png}
-  \caption{Framework for VVUQ of SBDT in the manufacturing domain. The framework starts with the data sources which all lead into the data lake. The data warehouse provides the Data Layer (DL) with different views. The DL further enriches the data to feed it into the Twin Layer (TL). The TL contains the DT and the physical entity. The TL is connected to the VVUQ Layer (VVUQL). It incorporates the ResNet BiLSTM network for VVUQ of the twin. It can trigger alarms and recommendations for action. The VVUQL is connected to the Decision Support Layer (DSL) which provides different data analysis and visualization tools. The DSL is responsible for the short-term decision making to manage the VVUQ process. The DSL is connected to the user interface (UI) which provides the user with a dashboard for monitoring and controlling the system. The DSL can request new data from the Data Sources. It also is connected to the Continuous Improvement Process layer (CIP) which is responsible for the long-term decision making.}
+  \caption[The thesis VVUQ framework]{Framework for VVUQ of SBDT in the manufacturing domain. The framework starts with the data sources which all lead into the data lake. The data warehouse provides the Data Layer (DL) with different views. The DL further enriches the data to feed it into the Twin Layer (TL). The TL contains the DT and the physical entity. The TL is connected to the VVUQ Layer (VVUQL). It incorporates the ResNet BiLSTM network for VVUQ of the twin. It can trigger alarms and recommendations for action. The VVUQL is connected to the Decision Support Layer (DSL) which provides different data analysis and visualization tools. The DSL is responsible for the short-term decision making to manage the VVUQ process. The DSL is connected to the user interface (UI) which provides the user with a dashboard for monitoring and controlling the system. The DSL can request new data from the Data Sources. It also is connected to the Continuous Improvement Process layer (CIP) which is responsible for the long-term decision making.}
   \caption*{Source: Own illustration.}
   \label{fig:framework}
 \end{figure}

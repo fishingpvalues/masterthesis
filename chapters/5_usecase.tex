@@ -10,8 +10,9 @@ The framework has been applied on the Internet of Things-Factory (IOT) in Güter
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/iot1.png}
-  \caption{Overview of the IOT factory. It consists of three production stations from left to right, which are followed by a sorting station and a packaging station. The stations are interconnected by an assembly line. Isolated from the assembly part, two AGVs are used to transport parts between the warehouse station (upper right) and another flexible workstation (right).}
+  \caption[IOT Factory Overview]{Overview of the IOT factory. It consists of three production stations from left to right, which are followed by a sorting station and a packaging station. The stations are interconnected by an assembly line. Isolated from the assembly part, two AGVs are used to transport parts between the warehouse station (upper right) and another flexible workstation (right).}
   \label{fig:iotoverview}
+  \caption*{Source: \autocite{IoTFactory2024}}
 \end{figure}
 
 The robot cells are responsible for performing transformation operation like assembling additional parts or testing functions.
@@ -19,8 +20,9 @@ The robot cells are responsible for performing transformation operation like ass
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/robots.png}
-  \caption{Two robot cells. The first cell is the main actor in this exemplary production process. Cell two is not part of the observed process here. The third image shows an AGV which transports boxes with assembled and disassembled parts to the stations.}
+  \caption[Robot cells]{Two robot cells. The first cell is the main actor in this exemplary production process. Cell two is not part of the observed process here. The third image shows an AGV which transports boxes with assembled and disassembled parts to the stations.}
   \label{fig:robots}
+  \caption*{Source: \autocite{IoTFactory2024}}
 \end{figure}
 
 The factory produces an exemplary product, consisting of a back part, a breadboard for several parts and a front panel. The parts to put on the breadboard are a display, gyroscope, an analog board and a weather station.
@@ -28,8 +30,9 @@ The factory produces an exemplary product, consisting of a back part, a breadboa
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.2\textwidth]{figures/parts.png}
-  \caption{The product consists of a back part, a breadboard and a front panel. The breadboard is used to put on several parts, such as a display, gyroscope, analog board and a weather station.}
+  \caption[Part variants]{The product consists of a back part, a breadboard and a front panel. The breadboard is used to put on several parts, such as a display, gyroscope, analog board and a weather station.}
   \label{fig:iotproduct}
+  \caption*{Source: \autocite{IoTFactory2024}}
 \end{figure}
 
 The only colour produced at the moment is black. Not all parts can be put on the breadboard and there are several parts which conflict in size and location on the breadboard. Back and front cover are necessary parts and are assembled every time. The main part \texttt{main\_pcb} is also obligatory. It is placed at the beginning. Following that, the display or gyroscope can be assembled. If the display has been chosen, only the analog board or the weather station can be assembled. The weather station takes too much space on the breadboard for the gyroscope to be placed. If the analog board has been placed, the gyroscope is of course possible. The product is finished by placing the front cover and delivering the product to the sink.
@@ -41,8 +44,9 @@ Finally, the sequential order of the production process is as follows:
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/processdirection.png}
-  \caption{The blueprint with transitions between resources.}
+  \caption[Production process]{The blueprint with transitions between resources.}
   \label{fig:transitions}
+  \caption*{Source: \autocite{IoTFactory2024}}
 \end{figure}
 
 \subsection*{Factory Dataset}
@@ -109,7 +113,7 @@ Per step, several resources are involved. The following table shows the utilized
 
 \begin{table}[H]
   \centering
-  \caption{Steps and Resources Used}
+  \caption[Production steps and resources]{Steps and Resources Used}
   \label{tab:description-resources}
   \begin{tabular}{@{}p{0.4\textwidth}p{0.4\textwidth}@{}}
     \toprule
@@ -137,6 +141,7 @@ Per step, several resources are involved. The following table shows the utilized
     Deliver Part                                  & CP-AM-OUT                             \\
     \bottomrule
   \end{tabular}
+  \caption*{Source: \autocite{IoTFactory2024}}
 \end{table}
 
 
@@ -298,8 +303,9 @@ Figure \ref{fig:time-encoding} illustrates this concept for the hour of the day.
       }
 
   \end{tikzpicture}
-  \caption{Sine and Cosine transformation of the hour of the day (0-23). Each hour is mapped to a point $(x_{\cos}, x_{\sin})$ on the unit circle (blue dots). Key hours are labelled, demonstrating how the transformation preserves cyclical continuity (hour 23 is near hour 0).}
+  \caption[Feature Transformation]{Sine and Cosine transformation of the hour of the day (0-23). Each hour is mapped to a point $(x_{\cos}, x_{\sin})$ on the unit circle (blue dots). Key hours are labelled, demonstrating how the transformation preserves cyclical continuity (hour 23 is near hour 0).}
   \label{fig:time-encoding}
+  \caption*{Source: Own illustration}
 \end{figure}
 
 \section{Validation Methodology and Setup}
@@ -334,7 +340,7 @@ The analysis was performed separately for distinct feature subsets $\mathcal{F}_
 The practical implementation of the test described in \autoref{eq:pvalue_perm} followed these steps for each feature subset $\mathcal{F}_c$:
 
 \begin{algorithm}[H]
-  \caption{Multi-Run Permutation Testing}
+  \caption[Permutation Testing]{Multi-Run Permutation Testing}
   \label{alg:permutation_testing_symbolic} % New label for symbolic version
   \begin{algorithmic}[1] % Optional line numbering
     \footnotesize % Font size
@@ -416,7 +422,7 @@ The feature subsets are equal to the model components, as noted. The following U
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/upset.png}
-  \caption{UpSet plot visualizing feature overlap across categories. Left bars show total features per category; top bars show counts for specific intersections defined by the dot matrix below.}
+  \caption[UpSet plot]{UpSet plot visualizing feature overlap across categories. Left bars show total features per category; top bars show counts for specific intersections defined by the dot matrix below.}
   \caption*{Source: Own illustration.}
   \label{fig:upsetplot}
 \end{figure}
@@ -424,10 +430,10 @@ The feature subsets are equal to the model components, as noted. The following U
 The plot highlights that the time model has the largest number of unique features (6 features), consisting primarily of derived temporal sinusoidal and cosine encodings and status dummy variables. The KPI category also contains a distinct set of 4 unique features, representing specific performance metrics. These exclusive memberships indicate that temporal representation and performance indicators introduce the most diverse information into the overall feature space.
 Several other features show significant overlap, signifying their role as core concepts linking multiple perspectives. Key identifiers like process\_id are shared across resource model, transformation model, and process model, while part\_id links resource model, transformation model, and transition model. The feature sequence\_number exhibits the highest degree of intersection among the detailed combinations, connecting time model, transformation model, transition model, and process model, underscoring its importance in relating temporal sequence to various operational views. Similarly, duration connects time model, transition model, and process model, and resource\_id connects resource model and transition model. PRÜFEN UND ANPASSEN
 
-Based on the aggregated results, the fidelity of the SBDT component corresponding to the feature set $\mathcal{F}_c$ was assessed. A high \textit{rejection rate} (e.g., consistently above 0.5 across the 10 runs) was interpreted as strong evidence against the null hypothesis $H_0$. This indicates that the classifier could reliably distinguish between real and simulated data based on the features $\mathcal{F}_c$, suggesting that the corresponding SBDT component was \textit{not learned accurately} (labeled 'INACCURATE'). Conversely, a low rejection rate suggests insufficient evidence to reject $H_0$, implying the SBDT component might be \textit{adequately learned} ('ACCURATE'), or at least its potential inaccuracies were not detectable by the classifier using the given features.
+Based on the aggregated results, the fidelity of the SBDT component corresponding to the feature set $\mathcal{F}_c$ was assessed. A high \textit{rejection rate} (e.g., consistently above 0.5 across the 10 runs) was interpreted as strong evidence against the null hypothesis $H_0$. This indicates that the classifier could reliably distinguish between real and simulated data based on the features $\mathcal{F}_c$, suggesting that the corresponding SBDT component was \textit{not learned accurately} (labeled 'INACCURATE'). Conversely, a low rejection rate suggests insufficient evidence to reject $H_0$, implying the SBDT component might be \textit{adequately learned} ('accurate'), or at least its potential inaccuracies were not detectable by the classifier using the given features.
 "
 \subsection*{Results of Whitebox Model}
-
+\label{sec:results-whitebox}
 The whitebox validation was performed using a DTree classifier \autocite{Scikit-Learn}. Key hyperparameters included limiting the tree complexity with a max tree depth of five using the default gini criterion for node impurity and split evaluation. The Gini impurity $G(S)$ for a set of samples $S$ at a node measures the probability of incorrectly classifying a randomly chosen element if it were randomly labelled according to the distribution of labels in the set. For $K$ classes ($K = 2$ here), with $p_k$ being the proportion of samples belonging to class $k$ in $S$, it is defined as:
 
 \begin{equation}
@@ -446,7 +452,7 @@ The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with 
 
 \begin{table}[htbp]
   \centering
-  \caption{Whitebox DTree validation results across 10 runs (N=1000, $\alpha=0.05$), using paragraph-based layout.}
+  \caption[Whitebox model results]{Whitebox DTree validation results across 10 runs (N=1000, $\alpha=0.05$), using paragraph-based layout.}
   \label{tab:results-whitebox}
   \begin{tabular}{l l l l l p{3cm}}
     \toprule
@@ -461,20 +467,22 @@ The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with 
     \texttt{all\_features}               & 1.0000                               & 0.0000                             & 0.0000                   & 1.00        & INACCURATE          \\
     \bottomrule
   \end{tabular}
+  \caption*{Source: Own tabulation.}
 \end{table}
 
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/dt-roc-auc-by-component.png}
-  \caption{Mean ROC AUC scores achieved by the DTree classifier when distinguishing between real and simulated data, using feature subsets corresponding to different SBDT components. Scores averaged over 10 runs. The dashed red line indicates random chance (AUC = 0.5).}
+  \caption[Results Decision Tree]{Mean ROC AUC scores achieved by the DTree classifier when distinguishing between real and simulated data, using feature subsets corresponding to different SBDT components. Scores averaged over 10 runs. The dashed red line indicates random chance (AUC = 0.5).}
   \label{fig:dt-roc-auc}
+  \caption*{Source: Own illustration.}
 \end{figure}
 
 The results from the whitebox model are highly significant. For almost all feature subsets, the DTree achieved a perfect mean ROC AUC of 1.0000, with the exception of the \texttt{resource\_model} subset which scored slightly lower but still extremely high ($\bar{S}_{obs}=0.9832 \pm 0.0104$). Correspondingly, the mean p-values were effectively zero ($< 0.0001$, reported as 0.0000) and the rejection rate was 1.00 for all components across all 10 runs. This indicates that the Decision Tree could easily and consistently distinguish the simulated data from the real data based on the features associated with every tested SBDT component. According to the interpretation framework, this implies that, from the perspective of the whitebox model, all tested SBDT components were learned inaccurately.
 Given that the mean p-value for every feature subset is far below the significance level ($\bar{p} \approx 0.0000 < \alpha = 0.05$), and the rejection rate (RR) is 1.00 for all components, it rejects the null hypothesis ($H_0$) for every tested SBDT component based on the Decision Tree classifier. This provides statistically significant evidence that the Decision Tree model can reliably distinguish between the real process data and the simulated data using the features associated with the time model, resource model, transformation model, transition model, process model, and KPI-based perspectives, as well as when using all features combined.
 
-The conclusion drawn solely from this whitebox analysis is therefore that the SBDT exhibits detectable discrepancies compared to the real system across all evaluated aspects. Consequently, based on the stringent criteria of the Decision Tree's ability to find differentiating patterns (even limited to $max_depth=5$), all tested components of the SBDT are deemed INACCURATE. This suggests that, at the level of detail captured by the engineered features and discernible by the DTree model, the simulation does not adequately replicate the observed behaviour of the real IoT factory. The analysis with the blackbox model in the next section will explore whether a more complex model reaches similar conclusions.
+The conclusion drawn solely from this whitebox analysis is therefore that the SBDT exhibits detectable discrepancies compared to the real system across all evaluated aspects. Consequently, based on the stringent criteria of the Decision Tree's ability to find differentiating patterns (even limited to $max_depth=5$), all tested components of the SBDT are deemed inaccurate. This suggests that, at the level of detail captured by the engineered features and discernible by the DTree model, the simulation does not adequately replicate the observed behaviour of the real IoT factory. The analysis with the blackbox model in the next section will explore whether a more complex model reaches similar conclusions.
 
 \subsection*{Results of Blackbox Model}
 
@@ -484,7 +492,7 @@ The aggregated results from the blackbox models permutation tests are summarized
 
 \begin{table}[htbp]
   \centering
-  \caption{Blackbox BiLSTM validation results across 10 runs (N=1000, $\alpha=0.01$).}
+  \caption[Results BiLSTM]{Blackbox BiLSTM validation results across 10 runs (N=1000, $\alpha=0.01$).}
   \label{tab:results-blackbox}
   \begin{tabular}{l l l l l p{3cm}}
     \toprule
@@ -499,13 +507,15 @@ The aggregated results from the blackbox models permutation tests are summarized
     \texttt{all\_features}               & 1.0000                               & 0.0000                             & 0.0000                   & 1.00        & INACCURATE          \\
     \bottomrule
   \end{tabular}
+  \caption*{Source: Own tabulation.}
 \end{table}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/lstm-roc-auc-by-component.png}
-  \caption{Mean ROC AUC scores achieved by the classifier when distinguishing between real and simulated data, using feature subsets corresponding to different SBDT components. Scores averaged over 10 runs. The dashed red line indicates random chance (AUC = 0.5).}
+  \caption[Results Blackbox model]{Mean ROC AUC scores achieved by the classifier when distinguishing between real and simulated data, using feature subsets corresponding to different SBDT components. Scores averaged over 10 runs. The dashed red line indicates random chance (AUC = 0.5).}
   \label{fig:bilstm-roc-auc}
+  \caption*{Source: Own illustration.}
 \end{figure}
 
 The blackbox model results largely align with the whitebox findings, indicating significant discrepancies between the simulated and real data across various SBDT components. The BiLSTM classifier achieved very high mean ROC AUC scores for most feature subsets, particularly for \texttt{time\_model} (0.9998), \texttt{transition\_model} (1.0000), \texttt{process\_model} (0.9788), \texttt{kpi\_based} (0.9989), and \texttt{all\_features} (1.0000). For these components, the mean p-values were effectively zero, and the rejection rate (RR) was 1.00, strongly indicating rejection of the null hypothesis ($H_0$) at the $\alpha = 0.01$ significance level.
@@ -514,4 +524,4 @@ For the \texttt{resource\_model} and \texttt{transformation\_model}, the mean RO
 
 Therefore, based on the consistent rejection of $H_0$ across the majority of runs (as indicated by RR $\ge$ 0.80) for all feature subsets, it concludes that the blackbox model also finds statistically significant differences between the real and simulated data for all tested aspects.
 
-Similar to the whitebox analysis, the conclusion drawn from the blackbox model is that the SBDT exhibits detectable inaccuracies compared to the real system across all evaluated components. The high ROC AUC scores and, critically, the high rejection rates under permutation testing provide strong evidence against the null hypothesis ($H_0$) for every component. Consequently, based on the BiLSTM classifier's ability to distinguish the data, all tested components of the SBDT are assessed as INACCURATE. This reinforces the finding that the current SBDT configuration, as evaluated through the engineered features, does not sufficiently replicate the behavior observed in the real IoT factory dataset.
+Similar to the whitebox analysis, the conclusion drawn from the blackbox model is that the SBDT exhibits detectable inaccuracies compared to the real system across all evaluated components. The high ROC AUC scores and, critically, the high rejection rates under permutation testing provide strong evidence against the null hypothesis ($H_0$) for every component. Consequently, based on the BiLSTM classifier's ability to distinguish the data, all tested components of the SBDT are assessed as accurate. This reinforces the finding that the current SBDT configuration, as evaluated through the engineered features, does not sufficiently replicate the behavior observed in the real IoT factory dataset.

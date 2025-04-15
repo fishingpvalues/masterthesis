@@ -1,6 +1,4 @@
-%=========================================================================
-% Appendix Section: Mathematical Foundations
-% =========================================================================
+
 \begin{appendices}
   \section{Mathematical Notation}
   \label{app:math_notation}
@@ -9,7 +7,7 @@
 
   \begin{table}[htbp]
     \centering
-    \caption{Mathematical Notation Used in This Thesis}
+    \caption[Mathematical Notation]{Mathematical Notation Used in This Thesis}
     \label{tab:math_notation}
     \resizebox{width=0.8\textwidth}{!}{%
       \begin{tabular}{p{0.28\textwidth}p{0.68\textwidth}}
@@ -98,20 +96,21 @@
         $\mathcal{D}_{train}$, $\mathcal{D}_{test}$ & Training and testing datasets                                                        \\
         $\mathcal{D}_{real}$, $\mathcal{D}_{sim}$   & Real-world and simulation datasets                                                   \\
         \bottomrule
-      \end{tabular}%
+      \end{tabular}
     }
+    \caption*{Own tabulation.}
   \end{table}
 
   \section{Mathematical Foundations}
   \label{app:math_foundations}
 
-  This appendix provides formal definitions and illustrations for the core mathematical functions and operations referenced in the theoretical foundations chapter (Section~\ref{sec:rnn} onwards), as well as other relevant mathematical concepts and techniques commonly encountered in machine learning, deep learning, optimization, and data handling that are pertinent to the methods employed in this thesis. % Adjust Section ref if needed
+  This appendix provides formal definitions and illustrations for the core mathematical functions and operations referenced in the theoretical foundations chapter (Section~\ref{sec:rnn} onwards), as well as other relevant mathematical concepts and techniques commonly encountered in machine learning, deep learning, optimization, and data handling that are pertinent to the methods employed in this thesis.
 
 
   % -------------------------------------------------------------------------
   \subsection{Basic Notation and Operations}
   % -------------------------------------------------------------------------
-  % (Content from previous version - vectors, matrices, basic ops...)
+
   As established at the beginning of the chapter, vectors are denoted by bold lowercase letters (e.g., \( \bm{z} \)) and matrices by uppercase letters (e.g., \( W \)). Vectors are assumed to be column vectors unless otherwise specified.
 
   \paragraph{Matrix-Vector Multiplication:}
@@ -147,7 +146,7 @@
   % -------------------------------------------------------------------------
   \subsection{Activation Functions}
   % -------------------------------------------------------------------------
-  % (Content from previous version - Sigmoid, Tanh, ReLU, Softmax with plots)
+
   Activation functions introduce non-linearity into neural network models, allowing them to learn complex patterns. They are typically applied element-wise to the output of a linear transformation \( \bm{z} = W\bm{x} + \bm{b} \).
 
   \paragraph{Sigmoid Function (\( \sigma \)):}
@@ -155,7 +154,7 @@
   \begin{equation}
     \sigma(z) = \frac{1}{1 + e^{-z}}
   \end{equation}
-  Due to its output range, it is commonly used for gating mechanisms in LSTMs (Equations~\ref{eq:lstm_forget_gate}, \ref{eq:lstm_input_gate}, \ref{eq:lstm_output_gate}) and for producing probabilities in binary classification outputs. A plot is shown in Figure~\ref{fig:sigmoid_plot}.
+  Due to its output range, it is commonly used for gating mechanisms in LSTMs (Equations~\ref{eq:lstm-forget-gate}, \ref{eq:lstm_input_gate}, \ref{eq:lstm_output_gate}) and for producing probabilities in binary classification outputs. A plot is shown in Figure~\ref{fig:sigmoid_plot}.
 
   \begin{figure}[htbp]
     \centering
@@ -180,8 +179,9 @@
         \addplot [dashed, gray, domain=-6.5:6.5] {1};
       \end{axis}
     \end{tikzpicture}
-    \caption{The Sigmoid activation function.}
+    \caption[Sigmoid activation function]{The Sigmoid activation function.}
     \label{fig:sigmoid_plot}
+    \caption*{Own illustration.}
   \end{figure}
 
 
@@ -190,7 +190,7 @@
   \begin{equation}
     \tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}} = 2\sigma(2z) - 1
   \end{equation}
-  It is frequently used as the main activation function for hidden states in RNNs and LSTMs (e.g., Equations~\ref{eq:rnn_hidden_state}, \ref{eq:lstm_candidate_cell}, \ref{eq:lstm_hidden_state}). See Figure~\ref{fig:tanh_plot}.
+  It is frequently used as the main activation function for hidden states in RNNs and LSTMs (e.g., Equations~\ref{eq:rnn_hidden_state}, \ref{eq:lstm_candidate_cell}, \ref{eq:lstm-hidden-state}). See Figure~\ref{fig:tanh_plot}.
 
   \begin{figure}[htbp]
     \centering
@@ -215,8 +215,9 @@
         \addplot [dashed, gray, domain=-4.5:4.5] {1};
       \end{axis}
     \end{tikzpicture}
-    \caption{The Hyperbolic Tangent (tanh) activation function.}
+    \caption[Tanh activation function]{The Hyperbolic Tangent (tanh) activation function.}
     \label{fig:tanh_plot}
+    \caption*{Own illustration.}
   \end{figure}
 
 
@@ -246,8 +247,9 @@
         \addlegendentry{ReLU$(z) = \max(0, z)$}
       \end{axis}
     \end{tikzpicture}
-    \caption{The Rectified Linear Unit (ReLU) activation function.}
+    \caption[ReLU activation function]{The Rectified Linear Unit (ReLU) activation function.}
     \label{fig:relu_plot}
+    \caption*{Own illustration.}
   \end{figure}
 
 

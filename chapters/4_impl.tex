@@ -1,6 +1,6 @@
 \chapter{Implementation}
 \label{chap:implementation}
-This chapter details the technical implementation of the ResNet-BiLSTM-Attention framework \autocite{Fischer2025ResNetBiLSTM} by putting the conceptual framework from \autoref{chap:methodology} into a functional system that processes manufacturing OCEL, extracts relevant features, trains models, and evaluates the fidelity of SBDT.
+This chapter details the technical implementation of the ResNet-BiLSTM-Attention framework \textcite{Fischer2025ResNetBiLSTM} by putting the conceptual framework from \autoref{chap:methodology} into a functional system that processes manufacturing OCEL, extracts relevant features, trains models, and evaluates the fidelity of SBDT.
 
 \section{Architecture and System Setup}
 
@@ -10,8 +10,8 @@ The implementation follows a modular architecture. It can process both streams a
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=1\textwidth]{figures/code.png}
-  \caption{Unified Modelling Language (UML) diagram of the ResNet-BiLSTM-Attention framework for validating SBDT in manufacturing environments.}
-  \caption*{Source: Own figure.}
+  \caption[UML Diagram of the Implementation]{Unified Modelling Language (UML) diagram of the ResNet-BiLSTM-Attention framework for validating SBDT in manufacturing environments.}
+  \caption*{Source: Own illustration.}
   \label{fig:uml-diagram}
 \end{figure}
 
@@ -46,11 +46,11 @@ After laying out the architecture and system setup, this section focuses on the 
 
 \subsection{OCEL Format}
 
-Both models used in this thesis require the input data to be in the OCEL format, see \autoref{sec:object-centric-event-logs}. The columns are inspired by the twin comparison model by \autocite{schwede2024learning}. For the given framework, the format is expected as input in the following format:
+Both models used in this thesis require the input data to be in the OCEL format, see \autoref{sec:object-centric-event-logs}. The columns are inspired by the twin comparison model by \textcite{schwede2024learning}. For the given framework, the format is expected as input in the following format:
 
 \begin{table}[htbp]
   \centering
-  \caption{Detailed structure, data types, and description of the processed manufacturing OCEL.}
+  \caption[Manufacturing OCEL used]{Detailed structure, data types, and description of the processed manufacturing OCEL.}
   \label{tab:output-structure-detailed}
   % Adjust the width 'p{6cm}' of the description column as needed, or use tabularx
   \begin{tabular}{l l p{6cm}} % l=left-aligned, p{width}=paragraph column
@@ -69,6 +69,7 @@ Both models used in this thesis require the input data to be in the OCEL format,
     \texttt{is\_valid}              & \texttt{bool}            & Boolean flag indicating whether the recorded event sequence or outcome is considered valid (e.g., based on model prediction or predefined rules). \\
     \bottomrule
   \end{tabular}
+  \caption*{Source: Own tabulation.}
 \end{table}
 
 The terms are consistent with the upper cited framework. For the model components, following features may be considered:
@@ -109,7 +110,7 @@ As an alternative model, the ResNet-BiLSTM-Attention model is implemented, see \
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.4\textwidth]{figures/architecture.png}
-  \caption{ResNet-BiLSTM-Attention architecture. The model consists of a ResNet block, followed by a BiLSTM layer and a multi-head self-attention mechanism. The output is then passed through a fully connected layer for classification.}
+  \caption[ResNet-BiLSTM-Attention architecture]{ResNet-BiLSTM-Attention architecture. The model consists of a ResNet block, followed by a BiLSTM layer and a multi-head self-attention mechanism. The output is then passed through a fully connected layer for classification.}
   \label{fig:architecture}
   \caption*{Source: Own Torchview illustration.}
 \end{figure}
