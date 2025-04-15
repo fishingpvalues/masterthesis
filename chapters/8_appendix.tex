@@ -1,4 +1,4 @@
-=========================================================================
+%=========================================================================
 % Appendix Section: Mathematical Foundations
 % =========================================================================
 \begin{appendices}
@@ -11,7 +11,7 @@
     \centering
     \caption{Mathematical Notation Used in This Thesis}
     \label{tab:math_notation}
-    \resizebox{\textwidth}{!}{%
+    \resizebox{width=0.8\textwidth}{!}{%
       \begin{tabular}{p{0.28\textwidth}p{0.68\textwidth}}
         \toprule
         \textbf{Notation}                           & \textbf{Description}                                                                 \\
@@ -416,48 +416,5 @@
 
   \paragraph{Sequence Padding:}
   Neural networks typically require inputs within a batch to be tensors of uniform shape. Since sequential data (like manufacturing process steps or natural language sentences) often has varying lengths, techniques are needed to handle this during batch processing. Padding involves augmenting shorter sequences within a batch with special padding values (often zero) until they reach the length of the longest sequence in that batch. This results in rectangular tensors suitable for processing. The `collate_fn` used in the data loading pipeline for this thesis employs padding (via `pad_sequence`). It is important that subsequent computations (e.g., loss calculation, attention mechanisms) are designed to ignore or mask these padded values to avoid introducing noise.
-
-  % (Existing code before this point...)
-
-  % -------------------------------------------------------------------------
-  \subsection{Data Handling for Sequences}
-  % -------------------------------------------------------------------------
-
-  \paragraph{Sequence Padding:}
-  Neural networks typically require inputs within a batch to be tensors of uniform shape. Since sequential data (like manufacturing process steps or natural language sentences) often has varying lengths, techniques are needed to handle this during batch processing. Padding involves augmenting shorter sequences within a batch with special padding values (often zero) until they reach the length of the longest sequence in that batch. This results in rectangular tensors suitable for processing. The `collate_fn` used in the data loading pipeline for this thesis employs padding (via `pad_sequence`). It is important that subsequent computations (e.g., loss calculation, attention mechanisms) are designed to ignore or mask these padded values to avoid introducing noise.
-
-  % --- ADDED ENTRY STARTS HERE ---
-  % -------------------------------------------------------------------------
-  \subsection{Impurity Measures for Decision Trees}
-  \label{app:impurity_measures}
-  % -------------------------------------------------------------------------
-  Impurity measures quantify the homogeneity of labels within a set of samples at a node in a decision tree. They are crucial for evaluating potential splits during tree construction. Lower impurity indicates a more homogeneous (purer) node.
-
-  \paragraph{Gini Criterion (Gini Impurity):}
-  The Gini impurity measures the probability of incorrectly classifying a randomly chosen element from the set $S$ if it were randomly labeled according to the distribution of labels in $S$. For a set $S$ containing samples from $K$ distinct classes, let $p_k$ be the proportion of samples belonging to class $k$ within $S$. The Gini impurity $G(S)$ is defined as:
-  \begin{equation}
-    G(S) = 1 - \sum_{k=1}^{K} p_k^2
-    \label{eq:gini_impurity}
-  \end{equation}
-  where $p_k = \frac{|\{ \text{samples in } S \text{ of class } k \}|}{|S|}$.
-  The Gini impurity ranges from 0 (perfectly pure node, all samples belong to a single class, i.e., one $p_k=1$ and others are 0) to a maximum of $1 - 1/K$ (when samples are uniformly distributed across all classes, $p_k=1/K$ for all $k$). For binary classification ($K=2$), the maximum value is 0.5.
-
-  Decision tree algorithms like CART (Classification and Regression Trees) typically select the split that minimizes the weighted average Gini impurity of the resulting child nodes. For a potential split that divides set $S$ into subsets $S_{left}$ and $S_{right}$, the quality of the split is often evaluated using the Gini Index:
-  \begin{equation}
-    \text{Gini}_{\text{split}}(S) = \frac{|S_{left}|}{|S|} G(S_{left}) + \frac{|S_{right}|}{|S|} G(S_{right})
-    \label{eq:gini_split}
-  \end{equation}
-  The split leading to the lowest $\text{Gini}_{\text{split}}(S)$ is preferred.
-  % --- ADDED ENTRY ENDS HERE ---
-
-  % -------------------------------------------------------------------------
-  % \subsection{Probability and Statistics Basics (Example Section - Keep/Expand if relevant for VVUQ etc.)}
-  % -------------------------------------------------------------------------
-  % (Keep relevant parts from previous version, e.g., Gaussian if used)
-  % \paragraph{Gaussian (Normal) Distribution:}
-  % A continuous probability distribution characterized by its mean \( \mu \) and variance \( \sigma^2 \). Its probability density function (PDF) is:
-  % \begin{equation}
-  %     p(x | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right)
-  % \end{equation}
 
 \end{appendices}

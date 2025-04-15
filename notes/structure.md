@@ -9,7 +9,7 @@
 
 ### 1.2 Problem Definition
 
-- Challenges in the V&V of automatically generated digital twins
+- Challenges in the V\&V of automatically generated digital twins
 - Need for use case-independent validation methods
 - **Fundamental clarification of terms: verification and validation** (→ detailed discussion in 2.2)
 - The fusion of verification and validation in automatically generated models**
@@ -17,15 +17,15 @@
 ### 1.3 Objectives of the Work
 
 - Research questions:
-  - How can an automated V&V procedure be developed for automatically generated digital twins?
+  - How can an automated V\&V procedure be developed for automatically generated digital twins?
   - To what extent can the Object-Centric Event Log serve as a basis for automated validation?
   - What role does verification play in the context of automatically generated digital twins and to what extent does it merge with validation (→ discussion in 2.2, 3.1, and 7.2)?
 - Hypotheses
-- **Preliminary positioning on the V&V problem** (→ theoretically substantiated in 2.2 and reflected in 7.2)
+- **Preliminary positioning on the V\&V problem** (→ theoretically substantiated in 2.2 and reflected in 7.2)
 
 ### 1.4 Structure of the Work/Methodological Approach
 
-- Reference to methodological approach for empirical testing of the V&V concepts** (→ Chapters 4 and 6)
+- Reference to methodological approach for empirical testing of the V\&V concepts** (→ Chapters 4 and 6)
 
 ## 2. Theoretical Foundations (10-12 pages)
 
@@ -38,10 +38,10 @@
 ### 2.2 Verification and Validation in the Context of Simulation-Based Digital Twins
 
 - Definitions and differences from classical simulation literature**
-- **Historical development of V&V concepts** (→ Reference to 1.2: Introductory definition)
+- **Historical development of V\&V concepts** (→ Reference to 1.2: Introductory definition)
 - **Peculiarities of automatically generated models** (→ Reference to 3.1 and 7.2)
 - **Theoretical argumentation for merging verification and validation**
-- V&V as a continuous process** (→ Reference to 4.5: Online validation)
+- V\&V as a continuous process** (→ Reference to 4.5: Online validation)
 
 ### 2.3 Process Mining and Event Logs
 
@@ -61,7 +61,7 @@
 ### 3.1 Existing Approaches to Validation and Verification of Digital Twins
 
 - Manual vs. automated approaches
-- **Critical discussion of existing V&V definitions and methods** (→ Reference back to 2.2)
+- **Critical discussion of existing V\&V definitions and methods** (→ Reference back to 2.2)
 - Challenges in the validation of automatically generated models
 
 ### 3.2 Automatic Model Generation for Digital Twins
@@ -79,11 +79,11 @@
 
 - Classification methods for the detection of model deviations (→ Reference to 4.3)
 - Challenges in data preparation and feature selection
-- **Discussion of previous ML approaches in the context of the V&V problem** (→ Reference to 2.2 and 4.3)
+- **Discussion of previous ML approaches in the context of the V\&V problem** (→ Reference to 2.2 and 4.3)
 
 ### 3.4 Research Gaps and Open Questions
 
-- Identification of the research gap on automated V&V** (→ Reference to research questions in 1.3)
+- Identification of the research gap on automated V\&V** (→ Reference to research questions in 1.3)
 - Delimitation of own research approach** (→ transition to Chapter 4)
 
 ## 4. Conception of a Framework for Automated Validation (12-15 pages)
@@ -101,12 +101,12 @@
 - Temporal data partitioning (training, validation, test)
 - Feature selection: identification of relevant features from event logs
 - Order reconstruction from process data
-- Methodical implementation of the theoretical V&V concepts** (→ Reference to 2.2)
+- Methodical implementation of the theoretical V\&V concepts** (→ Reference to 2.2)
 
 ### 4.3 Machine Learning-Based Validation Approach
 
 - Simulation model for the generation of synthetic event logs
-- Classification-based deviation detection as a unified V&V approach** (→ Reference to 2.2 and 3.3)
+- Classification-based deviation detection as a unified V\&V approach** (→ Reference to 2.2 and 3.3)
 - Hyperparameter optimization and model selection
 - Artificial error injection to validate the approach (→ Reference to 6.3)
 
@@ -115,13 +115,13 @@
 - Process-oriented metrics (throughput times, resource utilization) (→ Reference to 2.4)
 - Time-related metrics (start and end times, processing times)
 - Order-related metrics (completeness, sequence fidelity)
-- Derivation of metrics from V&V theory** (→ reference to 2.2)
+- Derivation of metrics from V\&V theory** (→ reference to 2.2)
 
 ### 4.5 Online Validation and Continuous Monitoring
 
 - Early detection of model deviations
 - Recommendations for action in the event of model drift
-- V&V as a continuous process
+- V\&V as a continuous process
 
 ## 5. Implementation of the Framework (8-12 pages)
 
@@ -144,14 +144,14 @@
 - Integration of the Digital Twin model
 - Generation of synthetic event logs
 - Automated validation experiments
-- **Practical implementation of the V&V merging** (→ reference to 2.2 and 4.3)
+- **Practical implementation of the V\&V merging** (→ reference to 2.2 and 4.3)
 
 ### 5.4 Machine Learning Pipeline
 
 - Selection and implementation of classification algorithms (→ reference to 4.3)
 - Training, validation, and model evaluation
 - Error injection and anomaly detection (→ reference to 4.3 and 6.3)
-- **Technical realization of the ML-based V&V approach** (→ reference to 3.3)
+- **Technical realization of the ML-based V\&V approach** (→ reference to 3.3)
 
 ## 6. Case Study: Validation in Practice (10-12 pages)
 
@@ -172,21 +172,21 @@
 - Experimental design
 - Execution of automated validation
 - Error injection and model adjustment
-- **Empirical verification of theoretical V&V concepts** (→ reference to 2.2 and 4.3)
+- **Empirical verification of theoretical V\&V concepts** (→ reference to 2.2 and 4.3)
 
 ### 6.4 Results and Interpretation
 
 - Model accuracy and reliability
 - Detection rate of artificially injected errors
 - Analysis of validation metrics (→ reference to 4.4)
-- **Evaluation of results in the context of V&V theory** (→ reference to 2.2)
+- **Evaluation of results in the context of V\&V theory** (→ reference to 2.2)
 
 ### 6.5 Comparison with Manual Validation Methods
 
 - Effort analysis
 - Quality comparison
 - Cost-benefit analysis
-- **Empirical evidence for the advantages of automated V&V** (→ reference to 3.2 and 7.3)
+- **Empirical evidence for the advantages of automated V\&V** (→ reference to 3.2 and 7.3)
 
 ## 7. Discussion of Results (5-7 pages)
 
@@ -198,11 +198,11 @@
 
 ### 7.2 Significance of Verification in Automatically Generated Digital Twins
 
-- **Reference back to theoretical discussion on V&V** (→ reference to 1.2, 2.2, and 3.1)
+- **Reference back to theoretical discussion on V\&V** (→ reference to 1.2, 2.2, and 3.1)
 - **Empirical findings on the merging of verification and validation**
 - Distinction from validation
 - Integration into the overall process
-- **Theoretical advancement of V&V concepts** (→ reference to 2.2 and 8.2)
+- **Theoretical advancement of V\&V concepts** (→ reference to 2.2 and 8.2)
 
 ### 7.3 Limitations of Automated Validation
 
@@ -229,7 +229,7 @@
 
 - **Significance of the Object-Centric Event Log format** (→ reference to 2.3 and 4.2)
 - **Machine Learning for automated validation** (→ reference to 3.3 and 4.3)
-- **Advancement of V&V theory** (→ reference to 2.2 and 7.2)
+- **Advancement of V\&V theory** (→ reference to 2.2 and 7.2)
 
 ### 8.3 Outlook
 

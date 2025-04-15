@@ -341,8 +341,8 @@ NEW: Verification assesses model correctness \autocite{Sargent2010wsc}, while va
 *(Style: More concise phrasing; "quantitatively" is correct spelling.)*  
 
 **Line 552:**  
-OLD: Uncertainty quantification (UQ) is a relatively new field in V&V.  
-NEW: Uncertainty quantification (UQ) is a recent addition to V&V.  
+OLD: Uncertainty quantification (UQ) is a relatively new field in V\&V.  
+NEW: Uncertainty quantification (UQ) is a recent addition to V\&V.  
 *(Style: More concise phrasing.)*  
 
 **Line 560:**  

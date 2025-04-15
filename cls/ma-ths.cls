@@ -5,7 +5,7 @@
 %% Base Class & Package Loading
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Load a standard base class (scrreprt) that defines default font sizes, etc.
-\LoadClass[a4paper,12pt]{scrreprt}
+\LoadClass[a4paper,12pt,open=any]{scrreprt}
 
 % Required packages
 \RequirePackage{geometry}     % Page geometry setup
@@ -105,22 +105,6 @@
 
 % Define a default background color for minted code blocks
 \definecolor{bgcolor}{rgb}{0.95,0.95,0.95}
-
-% Minted environment for Python code
-\newenvironment{pythoncode}{%
-    \VerbatimEnvironment
-    \begin{minted}[bgcolor=bgcolor,fontsize=\small,breaklines,linenos]{python}%
-}{%
-    \end{minted}%
-}
-
-% Minted environment for algorithm/pseudocode text
-\newenvironment{algocode}{%
-    \VerbatimEnvironment
-    \begin{minted}[bgcolor=bgcolor,fontsize=\small,breaklines,linenos]{text}%
-}{%
-    \end{minted}%
-}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% End of Class Definition

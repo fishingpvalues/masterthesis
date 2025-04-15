@@ -1,12 +1,12 @@
 Automatisierte Validierung von automatisiert generierten Simulationsbasierten Digitalen Zwillingen für Diskrete Materialflusssysteme
 
 Story:
- V&V von digitalen Zwillingen benötigt als ersten Schritt Referenzwert, die Vergleichen werden können (siehe SIMULATION-BASED DIGITAL TWINS: AN ACCREDITATION METHOD)
+ V\&V von digitalen Zwillingen benötigt als ersten Schritt Referenzwert, die Vergleichen werden können (siehe SIMULATION-BASED DIGITAL TWINS: AN ACCREDITATION METHOD)
  Normalerweise sind diese Werte Use-case spezifisch festzulegen und müssen im phyischen System und im digitalen Zwilling übereinstimmen
  Bei Automatische generierten Zwillingen wird häufig auf Process Mining und das (object centric) Eventlog Format gesetzt
- Gerade bei der automatischen erstellung macht ein manuelles V&V wenig Sinn, da es wieder manuellen Expertenaufwand erhöht
- Hier soll also ein V&V Verfahren entwickelt werden das Use-case unabhängig automatisiert eingesetzt werden kann
- Kernidee: das object-centric Event log dient als Grundlage für V&V
+ Gerade bei der automatischen erstellung macht ein manuelles V\&V wenig Sinn, da es wieder manuellen Expertenaufwand erhöht
+ Hier soll also ein V\&V Verfahren entwickelt werden das Use-case unabhängig automatisiert eingesetzt werden kann
+ Kernidee: das object-centric Event log dient als Grundlage für V\&V
 
 - V+V nach der Modellerstellung
 - ist bei AUtomatischen generierten DT Verifikation und Validierung nicht dasselbe?
@@ -26,5 +26,5 @@ Wie abstrahieren wir von den Eventlogs? Kriterien anhand des Eventlogs zur Evail
  Für Training, Validation und Test Zeitraum (mit selben Auftragsdaten) Eventlogs mit der Simulation erzeugen und mit 0 Labeln
  Classifier trainieren () und validieren gegenfalls Hyperparameter anpasssen. Ist der Classifier genau genug? Was will man mit dieser Genauigkeit erreichen?
  Wenn Model schon jetzt perfekt, testweise realistische Fehler in original Eventlogs von Validierung und Testset einbauen
- Das V&V System sollte nun die Abweichung erkennen
+ Das V\&V System sollte nun die Abweichung erkennen
  Framework auf Schmausdaten final testen

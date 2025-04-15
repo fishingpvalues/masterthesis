@@ -9,11 +9,11 @@ A thorough analysis of the requirements for the proposed VVUQ framework is essen
 The following \autoref{fig:requirements} summarizes the key requirements identified in \autoref{sec:requirements-automatically-generated-models} and adds requirements which have been derived from the theoretical findings in Chapter \ref{chap:theory}.
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/req.png}
-    \caption{Key Requirements for the VVUQ framework differentiated by FR, NFR, TR, and OR. }
-    \caption*{Source: Own illustration.}
-    \label{fig:requirements}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/req.png}
+  \caption{Key Requirements for the VVUQ framework differentiated by FR, NFR, TR, and OR. }
+  \caption*{Source: Own illustration.}
+  \label{fig:requirements}
 \end{figure}
 
 Real-time data integration enables continuous synchronization between physical processes and the digital twin through real-time data streams. This is crucial for ensuring that the digital twin accurately reflects the current state of the physical system. The latency in this regard has to be minimized \autocite{li2018learning}. Of course, one FR has to be the Automatic VVUQ of the SBDT with its functional capabilities anomaly detection \autocite{pang2021deep}, uncertainty quantification \autocite{sel2025survey}, and adaptive recalibration to new physical states. The framework should also include an alarm management system that generates alerts and recommendations for action in the event of anomalies or validation errors. This is essential for ensuring that operators can respond quickly to potential issues and maintain the integrity of the system. The performance evaluation of the framework should be automated and include KPIs such as F1-Score, MAE, and synchronization accuracy see \autoref{sec:metrics-theory}.
@@ -28,11 +28,11 @@ The OR incorporate several key aspects that ensure the effective operation of th
 \label{sec:framework}
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/framework.png}
-    \caption{Framework for VVUQ of SBDT in the manufacturing domain. The framework starts with the data sources which all lead into the data lake. The data warehouse provides the Data Layer (DL) with different views. The DL further enriches the data to feed it into the Twin Layer (TL). The TL contains the DT and the physical entity. The TL is connected to the VVUQ Layer (VVUQL). It incorporates the ResNet BiLSTM network for VVUQ of the twin. It can trigger alarms and recommendations for action. The VVUQL is connected to the Decision Support Layer (DSL) which provides different data analysis and visualization tools. The DSL is responsible for the short-term decision making to manage the VVUQ process. The DSL is connected to the user interface (UI) which provides the user with a dashboard for monitoring and controlling the system. The DSL can request new data from the Data Sources. It also is connected to the Continuous Improvement Process layer (CIP) which is responsible for the long-term decision making.}
-    \caption*{Source: Own illustration.}
-    \label{fig:framework}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/framework.png}
+  \caption{Framework for VVUQ of SBDT in the manufacturing domain. The framework starts with the data sources which all lead into the data lake. The data warehouse provides the Data Layer (DL) with different views. The DL further enriches the data to feed it into the Twin Layer (TL). The TL contains the DT and the physical entity. The TL is connected to the VVUQ Layer (VVUQL). It incorporates the ResNet BiLSTM network for VVUQ of the twin. It can trigger alarms and recommendations for action. The VVUQL is connected to the Decision Support Layer (DSL) which provides different data analysis and visualization tools. The DSL is responsible for the short-term decision making to manage the VVUQ process. The DSL is connected to the user interface (UI) which provides the user with a dashboard for monitoring and controlling the system. The DSL can request new data from the Data Sources. It also is connected to the Continuous Improvement Process layer (CIP) which is responsible for the long-term decision making.}
+  \caption*{Source: Own illustration.}
+  \label{fig:framework}
 \end{figure}
 
 The framework consists of five interconnected layers that form a closed-loop system with continuous data flow, validation and improvement. At the start, diverse data sources such as PPC systems, DES outputs, PM, expert knowledge, sensor networks, and CRM feedback provide the raw inputs, which are centralized in a data lake with structured views managed by a data warehouse. The data warehouse enriches the incoming data with engineering features. The DL collects and integrates this data, preprocesses it through cleaning, normalization and feature extraction. The DL performs a subset of the actions of the data warehouse, but tailors the data specifically for the SBDT. This structured approach meets real-time integration and quality requirements considered above.
@@ -55,26 +55,26 @@ Permutation testing is particularly useful when the underlying distribution of t
 The procedure involves the following steps:
 
 \begin{enumerate}
-    \item \textbf{Define the Null Hypothesis ($H_0$):} State the specific null hypothesis being tested. For instance, in a classification task comparing two data sources (e.g., real vs. simulated), $H_0$ might be that the data source labels are independent of the input features.
-    \item \textbf{Choose a Test Statistic ($S$):} Select a suitable metric to quantify the effect or performance of interest. This could be the difference in means between two groups, a correlation coefficient, classifier accuracy, AUC, or another relevant measure.
-    \item \textbf{Compute the Observed Statistic ($S_{obs}$):} Calculate the chosen test statistic $S$ on the original, unpermuted dataset.
-    \item \textbf{Generate the Null Distribution:} Repeat the following steps a large number of times ($N$, e.g., $N=1000$ or more):
-          \begin{itemize}
-              \item Create a permuted dataset by randomly shuffling the relevant labels or group assignments while keeping the features intact. For example, in a two-class classification problem, shuffle the class labels across all data instances. This process breaks the potential association between features and labels, simulating the scenario under $H_0$.
-              \item Compute the test statistic $S$ on this permuted dataset, denoted as $S_{perm}$.
-          \end{itemize}
-          The collection of these $N$ permuted statistics ($S_{perm, 1}, S_{perm, 2}, ..., S_{perm, N}$) forms the empirical null distribution.
-    \item \textbf{Calculate the p-value:} The p-value represents the probability of observing a test statistic as extreme as, or more extreme than, $S_{obs}$ under the assumption that $H_0$ is true. It is calculated as the proportion of permuted statistics that are greater than or equal to (or less than or equal to, depending on the hypothesis direction) the observed statistic:
-          \begin{equation}
-              p = \frac{\sum_{i=1}^{N} \mathbb{I}(S_{perm, i} \ge S_{obs})}{N}
-              \label{eq:pvalue_perm}
-          \end{equation}
-          where $\mathbb{I}(\cdot)$ is the indicator function (1 if the condition is true, 0 otherwise). For a two-sided test, the calculation involves considering extreme values in both tails of the null distribution.
-    \item \textbf{Interpret the Result:} Compare the calculated p-value to a pre-defined significance level $\alpha$ (commonly $\alpha = 0.05$ or $\alpha = 0.01$).
-          \begin{itemize}
-              \item If $p < \alpha$: Reject the null hypothesis $H_0$. This indicates that the observed result ($S_{obs}$) is statistically significant and unlikely to have occurred merely by chance. There is evidence for the alternative hypothesis (e.g., the classifier performs significantly better than chance, or the two groups are significantly different).
-              \item If $p \ge \alpha$: Fail to reject the null hypothesis $H_0$. This means there is insufficient statistical evidence to conclude that the observed result is different from what might be expected under random chance, given the current data and test.
-          \end{itemize}
+  \item \textbf{Define the Null Hypothesis ($H_0$):} State the specific null hypothesis being tested. For instance, in a classification task comparing two data sources (e.g., real vs. simulated), $H_0$ might be that the data source labels are independent of the input features.
+  \item \textbf{Choose a Test Statistic ($S$):} Select a suitable metric to quantify the effect or performance of interest. This could be the difference in means between two groups, a correlation coefficient, classifier accuracy, AUC, or another relevant measure.
+  \item \textbf{Compute the Observed Statistic ($S_{obs}$):} Calculate the chosen test statistic $S$ on the original, unpermuted dataset.
+  \item \textbf{Generate the Null Distribution:} Repeat the following steps a large number of times ($N$, e.g., $N=1000$ or more):
+        \begin{itemize}
+          \item Create a permuted dataset by randomly shuffling the relevant labels or group assignments while keeping the features intact. For example, in a two-class classification problem, shuffle the class labels across all data instances. This process breaks the potential association between features and labels, simulating the scenario under $H_0$.
+          \item Compute the test statistic $S$ on this permuted dataset, denoted as $S_{perm}$.
+        \end{itemize}
+        The collection of these $N$ permuted statistics ($S_{perm, 1}, S_{perm, 2}, ..., S_{perm, N}$) forms the empirical null distribution.
+  \item \textbf{Calculate the p-value:} The p-value represents the probability of observing a test statistic as extreme as, or more extreme than, $S_{obs}$ under the assumption that $H_0$ is true. It is calculated as the proportion of permuted statistics that are greater than or equal to (or less than or equal to, depending on the hypothesis direction) the observed statistic:
+        \begin{equation}
+          p = \frac{\sum_{i=1}^{N} \mathbb{I}(S_{perm, i} \ge S_{obs})}{N}
+          \label{eq:pvalue_perm}
+        \end{equation}
+        where $\mathbb{I}(\cdot)$ is the indicator function (1 if the condition is true, 0 otherwise). For a two-sided test, the calculation involves considering extreme values in both tails of the null distribution.
+  \item \textbf{Interpret the Result:} Compare the calculated p-value to a pre-defined significance level $\alpha$ (commonly $\alpha = 0.05$ or $\alpha = 0.01$).
+        \begin{itemize}
+          \item If $p < \alpha$: Reject the null hypothesis $H_0$. This indicates that the observed result ($S_{obs}$) is statistically significant and unlikely to have occurred merely by chance. There is evidence for the alternative hypothesis (e.g., the classifier performs significantly better than chance, or the two groups are significantly different).
+          \item If $p \ge \alpha$: Fail to reject the null hypothesis $H_0$. This means there is insufficient statistical evidence to conclude that the observed result is different from what might be expected under random chance, given the current data and test.
+        \end{itemize}
 \end{enumerate}
 
-By applying permutation testing, we can add statistical rigor to the evaluation of models and comparisons between datasets, providing stronger support for the conclusions drawn from empirical results. This method will be employed in the validation phase of this thesis (Chapter \autoref{chap:case-study}) to assess the significance of the findings.
+By applying permutation testing, one can add statistical rigor to the evaluation of models and comparisons between datasets, providing stronger support for the conclusions drawn from empirical results. This method will be employed in the validation phase of this thesis (Chapter \autoref{chap:case-study}) to assess the significance of the findings.

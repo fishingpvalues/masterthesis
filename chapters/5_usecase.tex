@@ -1,4 +1,4 @@
-\chapter{Empirical Validation: IoT Factory Case Study}
+\chapter{Empirical Validation}
 \label{chap:case-study}
 
 The thesis now focusses on the application of the implemented features and methods in a real-world scenario. The goal is to demonstrate the practical applicability of the developed concepts and to validate the theoretical findings presented in the previous chapters.
@@ -32,17 +32,7 @@ The factory produces an exemplary product, consisting of a back part, a breadboa
   \label{fig:iotproduct}
 \end{figure}
 
-The only colour produced at the moment is black. Not all parts can be put on the breadboard and there are several parts which conflict in size and location on the breadboard. The ground-truth assembly rules look as follows:
-PRÜFEN UND ANPASSEN
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.8\textwidth]{figures/assrules.png}
-  \caption{Three variants are possible. No transformation is also a possibility.}
-  \label{fig:assrules}
-\end{figure}
-
-Back and front cover are necessary parts and are assembled every time. The main part \texttt{main\_pcb} is also obligatory. It is placed at the beginning. Following that, the display or gyroscope can be assembled. If the display has been chosen, only the analog board or the weather station can be assembled. The weather station takes too much space on the breadboard for the gyroscope to be placed. If the analog board has been placed, the gyroscope is of course possible. The product is finished by placing the front cover and delivering the product to the sink.
+The only colour produced at the moment is black. Not all parts can be put on the breadboard and there are several parts which conflict in size and location on the breadboard. Back and front cover are necessary parts and are assembled every time. The main part \texttt{main\_pcb} is also obligatory. It is placed at the beginning. Following that, the display or gyroscope can be assembled. If the display has been chosen, only the analog board or the weather station can be assembled. The weather station takes too much space on the breadboard for the gyroscope to be placed. If the analog board has been placed, the gyroscope is of course possible. The product is finished by placing the front cover and delivering the product to the sink.
 
 During the production, the factory gathers data via sensors. The data is saved in a database and can be used for further analysis.
 
@@ -167,7 +157,7 @@ The construction of the State Model within OFacT uses structured input methods, 
 
 \begin{itemize}
   \item \textbf{Plant}: The overall entity of production. The plant name used here was \texttt{iot\_factory}.
-  \item \textbf{EntityType}: All entities have to be defined here. This ranges from the parts, resources and AGVs to the factory itself. For a complete list see the excel document \texttt{small.xlsx} on the second sheet.
+  \item \textbf{EntityType}: All entities have to be defined here. This ranges from the parts, resources and AGVs to the factory itself.
   \item \textbf{StationaryResource}: Stationary resources are static and can not move. In this case, these are the RASS stations, measurement-, cam-, function test- and labelling station. The AGVs are not stationary resources, because they can move.
   \item \textbf{Storage}: Storage units contain parts. They are used to traverse the parts through the factory. In this context, the warehouse and box storage, have been modelled.
   \item \textbf{Warehouse}: This is a static storage unit where the parts are stored in boxes until they are processed.
@@ -194,17 +184,17 @@ The construction of the State Model within OFacT uses structured input methods, 
 \end{itemize}
 
 
-By defining these elements according to the IoT Factory's characteristics, a detailed static model was created within the OFacT framework. For simulation purposes, the state model then gets 'played out' with orders. The orders contain this model then served as the basis for running simulations to generate process execution data, forming the SBDT dataset used in this thesis for comparison against real-world data. The \autoref{fig:assrules} are inherently modelled by the chosen order variants.
+By defining these elements according to the IoT Factory characteristics, a detailed static model was created within the OFacT framework. For simulation purposes, the state model then gets played out \autoref{fig:playinoutreplay} with orders. The orders contain this model then served as the basis for running simulations to generate process execution data, forming the SBDT dataset used in this thesis for comparison against real-world data.
 
 \subsection*{SBDT Dataset}
 
-The dataset gathered from the SBDT is referred to as \texttt{sim\_data}. The OpenFactoryTwin (see \autoref{sec:automated-digital-twin}) provides a method to deserialize the simulated orders and save them in a CSV file. The dataset then gets converted to the OCEL structure. For this endeavour, a separate connector logic has to be implemented in every use case. See \texttt{src/connector/ofact} for the connector here.
+The dataset gathered from the SBDT is referred to as \texttt{sim\_data}. The OpenFactoryTwin provides a method to deserialize the simulated orders and save them in a CSV file. The dataset then gets converted to the OCEL structure. For this endeavour, a separate connector logic has to be implemented in every use case.\footnote{See \texttt{src/connector/ofact} for the connector here.}
 
 The connector's output follows a standardized structure defined by the \texttt{OutputStructure} class, which ensures consistency across different data sources. The connector first deserializes the dynamic state model from a pickle file, accessing the full simulation state. Only actual process executions (as opposed to planned ones) are retained for further processing, identified by the "ACTUAL" flag in their event type. The connector creates mapping dictionaries for various categorical attributes following the OCED standard:
 
 \begin{itemize}
   \item \textbf{Part ID Mapping:} Uses domain expertise to identify part types from process names, normalizing text (lowercase, no whitespace) to match against a predefined list of possible parts. This list contains possible parts from \autoref{fig:iotproduct}.
-  \item \textbf{Process Type Categorization:} Assigns process steps to expert-defined categories such as "machine," "feature," "endproduct," "test," and "transport" based on keywords in process names. These types have been assigned by the modeller and are of free choice. See \autoref{tab:output-structure-detailed}.
+  \item \textbf{Process Type Categorization:} Assigns process steps to expert-defined categories such as "machine," "feature," "endproduct," "test," and "transport" based on keywords in process names. These types have been assigned by the modeller and are of free choice.
   \item \textbf{Process ID Mapping:} Creates unique integer identifiers for each distinct process description based on enumeration.
   \item \textbf{Resource ID Mapping:} Generates unique identifiers for each resource involved in the process executions based on enumeration.
   \item \textbf{Temporal Data Extraction:} The connector extracts start and end times for each process execution.
@@ -216,7 +206,7 @@ A key aspect of the connector's functionality is the integration of domain knowl
 
 For example, the part identification logic uses a predefined list of potential parts (such as "GYROSCOPE," "MAIN PCB," "FRONT COVER," etc.) and searches for these terms within process descriptions. Similarly, the process type categorization uses domain-specific groupings like "machine," "feature," and "test" based on keywords found in process names.This domain knowledge integration ensures that the transformed data maintains the semantic richness required for meaningful validation and comparison between simulated and real-world processes.
 
-The \texttt{sim\_data} rows will receive the label $0$ for \texttt{is\_valid}, because we want the black-box model to learn to distinguish between real and simulated data to perform VVUQ. This way we can ensure that the SBDT learned important characteristics from the factory data, which receives the integer $1$ for \texttt{is\_valid}.
+The \texttt{sim\_data} rows will receive the label $0$ for \texttt{is\_valid}, because the black-box model should learn to distinguish between real and simulated data to perform VVUQ. The entries of the \texttt{real\_data} receive $1$ for \texttt{is\_valid}.
 
 
 \section{Data Pipeline}
@@ -225,10 +215,10 @@ The \texttt{sim\_data} rows will receive the label $0$ for \texttt{is\_valid}, b
 Several preprocessing steps had to be performed to account for the fact that the SBDT simulated only one variant of the product: 'analog', 'cover', 'display', 'gyroscope', 'pcb' and the involved machines. This yielded the necessity to make both datasets congruent to each other. The following steps were performed:
 
 \begin{itemize}
-  \item The \texttt{sim\_data} dataset was aligned for the same time period as the \texttt{real\_data} dataset. The SBDT chose the time of order as the production time. In the modelling phase, when adaptive feature selection had been performed to identify if the SBDT was able to learn the Time Model, only \textit{relative} time features were chosen which were developed in \autoref{sec:feature-engineering}.
+  \item The \texttt{sim\_data} dataset was aligned for the same time period as the \texttt{real\_data} dataset. The SBDT chose the time of order as the production time. In the modelling phase, when adaptive feature selection had been performed to identify if the SBDT was able to learn the Time Model, only \textit{relative} time features like duration were chosen which were developed in \autoref{sec:feature-engineering}.
   \item The \texttt{real\_data} dataset was filtered for the same process steps as the \texttt{sim\_data} dataset. This means that only the process steps which are present in the \texttt{sim\_data} dataset were kept, producing only one product variant. This has also been applied on the part\_id, the process\_type and resource\_id columns. The IDs based on enumeration had to be mapped to the original IDs in \texttt{real\_data} to ensure that the correct IDs are used in the simulation. The mapping was done through the JSON files generated by the connector.
   \item Both datasets have been cleaned and entries containing invalid IDs were removed. This means that all entries which are not present in the mapping dictionaries were removed. The mapping dictionaries are generated by the connector and contain only valid IDs per definition.
-  \item Only a subset of all performed processes was included (in detail, all \texttt{process\_id} $\le 26$. These processes all have the \texttt{process\_type} 'machine', 'feature' or 'endproduct'. The processes with the \texttt{process\_type} 'test' and 'transport' were removed. This was done to ensure that only the relevant processes are included in the dataset.
+  \item Only a subset of all performed processes was included (in detail, all \texttt{process\_id} $\le 26$). These processes all have the \texttt{process\_type} 'machine', 'feature' or 'endproduct'. The processes with the \texttt{process\_type} 'test' and 'transport' were removed. This was done to ensure that only the relevant processes are included in the dataset.
 \end{itemize}
 
 The \texttt{real\_data} dataset was then concatenated with the \texttt{sim\_data} dataset. The concatenation was done by appending the \texttt{sim\_data} dataset to the \texttt{real\_data} dataset. The resulting dataset contains all process steps from both datasets. The resulting dataset is referred to as \texttt{final\_data}. The unification before concatenation was necessary to ensure that no logical flaws are present in the data.
@@ -254,7 +244,7 @@ The following features were generated with domain knowledge:
   \item \textbf{hour\_of\_day\_cos and hour\_of\_day\_sin}: A periodic time feature representing the cosine and sine of the hour of the day, which helps capture daily patterns in the data.
 \end{itemize}
 
-Days and hours are cyclical features that require special handling. Representing them as raw integers fails to capture their continuity (e.g., hour 23 is close to hour 0). To address this, we transform the feature $x$ with period $P$ using sine and cosine functions, effectively mapping it onto a unit circle:
+Days and hours are cyclical features that require special handling. Representing them as raw integers fails to capture their continuity (e.g., hour 23 is close to hour 0). To address this, the feature $x$ with period $P$ using sine and cosine functions has been transformed, effectively mapping it onto a unit circle:
 \begin{equation}
   x_{\sin} = \sin\left(\frac{2 \pi x}{P}\right) \quad ; \quad
   x_{\cos} = \cos\left(\frac{2 \pi x}{P}\right)
@@ -274,7 +264,7 @@ Figure \ref{fig:time-encoding} illustrates this concept for the hour of the day.
 \begin{figure}[ht]
   \centering
   \begin{tikzpicture}[
-      scale=2.5, % Adjust scale to change overall size
+      scale=3, % Adjust scale to change overall size
       hour dot/.style={circle, fill=blue!70, inner sep=1.5pt},
       hour label/.style={font=\small}
     ]
@@ -332,10 +322,10 @@ As laid out in the methodology chapter \autoref{sec:permtest}, a permutation tes
   \label{eq:h1}
 \end{equation}
 
-\noindent Under this framework, if a classifier trained on the feature set $\mathcal{F}_c$ achieves performance significantly better than chance at distinguishing between real ($y=1$) and simulated ($y=0$) data, it provides evidence to reject $H_0$ in favour of $H_1$. This would imply that the SBDT component $c$ has \emph{not} been learned accurately, as detectable discrepancies exist. Conversely, if the classifier performs poorly (close to random chance), we fail to reject $H_0$, suggesting that, based on the features $\mathcal{F}_c$, the simulated data is consistent with the real data for that component.
+\noindent Under this framework, if a classifier trained on the feature set $\mathcal{F}_c$ achieves performance significantly better than chance at distinguishing between real ($y=1$) and simulated ($y=0$) data, it provides evidence to reject $H_0$ in favour of $H_1$. This would imply that the SBDT component $c$ has \emph{not} been learned accurately, as detectable discrepancies exist. Conversely, if the classifier performs poorly (close to random chance), it fails to reject $H_0$, suggesting that, based on the features $\mathcal{F}_c$, the simulated data is consistent with the real data for that component.
 
 \subsection*{Testing the SBDT Components}
-To rigorously evaluate the SBDTs fidelity concerning different process aspects, we implemented the hypothesis testing framework outlined previously (testing $H_0$: \autoref{eq:h0} against $H_1$: \autoref{eq:h1}). This involved using machine learning classifiers to determine if statistically significant differences exist between the real process data ($\mathcal{D}_{real}$, labelled $y=1$) and the simulated data ($\mathcal{D}_{sim}$, labelled $y=0$) based on specific feature subsets ($\mathcal{F}_c$) corresponding to key SBDT model components.
+To rigorously evaluate the SBDTs fidelity concerning different process aspects, the thesis implements the hypothesis testing framework outlined previously (testing $H_0$: \autoref{eq:h0} against $H_1$: \autoref{eq:h1}). This involved using machine learning classifiers to determine if statistically significant differences exist between the real process data ($\mathcal{D}_{real}$, labelled $y=1$) and the simulated data ($\mathcal{D}_{sim}$, labelled $y=0$) based on specific feature subsets ($\mathcal{F}_c$) corresponding to key SBDT model components.
 
 The analysis was performed separately for distinct feature subsets $\mathcal{F}_c$, each curated to reflect the behaviour governed by specific SBDT components. Based on the feature engineering described in \autoref{sec:feature-engineering}, subsets were defined for the \texttt{time\_model} (including duration, sequence, cyclical time features), \texttt{resource\_model} (categorical resource, part, process IDs), \texttt{process\_model} (process ID, duration, sequence), \texttt{kpi\_based} (calculated KPIs like throughput, cycle time), and an \texttt{all\_features} set encompassing all available engineered features. PRÜFEN UND ANPASSEN
 
@@ -351,9 +341,9 @@ The practical implementation of the test described in \autoref{eq:pvalue_perm} f
     % -----------
 
     \Require % Input:
-    \Statex \hspace{\algorithmicindent} Dataset $\mathcal{D}_{final}$ (Features $\mathbf{X}$, Labels $y \in \{0,1\}$),
-    \Statex \hspace{\algorithmicindent} Feature Subsets $\{\mathcal{F}_c\}_{c=1}^C$,
-    \Statex \hspace{\algorithmicindent} Runs $n_{runs}$, Permutations $N$, Significance $\alpha$, Model Type $M_{type}$
+    \Statex \hspace{\algorithmicindent} Concatenated Dataset $\mathcal{D}_{final}$ (Features $\mathbf{X}$, Labels $y \in \{0,1\}$),
+    \Statex \hspace{\algorithmicindent} Feature Subsets for model components $\{\mathcal{F}_c\}_{c=1}^C$,
+    \Statex \hspace{\algorithmicindent} Runs $n_{runs}$, Permutations $N$, Significance level $\alpha$, Model Type $M_{type}$ \Comment{DTree, BiLSTM}
     \Ensure % Output:
     \Statex \hspace{\algorithmicindent} Results $R : \{c \mapsto (\bar{S}_{obs}, \sigma_{S_{obs}}, \bar{p}, RR)\}$ \Comment{Map component to aggregated stats}
     \medskip
@@ -366,7 +356,7 @@ The practical implementation of the test described in \autoref{eq:pvalue_perm} f
     \medskip
     \For{$run = 1$ to $n_{runs}$}
     \State $seed \leftarrow \text{RandomSeed}()$
-    \State $(\mathcal{D}_{train}, \mathcal{D}_{test}) \leftarrow \text{Split}(\mathcal{D}_{final}, \mathcal{F}_c, seed)$ \Comment{Stratified split}
+    \State $(\mathcal{D}_{train}, \mathcal{D}_{test}) \leftarrow \text{Split}(\mathcal{D}_{final}, \mathcal{F}_c, seed)$ \Comment{Split stratified on $y$}
     \State $M \leftarrow \text{Train}(M_{type}, \mathcal{D}_{train})$ \Comment{Train on $(\mathbf{X}_{train}, \mathbf{y}_{train})$ using features $\mathcal{F}_c$}
     \medskip
 
@@ -405,7 +395,7 @@ The practical implementation of the test described in \autoref{eq:pvalue_perm} f
 
 \begin{enumerate}
   \item \textbf{Data Splitting:} The combined dataset (\texttt{final\_data}) was split into stratified training ($\mathcal{D}_{train}$) and testing ($\mathcal{D}_{test}$) sets, ensuring proportional representation of real ($y=1$) and simulated ($y=0$) data in both sets. A random seed was used for reproducibility within a single run.
-  \item \textbf{Model Training:} The chosen classifier (DT or BiLSTM) was trained on $\mathcal{D}_{train}$ using only the features in $\mathcal{F}_c$.
+  \item \textbf{Model Training:} The chosen classifier (DTree or BiLSTM) was trained on $\mathcal{D}_{train}$ using only the features in $\mathcal{F}_c$.
   \item \textbf{Observed Statistic Calculation:} The trained model was evaluated on the original test set $\mathcal{D}_{test}$. The performance metric, specifically the ROC AUC score \autoref{eq:auc} (\textbf{ROC AUC}), was calculated and recorded as the observed statistic, $S_{obs}$.
   \item \textbf{Null Distribution Generation (Permutation):} To generate the null distribution, $N$ permutations were performed. Critically, an efficient approach was used, particularly for the computationally intensive BiLSTM model:
         \begin{itemize}
@@ -438,13 +428,25 @@ Based on the aggregated results, the fidelity of the SBDT component correspondin
 "
 \subsection*{Results of Whitebox Model}
 
-The whitebox validation was performed using a DT classifier \autocite{Scikit-Learn}. Key hyperparameters included limiting the tree complexity with a max tree depth of five using the default gini criterion \autoref{eq:gini_impurity} for measuring split quality \autoref{eq:gini_split}. Permutation testing was conducted with $N = 1000$ permutations per run over $n_{runs}=10$ runs, using a significance level of $\alpha = 0.05$. Because inference costs with the DT are low, label shuffling was performed on training and test set.
+The whitebox validation was performed using a DTree classifier \autocite{Scikit-Learn}. Key hyperparameters included limiting the tree complexity with a max tree depth of five using the default gini criterion for node impurity and split evaluation. The Gini impurity $G(S)$ for a set of samples $S$ at a node measures the probability of incorrectly classifying a randomly chosen element if it were randomly labelled according to the distribution of labels in the set. For $K$ classes ($K = 2$ here), with $p_k$ being the proportion of samples belonging to class $k$ in $S$, it is defined as:
+
+\begin{equation}
+  G(S) = 1 - \sum_{k=1}^{K} p_k^2
+  \label{eq:gini_impurity}
+\end{equation}
+A lower Gini impurity indicates a purer node. The quality of a potential split, which divides the set $S$ into subsets $S_{left}$ and $S_{right}$, is then evaluated based on the weighted average impurity of the child nodes, often referred to as the Gini split index:
+\begin{equation}
+  \text{Gini}_{\text{split}}(S) = \frac{|S_{left}|}{|S|} G(S_{left}) + \frac{|S_{right}|}{|S|} G(S_{right})
+  \label{eq:gini_split}
+\end{equation}
+
+The decision tree algorithm seeks splits that minimize this value \autocite{breiman1984classification}. Permutation testing was conducted with $N = 1000$ permutations per run over $n_{runs}=10$ runs, using a significance level of $\alpha = 0.05$. Because inference costs with the DTree are low, label shuffling was performed on training and test set.
 
 The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with standard deviation ($\sigma_{S_{obs}}$), mean p-value ($\bar{p}$), and the Rejection Rate (RR), are presented in Table \ref{tab:results-whitebox}. The mean ROC AUC scores are also visualized in Figure \ref{fig:dt-roc-auc}.
 
 \begin{table}[htbp]
   \centering
-  \caption{Whitebox DT validation results across 10 runs (N=1000, $\alpha=0.05$), using paragraph-based layout.}
+  \caption{Whitebox DTree validation results across 10 runs (N=1000, $\alpha=0.05$), using paragraph-based layout.}
   \label{tab:results-whitebox}
   \begin{tabular}{l l l l l p{3cm}}
     \toprule
@@ -470,7 +472,7 @@ The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with 
 \end{figure}
 
 The results from the whitebox model are highly significant. For almost all feature subsets, the DTree achieved a perfect mean ROC AUC of 1.0000, with the exception of the \texttt{resource\_model} subset which scored slightly lower but still extremely high ($\bar{S}_{obs}=0.9832 \pm 0.0104$). Correspondingly, the mean p-values were effectively zero ($< 0.0001$, reported as 0.0000) and the rejection rate was 1.00 for all components across all 10 runs. This indicates that the Decision Tree could easily and consistently distinguish the simulated data from the real data based on the features associated with every tested SBDT component. According to the interpretation framework, this implies that, from the perspective of the whitebox model, all tested SBDT components were learned inaccurately.
-Given that the mean p-value for every feature subset is far below the significance level ($\bar{p} \approx 0.0000 < \alpha = 0.05$), and the rejection rate (RR) is 1.00 for all components, we reject the null hypothesis ($H_0$) for every tested SBDT component based on the Decision Tree classifier. This provides statistically significant evidence that the Decision Tree model can reliably distinguish between the real process data and the simulated data using the features associated with the time model, resource model, transformation model, transition model, process model, and KPI-based perspectives, as well as when using all features combined.
+Given that the mean p-value for every feature subset is far below the significance level ($\bar{p} \approx 0.0000 < \alpha = 0.05$), and the rejection rate (RR) is 1.00 for all components, it rejects the null hypothesis ($H_0$) for every tested SBDT component based on the Decision Tree classifier. This provides statistically significant evidence that the Decision Tree model can reliably distinguish between the real process data and the simulated data using the features associated with the time model, resource model, transformation model, transition model, process model, and KPI-based perspectives, as well as when using all features combined.
 
 The conclusion drawn solely from this whitebox analysis is therefore that the SBDT exhibits detectable discrepancies compared to the real system across all evaluated aspects. Consequently, based on the stringent criteria of the Decision Tree's ability to find differentiating patterns (even limited to $max_depth=5$), all tested components of the SBDT are deemed INACCURATE. This suggests that, at the level of detail captured by the engineered features and discernible by the DTree model, the simulation does not adequately replicate the observed behaviour of the real IoT factory. The analysis with the blackbox model in the next section will explore whether a more complex model reaches similar conclusions.
 
@@ -510,6 +512,6 @@ The blackbox model results largely align with the whitebox findings, indicating 
 
 For the \texttt{resource\_model} and \texttt{transformation\_model}, the mean ROC AUC scores were lower ($\bar{S}_{obs}=0.9087$ and $0.8705$, respectively) and exhibited considerably higher standard deviations ($\sigma_{S_{obs}}=0.1618$ and $0.2094$), suggesting greater variability in the models ability to distinguish data based on these features across the 10 runs. Despite this variability, the rejection rates were still very high (RR=0.90 for \texttt{resource\_model}, RR=0.80 for \texttt{transformation\_model}). A rejection rate of 0.90 means that in 9 out of the 10 independent runs, the calculated p-value was less than the stringent $\alpha=0.01$, leading to the rejection of $H_0$. Similarly, for the transformation model, $H_0$ was rejected in 8 out of 10 runs. While the mean p-values (0.0492 and 0.1879) are higher than for other components and above $\alpha=0.01$, the high rejection rates across multiple runs provide strong evidence that the BiLSTM could consistently distinguish the data more often than not, even under the stricter significance level.
 
-Therefore, based on the consistent rejection of $H_0$ across the majority of runs (as indicated by RR $\ge$ 0.80) for all feature subsets, we conclude that the blackbox model also finds statistically significant differences between the real and simulated data for all tested aspects.
+Therefore, based on the consistent rejection of $H_0$ across the majority of runs (as indicated by RR $\ge$ 0.80) for all feature subsets, it concludes that the blackbox model also finds statistically significant differences between the real and simulated data for all tested aspects.
 
 Similar to the whitebox analysis, the conclusion drawn from the blackbox model is that the SBDT exhibits detectable inaccuracies compared to the real system across all evaluated components. The high ROC AUC scores and, critically, the high rejection rates under permutation testing provide strong evidence against the null hypothesis ($H_0$) for every component. Consequently, based on the BiLSTM classifier's ability to distinguish the data, all tested components of the SBDT are assessed as INACCURATE. This reinforces the finding that the current SBDT configuration, as evaluated through the engineered features, does not sufficiently replicate the behavior observed in the real IoT factory dataset.
