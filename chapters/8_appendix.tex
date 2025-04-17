@@ -9,7 +9,8 @@
     \centering
     \caption[Mathematical Notation]{Mathematical Notation Used in This Thesis}
     \label{tab:math_notation}
-    \resizebox{width=0.8\textwidth}{!}{%
+    \small
+    \resizebox{\textwidth}{!}{%
       \begin{tabular}{p{0.28\textwidth}p{0.68\textwidth}}
         \toprule
         \textbf{Notation}                           & \textbf{Description}                                                                 \\
@@ -97,8 +98,8 @@
         $\mathcal{D}_{real}$, $\mathcal{D}_{sim}$   & Real-world and simulation datasets                                                   \\
         \bottomrule
       \end{tabular}
+      \caption*{Own tabulation.}
     }
-    \caption*{Own tabulation.}
   \end{table}
 
   \section{Mathematical Foundations}
@@ -385,7 +386,7 @@
   \subsection{Loss Functions}
   % -------------------------------------------------------------------------
   % (Content from previous version - MSE, BCE, CCE - keep only relevant ones)
-  Loss functions quantify the difference between the model's predictions and the true target values, guiding the optimization process.
+  Loss functions quantify the difference between the models predictions and the true target values, guiding the optimization process.
 
   \paragraph{Binary Cross-Entropy (BCE):}
   \label{eq:bce} % Reuse label if needed

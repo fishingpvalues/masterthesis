@@ -5,7 +5,7 @@
 %% Base Class & Package Loading
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Load a standard base class (scrreprt) that defines default font sizes, etc.
-\LoadClass[a4paper,12pt,open=any]{scrreprt}
+\LoadClass[a4paper,12pt]{scrreprt}
 
 % Required packages
 \RequirePackage{geometry}     % Page geometry setup
@@ -32,11 +32,11 @@
     a4paper,
     left=3.0cm,
     right=2.5cm,
-    top=2.0cm,
-    bottom=2.0cm,
-    headheight=15pt,
-    headsep=10pt,
-    footskip=30pt
+    top=1.8cm,
+    bottom=1.8cm,
+    headheight=12pt,
+    headsep=8,
+    footskip=25pt
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,8 +52,10 @@
 %% Paragraph & Line Spacing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{1em}
-\onehalfspacing
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
+%\setlength{\parskip}{1em}
+\setstretch{1.2} % Or try 1.35, 1.3 etc.
+%\onehalfspacing
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Title & Section Formatting
@@ -73,7 +75,12 @@
 \titleformat{\subsubsection}
   {\normalfont\small\bfseries}
   {\thesubsubsection}{1em}{}
-
+\titlespacing*{\chapter}{\parindent}{*1.8}{*1.2}
+\titlespacing*{\section}{\parindent}{*1.5}{*1.0} % Example: Reduce space below section titles
+\titlespacing*{\subsection}{\parindent}{*1.2}{*0.8}
+\titlespacing*{\subsubsection}{\parindent}{*1.0}{*0.6}
+% Adjust the {beforesep} (*1.5 etc) and {aftersep} (*1.0 etc) multipliers.
+% Using \parindent (0pt here) for left margin alignment. Decrease the multipliers.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Header and Footer Configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,6 +113,9 @@
 % Define a default background color for minted code blocks
 \definecolor{bgcolor}{rgb}{0.95,0.95,0.95}
 
+% In your preamble:
+\usepackage{enumitem}
+\setlist{nosep}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% End of Class Definition
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
