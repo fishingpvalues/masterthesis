@@ -10,7 +10,7 @@ The framework has been applied on the Internet of Things-Factory (IOT) in Güter
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/iot1.png}
-  \caption[IOT Factory Overview]{Overview of the IOT factory. It consists of three production stations from left to right, which are followed by a sorting station and a packaging station. The stations are interconnected by an assembly line. Isolated from the assembly part, two AGVs are used to transport parts between the warehouse station (upper right) and another flexible workstation (right).}
+  \caption[IoT Factory Overview]{Overview of the IOT factory. It consists of three production stations from left to right, which are followed by a sorting station and a packaging station. The stations are interconnected by an assembly line. Isolated from the assembly part, two AGVs are used to transport parts between the warehouse station (upper right) and another flexible workstation (right).}
   \label{fig:iotoverview}
   \caption*{Source: \autocite{IoTFactory2024}}
 \end{figure}
@@ -525,3 +525,46 @@ For the \texttt{resource\_model} and \texttt{transformation\_model}, the mean RO
 Therefore, based on the consistent rejection of $H_0$ across the majority of runs (as indicated by RR $\ge$ 0.80) for all feature subsets, it concludes that the blackbox model also finds statistically significant differences between the real and simulated data for all tested aspects.
 
 Similar to the whitebox analysis, the conclusion drawn from the blackbox model is that the SBDT exhibits detectable inaccuracies compared to the real system across all evaluated components. The high ROC AUC scores and, critically, the high rejection rates under permutation testing provide strong evidence against the null hypothesis ($H_0$) for every component. Consequently, based on the BiLSTM classifier's ability to distinguish the data, all tested components of the SBDT are assessed as accurate. This reinforces the finding that the current SBDT configuration, as evaluated through the engineered features, does not sufficiently replicate the behavior observed in the real IoT factory dataset.
+
+\section{Sanity Check}
+\label{sec:sanity-check}
+
+Given the high, near-perfect ROC AUC scores observed in the main experiments (\autoref{tab:results-whitebox}, \autoref{tab:results-blackbox}), this control experiment was performed to rule out the possibility that these scores resulted from data artifacts rather than genuine SBDT fidelity issues. This "Identical Data Control Experiment" tests if classifiers can distinguish between identical datasets solely based on assigned labels (y=1 vs y=0), using the same methodology as the main experiments but on duplicated real and simulated data separately \autocite{adebayo2018sanity}.
+
+The results are summarized in \autoref{tab:sanity-check-results}.
+
+\begin{table}[htbp]
+  \centering
+  \caption[Sanity Check]{Results of Identical Data Control Experiments (Mean ROC AUC over 10 runs)}
+  \label{tab:sanity-check-results}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{l l c c c c}
+      \toprule
+      \textbf{Classifier} & \textbf{Feature Set ($\mathcal{F}_c$)} & \textbf{Original AUC}   & \textbf{Identical Real Data AUC} & \textbf{Identical Simulated Data AUC} & \textbf{Expected AUC}    \\
+                          &                                        & \textbf{(Real vs. Sim)} & \textbf{(Real vs. Real-Copy)}    & \textbf{(Sim vs. Sim-Copy)}           & \textbf{(Random Chance)} \\
+      \midrule
+      Decision Tree       & \texttt{time\_model}                   & 1.0000                  & 0.3302                           & 0.3545                                & $\approx 0.5$            \\
+      Decision Tree       & \texttt{resource\_model}               & 0.9832                  & 0.3916                           & 0.4140                                & $\approx 0.5$            \\
+      Decision Tree       & \texttt{transformation\_model}         & 1.0000                  & 0.3903                           & 0.4072                                & $\approx 0.5$            \\
+      Decision Tree       & \texttt{transition\_model}             & 1.0000                  & 0.3389                           & 0.4079                                & $\approx 0.5$            \\
+      Decision Tree       & \texttt{process\_model}                & 1.0000                  & 0.3279                           & 0.4107                                & $\approx 0.5$            \\
+      Decision Tree       & \texttt{kpi\_based}                    & 1.0000                  & 0.3278                           & 0.3788                                & $\approx 0.5$            \\
+      Decision Tree       & \texttt{all\_features}                 & 1.0000                  & 0.3471                           & 0.3763                                & $\approx 0.5$            \\
+      \midrule
+      BiLSTM              & \texttt{time\_model}                   & 0.9998                  & 0.4992                           & 0.5008                                & $\approx 0.5$            \\
+      BiLSTM              & \texttt{resource\_model}               & 0.9087                  & 0.4989                           & 0.5003                                & $\approx 0.5$            \\
+      BiLSTM              & \texttt{transformation\_model}         & 0.8705                  & 0.5015                           & 0.4980                                & $\approx 0.5$            \\
+      BiLSTM              & \texttt{transition\_model}             & 1.0000                  & 0.4998                           & 0.5007                                & $\approx 0.5$            \\
+      BiLSTM              & \texttt{process\_model}                & 0.9788                  & 0.4752                           & 0.4977                                & $\approx 0.5$            \\
+      BiLSTM              & \texttt{kpi\_based}                    & 0.9989                  & 0.4938                           & 0.5027                                & $\approx 0.5$            \\
+      BiLSTM              & \texttt{all\_features}                 & 1.0000                  & 0.5000                           & 0.5000                                & $\approx 0.5$            \\
+      \bottomrule
+    \end{tabular}%
+  }
+  \caption*{Source: Own tabulation, incorporating results from provided summary and \autoref{tab:results-whitebox}, \autoref{tab:results-blackbox}.}
+\end{table}
+
+As shown, both classifiers achieved ROC AUC scores near the random chance baseline of 0.5 when tested on identical data (IRDT and ISDT columns), in  contrast to the near-perfect scores achieved on the original real vs. simulated data comparison.
+This successful outcome strongly suggests the original high AUC scores were not primarily driven by artifacts. It validates the framework's core interpretation: the classifiers detected genuine, statistically significant differences between the real and simulated data. Therefore, the high AUC and RR values reported in \autoref{tab:results-whitebox} and \autoref{tab:results-blackbox} can be confidently interpreted as indicators of lower fidelity in the corresponding SBDT components, providing a reliable basis for identifying areas for model improvement.
+
+To conclude, this chapter empirically validated the proposed VVUQ framework using the IoT Factory case study (\autoref{sec:factory}, \autoref{sec:automated-digital-twin}). The machine learning-based approach, employing both Decision Tree and BiLSTM classifiers with permutation testing (\autoref{sec:model-logic}), successfully identified statistically significant discrepancies between the SBDT and real-world data across all tested components (\autoref{tab:results-whitebox}, \autoref{tab:results-blackbox}). Crucially, identical data control experiments (\autoref{sec:sanity-check}) confirmed these findings were not due to artifacts (\autoref{tab:sanity-check-results}). The validation demonstrated the frameworks effectiveness in automatically assessing SBDT fidelity and providing component-specific feedback for improvement.

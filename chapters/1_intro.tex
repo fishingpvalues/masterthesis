@@ -10,7 +10,7 @@ Although this discipline is rapidly evolving, a unified definition of DT has yet
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/kritzinger.png}
-  \caption[The different types of digital models.]{Comparison of Digital Shadow (DS), Digital Model (DM) and Digital Twin (DT) as presented by Kritzinger (2018). This distinction is crucial for understanding validation requirements across different digital representation types.}
+  \caption[The different Types of Digital Models.]{Comparison of Digital Shadow (DS), Digital Model (DM) and Digital Twin (DT) as presented by Kritzinger (2018). This distinction is crucial for understanding validation requirements across different digital representation types.}
   \label{fig:Kritzinger}
   \caption*{Own illustration based on \textcite{kritzinger2018digital} and \textcite{Zhang2021jmsy}}
 \end{figure}
@@ -54,25 +54,7 @@ This thesis proposes that object-centric event logs—commonly used to generate 
 
 \section{Structure and Methodology}
 
-\subsection*{Structure}
-The thesis is organized into eight chapters.
-\autoref{chap:theory} establishes the theoretical foundation. It begins with broad, domain-specific concepts and progressively narrows the focus to the core topics of this thesis: Automated verification and validation (VVUQ) of simulation-based digital twins (SBDTs) in DMFS.
-\autoref{sec:material-flow} introduces material flow planning and simulation, outlining the key elements of production systems, such as processes, resources, and control mechanisms. It also defines key performance indicators (KPIs), essential for evaluating both real and simulated systems, providing the practical context in which DTs operate.
-\autoref{sec:digital-twin} then transitions to the DT concepts. A framework for comparing DTs by \textcite{schwede2024learning} is presented. Special attention is given to data-driven DTs and their subset, automatically generated digital twins (AGDTs). The section concludes by contrasting AGDTs with classical simulation models, highlighting the challenges posed by automatically generated models.
-Building on this foundation, \autoref{sec:process-mining} presents the principles of process mining (PM) and event log analysis, focusing on object-centric event logs as a data basis for automated validation. This section demonstrates how PM acts as a bridge between real-world process data and model validation, thus enabling continuous verification of SBDTs.
-\autoref{sec:vvuq-sbdt} narrows the focus further to VVUQ in the context of SBDTs, beginning with a historical overview of VVUQ methodologies. It then addresses the specific challenges posed by automatically generated models, such as data dependency and lack of transparency in model creation. The section introduces machine learning-based approaches for VVUQ, particularly classification methods for detecting model deviation. It also explores the current state of VVUQ in corporate practice, emphasizing the need for continuous and automated validation processes.
-
-\autoref{chap:methodology} outlines the methodology for developing the proposed framework. It begins with a requirements analysis, deriving functional, technical, and data format requirements from theoretical findings. The chapter then elaborates on the data-based validation strategy, machine learning-based validation approach, metrics for model evaluation, and online validation with continuous monitoring.
-
-\autoref{chap:implementation} presents the implementation of the framework, starting with the architecture and system setup, followed by detailed descriptions of event log processing, simulation integration, and the machine learning pipeline.
-
-\autoref{chap:case-study} presents the case study results, evaluating the framework's effectiveness in improving DT quality. It describes the application scenario and data basis, the automatically generated DT, validation experiments, and result interpretation. It concludes with a comparison to manual validation methods.
-
-\autoref{chap:discussion} discusses the implications of the results and provides recommendations for future research. It evaluates the framework in light of the research questions, examines the significance of verification in automatically generated DTs, addresses limitations, and explores implications for research and practice.
-
-\autoref{chap:conclusion} concludes the thesis by summarizing key findings and their implications. It addresses the research questions and hypotheses, discusses the significance of the results, acknowledges limitations, and provides recommendations for future work.
-
-\subsection*{Methodology}
+This thesis is organized as follows: \autoref{chap:theory} establishes the theoretical background on DMFS, SBDTs, Process Mining, and VVUQ. \autoref{chap:methodology} details the development methodology for the automated VVUQ framework, including requirements and the ML-based validation strategy. \autoref{chap:implementation} describes the technical implementation and system architecture. \autoref{chap:case-study} presents the empirical validation using the IoT Factory case study, including main results and sanity checks. Finally, \autoref{chap:discussion} discusses the findings and their implications, while \autoref{chap:conclusion} summarizes the key contributions and outlines future research directions.
 
 The thesis follows a Design Science Research approach (DSR). This approach is characterized by the development of artifacts to solve practical problems \autocite{hevner2004design,peffers2007design}. Artifacts in the sense of DSR are created objects or constructs which address the given problem and contribute to both theory and practice. The artifacts are evaluated in a real-world context to demonstrate their effectiveness. The thesis applies the cyclical DSR model, see figure \ref{fig:DSR}.
 
