@@ -1,11 +1,11 @@
 \chapter{Empirical Validation}
 \label{chap:case-study}
 
-The thesis now focusses on the application of the implemented features and methods in a real-world scenario. The goal is to demonstrate the practical applicability of the developed concepts and to validate the theoretical findings presented in the previous chapters.
+The thesis now focuses on the application of the implemented features and methods in a real-world scenario. The goal is to demonstrate the practical applicability of the developed concepts and to validate the theoretical findings presented in the previous chapters.
 
 \section{Physical Entity: Internet of Things Factory}
 \label{sec:factory}
-The framework has been applied on the Internet of Things-Factory (IOT) in Gütersloh, Germany \autocite{IoTFactory2024}. It is a cyber-physical system (CPS) \autocite{baheti2011cyber} mimicking industry-relevant processes in a smaller scale for research students. It consists of several stations that are partly interconnected via an assembly line or a delivery service conducted by automatic guided vehicles (AGVs). The factory is modular, so processes can be discovered module-wise in isolation. All modules are working on edge but are connected to a cluster to control it. The factory works without any personnel in theory. The main process also evaluated here is circular, meaning that the product is assembled and can be disassembled in a loop. The factory is shown in Figure \ref{fig:iotoverview}.
+The framework has been applied on the Internet of Things-Factory (IOT) in Gütersloh, Germany \autocite{IoTFactory2024}. It is a cyber-physical system (CPS) \autocite{baheti2011cyber} mimicking industry-relevant processes in a smaller scale for research students. It consists of several stations that are partly interconnected via an assembly line or a delivery service conducted by automatic guided vehicles (AGVs). The factory is modular, so processes can be discovered module-wise in isolation. All modules are working on edge but are connected to a cluster that controls them. The factory works without any personnel in theory. The main process also evaluated here is circular, meaning that the product is assembled and can be disassembled in a loop. The factory is shown in Figure \ref{fig:iotoverview}.
 
 \begin{figure}[htbp]
   \centering
@@ -15,7 +15,7 @@ The framework has been applied on the Internet of Things-Factory (IOT) in Güter
   \caption*{Source: \autocite{IoTFactory2024}}
 \end{figure}
 
-The robot cells are responsible for performing transformation operation like assembling additional parts or testing functions.
+The robot cells are responsible for performing transformation operations like assembling additional parts or testing functions.
 
 \begin{figure}[htbp]
   \centering
@@ -53,7 +53,7 @@ Finally, the sequential order of the production process is as follows:
 
 The dataset has been gathered from the database of the IoT Factory. In the code it is referred to as \texttt{real\_data}.
 
-The dataset contains 18057 rows and 4696 orders from a timespan of 22.04.2020 to 14.05.2024. There are no duplicate rows. Each row describes a unique operation step in an order. Roughly 40 percent of the rows contain missing values, which have been filled with zeros.
+The dataset contains 18057 rows and 4696 orders from a time span of 22.04.2020 to 14.05.2024. There are no duplicate rows. Each row describes a unique operation step in an order. Roughly 40 percent of the rows contain missing values, which have been filled with zeros.
 The data has been mined from a MariaDB SQL database of the IoT Factory. Several tables have been aggregated to form the dataset. Without additional tables, no information about workplans, resources and operation numbers would be available. The dataset is filtered for promising trajectories of meaningful and intact process executions. The filter considers data between the 20.04.2020 and 22.04.2022, 02.05.2022 and 19.07.2022, 02.11.2022, 11.11.2022, 23.01.2022 and March 2023, each data inclusively.
 
 The dataset contains the following columns:
@@ -75,7 +75,7 @@ The dataset contains the following columns:
   \item \textbf{ErrorStep}: Is this step an error step (yes/no)?
   \item \textbf{ErrorRetVal}: The error return value of the specific step.
   \item \textbf{Active}: Is this step active (yes/no)?
-  \item \textbf{op\_desc}: The operation description of the specific operation. More specific than the description.
+  \item \textbf{op\_desc}: The operation description of the specific operation, which is more specific than the description.
   \item \textbf{ResourceName}: The name of the specific resource.
   \item \textbf{resource\_desc}: The description of the specific resource.
   \item \textbf{workplan\_desc}: The description of the specific workplan.
@@ -240,7 +240,7 @@ The following features were generated with domain knowledge:
 \begin{itemize}
   \item \textbf{KPIs}: Throughput, setup time, lead time and cycle time have been added to assist the VVUQ, see \autoref{sec:relevant-kpis}. They allow PPC VVUQ to be performed. They further can be integrated to check if the Time Model has been learned.
   \item \textbf{duration}: The duration of the process step. This feature is important to understand how long the process step took. It is calculated as the difference between the start and end time of the process step.
-  \item \textbf{sequence\_number}: The sequence number of the process step. This feature is important to understand the order of the process steps. It is calculated by grouping the data by the order number and then enumerating the process steps within each order based on the end time. This way, the sequence number enumerates each process step per order. It helps the \texttt{DecisionTree Classifier} to learn the order of the process steps.
+  \item \textbf{sequence\_number}: The sequence number of the process step. This feature is important to understand the order of the process steps. It is calculated by grouping the data by the order number and then enumerating the process steps within each order based on the end time. This way, the sequence number enumerates each process step per order. It helps the \texttt{DecisionTreeClassifier} to learn the order of the process steps.
   \item \textbf{is\_not\_weekday}: A binary feature indicating whether the process step occurred on a weekend (1) or a weekday (0). No activities have been performed on weekends in the factory, so weekend activity is an anomaly.
   \item \textbf{is\_break}: A binary feature indicating whether the process step occurred during a break (1) or not (0). No activities have been performed during breaks in the factory, so break activity is an anomaly as well.
   \item \textbf{hour\_of\_day}: The hour of the day when the process step occurred. This feature is important to understand the time of day when the process step took place. It is calculated as the hour of the start time of the process step.
@@ -529,7 +529,7 @@ Similar to the whitebox analysis, the conclusion drawn from the blackbox model i
 \section{Sanity Check}
 \label{sec:sanity-check}
 
-Given the high, near-perfect ROC AUC scores observed in the main experiments (\autoref{tab:results-whitebox}, \autoref{tab:results-blackbox}), this control experiment was performed to rule out the possibility that these scores resulted from data artifacts rather than genuine SBDT fidelity issues. This 'Identical Data Control Experiment" tests if classifiers can distinguish between identical datasets solely based on assigned labels (y=1 vs y=0), using the same methodology as the main experiments but on duplicated real and simulated data separately \autocite{adebayo2018sanity}.
+Given the high, near-perfect ROC AUC scores observed in the main experiments (\autoref{tab:results-whitebox}, \autoref{tab:results-blackbox}), this control experiment was performed to rule out the possibility that these scores resulted from data artifacts rather than genuine SBDT fidelity issues. This 'Identical Data Control Experiment" tests if classifiers can distinguish between identical datasets solely based on assigned labels ($y=1$ versus $y=0$), using the same methodology as the main experiments but on duplicated real and simulated data separately \autocite{adebayo2018sanity}.
 
 The results are summarized in \autoref{tab:sanity-check-results}.
 

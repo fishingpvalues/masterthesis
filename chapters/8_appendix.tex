@@ -1,106 +1,120 @@
-
 \begin{appendices}
   \section{Mathematical Notation}
   \label{app:math_notation}
 
   This section provides a reference for the mathematical notation used throughout this thesis.
 
-  \begin{table}[htbp]
-    \centering
-    \caption[Mathematical Notation]{Mathematical Notation Used in This Thesis}
-    \label{tab:math_notation}
-    \small
-    \resizebox{\textwidth}{!}{%
-      \begin{tabular}{p{0.28\textwidth}p{0.68\textwidth}}
-        \toprule
-        \textbf{Notation}                           & \textbf{Description}                                                                 \\
-        \midrule
-        \multicolumn{2}{l}{\textbf{Basic Notation}}                                                                                        \\
-        \midrule
-        $\bm{x}$, $\bm{y}$, $\bm{z}$                & Bold lowercase letters denote vectors                                                \\
-        $W$, $A$, $Q$                               & Uppercase letters denote matrices                                                    \\
-        $x_i$ or $(\bm{x})_i$                       & Subscript $i$ denotes the $i$-th element of vector $\bm{x}$                          \\
-        $W_{ij}$                                    & Subscripts $i,j$ denote the element at row $i$, column $j$ of matrix $W$             \\
-        $\bm{h}_t$                                  & Subscript $t$ typically denotes time step or sequence position                       \\
-        $\mathbb{R}^n$                              & $n$-dimensional Euclidean space                                                      \\
-        $\hat{y}$                                   & Predicted value (in contrast to true value $y$)                                      \\
-        \midrule
-        \multicolumn{2}{l}{\textbf{Mathematical Operations}}                                                                               \\
-        \midrule
-        $\odot$                                     & Hadamard (element-wise) product                                                      \\
-        $[\bm{a};\bm{b}]$                           & Vertical concatenation of vectors $\bm{a}$ and $\bm{b}$                              \\
-        $||\bm{x}||_p$                              & $L_p$ norm of vector $\bm{x}$                                                        \\
-        $\nabla J(\theta)$                          & Gradient of function $J$ with respect to parameters $\theta$                         \\
-        $d_{\text{Euclidean}}(\bm{a},\bm{b})$       & Euclidean distance between vectors $\bm{a}$ and $\bm{b}$                             \\
-        $\text{CosineSimilarity}(\bm{a},\bm{b})$    & Cosine similarity between vectors $\bm{a}$ and $\bm{b}$                              \\
-        \midrule
-        \multicolumn{2}{l}{\textbf{Neural Network Components}}                                                                             \\
-        \midrule
-        $\sigma(\cdot)$                             & Sigmoid activation function                                                          \\
-        $\tanh(\cdot)$                              & Hyperbolic tangent activation function                                               \\
-        $\text{ReLU}(\cdot)$                        & Rectified Linear Unit activation function                                            \\
-        $\text{softmax}(\bm{z})$                    & Softmax function applied to vector $\bm{z}$                                          \\
-        $\vec{\bm{h}}_t$, $\cev{\bm{h}}_t$          & Forward and backward hidden states in Bi-LSTM                                        \\
-        $\bm{h}_{\text{mean\_pool}}$                & Result of mean pooling operation on sequence                                         \\
-        $\bm{h}_{\text{max\_pool}}$                 & Result of max pooling operation on sequence                                          \\
-        $\bm{\gamma}$, $\bm{\beta}$                 & Scale and shift parameters in normalization layers                                   \\
-        \midrule
-        \multicolumn{2}{l}{\textbf{Optimization}}                                                                                          \\
-        \midrule
-        $\eta$                                      & Learning rate in optimization algorithms                                             \\
-        $\lambda$                                   & Regularization strength parameter                                                    \\
-        $\epsilon$                                  & Small constant added for numerical stability                                         \\
-        $\bm{m}_t$, $\bm{v}_t$                      & First and second moment estimates in Adam optimizer                                  \\
-        $\hat{\bm{m}}_t$, $\hat{\bm{v}}_t$          & Bias-corrected moment estimates in Adam optimizer                                    \\
-        \midrule
-        \multicolumn{2}{l}{\textbf{Loss Functions and Performance Metrics}}                                                                \\
-        \midrule
-        $\text{BCE}$                                & Binary Cross-Entropy loss function                                                   \\
-        $\text{MSE}$                                & Mean Squared Error metric                                                            \\
-        $\text{MAE}$                                & Mean Absolute Error metric                                                           \\
-        $\text{MAPE}$                               & Mean Absolute Percentage Error metric                                                \\
-        $\text{Precision}$                          & Precision metric in binary classification                                            \\
-        $\text{Recall}$                             & Recall (sensitivity) metric in binary classification                                 \\
-        $\text{F1}$                                 & F1-score, harmonic mean of precision and recall                                      \\
-        $AUC$                                       & Area Under the Curve metric for binary classification                                \\
-        $ROC$                                       & Receiver Operating Characteristic curve                                              \\
-        $TPR$, $FPR$                                & True Positive Rate and False Positive Rate                                           \\
-        $TP$, $TN$, $FP$, $FN$                      & True Positive, True Negative, False Positive, False Negative counts                  \\
-        \midrule
-        \multicolumn{2}{l}{\textbf{Statistical Concepts}}                                                                                  \\
-        \midrule
-        $\mu$, $\sigma^2$                           & Mean and variance of a distribution                                                  \\
-        $\mathcal{N}(\mu,\sigma^2)$                 & Normal (Gaussian) distribution with mean $\mu$ and variance $\sigma^2$               \\
-        $\text{UCL}$, $\text{LCL}$                  & Upper and Lower Control Limits in statistical process control                        \\
-        $p$                                         & Proportion (typically of anomalies) in statistical process control                   \\
-        $H_0$                                       & Null hypothesis in statistical testing                                               \\
-        $\alpha$                                    & Significance level in statistical testing                                            \\
-        $S_{obs}$                                   & Observed test statistic in permutation testing                                       \\
-        $N$                                         & Number of permutations in permutation testing                                        \\
-        $p$-value                                   & Probability of observing test statistic at least as extreme as $S_{obs}$ under $H_0$ \\
-        $RR$                                        & Rejection rate of null hypothesis                                                    \\
-        \midrule
-        \multicolumn{2}{l}{\textbf{Feature Engineering}}                                                                                   \\
-        \midrule
-        $x_{\sin}$, $x_{\cos}$                      & Sine and cosine transformations of cyclical feature $x$                              \\
-        $P$                                         & Period of cyclical feature in time encoding                                          \\
-        $\mathcal{F}_c$                             & Feature subset in feature selection methods                                          \\
-        \midrule
-        \multicolumn{2}{l}{\textbf{Attention Mechanism}}                                                                                   \\
-        \midrule
-        $Q$, $K$, $V$                               & Query, Key, and Value matrices in attention mechanism                                \\
-        $d_k$                                       & Dimension of key vectors in attention mechanism                                      \\
-        \midrule
-        \multicolumn{2}{l}{\textbf{Dataset Notation}}                                                                                      \\
-        \midrule
-        $\mathcal{D}$                               & Dataset or distribution                                                              \\
-        $\mathcal{D}_{train}$, $\mathcal{D}_{test}$ & Training and testing datasets                                                        \\
-        $\mathcal{D}_{real}$, $\mathcal{D}_{sim}$   & Real-world and simulation datasets                                                   \\
-        \bottomrule
-      \end{tabular}
-      \caption*{Own tabulation.}
-    }
-  \end{table}
+  \begingroup
+  \begin{longtable}{p{0.28\textwidth}p{0.68\textwidth}}
+    \caption[Summary of Mathematical Notation]{Mathematical Notation} \label{tab:math_notation}                                        \\
+
+    % Header that appears on the first page
+    \toprule
+    \textbf{Notation}                           & \textbf{Description}                                                                 \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Basic Notation}}                                                                                        \\
+    \midrule
+    \endfirsthead
+
+    % Header that appears on subsequent pages
+    \multicolumn{2}{c}{\tablename\ \thetable{} -- continued from previous page}                                                        \\
+    \toprule
+    \textbf{Notation}                           & \textbf{Description}                                                                 \\
+    \midrule
+    \endhead
+
+    % Footer that appears on all pages except the last
+    \midrule
+    \multicolumn{2}{r}{\textit{Continued on next page}}                                                                                \\
+    \endfoot
+
+    % Footer that appears on the last page
+    \bottomrule
+    \caption*{Source: Own tabulation.}
+    \endlastfoot
+
+    % Table content starts here (unchanged)
+    $\bm{x}$, $\bm{y}$, $\bm{z}$                & Bold lowercase letters denote vectors                                                \\
+    $W$, $A$, $Q$                               & Uppercase letters denote matrices                                                    \\
+    $x_i$ or $(\bm{x})_i$                       & Subscript $i$ denotes the $i$-th element of vector $\bm{x}$                          \\
+    $W_{ij}$                                    & Subscripts $i,j$ denote the element at row $i$, column $j$ of matrix $W$             \\
+    $\bm{h}_t$                                  & Subscript $t$ typically denotes time step or sequence position                       \\
+    $\mathbb{R}^n$                              & $n$-dimensional Euclidean space                                                      \\
+    $\hat{y}$                                   & Predicted value (in contrast to true value $y$)                                      \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Mathematical Operations}}                                                                               \\
+    \midrule
+    $\odot$                                     & Hadamard (element-wise) product                                                      \\
+    $[\bm{a};\bm{b}]$                           & Vertical concatenation of vectors $\bm{a}$ and $\bm{b}$                              \\
+    $||\bm{x}||_p$                              & $L_p$ norm of vector $\bm{x}$                                                        \\
+    $\nabla J(\theta)$                          & Gradient of function $J$ with respect to parameters $\theta$                         \\
+    $d_{\text{Euclidean}}(\bm{a},\bm{b})$       & Euclidean distance between vectors $\bm{a}$ and $\bm{b}$                             \\
+    $\text{CosineSimilarity}(\bm{a},\bm{b})$    & Cosine similarity between vectors $\bm{a}$ and $\bm{b}$                              \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Neural Network Components}}                                                                             \\
+    \midrule
+    $\sigma(\cdot)$                             & Sigmoid activation function                                                          \\
+    $\tanh(\cdot)$                              & Hyperbolic tangent activation function                                               \\
+    $\text{ReLU}(\cdot)$                        & Rectified Linear Unit activation function                                            \\
+    $\text{softmax}(\bm{z})$                    & Softmax function applied to vector $\bm{z}$                                          \\
+    $\vec{\bm{h}}_t$, $\cev{\bm{h}}_t$          & Forward and backward hidden states in Bi-LSTM                                        \\
+    $\bm{h}_{\text{mean\_pool}}$                & Result of mean pooling operation on sequence                                         \\
+    $\bm{h}_{\text{max\_pool}}$                 & Result of max pooling operation on sequence                                          \\
+    $\bm{\gamma}$, $\bm{\beta}$                 & Scale and shift parameters in normalization layers                                   \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Optimization}}                                                                                          \\
+    \midrule
+    $\eta$                                      & Learning rate in optimization algorithms                                             \\
+    $\lambda$                                   & Regularization strength parameter                                                    \\
+    $\epsilon$                                  & Small constant added for numerical stability                                         \\
+    $\bm{m}_t$, $\bm{v}_t$                      & First and second moment estimates in Adam optimizer                                  \\
+    $\hat{\bm{m}}_t$, $\hat{\bm{v}}_t$          & Bias-corrected moment estimates in Adam optimizer                                    \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Loss Functions and Performance Metrics}}                                                                \\
+    \midrule
+    $\text{BCE}$                                & Binary Cross-Entropy loss function                                                   \\
+    $\text{MSE}$                                & Mean Squared Error metric                                                            \\
+    $\text{MAE}$                                & Mean Absolute Error metric                                                           \\
+    $\text{MAPE}$                               & Mean Absolute Percentage Error metric                                                \\
+    $\text{Precision}$                          & Precision metric in binary classification                                            \\
+    $\text{Recall}$                             & Recall (sensitivity) metric in binary classification                                 \\
+    $\text{F1}$                                 & F1-score, harmonic mean of precision and recall                                      \\
+    $AUC$                                       & Area Under the Curve metric for binary classification                                \\
+    $ROC$                                       & Receiver Operating Characteristic curve                                              \\
+    $TPR$, $FPR$                                & True Positive Rate and False Positive Rate                                           \\
+    $TP$, $TN$, $FP$, $FN$                      & True Positive, True Negative, False Positive, False Negative counts                  \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Statistical Concepts}}                                                                                  \\
+    \midrule
+    $\mu$, $\sigma^2$                           & Mean and variance of a distribution                                                  \\
+    $\mathcal{N}(\mu,\sigma^2)$                 & Normal (Gaussian) distribution with mean $\mu$ and variance $\sigma^2$               \\
+    $\text{UCL}$, $\text{LCL}$                  & Upper and Lower Control Limits in statistical process control                        \\
+    $p$                                         & Proportion (typically of anomalies) in statistical process control                   \\
+    $H_0$                                       & Null hypothesis in statistical testing                                               \\
+    $\alpha$                                    & Significance level in statistical testing                                            \\
+    $S_{obs}$                                   & Observed test statistic in permutation testing                                       \\
+    $N$                                         & Number of permutations in permutation testing                                        \\
+    $p$-value                                   & Probability of observing test statistic at least as extreme as $S_{obs}$ under $H_0$ \\
+    $RR$                                        & Rejection rate of null hypothesis                                                    \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Feature Engineering}}                                                                                   \\
+    \midrule
+    $x_{\sin}$, $x_{\cos}$                      & Sine and cosine transformations of cyclical feature $x$                              \\
+    $P$                                         & Period of cyclical feature in time encoding                                          \\
+    $\mathcal{F}_c$                             & Feature subset in feature selection methods                                          \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Attention Mechanism}}                                                                                   \\
+    \midrule
+    $Q$, $K$, $V$                               & Query, Key, and Value matrices in attention mechanism                                \\
+    $d_k$                                       & Dimension of key vectors in attention mechanism                                      \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Dataset Notation}}                                                                                      \\
+    \midrule
+    $\mathcal{D}$                               & Dataset or distribution                                                              \\
+    $\mathcal{D}_{train}$, $\mathcal{D}_{test}$ & Training and testing datasets                                                        \\
+    $\mathcal{D}_{real}$, $\mathcal{D}_{sim}$   & Real-world and simulation datasets                                                   \\
+  \end{longtable}
+  \endgroup
 
   \section{Mathematical Foundations}
   \label{app:math_foundations}
