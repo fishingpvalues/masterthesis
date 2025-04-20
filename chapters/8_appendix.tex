@@ -1,4 +1,5 @@
 \begin{appendices}
+  \chapter{Mathematical Appendix}
   \section{Mathematical Notation}
   \label{app:math_notation}
 
@@ -433,5 +434,7 @@
 
   \paragraph{Sequence Padding:}
   Neural networks typically require inputs within a batch to be tensors of uniform shape. Since sequential data (like manufacturing process steps or natural language sentences) often has varying lengths, techniques are needed to handle this during batch processing. Padding involves augmenting shorter sequences within a batch with special padding values (often zero) until they reach the length of the longest sequence in that batch. This results in rectangular tensors suitable for processing. The `collate_fn` used in the data loading pipeline for this thesis employs padding (via `pad_sequence`). It is important that subsequent computations (e.g., loss calculation, attention mechanisms) are designed to ignore or mask these padded values to avoid introducing noise.
+
+  \chapter{Miscellaneous}
 
 \end{appendices}
