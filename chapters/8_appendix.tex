@@ -114,6 +114,17 @@
     $\mathcal{D}$                               & Dataset or distribution                                                              \\
     $\mathcal{D}_{train}$, $\mathcal{D}_{test}$ & Training and testing datasets                                                        \\
     $\mathcal{D}_{real}$, $\mathcal{D}_{sim}$   & Real-world and simulation datasets                                                   \\
+    \midrule
+    \multicolumn{2}{l}{\textbf{Statistical Tests and Combinations}}                                                                    \\
+    \midrule
+    $p_i$                                       & Individual p-value from the $i$-th statistical test                                  \\
+    $k$                                         & Number of independent or related tests being combined                                \\
+    $t_i$                                       & Cauchy-transformed p-value in the CCT method                                         \\
+    $T_{CCT}$                                   & Combined test statistic in the Cauchy Combination Test                               \\
+    $P_{CCT}$                                   & Combined p-value from the Cauchy Combination Test                                    \\
+    $k_{obs}$                                   & Observed number of rejections across $k$ tests                                       \\
+    $P_{Binom}$                                 & P-value from the Binomial test for rejection rates                                   \\
+    $B(k, \alpha)$                              & Binomial distribution with $k$ trials and success probability $\alpha$               \\
   \end{longtable}
   \endgroup
 
@@ -435,7 +446,7 @@
   \paragraph{Sequence Padding:}
   Neural networks typically require inputs within a batch to be tensors of uniform shape. Since sequential data (like manufacturing process steps or natural language sentences) often has varying lengths, techniques are needed to handle this during batch processing. Padding involves augmenting shorter sequences within a batch with special padding values (often zero) until they reach the length of the longest sequence in that batch. This results in rectangular tensors suitable for processing. The `collate\_fn` used in the data loading pipeline for this thesis employs padding (via `pad\_sequence`). It is important that subsequent computations (e.g., loss calculation, attention mechanisms) are designed to ignore or mask these padded values to avoid introducing noise.
 
-  \chapter{Miscellaneous}
+  \chapter{Images and Illustrations}
 
   \section{Design Science Research Methodology}
   \begin{figure}[H]
@@ -489,5 +500,127 @@
     \label{fig:time-encoding}
     \caption*{Source: Own illustration}
   \end{figure}
+
+  \chapter{Additional Statistical Validation Methods}
+  \label{app:cct}
+
+  This chapter details the methodology for the Cauchy Combination Test (CCT) and the Binomial test for rejection rates, which were used to provide a more robust statistical assessment of the significance observed across multiple runs of the permutation tests described in \autoref{sec:permtest}. These methods address the limitations of simply averaging p-values, particularly when dealing with potentially dependent results from repeated analyses on the same or related datasets.
+
+  \section{Cauchy Combination Test (CCT)}
+  \label{sec:cct_methodology}
+
+  The Cauchy Combination Test \autocite{liu2020cauchy} provides a powerful method for combining $k$ individual p-values, $p_1, p_2, ..., p_k$, obtained from multiple statistical tests (in this case, the $k=10$ runs of the permutation test for each feature subset) into a single overall p-value. A key advantage of the CCT is its robustness under arbitrary dependence structures among the individual p-values, which is particularly relevant when tests are performed on resampled versions of the same underlying dataset.
+
+  The CCT works by transforming each individual p-value $p_i$ using the inverse cumulative distribution function (CDF) of the standard Cauchy distribution ($C(0,1)$), which is equivalent to using the tangent function. Specifically, each $p_i$ is transformed into a Cauchy-distributed variable $t_i$:
+  \begin{equation}
+    t_i = \tan\left( (0.5 - p_i) \pi \right)
+    \label{eq:cct_transform}
+  \end{equation}
+  where $\pi$ is the mathematical constant pi. Note that $p_i=0.5$ transforms to 0, $p_i \to 0$ transforms to $t_i \to \infty$, and $p_i \to 1$ transforms to $t_i \to -\infty$.
+
+  The combined test statistic, $T_{CCT}$, is then calculated as the mean (or a weighted mean, though equal weights $w_i=1/k$ are typically used) of these transformed values:
+  \begin{equation}
+    T_{CCT} = \frac{1}{k} \sum_{i=1}^k t_i = \frac{1}{k} \sum_{i=1}^k \tan\left( (0.5 - p_i) \pi \right)
+    \label{eq:cct_statistic}
+  \end{equation}
+
+  A remarkable property of the Cauchy distribution is that the average of $k$ independent standard Cauchy variables is itself a standard Cauchy variable. The CCT leverages the fact that this holds approximately even under dependence. Therefore, under the global null hypothesis (that all individual null hypotheses corresponding to $p_1, ..., p_k$ are true), the test statistic $T_{CCT}$ follows a standard Cauchy distribution, $C(0,1)$.
+
+  The final combined p-value, $P_{CCT}$, is computed as the upper tail probability of the standard Cauchy distribution evaluated at the observed test statistic $T_{CCT}$:
+  \begin{equation}
+    P_{CCT} = P(C(0,1) \ge T_{CCT}) = 1 - F_{C(0,1)}(T_{CCT}) = 0.5 - \frac{\arctan(T_{CCT})}{\pi}
+    \label{eq:cct_pvalue}
+  \end{equation}
+  where $F_{C(0,1)}$ is the CDF of the standard Cauchy distribution. A small $P_{CCT}$ indicates strong evidence against the global null hypothesis.
+
+  The CCT is computationally simple and does not require estimating dependence structures. It is particularly powerful when the signal against the null hypothesis is sparse (i.e., present in only a subset of the individual tests) and maintains good performance under various dependency scenarios.
+
+  \section{Binomial Test for Rejection Rate}
+  \label{sec:binom_test_methodology}
+
+  While the CCT combines the magnitude of the p-values themselves, the Binomial test provides a complementary perspective by formally assessing the significance of the observed \textit{Rejection Rate} ($RR$). The $RR$ is defined as the proportion of the $k$ individual runs for which the null hypothesis $H_0$ was rejected at a pre-defined significance level $\alpha$.
+  This test addresses the question: "Is the number of times we rejected $H_0$ across the $k$ runs significantly greater than what we would expect purely by chance if $H_0$ were true for all runs?"
+
+  Consider the $k$ runs of the permutation test performed for a specific feature subset. Let $\alpha$ be the significance level used for each individual run (e.g., $\alpha=0.05$ for DTree, $\alpha=0.01$ for BiLSTM). We define a "success" for a single run if its p-value $p_{run}$ is less than $\alpha$ ($p_{run} < \alpha$). Let $k_{obs}$ be the observed number of successful runs (i.e., number of rejections) out of the total $k$ runs. The Rejection Rate is $RR = k_{obs}/k$.
+
+  The null hypothesis ($H_0$) for the Binomial test is that the true underlying probability of success (rejecting $H_0$ in any single run) is equal to the significance level $\alpha$. This assumes that under the global null, each run represents an independent Bernoulli trial with success probability $\alpha$.
+
+  Under $H_0$, the random variable $X$ representing the number of successful runs follows a Binomial distribution with parameters $k$ (number of trials, i.e., runs) and $\alpha$ (probability of success):
+  \begin{equation}
+    X \sim B(k, \alpha)
+  \end{equation}
+  The probability of observing exactly $i$ successes in $k$ trials is given by the probability mass function (PMF) of the Binomial distribution:
+  \begin{equation}
+    P(X=i | k, \alpha) = \binom{k}{i} \alpha^i (1-\alpha)^{k-i}
+    \label{eq:binom_pmf}
+  \end{equation}
+  where $\binom{k}{i} = \frac{k!}{i!(k-i)!}$ is the binomial coefficient.
+
+  To assess whether the observed number of rejections $k_{obs}$ is significantly high, we compute the probability of observing $k_{obs}$ or more successes under $H_0$. This corresponds to a one-sided Binomial test p-value:
+  \begin{equation}
+    P_{Binom} = P(X \ge k_{obs} | H_0) = \sum_{i=k_{obs}}^{k} P(X=i | k, \alpha) = \sum_{i=k_{obs}}^{k} \binom{k}{i} \alpha^i (1-\alpha)^{k-i}
+    \label{eq:binom_pvalue}
+  \end{equation}
+  A small $P_{Binom}$ suggests that observing $k_{obs}$ or more rejections is unlikely if the true rejection probability were only $\alpha$, providing evidence that the observed $RR$ is significantly higher than expected by chance and supporting the overall rejection of $H_0$ for that feature subset.
+
+  This test directly quantifies the statistical significance of the consistency of rejecting $H_0$ across multiple independent or near-independent analyses, complementing methods like CCT that focus on the magnitude of the p-values.
+
+
+  \section{Detailed Results for Decision Tree Model}
+  \label{sec:dt_results_appendix}
+
+  The following table presents the detailed hypothesis testing results obtained using the DTree as the model for distinguishing between real and simulated data. The evaluation metric was the ROC AUC score. The results are based on $k=10$ independent runs, each employing $N=1000$ permutations for p-value calculation. The significance level for individual run rejection and the Binomial test was set at $\alpha=0.05$. The Cauchy Combination Test (CCT) was used to combine p-values across runs (yielding $P_{CCT}$), and the Binomial test assessed the significance of the observed Rejection Rate ($RR$, yielding $P_{Binom}$).
+
+  \begin{table}[htbp]
+    \centering
+    \caption[Detailed Decision Tree Model Results applying CCT]{Detailed Decision Tree validation results across 10 runs (N=1000, $\alpha=0.05$).}
+    \label{tab:results-dt-appendix}
+    \resizebox{\textwidth}{!}{%
+      \begin{tabular}{l c c c c c p{3cm}}
+        \toprule
+        \textbf{Component ($\mathcal{F}_c$)} & \textbf{$\overline{\text{ROC AUC}}$} & \textbf{$\sigma_{\text{ROC AUC}}$} & \textbf{$P_{CCT}$} & \textbf{RR} & \textbf{$P_{Binom}$} & \textbf{Assessment} \\
+        \midrule
+        \texttt{time\_model}                 & 1.0000                               & 0.0000                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \texttt{resource\_model}             & 0.9817                               & 0.0088                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \texttt{transformation\_model}       & 1.0000                               & 0.0000                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \texttt{transition\_model}           & 1.0000                               & 0.0000                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \texttt{process\_model}              & 1.0000                               & 0.0000                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \texttt{kpi\_based}                  & 1.0000                               & 0.0000                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \texttt{all\_features}               & 1.0000                               & 0.0000                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \bottomrule
+      \end{tabular}%
+    }
+    \caption*{Source: Own tabulation based on permutation test results.}
+  \end{table}
+
+  As evidenced by the results in Table \ref{tab:results-dt-appendix}, both the Cauchy Combination Test ($P_{CCT}=0.0000$) and the Binomial test ($P_{Binom}=0.0000$) yielded extremely significant p-values for all feature subsets when using the Decision Tree model at $\alpha=0.05$. The perfect rejection rate ($RR=1.00$) across all components further underscores this. This indicates a highly consistent and statistically robust ability of the DT model to distinguish between the real and simulated data across all evaluated components based on the engineered features, leading to the assessment "INACCURATE" for all components according to the defined validation framework.
+  \section{Detailed Results for BiLSTM Model}
+  \label{sec:lstm_results_appendix}
+
+  The following table presents the detailed hypothesis testing results obtained using the BiLSTM classifier as the blackbox model for distinguishing between real and simulated data. The evaluation metric was the ROC AUC score. The results are based on $k=10$ independent runs, each employing $N=1000$ permutations for p-value calculation. The significance level for individual run rejection and the Binomial test was set at $\alpha=0.01$. The Cauchy Combination Test (CCT) was used to combine p-values across runs (yielding $P_{CCT}$), and the Binomial test assessed the significance of the observed Rejection Rate ($RR$, yielding $P_{Binom}$).
+
+  \begin{table}[htbp] % Using htbp allows LaTeX more flexibility in placement
+    \centering
+    \caption[Detailed BiLSTM model results]{Detailed BiLSTM validation results across 10 runs (N=1000, $\alpha=0.01$).}
+    \label{tab:results-lstm-appendix}
+    \resizebox{\textwidth}{!}{%
+      \begin{tabular}{l l l l l l p{3cm}}
+        \toprule
+        \textbf{Component ($\mathcal{F}_c$)} & \textbf{$\overline{\text{ROC AUC}}$} & \textbf{$\sigma_{\text{ROC AUC}}$} & \textbf{$P_{CCT}$} & \textbf{RR} & \textbf{$P_{Binom}$} & \textbf{Assessment} \\
+        \midrule
+        \texttt{time\_model}                 & 1.0000                               & 0.0000                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \texttt{resource\_model}             & 0.9945                               & 0.0071                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \texttt{transformation\_model}       & 1.0000                               & 0.0000                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \texttt{transition\_model}           & 0.9644                               & 0.1067                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \texttt{process\_model}              & 0.9714                               & 0.0858                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \texttt{kpi\_based}                  & 0.9975                               & 0.0054                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \texttt{all\_features}               & 1.0000                               & 0.0000                             & 0.0000             & 1.00        & 0.0000               & INACCURATE          \\
+        \bottomrule
+      \end{tabular}%
+    }
+    \caption*{Source: Own tabulation based on permutation test results.}
+  \end{table}
+
+  As shown in Table \ref{tab:results-lstm-appendix}, the results for the BiLSTM model are the same observed with the DTree. Using the stricter significance level of $\alpha=0.01$, both the CCT ($P_{CCT}=0.0000$) and the Binomial test ($P_{Binom}=0.0000$) yielded extremely significant p-values for all feature subsets. The rejection rate was also perfect ($RR=1.00$) across all components. This demonstrates a consistent and statistically robust capability of the BiLSTM model to distinguish between the real and simulated data across all SBDT components evaluated, leading to the assessment "INACCURATE" for all components within the validation framework.
 
 \end{appendices}
