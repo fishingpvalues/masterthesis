@@ -139,7 +139,7 @@ Per step, several resources are involved. The following table shows the utilized
     Deliver Part                                  & CP-AM-OUT                             \\
     \bottomrule
   \end{tabular}
-  \caption*{Source: \autocite{IoTFactory2024}}
+  \caption*{Source: \Textcite{IoTFactory2024}}
 \end{table}
 
 
@@ -262,48 +262,6 @@ In this work, this transformation is applied to:
 \end{itemize}
 
 Figure \ref{fig:time-encoding} illustrates this concept for the hour of the day. This encoding helps machine learning models better understand and utilize the cyclical nature of time.
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}[
-      scale=3, % Adjust scale to change overall size
-      hour dot/.style={circle, fill=blue!70, inner sep=1.5pt},
-      hour label/.style={font=\small}
-    ]
-
-    % Draw the unit circle
-    \draw [gray, dashed] (0,0) circle (1);
-
-    % Draw axes
-    \draw [->, gray!80] (-1.3,0) -- (1.3,0) node[right, black] {$x_{\cos}$};
-    \draw [->, gray!80] (0,-1.3) -- (0,1.3) node[above, black] {$x_{\sin}$};
-    \node[above=5pt] at (current bounding box.north) {Hour of Day Encoded on Unit Circle}; % Title
-
-
-    % Plot hour points and labels
-    \foreach \h in {0,...,23} {
-        % Calculate angle in degrees (TikZ trigonometric functions use degrees)
-        \pgfmathsetmacro{\angle}{\h * 360 / 24}
-
-        % Draw the point for the hour
-        \node[hour dot] at (\angle:1) {}; % Place dot using polar coordinates (angle:radius)
-
-        % Add labels for key hours slightly outside the circle
-        \ifnum \h = 0 \node[hour label, anchor=west] at (\angle:1.15) {0h (Midnight)}; \fi
-        \ifnum \h = 3 \node[hour label, anchor=south west] at (\angle:1.15) {3h}; \fi
-        \ifnum \h = 6 \node[hour label, anchor=south] at (\angle:1.15) {6h (Morning)}; \fi
-        \ifnum \h = 9 \node[hour label, anchor=south east] at (\angle:1.15) {9h}; \fi
-        \ifnum \h = 12 \node[hour label, anchor=east] at (\angle:1.15) {12h (Noon)}; \fi
-        \ifnum \h = 15 \node[hour label, anchor=north east] at (\angle:1.15) {15h}; \fi
-        \ifnum \h = 18 \node[hour label, anchor=north] at (\angle:1.15) {18h (Evening)}; \fi
-        \ifnum \h = 21 \node[hour label, anchor=north west] at (\angle:1.15) {21h}; \fi
-      }
-
-  \end{tikzpicture}
-  \caption[Feature Transformation]{Sine and Cosine transformation of the hour of the day (0-23). Each hour is mapped to a point $(x_{\cos}, x_{\sin})$ on the unit circle (blue dots). Key hours are labelled, demonstrating how the transformation preserves cyclical continuity (hour 23 is near hour 0).}
-  \label{fig:time-encoding}
-  \caption*{Source: Own illustration}
-\end{figure}
 
 \section{Validation Methodology and Setup}
 With the integration of these features, AFS can be performed. For the statistical soundness of the analysis, a permutation test will be performed to assess the significance of the results. The following sections outline the testing procedure and the specific components of the SBDT that will be evaluated.
@@ -517,11 +475,11 @@ The aggregated results from the blackbox models permutation tests are summarized
 
 The blackbox model results largely align with the whitebox findings, indicating significant discrepancies between the simulated and real data across various SBDT components. The BiLSTM classifier achieved very high mean ROC AUC scores for most feature subsets, particularly for \texttt{time\_model} (0.9998), \texttt{transition\_model} (1.0000), \texttt{process\_model} (0.9788), \texttt{kpi\_based} (0.9989), and \texttt{all\_features} (1.0000). For these components, the mean p-values were effectively zero, and the rejection rate $RR$ was 1.00, strongly indicating rejection of the null hypothesis ($H_0$) at the $\alpha = 0.01$ significance level.
 
-For the \texttt{resource\_model} and \texttt{transformation\_model}, the mean ROC AUC scores were lower ($\bar{S}_{obs}=0.9087$ and $0.8705$, respectively) and exhibited considerably higher standard deviations ($\sigma_{S_{obs}}=0.1618$ and $0.2094$), suggesting greater variability in the models ability to distinguish data based on these features across the 10 runs. Despite this variability, the rejection rates were still very high ($RR=0.90$ for \texttt{resource\_model}, $RR=0.80$ for \texttt{transformation\_model}). A rejection rate of $0.90$ means that in 9 out of the 10 independent runs, the calculated p-value was less than the strict $\alpha=0.01$, leading to the rejection of $H_0$. Similarly, for the transformation model, $H_0$ was rejected in 8 out of 10 runs. While the mean p-values (0.0492 and 0.1879) are higher than for other components and above $\alpha=0.01$, the high rejection rates across multiple runs provide strong evidence that the BiLSTM could consistently distinguish the data more often than not, even under the stricter significance level.
+For the \texttt{resource\_model} and \texttt{transformation\_model}, the mean ROC AUC scores were lower ($\bar{S}_{obs}=0.9087$ and $0.8705$, respectively) and exhibited considerably higher standard deviations ($\sigma_{S_{obs}}=0.1618$ and $0.2094$), suggesting greater variability in the models ability to distinguish data based on these features across the 10 runs. \textbf{Notably, while the \textit{mean} p-values (0.0492 and 0.1879) across the 10 runs were above the strict $\alpha=0.01$ threshold for these two components, $RR$ (showing the consistency of rejecting $H_0$ in individual runs) was considered the more decisive metric for the overall assessment in this multi-run framework.} The $RR$ values remained very high ($RR=0.90$ for \texttt{resource\_model}, $RR=0.80$ for \texttt{transformation\_model}). \textbf{Crucially,} a rejection rate of $0.90$ means that in 9 out of the 10 independent runs, the calculated p-value was less than the strict $\alpha=0.01$, leading to the rejection of $H_0$. Similarly, for the transformation model, $H_0$ was rejected in 8 out of 10 runs. \textbf{Therefore,} the high rejection rates across multiple runs provide strong \textbf{statistical evidence} that the BiLSTM could consistently distinguish the data \textbf{for these components as well}, supporting the rejection of $H_0$ \textbf{based on repeated testing, even considering the variability observed and the average p-value.}
 
-Therefore, based on the consistent rejection of $H_0$ across the majority of runs (as indicated by $RR \ge 0.80$) for all feature subsets, it concludes that the blackbox model also finds statistically significant differences between the real and simulated data for all tested aspects.
+\textbf{Consequently, prioritizing $RR$ which reflects statistical significance across the majority of independent runs over the potentially variable average p-value}, the analysis concludes that the blackbox model finds statistically significant differences between the real and simulated data for all tested aspects.
 
-Similar to the whitebox analysis, the conclusion drawn from the blackbox model is \textbf{that the SBDT exhibits detectable inaccuracies compared to the real system across all evaluated components. The high ROC AUC scores and the high rejection rates under permutation testing provide strong evidence against the null hypothesis ($H_0$) for every component. Consequently, based on the BiLSTM classifier's ability to distinguish the data, all tested components of the SBDT are assessed as inaccurate.} This supports the finding that the current SBDT configuration, as evaluated through the engineered features, does not sufficiently replicate the behavior observed in the real IoT factory dataset.
+Similar to the whitebox analysis, the conclusion drawn from the blackbox model is \textbf{that the SBDT exhibits detectable inaccuracies compared to the real system across all evaluated components. The combination of high ROC AUC scores and, critically, the high rejection rates (RR $\ge$ 0.80 for all components) under permutation testing provide robust evidence against the null hypothesis ($H_0$) for every component. Consequently, based on the BiLSTM classifier's consistent ability to distinguish the data across multiple runs, all tested components of the SBDT are assessed as inaccurate.} This supports the finding that the current SBDT configuration, as evaluated through the engineered features, does not sufficiently replicate the behavior observed in the real IoT factory dataset.
 
 \section{Sanity Check}
 \label{sec:sanity-check}

@@ -127,3 +127,40 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{caption}
 \captionsetup{font=small, labelfont=bf, skip=5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Code Listing Configuration with Minted
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xcolor} % Needed if you decide to use bgcolor later
+\usepackage{minted}
+
+% Style Choice: 'friendly' is often good for readability in print/papers.
+% 'default' is also acceptable. Avoid overly colorful styles.
+\usemintedstyle{friendly}
+% \usemintedstyle{default} % Alternative if 'friendly' isn't preferred
+
+% Set default options for Python code blocks and files globally
+\setminted{
+  python, % Apply these settings to the python language
+  linenos,              % Show line numbers (essential for reference)
+  numbersep=5pt,        % Standard spacing for line numbers
+  frame=lines,          % Lines top and bottom - clean look
+  framesep=2mm,         % Standard frame spacing
+  autogobble,           % Automatically remove common leading whitespace
+  breaklines,           % Break long lines
+  % breakanywhere=false, % Optional: Prevent breaking within words/tokens if needed
+  fontsize=\footnotesize, % Slightly smaller font for code blocks
+  tabsize=4,            % Standard Python indentation
+  % bgcolor=codegray,   % Optional: Uncomment to add subtle background
+                         % Needs \definecolor{codegray}{gray}{0.95} in preamble
+  % mathescape          % Optional: Uncomment if comments contain LaTeX math
+}
+
+% Define the environments/commands using the default settings above
+% Block environment named 'pythoncode'
+\newenvironment{pythoncode}
+  {\VerbatimEnvironment\begin{minted}{python}}
+  {\end{minted}}
+
+% Alias for standard minted environment (optional, if you prefer \begin{pythoncode}...)
+% \newminted{python}{} % This would let you use \begin{pythoncode} with above defaults

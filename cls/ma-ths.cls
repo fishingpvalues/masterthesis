@@ -60,9 +60,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Title & Section Formatting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\titleformat{\chapter}[display]
-  {\normalfont\huge\bfseries}
-  {\chaptername\ \thechapter}{20pt}{\Huge}
+\titleformat{\chapter}
+  {\normalfont\Huge\bfseries}
+  {\chaptername\ \thechapter:}{1em}{\Huge}
 
 \titleformat{\section}
   {\normalfont\Large\bfseries}
@@ -116,6 +116,35 @@
 % In your preamble:
 \usepackage{enumitem}
 \setlist{nosep}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Chapter Configuration (Allow chapters to start on any page)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\let\old@chapter\@chapter
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+    \if@mainmatter
+      \refstepcounter{chapter}%
+      \typeout{\@chapapp\space\thechapter.}%
+      \addcontentsline{toc}{chapter}%
+      {\protect\numberline{\thechapter}#1}%
+    \else
+      \addcontentsline{toc}{chapter}{#1}%
+    \fi
+  \else
+    \addcontentsline{toc}{chapter}{#1}%
+  \fi
+  \chaptermark{#1}%
+  \addtocontents{lof}{\protect\addvspace{10\p@}}%
+  \addtocontents{lot}{\protect\addvspace{10\p@}}%
+  \if@twocolumn
+    \@topnewpage[\@makechapterhead{#2}]%
+  \else
+    \@makechapterhead{#2}%
+    \@afterheading
+  \fi}
+\makeatother
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% End of Class Definition
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

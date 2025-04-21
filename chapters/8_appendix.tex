@@ -433,8 +433,61 @@
   % -------------------------------------------------------------------------
 
   \paragraph{Sequence Padding:}
-  Neural networks typically require inputs within a batch to be tensors of uniform shape. Since sequential data (like manufacturing process steps or natural language sentences) often has varying lengths, techniques are needed to handle this during batch processing. Padding involves augmenting shorter sequences within a batch with special padding values (often zero) until they reach the length of the longest sequence in that batch. This results in rectangular tensors suitable for processing. The `collate_fn` used in the data loading pipeline for this thesis employs padding (via `pad_sequence`). It is important that subsequent computations (e.g., loss calculation, attention mechanisms) are designed to ignore or mask these padded values to avoid introducing noise.
+  Neural networks typically require inputs within a batch to be tensors of uniform shape. Since sequential data (like manufacturing process steps or natural language sentences) often has varying lengths, techniques are needed to handle this during batch processing. Padding involves augmenting shorter sequences within a batch with special padding values (often zero) until they reach the length of the longest sequence in that batch. This results in rectangular tensors suitable for processing. The `collate\_fn` used in the data loading pipeline for this thesis employs padding (via `pad\_sequence`). It is important that subsequent computations (e.g., loss calculation, attention mechanisms) are designed to ignore or mask these padded values to avoid introducing noise.
 
   \chapter{Miscellaneous}
+
+  \section{Design Science Research Methodology}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/dsr.png}
+    \caption[Design Science Methodology]{The cyclical design science research model. The model consists of six steps. The problem identification (1) refers to the research gap in automated VVUQ of SBDT. Defining the solution objectives (2) specifies the research gap by formulating questions and hypotheses based on the theoretical foundations. The design and development (3) phase includes the development of the framework. The demonstration (4) phase shows the application of the framework in a case study. The evaluation (5) phase assesses the effectiveness of the framework. The communication (6) phase concludes the research by presenting the results.}
+    \label{fig:DSR}
+    \caption*{Own illustration inspired by \textcite{peffers2007design}}
+  \end{figure}
+
+  \section{Time Encoding on Unit Circle}
+
+  \begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+        scale=3, % Adjust scale to change overall size
+        hour dot/.style={circle, fill=blue!70, inner sep=1.5pt},
+        hour label/.style={font=\small}
+      ]
+
+      % Draw the unit circle
+      \draw [gray, dashed] (0,0) circle (1);
+
+      % Draw axes
+      \draw [->, gray!80] (-1.3,0) -- (1.3,0) node[right, black] {$x_{\cos}$};
+      \draw [->, gray!80] (0,-1.3) -- (0,1.3) node[above, black] {$x_{\sin}$};
+      \node[above=5pt] at (current bounding box.north) {Hour of Day Encoded on Unit Circle}; % Title
+
+
+      % Plot hour points and labels
+      \foreach \h in {0,...,23} {
+          % Calculate angle in degrees (TikZ trigonometric functions use degrees)
+          \pgfmathsetmacro{\angle}{\h * 360 / 24}
+
+          % Draw the point for the hour
+          \node[hour dot] at (\angle:1) {}; % Place dot using polar coordinates (angle:radius)
+
+          % Add labels for key hours slightly outside the circle
+          \ifnum \h = 0 \node[hour label, anchor=west] at (\angle:1.15) {0h (Midnight)}; \fi
+          \ifnum \h = 3 \node[hour label, anchor=south west] at (\angle:1.15) {3h}; \fi
+          \ifnum \h = 6 \node[hour label, anchor=south] at (\angle:1.15) {6h (Morning)}; \fi
+          \ifnum \h = 9 \node[hour label, anchor=south east] at (\angle:1.15) {9h}; \fi
+          \ifnum \h = 12 \node[hour label, anchor=east] at (\angle:1.15) {12h (Noon)}; \fi
+          \ifnum \h = 15 \node[hour label, anchor=north east] at (\angle:1.15) {15h}; \fi
+          \ifnum \h = 18 \node[hour label, anchor=north] at (\angle:1.15) {18h (Evening)}; \fi
+          \ifnum \h = 21 \node[hour label, anchor=north west] at (\angle:1.15) {21h}; \fi
+        }
+
+    \end{tikzpicture}
+    \caption[Feature Transformation]{Sine and Cosine transformation of the hour of the day (0-23). Each hour is mapped to a point $(x_{\cos}, x_{\sin})$ on the unit circle (blue dots). Key hours are labelled, demonstrating how the transformation preserves cyclical continuity (hour 23 is near hour 0).}
+    \label{fig:time-encoding}
+    \caption*{Source: Own illustration}
+  \end{figure}
 
 \end{appendices}
