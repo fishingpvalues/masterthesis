@@ -18,7 +18,7 @@
 \RequirePackage{amsmath}        % Advanced math typesetting
 \RequirePackage{amsfonts}       % Math fonts
 \RequirePackage{amssymb}        % Additional math symbols
-\RequirePackage[toc,acronym,nonumberlist]{glossaries} % Glossary handling - ADDED acronym, nonumberlist
+\RequirePackage[toc,acronym,nonumberlist,style=long]{glossaries} % Glossary handling - using simpler style
 \RequirePackage{listings}       % Code listings
 \RequirePackage{minted}         % Enhanced code highlighting
 \RequirePackage{xcolor}         % Color management
@@ -35,7 +35,7 @@
     top=2cm,
     bottom=1.8cm,
     headheight=12pt,
-    headsep=8,
+    headsep=8pt,
     footskip=25pt
 }
 
@@ -75,12 +75,19 @@
 \titleformat{\subsubsection}
   {\normalfont\small\bfseries}
   {\thesubsubsection}{1em}{}
+
+\titleformat{\paragraph}[runin]
+  {\normalfont\normalsize\bfseries}
+  {\theparagraph}{1em}{}[.]
+
 \titlespacing*{\chapter}{\parindent}{*1.8}{*1.2}
 \titlespacing*{\section}{\parindent}{*1.5}{*1.0} % Example: Reduce space below section titles
 \titlespacing*{\subsection}{\parindent}{*1.2}{*0.8}
 \titlespacing*{\subsubsection}{\parindent}{*1.0}{*0.6}
+\titlespacing*{\paragraph}{\parindent}{1.1em}{1em}
 % Adjust the {beforesep} (*1.5 etc) and {aftersep} (*1.0 etc) multipliers.
 % Using \parindent (0pt here) for left margin alignment. Decrease the multipliers.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Header and Footer Configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

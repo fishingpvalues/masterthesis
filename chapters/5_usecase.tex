@@ -5,12 +5,12 @@ The thesis now focuses on the application of the implemented features and method
 
 \section{Physical Entity: Internet of Things Factory}
 \label{sec:factory}
-The framework has been applied on the Internet of Things-Factory (IOT) in Gütersloh, Germany \autocite{IoTFactory2024}. It is a cyber-physical system (CPS) \autocite{baheti2011cyber} mimicking industry-relevant processes in a smaller scale for research students. It consists of several stations that are partly interconnected via an assembly line or a delivery service conducted by automatic guided vehicles (AGVs). The factory is modular, so processes can be discovered module-wise in isolation. All modules are working on edge but are connected to a cluster that controls them. Theoretically, some stations can perform jobs of others. The main process also evaluated here is circular, meaning that the product is assembled and can be disassembled in a loop. The factory is shown in Figure \ref{fig:iotoverview}.
+The framework has been applied on the Internet of Things-Factory (\gls{iot}) in Gütersloh, Germany \autocite{IoTFactory2024}. It is a cyber-physical system (\gls{cps}) \autocite{baheti2011cyber} mimicking industry-relevant processes in a smaller scale for research students. It consists of several stations that are partly interconnected via an assembly line or a delivery service conducted by automatic guided vehicles (\gls{agv}s). The factory is modular, so processes can be discovered module-wise in isolation. All modules are working on edge but are connected to a cluster that controls them. Theoretically, some stations can perform jobs of others. The main process also evaluated here is circular, meaning that the product is assembled and can be disassembled in a loop. The factory is shown in Figure \ref{fig:iotoverview}.
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/iot1.png}
-  \caption[IoT Factory Overview]{Overview of the IOT factory. It consists of three production stations from left to right, which are followed by a sorting station and a packaging station. The stations are interconnected by an assembly line. Isolated from the assembly part, two AGVs are used to transport parts between the warehouse station (upper right) and another flexible workstation (right).}
+  \caption[IoT Factory Overview]{Overview of the \gls{iot} factory. It consists of three production stations from left to right, which are followed by a sorting station and a packaging station. The stations are interconnected by an assembly line. Isolated from the assembly part, two \gls{agv}s are used to transport parts between the warehouse station (upper right) and another flexible workstation (right).}
   \label{fig:iotoverview}
   \caption*{Source: \autocite{IoTFactory2024}}
 \end{figure}
@@ -20,7 +20,7 @@ The robot cells are responsible for performing transformation operations like as
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/robots.png}
-  \caption[Robot Cells]{Two robot cells. The first cell is the main actor in this exemplary production process. Cell two is not part of the observed process here. The third image shows an AGV which transports boxes with assembled and disassembled parts to the stations.}
+  \caption[Robot Cells]{Two robot cells. The first cell is the main actor in this exemplary production process. Cell two is not part of the observed process here. The third image shows an \gls{agv} which transports boxes with assembled and disassembled parts to the stations.}
   \label{fig:robots}
   \caption*{Source: \autocite{IoTFactory2024}}
 \end{figure}
@@ -35,7 +35,7 @@ The factory produces an exemplary product, consisting of a back part, a breadboa
   \caption*{Source: \autocite{IoTFactory2024}}
 \end{figure}
 
-The only colour produced at the moment is black. Not all parts can be put on the breadboard and there are several parts which conflict in size and location on the breadboard. Back and front cover are necessary parts and are assembled every time. The main part \texttt{main\_pcb} is also obligatory. It is placed at the beginning. Following that, the display or gyroscope can be assembled. If the display has been chosen, only the analog board or the weather station can be assembled. The weather station takes too much space on the breadboard for the gyroscope to be placed. If the analog board has been placed, the gyroscope is of course possible. The product is finished by placing the front cover and delivering the product to the sink.During the production, the factory gathers data via sensors. The data is saved in a database and can be used for further analysis. The database is relational and supports SQL queries.
+The only colour produced at the moment is black. Not all parts can be put on the breadboard and there are several parts which conflict in size and location on the breadboard. Back and front cover are necessary parts and are assembled every time. The main part \texttt{main\_pcb} is also obligatory. It is placed at the beginning. Following that, the display or gyroscope can be assembled. If the display has been chosen, only the analog board or the weather station can be assembled. The weather station takes too much space on the breadboard for the gyroscope to be placed. If the analog board has been placed, the gyroscope is of course possible. The product is finished by placing the front cover and delivering the product to the sink. During the production, the factory gathers data via sensors. The data is saved in a database and can be used for further analysis. The database is relational and supports SQL queries.
 
 Finally, the sequential order of the production process is as follows:
 
@@ -49,9 +49,9 @@ Finally, the sequential order of the production process is as follows:
 
 \subsection*{Factory Dataset}
 
-The dataset has been gathered from the database of the IoT Factory. In the code it is referred to as \texttt{real\_data}.
+The dataset has been gathered from the database of the \gls{iot} Factory. In the code it is referred to as \texttt{real\_data}.
 
-The dataset contains 18057 rows and 4696 orders from a time span of 22.04.2020 to 14.05.2024. There are no duplicate rows. Each row describes a unique operation step in an order. Roughly 40 percent of the rows contain missing values, which have been filled with zeros. The data has been mined from a MariaDB SQL database of the IoT Factory. Several tables have been aggregated to form the dataset. Without additional tables, no information about workplans, resources and operation numbers would be available. The dataset is filtered for promising trajectories of meaningful and intact process executions. The filter considers data between the 20.04.2020 and 22.04.2022, 02.05.2022 and 19.07.2022, 02.11.2022, 11.11.2022, 23.01.2022 and March 2023, each data inclusively.
+The dataset contains 18057 rows and 4696 orders from a time span of 22.04.2020 to 14.05.2024. There are no duplicate rows. Each row describes a unique operation step in an order. Roughly 40 percent of the rows contain missing values, which have been filled with zeros. The data has been mined from a MariaDB SQL database of the \gls{iot} Factory. Several tables have been aggregated to form the dataset. Without additional tables, no information about workplans, resources and operation numbers would be available. The dataset is filtered for promising trajectories of meaningful and intact process executions. The filter considers data between the 20.04.2020 and 22.04.2022, 02.05.2022 and 19.07.2022, 02.11.2022, 11.11.2022, 23.01.2022 and March 2023, each data inclusively.
 
 The dataset contains the following columns:
 
@@ -84,7 +84,7 @@ The dataset contains the following columns:
 The operations performed can be seen in the following:
 
 \begin{enumerate}
-  \item \textbf{Release a part on stopper 1}: The AGV delivered the box with the parts to be manufactured to the first station. The box is travelling over the assembly line to the first station where the first part is released.
+  \item \textbf{Release a part on stopper 1}: The \gls{agv} delivered the box with the parts to be manufactured to the first station. The box is travelling over the assembly line to the first station where the first part is released.
   \item \textbf{Place cover to assembly place}: The first part is placed on the assembly place. The cover is placed on top of the part as the first piece of the product.
   \item \textbf{Assemble part from box on RASS1 - MAIN PCB}: The main PCB is assembled on the cover. This is the first configured part of the product. The main PCB is the breadboard of the product.
   \item \textbf{Switch on PCB}: The main PCB is switched on. This is necessary to activate it.
@@ -148,7 +148,7 @@ This process has been identified as the ground-truth process. The process is cir
 \section{Digital Entity: Open Factory Twin}
 \label{sec:automated-digital-twin}
 
-The Simulation-Based Digital Twin (SBDT) for the IoT Factory use case was developed using the Open Factory Twin (OFacT) framework \autocite{ofact-intern}. OFacT is an open-source digital twin framework specifically designed for modelling, simulating, and controlling production and logistics environments. Its goal is to support system design, planning, and operational control during the entire lifecycle of such systems.
+The Simulation-Based Digital Twin (SBDT) for the \gls{iot} Factory use case was developed using the Open Factory Twin (OFacT) framework \autocite{ofact-intern}. OFacT is an open-source digital twin framework specifically designed for modelling, simulating, and controlling production and logistics environments. Its goal is to support system design, planning, and operational control during the entire lifecycle of such systems.
 
 A principle of OFacT is the separation between the static description of the system and its dynamic behaviour. This is achieved by distinguishing between:
 
@@ -157,12 +157,12 @@ A principle of OFacT is the separation between the static description of the sys
   \item \textbf{Agent Control:} This component implements the dynamic logic that controls the systems operation during simulation, making decisions about resource allocation, process execution sequences, and handling events based on the state model.
 \end{itemize}
 
-The construction of the State Model within OFacT uses structured input methods, such as Excel files, where different sheets correspond to specific classes within the OFacT metamodel, inspired by \textcite{schwede2024learning}. To model the IoT Factory scenario (\autoref{sec:factory}), the relevant components of the OFacT State Model were defined, including:
+The construction of the State Model within OFacT uses structured input methods, such as Excel files, where different sheets correspond to specific classes within the OFacT metamodel, inspired by \textcite{schwede2024learning}. To model the \gls{iot} Factory scenario (\autoref{sec:factory}), the relevant components of the OFacT State Model were defined, including:
 
 \begin{itemize}
   \item \textbf{Plant}: The overall entity of production. The plant name used here was \texttt{iot\_factory}.
-  \item \textbf{EntityType}: All entities have to be defined here. This ranges from the parts, resources and AGVs to the factory itself.
-  \item \textbf{StationaryResource}: Stationary resources are static and can not move. In this case, these are the RASS stations, measurement-, cam-, function test- and labelling station. The AGVs are not stationary resources, because they can move.
+  \item \textbf{EntityType}: All entities have to be defined here. This ranges from the parts, resources and \gls{agv}s to the factory itself.
+  \item \textbf{StationaryResource}: Stationary resources are static and can not move. In this case, these are the RASS stations, measurement-, cam-, function test- and labelling station. The \gls{agv}s are not stationary resources, because they can move.
   \item \textbf{Storage}: Storage units contain parts. They are used to traverse the parts through the factory. In this context, the warehouse and box storage, have been modelled.
   \item \textbf{Warehouse}: This is a static storage unit where the parts are stored in boxes until they are processed.
   \item \textbf{WorkStation}: Workstations are resources which perform processes on parts. In our use case, these are the RASS stations.
@@ -187,7 +187,7 @@ The construction of the State Model within OFacT uses structured input methods, 
   \item \textbf{TransformationModel}: This model contains an artificial transformation model.
 \end{itemize}
 
-By defining these elements according to the IoT Factory characteristics, a detailed static model was created within the OFacT framework. For simulation purposes, the state model then gets played out \autoref{fig:playinoutreplay} with orders. The orders contain this model then served as the basis for running simulations to generate process execution data, forming the SBDT dataset used in this thesis for comparison against real-world data.
+By defining these elements according to the \gls{iot} Factory characteristics, a detailed static model was created within the OFacT framework. For simulation purposes, the state model then gets played out \autoref{fig:playinoutreplay} with orders. The orders contain this model then served as the basis for running simulations to generate process execution data, forming the SBDT dataset used in this thesis for comparison against real-world data.
 
 \subsection*{SBDT Dataset}
 
@@ -530,4 +530,4 @@ The results are summarized in \autoref{tab:sanity-check-results}.
 As shown, both classifiers achieved ROC AUC scores near the random chance baseline of 0.5 when tested on identical data in contrast to the near-perfect scores achieved on the original real vs. simulated data comparison.
 This successful outcome strongly suggests the original high AUC scores were not primarily driven by artifacts. It validates the framework's core interpretation: the classifiers detected genuine, statistically significant differences between the real and simulated data. Therefore, the high AUC and RR values reported in \autoref{tab:results-whitebox} and \autoref{tab:results-blackbox} can be confidently interpreted as indicators of lower fidelity in the corresponding SBDT components, providing a reliable basis for identifying areas for model improvement.
 
-To conclude, this chapter empirically validated the proposed VVUQ framework using the IoT Factory case study (\autoref{sec:factory}, \autoref{sec:automated-digital-twin}). The machine learning-based approach, employing both Decision Tree and BiLSTM classifiers with permutation testing (\autoref{sec:model-logic}), successfully identified statistically significant discrepancies between the SBDT and real-world data across all tested components (\autoref{tab:results-whitebox}, \autoref{tab:results-blackbox}). Crucially, identical data control experiments (\autoref{sec:sanity-check}) confirmed these findings were not due to artifacts (\autoref{tab:sanity-check-results}). The validation demonstrated the frameworks effectiveness in automatically assessing SBDT fidelity and providing component-specific feedback for improvement.
+To conclude, this chapter empirically validated the proposed VVUQ framework using the \gls{iot} Factory case study (\autoref{sec:factory}, \autoref{sec:automated-digital-twin}). The machine learning-based approach, employing both Decision Tree and BiLSTM classifiers with permutation testing (\autoref{sec:model-logic}), successfully identified statistically significant discrepancies between the SBDT and real-world data across all tested components (\autoref{tab:results-whitebox}, \autoref{tab:results-blackbox}). Crucially, identical data control experiments (\autoref{sec:sanity-check}) confirmed these findings were not due to artifacts (\autoref{tab:sanity-check-results}). The validation demonstrated the frameworks effectiveness in automatically assessing SBDT fidelity and providing component-specific feedback for improvement.

@@ -21,6 +21,36 @@
 \usepackage{cleveref} % For clever references
 \usepackage{url} % URL formatting
 \usepackage[toc,page]{appendix}
+
+%% Customization for \autoref to display capitalized reference names
+\providecommand{\chapterautorefname}{Chapter}
+\providecommand{\sectionautorefname}{Section}
+\providecommand{\subsectionautorefname}{Section}
+\providecommand{\subsubsectionautorefname}{Section}
+\providecommand{\figureautorefname}{Figure}
+\providecommand{\tableautorefname}{Table}
+\providecommand{\appendixautorefname}{Appendix}
+\providecommand{\equationautorefname}{Equation}
+\providecommand{\algorithmautorefname}{Algorithm}
+\providecommand{\lstlistingautorefname}{Listing}
+\providecommand{\theoremautorefname}{Theorem}
+\providecommand{\lemmaautorefname}{Lemma}
+\providecommand{\definitionautorefname}{Definition}
+
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
+\renewcommand{\subsubsectionautorefname}{Section}
+\renewcommand{\figureautorefname}{Figure}
+\renewcommand{\tableautorefname}{Table}
+\renewcommand{\appendixautorefname}{Appendix}
+\renewcommand{\equationautorefname}{Equation}
+\renewcommand{\algorithmautorefname}{Algorithm}
+\renewcommand{\lstlistingautorefname}{Listing}
+\renewcommand{\theoremautorefname}{Theorem}
+\renewcommand{\lemmaautorefname}{Lemma}
+\renewcommand{\definitionautorefname}{Definition}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Floating Objects and Graphics
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -169,3 +199,16 @@
 
 % Alias for standard minted environment (optional, if you prefer \begin{pythoncode}...)
 % \newminted{python}{} % This would let you use \begin{pythoncode} with above defaults
+
+% Required packages
+\RequirePackage{geometry}     % Page geometry setup
+\RequirePackage{fontspec}       % Font selection (requires LuaLaTeX or XeLaTeX)
+\RequirePackage{hyperref}       % Hypertext links
+\RequirePackage{setspace}       % Line spacing control
+\RequirePackage{titlesec}       % Section title formatting
+\RequirePackage{fancyhdr}       % Header and footer customization
+\RequirePackage{graphicx}       % Graphics inclusion
+\RequirePackage{amsmath}        % Advanced math typesetting
+\RequirePackage{amsfonts}       % Math fonts
+\RequirePackage{amssymb}        % Additional math symbols
+\RequirePackage[toc,acronym,nonumberlist,style=long,nopostdot,nogroupskip]{glossaries} % Glossary handling - using simpler style

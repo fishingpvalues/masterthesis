@@ -6,7 +6,9 @@
 \input{packages.tex}
 \makeglossaries
 \loadglsentries{glossary} % glossary.tex is in the project root folder
-\glsaddall  % Ensure all glossary entries are added
+% Comment out glsaddall to avoid adding all entries in development phase
+% This ensures only referenced abbreviations are included
+%\glsaddall  % Ensure all glossary entries are added
 
 \begin{document}
 
