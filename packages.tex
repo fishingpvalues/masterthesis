@@ -42,6 +42,11 @@
 \tikzstyle{line} = [thick]
 \tikzstyle{state_line} = [line width=1.5pt] % Thicker line for cell state
 \usepackage{changepage}
+% Add to preamble (main.tex or similar)
+% Add to preamble
+% Add to preamble (main.tex or similar)
+\usepackage{amssymb} % Ensures the diamond symbol is available
+\newcommand{\ai}[1]{#1\textsuperscript{◊}}
 
 % Configure float placement to be more aggressive
 \renewcommand{\topfraction}{0.9}    % Max fraction of page for floats at top
@@ -121,7 +126,8 @@
 \setlength{\cftsubsecindent}{3em}
 \renewcommand{\cftsubsecfont}{\fontspec{Times New Roman}\normalfont\small}
 \renewcommand{\cftsubsecpagefont}{\fontspec{Times New Roman}\normalfont\small}
-
+% Add this after your other tocloft settings
+\setlength{\cftaftertoctitleskip}{1em} % Adjust this value as needed
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Captions Configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -152,14 +158,14 @@
   fontsize=\footnotesize, % Slightly smaller font for code blocks
   tabsize=4,            % Standard Python indentation
   % bgcolor=codegray,   % Optional: Uncomment to add subtle background
-                         % Needs \definecolor{codegray}{gray}{0.95} in preamble
+  % Needs \definecolor{codegray}{gray}{0.95} in preamble
   % mathescape          % Optional: Uncomment if comments contain LaTeX math
 }
 
 % Define the environments/commands using the default settings above
 % Block environment named 'pythoncode'
 \newenvironment{pythoncode}
-  {\VerbatimEnvironment\begin{minted}{python}}
+{\VerbatimEnvironment\begin{minted}{python}}
   {\end{minted}}
 
 % Alias for standard minted environment (optional, if you prefer \begin{pythoncode}...)

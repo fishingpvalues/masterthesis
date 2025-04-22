@@ -20,7 +20,7 @@ The robot cells are responsible for performing transformation operations like as
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/robots.png}
-  \caption[Robot cells]{Two robot cells. The first cell is the main actor in this exemplary production process. Cell two is not part of the observed process here. The third image shows an AGV which transports boxes with assembled and disassembled parts to the stations.}
+  \caption[Robot Cells]{Two robot cells. The first cell is the main actor in this exemplary production process. Cell two is not part of the observed process here. The third image shows an AGV which transports boxes with assembled and disassembled parts to the stations.}
   \label{fig:robots}
   \caption*{Source: \autocite{IoTFactory2024}}
 \end{figure}
@@ -30,7 +30,7 @@ The factory produces an exemplary product, consisting of a back part, a breadboa
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.2\textwidth]{figures/parts.png}
-  \caption[Part variants]{The product consists of a back part, a breadboard and a front panel. The breadboard is used to put on several parts, such as a display, gyroscope, analog board and a weather station.}
+  \caption[Part Variants]{The product consists of a back part, a breadboard and a front panel. The breadboard is used to put on several parts, such as a display, gyroscope, analog board and a weather station.}
   \label{fig:iotproduct}
   \caption*{Source: \autocite{IoTFactory2024}}
 \end{figure}
@@ -42,7 +42,7 @@ Finally, the sequential order of the production process is as follows:
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/processdirection.png}
-  \caption[Production process]{The blueprint with transitions between resources.}
+  \caption[Production Process]{The blueprint with transitions between resources.}
   \label{fig:transitions}
   \caption*{Source: \autocite{IoTFactory2024}}
 \end{figure}
@@ -111,7 +111,7 @@ Per step, several resources are involved. The following table shows the utilized
 \begin{table}[H]
   \centering
   \footnotesize
-  \caption[Production steps and resources]{Steps and Resources Used}
+  \caption[Production Steps and Resources]{Steps and Resources Used}
   \label{tab:description-resources}
   \begin{tabular}{@{}p{0.4\textwidth}p{0.4\textwidth}@{}}
     \toprule
@@ -166,7 +166,7 @@ The construction of the State Model within OFacT uses structured input methods, 
   \item \textbf{Storage}: Storage units contain parts. They are used to traverse the parts through the factory. In this context, the warehouse and box storage, have been modelled.
   \item \textbf{Warehouse}: This is a static storage unit where the parts are stored in boxes until they are processed.
   \item \textbf{WorkStation}: Workstations are resources which perform processes on parts. In our use case, these are the RASS stations.
-  \item \textbf{ConveyorBelt}: There is one belt where the storage units traverse through the factory.
+  \item \textbf{ConveyorBelt}: There is one belt where the storage units traversing through the factory.
   \item \textbf{NonStationaryResource}: There are no non-stationary resources.
   \item \textbf{PassiveMovingResource}: One artificial passive moving resource has been mod
   \item \textbf{Process}: Contains processes and value added processes (VAP). VAP are adding features to parts and modify it. For each activity in the data a VAP has been created.
@@ -379,12 +379,12 @@ The feature subsets are equal to the model components, as noted. The following U
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/upset.png}
-  \caption[UpSet plot]{UpSet plot visualizing feature overlap across categories. Left bars show total features per category; top bars show counts for specific intersections defined by the dot matrix below.}
+  \caption[UpSet Plot]{UpSet plot visualizing feature overlap across categories. Left bars show total features per category; top bars show counts for specific intersections defined by the dot matrix below.}
   \caption*{Source: Own illustration.}
   \label{fig:upsetplot}
 \end{figure}
 
-The plot highlights that the time model has the largest number of unique features (6 features), consisting primarily of derived temporal sinusoidal and cosine encodings and status dummy variables. The KPI category also contains a distinct set of 4 unique features, representing specific performance metrics. These exclusive memberships indicate that temporal representation and performance indicators introduce the most diverse information into the overall feature space.
+The plot highlights that the time model has the largest number of unique features (six features), consisting primarily of derived temporal sinusoidal and cosine encodings and status dummy variables. The KPI category also contains a distinct set of four unique features, representing specific performance metrics. These exclusive memberships indicate that temporal representation and performance indicators introduce the most diverse information into the overall feature space.
 Several other features show significant overlap, signifying their role as core concepts linking multiple perspectives. Key identifiers like process\_id are shared across resource model, transformation model, and process model, while part\_id links resource model, transformation model, and transition model. The feature sequence\_number exhibits the highest degree of intersection among the detailed combinations, connecting time model, transformation model, transition model, and process model, underscoring its importance in relating temporal sequence to various operational views. Similarly, duration connects time model, transition model, and process model, and resource\_id connects resource model and transition model.
 
 Based on the aggregated results, the fidelity of the SBDT component corresponding to the feature set $\mathcal{F}_c$ was assessed. A high \textit{rejection rate} $RR$ (e.g., consistently above 0.5 across the 10 runs) was interpreted as strong evidence against the null hypothesis $H_0$. This indicates that the classifier could reliably distinguish between real and simulated data based on the features $\mathcal{F}_c$, suggesting that the corresponding SBDT component was \textit{not learned accurately}. Conversely, a low rejection rate suggests insufficient evidence to reject $H_0$, implying the SBDT component might be \textit{adequately learned}, or at least its potential inaccuracies were not detectable by the classifier using the given features.
@@ -403,13 +403,13 @@ A lower Gini impurity indicates a purer node. The quality of a potential split, 
   \label{eq:gini_split}
 \end{equation}
 
-The decision tree algorithm seeks splits that minimize this value \autocite{breiman1984classification}. Permutation testing was conducted with $N = 1000$ permutations per run over $n_{runs}=10$ runs, using a significance level of $\alpha = 0.05$. Because inference costs with the DTree are low, label shuffling was performed on training and test set.
+The DTree seeks splits that minimize this value \autocite{breiman1984classification}. Permutation testing was conducted with $N = 1000$ permutations per run over $n_{runs}=10$ runs, using a significance level of $\alpha = 0.05$. Because inference costs with the DTree are low, label shuffling was performed on training and test set.
 
 The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with standard deviation ($\sigma_{S_{obs}}$), mean p-value ($\bar{p}$), and the Rejection Rate $RR$, are presented in Table \ref{tab:results-whitebox}. The mean ROC AUC scores are also visualized in Figure \ref{fig:dt-roc-auc}.
 
 \begin{table}[htbp]
   \centering
-  \caption[Whitebox model results]{Whitebox DTree validation results across 10 runs (N=1000, $\alpha=0.05$), using paragraph-based layout.}
+  \caption[Whitebox Model Results]{Whitebox DTree validation results across 10 runs (N=1000, $\alpha=0.05$), using paragraph-based layout.}
   \label{tab:results-whitebox}
   \begin{tabular}{l l l l l p{3cm}}
     \toprule
@@ -437,9 +437,9 @@ The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with 
 \end{figure}
 
 The results from the whitebox model are highly significant. For almost all feature subsets, the DTree achieved a perfect mean ROC AUC of 1.0000, with the exception of the \texttt{resource\_model} subset which scored slightly lower but still extremely high ($\bar{S}_{obs}=0.9832 \pm 0.0104$). Correspondingly, the mean p-values were effectively zero ($< 0.0001$, reported as 0.0000) and the rejection rate was 1.00 for all components across all 10 runs. This indicates that the DTree could easily and consistently distinguish the simulated data from the real data based on the features associated with every tested SBDT component. According to the interpretation framework, this implies that, from the perspective of the whitebox model, all tested SBDT components were learned inaccurately.
-Given that the mean p-value for every feature subset is far below the significance level ($\bar{p} \approx 0.0000 < \alpha = 0.05$), and the rejection rate $RR$ is 1.00 for all components, it rejects the null hypothesis ($H_0$) for every tested SBDT component based on the DTree. This provides statistically significant evidence that the model can reliably distinguish between the real process data and the simulated data using the features associated with the time model, resource model, transformation model, transition model, process model, and KPI-based perspectives, as well as when using all features combined.
+Given that the mean p-value for every feature subset is far below the significance level ($\bar{p} \approx 0.0000 < \alpha = 0.05$), and the rejection rate $RR$ is $1.00$ for all components, it rejects the null hypothesis ($H_0$) for every tested SBDT component based on the DTree. This provides statistically significant evidence that the model can reliably distinguish between the real process data and the simulated data using the features associated with the time model, resource model, transformation model, transition model, process model, and KPI-based perspectives, as well as when using all features combined.
 
-\textbf{The conclusion drawn solely from this whitebox analysis is therefore that the SBDT exhibits detectable discrepancies compared to the real system across all evaluated aspects. Consequently, based on the stringent criteria of the Decision Tree's ability to find differentiating patterns (even limited to $max_depth=5$), all tested components of the SBDT are deemed inaccurate.} This suggests that, at the level of detail captured by the engineered features and marked by the DTree model, the simulation does not adequately replicate the observed behaviour of the real IoT factory. The analysis with the blackbox model in the next section will explore whether a more complex model reaches similar conclusions.
+\textbf{The conclusion drawn from this whitebox analysis is therefore that the SBDT exhibits detectable discrepancies compared to the real system across all evaluated aspects. Consequently, based on the criteria of the DTrees ability to find differentiating patterns (even limited to $max_depth=5$), all tested components of the SBDT are deemed inaccurate.} At the level of detail captured by the engineered features and marked by the DTree model, the simulation does not adequately replicate the observed behaviour of the real IoT factory. The analysis with the blackbox model in the next section will explore whether a more complex model reaches similar conclusions.
 
 \subsection*{Results of Blackbox Model}
 
@@ -475,15 +475,19 @@ The aggregated results from the blackbox models permutation tests are summarized
   \caption*{Source: Own illustration.}
 \end{figure}
 
-The blackbox model results largely align with the whitebox findings, indicating significant discrepancies between the simulated and real data across various SBDT components. Focusing initially on the BiLSTM classifier (using $\alpha = 0.01$), it achieved very high mean ROC AUC scores $\overline{\text{ROC AUC}}$ for most feature subsets, particularly for \texttt{time\_model} (0.9998), \texttt{transition\_model} (1.0000), \texttt{process\_model} (0.9788), \texttt{kpi\_based} (0.9989), and \texttt{all\_features} (1.0000). For these components, the mean p-values were effectively zero, and the rejection rate $RR$ was 1.00, strongly indicating rejection of the null hypothesis ($H_0$).
+The blackbox model results largely align with the whitebox findings, indicating significant discrepancies between the simulated and real data across various SBDT components. Focusing on the BiLSTM classifier (using $\alpha = 0.01$), it achieved very high mean ROC AUC scores $\overline{\text{ROC AUC}}$ for most feature subsets, particularly for \texttt{time\_model} (0.9998), \texttt{transition\_model} (1.0000), \texttt{process\_model} (0.9788), \texttt{kpi\_based} (0.9989), and \texttt{all\_features} (1.0000). For these components, the mean p-values were effectively zero, and the rejection rate $RR$ was 1.00, indicating rejection of the null hypothesis ($H_0$).
 
-For the \texttt{resource\_model} and \texttt{transformation\_model}, the mean ROC AUC scores were lower ($\bar{S}_{obs}=0.9087$ and $0.8705$) with higher variability ($\sigma_{S_{obs}}=0.1618$ and $0.2094$). While the \textit{mean} p-values (0.0492 and 0.1879) exceeded $\alpha=0.01$, the Rejection Rates ($RR$) remained very high ($RR=0.90$ and $RR=0.80$). This initial assessment, prioritizing the high $RR$, was subsequently confirmed by more rigorous statistical analyses detailed in appendix \autoref{app:cct}.\footnote{The Cauchy Combination Test (CCT) combines the $k=10$ p-values ($p_1, ..., p_k$) from the individual runs. It tests the global null hypothesis $H_{0,Global}$: All individual null hypotheses $H_{0,i}$ (defined as $\mathcal{D}_{real}(\mathbf{X} | \mathcal{F}_c) = \mathcal{D}_{sim}(\mathbf{X} | \mathcal{F}_c)$ for run $i$) are true. A small $P_{CCT}$ provides evidence against $H_{0,Global}$. The Binomial test assesses the observed rejection rate $RR = k_{obs}/k$. It tests the null hypothesis $H_{0,Binom}$: The true probability of rejecting $H_{0,i}$ in a single run is equal to $\alpha$. The alternative is $H_{1,Binom}$: True rejection probability $> \alpha$. A small $P_{Binom}$ indicates the observed $RR$ is significantly higher than expected by chance under the null. See \autoref{sec:cct_methodology} and \autoref{sec:binom_test_methodology} for formal details.} Specifically for the BiLSTM, both the CCT and the formal Binomial test applied to the rejection rates yielded highly significant results, supporting the rejection of $H_0$ for these components as well.
+For the \texttt{resource\_model} and \texttt{transformation\_model}, the mean ROC AUC scores were lower ($\bar{S}_{obs}=0.9087$ and $0.8705$) with higher variability ($\sigma_{S_{obs}}=0.1618$ and $0.2094$). While the \textit{mean} p-values (0.0492 and 0.1879) \textbf{exceeded} $\alpha=0.01$, the Rejection Rates ($RR$) remained very high ($RR=0.90$ and $RR=0.80$). This initial assessment, prioritizing the high $RR$, was subsequently confirmed by more rigorous statistical analyses detailed in appendix \autoref{app:cct}.\footnote{The Cauchy Combination Test (CCT) combines the $k=10$ p-values ($p_1, ..., p_k$) from the individual runs. It tests the global null hypothesis $H_{0,Global}$: All individual null hypotheses $H_{0,i}$ (defined as $\mathcal{D}_{real}(\mathbf{X} | \mathcal{F}_c) = \mathcal{D}_{sim}(\mathbf{X} | \mathcal{F}_c)$ for run $i$) are true. A small $P_{CCT}$ provides evidence against $H_{0,Global}$.}  Specifically for the BiLSTM, both the CCT and the formal Binomial test\footnote{The Binomial test assesses the observed rejection rate $RR = k_{obs}/k$. It tests the null hypothesis $H_{0,Binom}$: The true probability of rejecting $H_{0,i}$ in a single run is equal to $\alpha$. The alternative is $H_{1,Binom}$: True rejection probability $> \alpha$. A small $P_{Binom}$ indicates the observed $RR$ is significantly higher than expected by chance under the null. See \autoref{sec:cct_methodology} and \autoref{sec:binom_test_methodology} for formal details.} applied to the rejection rates yielded highly significant results, supporting the rejection of $H_0$ for these components as well.
+
+Similar to the whitebox analysis, the conclusion drawn from the blackbox model is that the SBDT \textbf{exhibits detectable inaccuracies compared to the real system across all evaluated components. The combination of high ROC AUC scores and high rejection rates, supported by the confirming significant results from the CCT and Binomial test analyses for both BiLSTM and DT models (Appendix \ref{app:cct}), provide robust evidence against $H_0$ for every component. Therefore, based on the consistent ability of both classifiers to distinguish the data, all tested components of the SBDT are assessed as inaccurate.} This supports the finding that the current SBDT does not sufficiently replicate the behaviour observed in the real IoT factory dataset.
+
+\paragraph{Joint Conclusion}
 
 Furthermore, \autoref{app:cct} also details the results for the DTree model (using $\alpha = 0.05$). The findings for the DT were even more uniformly decisive. \textbf{For every single tested component (\texttt{time\_model}, \texttt{resource\_model}, \texttt{transformation\_model}, \texttt{transition\_model}, \texttt{process\_model}, \texttt{kpi\_based}, and \texttt{all\_features}), the Cauchy Combination Test yielded a p-value of 0.0000. Similarly, the Binomial test assessing the rejection rate was significant for all components, also yielding a p-value of 0.0000 and confirming a rejection rate of 1.00 across the board.}
 
 Consequently, considering the strong performance metrics and consistent rejection of $H_0$ across runs for both models – BiLSTM (confirmed via CCT/Binomial tests in Appendix \ref{app:cct}) and Decision Tree (with universally significant CCT and Binomial test p-values of 0.0000 for all components, also detailed in Appendix \ref{app:cct}) – the analysis robustly concludes that statistically significant differences exist between the real and simulated data for all tested aspects.
 
-Similar to the whitebox analysis, the conclusion drawn from the blackbox model is that the SBDT exhibits detectable inaccuracies compared to the real system across all evaluated components. The combination of high ROC AUC scores and high rejection rates, supported by the confirming significant results from the CCT and Binomial test analyses for both BiLSTM and DT models (Appendix \ref{app:cct}), provide robust evidence against $H_0$ for every component. Therefore, based on the consistent ability of both classifiers to distinguish the data, validated through multiple statistical approaches, all tested components of the SBDT are assessed as inaccurate. This supports the finding that the current SBDT configuration, as evaluated through the engineered features, does not sufficiently replicate the behaviour observed in the real IoT factory dataset.
+
 
 \section{Sanity Check}
 \label{sec:sanity-check}

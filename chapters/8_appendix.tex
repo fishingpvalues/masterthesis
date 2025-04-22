@@ -538,7 +538,7 @@
   \section{Binomial Test for Rejection Rate}
   \label{sec:binom_test_methodology}
 
-  While the CCT combines the magnitude of the p-values themselves, the Binomial test provides a complementary perspective by formally assessing the significance of the observed \textit{Rejection Rate} ($RR$). The $RR$ is defined as the proportion of the $k$ individual runs for which the null hypothesis $H_0$ was rejected at a pre-defined significance level $\alpha$.
+  While the CCT combines the magnitude of the p-values themselves, the Binomial test provides a complementary perspective by formally assessing the significance of the observed \textit{Rejection Rate} ($RR$) \autocite{fahrmeir2016statistik}. The $RR$ is defined as the proportion of the $k$ individual runs for which the null hypothesis $H_0$ was rejected at a pre-defined significance level $\alpha$.
   This test addresses the question: "Is the number of times we rejected $H_0$ across the $k$ runs significantly greater than what we would expect purely by chance if $H_0$ were true for all runs?"
 
   Consider the $k$ runs of the permutation test performed for a specific feature subset. Let $\alpha$ be the significance level used for each individual run (e.g., $\alpha=0.05$ for DTree, $\alpha=0.01$ for BiLSTM). We define a "success" for a single run if its p-value $p_{run}$ is less than $\alpha$ ($p_{run} < \alpha$). Let $k_{obs}$ be the observed number of successful runs (i.e., number of rejections) out of the total $k$ runs. The Rejection Rate is $RR = k_{obs}/k$.
@@ -601,7 +601,7 @@
 
   \begin{table}[htbp] % Using htbp allows LaTeX more flexibility in placement
     \centering
-    \caption[Detailed BiLSTM model results]{Detailed BiLSTM validation results across 10 runs (N=1000, $\alpha=0.01$).}
+    \caption[Detailed BiLSTM Model Results]{Detailed BiLSTM validation results across 10 runs (N=1000, $\alpha=0.01$).}
     \label{tab:results-lstm-appendix}
     \resizebox{\textwidth}{!}{%
       \begin{tabular}{l l l l l l p{3cm}}
