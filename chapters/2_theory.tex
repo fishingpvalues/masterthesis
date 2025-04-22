@@ -84,7 +84,7 @@ Like introduced in the preceding chapter, DT inherit the highest order of modell
   The digital twin concept (...) contains three main parts: A) Physical products in real space, (B) virtual products in virtual space and (C) the two-way connections of data and information that tie the virtual and real products together. \textcite{grieves2014digital}
 \end{quote}
 
-The physical product is the entity which will be modelled. The virtual product is the DT itself, but also its infrastructure, for example data services making the real-time data flow possible \autocite{Tao2018ijamt}. The two-way connection is the data flow between the physical and the virtual product. The data flow is bidirectional. \textcite{zehnder2018representing} add that the data flow may contain meta data ``describing the data source and its context'.
+The physical product is the entity which will be modelled. The virtual product is the DT itself, but also its infrastructure, for example data services making the real-time data flow possible \autocite{Tao2018ijamt}. The two-way connection is the data flow between the physical and the virtual product. The data flow is bidirectional. \textcite{zehnder2018representing} add that the data flow may contain meta data ``describing the data source and its context.
 
 \subsection*{Types of Digital Twins}
 \label{sec:types-digital-twins}
@@ -125,7 +125,7 @@ Overall DDDT are a promising approach to model the physical entity. If the right
 \label{par:asmg}
 One last discipline, automatic simulation model generation (ASMG), is worth mentioning. ASMG has to be differentiated from DDDT by the effort to automatically generate models, not twins. DM and DS are the goal here, achieved with tools of DES. Automatic DT generation is not necessarily the goal. It aims to automate the model generation process and tries to eliminate the human in the loop, \autocite{reinhardt2019survey,lechevalier2018methodology}. Automation is achieved by taking into account a diverse range of data sources, including Computer Aided Design data, PPS data, production manuals, process data and programming code, thus reaching a high data variability. The gathered data has to be processed online or offline as well through suitable frameworks or human intervention. Challenges lay in incomplete data \autocite{bergmann2014automatische}, although the same problems of DDDT also apply here. If the gained data is not mined thoroughly, human intervention is needed again, mitigating automation efforts.
 
-To conclude this section about DT, the thesis summarizes that there are different types of DT differentiated by their source of information retrieval. A lot of work has been done to make the DT creation, updating and prediction process more efficient. By the help of simulation, data and automated model generation, the DT may be created with less time and resources than manually.
+To conclude this section about DT, the thesis concludes that there are different types of DT differentiated by their source of information retrieval. A lot of work has been done to make the DT creation, updating and prediction process more efficient. By the help of simulation, data and automated model generation, the DT may be created with less time and resources than manually.
 
 \section{Process Mining and Event Logs}
 \label{sec:process-mining}
@@ -205,7 +205,7 @@ PPC systems (\autoref{sec:ppc}) often times deliver even more data to enrich the
 The previous sections introduced the concepts of DES, PPC, relevant KPIs, DT, PM and OCED. This section now focuses on VVUQ in the context of SBDT. The thesis at hand uses the term VVUQ to describe the process of verifying, validating and quantifying the uncertainty of a SBDT. V\&V has a long history in manufacturing and DES \autocite{Bitencourt2023}. \Textcite{sel2025survey} add uncertainty quantification as a main interest. Their framework is applied in the medical domain, but they mention reasonable arguments regarding efficiency and safety of SBDT in general.\footnote{To go into detail, they deem erroneous data through sensor failure, model opacity (\autoref{sec:requirements-automatically-generated-models}) and the speed of model self-adaption as the necessities for UQ.} Thus, the thesis considers VVUQ instead of merely V\&V efforts. The following section introduces the basic concepts of VVUQ and its relevance for SBDT.
 
 
-\subsection{Development process of VVUQ Concepts}
+\subsection{Development Process of VVUQ Concepts}
 \label{sec:historical-development}
 With the uprising of simulation models in the early 1950s \autocite{evans1967simulation}, the need for VVUQ arose unknowingly to the modellers. The usability of such simulations was deemed high as long as the results were promising, increasing trust in the technology \autocite{durst2017historical}. Blind trust does not validate models. Contrarily, if the results more or less were satisfactory, the model was considered validated \autocite{bonani2003physics}.
 
@@ -233,7 +233,7 @@ The historical development of VVUQ, from early verification to integrated UQ, re
 Automatically generated models largely stem from the DES discipline (\autoref{par:asmg}), termed automatic simulation model generation, ASMG \autocite{mildeautomated,Charpentier2014}. They may use data-driven techniques which reduce the manual effort to create and update themselves. These models adapt quickly to changing conditions, making them valuable for dynamic environments like manufacturing. However, ensuring their reliability requires specific VVUQ. Because ASMG models often are black boxes, traditional VVUQ methods may not be applicable. The challenge lies in understanding the models internal logic and ensuring it accurately reflects the physical system. If sophisticated data driven methods have been applied, several \textit{key challenges} arise, hindering successful VVUQ:
 
 \begin{itemize}
-  \item \textbf{Model Opacity:} ASMG models often use complex machine learning algorithms like neural networks. Such black-box models are difficult to interpret, making it hard to understand their internal logic. This opacity may hinder VVUQ, as the modeller cannot easily identify errors or biases.
+  \item \textbf{Model Opacity:} ASMG models often use complex machine learning algorithms like neural networks. Such blackbox models are difficult to interpret, making it hard to understand their internal logic. This opacity may hinder VVUQ, as the modeller cannot easily identify errors or biases.
   \item \textbf{Data Dependency:} Data-driven models rely on high-quality data. If the data is biased or noisy, the models predictions may be inaccurate.
   \item \textbf{Dynamic Model Adaptation:} Models that continuously learn and adapt, such as those using online learning, require ongoing validation to ensure they remain valid as new data is ingested. This dynamic nature introduces the risk of concept drift \autocite{lu2018learning}, where the underlying process changes over time, potentially degrading model performance.
   \item \textbf{Quantifying Uncertainty:} Model predictions are stochastic in nature. For applications where precision is crucial, such as in manufacturing, uncertainty needs to be quantified.
@@ -435,9 +435,9 @@ For binary classification tasks, such as the prediction of 'is\_valid' status in
       \addlegendentry{Random Classifier}
     \end{axis}
   \end{tikzpicture}
-  \caption[ROC AUC Curve example]{Example ROC Curve}
+  \caption[ROC AUC Curve Example]{Example ROC Curve}
   \label{fig:roc}
-  \caption*{Own tabulation based on \autocite{geron2022hands}.}}
+  \caption*{Own tabulation based on \textcite{geron2022hands}. \ai{AI generated based on copyrighted image..}}}
 \end{figure}
 
 \begin{equation}
@@ -521,9 +521,9 @@ The core computation within an RNN at time step \( t \) is calculating the new h
     \draw [arrow] (ytp1) -- (dots_right_y);
 
   \end{tikzpicture}
-  \caption[RNN unfolded]{Unfolded architecture of a Recurrent Neural Network (RNN) over time, illustrating the computation of the hidden state \(\bm{h}_t\) according to \autoref{eq:rnn_hidden_state}.}
+  \caption[RNN Unfolded]{Unfolded architecture of a Recurrent Neural Network (RNN) over time, illustrating the computation of the hidden state \(\bm{h}_t\) according to \autoref{eq:rnn_hidden_state}.}
   \label{fig:rnn_unfolded}
-  \caption*{Own illustration based on \autocite{geron2022hands}.}
+  \caption*{Own illustration based on \textcite{geron2022hands}. \ai{AI generated based on copyrighted image..}}
 \end{figure}
 
 where \( W_{xh} \) is the weight matrix connecting the input to the hidden layer, \( W_{hh} \) is the weight matrix for the recurrent connection from the previous hidden state to the current hidden state, \( \bm{b}_h \) is the bias vector for the hidden layer, and \( \sigma_h \) is a non-linear activation function, commonly the hyperbolic tangent (\(\tanh\)) or ReLU. The initial hidden state \( \bm{h}_0 \) is typically initialized to zeros or learned.
@@ -683,9 +683,9 @@ The gating mechanisms allow LSTMs to selectively remember or forget information 
     % Annotation for combination
     \node[draw, ellipse, dashed, fit=(f3)(b3), inner 09 = 0.3cm, label={[yshift=-1.2cm]center:Combine}] {};
   \end{tikzpicture}
-  \caption[Bi-LSTM architecture]{Architecture of a Bidirectional LSTM (Bi-LSTM), processing the input sequence (\(\bm{x}_t\)) both forwards (generating \(\vec{\bm{h}}_t\)) and backwards (generating \(\cev{\bm{h}}_t\)). The final hidden states \(\bm{h}_t\) are produced by combining information from both directions (via concatenation according to Equation \autoref{eq:bilstm_concat}).}
+  \caption[Bi-LSTM Architecture]{Architecture of a Bidirectional LSTM (Bi-LSTM), processing the input sequence (\(\bm{x}_t\)) both forwards (generating \(\vec{\bm{h}}_t\)) and backwards (generating \(\cev{\bm{h}}_t\)). The final hidden states \(\bm{h}_t\) are produced by combining information from both directions (via concatenation according to Equation \autoref{eq:bilstm_concat}).}
   \label{fig:bilstm_arch}
-  \caption*{Own illustration.}
+  \caption*{Own illustration. \ai{AI generated based on copyrighted image..}}
 \end{figure}
 
 While standard LSTMs process sequences chronologically, capturing dependencies on past inputs, many tasks benefit from considering context from both past and future elements. For example, understanding why a specific machine task is performed requires knowledge about the task performed afterwards. Bidirectional LSTMs (Bi-LSTMs) address this by processing the input sequence in both forward and backward directions \autocite{schuster1997bidirectional}.
@@ -849,7 +849,7 @@ The approach by \textcite{dos2024simulation} integrates KNN with p-charts for th
   \end{tikzpicture}
   \caption[Proportion chart for VVUQ]{Example P-Chart showing the proportion of anomalies detected by KNN over time for DT accreditation, with Upper (UCL) and Lower (LCL) control limits. A point outside the limits (like at t=7) suggests potential deviation.}
   \label{fig:pchart_knn_dt}
-  \caption*{Own illustration based on \textcite{dos2024simulation}.}
+  \caption*{Own illustration based on \textcite{dos2024simulation}. \ai{AI generated based on copyrighted image..}}
 \end{figure}
 
 \subsubsection*{Time Series Classification for Fault Localization}

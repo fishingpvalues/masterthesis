@@ -18,7 +18,7 @@
 \RequirePackage{amsmath}        % Advanced math typesetting
 \RequirePackage{amsfonts}       % Math fonts
 \RequirePackage{amssymb}        % Additional math symbols
-\RequirePackage[toc]{glossaries} % Glossary handling
+\RequirePackage[toc,acronym,nonumberlist]{glossaries} % Glossary handling - ADDED acronym, nonumberlist
 \RequirePackage{listings}       % Code listings
 \RequirePackage{minted}         % Enhanced code highlighting
 \RequirePackage{xcolor}         % Color management

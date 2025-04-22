@@ -207,7 +207,7 @@ Process executions are associated with their respective order IDs, establishing 
 
 A key aspect of the connector's functionality is the non-mandatory integration of domain knowledge into the data transformation process. Instead of relying only on the raw data structure, the connector employs expert-defined categorizations and normalization procedures to ensure semantic consistency in the transformed data.
 
-For example, the part identification logic uses a predefined list of potential parts (such as `GYROSCOPE,' ``MAIN PCB,' ``FRONT COVER,' etc.) and searches for these terms within process descriptions. Similarly, the process type categorization uses domain-specific groupings like `machine,' `feature,' and `test' based on keywords found in process names. The \texttt{sim\_data} rows will receive the label $0$ for \texttt{is\_valid}, because the black-box model should learn to distinguish between real and simulated data to perform VVUQ. The entries of the \texttt{real\_data} receive $1$ for \texttt{is\_valid}.
+For example, the part identification logic uses a predefined list of potential parts (such as `GYROSCOPE,' ``MAIN PCB,' ``FRONT COVER,' etc.) and searches for these terms within process descriptions. Similarly, the process type categorization uses domain-specific groupings like `machine,' `feature,' and `test' based on keywords found in process names. The \texttt{sim\_data} rows will receive the label $0$ for \texttt{is\_valid}, because the blackbox model should learn to distinguish between real and simulated data to perform VVUQ. The entries of the \texttt{real\_data} receive $1$ for \texttt{is\_valid}.
 
 
 \section{Data Pipeline}
