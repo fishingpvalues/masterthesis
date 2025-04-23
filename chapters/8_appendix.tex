@@ -366,18 +366,18 @@
   Initializing the weight parameters of a neural network appropriately is crucial for effective training, helping to prevent issues like vanishing or exploding gradients.
 
   \paragraph{Kaiming (He) Initialization:}
-  Proposed by He et al. \autocite{he2015delving}, this method is primarily designed for layers followed by Rectified Linear Unit (ReLU) activations. It accounts for the non-linearity of ReLU. For Kaiming Normal initialization (used in the implemented model via `kaiming_normal_`), weights \( W \) are drawn from a normal distribution \( \mathcal{N}(0, \text{std}^2) \), where:
+  Proposed by He et al. \autocite{he2015delving}, this method is primarily designed for layers followed by Rectified Linear Unit (ReLU) activations. It accounts for the non-linearity of ReLU. For Kaiming Normal initialization (used in the implemented model via `kaiming\_normal_`), weights \( W \) are drawn from a normal distribution \( \mathcal{N}(0, \text{std}^2) \), where:
   \begin{equation}
     \text{std} = \sqrt{\frac{2}{\text{fan\_in}}}
   \end{equation}
-  Here, `fan_in` is the number of input units to the weight tensor. A variant considers the non-linearity slope \( a \) of leaky ReLU (where \( a=0 \) for standard ReLU).
+  Here, `fan\_in` is the number of input units to the weight tensor. A variant considers the non-linearity slope \( a \) of leaky ReLU (where \( a=0 \) for standard ReLU).
 
   \paragraph{Xavier (Glorot) Initialization:}
   Proposed by Glorot and Bengio \autocite{glorot2010understanding}, this method aims to keep the variance of activations and gradients roughly constant across layers, particularly effective for symmetric activations like tanh or sigmoid. For Xavier Normal initialization, weights \( W \) are drawn from \( \mathcal{N}(0, \text{std}^2) \), where:
   \begin{equation}
     \text{std} = \sqrt{\frac{2}{\text{fan\_in} + \text{fan\_out}}}
   \end{equation}
-  `fan_out` is the number of output units. Uniform versions also exist for both Kaiming and Xavier initialization.
+  `fan\_out` is the number of output units. Uniform versions also exist for both Kaiming and Xavier initialization.
 
   % -------------------------------------------------------------------------
   \subsection{Optimization Algorithms and Refinements}
@@ -479,6 +479,24 @@
 
   \paragraph{Sequence Padding:}
   Neural networks typically require inputs within a batch to be tensors of uniform shape. Since sequential data (like manufacturing process steps or natural language sentences) often has varying lengths, techniques are needed to handle this during batch processing. Padding involves augmenting shorter sequences within a batch with special padding values (often zero) until they reach the length of the longest sequence in that batch. This results in rectangular tensors suitable for processing. The `collate\_fn` used in the data loading pipeline for this thesis employs padding (via `pad\_sequence`). It is important that subsequent computations (e.g., loss calculation, attention mechanisms) are designed to ignore or mask these padded values to avoid introducing noise.
+
+  \subsection{Decision Tree Splitting Criteria}
+  \label{subsec:decision_tree_splitting_criteria}
+
+  \paragraph{Gini Impurity}
+  The Gini impurity $G(S)$ for a set of samples $S$ at a node measures the probability of incorrectly classifying a randomly chosen element if it were randomly labelled according to the distribution of labels in the set. For $K$ classes ($K = 2$ here), with $p_k$ being the proportion of samples belonging to class $k$ in $S$, it is defined as:
+
+  \begin{equation}
+    G(S) = 1 - \sum_{k=1}^{K} p_k^2
+    \label{eq:gini_impurity}
+  \end{equation}
+  A lower Gini impurity indicates a purer node. The quality of a potential split, which divides the set $S$ into subsets $S_{left}$ and $S_{right}$, is then evaluated based on the weighted average impurity of the child nodes, often referred to as the Gini split index:
+  \begin{equation}
+    \text{Gini}_{\text{split}}(S) = \frac{|S_{left}|}{|S|} G(S_{left}) + \frac{|S_{right}|}{|S|} G(S_{right})
+    \label{eq:gini_split}
+  \end{equation}
+
+  The DTree seeks splits that minimize this value \autocite{breiman1984classification}.
 
   \chapter{Further Illustrations}
 

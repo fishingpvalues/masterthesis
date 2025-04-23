@@ -391,19 +391,9 @@ Based on the aggregated results, the fidelity of the SBDT component correspondin
 
 \subsection*{Results of Whitebox Model}
 \label{sec:results-whitebox}
-The whitebox validation was performed using a DTree classifier \autocite{Scikit-Learn}. Key hyperparameters included limiting the tree complexity with a max tree depth of five using the default gini criterion for node impurity and split evaluation. The Gini impurity $G(S)$ for a set of samples $S$ at a node measures the probability of incorrectly classifying a randomly chosen element if it were randomly labelled according to the distribution of labels in the set. For $K$ classes ($K = 2$ here), with $p_k$ being the proportion of samples belonging to class $k$ in $S$, it is defined as:
+The whitebox validation was performed using a DTree classifier \autocite{Scikit-Learn}. Key hyperparameters included limiting the tree complexity with a max tree depth of five using the default gini criterion for node impurity and split evaluation, see \autoref{subsec:decision_tree_splitting_criteria}.
 
-\begin{equation}
-  G(S) = 1 - \sum_{k=1}^{K} p_k^2
-  \label{eq:gini_impurity}
-\end{equation}
-A lower Gini impurity indicates a purer node. The quality of a potential split, which divides the set $S$ into subsets $S_{left}$ and $S_{right}$, is then evaluated based on the weighted average impurity of the child nodes, often referred to as the Gini split index:
-\begin{equation}
-  \text{Gini}_{\text{split}}(S) = \frac{|S_{left}|}{|S|} G(S_{left}) + \frac{|S_{right}|}{|S|} G(S_{right})
-  \label{eq:gini_split}
-\end{equation}
-
-The DTree seeks splits that minimize this value \autocite{breiman1984classification}. Permutation testing was conducted with $N = 1000$ permutations per run over $n_{runs}=10$ runs, using a significance level of $\alpha = 0.05$. Because inference costs with the DTree are low, label shuffling was performed on training and test set.
+Permutation testing was conducted with $N = 1000$ permutations per run over $n_{runs}=10$ runs, using a significance level of $\alpha = 0.05$. Because inference costs with the DTree are low, label shuffling was performed on training and test set.
 
 The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with standard deviation ($\sigma_{S_{obs}}$), mean p-value ($\bar{p}$), and the Rejection Rate $RR$, are presented in Table \ref{tab:results-whitebox}. The mean ROC AUC scores are also visualized in Figure \ref{fig:dt-roc-auc}.
 
@@ -439,7 +429,7 @@ The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with 
 The results from the whitebox model are highly significant. For almost all feature subsets, the DTree achieved a perfect mean ROC AUC of 1.0000, with the exception of the \texttt{resource\_model} subset which scored slightly lower but still extremely high ($\bar{S}_{obs}=0.9832 \pm 0.0104$). Correspondingly, the mean p-values were effectively zero ($< 0.0001$, reported as 0.0000) and the rejection rate was 1.00 for all components across all 10 runs. This indicates that the DTree could easily and consistently distinguish the simulated data from the real data based on the features associated with every tested SBDT component. According to the interpretation framework, this implies that, from the perspective of the whitebox model, all tested SBDT components were learned inaccurately.
 Given that the mean p-value for every feature subset is far below the significance level ($\bar{p} \approx 0.0000 < \alpha = 0.05$), and the rejection rate $RR$ is $1.00$ for all components, it rejects the null hypothesis ($H_0$) for every tested SBDT component based on the DTree. This provides statistically significant evidence that the model can reliably distinguish between the real process data and the simulated data using the features associated with the time model, resource model, transformation model, transition model, process model, and KPI-based perspectives, as well as when using all features combined.
 
-\textbf{The conclusion drawn from this whitebox analysis is therefore that the SBDT exhibits detectable discrepancies compared to the real system across all evaluated aspects. Consequently, based on the criteria of the DTrees ability to find differentiating patterns (even limited to $max_depth=5$), all tested components of the SBDT are deemed inaccurate.} At the level of detail captured by the engineered features and marked by the DTree model, the simulation does not adequately replicate the observed behaviour of the real IoT factory. The analysis with the blackbox model in the next section will explore whether a more complex model reaches similar conclusions.
+\textbf{The conclusion drawn from this whitebox analysis is therefore that the SBDT exhibits detectable discrepancies compared to the real system across all evaluated aspects. Consequently, based on the criteria of the DTrees ability to find differentiating patterns, all tested components of the SBDT are deemed inaccurate.} At the level of detail captured by the engineered features and marked by the DTree model, the simulation does not adequately replicate the observed behaviour of the real IoT factory. The analysis with the blackbox model in the next section will explore whether a more complex model reaches similar conclusions.
 
 \subsection*{Results of Blackbox Model}
 
@@ -464,7 +454,7 @@ The aggregated results from the blackbox models permutation tests are summarized
     \texttt{all\_features}               & 1.0000                               & 0.0000                             & 0.0000                   & 1.00        & INACCURATE          \\
     \bottomrule
   \end{tabular}
-  \caption*{Source: Own tabulation.}
+  \caption*{Source: Authors tabulation.}
 \end{table}
 
 \begin{figure}[htbp]
@@ -483,7 +473,7 @@ Similar to the whitebox analysis, the conclusion drawn from the blackbox model i
 
 \paragraph{Joint Conclusion}
 
-Furthermore, \autoref{app:cct} also details the results for the DTree model (using $\alpha = 0.05$). The findings for the DT were even more uniformly decisive. \textbf{For every single tested component (\texttt{time\_model}, \texttt{resource\_model}, \texttt{transformation\_model}, \texttt{transition\_model}, \texttt{process\_model}, \texttt{kpi\_based}, and \texttt{all\_features}), the Cauchy Combination Test yielded a p-value of 0.0000. Similarly, the Binomial test assessing the rejection rate was significant for all components, also yielding a p-value of 0.0000 and confirming a rejection rate of 1.00 across the board.}
+Furthermore, \autoref{app:cct} also details the results for the DTree model (using $\alpha = 0.05$). \textbf{For every single tested component (\texttt{time\_model}, \texttt{resource\_model}, \texttt{transformation\_model}, \texttt{transition\_model}, \texttt{process\_model}, \texttt{kpi\_based}, and \texttt{all\_features}), the Cauchy Combination Test yielded a p-value of 0.0000. Similarly, the Binomial test assessing the rejection rate was significant for all components, also yielding a p-value of 0.0000 and confirming a rejection rate of 1.00 across the board.}
 
 Consequently, considering the strong performance metrics and consistent rejection of $H_0$ across runs for both models – BiLSTM (confirmed via CCT/Binomial tests in Appendix \ref{app:cct}) and Decision Tree (with universally significant CCT and Binomial test p-values of 0.0000 for all components, also detailed in Appendix \ref{app:cct}) – the analysis robustly concludes that statistically significant differences exist between the real and simulated data for all tested aspects.
 

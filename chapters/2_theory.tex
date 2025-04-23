@@ -13,7 +13,7 @@ This section begins with an introduction of the underlying concepts of \gls{dmfs
 
 Simulation in this context refers to the process of imitating the operation of a Discrete Event System over time, often over the course of multiple event sequences and capturing it in a model. The core activities in a simulation involve constructing and experimenting with this model. A high-quality simulation abstracts the essential features of the system, which requires the modeller to have a sound a priori understanding of what `essential' means in the given context. Although the model can later be refined, its quality is primarily measured by its ability to predict outcomes and offer a diverse range of scenarios \autocite{maria1997introduction}.
 
-When simulating \gls{dmfs}, their simulation describes the imitation of material flow systems by breaking down continuous flows into discrete events. Such material flow systems can be characterized as “systems processing discrete objects (parts) that move at regular or irregular intervals along transportation routes or conveyor lines, comprising production and logistic systems” \autocite{Arnold2006,schwede2024learning}. These systems form the backbone of material flow planning and control structures. The central idea of material flow planning and control is to ensure that material requirements—both in terms of quantity and timing—are met during transportation and storage across the various stages of the supply chain \autocite{Gehr2007}. Importantly, the time horizon of interest spans from order placement up to delivery.
+When simulating \gls{dmfs}, their simulation describes the imitation of material flow systems by breaking down continuous flows into discrete events. Such material flow systems can be characterized as “systems processing discrete objects (parts) that move at regular or irregular intervals along transportation routes or conveyor lines, comprising production and logistic systems” \autocite{Arnold2006,Schwede2024}. These systems form the backbone of material flow planning and control structures. The central idea of material flow planning and control is to ensure that material requirements—both in terms of quantity and timing—are met during transportation and storage across the various stages of the supply chain \autocite{Gehr2007}. Importantly, the time horizon of interest spans from order placement up to delivery.
 
 To summarize, \gls{dmfs} are often simulated using \gls{des}, which abstracts the continuous flow of materials into discrete events. The simulation is carried out using a model. The simulation and modeller are embedded in the context of material flow planning and control, which aims to ensure that material requirements are met across the supply chain. Successfully performed material flow planning and control induce high quality data for simulation and modelling purposes.
 
@@ -22,8 +22,8 @@ To summarize, \gls{dmfs} are often simulated using \gls{des}, which abstracts th
 Because the simulation of \gls{dmfs} often involves (discrete) event simulation, events in \gls{dmfs} need to be further differentiated to be comparable. \Textcite{Arnold2006} propose to differentiate \gls{dmfs} into static and dynamic components.
 
 Static components describe the possible states of the system. Possible states can be the set of possible processes given a part or resource, for example. Dynamic components define the concrete material flow for a certain part or order.
-Static components include parts, resources and processes \autocite{schwede2024learning}. Parts are transformed by processes using resources, sometimes based on orders. Transformation can have an impact on physical properties of the parts (transformation model), spatial position (transition model), the quality of the parts (quality model) and takes time (time model) and uses resources (resource model). Resources have a capacity of handling parts in parallel (resource capacity model) and processes have a predecessor-successors relationship (process model).
-Dynamic components are used to define the concrete dynamic material flow within the \gls{dmfs}. There are four components: Order generation, order control, resource control and supply control. Order generation defines the load the system must process. Order control defines how parts are processed, sometimes referred to as routing rules \autocite{mildeautomated}. Resource control defines how resources decide to handle processing requests, also sometimes referred to as priority rules. Supply control describes how supply parts are provided \autocite{mildeautomated,schwede2024learning}.\footnote{Refer to the latter source for a more detailed description of the components.}
+Static components include parts, resources and processes \autocite{Schwede2024}. Parts are transformed by processes using resources, sometimes based on orders. Transformation can have an impact on physical properties of the parts (transformation model), spatial position (transition model), the quality of the parts (quality model) and takes time (time model) and uses resources (resource model). Resources have a capacity of handling parts in parallel (resource capacity model) and processes have a predecessor-successors relationship (process model).
+Dynamic components are used to define the concrete dynamic material flow within the \gls{dmfs}. There are four components: Order generation, order control, resource control and supply control. Order generation defines the load the system must process. Order control defines how parts are processed, sometimes referred to as routing rules \autocite{mildeautomated}. Resource control defines how resources decide to handle processing requests, also sometimes referred to as priority rules. Supply control describes how supply parts are provided \autocite{mildeautomated,Schwede2024}.\footnote{Refer to the latter source for a more detailed description of the components.}
 
 
 \subsection{Production Planning and Control}
@@ -36,16 +36,16 @@ The integration of \gls{ppc} with simulation models is crucial, because it direc
 
 \subsection{Key Performance Indicators}
 \label{sec:relevant-kpis}
-Up to this point, \gls{des} for \gls{sbdt} of \gls{dmfs} has been introduced, outlining the key factors that contribute to a robust simulation. A model differentiation framework proposed by \textcite*{schwede2024learning} has been briefly presented to facilitate comparison of \gls{sbdt}. Furthermore, the critical role of \gls{ppc} in generating high-quality data for simulation has been discussed. These discussions ignored up until now that, even when \gls{sbdt} are integrated within well-functioning \gls{ppc} processes, various \gls{sbdt} models remain prone to errors and inherent trade-offs that must be addressed by the modeller \autocite{Tao2018ijamt}.
+Up to this point, \gls{des} for \gls{sbdt} of \gls{dmfs} has been introduced, outlining the key factors that contribute to a robust simulation. A model differentiation framework proposed by \textcite*{Schwede2024} has been briefly presented to facilitate comparison of \gls{sbdt}. Furthermore, the critical role of \gls{ppc} in generating high-quality data for simulation has been discussed. These discussions ignored up until now that, even when \gls{sbdt} are integrated within well-functioning \gls{ppc} processes, various \gls{sbdt} models remain prone to errors and inherent trade-offs that must be addressed by the modeller \autocite{Tao2018ijamt}.
 
 The goal conflict of the modeller when developing \gls{sbdt} can be described by the following conflict triangle in \autoref{fig:goals} \autocite{robinson2014simulation,balci2012life}.
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/goals.png}
-    \caption[Conflict Triangle]{The goal conflict of the modeller when developing \gls{sbdt}. Aiming for higher accuracy often leads to higher computational costs and reduced scalability. Reduced computational cost often leads to reduced accuracy and scalability. Aiming for higher scalability often leads to reduced accuracy and  higher costs.}
-    \label{fig:goals}
-    \caption*{Illustration based on \autocite{robinson2014simulation,balci2012life}.}
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/goals.png}
+  \caption[Conflict Triangle]{The goal conflict of the modeller when developing \gls{sbdt}. Aiming for higher accuracy often leads to higher computational costs and reduced scalability. Reduced computational cost often leads to reduced accuracy and scalability. Aiming for higher scalability often leads to reduced accuracy and  higher costs.}
+  \label{fig:goals}
+  \caption*{Illustration based on \autocite{robinson2014simulation,balci2012life}.}
 \end{figure}
 
 Focusing one of the three dimensions often leads to trade-offs in the other two dimensions. Oftentimes the data itself is not sufficient to decide on which goal to choose. Limited data points may hinder the modeller from reaching high validity. System architecture may block the system from reaching good scalability. Hardware limitations may hinder the modeller from reaching high efficiency.
@@ -54,23 +54,23 @@ At other times, corporate management may have a preference for one of the dimens
 One solution to balance and quantify these goals can be achieved by defining a set of \gls{kpi}s. Some may already be available through \gls{ppc}, some may be calculated from \gls{des} data or the \gls{des} itself. Optimally, the data warehouse provides relevant views \autocite{cui2020manufacturing}. Because the \gls{sbdt} in theory mirrors the \gls{dmfs}, the KPIs gathered from \gls{ppc} and the \gls{des} should yield identical values. Deviations between the KPIs of the \gls{sbdt} and the \gls{dmfs} may indicate errors in the \gls{sbdt} or anomalies in the \gls{dfms}. The following KPIs are deemed relevant for the evaluation of \gls{sbdt} \autocite{friederich2023framework}:
 
 \begin{equation}
-    \text{Throughput} = \frac{\text{Number of units produced}}{\text{Time period}}
-    \label{eq:throughput}
+  \text{Throughput} = \frac{\text{Number of units produced}}{\text{Time period}}
+  \label{eq:throughput}
 \end{equation}
 
 \begin{equation}
-    \text{Lead Time} = \text{End time of the process} - \text{Start time of the process}
-    \label{eq:lead_time}
+  \text{Lead Time} = \text{End time of the process} - \text{Start time of the process}
+  \label{eq:lead_time}
 \end{equation}
 
 \begin{equation}
-    \text{Cycle Time} = \frac{\text{Total processing time}}{\text{Number of units produced}}
-    \label{eq:cycle_time}
+  \text{Cycle Time} = \frac{\text{Total processing time}}{\text{Number of units produced}}
+  \label{eq:cycle_time}
 \end{equation}
 
 \begin{equation}
-    \text{Total Setup Time} = \sum_{i=1}^{n} \text{Setup Time}_i
-    \label{eq:setup_time}
+  \text{Total Setup Time} = \sum_{i=1}^{n} \text{Setup Time}_i
+  \label{eq:setup_time}
 \end{equation}
 
 The \gls{ppc} related KPIs may be provided by the above-mentioned data warehouse, because they are highly relevant in the context of production scheduling and control. \textit{Throughput}, as defined in \autoref{eq:throughput}, measures the number of produced parts at the last station in a specified period and is an indicator for the productivity of the manufacturing system \autocite{hopp2011factory, imseitif2019throughput}. \textit{Lead time}, formulated in \autoref{eq:lead_time}, is the cumulative time a part travels through the system from start to finish and serves as an indicator for the efficiency of the manufacturing system \autocite{slack2010operations, pfeiffer2016manufacturing}. \textit{Cycle time}, shown in \autoref{eq:cycle_time}, measures the same duration as lead time but focuses only on the active production process, excluding transports and waiting times \autocite{goldratt2004goal, griffin1993metrics}. \textit{Setup time}, as expressed in \autoref{eq:setup_time}, measures the time needed to prepare a machine for a new task and is an indicator for the flexibility of the manufacturing system \autocite{allahverdi1999review, allahverdi2008significance}. In the given use case, the thesis aggregates the setup time for all setup processes. All KPIs presented so far can be calculated dynamically when new data has been sent. Later on, they may serve as an alert system for the modeller to detect deviations between the \gls{sbdt} and the \gls{dmfs}, see \autoref{sec:vvuq-sbdt}.
@@ -82,7 +82,7 @@ The latter section gave a short introduction into \gls{dfms}, \gls{des}, its met
 As introduced in the preceding chapter, \gls{dt} inherit the highest order of modelling fidelity compared to \gls{dm} or \gls{ds}. There are different definitions of \gls{dt} present in the literature \autocite{Negri2017promfg,zheng2019application,glaessgen2012digital,Demkovich2018def,boschert2016digital,grieves2014digital,kritzinger2018digital,Tao2018ijamt,zehnder2018representing}. Each of them highlights different aspects of the \gls{dt}. This thesis utilizes the definition by \textcite{grieves2014digital} which highlights the conceptual elements of the twin and its lifecycle focus:
 
 \begin{quote}
-    The digital twin concept (...) contains three main parts: A) Physical products in real space, (B) virtual products in virtual space and (C) the two-way connections of data and information that tie the virtual and real products together. \autocite{grieves2014digital}
+  The digital twin concept (...) contains three main parts: A) Physical products in real space, (B) virtual products in virtual space and (C) the two-way connections of data and information that tie the virtual and real products together. \autocite{grieves2014digital}
 \end{quote}
 
 The physical product is the entity which is modelled. The virtual product represents the \gls{dt} itself, but also its infrastructure, for example data services making the real-time data flow possible \autocite{Tao2018ijamt}. The two-way connection is the data flow between the physical and the virtual product. The data flow is bidirectional. \textcite{zehnder2018representing} add that the data flow may contain meta data ``describing the data source and its context'.
@@ -92,9 +92,9 @@ The physical product is the entity which is modelled. The virtual product repres
 Now that a unified understanding of \gls{dt} has been established, this section focuses on how \gls{dt} may be learned from different sources of information. The following list includes the most relevant types of \gls{dt}:
 
 \begin{itemize}
-    \item \gls{sbdt} \autocite{Lugaresi2021aifac,martinez2018automatic}
-    \item \gls{dddt} \autocite{he2019data,Friederich2022}
-    \item \gls{hdt} \autocite{luo2020hybrid,huang2023hybrid}
+  \item \gls{sbdt} \autocite{Lugaresi2021aifac,martinez2018automatic}
+  \item \gls{dddt} \autocite{he2019data,Friederich2022}
+  \item \gls{hdt} \autocite{luo2020hybrid,huang2023hybrid}
 \end{itemize}
 
 
@@ -108,18 +108,18 @@ Now that a unified understanding of \gls{dt} has been established, this section 
 \label{sec:data-driven-digital-twins}
 
 While \gls{sbdt}s and \gls{hdt} possess significant computational costs and require domain expertise, \gls{dddt} are able to learn from data without the need for a hand-written simulation model. The \gls{dddt} \textit{learns} the model. Learning in the context of \gls{dddt} is not trivial, several approaches have been proposed in the literature \autocite{he2019data,Friederich2022,francis2021towards}. Oftentimes, Data Science methods come to work. The learning process may be supervised or unsupervised. Supervised learning uses labelled data to train the model \autocite{cunningham2008supervised}. The label can symbolize different values of interest. Unsupervised learning uses unlabelled data to train the model \autocite{barlow1989unsupervised}. Oftentimes, the task at hand is to group the data into different categories, see \autoref{sec:knn} \autocite{Biesinger2019}.
-The learning process may be online or offline. Offline learning uses the data \textit{once} for training, validation and testing, while online learning continuously updates the model with new data to adapt to changes in the physical system. Online learning is thus able to capture new trends in the data and to foresee concept drift \autocite{tsymbal2004problem}. \gls{dddt} have to be differentiated from data-driven simulation \autocite{Charpentier2014}, which involves human intervention to create highly individual solutions for the physical entity. The key difference is that every characteristic has to be explicitly described in the model by the expert, there are no efforts to let an intelligent algorithm learn these by itself. \gls{dddt} may be able to update themselves to new trends in the data by online learning, termed \textit{synchronization} \autocite{reinhardt2019survey}. Latter has to be differentiated from \textit{updating}, which is a manual process to take corrective action in the logic of the twin itself \autocite{schwede2024learning}. An example for updating a \gls{dddt} may be the addition of a new feature to the model. An example for synchronization may be the adaption of the model to new trends in the data. The latter may be done by the model itself, the former has to be done by the modeller.
+The learning process may be online or offline. Offline learning uses the data \textit{once} for training, validation and testing, while online learning continuously updates the model with new data to adapt to changes in the physical system. Online learning is thus able to capture new trends in the data and to foresee concept drift \autocite{tsymbal2004problem}. \gls{dddt} have to be differentiated from data-driven simulation \autocite{Charpentier2014}, which involves human intervention to create highly individual solutions for the physical entity. The key difference is that every characteristic has to be explicitly described in the model by the expert, there are no efforts to let an intelligent algorithm learn these by itself. \gls{dddt} may be able to update themselves to new trends in the data by online learning, termed \textit{synchronization} \autocite{reinhardt2019survey}. Latter has to be differentiated from \textit{updating}, which is a manual process to take corrective action in the logic of the twin itself \autocite{Schwede2024}. An example for updating a \gls{dddt} may be the addition of a new feature to the model. An example for synchronization may be the adaption of the model to new trends in the data. The latter may be done by the model itself, the former has to be done by the modeller.
 \gls{dddt}s thus rely less on domain expertise and manual model creation. A suitable model may be able to capture relevant trends in the data and to predict outcomes which describe most of the characteristics of the physical entity. \textcite{francis2021towards} propose several process steps a \gls{dddt} must undergo to be termed \textit{data-driven}:
 
 \begin{enumerate}
-    \item \textbf{Data Collection:} The relevant entities to be modelled have to be identified. This activity involves data gathering of the identified entities and ensuring a steady data stream to a database. The data may be gathered from sensors, data warehouses or other sources.
-    \item \textbf{Data Validation:} This step involves cleaning and preprocessing the data. The data may contain missing values, outliers or other errors. The data has to be cleaned and preprocessed to ensure a high quality of the model. Plausibility checks may be performed to ensure the data is correct.
-    \item \textbf{Knowledge Extraction:} After the data has been collected and cleaned, events have to be detected. \Citeauthor{francis2021towards} utilize process mining terms in this context, such as event detection and process discovery. The main goal in this step is to find a common ground on which events are of interest. The thesis later dives deeper into PM techniques applied here, see \autoref{sec:process-mining}.
-    \item \textbf{(Semi-)automatic Simulation Modelling:} The data is used to train a model. The model is then used to predict future states of the physical entity. The model may be updated with new data to increase its accuracy.
-    \item \textbf{Continuous Model Validation:} Interestingly, \citeauthor{francis2021towards} propose a continuous model validation. In the online learning case, they recommend to use the steady data stream to apply validation techniques continuously, see \autoref{sec:vvuq-sbdt}. The validation may be performed by comparing the model predictions with the real data. If the model deviates from the real data, the model may be recalibrated.
+  \item \textbf{Data Collection:} The relevant entities to be modelled have to be identified. This activity involves data gathering of the identified entities and ensuring a steady data stream to a database. The data may be gathered from sensors, data warehouses or other sources.
+  \item \textbf{Data Validation:} This step involves cleaning and preprocessing the data. The data may contain missing values, outliers or other errors. The data has to be cleaned and preprocessed to ensure a high quality of the model. Plausibility checks may be performed to ensure the data is correct.
+  \item \textbf{Knowledge Extraction:} After the data has been collected and cleaned, events have to be detected. \Citeauthor{francis2021towards} utilize process mining terms in this context, such as event detection and process discovery. The main goal in this step is to find a common ground on which events are of interest. The thesis later dives deeper into PM techniques applied here, see \autoref{sec:process-mining}.
+  \item \textbf{(Semi-)automatic Simulation Modelling:} The data is used to train a model. The model is then used to predict future states of the physical entity. The model may be updated with new data to increase its accuracy.
+  \item \textbf{Continuous Model Validation:} Interestingly, \citeauthor{francis2021towards} propose a continuous model validation. In the online learning case, they recommend to use the steady data stream to apply validation techniques continuously, see \autoref{sec:vvuq-sbdt}. The validation may be performed by comparing the model predictions with the real data. If the model deviates from the real data, the model may be recalibrated.
 \end{enumerate}
 
-\gls{dddt}s go one step further than \gls{sbdt} and minimize the influence of the human in the loop \autocite{francis2021towards,Friederich2022}. Faster model development and updating activities are the result. The third reason to automate \gls{dt} endeavours elaborated by \textcite{schwede2024learning}, increasing prediction quality, rises and falls with the data quality, thus the gathering and preprocessing efforts of the modeller. Extrinsic factors like the number of data points available also play into the equation. If the number of features is greater than the number of samples, the curse of dimensionality hinders a good modelling performance \autocite{koppen2000curse}. \gls{dddt} should avoid biased or noisy predictions at all costs. The identification of \textit{relevant} events poses the risk of introducing a selection bias, rather a confirmation bias. The modeller may have the tendency to select events which complement his hypothesis. Random sampling may be a solution to this problem, but can destroy sequential information patterns in event sequences.
+\gls{dddt}s go one step further than \gls{sbdt} and minimize the influence of the human in the loop \autocite{francis2021towards,Friederich2022}. Faster model development and updating activities are the result. The third reason to automate \gls{dt} endeavours elaborated by \textcite{Schwede2024}, increasing prediction quality, rises and falls with the data quality, thus the gathering and preprocessing efforts of the modeller. Extrinsic factors like the number of data points available also play into the equation. If the number of features is greater than the number of samples, the curse of dimensionality hinders a good modelling performance \autocite{koppen2000curse}. \gls{dddt} should avoid biased or noisy predictions at all costs. The identification of \textit{relevant} events poses the risk of introducing a selection bias, rather a confirmation bias. The modeller may have the tendency to select events which complement his hypothesis. Random sampling may be a solution to this problem, but can destroy sequential information patterns in event sequences.
 
 Overall \gls{dddt} are a promising approach to model the physical entity. If the right balance between human involvement and automated learning is found, it may be an efficient solution \autocite{francis2021towards}. Thinking one step ahead, employing data-based \gls{vvuq} approaches may also be a step forward. This topic will be discussed in Section \autoref{sec:ml-approaches}.
 
@@ -137,34 +137,34 @@ After introducing the corporate embedding of \gls{dt}s and their types, the thes
 \gls{pm} is a discipline established 1999 which is interdisciplinary rooted in the field of Data Science and Process Science \autocite{van2016data}. Data Science can be considered a process agnostic discipline \autocite{van2016data}, while process science uses models not covering hidden trends in the data. The bridge between both approaches is \gls{pm}. The goal of \gls{pm} is to use event data to identify and extract process information \autocite{vanderAalst2012}. This information is used to discover (process discovery), monitor (conformance checking) and improve processes (process enhancement \autocite{vanderAalst2012}) by using event logs. Such logs must contain a case ID, an activity name and a timestamp. Additional information like resource information, order information or other context information may be added to the log \autocite{vanderAalst2012}. Such logs assume that the process can be captured fully and sequentially.
 
 \begin{table}[htbp]
-    \centering
-    \caption[Exemplary Event Log]{A fragment of a manufacturing event log: Each line corresponds to an event. The case ID groups unique events which are identified by an event ID to one group, a trace. The timestamp refers to the time of event occurrence, while the activity describes the event. In this example, additional information like resource name and cost are given as well. Case 1, for example, consists of five events, involving a warehouse, two inspectors, and one machine.}
-    \label{tab:manufacturinglog}
-    \resizebox{\textwidth}{!}{%
-        \begin{tabular}{r r l l l r}
-            \toprule
-            \textbf{Case id} & \textbf{Event id} & \textbf{Timestamp} & \textbf{Activity}     & \textbf{Resource}  & \textbf{Cost} \\
-            \midrule
-            1                & 101               & 10-01-2025:08.00   & receive raw material  & Warehouse A        & 500           \\
-                             & 102               & 10-01-2025:08.30   & initial quality check & Inspector Stefan   & 300           \\
-                             & 103               & 10-01-2025:09.00   & cutting process       & Machine X          & 800           \\
-                             & 104               & 10-01-2025:09.45   & assembly              & Worker Paul        & 600           \\
-                             & 105               & 10-01-2025:10.30   & final inspection      & Inspector Eva      & 400           \\
-            \midrule
-            2                & 201               & 11-01-2025:07.45   & receive raw material  & Warehouse B        & 500           \\
-                             & 202               & 11-01-2025:08.15   & cutting process       & Machine Y          & 800           \\
-                             & 203               & 11-01-2025:09.00   & welding               & Robot Arm Z        & 700           \\
-                             & 204               & 11-01-2025:09.45   & quality assurance     & Inspector David    & 400           \\
-            \midrule
-            3                & 301               & 12-01-2025:06.30   & receive raw material  & Warehouse C        & 500           \\
-                             & 302               & 12-01-2025:07.00   & initial quality check & Inspector Claudius & 300           \\
-                             & 303               & 12-01-2025:07.30   & CNC machining         & Machine W          & 900           \\
-                             & 304               & 12-01-2025:08.15   & painting              & Worker Daniel      & 500           \\
-                             & 305               & 12-01-2025:09.00   & packaging             & Worker Johannes    & 350           \\
-            \bottomrule
-        \end{tabular}%
-    }
-    \caption*{Own illustration based on \textcite{van2016data}.}
+  \centering
+  \caption[Exemplary Event Log]{A fragment of a manufacturing event log: Each line corresponds to an event. The case ID groups unique events which are identified by an event ID to one group, a trace. The timestamp refers to the time of event occurrence, while the activity describes the event. In this example, additional information like resource name and cost are given as well. Case 1, for example, consists of five events, involving a warehouse, two inspectors, and one machine.}
+  \label{tab:manufacturinglog}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{r r l l l r}
+      \toprule
+      \textbf{Case id} & \textbf{Event id} & \textbf{Timestamp} & \textbf{Activity}     & \textbf{Resource}  & \textbf{Cost} \\
+      \midrule
+      1                & 101               & 10-01-2025:08.00   & receive raw material  & Warehouse A        & 500           \\
+                       & 102               & 10-01-2025:08.30   & initial quality check & Inspector Stefan   & 300           \\
+                       & 103               & 10-01-2025:09.00   & cutting process       & Machine X          & 800           \\
+                       & 104               & 10-01-2025:09.45   & assembly              & Worker Paul        & 600           \\
+                       & 105               & 10-01-2025:10.30   & final inspection      & Inspector Eva      & 400           \\
+      \midrule
+      2                & 201               & 11-01-2025:07.45   & receive raw material  & Warehouse B        & 500           \\
+                       & 202               & 11-01-2025:08.15   & cutting process       & Machine Y          & 800           \\
+                       & 203               & 11-01-2025:09.00   & welding               & Robot Arm Z        & 700           \\
+                       & 204               & 11-01-2025:09.45   & quality assurance     & Inspector David    & 400           \\
+      \midrule
+      3                & 301               & 12-01-2025:06.30   & receive raw material  & Warehouse C        & 500           \\
+                       & 302               & 12-01-2025:07.00   & initial quality check & Inspector Claudius & 300           \\
+                       & 303               & 12-01-2025:07.30   & CNC machining         & Machine W          & 900           \\
+                       & 304               & 12-01-2025:08.15   & painting              & Worker Daniel      & 500           \\
+                       & 305               & 12-01-2025:09.00   & packaging             & Worker Johannes    & 350           \\
+      \bottomrule
+    \end{tabular}%
+  }
+  \caption*{Own illustration based on \textcite{van2016data}.}
 \end{table}
 
 \autoref{tab:manufacturinglog} illustrates the \gls{pm} concepts. The case ID groups unique events which are identified by an event ID to one group, a trace. The timestamp refers to the time of event occurrence, while the activity describes the event. In this example, additional information like resource name and cost are given as well. Cases containing the same events identified by unique event IDs will have different case IDs \autocite{van2016data}. Process discovery may try to produce a process model from the event log. The challenge lies not in the recording of every trace present in the event log, rather in finding a generic representation of the most frequent traces. The process model must be generic enough to describe most traces, but specific enough not to get invalidated by future traces which may contain completely different events. Another major building block of this process model is accounting for trace concurrency. When several events may be identified to happen in parallel during the same time window, the model must recognize this, similar to a bias-variance trade-off lend from data science \autocite{briscoe2011conceptual}. The process must contain the most frequent traces but has to filter out traces which contain anomalies. Such anomalies like longer time per event due to a fire alarm have to be accounted for. Conformance checking may compare a given process model against a given event log. They are specialized in detecting aforementioned anomalies. A key insight in conformance checking lies in two possible deviations from reality: The given model does not capture the real behaviour or reality differs from the model. In the first case, the model is not working as intended. In the second case, the event log is corrupt. The third view on event logs, process enhancement, enables the modeller to use the generated process model to identify bottlenecks. Anomalies identified serve as a good starting point because they reveal errors in the process sequence. The given table offers costs associated to each event ID. This information may be used to create an event benchmark to further optimize the desired `ideal' trace.
@@ -172,11 +172,11 @@ After introducing the corporate embedding of \gls{dt}s and their types, the thes
 More generally, \gls{pm} empowers the modeller to perform \gls{vvuq} of a process model, event log or described trace. This concept is captured by the terms \textit{Play-In}, \textit{Play-Out} and \textit{Replay} \autocite{damm2001lscs}, see \autoref{fig:playinoutreplay}.
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/playinplayoutreplay.png}
-    \caption[Process Model Usages]{The Play-In, Play-Out and Replay concept in the context of \gls{pm}. The Play-In phase involves the creation of a process model from an event log. The Play-Out phase involves the creation of an event log from a process model. The Replay phase involves the modification of the process model thorough information gained from the event log.}
-    \label{fig:playinoutreplay}
-    \caption*{Illustration based on \autocite{damm2001lscs}.}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/playinplayoutreplay.png}
+  \caption[Process Model Usages]{The Play-In, Play-Out and Replay concept in the context of \gls{pm}. The Play-In phase involves the creation of a process model from an event log. The Play-Out phase involves the creation of an event log from a process model. The Replay phase involves the modification of the process model thorough information gained from the event log.}
+  \label{fig:playinoutreplay}
+  \caption*{Illustration based on \autocite{damm2001lscs}.}
 \end{figure}
 
 Play-In refers to the creation of a process model out of an event log. Play-Out may be called `sampling' in data science as it generates traces out of the model. \gls{des} uses Play-Out to generate new exemplary behaviour, see \autoref{sec:material-flow}. Here, a process model may be used to play-out (simulate) several traces of the desired events and then use bagging techniques like averaging the durations per event to gain robust KPIs (\autoref{sec:relevant-kpis}) and to reduce variance. A biased process model may still generate biased KPIs. Replay uses event log and process models together to check conformance, enriching the model with information captured in the log or to transform a descriptive process model into a prescriptive one \autocite{van2016data}.
@@ -215,9 +215,9 @@ The first effort to define and perform verification was performed by \textcite{m
 By 2004, modern V\&V emerged. Considering model fidelity of todays approaches, \textcite{Oberkampf2004amr} introduced widely recognized definitions of V\&V:
 
 \begin{quote}
-    \textit{Verification} is the process of determining that a model implementation accurately represents the developer's conceptual description of the model and the solution to the model.
+  \textit{Verification} is the process of determining that a model implementation accurately represents the developer's conceptual description of the model and the solution to the model.
 
-    \textit{Validation} is the process of determining the degree to which a model is an accurate representation of the real world from the perspective of the intended uses of the model. \autocite{Oberkampf2004amr}
+  \textit{Validation} is the process of determining the degree to which a model is an accurate representation of the real world from the perspective of the intended uses of the model. \autocite{Oberkampf2004amr}
 \end{quote}
 
 Verification thus concerns itself with the \textit{correctness} of the given model \autocite{Sargent2010wsc}, while validation evaluates the \textit{quality} of explanations quantitively \autocite{Oberkampf2004amr}. \Textcite{iso2017systems} span the concept of validation to computational models, where valid models correctly reflect the users intended functionality. \gls{ppc} may provide the modeller with relevant KPIs to assess both.
@@ -234,21 +234,21 @@ The historical development of \gls{vvuq}, from early verification to integrated 
 Automatically generated models largely stem from the \gls{des} discipline (\autoref{par:asmg}), termed automatic simulation model generation, \gls{asmg} \autocite{mildeautomated,Charpentier2014}. They may use data-driven techniques which reduce the manual effort to create and update themselves. These models adapt quickly to changing conditions, making them valuable for dynamic environments like manufacturing. However, ensuring their reliability requires specific \gls{vvuq}. Because \gls{asmg} models often are black boxes, traditional \gls{vvuq} methods may not be applicable. The challenge lies in understanding the models internal logic and ensuring it accurately reflects the physical system. If sophisticated data driven methods have been applied, several \textit{key challenges} arise, hindering successful \gls{vvuq}:
 
 \begin{itemize}
-    \item \textbf{Model Opacity:} \gls{asmg} models often use complex \gls{ml} algorithms like neural networks. Such blackbox models are difficult to interpret, making it hard to understand their internal logic. This opacity may hinder \gls{vvuq}, as the modeller cannot easily identify errors or biases.
-    \item \textbf{Data Dependency:} Data-driven models rely on high-quality data. If the data is biased or noisy, the models predictions may be inaccurate.
-    \item \textbf{Dynamic Model Adaptation:} Models that continuously learn and adapt, such as those using online learning, require ongoing validation to ensure they remain valid as new data is ingested. This dynamic nature introduces the risk of concept drift \autocite{lu2018learning}, where the underlying process changes over time, potentially degrading model performance.
-    \item \textbf{Quantifying Uncertainty:} Model predictions are stochastic in nature. For applications where precision is crucial, such as in manufacturing, uncertainty needs to be quantified.
+  \item \textbf{Model Opacity:} \gls{asmg} models often use complex \gls{ml} algorithms like neural networks. Such blackbox models are difficult to interpret, making it hard to understand their internal logic. This opacity may hinder \gls{vvuq}, as the modeller cannot easily identify errors or biases.
+  \item \textbf{Data Dependency:} Data-driven models rely on high-quality data. If the data is biased or noisy, the models predictions may be inaccurate.
+  \item \textbf{Dynamic Model Adaptation:} Models that continuously learn and adapt, such as those using online learning, require ongoing validation to ensure they remain valid as new data is ingested. This dynamic nature introduces the risk of concept drift \autocite{lu2018learning}, where the underlying process changes over time, potentially degrading model performance.
+  \item \textbf{Quantifying Uncertainty:} Model predictions are stochastic in nature. For applications where precision is crucial, such as in manufacturing, uncertainty needs to be quantified.
 \end{itemize}
 
 To assess these challenges, the thesis defines the following \textit{key requirements} for \gls{vvuq} of automatically generated models, especially \gls{sbdt}:
 \begin{itemize}
-    \label{par:key-requirements}
-    \item \textbf{Model Interpretability:} \label{par:surrogate} Models should be interpretable to ensure the models internal logic is transparent and understandable, enabling the modeller to identify errors or biases. Developing and employing techniques to make the decision-making processes of automatically generated models more transparent is crucial for \gls{vvuq}.
-    \item \textbf{Upholding Data Quality:} Procedures to ensure that the data used for model generation and validation is accurate, complete, and representative of the operational environment are important. This includes data cleaning, preprocessing, and plausibility checks to identify and mitigate issues like missing values, outliers, or biases. For instance, in manufacturing digital twins, sensor data must be validated for accuracy and consistency to ensure reliable model outputs \autocite{rodriguez2023updating}.
-    \item \textbf{Validatable Algorithms:} Besides ensuring model interpretability, the algorithms used for model generation must be validatable.
-    \item \textbf{Continuous Validation:} \gls{vvuq} processes have to work in real-time to ensure the model remains valid as new data is ingested. This requires continuous monitoring and validation of the models predictions against real-world data. Techniques like online validation \autocite{francis2021towards} can help ensure the models accuracy and reliability over time.
-    \item \textbf{Integration:} \gls{vvuq} processes have to be integrated into existing model- and \gls{ppc} infrastructure to be able to perform \gls{vvuq} on the fly. This requires close collaboration between data scientists, domain experts, and IT specialists to ensure the integration of \gls{vvuq} processes into the model lifecycle.
-    \item \textbf{Scalability:} \gls{vvuq} processes have to be scalable as the underlying model or data evolves over time.
+  \label{par:key-requirements}
+  \item \textbf{Model Interpretability:} \label{par:surrogate} Models should be interpretable to ensure the models internal logic is transparent and understandable, enabling the modeller to identify errors or biases. Developing and employing techniques to make the decision-making processes of automatically generated models more transparent is crucial for \gls{vvuq}.
+  \item \textbf{Upholding Data Quality:} Procedures to ensure that the data used for model generation and validation is accurate, complete, and representative of the operational environment are important. This includes data cleaning, preprocessing, and plausibility checks to identify and mitigate issues like missing values, outliers, or biases. For instance, in manufacturing digital twins, sensor data must be validated for accuracy and consistency to ensure reliable model outputs \autocite{rodriguez2023updating}.
+  \item \textbf{Validatable Algorithms:} Besides ensuring model interpretability, the algorithms used for model generation must be validatable.
+  \item \textbf{Continuous Validation:} \gls{vvuq} processes have to work in real-time to ensure the model remains valid as new data is ingested. This requires continuous monitoring and validation of the models predictions against real-world data. Techniques like online validation \autocite{francis2021towards} can help ensure the models accuracy and reliability over time.
+  \item \textbf{Integration:} \gls{vvuq} processes have to be integrated into existing model- and \gls{ppc} infrastructure to be able to perform \gls{vvuq} on the fly. This requires close collaboration between data scientists, domain experts, and IT specialists to ensure the integration of \gls{vvuq} processes into the model lifecycle.
+  \item \textbf{Scalability:} \gls{vvuq} processes have to be scalable as the underlying model or data evolves over time.
 \end{itemize}
 
 As noted by \textcite{francis2021towards}, the lifecycle \gls{sbdt} has implications for its \gls{vvuq} as well: \gls{vvuq} must accompany the \gls{sbdt} in all phases, from conceptualization to deployment and operation. The key requirements outlined above provide a foundation for developing robust \gls{vvuq} processes for automatically generated models.
@@ -284,34 +284,34 @@ Several algorithms exist to detect anomalies, including statistical methods, clu
 Another important aspects of assessing model quality is through metrics. The following section introduces the most common metrics used in \gls{vvuq} of \gls{sbdt}. The introduction is supported by an exemplary \gls{ocel}:
 
 \begin{table}[H]
-    \centering
-    \caption[Exemplary OCEL]{A fragment of a manufacturing \gls{ocel} with type annotations. Each row represents an event with associated process execution details. The columns are annotated as follows: \texttt{process\_execution\_id} (int), \texttt{order\_id} (int), \texttt{start\_time} (datetime), \texttt{end\_time} (datetime), \texttt{part\_id} (int), \texttt{process\_type} (int), \texttt{process\_id} (int), \texttt{resource\_id} (int), and \texttt{is\_valid} (bool).}
-    \label{tab:exemplary-ocel}
-    \resizebox{\textwidth}{!}{%
-        \begin{tabular}{r r l l r r r r l}
-            \toprule
-            \textbf{process\_execution\_id} & \textbf{order\_id} & \textbf{start\_time} & \textbf{end\_time}  & \textbf{part\_id} & \textbf{process\_type} & \textbf{process\_id} & \textbf{resource\_id} & \textbf{is\_valid} \\
-            \midrule
-            0                               & 2529               & 2020-04-22 14:21:07  & 2020-04-22 14:21:31 & -1                & 0                      & 0                    & 0                     & True               \\
-            1                               & 2529               & 2020-04-22 14:23:35  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
-            2                               & 2529               & 2020-04-22 14:21:09  & 2020-04-22 14:21:33 & -1                & 0                      & 0                    & 0                     & True               \\
-            3                               & 2529               & 2020-04-22 14:23:36  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
-            4                               & 2529               & 2020-04-22 14:21:11  & 2020-04-22 14:21:35 & -1                & 0                      & 0                    & 0                     & True               \\
-            5                               & 2529               & 2020-04-22 14:23:36  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
-            6                               & 2529               & 2020-04-22 14:21:13  & 2020-04-22 14:21:37 & -1                & 0                      & 0                    & 0                     & True               \\
-            7                               & 2529               & 2020-04-22 14:23:36  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
-            8                               & 2529               & 2020-04-22 14:21:15  & 2020-04-22 14:21:39 & -1                & 0                      & 0                    & 0                     & True               \\
-            9                               & 2529               & 2020-04-22 14:23:37  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
-            10                              & 2529               & 2020-04-22 14:21:18  & 2020-04-22 14:21:41 & -1                & 0                      & 0                    & 0                     & True               \\
-            11                              & 2529               & 2020-04-22 14:23:37  & 2020-04-22 14:23:57 & -1                & 1                      & 1                    & 1                     & False              \\
-            12                              & 2529               & 2020-04-22 14:21:20  & 2020-04-22 14:21:44 & -1                & 0                      & 0                    & 0                     & False              \\
-            13                              & 2529               & 2020-04-22 14:23:37  & 2020-04-22 14:23:57 & -1                & 1                      & 1                    & 1                     & False              \\
-            14                              & 2529               & 2020-04-22 14:21:22  & 2020-04-22 14:21:46 & -1                & 0                      & 0                    & 0                     & False              \\
-            15                              & 2529               & 2020-04-22 14:23:38  & 2020-04-22 14:23:57 & -1                & 1                      & 1                    & 1                     & False              \\
-            \bottomrule
-        \end{tabular}%
-    }
-    \caption*{Tabulation based IoT Factory data.}}
+  \centering
+  \caption[Exemplary OCEL]{A fragment of a manufacturing \gls{ocel} with type annotations. Each row represents an event with associated process execution details. The columns are annotated as follows: \texttt{process\_execution\_id} (int), \texttt{order\_id} (int), \texttt{start\_time} (datetime), \texttt{end\_time} (datetime), \texttt{part\_id} (int), \texttt{process\_type} (int), \texttt{process\_id} (int), \texttt{resource\_id} (int), and \texttt{is\_valid} (bool).}
+  \label{tab:exemplary-ocel}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{r r l l r r r r l}
+      \toprule
+      \textbf{process\_execution\_id} & \textbf{order\_id} & \textbf{start\_time} & \textbf{end\_time}  & \textbf{part\_id} & \textbf{process\_type} & \textbf{process\_id} & \textbf{resource\_id} & \textbf{is\_valid} \\
+      \midrule
+      0                               & 2529               & 2020-04-22 14:21:07  & 2020-04-22 14:21:31 & -1                & 0                      & 0                    & 0                     & True               \\
+      1                               & 2529               & 2020-04-22 14:23:35  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
+      2                               & 2529               & 2020-04-22 14:21:09  & 2020-04-22 14:21:33 & -1                & 0                      & 0                    & 0                     & True               \\
+      3                               & 2529               & 2020-04-22 14:23:36  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
+      4                               & 2529               & 2020-04-22 14:21:11  & 2020-04-22 14:21:35 & -1                & 0                      & 0                    & 0                     & True               \\
+      5                               & 2529               & 2020-04-22 14:23:36  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
+      6                               & 2529               & 2020-04-22 14:21:13  & 2020-04-22 14:21:37 & -1                & 0                      & 0                    & 0                     & True               \\
+      7                               & 2529               & 2020-04-22 14:23:36  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
+      8                               & 2529               & 2020-04-22 14:21:15  & 2020-04-22 14:21:39 & -1                & 0                      & 0                    & 0                     & True               \\
+      9                               & 2529               & 2020-04-22 14:23:37  & 2020-04-22 14:23:58 & -1                & 1                      & 1                    & 1                     & True               \\
+      10                              & 2529               & 2020-04-22 14:21:18  & 2020-04-22 14:21:41 & -1                & 0                      & 0                    & 0                     & True               \\
+      11                              & 2529               & 2020-04-22 14:23:37  & 2020-04-22 14:23:57 & -1                & 1                      & 1                    & 1                     & False              \\
+      12                              & 2529               & 2020-04-22 14:21:20  & 2020-04-22 14:21:44 & -1                & 0                      & 0                    & 0                     & False              \\
+      13                              & 2529               & 2020-04-22 14:23:37  & 2020-04-22 14:23:57 & -1                & 1                      & 1                    & 1                     & False              \\
+      14                              & 2529               & 2020-04-22 14:21:22  & 2020-04-22 14:21:46 & -1                & 0                      & 0                    & 0                     & False              \\
+      15                              & 2529               & 2020-04-22 14:23:38  & 2020-04-22 14:23:57 & -1                & 1                      & 1                    & 1                     & False              \\
+      \bottomrule
+    \end{tabular}%
+  }
+  \caption*{Tabulation based IoT Factory data.}}
 \end{table}
 
 \paragraph{\textbf{Accuracy}}
@@ -319,8 +319,8 @@ Accuracy measures the overall correctness of the classification model. It repres
 
 
 \begin{equation}
-    \label{eq:accuracy}
-    \text{Accuracy} = \frac{\text{Number of Correct Predictions}}{\text{Total Number of Predictions}} = \frac{TP + TN}{TP + TN + FP + FN}
+  \label{eq:accuracy}
+  \text{Accuracy} = \frac{\text{Number of Correct Predictions}}{\text{Total Number of Predictions}} = \frac{TP + TN}{TP + TN + FP + FN}
 \end{equation}
 where $TP$ denotes the count of true positives, $TN$ represents true negatives, $FP$ shows false positives, and $FN$ indicates false negatives.
 
@@ -330,8 +330,8 @@ This metric offers a high-level overview of the models performance by showing th
 Precision (positive predictive value) focuses on the quality of the positive predictions made by the model. It measures the proportion of instances that the model predicted as positive which were indeed positive.
 
 \begin{equation}
-    \label{eq:precision}
-    \text{Precision} = \frac{TP}{TP + FP}
+  \label{eq:precision}
+  \text{Precision} = \frac{TP}{TP + FP}
 \end{equation}
 A high precision score shows that when the model predicts a manufacturing process as ´valid' (assuming ´´valid' is the positive class), it is highly likely to be truly valid. This is important in manufacturing quality control to minimize the occurrence of false alarms, which can lead to interruptions in the production line and increased operational costs \autocite{kharitonov2022comparative}.
 
@@ -339,8 +339,8 @@ A high precision score shows that when the model predicts a manufacturing proces
 Recall, also called sensitivity or the true positive rate (TPR), shows the models ability to identify all the actual positive instances within the dataset. It measures the proportion of actual positive instances that were correctly classified as positive by the model \autocite{fahrmeir2016statistik}.
 
 \begin{equation}
-    \label{eq:recall}
-    \text{Recall} = \frac{TP}{TP + FN}
+  \label{eq:recall}
+  \text{Recall} = \frac{TP}{TP + FN}
 \end{equation}
 
 In the context of manufacturing, a high recall for the 'valid' class is crucial for ensuring that the model effectively detects the majority of the truly valid processes. Failing to identify a valid process (a false negative) can have consequences, potentially leading to the production of defective goods that may lead to costs related to rework, scrap, or customer dissatisfaction \autocite{kharitonov2022comparative}. Therefore, a model with high recall minimizes the risk of overlooking critical quality issues in the manufacturing process.
@@ -349,8 +349,8 @@ In the context of manufacturing, a high recall for the 'valid' class is crucial 
 The F1-score provides a balanced measure of the classification models performance by calculating the harmonic mean of precision and recall. This metric is particularly useful when handling datasets that contain an imbalance in the class distribution.
 
 \begin{equation}
-    \label{eq:F1-score}
-    \text{F1-score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} = \frac{2TP}{2TP + FP + FN}
+  \label{eq:F1-score}
+  \text{F1-score} = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} = \frac{2TP}{2TP + FP + FN}
 \end{equation}
 
 By considering both the precision (the accuracy of positive predictions) and the recall (the ability to find all positive instances), the F1-score offers a single metric that summarizes the trade-off between these two important aspects of a classifier's performance.
@@ -359,19 +359,19 @@ By considering both the precision (the accuracy of positive predictions) and the
 A confusion matrix is a specific type of contingency table that provides a detailed breakdown of the performance of a classification model by displaying the counts of true positives, true negatives, false positives, and false negatives. For a binary classification problem, such as predicting whether a manufacturing process is valid or not, the confusion matrix typically has the form of a 2x2 table \autocite{fahrmeir2016statistik}.
 
 \begin{table}[h!]
-    \centering
-    \caption[Confusion Matrix Skeleton]{Confusion Matrix for Binary Classification}
-    \label{tab:confusionmatrix}
-    \begin{tabular}{c|cc}
-        \toprule
-        \textbf{Actual Class} & \multicolumn{2}{c}{\textbf{Predicted Class}}                       \\
-                              & Positive (True)                              & Negative (False)    \\
-        \midrule
-        Positive (True)       & True Positive (TP)                           & False Negative (FN) \\
-        Negative (False)      & False Positive (FP)                          & True Negative (TN)  \\
-        \bottomrule
-    \end{tabular}
-    \caption*{Own tabulation based on \autocite{fahrmeir2016statistik}.}}
+  \centering
+  \caption[Confusion Matrix Skeleton]{Confusion Matrix for Binary Classification}
+  \label{tab:confusionmatrix}
+  \begin{tabular}{c|cc}
+    \toprule
+    \textbf{Actual Class} & \multicolumn{2}{c}{\textbf{Predicted Class}}                       \\
+                          & Positive (True)                              & Negative (False)    \\
+    \midrule
+    Positive (True)       & True Positive (TP)                           & False Negative (FN) \\
+    Negative (False)      & False Positive (FP)                          & True Negative (TN)  \\
+    \bottomrule
+  \end{tabular}
+  \caption*{Own tabulation based on \autocite{fahrmeir2016statistik}.}}
 \end{table}
 
 This matrix offers a view of the models predictive behaviour, allowing for an analysis of the different types of errors it makes. True positives represent the cases where the model correctly predicted a positive outcome (a valid process was correctly identified). True negatives indicate instances where the model correctly predicted a negative outcome (an invalid process was correctly identified). False positives occur when the model incorrectly predicts a positive outcome for a negative instance (an invalid process was wrongly predicted as valid). False negatives arise when the model incorrectly predicts a negative outcome for a positive instance (a valid process was missed and classified as invalid). Analysing the confusion matrix for the process validity prediction in the context of manufacturing can reveal crucial information about the models tendencies, such as whether it is more prone to generating false alarms or to missing actual defects, which has direct implications for the design and implementation of quality control strategies.
@@ -380,40 +380,40 @@ This matrix offers a view of the models predictive behaviour, allowing for an an
 For binary classification tasks, such as the prediction of the validity of manufacturing processes, Receiver Operating Characteristic (ROC) curves and the Area Under the Curve (AUC) provide an evaluation of the models performance.
 
 \begin{figure}[h]
-    \centering
-    \begin{tikzpicture}
-        \begin{axis}[
-                width=10cm, height=8cm,
-                xlabel={False Positive Rate (FPR)},
-                ylabel={True Positive Rate (TPR)},
-                grid=major,
-                xmin=0, xmax=1,
-                ymin=0, ymax=1,
-                axis lines=middle,
-                enlargelimits=false,
-                xtick={0,0.2,0.4,0.6,0.8,1},
-                ytick={0,0.2,0.4,0.6,0.8,1},
-                legend style={at={(1.05,0.5)}, anchor=west, draw=none, font=\small}
-            ]
-            % ROC Curve
-            \addplot[smooth, thick, blue] coordinates {
-                    (0,0) (0.1,0.4) (0.2,0.6) (0.4,0.7) (0.6,0.85) (0.8,0.9) (1,1)
-                };
-            \addlegendentry{ROC Curve}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        width=10cm, height=8cm,
+        xlabel={False Positive Rate (FPR)},
+        ylabel={True Positive Rate (TPR)},
+        grid=major,
+        xmin=0, xmax=1,
+        ymin=0, ymax=1,
+        axis lines=middle,
+        enlargelimits=false,
+        xtick={0,0.2,0.4,0.6,0.8,1},
+        ytick={0,0.2,0.4,0.6,0.8,1},
+        legend style={at={(1.05,0.5)}, anchor=west, draw=none, font=\small}
+      ]
+      % ROC Curve
+      \addplot[smooth, thick, blue] coordinates {
+          (0,0) (0.1,0.4) (0.2,0.6) (0.4,0.7) (0.6,0.85) (0.8,0.9) (1,1)
+        };
+      \addlegendentry{ROC Curve}
 
-            % Random classifier (diagonal line)
-            \addplot[dashed, red] coordinates {(0,0) (1,1)};
-            \addlegendentry{Random Classifier}
-        \end{axis}
-    \end{tikzpicture}
-    \caption[ROC AUC Curve Example]{Example ROC Curve}
-    \label{fig:roc}
-    \caption*{Own tabulation based on \textcite{geron2022hands}. \ai{AI generated based on copyrighted image.}}}
+      % Random classifier (diagonal line)
+      \addplot[dashed, red] coordinates {(0,0) (1,1)};
+      \addlegendentry{Random Classifier}
+    \end{axis}
+  \end{tikzpicture}
+  \caption[ROC AUC Curve Example]{Example ROC Curve}
+  \label{fig:roc}
+  \caption*{Own tabulation based on \textcite{geron2022hands}. \ai{AI generated based on copyrighted image.}}}
 \end{figure}
 
 \begin{equation}
-    \text{AUC} = \int_{0}^{1} \text{TPR}(\text{FPR}) \, d\text{FPR}
-    \label{eq:auc}
+  \text{AUC} = \int_{0}^{1} \text{TPR}(\text{FPR}) \, d\text{FPR}
+  \label{eq:auc}
 \end{equation}
 
 An ROC curve is a graphical representation that plots the true positive rate (TPR or recall) against the false positive rate (FPR) at various classification thresholds. By examining the curve, one can visualize the trade-off between the models sensitivity (its ability to correctly identify positive instances) and its specificity (its ability to correctly identify negative instances) across different decision points. The value of AUC ranges from 0 to 1. An AUC of 1 indicates a perfect classifier, while an AUC of .5 suggests a performance no better than chance level. In the context of predicting validity of data in manufacturing, a higher AUC for the network would signify that the model is better at distinguishing between valid and invalid processes, regardless of the chosen classification threshold. This is particularly valuable when the class distribution is imbalanced, as ROC and AUC provide a more robust evaluation compared to metrics like accuracy that can be skewed by the majority class \autocite{fawcett2006introduction}. Thus, ROC AUC will be used as the lead metric for assessing model quality.
@@ -431,78 +431,78 @@ Recurrent Neural Network (RNN) were the first novel networks to handle sequentia
 
 The core computation within an RNN at time step \( t \) is calculating the new hidden state \( \bm{h}_t \) based on the current input \( \bm{x}_t \) and the previous hidden state \( \bm{h}_{t-1} \). This relationship is typically defined as:
 \begin{equation}
-    \bm{h}_t = \sigma_h (W_{xh} \bm{x}_t + W_{hh} \bm{h}_{t-1} + \bm{b}_h)
-    \label{eq:rnn_hidden_state}
+  \bm{h}_t = \sigma_h (W_{xh} \bm{x}_t + W_{hh} \bm{h}_{t-1} + \bm{b}_h)
+  \label{eq:rnn_hidden_state}
 \end{equation}
 
 \begin{figure}[htbp]
-    \centering
-    \begin{tikzpicture}[node distance=1.2cm and 1.8cm]
-        % Nodes for time steps
-        \node (cell_tm1) [block] {RNN};
-        \node (cell_t)   [block, right=of cell_tm1] {RNN};
-        \node (cell_tp1) [block, right=of cell_t] {RNN};
+  \centering
+  \begin{tikzpicture}[node distance=1.2cm and 1.8cm]
+    % Nodes for time steps
+    \node (cell_tm1) [block] {RNN};
+    \node (cell_t)   [block, right=of cell_tm1] {RNN};
+    \node (cell_tp1) [block, right=of cell_t] {RNN};
 
-        % Inputs
-        \node (xtm1) [below=of cell_tm1] {\(\bm{x}_{t-1}\)};
-        \node (xt)   [below=of cell_t] {\(\bm{x}_t\)};
-        \node (xtp1) [below=of cell_tp1] {\(\bm{x}_{t+1}\)};
+    % Inputs
+    \node (xtm1) [below=of cell_tm1] {\(\bm{x}_{t-1}\)};
+    \node (xt)   [below=of cell_t] {\(\bm{x}_t\)};
+    \node (xtp1) [below=of cell_tp1] {\(\bm{x}_{t+1}\)};
 
-        % Outputs
-        \node (ytm1) [above=of cell_tm1] {\(\bm{y}_{t-1}\)};
-        \node (yt)   [above=of cell_t] {\(\bm{y}_t\)};
-        \node (ytp1) [above=of cell_tp1] {\(\bm{y}_{t+1}\)};
+    % Outputs
+    \node (ytm1) [above=of cell_tm1] {\(\bm{y}_{t-1}\)};
+    \node (yt)   [above=of cell_t] {\(\bm{y}_t\)};
+    \node (ytp1) [above=of cell_tp1] {\(\bm{y}_{t+1}\)};
 
-        % Hidden States (Coordinates for arrows)
-        \coordinate (h_tm1_out) at (cell_tm1.east);
-        \coordinate (h_t_in) at (cell_t.west);
-        \coordinate (h_t_out) at (cell_t.east);
-        \coordinate (h_tp1_in) at (cell_tp1.west);
-        \coordinate (h_init_in) at (cell_tm1.west); % Input for h_{t-2}
+    % Hidden States (Coordinates for arrows)
+    \coordinate (h_tm1_out) at (cell_tm1.east);
+    \coordinate (h_t_in) at (cell_t.west);
+    \coordinate (h_t_out) at (cell_t.east);
+    \coordinate (h_tp1_in) at (cell_tp1.west);
+    \coordinate (h_init_in) at (cell_tm1.west); % Input for h_{t-2}
 
-        % Input Connections
-        \draw [arrow] (xtm1) -- node[midway, right, font=\footnotesize]{$W_{xh}$} (cell_tm1);
-        \draw [arrow] (xt)   -- node[midway, right, font=\footnotesize]{$W_{xh}$} (cell_t);
-        \draw [arrow] (xtp1) -- node[midway, right, font=\footnotesize]{$W_{xh}$} (cell_tp1);
+    % Input Connections
+    \draw [arrow] (xtm1) -- node[midway, right, font=\footnotesize]{$W_{xh}$} (cell_tm1);
+    \draw [arrow] (xt)   -- node[midway, right, font=\footnotesize]{$W_{xh}$} (cell_t);
+    \draw [arrow] (xtp1) -- node[midway, right, font=\footnotesize]{$W_{xh}$} (cell_tp1);
 
-        % Output Connections
-        \draw [arrow] (cell_tm1) -- node[midway, right, font=\footnotesize]{$W_{hy}$} (ytm1);
-        \draw [arrow] (cell_t)   -- node[midway, right, font=\footnotesize]{$W_{hy}$} (yt);
-        \draw [arrow] (cell_tp1) -- node[midway, right, font=\footnotesize]{$W_{hy}$} (ytp1);
+    % Output Connections
+    \draw [arrow] (cell_tm1) -- node[midway, right, font=\footnotesize]{$W_{hy}$} (ytm1);
+    \draw [arrow] (cell_t)   -- node[midway, right, font=\footnotesize]{$W_{hy}$} (yt);
+    \draw [arrow] (cell_tp1) -- node[midway, right, font=\footnotesize]{$W_{hy}$} (ytp1);
 
-        % Hidden State Connections (Recurrence)
-        \draw [arrow] (h_tm1_out) -- node[midway, above]{$\bm{h}_{t-1}$} node[midway, below, font=\footnotesize]{$W_{hh}$} (h_t_in);
-        \draw [arrow] (h_t_out)   -- node[midway, above]{$\bm{h}_{t}$} node[midway, below, font=\footnotesize]{$W_{hh}$} (h_tp1_in);
+    % Hidden State Connections (Recurrence)
+    \draw [arrow] (h_tm1_out) -- node[midway, above]{$\bm{h}_{t-1}$} node[midway, below, font=\footnotesize]{$W_{hh}$} (h_t_in);
+    \draw [arrow] (h_t_out)   -- node[midway, above]{$\bm{h}_{t}$} node[midway, below, font=\footnotesize]{$W_{hh}$} (h_tp1_in);
 
-        % Indicate initial / further connections
-        \node (dots_left_h) [left=0.8cm of h_init_in] {\(\dots\)};
-        \draw [arrow] (dots_left_h) -- node[midway, above]{$\bm{h}_{t-2}$} node[midway, below, font=\footnotesize]{$W_{hh}$} (h_init_in);
-        \node (dots_right_h) [right=0.8cm of cell_tp1] {\(\dots\)};
-        \draw [arrow] (cell_tp1) -- (dots_right_h); % Arrow towards further steps
+    % Indicate initial / further connections
+    \node (dots_left_h) [left=0.8cm of h_init_in] {\(\dots\)};
+    \draw [arrow] (dots_left_h) -- node[midway, above]{$\bm{h}_{t-2}$} node[midway, below, font=\footnotesize]{$W_{hh}$} (h_init_in);
+    \node (dots_right_h) [right=0.8cm of cell_tp1] {\(\dots\)};
+    \draw [arrow] (cell_tp1) -- (dots_right_h); % Arrow towards further steps
 
-        % Ellipses for sequences
-        \node (dots_left_x) [left=0.8cm of xtm1] {\(\dots\)};
-        \draw [arrow] (dots_left_x) -- (xtm1);
-        \node (dots_right_x) [right=0.8cm of xtp1] {\(\dots\)};
-        \draw [arrow] (xtp1) -- (dots_right_x);
+    % Ellipses for sequences
+    \node (dots_left_x) [left=0.8cm of xtm1] {\(\dots\)};
+    \draw [arrow] (dots_left_x) -- (xtm1);
+    \node (dots_right_x) [right=0.8cm of xtp1] {\(\dots\)};
+    \draw [arrow] (xtp1) -- (dots_right_x);
 
-        \node (dots_left_y) [left=0.8cm of ytm1] {\(\dots\)};
-        \draw [arrow] (ytm1) -- (dots_left_y);
-        \node (dots_right_y) [right=0.8cm of ytp1] {\(\dots\)};
-        \draw [arrow] (ytp1) -- (dots_right_y);
+    \node (dots_left_y) [left=0.8cm of ytm1] {\(\dots\)};
+    \draw [arrow] (ytm1) -- (dots_left_y);
+    \node (dots_right_y) [right=0.8cm of ytp1] {\(\dots\)};
+    \draw [arrow] (ytp1) -- (dots_right_y);
 
-    \end{tikzpicture}
-    \caption[RNN Unfolded]{Unfolded architecture of a Recurrent Neural Network over time, illustrating the computation of the hidden state \(\bm{h}_t\) according to \autoref{eq:rnn_hidden_state}.}
-    \label{fig:rnn_unfolded}
-    \caption*{Illustration based on \textcite{geron2022hands}. \ai{AI generated based on copyrighted image.}}
+  \end{tikzpicture}
+  \caption[RNN Unfolded]{Unfolded architecture of a Recurrent Neural Network over time, illustrating the computation of the hidden state \(\bm{h}_t\) according to \autoref{eq:rnn_hidden_state}.}
+  \label{fig:rnn_unfolded}
+  \caption*{Illustration based on \textcite{geron2022hands}. \ai{AI generated based on copyrighted image.}}
 \end{figure}
 
 where \( W_{xh} \) is the weight matrix connecting the input to the hidden layer, \( W_{hh} \) is the weight matrix for the recurrent connection from the previous hidden state to the current hidden state, \( \bm{b}_h \) is the bias vector for the hidden layer, and \( \sigma_h \) is a non-linear activation function, commonly the hyperbolic tangent (\(\tanh\)) or ReLU. The initial hidden state \( \bm{h}_0 \) is typically initialized to zeros or learned.
 
 The output \( \bm{y}_t \) at time step \( t \) can then be computed from the hidden state:
 \begin{equation}
-    \bm{y}_t = \sigma_y (W_{hy} \bm{h}_t + \bm{b}_y)
-    \label{eq:rnn_output}
+  \bm{y}_t = \sigma_y (W_{hy} \bm{h}_t + \bm{b}_y)
+  \label{eq:rnn_output}
 \end{equation}
 Here, \( W_{hy} \) is the weight matrix from the hidden layer to the output layer, \( \bm{b}_y \) is the output bias vector, and \( \sigma_y \) is an activation function suitable for the task, for example softmax for classification tasks.
 
@@ -518,50 +518,50 @@ To address the vanishing gradient problem and learn long-range dependencies, Lon
 The key innovation of the LSTM cell is the introduction of a \textit{cell state}, \( \bm{c}_t \), which acts as an information conduit, allowing information to flow through time with minimal modification. The long-term preservation is a key distinction from the RNN, where the hidden state gets overwritten. The flow of information into, out of, and within the cell state is regulated by three specialized gating mechanisms: the forget gate, the input gate, and the output gate. These gates use sigmoid activation functions (\(\sigma\)), which output values between 0 and 1, representing the proportion of information allowed to pass.
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/lstmcell.png}
-    \caption[LSTM Cell]{Visual representation of the LSTM cell computations detailed in Equations \ref{eq:lstm-forget-gate} to \ref{eq:lstm-hidden-state}. The diagram shows how inputs $\bm{x}_t$ and $\bm{h}_{t-1}$ interact with the forget gate ($\bm{f}_t$), input gate ($\bm{i}_t$), candidate state ($\bm{\tilde{c}}_t$), and output gate ($\bm{o}_t$) to update the cell state from $\bm{c}_{t-1}$ to $\bm{c}_t$ and compute the hidden state $\bm{h}_t$.}
-    \caption*{Source: Own illustration based on \autocite{geron2022hands}.}
-    \label{fig:lstm_cell}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/lstmcell.png}
+  \caption[LSTM Cell]{Visual representation of the LSTM cell computations detailed in Equations \ref{eq:lstm-forget-gate} to \ref{eq:lstm-hidden-state}. The diagram shows how inputs $\bm{x}_t$ and $\bm{h}_{t-1}$ interact with the forget gate ($\bm{f}_t$), input gate ($\bm{i}_t$), candidate state ($\bm{\tilde{c}}_t$), and output gate ($\bm{o}_t$) to update the cell state from $\bm{c}_{t-1}$ to $\bm{c}_t$ and compute the hidden state $\bm{h}_t$.}
+  \caption*{Source: Own illustration based on \autocite{geron2022hands}.}
+  \label{fig:lstm_cell}
 \end{figure}
 At each time step \( t \), given the input \( \bm{x}_t \), the previous hidden state \( \bm{h}_{t-1} \), and the previous cell state \( \bm{c}_{t-1} \), the LSTM cell does the following computations:
 
 \begin{enumerate}
-    \item \textbf{Forget Gate (\( \bm{f}_t \)):} Decides which information to forget from the previous cell state \( \bm{c}_{t-1} \).
-          \begin{equation}
-              \bm{f}_t = \sigma(W_f \bm{x}_t + U_f \bm{h}_{t-1} + \bm{b}_f)
-              \label{eq:lstm-forget-gate}
-          \end{equation}
+  \item \textbf{Forget Gate (\( \bm{f}_t \)):} Decides which information to forget from the previous cell state \( \bm{c}_{t-1} \).
+        \begin{equation}
+          \bm{f}_t = \sigma(W_f \bm{x}_t + U_f \bm{h}_{t-1} + \bm{b}_f)
+          \label{eq:lstm-forget-gate}
+        \end{equation}
 
-    \item \textbf{Input Gate (\( \bm{i}_t \)):} Determines which new information from the input and previous hidden state should be added in the cell state. This involves two parts:
-          \begin{itemize}
-              \item The input gate layer decides which values to update:
-                    \begin{equation}
-                        \bm{i}_t = \sigma(W_i \bm{x}_t + U_i \bm{h}_{t-1} + \bm{b}_i)
-                        \label{eq:lstm-input-gate}
-                    \end{equation}
-              \item A candidate cell state \( \bm{\tilde{c}}_t \) is created with potential new values, typically using a \( \tanh \) activation:
-                    \begin{equation}
-                        \bm{\tilde{c}}_t = \tanh(W_c \bm{x}_t + U_c \bm{h}_{t-1} + \bm{b}_c)
-                        \label{eq:lstm-candidate-cell}
-                    \end{equation}
-          \end{itemize}
+  \item \textbf{Input Gate (\( \bm{i}_t \)):} Determines which new information from the input and previous hidden state should be added in the cell state. This involves two parts:
+        \begin{itemize}
+          \item The input gate layer decides which values to update:
+                \begin{equation}
+                  \bm{i}_t = \sigma(W_i \bm{x}_t + U_i \bm{h}_{t-1} + \bm{b}_i)
+                  \label{eq:lstm-input-gate}
+                \end{equation}
+          \item A candidate cell state \( \bm{\tilde{c}}_t \) is created with potential new values, typically using a \( \tanh \) activation:
+                \begin{equation}
+                  \bm{\tilde{c}}_t = \tanh(W_c \bm{x}_t + U_c \bm{h}_{t-1} + \bm{b}_c)
+                  \label{eq:lstm-candidate-cell}
+                \end{equation}
+        \end{itemize}
 
-    \item \textbf{Cell State Update (\( \bm{c}_t \)):} The old cell state \( \bm{c}_{t-1} \) is updated to the new cell state \( \bm{c}_t \). This involves element-wise multiplication (\(\odot\)) to forget parts of the old state (via \( \bm{f}_t \)) and add parts of the new candidate state (via \( \bm{i}_t \)).
-          \begin{equation}
-              \bm{c}_t = \bm{f}_t \odot \bm{c}_{t-1} + \bm{i}_t \odot \bm{\tilde{c}}_t
-              \label{eq:lstm-cell-update}
-          \end{equation}
+  \item \textbf{Cell State Update (\( \bm{c}_t \)):} The old cell state \( \bm{c}_{t-1} \) is updated to the new cell state \( \bm{c}_t \). This involves element-wise multiplication (\(\odot\)) to forget parts of the old state (via \( \bm{f}_t \)) and add parts of the new candidate state (via \( \bm{i}_t \)).
+        \begin{equation}
+          \bm{c}_t = \bm{f}_t \odot \bm{c}_{t-1} + \bm{i}_t \odot \bm{\tilde{c}}_t
+          \label{eq:lstm-cell-update}
+        \end{equation}
 
-    \item \textbf{Output Gate (\( \bm{o}_t \)):} Determines what part of the (filtered) cell state \( \bm{c}_t \) should be outputted as the new hidden state \( \bm{h}_t \).
-          \begin{equation}
-              \bm{o}_t = \sigma(W_o \bm{x}_t + U_o \bm{h}_{t-1} + \bm{b}_o)
-              \label{eq:lstm-output-gate}
-          \end{equation}
-          \begin{equation}
-              \bm{h}_t = \bm{o}_t \odot \tanh(\bm{c}_t)
-              \label{eq:lstm-hidden-state}
-          \end{equation}
+  \item \textbf{Output Gate (\( \bm{o}_t \)):} Determines what part of the (filtered) cell state \( \bm{c}_t \) should be outputted as the new hidden state \( \bm{h}_t \).
+        \begin{equation}
+          \bm{o}_t = \sigma(W_o \bm{x}_t + U_o \bm{h}_{t-1} + \bm{b}_o)
+          \label{eq:lstm-output-gate}
+        \end{equation}
+        \begin{equation}
+          \bm{h}_t = \bm{o}_t \odot \tanh(\bm{c}_t)
+          \label{eq:lstm-hidden-state}
+        \end{equation}
 \end{enumerate}
 
 In these equations, \( W_*, U_* \) represent the weight matrices for connections from the input and the previous hidden state, and \( \bm{b}_* \) are the bias vectors.
@@ -573,90 +573,90 @@ The gating mechanisms allow LSTMs to selectively remember or forget information 
 \label{sec:bilstm}
 
 \begin{figure}[htbp]
-    \centering
-    \begin{tikzpicture}[node distance=0.6cm and 1.3cm]
-        % Input Sequence
-        \node (x1) {\(\dots\)};
-        \node (x2) [right=of x1] {\(\bm{x}_{t-1}\)};
-        \node (x3) [right=of x2] {\(\bm{x}_t\)};
-        \node (x4) [right=of x3] {\(\bm{x}_{t+1}\)};
-        \node (x5) [right=of x4] {\(\dots\)};
-        \node[below=1.5em of x3, text width=6cm, align=center] {Input Sequence};
+  \centering
+  \begin{tikzpicture}[node distance=0.6cm and 1.3cm]
+    % Input Sequence
+    \node (x1) {\(\dots\)};
+    \node (x2) [right=of x1] {\(\bm{x}_{t-1}\)};
+    \node (x3) [right=of x2] {\(\bm{x}_t\)};
+    \node (x4) [right=of x3] {\(\bm{x}_{t+1}\)};
+    \node (x5) [right=of x4] {\(\dots\)};
+    \node[below=1.5em of x3, text width=6cm, align=center] {Input Sequence};
 
-        % Forward LSTM Layer
-        \node (f1) [block, fill=blue!20, above=1.2cm of x1] {\(\rightarrow\)};
-        \node (f2) [block, fill=blue!20, above=1.2cm of x2] {\(\rightarrow\)};
-        \node (f3) [block, fill=blue!20, above=1.2cm of x3] {\(\rightarrow\)};
-        \node (f4) [block, fill=blue!20, above=1.2cm of x4] {\(\rightarrow\)};
-        \node (f5) [block, fill=blue!20, above=1.2cm of x5] {\(\rightarrow\)};
-        \node[left=0.5em of f1, text width=2cm, align=right] {Forward LSTM};
+    % Forward LSTM Layer
+    \node (f1) [block, fill=blue!20, above=1.2cm of x1] {\(\rightarrow\)};
+    \node (f2) [block, fill=blue!20, above=1.2cm of x2] {\(\rightarrow\)};
+    \node (f3) [block, fill=blue!20, above=1.2cm of x3] {\(\rightarrow\)};
+    \node (f4) [block, fill=blue!20, above=1.2cm of x4] {\(\rightarrow\)};
+    \node (f5) [block, fill=blue!20, above=1.2cm of x5] {\(\rightarrow\)};
+    \node[left=0.5em of f1, text width=2cm, align=right] {Forward LSTM};
 
-        % Backward LSTM Layer
-        \node (b1) [block, fill=orange!20, above=0.8cm of f1] {\(\leftarrow\)};
-        \node (b2) [block, fill=orange!20, above=0.8cm of f2] {\(\leftarrow\)};
-        \node (b3) [block, fill=orange!20, above=0.8cm of f3] {\(\leftarrow\)};
-        \node (b4) [block, fill=orange!20, above=0.8cm of f4] {\(\leftarrow\)};
-        \node (b5) [block, fill=orange!20, above=0.8cm of f5] {\(\leftarrow\)};
-        \node[left=0.5em of b1, text width=2cm, align=right] {Backward LSTM};
+    % Backward LSTM Layer
+    \node (b1) [block, fill=orange!20, above=0.8cm of f1] {\(\leftarrow\)};
+    \node (b2) [block, fill=orange!20, above=0.8cm of f2] {\(\leftarrow\)};
+    \node (b3) [block, fill=orange!20, above=0.8cm of f3] {\(\leftarrow\)};
+    \node (b4) [block, fill=orange!20, above=0.8cm of f4] {\(\leftarrow\)};
+    \node (b5) [block, fill=orange!20, above=0.8cm of f5] {\(\leftarrow\)};
+    \node[left=0.5em of b1, text width=2cm, align=right] {Backward LSTM};
 
-        % Combined Output Layer (representing concatenation)
-        \coordinate (c1) at ($(f1)!0.5!(b1) + (0,1.5cm)$); % Position above the two layers
-        \coordinate (c2) at ($(f2)!0.5!(b2) + (0,1.5cm)$);
-        \coordinate (c3) at ($(f3)!0.5!(b3) + (0,1.5cm)$);
-        \coordinate (c4) at ($(f4)!0.5!(b4) + (0,1.5cm)$);
-        \coordinate (c5) at ($(f5)!0.5!(b5) + (0,1.5cm)$);
+    % Combined Output Layer (representing concatenation)
+    \coordinate (c1) at ($(f1)!0.5!(b1) + (0,1.5cm)$); % Position above the two layers
+    \coordinate (c2) at ($(f2)!0.5!(b2) + (0,1.5cm)$);
+    \coordinate (c3) at ($(f3)!0.5!(b3) + (0,1.5cm)$);
+    \coordinate (c4) at ($(f4)!0.5!(b4) + (0,1.5cm)$);
+    \coordinate (c5) at ($(f5)!0.5!(b5) + (0,1.5cm)$);
 
-        % Output Nodes/Labels
-        \node (o1) [above=0.1cm of c1] {\(\dots\)};
-        \node (o2) [above=0.1cm of c2] {\(\bm{h}_{t-1}\)};
-        \node (o3) [above=0.1cm of c3] {\(\bm{h}_t\)};
-        \node (o4) [above=0.1cm of c4] {\(\bm{h}_{t+1}\)};
-        \node (o5) [above=0.1cm of c5] {\(\dots\)};
-        \node[above=1.5em of o3, text width=6cm, align=center] {Combined Output Sequence};
+    % Output Nodes/Labels
+    \node (o1) [above=0.1cm of c1] {\(\dots\)};
+    \node (o2) [above=0.1cm of c2] {\(\bm{h}_{t-1}\)};
+    \node (o3) [above=0.1cm of c3] {\(\bm{h}_t\)};
+    \node (o4) [above=0.1cm of c4] {\(\bm{h}_{t+1}\)};
+    \node (o5) [above=0.1cm of c5] {\(\dots\)};
+    \node[above=1.5em of o3, text width=6cm, align=center] {Combined Output Sequence};
 
 
-        % Input Arrows to both LSTMs
-        \draw[arrow] (x1) |- (f1.south); \draw[arrow] (x1) |- (b1.south);
-        \draw[arrow] (x2) -- (f2.south); \draw[arrow] (x2) -- (b2.south);
-        \draw[arrow] (x3) -- (f3.south); \draw[arrow] (x3) -- (b3.south);
-        \draw[arrow] (x4) -- (f4.south); \draw[arrow] (x4) -- (b4.south);
-        \draw[arrow] (x5) |- (f5.south); \draw[arrow] (x5) |- (b5.south);
+    % Input Arrows to both LSTMs
+    \draw[arrow] (x1) |- (f1.south); \draw[arrow] (x1) |- (b1.south);
+    \draw[arrow] (x2) -- (f2.south); \draw[arrow] (x2) -- (b2.south);
+    \draw[arrow] (x3) -- (f3.south); \draw[arrow] (x3) -- (b3.south);
+    \draw[arrow] (x4) -- (f4.south); \draw[arrow] (x4) -- (b4.south);
+    \draw[arrow] (x5) |- (f5.south); \draw[arrow] (x5) |- (b5.south);
 
-        % LSTM Layer Connections (Forward)
-        \draw[arrow] (f1) -- node[midway, above, font=\tiny]{\(\vec{\bm{h}}_{t-2}\)} (f2);
-        \draw[arrow] (f2) -- node[midway, above, font=\tiny]{\(\vec{\bm{h}}_{t-1}\)} (f3);
-        \draw[arrow] (f3) -- node[midway, above, font=\tiny]{\(\vec{\bm{h}}_{t}\)} (f4);
-        \draw[arrow] (f4) -- node[midway, above, font=\tiny]{\(\vec{\bm{h}}_{t+1}\)} (f5);
+    % LSTM Layer Connections (Forward)
+    \draw[arrow] (f1) -- node[midway, above, font=\tiny]{\(\vec{\bm{h}}_{t-2}\)} (f2);
+    \draw[arrow] (f2) -- node[midway, above, font=\tiny]{\(\vec{\bm{h}}_{t-1}\)} (f3);
+    \draw[arrow] (f3) -- node[midway, above, font=\tiny]{\(\vec{\bm{h}}_{t}\)} (f4);
+    \draw[arrow] (f4) -- node[midway, above, font=\tiny]{\(\vec{\bm{h}}_{t+1}\)} (f5);
 
-        % LSTM Layer Connections (Backward)
-        \draw[arrow] (b5) -- node[midway, below, font=\tiny]{\(\cev{\bm{h}}_{t+2}\)} (b4);
-        \draw[arrow] (b4) -- node[midway, below, font=\tiny]{\(\cev{\bm{h}}_{t+1}\)} (b3);
-        \draw[arrow] (b3) -- node[midway, below, font=\tiny]{\(\cev{\bm{h}}_{t}\)} (b2);
-        \draw[arrow] (b2) -- node[midway, below, font=\tiny]{\(\cev{\bm{h}}_{t-1}\)} (b1);
+    % LSTM Layer Connections (Backward)
+    \draw[arrow] (b5) -- node[midway, below, font=\tiny]{\(\cev{\bm{h}}_{t+2}\)} (b4);
+    \draw[arrow] (b4) -- node[midway, below, font=\tiny]{\(\cev{\bm{h}}_{t+1}\)} (b3);
+    \draw[arrow] (b3) -- node[midway, below, font=\tiny]{\(\cev{\bm{h}}_{t}\)} (b2);
+    \draw[arrow] (b2) -- node[midway, below, font=\tiny]{\(\cev{\bm{h}}_{t-1}\)} (b1);
 
-        % Output Arrows (Combining)
-        \draw[arrow] (f1.north) -- (c1); \draw[arrow] (b1.north) -- (c1);
-        \draw[arrow] (f2.north) -- node[midway, left, font=\tiny]{\(\vec{\bm{h}}_{t-1}\)} (c2);
-        \draw[arrow] (b2.north) -- node[midway, right, font=\tiny]{\(\cev{\bm{h}}_{t-1}\)} (c2);
-        \draw[arrow] (f3.north) -- node[midway, left, font=\tiny]{\(\vec{\bm{h}}_{t}\)} (c3);
-        \draw[arrow] (b3.north) -- node[midway, right, font=\tiny]{\(\cev{\bm{h}}_{t}\)} (c3);
-        \draw[arrow] (f4.north) -- node[midway, left, font=\tiny]{\(\vec{\bm{h}}_{t+1}\)} (c4);
-        \draw[arrow] (b4.north) -- node[midway, right, font=\tiny]{\(\cev{\bm{h}}_{t+1}\)} (c4);
-        \draw[arrow] (f5.north) -- (c5); \draw[arrow] (b5.north) -- (c5);
+    % Output Arrows (Combining)
+    \draw[arrow] (f1.north) -- (c1); \draw[arrow] (b1.north) -- (c1);
+    \draw[arrow] (f2.north) -- node[midway, left, font=\tiny]{\(\vec{\bm{h}}_{t-1}\)} (c2);
+    \draw[arrow] (b2.north) -- node[midway, right, font=\tiny]{\(\cev{\bm{h}}_{t-1}\)} (c2);
+    \draw[arrow] (f3.north) -- node[midway, left, font=\tiny]{\(\vec{\bm{h}}_{t}\)} (c3);
+    \draw[arrow] (b3.north) -- node[midway, right, font=\tiny]{\(\cev{\bm{h}}_{t}\)} (c3);
+    \draw[arrow] (f4.north) -- node[midway, left, font=\tiny]{\(\vec{\bm{h}}_{t+1}\)} (c4);
+    \draw[arrow] (b4.north) -- node[midway, right, font=\tiny]{\(\cev{\bm{h}}_{t+1}\)} (c4);
+    \draw[arrow] (f5.north) -- (c5); \draw[arrow] (b5.north) -- (c5);
 
-        % Arrows to final output nodes
-        \draw[arrow] (c1) -- (o1);
-        \draw[arrow] (c2) -- (o2);
-        \draw[arrow] (c3) -- (o3);
-        \draw[arrow] (c4) -- (o4);
-        \draw[arrow] (c5) -- (o5);
+    % Arrows to final output nodes
+    \draw[arrow] (c1) -- (o1);
+    \draw[arrow] (c2) -- (o2);
+    \draw[arrow] (c3) -- (o3);
+    \draw[arrow] (c4) -- (o4);
+    \draw[arrow] (c5) -- (o5);
 
-        % Annotation for combination
-        \node[draw, ellipse, dashed, fit=(f3)(b3), inner 09 = 0.3cm, label={[yshift=-1.2cm]center:Combine}] {};
-    \end{tikzpicture}
-    \caption[Bi-LSTM Architecture]{Architecture of a Bidirectional LSTM (Bi-LSTM), processing the input sequence (\(\bm{x}_t\)) both forwards (generating \(\vec{\bm{h}}_t\)) and backwards (generating \(\cev{\bm{h}}_t\)). The final hidden states \(\bm{h}_t\) are produced by combining information from both directions (via concatenation according to Equation \autoref{eq:bilstm_concat}).}
-    \label{fig:bilstm_arch}
-    \caption*{\ai{AI generated based on copyrighted image.}}
+    % Annotation for combination
+    \node[draw, ellipse, dashed, fit=(f3)(b3), inner 09 = 0.3cm, label={[yshift=-1.2cm]center:Combine}] {};
+  \end{tikzpicture}
+  \caption[Bi-LSTM Architecture]{Architecture of a Bidirectional LSTM (Bi-LSTM), processing the input sequence (\(\bm{x}_t\)) both forwards (generating \(\vec{\bm{h}}_t\)) and backwards (generating \(\cev{\bm{h}}_t\)). The final hidden states \(\bm{h}_t\) are produced by combining information from both directions (via concatenation according to Equation \autoref{eq:bilstm_concat}).}
+  \label{fig:bilstm_arch}
+  \caption*{\ai{AI generated based on copyrighted image.}}
 \end{figure}
 
 While standard LSTMs process sequences chronologically, capturing dependencies on past inputs, many tasks benefit from considering context from both past and future elements. For example, understanding why a specific machine task is performed requires knowledge about the task performed afterwards. Bidirectional LSTMs (Bi-LSTMs) address this by processing the input sequence in both forward and backward directions \autocite{schuster1997bidirectional}.
@@ -664,14 +664,14 @@ While standard LSTMs process sequences chronologically, capturing dependencies o
 A Bi-LSTM consists of two separate LSTM layers:
 
 \begin{enumerate}
-    \item A \textbf{forward LSTM} processes the input sequence \( \{\bm{x}_1, ..., \bm{x}_T\} \) from \( t=1 \) to \( T \), producing a sequence of forward hidden states \( \{\vec{\bm{h}}_1, ..., \vec{\bm{h}}_T\} \). The computation for \( \vec{\bm{h}}_t \) follows the standard LSTM equations \autoref{eq:lstm-forget-gate} through \autoref{eq:lstm-hidden-state}.
-    \item A \textbf{backward LSTM} processes the input sequence in reverse order, from \( t=T \) down to \( 1 \), producing a sequence of backward hidden states \( \{\cev{\bm{h}}_1, ..., \cev{\bm{h}}_T\} \). The computation for \( \cev{\bm{h}}_t \) uses a separate set of LSTM parameters and processes the sequence \( \{\bm{x}_T, ..., \bm{x}_1\} \).
+  \item A \textbf{forward LSTM} processes the input sequence \( \{\bm{x}_1, ..., \bm{x}_T\} \) from \( t=1 \) to \( T \), producing a sequence of forward hidden states \( \{\vec{\bm{h}}_1, ..., \vec{\bm{h}}_T\} \). The computation for \( \vec{\bm{h}}_t \) follows the standard LSTM equations \autoref{eq:lstm-forget-gate} through \autoref{eq:lstm-hidden-state}.
+  \item A \textbf{backward LSTM} processes the input sequence in reverse order, from \( t=T \) down to \( 1 \), producing a sequence of backward hidden states \( \{\cev{\bm{h}}_1, ..., \cev{\bm{h}}_T\} \). The computation for \( \cev{\bm{h}}_t \) uses a separate set of LSTM parameters and processes the sequence \( \{\bm{x}_T, ..., \bm{x}_1\} \).
 \end{enumerate}
 
 At each time step \( t \), the final hidden state representation \( \bm{h}_t \) combines the information from both directions. A common method is concatenation:
 \begin{equation}
-    \bm{h}_t = [\vec{\bm{h}}_t ; \cev{\bm{h}}_t]
-    \label{eq:bilstm_concat}
+  \bm{h}_t = [\vec{\bm{h}}_t ; \cev{\bm{h}}_t]
+  \label{eq:bilstm_concat}
 \end{equation}
 where \( [;] \) denotes vector concatenation. Other combination methods like summation or averaging are also possible. This combined state \( \bm{h}_t \) contains information about the input \( \bm{x}_t \) informed by both its preceding and succeeding context within the sequence.
 
@@ -684,8 +684,8 @@ As neural networks became deeper to model more complex functions, researchers en
 
 Such a block of layers aiming to learn a mapping is denoted \( \mathcal{H}(\bm{x}) \). A residual block instead learns a residual function \( \mathcal{F}(\bm{x}) = \mathcal{H}(\bm{x}) - \bm{x} \). The output \( \bm{y} \) of the residual block is then computed as:
 \begin{equation}
-    \bm{y} = \mathcal{F}(\bm{x}, \{W_i\}) + \bm{x}
-    \label{eq:resnet_block}
+  \bm{y} = \mathcal{F}(\bm{x}, \{W_i\}) + \bm{x}
+  \label{eq:resnet_block}
 \end{equation}
 Here, \( \bm{x} \) is the input to the block, \( \mathcal{F}(\bm{x}, \{W_i\}) \) is the function learned by the stacked layers within the block (described by weights \( \{W_i\} \)), and the \( +\bm{x} \) term is an identity skip connection. This formulation makes it easier for the network to learn an identity mapping by driving the weights in \( \mathcal{F} \) towards zero.
 
@@ -699,8 +699,8 @@ Self-attention works on input vectors, typically representing tokens or time ste
 
 The most common form is \textit{Scaled Dot-Product Attention}, calculated for a set of queries \( Q \), keys \( K \), and values \( V \) (where \( Q, K, V \) are matrices stacking the \( \bm{q}, \bm{k}, \bm{v} \) vectors):
 \begin{equation}
-    \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V
-    \label{eq:scaled_dot_product_attention}
+  \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) V
+  \label{eq:scaled_dot_product_attention}
 \end{equation}
 Here, \( QK^T \) computes the dot products between all query-key pairs. The result is scaled by \( \sqrt{d_k} \), where \( d_k \) is the dimension of the keys, to prevent the dot products from becoming too large and pushing the softmax function into regions with very small gradients. The softmax function normalizes these scores into attention weights, which sum to 1. Finally, these weights are multiplied by the Value matrix \( V \) to produce the output, highlighting the values corresponding to the most relevant keys for each query.
 
@@ -708,13 +708,13 @@ Here, \( QK^T \) computes the dot products between all query-key pairs. The resu
 
 Let the number of heads be \( h \). For each head \( i \in \{1, ..., h\} \), the input \( Q, K, V \) are projected using learned weight matrices \( W^Q_i, W^K_i, W^V_i \):
 \begin{equation}
-    \text{head}_i = \text{Attention}(Q W^Q_i, K W^K_i, V W^V_i)
-    \label{eq:attention_head_i}
+  \text{head}_i = \text{Attention}(Q W^Q_i, K W^K_i, V W^V_i)
+  \label{eq:attention_head_i}
 \end{equation}
 The outputs of all heads are then concatenated and projected one final time using another learned weight matrix \( W^O \):
 \begin{equation}
-    \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h) W^O
-    \label{eq:multihead_attention}
+  \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h) W^O
+  \label{eq:multihead_attention}
 \end{equation}
 
 This multi-head structure allows each head to potentially focus on different types of relationships, leading to a richer representation. Multi-head attention is a cornerstone of the transformer architecture \autocite{vaswani2017attention} and is increasingly combined with other models like LSTMs.
@@ -734,11 +734,11 @@ ML-based \gls{vvuq} approaches heavily rely on data. In the preceding sections, 
 \Textcite{Bitencourt2023} conducted a SLR on V\&V in the context of \gls{dt}, a relatively new field. They did not consider uncertainty quantification in their SLR. As \textcite{hua2022validation} note, there are no structured and established frameworks for validating \gls{dt}s. This statement holds for all sectors where \gls{dt}s are applied. The SLR analysed 269 papers. They applied the 4R framework by \textcite{Osho2022jmsy} to describe the capabilities of the analysed twin frameworks. The 4R framework consists of the four dimensions \textit{Representation}, \textit{Replication}, \textit{Reality} and \textit{Relational}. The SLR found that most frameworks ($49\%$) rather developed a \gls{dm} or \gls{ds}. Another $26\%$ of \gls{dt} were only able to \textit{represent} the physical entity. Highly sophisticated \gls{dt} were the exception, not the rule. Considering this trend, V\&V may not be a topic researchers are interested in at first sight. \Textcite{Bitencourt2023} identified a trend throughout the years of increasing modelling capabilities of the considered \gls{dt}. Up to the year 2023, the trend is still increasing. They identify more data sources as the main driver for this trend. From the 269 papers, $47\%$ have been applied in the manufacturing domain. Of all classified \gls{dt}, one key insight is that most authors performed at least one form of V\&V.
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/vvbitencourt.png}
-    \caption[Donut Chart V\&V]{Donut chart showing the distribution of V\&V methods in the context of \gls{dt}.}
-    \label{fig:vvbitencourt}
-    \caption*{Own illustration based on \textcite{Bitencourt2023}.}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/vvbitencourt.png}
+  \caption[Donut Chart V\&V]{Donut chart showing the distribution of V\&V methods in the context of \gls{dt}.}
+  \label{fig:vvbitencourt}
+  \caption*{Own illustration based on \textcite{Bitencourt2023}.}
 \end{figure}
 
 \gls{dt}s ranking in the \textit{reality} category where most often verified and validated. The authors deduce that because of the increasing complexity of the model, V\&V may become a stressing topic. \Textcite{Nie2023rcim} propose a multi-agent and cloud-edge orchestration framework leveraging \gls{dt} and IIoT to optimize distributed manufacturing resources. Their framework integrates a Convolutional Neural Network (CNN) with a bidirectional Long Short Term Memory (LSTM) module to perform scheduling and self-adaptive strategies for intelligent, real-time production control. They compare their network with an earlier adopted algorithm and its result to perform V\&V. Quantifying the validity, they use Mean Squared Error (MSE) and Mean Absolute Error (MAE), see \autoref{sec:metrics-theory}.
@@ -750,74 +750,74 @@ ML-based \gls{vvuq} approaches heavily rely on data. In the preceding sections, 
 The k-Nearest Neighbours (KNN) algorithm, a lazy learning approach grounded in measuring feature similarity, can be used for the accreditation of manufacturing \gls{dt}s \autocite{dos2024simulation}. KNN classifies new data points by identifying the majority class among the $K$ nearest neighbours in the training dataset. The determination of ``being close' relies on various distance metrics. Most commonly, the Euclidean distance (see \autoref{eq:euclidean_distance} is used. Selecting an appropriate value for $K$ is crucial for balancing the models bias and variance. A small $K$ can lead to overfitting, while a large $K$ may provide no insights at all. It is not an eager learner like DTrees or NN because it does not learn a model from the training data. Instead, it stores the training data and makes predictions based on the stored data. This characteristic makes KNN particularly suitable for scenarios where the underlying distribution of the data is unknown or complex. The algorithm's simplicity and interpretability make it a popular choice for various classification tasks, including those in manufacturing contexts.
 
 \begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/knn.png}
-    \caption[KNN Intuition]{KNN algorithm. The algorithm classifies a new data point based on the majority class of its $K$ nearest neighbours in the training dataset. Euclidean distance metric has been used to determine the distance between data points.}
-    \label{fig:knn}
-    \caption*{Own illustration.}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/knn.png}
+  \caption[KNN Intuition]{KNN algorithm. The algorithm classifies a new data point based on the majority class of its $K$ nearest neighbours in the training dataset. Euclidean distance metric has been used to determine the distance between data points.}
+  \label{fig:knn}
+  \caption*{Own illustration.}
 \end{figure}
 
 In the given figure, the lazy learning approach of KNN near completion is shown. The star-formed point has to be assigned to class one or two. Based on the count of points in the near region of the unassigned point, the algorithm will decide class two.
 The approach by \textcite{dos2024simulation} integrates KNN with p-charts for the concurrent validation of \gls{sbdt} \autocite{dos2024digital}. This involves monitoring the \gls{dt}s output over time and using KNN to classify its behaviour. Subsequently, p-charts are employed to statistically monitor the proportion of anomalies detected by KNN. The X-axis represents the discretized time $t$, the Y-axis represents the proportion of anomalies detected by the KNN. P-charts normally show a relative proportion of nonconforming items in a sample \autocite{acosta1999improved}. \Textcite{dos2024simulation} enriched their chart with an upper control limit (UCL) and lower control limit (LCL), which stand for acceptable statistical boundaries. This approach is similar to \textcite{Nie2023rcim} who also defined control intervals. If the p-value exceeds the boundaries, the twin may deviate from real behaviour. This method offers the advantage of real-time monitoring. However, it is sensitive to the choice of the hyperparameter $K$ and can be computationally expensive for large datasets \autocite{dos2024simulation}. The presence of outliers and noisy data can also impact the accuracy of KNN, and its performance may decrease in high-dimensional spaces. The authors utilized metrics such as accuracy, precision, recall and F1-Score, see \autoref{sec:metrics-theory}. They also used cross validation for increasing robustness of the prediction. By varying values for $K$, an optimal split may be found. Recalling the different kinds of anomalies from \autoref{sec:classification-methods}, KNN is able to capture point anomalies and contextual anomalies. Collective anomalies are not captured by KNN, as they are not able to learn from the data.
 
 \begin{figure}[htbp]
-    \centering
-    \begin{tikzpicture}
-        % Define control limits (adjust values as needed for a real scenario)
-        \def\ucl{0.20} % Upper Control Limit
-        \def\lcl{0.05} % Lower Control Limit
-        \def\cl{((\ucl)+(\lcl))/2} % Center Line (optional, average proportion)
+  \centering
+  \begin{tikzpicture}
+    % Define control limits (adjust values as needed for a real scenario)
+    \def\ucl{0.20} % Upper Control Limit
+    \def\lcl{0.05} % Lower Control Limit
+    \def\cl{((\ucl)+(\lcl))/2} % Center Line (optional, average proportion)
 
-        \begin{axis}[
-                width=10cm, % Adjusted width
-                height=8cm,  % Adjusted height
-                grid=both,
-                title={P-Chart for Digital Twin Anomaly Monitoring (using KNN results)},
-                xlabel={Discretized Time (t)},
-                ylabel={Proportion of Anomalies (p)},
-                xmin=0, xmax=11, % Extend x-axis slightly beyond data
-                ymin=0, ymax=0.3, % Adjust y-axis to fit data and limits
-                xtick={1,2,3,4,5,6,7,8,9,10}, % Explicit ticks for discrete time
-                yticklabel style={/pgf/number format/.cd,fixed,precision=2}, % Format y-labels
-                scaled y ticks=false, % Show actual proportion values
-                legend pos=outer north east, % Place legend outside
-                legend cell align={left},
-            ]
+    \begin{axis}[
+        width=10cm, % Adjusted width
+        height=8cm,  % Adjusted height
+        grid=both,
+        title={P-Chart for Digital Twin Anomaly Monitoring (using KNN results)},
+        xlabel={Discretized Time (t)},
+        ylabel={Proportion of Anomalies (p)},
+        xmin=0, xmax=11, % Extend x-axis slightly beyond data
+        ymin=0, ymax=0.3, % Adjust y-axis to fit data and limits
+        xtick={1,2,3,4,5,6,7,8,9,10}, % Explicit ticks for discrete time
+        yticklabel style={/pgf/number format/.cd,fixed,precision=2}, % Format y-labels
+        scaled y ticks=false, % Show actual proportion values
+        legend pos=outer north east, % Place legend outside
+        legend cell align={left},
+      ]
 
-            % --- Simulated Data: Proportion of anomalies detected by KNN over time ---
-            % Replace this with actual data if available
-            % Format: (time_step, proportion)
-            \addplot+[mark=*, blue, solid, mark options={fill=blue}]
-            coordinates {
-                    (1, 0.08) % Time 1, 8% anomalies
-                    (2, 0.11) % Time 2, 11% anomalies
-                    (3, 0.09) % Time 3, 9% anomalies
-                    (4, 0.13) % Time 4, 13% anomalies
-                    (5, 0.07) % Time 5, 7% anomalies
-                    (6, 0.15) % Time 6, 15% anomalies
-                    (7, 0.22) % Time 7, 22% anomalies - Exceeds UCL!
-                    (8, 0.10) % Time 8, 10% anomalies
-                    (9, 0.06) % Time 9, 6% anomalies
-                    (10, 0.12)% Time 10, 12% anomalies
-                };
-            \addlegendentry{Anomaly Proportion (p)}
+      % --- Simulated Data: Proportion of anomalies detected by KNN over time ---
+      % Replace this with actual data if available
+      % Format: (time_step, proportion)
+      \addplot+[mark=*, blue, solid, mark options={fill=blue}]
+      coordinates {
+          (1, 0.08) % Time 1, 8% anomalies
+          (2, 0.11) % Time 2, 11% anomalies
+          (3, 0.09) % Time 3, 9% anomalies
+          (4, 0.13) % Time 4, 13% anomalies
+          (5, 0.07) % Time 5, 7% anomalies
+          (6, 0.15) % Time 6, 15% anomalies
+          (7, 0.22) % Time 7, 22% anomalies - Exceeds UCL!
+          (8, 0.10) % Time 8, 10% anomalies
+          (9, 0.06) % Time 9, 6% anomalies
+          (10, 0.12)% Time 10, 12% anomalies
+        };
+      \addlegendentry{Anomaly Proportion (p)}
 
-            % --- Control Limits ---
-            % Upper Control Limit (UCL)
-            \addplot[const plot, dashed, red, thick, domain=\pgfkeysvalueof{/pgfplots/xmin}:\pgfkeysvalueof{/pgfplots/xmax}] {\ucl};
-            \addlegendentry{UCL = \pgfmathprintnumber{\ucl}}
-            % Add label directly to the line (alternative to legend)
-            % \node[anchor=west, red] at (axis cs:\pgfkeysvalueof{/pgfplots/xmax},\ucl) {UCL}; 
+      % --- Control Limits ---
+      % Upper Control Limit (UCL)
+      \addplot[const plot, dashed, red, thick, domain=\pgfkeysvalueof{/pgfplots/xmin}:\pgfkeysvalueof{/pgfplots/xmax}] {\ucl};
+      \addlegendentry{UCL = \pgfmathprintnumber{\ucl}}
+      % Add label directly to the line (alternative to legend)
+      % \node[anchor=west, red] at (axis cs:\pgfkeysvalueof{/pgfplots/xmax},\ucl) {UCL}; 
 
-            % Lower Control Limit (LCL)
-            \addplot[const plot, dashed, green, thick, domain=\pgfkeysvalueof{/pgfplots/xmin}:\pgfkeysvalueof{/pgfplots/xmax}] {\lcl};
-            \addlegendentry{LCL = \pgfmathprintnumber{\lcl}}
+      % Lower Control Limit (LCL)
+      \addplot[const plot, dashed, green, thick, domain=\pgfkeysvalueof{/pgfplots/xmin}:\pgfkeysvalueof{/pgfplots/xmax}] {\lcl};
+      \addlegendentry{LCL = \pgfmathprintnumber{\lcl}}
 
-        \end{axis}
-    \end{tikzpicture}
-    \caption[Proportion chart for VVUQ]{Example P-Chart showing the proportion of anomalies detected by KNN over time for \gls{dt} accreditation, with Upper (UCL) and Lower (LCL) control limits. A point outside the limits (like at t=7) suggests potential deviation.}
-    \label{fig:pchart_knn_dt}
-    \caption*{Own illustration based on \textcite{dos2024simulation}. \ai{AI generated based on copyrighted image.}}
+    \end{axis}
+  \end{tikzpicture}
+  \caption[Proportion chart for VVUQ]{Example P-Chart showing the proportion of anomalies detected by KNN over time for \gls{dt} accreditation, with Upper (UCL) and Lower (LCL) control limits. A point outside the limits (like at t=7) suggests potential deviation.}
+  \label{fig:pchart_knn_dt}
+  \caption*{Own illustration based on \textcite{dos2024simulation}. \ai{AI generated based on copyrighted image.}}
 \end{figure}
 
 \subsubsection*{Time Series Classification for Fault Localization}
