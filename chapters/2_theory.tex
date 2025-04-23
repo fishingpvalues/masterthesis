@@ -346,7 +346,7 @@ Recall, also called sensitivity or the true positive rate (TPR), shows the model
 In the context of manufacturing, a high recall for the 'valid' class is crucial for ensuring that the model effectively detects the majority of the truly valid processes. Failing to identify a valid process (a false negative) can have consequences, potentially leading to the production of defective goods that may lead to costs related to rework, scrap, or customer dissatisfaction \autocite{kharitonov2022comparative}. Therefore, a model with high recall minimizes the risk of overlooking critical quality issues in the manufacturing process.
 
 \paragraph{\textbf{F1-Score}}
-The F1-score provides a balanced measure of the classification models performance by calculating the harmonic mean of precision and recall. This metric is particularly useful when handlingdatasets that contain an imbalance in the class distribution.
+The F1-score provides a balanced measure of the classification models performance by calculating the harmonic mean of precision and recall. This metric is particularly useful when handling datasets that contain an imbalance in the class distribution.
 
 \begin{equation}
     \label{eq:F1-score}
@@ -675,7 +675,7 @@ At each time step \( t \), the final hidden state representation \( \bm{h}_t \) 
 \end{equation}
 where \( [;] \) denotes vector concatenation. Other combination methods like summation or averaging are also possible. This combined state \( \bm{h}_t \) contains information about the input \( \bm{x}_t \) informed by both its preceding and succeeding context within the sequence.
 
-Bi-LSTMs have proven effective in tasks requiring contextual understanding, such as Named Entity Recognition or sentiment analysis \autocite{al2024rnn}. However, they are computationally more expensive than unidirectional LSTMs due to the doubled network structure.
+Bi-LSTMs have proven effective in tasks requiring contextual understanding, such as Named Entity Recognition or sentiment analysis \autocite{al2024rnn}. They have not been applied widely in the manufacturing domain. Unfortunately, they are computationally more expensive than unidirectional LSTMs due to the doubled network structure.
 
 \paragraph{\textbf{Residual Networks (ResNets)}}
 \label{sec:resnet}
@@ -689,7 +689,7 @@ Such a block of layers aiming to learn a mapping is denoted \( \mathcal{H}(\bm{x
 \end{equation}
 Here, \( \bm{x} \) is the input to the block, \( \mathcal{F}(\bm{x}, \{W_i\}) \) is the function learned by the stacked layers within the block (described by weights \( \{W_i\} \)), and the \( +\bm{x} \) term is an identity skip connection. This formulation makes it easier for the network to learn an identity mapping by driving the weights in \( \mathcal{F} \) towards zero.
 
-These skip connections provide alternative pathways for gradient propagation during backpropagation. Gradients can flow directly through the identity connections, overjumping the layers in \( \mathcal{F} \). This avoidsthe vanishing gradient problem in very deep networks, allowing for the successful training of models with hundreds or even thousands of layers \autocite{he2016deep}. While originally developed for computer vision, the principle of residual connections can be applied to other architectures, including sequential models. Using ResNet-like connections within or around (Bi-)LSTM layers can stabilize training and allow for deeper sequential architectures, enabling the capture of more  temporal patterns without suffering from degradation.
+These skip connections provide alternative pathways for gradient propagation during backpropagation. Gradients can flow directly through the identity connections, overjumping the layers in \( \mathcal{F} \). This avoids the vanishing gradient problem in very deep networks, allowing for the successful training of models with hundreds or even thousands of layers \autocite{he2016deep}. While originally developed for computer vision, the principle of residual connections can be applied to other architectures, including sequential models. Using ResNet-like connections within or around (Bi-)LSTM layers can stabilize training and allow for deeper sequential architectures, enabling the capture of more  temporal patterns without suffering from degradation.
 
 \paragraph{\textbf{Multi-head Attention Mechanism}}
 \label{sec:attention}
