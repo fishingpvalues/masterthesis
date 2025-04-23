@@ -424,6 +424,40 @@
   % Remove MSE/CCE if not used elsewhere in the thesis
 
   % -------------------------------------------------------------------------
+  \subsection{Regression Metrics}
+  % -------------------------------------------------------------------------
+
+  While the primary focus based on the example data is on classification, the model might also be employed for regression tasks in manufacturing, such as predicting continuous variables like throughput times or resource utilization levels. In such scenarios, the following regression metrics are crucial for evaluating the models predictive accuracy.
+
+  \paragraph{\textbf{Mean Squared Error (MSE)}}
+  Mean Squared Error (MSE) shows the average of the squared differences between the values predicted by the model and the actual observed values.
+
+  \begin{equation}
+    \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+  \end{equation}
+  where $y_i$ represents the actual value of the target variable for the $i$-th instance, $\hat{y}_i$ is the corresponding predicted value, and $n$ is the total number of data points in the dataset.
+
+  MSE provides a measure of the overall prediction error. The squaring of the differences means that larger errors contribute more to the final MSE value, making it sensitive to outliers in the predictions. In the context of manufacturing, if the model were predicting throughput time, a high MSE would indicate that, on average, the squared difference between the predicted and actual throughput times is large, suggesting a lower accuracy in the model's predictions \autocite{fahrmeir2016statistik}.
+
+  \paragraph{\textbf{Mean Absolute Error (MAE)}}
+  Mean Absolute Error (MAE) measures the average of the absolute differences between the predicted and actual values.
+
+  \begin{equation}
+    \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+  \end{equation}
+
+  MAE offers a more direct and interpretable measure of the average magnitude of the errors in the models predictions. Unlike MSE, MAE treats all errors equally, without giving disproportionate weight to larger errors \autocite{fahrmeir2016statistik}.
+
+  \paragraph{\textbf{Mean Absolute Percentage Error (MAPE)}}
+  Mean Absolute Percentage Error (MAPE) calculates the average percentage error between the predicted and actual values.
+
+  \begin{equation}
+    \text{MAPE} = \frac{1}{n} \sum_{i=1}^{n} \left| \frac{y_i - \hat{y}_i}{y_i} \right| \times 100\%
+  \end{equation}
+
+  MAPE is particularly useful when the scale of the target variable varies, as it provides an error measure in relative terms.
+
+  % -------------------------------------------------------------------------
   \subsection{Regularization Techniques}
   % -------------------------------------------------------------------------
   % (Content from previous version - L2, Dropout)
