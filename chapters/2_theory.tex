@@ -162,7 +162,7 @@ After introducing the corporate embedding of \gls{dt}s and their types, the thes
       \bottomrule
     \end{tabular}%
   }
-  \caption*{Own illustration based on \textcite{van2016data}.}
+  \caption*{Author's illustration based on \textcite{van2016data}.}
 \end{table}
 
 \autoref{tab:manufacturinglog} illustrates the \gls{pm} concepts. The case \gls{id} groups unique events which are identified by an event \gls{id} to one group, a trace. The timestamp refers to the time of event occurrence, while the activity describes the event. In this example, additional information like resource name and cost are given as well. Cases containing the same events identified by unique event IDs will have different case IDs \autocite{van2016data}. Process discovery may try to produce a process model from the event log. The challenge does not lie in the recording of every trace present in the event log, but rather in finding a generic representation of the most frequent traces. The process model must be generic enough to describe most traces, but specific enough not to get invalidated by future traces which may contain completely different events. Another major building block of this process model is accounting for trace concurrency. When several events may be identified to happen in parallel during the same time window, the model must recognize this, similar to a bias-variance trade-off lend from data science \autocite{briscoe2011conceptual}. The process must contain the most frequent traces but has to filter out traces which contain anomalies. Such anomalies like longer time per event due to a fire alarm have to be accounted for. Conformance checking may compare a given process model against a given event log. They are specialized in detecting aforementioned anomalies. A key insight in conformance checking lies in two possible deviations from reality: The given model does not capture the real behaviour or reality differs from the model. In the first case, the model is not working as intended. In the second case, the event log is corrupt. The third view on event logs, process enhancement, enables the modeller to use the generated process model to identify bottlenecks. Anomalies identified serve as a good starting point because they reveal errors in the process sequence. The given table offers costs associated to each event \gls{id}. This information may be used to create an event benchmark to further optimize the desired `ideal' trace.
@@ -369,7 +369,7 @@ A confusion matrix is a specific type of contingency table that provides a detai
     Negative (False)      & False Positive (FP)                          & True Negative (TN)  \\
     \bottomrule
   \end{tabular}
-  \caption*{Own tabulation based on \autocite{fahrmeir2016statistik}.}}
+  \caption*{Author's tabulation based on \autocite{fahrmeir2016statistik}.}}
 \end{table}
 
 This matrix offers a view of the models predictive behaviour, allowing for an analysis of the different types of errors it makes. True positives represent the cases where the model correctly predicted a positive outcome (a valid process was correctly identified). True negatives indicate instances where the model correctly predicted a negative outcome (an invalid process was correctly identified). False positives occur when the model incorrectly predicts a positive outcome for a negative instance (an invalid process was wrongly predicted as valid). False negatives arise when the model incorrectly predicts a negative outcome for a positive instance (a valid process was missed and classified as invalid). Analysing the confusion matrix for the process validity prediction in the context of manufacturing can reveal crucial information about the models tendencies, such as whether it is more prone to generating false alarms or to missing actual defects, which has direct implications for the design and implementation of quality control strategies.
@@ -406,7 +406,7 @@ For binary classification tasks, such as the prediction of the validity of manuf
   \end{tikzpicture}
   \caption[ROC AUC Curve Example]{Example ROC Curve}
   \label{fig:roc}
-  \caption*{Own tabulation based on \textcite{geron2022hands}. \ai{AI generated based on copyrighted image.}}}
+  \caption*{Author's tabulation based on \textcite{geron2022hands}. \ai{AI generated based on copyrighted image.}}}
 \end{figure}
 
 \begin{equation}
@@ -519,7 +519,7 @@ The key innovation of the LSTM cell is the introduction of a \textit{cell state}
   \centering
   \includegraphics[width=0.8\textwidth]{figures/lstmcell.png}
   \caption[LSTM Cell]{Visual representation of the LSTM cell computations detailed in Equations \ref{eq:lstm-forget-gate} to \ref{eq:lstm-hidden-state}. The diagram shows how inputs $\bm{x}_t$ and $\bm{h}_{t-1}$ interact with the forget gate ($\bm{f}_t$), input gate ($\bm{i}_t$), candidate state ($\bm{\tilde{c}}_t$), and output gate ($\bm{o}_t$) to update the cell state from $\bm{c}_{t-1}$ to $\bm{c}_t$ and compute the hidden state $\bm{h}_t$.}
-  \caption*{Source: Own illustration based on \autocite{geron2022hands}.}
+  \caption*{Source: Author's illustration based on \autocite{geron2022hands}.}
   \label{fig:lstm_cell}
 \end{figure}
 At each time step \( t \), given the input \( \bm{x}_t \), the previous hidden state \( \bm{h}_{t-1} \), and the previous cell state \( \bm{c}_{t-1} \), the LSTM cell does the following computations:
@@ -736,7 +736,7 @@ ML-based \gls{vvuq} approaches heavily rely on data. In the preceding sections, 
   \includegraphics[width=0.8\textwidth]{figures/vvbitencourt.png}
   \caption[Donut Chart V\&V]{Donut chart showing the distribution of V\&V methods in the context of \gls{dt}.}
   \label{fig:vvbitencourt}
-  \caption*{Own illustration based on \textcite{Bitencourt2023}.}
+  \caption*{Author's illustration based on \textcite{Bitencourt2023}.}
 \end{figure}
 
 \gls{dt}s ranking in the \textit{reality} category where most often verified and validated. The authors deduce that because of the increasing complexity of the model, V\&V may become a stressing topic. \Textcite{Nie2023rcim} propose a multi-agent and cloud-edge orchestration framework leveraging \gls{dt} and IIoT to optimize distributed manufacturing resources. Their framework integrates a Convolutional Neural Network (CNN) with a bidirectional Long Short Term Memory (LSTM) module to perform scheduling and self-adaptive strategies for intelligent, real-time production control. They compare their network with an earlier adopted algorithm and its result to perform V\&V. Quantifying the validity, they use Mean Squared Error (MSE) and Mean Absolute Error (MAE), see \autoref{sec:metrics-theory}.
@@ -753,7 +753,7 @@ The k-Nearest Neighbours (KNN) algorithm, a lazy learning approach grounded in m
   \includegraphics[width=0.8\textwidth]{figures/knn.png}
   \caption[KNN Intuition]{KNN algorithm. The algorithm classifies a new data point based on the majority class of its $K$ nearest neighbours in the training dataset. Euclidean distance metric has been used to determine the distance between data points.}
   \label{fig:knn}
-  \caption*{Own illustration.}
+  \caption*{Author's illustration.}
 \end{figure}
 
 In the given figure, the lazy learning approach of KNN near completion is shown. The star-formed point has to be assigned to class one or two. Based on the count of points in the near region of the unassigned point, the algorithm will decide class two.
@@ -816,7 +816,7 @@ The approach by \textcite{dos2024simulation} integrates KNN with p-charts for th
   \end{tikzpicture}
   \caption[Proportion chart for VVUQ]{Example P-Chart showing the proportion of anomalies detected by KNN over time for \gls{dt} accreditation, with Upper (UCL) and Lower (LCL) control limits. A point outside the limits (like at t=7) suggests potential deviation.}
   \label{fig:pchart_knn_dt}
-  \caption*{Own illustration based on \textcite{dos2024simulation}. \ai{AI generated based on copyrighted image.}}
+  \caption*{Author's illustration based on \textcite{dos2024simulation}. \ai{AI generated based on copyrighted image.}}
 \end{figure}
 
 \subsubsection*{Time Series Classification for Fault Localization}

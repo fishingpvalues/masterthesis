@@ -84,7 +84,7 @@
 ### 3.4 Research Gaps and Open Questions
 
 - Identification of the research gap on automated V\&V** (→ Reference to research questions in 1.3)
-- Delimitation of own research approach** (→ transition to Chapter 4)
+- Delimitation of Author's research approach** (→ transition to Chapter 4)
 
 ## 4. Conception of a Framework for Automated Validation (12-15 pages)
 
@@ -209,7 +209,7 @@
 - Technical limits
 - Methodological constraints
 - Application areas
-- **Critical reflection of the own approach** (→ reference to 4.5 and 6.5)
+- **Critical reflection of the Author's approach** (→ reference to 4.5 and 6.5)
 
 ### 7.4 Implications for Research and Practice
 

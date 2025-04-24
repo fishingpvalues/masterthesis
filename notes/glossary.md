@@ -551,8 +551,8 @@ Class files
 
     Understanding packages and class files
     List of packages and class files
-    Writing your own package
-    Writing your own class
+    Writing your Author's package
+    Writing your Author's class
 
 Advanced TeX/LaTeX
 

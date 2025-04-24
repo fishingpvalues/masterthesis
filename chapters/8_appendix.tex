@@ -31,7 +31,7 @@
 
     % Footer that appears on the last page
     \bottomrule
-    \caption*{Source: Own tabulation.}
+    \caption*{Source: Author's tabulation.}
     \endlastfoot
 
     % Table content starts here (unchanged)
@@ -208,7 +208,7 @@
     \end{tikzpicture}
     \caption[Sigmoid Activation Function]{The Sigmoid activation function.}
     \label{fig:sigmoid_plot}
-    \caption*{Own illustration.}
+    \caption*{Author's illustration.}
   \end{figure}
 
 
@@ -244,7 +244,7 @@
     \end{tikzpicture}
     \caption[Tanh activation function]{The Hyperbolic Tangent (tanh) activation function.}
     \label{fig:tanh_plot}
-    \caption*{Own illustration.}
+    \caption*{Author's illustration.}
   \end{figure}
 
 
@@ -276,7 +276,7 @@
     \end{tikzpicture}
     \caption[ReLU activation function]{The Rectified Linear Unit (ReLU) activation function.}
     \label{fig:relu_plot}
-    \caption*{Own illustration.}
+    \caption*{Author's illustration.}
   \end{figure}
 
 
@@ -550,7 +550,7 @@
     \end{tikzpicture}
     \caption[Feature Transformation]{Sine and Cosine transformation of the hour of the day (0-23). Each hour is mapped to a point $(x_{\cos}, x_{\sin})$ on the unit circle (blue dots). Key hours are labelled, demonstrating how the transformation preserves cyclical continuity (hour 23 is near hour 0).}
     \label{fig:time-encoding}
-    \caption*{Source: Own illustration}
+    \caption*{Source: Author's illustration}
   \end{figure}
 
   \chapter{Additional Statistical Validation Methods}
@@ -642,7 +642,7 @@
         \bottomrule
       \end{tabular}%
     }
-    \caption*{Source: Own tabulation based on permutation test results.}
+    \caption*{Source: Author's tabulation based on permutation test results.}
   \end{table}
 
   As evidenced by the results in Table \ref{tab:results-dt-appendix}, both the Cauchy Combination Test ($P_{CCT}=0.0000$) and the Binomial test ($P_{Binom}=0.0000$) yielded extremely significant p-values for all feature subsets when using the Decision Tree model at $\alpha=0.05$. The perfect rejection rate ($RR=1.00$) across all components further underscores this. This indicates a highly consistent and statistically robust ability of the DT model to distinguish between the real and simulated data across all evaluated components based on the engineered features, leading to the assessment "INACCURATE" for all components according to the defined validation framework.
@@ -670,7 +670,7 @@
         \bottomrule
       \end{tabular}%
     }
-    \caption*{Source: Own tabulation based on permutation test results.}
+    \caption*{Source: Author's tabulation based on permutation test results.}
   \end{table}
 
   As shown in Table \ref{tab:results-lstm-appendix}, the results for the BiLSTM model are the same observed with the DTree. Using the stricter significance level of $\alpha=0.01$, both the CCT ($P_{CCT}=0.0000$) and the Binomial test ($P_{Binom}=0.0000$) yielded extremely significant p-values for all feature subsets. The rejection rate was also perfect ($RR=1.00$) across all components. This demonstrates a consistent and statistically robust capability of the BiLSTM model to distinguish between the real and simulated data across all SBDT components evaluated, leading to the assessment "INACCURATE" for all components within the validation framework.

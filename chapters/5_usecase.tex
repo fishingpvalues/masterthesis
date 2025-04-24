@@ -380,7 +380,7 @@ The feature subsets are equal to the model components, as noted. The following U
   \centering
   \includegraphics[width=0.7\textwidth]{figures/upset.png}
   \caption[UpSet Plot]{UpSet plot visualizing feature overlap across categories. Left bars show total features per category; top bars show counts for specific intersections defined by the dot matrix below.}
-  \caption*{Source: Own illustration.}
+  \caption*{Source: Author's illustration.}
   \label{fig:upsetplot}
 \end{figure}
 
@@ -414,7 +414,7 @@ The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with 
     \texttt{all\_features}               & 1.0000                               & 0.0000                             & 0.0000                   & 1.00        & INACCURATE          \\
     \bottomrule
   \end{tabular}
-  \caption*{Source: Own tabulation.}
+  \caption*{Source: Author's tabulation.}
 \end{table}
 
 
@@ -423,7 +423,7 @@ The aggregated results, including the mean ROC AUC score ($\bar{S}_{obs}$) with 
   \includegraphics[width=0.8\textwidth]{figures/dt-roc-auc-by-component.png}
   \caption[Results Decision Tree]{Mean ROC AUC scores achieved by the DTree classifier when distinguishing between real and simulated data, using feature subsets corresponding to different SBDT components. Scores averaged over 10 runs. The dashed red line indicates random chance (AUC = 0.5).}
   \label{fig:dt-roc-auc}
-  \caption*{Source: Own illustration.}
+  \caption*{Source: Author's illustration.}
 \end{figure}
 
 The results from the whitebox model are highly significant. For almost all feature subsets, the DTree achieved a perfect mean ROC AUC of 1.0000, with the exception of the \texttt{resource\_model} subset which scored slightly lower but still extremely high ($\bar{S}_{obs}=0.9832 \pm 0.0104$). Correspondingly, the mean p-values were effectively zero ($< 0.0001$, reported as 0.0000) and the rejection rate was 1.00 for all components across all 10 runs. This indicates that the DTree could easily and consistently distinguish the simulated data from the real data based on the features associated with every tested SBDT component. According to the interpretation framework, this implies that, from the perspective of the whitebox model, all tested SBDT components were learned inaccurately.
@@ -462,7 +462,7 @@ The aggregated results from the blackbox models permutation tests are summarized
   \includegraphics[width=0.8\textwidth]{figures/lstm-roc-auc-by-component.png}
   \caption[Results Blackbox model]{Mean ROC AUC scores achieved by the classifier when distinguishing between real and simulated data, using feature subsets corresponding to different SBDT components. Scores averaged over 10 runs. The dashed red line indicates random chance (AUC = 0.5).}
   \label{fig:bilstm-roc-auc}
-  \caption*{Source: Own illustration.}
+  \caption*{Source: Author's illustration.}
 \end{figure}
 
 The blackbox model results largely align with the whitebox findings, indicating significant discrepancies between the simulated and real data across various SBDT components. Focusing on the BiLSTM classifier (using $\alpha = 0.01$), it achieved very high mean ROC AUC scores $\overline{\text{ROC AUC}}$ for most feature subsets, particularly for \texttt{time\_model} (0.9998), \texttt{transition\_model} (1.0000), \texttt{process\_model} (0.9788), \texttt{kpi\_based} (0.9989), and \texttt{all\_features} (1.0000). For these components, the mean p-values were effectively zero, and the rejection rate $RR$ was 1.00, indicating rejection of the null hypothesis ($H_0$).
@@ -514,7 +514,7 @@ The results are summarized in \autoref{tab:sanity-check-results}.
       \bottomrule
     \end{tabular}%
   }
-  \caption*{Source: Own tabulation, incorporating results from provided summary and \autoref{tab:results-whitebox}, \autoref{tab:results-blackbox}.}
+  \caption*{Source: Author's tabulation, incorporating results from provided summary and \autoref{tab:results-whitebox}, \autoref{tab:results-blackbox}.}
 \end{table}
 
 As shown, both classifiers achieved ROC AUC scores near the random chance baseline of 0.5 when tested on identical data in contrast to the near-perfect scores achieved on the original real vs. simulated data comparison.
