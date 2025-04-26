@@ -101,20 +101,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Enhanced title page command
 \newcommand{\frontpage}{%
+    \newgeometry{top=3.5cm, bottom=2.5cm, left=3cm, right=2.5cm}
     \begin{titlepage}
         \centering
-        \vspace*{1.8in} % Increased top space for balance
-        {\fontsize{34}{90}\selectfont\bfseries Automatic Verification and Validation of Automatically Generated Simulation-Based Digital Twins for Discrete Material Flow Systems}\\[2em] % Increased vertical space after title from 1em to 2em
-        \rule{\textwidth}{1pt}\\[2em]
-        \begin{tabular}{rl}
-            \textbf{Author:}       & Daniel Fischer\\[1em]
-            \textbf{Supervisor:}   & Prof. Christian Schwede\\[1em]
-            \textbf{Program:}      & Research Master Data Science\\[1em]
-            \textbf{Institution:}  & Hochschule Bielefeld (HSBI)\\[1em]
-            \textbf{Submission Date:} & \today\\[1em]
-        \end{tabular}
+        \vspace*{2.5cm}
+        {\LARGE\bfseries
+            \makebox[\textwidth][c]{%
+                \begin{tabular}{c}
+                    Automatic Verification and Validation of \\
+                    Automatically Generated Simulation-Based Digital Twins \\
+                    for Discrete Material Flow Systems
+                \end{tabular}%
+            }
+        }
+        
+        \vspace{1.5cm}
+        {\LARGE
+            \textbf{Daniel Fischer}\\[1.5em]
+            Research Master Data Science\\[0.5em]
+            Hochschule Bielefeld (HSBI)
+        }
         \vfill
+        {\Large
+            \textbf{Supervisor:} Prof. Christian Schwede\\[1em]
+            \textbf{Submission Date:} \today
+        }
+        \vspace*{1.5cm}
     \end{titlepage}
+    \restoregeometry
 }
 
 % Define a default background color for minted code blocks
