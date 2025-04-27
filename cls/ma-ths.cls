@@ -113,13 +113,12 @@
         
         {\usefont{T1}{ppl}{b}{n}
         \fontsize{22pt}{28pt}\selectfont
-        \makebox[\textwidth][c]{%
-            \begin{tabular}{c}
-                Automatic Verification and Validation of \\
-                Automatically Generated Simulation-Based Digital Twins \\
-                for Discrete Material Flow Systems
-            \end{tabular}%
-        }
+        \begin{center}
+          \begin{minipage}{0.9\textwidth}
+            \centering
+            Automatic Verification and Validation of Automatically Generated Simulation-Based Digital Twins for Discrete Material Flow Systems
+          \end{minipage}
+        \end{center}
         }
         
         \vspace{2em}

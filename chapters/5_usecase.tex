@@ -7,7 +7,7 @@ The thesis now focuses on the application of the implemented features and method
 \label{sec:factory}
 The framework has been applied on the Internet of Things-Factory (\gls{iot}) in Gütersloh, Germany \autocite{IoTFactory2024}. It is a cyber-physical system (\gls{cps}) \autocite{baheti2011cyber} mimicking industry-relevant processes in a smaller scale for research students. It consists of several stations that are partly interconnected via an assembly line or a delivery service conducted by automatic guided vehicles (\gls{agv}s). The factory is modular, so processes can be discovered module-wise in isolation. All modules are working on edge but are connected to a cluster that controls them. Theoretically, some stations can perform jobs of others. The main process also evaluated here is circular, meaning that the product is assembled and can be disassembled in a loop. The factory is shown in Figure \ref{fig:iotoverview}.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/iot1.png}
     \caption[IoT Factory Overview]{Overview of the \gls{iot} factory. It consists of three production stations from left to right, which are followed by a sorting station and a packaging station. The stations are interconnected by an assembly line. Isolated from the assembly part, two \gls{agv}s are used to transport parts between the warehouse station (upper right) and another flexible workstation (right).}
@@ -17,7 +17,7 @@ The framework has been applied on the Internet of Things-Factory (\gls{iot}) in 
 
 The robot cells are responsible for performing transformation operations like assembling additional parts or testing functions.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/robots.png}
     \caption[Robot Cells]{Two robot cells. The first cell is the main actor in this exemplary production process. Cell two is not part of the observed process here. The third image shows an \gls{agv} which transports boxes with assembled and disassembled parts to the stations.}
@@ -27,7 +27,7 @@ The robot cells are responsible for performing transformation operations like as
 
 The factory produces an exemplary product, consisting of a back part, a breadboard for several parts and a front panel. The parts to put on the breadboard are a display, gyroscope, an analog board and a weather station.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.2\textwidth]{figures/parts.png}
     \caption[Part Variants]{The product consists of a back part, a breadboard and a front panel. The breadboard is used to put on several parts, such as a display, gyroscope, analog board and a weather station.}
