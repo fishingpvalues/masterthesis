@@ -101,32 +101,44 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Enhanced title page command
 \newcommand{\frontpage}{%
-    \newgeometry{top=3.5cm, bottom=2.5cm, left=3cm, right=2.5cm}
+    \newgeometry{top=2.5cm, bottom=1.5cm, left=2.5cm, right=2cm}
     \begin{titlepage}
         \centering
-        \vspace*{2.5cm}
-        {\LARGE\bfseries
-            \makebox[\textwidth][c]{%
-                \begin{tabular}{c}
-                    Automatic Verification and Validation of \\
-                    Automatically Generated Simulation-Based Digital Twins \\
-                    for Discrete Material Flow Systems
-                \end{tabular}%
-            }
+        \vspace*{1.2cm}
+        {\LARGE\bfseries HOCHSCHULE BIELEFELD\\[0.5em]
+        UNIVERSITY OF APPLIED SCIENCES AND ARTS\\[2em]}
+        
+        {\large\bfseries MASTER'S DEGREE PROGRAMME\\[0.5em]
+        DATA SCIENCE (RESEARCH MASTER)\\[2em]}
+        
+        {\usefont{T1}{ppl}{b}{n}
+        \fontsize{22pt}{28pt}\selectfont
+        \makebox[\textwidth][c]{%
+            \begin{tabular}{c}
+                Automatic Verification and Validation of \\
+                Automatically Generated Simulation-Based Digital Twins \\
+                for Discrete Material Flow Systems
+            \end{tabular}%
+        }
         }
         
-        \vspace{1.5cm}
-        {\LARGE
-            \textbf{Daniel Fischer}\\[1.5em]
-            Research Master Data Science\\[0.5em]
-            Hochschule Bielefeld (HSBI)
+        \vspace{2em}
+        {\large Master's Thesis\\[2em]}
+        
+        {\Large\bfseries Daniel Fischer\\[0.5em]
+        Matriculation Number: 50008155\\[1.5em]}
+        
+        {\normalsize
+        Degree: Master of Science (M.Sc.)\\
+        Study model: Full-Time Study\\
+        Faculty: Engineering and Mathematics\\
+        Study location: Gütersloh\\[1.5em]
+        Supervisor: Prof. Christian Schwede\\[1.5em]
+        Submission Date: \today
         }
+        
         \vfill
-        {\Large
-            \textbf{Supervisor:} Prof. Christian Schwede\\[1em]
-            \textbf{Submission Date:} \today
-        }
-        \vspace*{1.5cm}
+        \vspace*{1.2cm}
     \end{titlepage}
     \restoregeometry
 }
