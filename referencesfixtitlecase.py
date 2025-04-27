@@ -4,6 +4,76 @@ from bibtexparser.bwriter import BibTexWriter
 from bibtexparser.customization import convert_to_unicode
 from titlecase import titlecase
 import re
+import unicodedata
+
+# Map of some common unicode to LaTeX equivalents (expand as needed)
+UNICODE_LATEX_MAP = {
+    "ä": '{"a}',
+    "ö": '{"o}',
+    "ü": '{"u}',
+    "ß": "{\ss}",
+    "Ä": '{"A}',
+    "Ö": '{"O}',
+    "Ü": '{"U}',
+    "é": "{\\'e}",
+    "è": "{\\`e}",
+    "ê": "{\\^e}",
+    "á": "{\\'a}",
+    "à": "{\\`a}",
+    "â": "{\\^a}",
+    "É": "{\\'E}",
+    "È": "{\\`E}",
+    "Ê": "{\\^E}",
+    "Á": "{\\'A}",
+    "À": "{\\`A}",
+    "Â": "{\\^A}",
+    "ç": "{\\c{c}}",
+    "Ç": "{\\c{C}}",
+    "ñ": "{\\~n}",
+    "Ñ": "{\\~N}",
+    "ø": "{\\o}",
+    "Ø": "{\\O}",
+    "å": "{\\aa}",
+    "Å": "{\\AA}",
+    "œ": "{\\oe}",
+    "Œ": "{\\OE}",
+    "æ": "{\\ae}",
+    "Æ": "{\\AE}",
+    "í": "{\\'i}",
+    "ì": "{\\`i}",
+    "î": "{\\^i}",
+    "Í": "{\\'I}",
+    "Ì": "{\\`I}",
+    "Î": "{\\^I}",
+    "ó": "{\\'o}",
+    "ò": "{\\`o}",
+    "ô": "{\\^o}",
+    "Ó": "{\\'O}",
+    "Ò": "{\\`O}",
+    "Ô": "{\\^O}",
+    "ú": "{\\'u}",
+    "ù": "{\\`u}",
+    "û": "{\\^u}",
+    "Ú": "{\\'U}",
+    "Ù": "{\\`U}",
+    "Û": "{\\^U}",
+    # Add more as needed
+}
+
+
+def escape_non_ascii(text):
+    """Replace non-ASCII characters with LaTeX equivalents or escape as unicode."""
+
+    def repl(c):
+        if c in UNICODE_LATEX_MAP:
+            return UNICODE_LATEX_MAP[c]
+        elif ord(c) < 128:
+            return c
+        else:
+            # fallback: unicode code point
+            return "{{\\char{}}}".format(ord(c))
+
+    return "".join(repl(c) for c in text)
 
 
 def split_protected(text):
@@ -80,9 +150,15 @@ def process_bibtex_file(input_file: str, output_file: str) -> None:
                     if not is_title_case(original):
                         entry[field] = safe_titlecase(original)
                         changed_count += 1
+            # Escape all fields to ASCII/LaTeX
+            for field in entry:
+                if isinstance(entry[field], str):
+                    entry[field] = escape_non_ascii(entry[field])
 
         # Write the output file carefully
-        with open(output_file, "w", encoding="utf-8") as bibfile:
+        with open(
+            output_file, "w", encoding="ascii", errors="backslashreplace"
+        ) as bibfile:
             writer = BibTexWriter()
             # Configure the writer for compatibility
             writer.indent = "  "  # Standard indentation
@@ -113,7 +189,7 @@ def process_bibtex_file(input_file: str, output_file: str) -> None:
 
 
 if __name__ == "__main__":
-    input_file = "d:/masterthesis/references_updated.bib"
-    output_file = "d:/masterthesis/ref_fix.bib"
+    input_file = "ref.bib"
+    output_file = "ref_titlecase.bib"
 
     process_bibtex_file(input_file, output_file)

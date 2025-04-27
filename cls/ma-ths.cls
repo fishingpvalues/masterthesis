@@ -104,7 +104,7 @@
     \newgeometry{top=2.5cm, bottom=1.5cm, left=2.5cm, right=2cm}
     \begin{titlepage}
         \centering
-        \vspace*{1.2cm}
+        \vspace*{1.8cm} % Slightly more than original (1.2cm), so the title is a little lower
         {\LARGE\bfseries HOCHSCHULE BIELEFELD\\[0.5em]
         UNIVERSITY OF APPLIED SCIENCES AND ARTS\\[2em]}
         
@@ -112,7 +112,7 @@
         DATA SCIENCE (RESEARCH MASTER)\\[2em]}
         
         {\usefont{T1}{ppl}{b}{n}
-        \fontsize{22pt}{28pt}\selectfont
+        \fontsize{22pt}{28pt}\selectfont % Restored original font size for the title
         \begin{center}
           \begin{minipage}{0.9\textwidth}
             \centering
@@ -120,10 +120,7 @@
           \end{minipage}
         \end{center}
         }
-        
-        \vspace{2em}
-        {\large Master's Thesis\\[2em]}
-        
+        \vspace{3em} % Add extra space after the title block
         {\Large\bfseries Daniel Fischer\\[0.5em]
         Matriculation Number: 50008155\\[1.5em]}
         
